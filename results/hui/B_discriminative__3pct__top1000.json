@@ -1,0 +1,3107 @@
+[
+  {
+    "itemset": [
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 243259.01178731775,
+    "support": 2882
+  },
+  {
+    "itemset": [
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 195149.25880178952,
+    "support": 3545
+  },
+  {
+    "itemset": [
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 188470.85433153852,
+    "support": 1792
+  },
+  {
+    "itemset": [
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 188201.6751724332,
+    "support": 3431
+  },
+  {
+    "itemset": [
+      "WAP077",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 187132.07353482838,
+    "support": 1509
+  },
+  {
+    "itemset": [
+      "WAP516",
+      "WAP495",
+      "WAP501"
+    ],
+    "utility": 185679.74127877218,
+    "support": 2329
+  },
+  {
+    "itemset": [
+      "WAP087",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 185646.21756916403,
+    "support": 1759
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP070",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 184727.7865235486,
+    "support": 1526
+  },
+  {
+    "itemset": [
+      "WAP070",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 182888.79518552392,
+    "support": 1768
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062"
+    ],
+    "utility": 181917.64690891845,
+    "support": 2324
+  },
+  {
+    "itemset": [
+      "WAP517",
+      "WAP502"
+    ],
+    "utility": 179051.73985183093,
+    "support": 3354
+  },
+  {
+    "itemset": [
+      "WAP077",
+      "WAP078",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 178147.7399394268,
+    "support": 1902
+  },
+  {
+    "itemset": [
+      "WAP077",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 177993.392235856,
+    "support": 1691
+  },
+  {
+    "itemset": [
+      "WAP117",
+      "WAP118",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 176607.97697219605,
+    "support": 1310
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 176461.54512527713,
+    "support": 1735
+  },
+  {
+    "itemset": [
+      "WAP062",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 175517.87199950803,
+    "support": 1693
+  },
+  {
+    "itemset": [
+      "WAP132",
+      "WAP131",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 175487.07808420577,
+    "support": 1339
+  },
+  {
+    "itemset": [
+      "WAP061",
+      "WAP062",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 175152.67115880342,
+    "support": 1494
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 174307.00525613525,
+    "support": 1716
+  },
+  {
+    "itemset": [
+      "WAP087",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 171295.75654560194,
+    "support": 2217
+  },
+  {
+    "itemset": [
+      "WAP078",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 167472.050331224,
+    "support": 2218
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062"
+    ],
+    "utility": 167153.1092731978,
+    "support": 1475
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 166537.89786553913,
+    "support": 1230
+  },
+  {
+    "itemset": [
+      "WAP118",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 165981.6690432283,
+    "support": 1473
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 165454.43097192943,
+    "support": 1333
+  },
+  {
+    "itemset": [
+      "WAP096",
+      "WAP097",
+      "WAP516",
+      "WAP495",
+      "WAP501"
+    ],
+    "utility": 165251.7796696371,
+    "support": 1319
+  },
+  {
+    "itemset": [
+      "WAP066",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 164979.79964564636,
+    "support": 1546
+  },
+  {
+    "itemset": [
+      "WAP132",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 164558.97562604168,
+    "support": 1490
+  },
+  {
+    "itemset": [
+      "WAP061",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 164401.89606774424,
+    "support": 1624
+  },
+  {
+    "itemset": [
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 164255.4502390805,
+    "support": 1361
+  },
+  {
+    "itemset": [
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062"
+    ],
+    "utility": 163362.84923523004,
+    "support": 1660
+  },
+  {
+    "itemset": [
+      "WAP131",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 162127.1530903363,
+    "support": 1465
+  },
+  {
+    "itemset": [
+      "WAP077",
+      "WAP078",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 160756.66368798897,
+    "support": 1717
+  },
+  {
+    "itemset": [
+      "WAP117",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 160323.01054068728,
+    "support": 1426
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP070",
+      "WAP087",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 160233.56886052724,
+    "support": 1108
+  },
+  {
+    "itemset": [
+      "WAP077",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 159379.21841428502,
+    "support": 2139
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 159302.1361049274,
+    "support": 1328
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 159090.81877000627,
+    "support": 1877
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 158828.46662759857,
+    "support": 1498
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 158678.26406532052,
+    "support": 1013
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062"
+    ],
+    "utility": 157930.91044087784,
+    "support": 1610
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP070",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 157673.5541307414,
+    "support": 1722
+  },
+  {
+    "itemset": [
+      "WAP077",
+      "WAP078",
+      "WAP517",
+      "WAP502"
+    ],
+    "utility": 157625.18933591212,
+    "support": 1708
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP062"
+    ],
+    "utility": 157072.85326204018,
+    "support": 2550
+  },
+  {
+    "itemset": [
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 156895.56929333083,
+    "support": 1135
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP062",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 156631.65307785748,
+    "support": 1096
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP070",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 156481.94193638786,
+    "support": 1709
+  },
+  {
+    "itemset": [
+      "WAP070",
+      "WAP087",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 156402.24804042486,
+    "support": 1241
+  },
+  {
+    "itemset": [
+      "WAP066",
+      "WAP062",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 155098.75420826566,
+    "support": 1242
+  },
+  {
+    "itemset": [
+      "WAP087",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 154932.83241601865,
+    "support": 2058
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP070",
+      "WAP517",
+      "WAP502"
+    ],
+    "utility": 154363.25547053598,
+    "support": 1695
+  },
+  {
+    "itemset": [
+      "WAP078",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 153809.5889562086,
+    "support": 2057
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 153590.14036177075,
+    "support": 1301
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP087"
+    ],
+    "utility": 153121.4319434987,
+    "support": 2395
+  },
+  {
+    "itemset": [
+      "WAP099",
+      "WAP098",
+      "WAP516",
+      "WAP495",
+      "WAP501"
+    ],
+    "utility": 152405.3688967249,
+    "support": 1187
+  },
+  {
+    "itemset": [
+      "WAP084",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 151792.47244475485,
+    "support": 1522
+  },
+  {
+    "itemset": [
+      "WAP132",
+      "WAP131",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 151603.87152334355,
+    "support": 1529
+  },
+  {
+    "itemset": [
+      "WAP062",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 151577.74043745047,
+    "support": 1232
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP087"
+    ],
+    "utility": 151326.27089994098,
+    "support": 1812
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP082",
+      "WAP065",
+      "WAP066",
+      "WAP087"
+    ],
+    "utility": 151201.4276492208,
+    "support": 1364
+  },
+  {
+    "itemset": [
+      "WAP117",
+      "WAP118",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 151139.6007227063,
+    "support": 1476
+  },
+  {
+    "itemset": [
+      "WAP077",
+      "WAP078",
+      "WAP496"
+    ],
+    "utility": 150463.09932969447,
+    "support": 2354
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP062"
+    ],
+    "utility": 150258.77766965888,
+    "support": 1567
+  },
+  {
+    "itemset": [
+      "WAP061",
+      "WAP062",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 150140.96948601192,
+    "support": 1720
+  },
+  {
+    "itemset": [
+      "WAP061",
+      "WAP062",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 150073.53977012637,
+    "support": 1734
+  },
+  {
+    "itemset": [
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 150063.74085289138,
+    "support": 1452
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 150017.04729634587,
+    "support": 1070
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP087",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 149972.0568132614,
+    "support": 1212
+  },
+  {
+    "itemset": [
+      "WAP061",
+      "WAP062",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 149862.65012771217,
+    "support": 1093
+  },
+  {
+    "itemset": [
+      "WAP070",
+      "WAP077",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 149010.72146237525,
+    "support": 1024
+  },
+  {
+    "itemset": [
+      "WAP070",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 148859.1194746238,
+    "support": 2026
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP061",
+      "WAP062",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 148707.3745129206,
+    "support": 1075
+  },
+  {
+    "itemset": [
+      "WAP078",
+      "WAP517",
+      "WAP502"
+    ],
+    "utility": 148651.09118527052,
+    "support": 2036
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP070",
+      "WAP077",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 148628.64675470808,
+    "support": 906
+  },
+  {
+    "itemset": [
+      "WAP132",
+      "WAP131",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 148499.78751940225,
+    "support": 1496
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP087"
+    ],
+    "utility": 148290.7183835023,
+    "support": 1274
+  },
+  {
+    "itemset": [
+      "WAP087",
+      "WAP517",
+      "WAP502"
+    ],
+    "utility": 147876.65422842823,
+    "support": 1970
+  },
+  {
+    "itemset": [
+      "WAP066",
+      "WAP061",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 147625.61506785313,
+    "support": 1210
+  },
+  {
+    "itemset": [
+      "WAP085",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 147607.7149402363,
+    "support": 1460
+  },
+  {
+    "itemset": [
+      "WAP096",
+      "WAP516",
+      "WAP495",
+      "WAP501"
+    ],
+    "utility": 147512.5721301284,
+    "support": 1410
+  },
+  {
+    "itemset": [
+      "WAP062",
+      "WAP077",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 147234.49867865507,
+    "support": 1043
+  },
+  {
+    "itemset": [
+      "WAP070",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 146953.23305899664,
+    "support": 1990
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP062",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 146918.16333144513,
+    "support": 1179
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP061"
+    ],
+    "utility": 146785.60445328892,
+    "support": 2440
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 146351.8991985082,
+    "support": 1160
+  },
+  {
+    "itemset": [
+      "WAP122",
+      "WAP121",
+      "WAP132",
+      "WAP131"
+    ],
+    "utility": 145711.64844771652,
+    "support": 1634
+  },
+  {
+    "itemset": [
+      "WAP117",
+      "WAP118",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 145707.14454512237,
+    "support": 1408
+  },
+  {
+    "itemset": [
+      "WAP061",
+      "WAP062",
+      "WAP077",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 145402.12751231436,
+    "support": 934
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP082",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 145381.52543462606,
+    "support": 993
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP087"
+    ],
+    "utility": 145215.77528040568,
+    "support": 1508
+  },
+  {
+    "itemset": [
+      "WAP117",
+      "WAP118",
+      "WAP517",
+      "WAP502"
+    ],
+    "utility": 145169.37764808256,
+    "support": 1428
+  },
+  {
+    "itemset": [
+      "WAP077",
+      "WAP078",
+      "WAP517"
+    ],
+    "utility": 144989.99287230402,
+    "support": 2299
+  },
+  {
+    "itemset": [
+      "WAP070",
+      "WAP517",
+      "WAP502"
+    ],
+    "utility": 144950.8293567525,
+    "support": 1988
+  },
+  {
+    "itemset": [
+      "WAP097",
+      "WAP516",
+      "WAP495",
+      "WAP501"
+    ],
+    "utility": 144769.0024274141,
+    "support": 1407
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP065",
+      "WAP066",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 144679.34606735298,
+    "support": 1406
+  },
+  {
+    "itemset": [
+      "WAP077",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 144656.52759603257,
+    "support": 1932
+  },
+  {
+    "itemset": [
+      "WAP070",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 144491.35553019642,
+    "support": 1157
+  },
+  {
+    "itemset": [
+      "WAP062",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 144454.12734463715,
+    "support": 1980
+  },
+  {
+    "itemset": [
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP062"
+    ],
+    "utility": 144167.03597786336,
+    "support": 1779
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP077",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 144158.36665826096,
+    "support": 1004
+  },
+  {
+    "itemset": [
+      "WAP132",
+      "WAP131",
+      "WAP517",
+      "WAP502"
+    ],
+    "utility": 143856.4778927836,
+    "support": 1480
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061"
+    ],
+    "utility": 143767.03930556693,
+    "support": 1526
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 143747.32934536325,
+    "support": 1542
+  },
+  {
+    "itemset": [
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP087"
+    ],
+    "utility": 143551.79617302073,
+    "support": 1408
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP082",
+      "WAP063",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 143468.35620744183,
+    "support": 803
+  },
+  {
+    "itemset": [
+      "WAP062",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 143102.42833619827,
+    "support": 1949
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP070",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 143051.58697685756,
+    "support": 1001
+  },
+  {
+    "itemset": [
+      "WAP061",
+      "WAP062",
+      "WAP077",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 142998.14306747066,
+    "support": 1044
+  },
+  {
+    "itemset": [
+      "WAP062",
+      "WAP077",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 142752.38311799508,
+    "support": 1163
+  },
+  {
+    "itemset": [
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 142554.08035745673,
+    "support": 1852
+  },
+  {
+    "itemset": [
+      "WAP061",
+      "WAP062",
+      "WAP517",
+      "WAP502"
+    ],
+    "utility": 142225.3501732667,
+    "support": 1687
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 142069.3512021291,
+    "support": 1133
+  },
+  {
+    "itemset": [
+      "WAP516",
+      "WAP495",
+      "WAP501",
+      "WAP069",
+      "WAP070"
+    ],
+    "utility": 141894.50148692814,
+    "support": 1221
+  },
+  {
+    "itemset": [
+      "WAP516",
+      "WAP495",
+      "WAP501",
+      "WAP077",
+      "WAP078"
+    ],
+    "utility": 141813.370994946,
+    "support": 1188
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP082",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 141716.57217948936,
+    "support": 863
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 141686.05442012454,
+    "support": 1960
+  },
+  {
+    "itemset": [
+      "WAP096",
+      "WAP097",
+      "WAP495",
+      "WAP501"
+    ],
+    "utility": 141637.99804879358,
+    "support": 1448
+  },
+  {
+    "itemset": [
+      "WAP066",
+      "WAP061",
+      "WAP062"
+    ],
+    "utility": 141483.36270717895,
+    "support": 2604
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP063",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 141291.8973741156,
+    "support": 883
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 141221.9218802055,
+    "support": 1522
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 141108.26374773003,
+    "support": 1110
+  },
+  {
+    "itemset": [
+      "WAP077",
+      "WAP517",
+      "WAP502"
+    ],
+    "utility": 141091.43568757913,
+    "support": 1927
+  },
+  {
+    "itemset": [
+      "WAP061",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 140933.21323112908,
+    "support": 1164
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066"
+    ],
+    "utility": 140859.8463321669,
+    "support": 3398
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP070",
+      "WAP077",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 140801.75236249945,
+    "support": 979
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP062",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 140667.77196328057,
+    "support": 1259
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP061",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 140566.9044201518,
+    "support": 1151
+  },
+  {
+    "itemset": [
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP087"
+    ],
+    "utility": 140338.00647247248,
+    "support": 1715
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP070",
+      "WAP087",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 140206.83980115864,
+    "support": 1227
+  },
+  {
+    "itemset": [
+      "WAP082",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 140191.77080751187,
+    "support": 1123
+  },
+  {
+    "itemset": [
+      "WAP085",
+      "WAP084",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 140151.78559384507,
+    "support": 1234
+  },
+  {
+    "itemset": [
+      "WAP082",
+      "WAP063",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 140143.16119876917,
+    "support": 890
+  },
+  {
+    "itemset": [
+      "WAP495",
+      "WAP501"
+    ],
+    "utility": 140134.04091993088,
+    "support": 2624
+  },
+  {
+    "itemset": [
+      "WAP070",
+      "WAP077",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 139985.6154809517,
+    "support": 1116
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP087"
+    ],
+    "utility": 139702.52806081987,
+    "support": 1379
+  },
+  {
+    "itemset": [
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 139145.2745392298,
+    "support": 1292
+  },
+  {
+    "itemset": [
+      "WAP061",
+      "WAP077",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 139096.03561025386,
+    "support": 995
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP087",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 139046.13847098357,
+    "support": 963
+  },
+  {
+    "itemset": [
+      "WAP077",
+      "WAP078",
+      "WAP087",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 138962.41839331738,
+    "support": 1207
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP517",
+      "WAP502"
+    ],
+    "utility": 138941.62652734056,
+    "support": 1124
+  },
+  {
+    "itemset": [
+      "WAP516",
+      "WAP495",
+      "WAP501",
+      "WAP077"
+    ],
+    "utility": 138932.62196679355,
+    "support": 1376
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP065",
+      "WAP066",
+      "WAP062"
+    ],
+    "utility": 138790.24831995356,
+    "support": 1715
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP082",
+      "WAP065",
+      "WAP066",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 138760.8720721561,
+    "support": 1064
+  },
+  {
+    "itemset": [
+      "WAP489",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 138725.8203137566,
+    "support": 1220
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP070",
+      "WAP087",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 138700.9866637366,
+    "support": 1209
+  },
+  {
+    "itemset": [
+      "WAP132",
+      "WAP131",
+      "WAP066",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 138634.79929874884,
+    "support": 916
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP070",
+      "WAP077",
+      "WAP078"
+    ],
+    "utility": 138584.1806663636,
+    "support": 1827
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 138505.95114334353,
+    "support": 1923
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 138500.79110653882,
+    "support": 1121
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP082",
+      "WAP065",
+      "WAP066"
+    ],
+    "utility": 138303.3625101585,
+    "support": 1567
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 138267.67720577176,
+    "support": 1817
+  },
+  {
+    "itemset": [
+      "WAP064",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 138201.715553889,
+    "support": 1381
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 137940.96388285127,
+    "support": 949
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP496"
+    ],
+    "utility": 137705.18729246117,
+    "support": 1415
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP082",
+      "WAP063",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 137656.62845874744,
+    "support": 842
+  },
+  {
+    "itemset": [
+      "WAP061",
+      "WAP062",
+      "WAP070",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 137579.98186923534,
+    "support": 1004
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP070",
+      "WAP087",
+      "WAP517",
+      "WAP502"
+    ],
+    "utility": 137557.16662599694,
+    "support": 1199
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 137525.23677181193,
+    "support": 952
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 137518.40934011637,
+    "support": 1377
+  },
+  {
+    "itemset": [
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 137470.35764336097,
+    "support": 1283
+  },
+  {
+    "itemset": [
+      "WAP011",
+      "WAP012",
+      "WAP132",
+      "WAP131"
+    ],
+    "utility": 137457.2021249543,
+    "support": 1565
+  },
+  {
+    "itemset": [
+      "WAP117",
+      "WAP132",
+      "WAP131",
+      "WAP118",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 137444.01582965816,
+    "support": 715
+  },
+  {
+    "itemset": [
+      "WAP516",
+      "WAP495",
+      "WAP501",
+      "WAP070"
+    ],
+    "utility": 137358.3186842613,
+    "support": 1390
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP082",
+      "WAP063",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062"
+    ],
+    "utility": 137354.76166425098,
+    "support": 882
+  },
+  {
+    "itemset": [
+      "WAP516",
+      "WAP501"
+    ],
+    "utility": 137284.93168567133,
+    "support": 2627
+  },
+  {
+    "itemset": [
+      "WAP516",
+      "WAP495",
+      "WAP501",
+      "WAP069"
+    ],
+    "utility": 137243.09710843558,
+    "support": 1404
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP062",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 137035.22512464933,
+    "support": 1230
+  },
+  {
+    "itemset": [
+      "WAP117",
+      "WAP118",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 137029.40282948955,
+    "support": 874
+  },
+  {
+    "itemset": [
+      "WAP085",
+      "WAP087",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 136928.77324357373,
+    "support": 1116
+  },
+  {
+    "itemset": [
+      "WAP082",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 136892.94367353895,
+    "support": 958
+  },
+  {
+    "itemset": [
+      "WAP122",
+      "WAP121",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 136864.1039733347,
+    "support": 1081
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP517"
+    ],
+    "utility": 136855.78742860473,
+    "support": 1416
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP064",
+      "WAP065",
+      "WAP066"
+    ],
+    "utility": 136846.76150691355,
+    "support": 1847
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP517",
+      "WAP502"
+    ],
+    "utility": 136769.80612857162,
+    "support": 1919
+  },
+  {
+    "itemset": [
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061"
+    ],
+    "utility": 136718.61595877048,
+    "support": 1720
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP082",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062"
+    ],
+    "utility": 136666.0965165691,
+    "support": 1112
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 136636.8447105109,
+    "support": 774
+  },
+  {
+    "itemset": [
+      "WAP132",
+      "WAP131",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 136536.8607911187,
+    "support": 903
+  },
+  {
+    "itemset": [
+      "WAP084",
+      "WAP087",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 136505.51446156693,
+    "support": 1127
+  },
+  {
+    "itemset": [
+      "WAP087",
+      "WAP496"
+    ],
+    "utility": 136358.46040066605,
+    "support": 2840
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP065",
+      "WAP066",
+      "WAP087"
+    ],
+    "utility": 136350.53469913127,
+    "support": 1674
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 136294.76035812026,
+    "support": 771
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP065",
+      "WAP066",
+      "WAP087"
+    ],
+    "utility": 136213.7772302408,
+    "support": 1506
+  },
+  {
+    "itemset": [
+      "WAP132",
+      "WAP131",
+      "WAP065",
+      "WAP066",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 136211.35727376124,
+    "support": 811
+  },
+  {
+    "itemset": [
+      "WAP064",
+      "WAP087",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 136187.1859007942,
+    "support": 1103
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP070",
+      "WAP077",
+      "WAP078",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 136179.17785795487,
+    "support": 1021
+  },
+  {
+    "itemset": [
+      "WAP132",
+      "WAP131",
+      "WAP062",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 136105.04219238306,
+    "support": 901
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP064",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 136094.55573933618,
+    "support": 1254
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP063",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062"
+    ],
+    "utility": 136078.5229694367,
+    "support": 990
+  },
+  {
+    "itemset": [
+      "WAP066",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 135927.37987000635,
+    "support": 1073
+  },
+  {
+    "itemset": [
+      "WAP062",
+      "WAP517",
+      "WAP502"
+    ],
+    "utility": 135850.7237679278,
+    "support": 1921
+  },
+  {
+    "itemset": [
+      "WAP066",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 135840.35170155246,
+    "support": 1804
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP517",
+      "WAP502"
+    ],
+    "utility": 135745.4725773612,
+    "support": 1488
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP077",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 135684.10884994542,
+    "support": 1097
+  },
+  {
+    "itemset": [
+      "WAP096",
+      "WAP097",
+      "WAP516",
+      "WAP501"
+    ],
+    "utility": 135557.6181950552,
+    "support": 1396
+  },
+  {
+    "itemset": [
+      "WAP061",
+      "WAP062",
+      "WAP087",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 135466.79273843882,
+    "support": 1003
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP082",
+      "WAP063",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 135273.5165160627,
+    "support": 834
+  },
+  {
+    "itemset": [
+      "WAP061",
+      "WAP077",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 135118.42359366006,
+    "support": 1114
+  },
+  {
+    "itemset": [
+      "WAP077",
+      "WAP078",
+      "WAP502"
+    ],
+    "utility": 135069.3677876541,
+    "support": 2157
+  },
+  {
+    "itemset": [
+      "WAP098",
+      "WAP516",
+      "WAP495",
+      "WAP501"
+    ],
+    "utility": 135061.61989608448,
+    "support": 1256
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP087",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 134991.13596097234,
+    "support": 1100
+  },
+  {
+    "itemset": [
+      "WAP132",
+      "WAP131",
+      "WAP065",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 134881.44283532375,
+    "support": 892
+  },
+  {
+    "itemset": [
+      "WAP066",
+      "WAP087",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 134841.45133961854,
+    "support": 1064
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP063",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 134801.6926651036,
+    "support": 931
+  },
+  {
+    "itemset": [
+      "WAP082",
+      "WAP065",
+      "WAP066",
+      "WAP087"
+    ],
+    "utility": 134782.43803444985,
+    "support": 1533
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP087",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 134716.83351081616,
+    "support": 1070
+  },
+  {
+    "itemset": [
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 134668.556924792,
+    "support": 849
+  },
+  {
+    "itemset": [
+      "WAP082",
+      "WAP063",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062"
+    ],
+    "utility": 134619.87068893592,
+    "support": 996
+  },
+  {
+    "itemset": [
+      "WAP066",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 134475.94177762233,
+    "support": 1777
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP064",
+      "WAP065",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 134462.5978592747,
+    "support": 1258
+  },
+  {
+    "itemset": [
+      "WAP074",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062"
+    ],
+    "utility": 134407.00836861946,
+    "support": 1399
+  },
+  {
+    "itemset": [
+      "WAP077",
+      "WAP078"
+    ],
+    "utility": 134340.11790895808,
+    "support": 3668
+  },
+  {
+    "itemset": [
+      "WAP132",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 134286.83781180246,
+    "support": 1704
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP070",
+      "WAP077",
+      "WAP078",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 134271.97151189036,
+    "support": 996
+  },
+  {
+    "itemset": [
+      "WAP062",
+      "WAP070",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 134257.60627423157,
+    "support": 1095
+  },
+  {
+    "itemset": [
+      "WAP118",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 134241.55165826424,
+    "support": 1663
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP082",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 134222.04703394911,
+    "support": 908
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062"
+    ],
+    "utility": 134145.22877985108,
+    "support": 1295
+  },
+  {
+    "itemset": [
+      "WAP132",
+      "WAP131",
+      "WAP118",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 133990.27476468546,
+    "support": 799
+  },
+  {
+    "itemset": [
+      "WAP073",
+      "WAP074",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062"
+    ],
+    "utility": 133926.2986951991,
+    "support": 1179
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 133878.91203514434,
+    "support": 1223
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP062",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 133860.34045995984,
+    "support": 824
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP082",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062"
+    ],
+    "utility": 133742.65190570714,
+    "support": 947
+  },
+  {
+    "itemset": [
+      "WAP061",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 133595.31393990715,
+    "support": 1893
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP064",
+      "WAP087",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 133542.10100133612,
+    "support": 970
+  },
+  {
+    "itemset": [
+      "WAP082",
+      "WAP063",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 133521.82494310566,
+    "support": 940
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP062",
+      "WAP517",
+      "WAP502"
+    ],
+    "utility": 133496.9589848396,
+    "support": 1220
+  },
+  {
+    "itemset": [
+      "WAP070",
+      "WAP077",
+      "WAP078",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 133476.48108555697,
+    "support": 1166
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP062",
+      "WAP087",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 133466.34203866633,
+    "support": 820
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP082",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP087"
+    ],
+    "utility": 133440.6766951711,
+    "support": 1050
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP070",
+      "WAP077",
+      "WAP078",
+      "WAP517",
+      "WAP502"
+    ],
+    "utility": 133413.1829591673,
+    "support": 1012
+  },
+  {
+    "itemset": [
+      "WAP066",
+      "WAP062",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 133283.2019018661,
+    "support": 922
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP061",
+      "WAP062"
+    ],
+    "utility": 133254.1658161032,
+    "support": 2472
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP502"
+    ],
+    "utility": 133235.4114608998,
+    "support": 1409
+  },
+  {
+    "itemset": [
+      "WAP011",
+      "WAP012",
+      "WAP144",
+      "WAP145"
+    ],
+    "utility": 133210.1107718959,
+    "support": 1556
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP064",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 133206.5457254302,
+    "support": 1175
+  },
+  {
+    "itemset": [
+      "WAP062",
+      "WAP087",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 133176.92342385836,
+    "support": 1094
+  },
+  {
+    "itemset": [
+      "WAP117",
+      "WAP118",
+      "WAP077",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 133163.16916931013,
+    "support": 766
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP061",
+      "WAP062",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 133110.40706352404,
+    "support": 1240
+  },
+  {
+    "itemset": [
+      "WAP131",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 133109.0762015359,
+    "support": 1690
+  },
+  {
+    "itemset": [
+      "WAP516",
+      "WAP495",
+      "WAP501",
+      "WAP078"
+    ],
+    "utility": 133101.22578409297,
+    "support": 1328
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP082",
+      "WAP063",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP087"
+    ],
+    "utility": 133020.77344629524,
+    "support": 944
+  },
+  {
+    "itemset": [
+      "WAP061",
+      "WAP069",
+      "WAP062",
+      "WAP070",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 132993.38649117947,
+    "support": 857
+  },
+  {
+    "itemset": [
+      "WAP078",
+      "WAP087",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 132989.83365561898,
+    "support": 1374
+  },
+  {
+    "itemset": [
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP517",
+      "WAP502"
+    ],
+    "utility": 132957.92118536076,
+    "support": 1272
+  },
+  {
+    "itemset": [
+      "WAP099",
+      "WAP098",
+      "WAP516",
+      "WAP495",
+      "WAP501",
+      "WAP077",
+      "WAP078"
+    ],
+    "utility": 132948.6930317477,
+    "support": 785
+  },
+  {
+    "itemset": [
+      "WAP082",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062"
+    ],
+    "utility": 132919.18339064237,
+    "support": 1303
+  },
+  {
+    "itemset": [
+      "WAP061",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 132894.0666962158,
+    "support": 1867
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP082",
+      "WAP085",
+      "WAP084",
+      "WAP065",
+      "WAP066",
+      "WAP087"
+    ],
+    "utility": 132810.40684345932,
+    "support": 954
+  },
+  {
+    "itemset": [
+      "WAP066",
+      "WAP062",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 132578.70388869362,
+    "support": 1416
+  },
+  {
+    "itemset": [
+      "WAP070",
+      "WAP087",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 132505.2644711586,
+    "support": 1392
+  },
+  {
+    "itemset": [
+      "WAP099",
+      "WAP516",
+      "WAP495",
+      "WAP501"
+    ],
+    "utility": 132431.0172633593,
+    "support": 1226
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP065",
+      "WAP066",
+      "WAP061"
+    ],
+    "utility": 132418.51525428766,
+    "support": 1671
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP082",
+      "WAP084",
+      "WAP065",
+      "WAP066",
+      "WAP087"
+    ],
+    "utility": 132388.86290156507,
+    "support": 1068
+  },
+  {
+    "itemset": [
+      "WAP061",
+      "WAP069",
+      "WAP062",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 132350.35721812132,
+    "support": 976
+  },
+  {
+    "itemset": [
+      "WAP066",
+      "WAP062",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 132289.23406130902,
+    "support": 1417
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP082",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP087"
+    ],
+    "utility": 132274.92781745506,
+    "support": 1022
+  },
+  {
+    "itemset": [
+      "WAP132",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 132199.56989755164,
+    "support": 1680
+  },
+  {
+    "itemset": [
+      "WAP064",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 132181.76873274805,
+    "support": 1404
+  },
+  {
+    "itemset": [
+      "WAP061",
+      "WAP062",
+      "WAP077",
+      "WAP078",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 132085.09414805382,
+    "support": 1037
+  },
+  {
+    "itemset": [
+      "WAP203",
+      "WAP204",
+      "WAP096",
+      "WAP097",
+      "WAP516",
+      "WAP495",
+      "WAP501"
+    ],
+    "utility": 131942.67560869263,
+    "support": 784
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP065",
+      "WAP066",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 131929.08176544998,
+    "support": 1190
+  },
+  {
+    "itemset": [
+      "WAP069",
+      "WAP070",
+      "WAP496"
+    ],
+    "utility": 131894.11524383028,
+    "support": 2110
+  },
+  {
+    "itemset": [
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP087",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 131811.31431296087,
+    "support": 837
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP063",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP062",
+      "WAP087"
+    ],
+    "utility": 131766.69886860883,
+    "support": 918
+  },
+  {
+    "itemset": [
+      "WAP132",
+      "WAP131",
+      "WAP061",
+      "WAP062",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 131740.19041308222,
+    "support": 800
+  },
+  {
+    "itemset": [
+      "WAP063",
+      "WAP064",
+      "WAP066",
+      "WAP061",
+      "WAP062"
+    ],
+    "utility": 131696.0168301063,
+    "support": 1519
+  },
+  {
+    "itemset": [
+      "WAP070",
+      "WAP077",
+      "WAP078",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 131519.3481269918,
+    "support": 1131
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP082",
+      "WAP063",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP087"
+    ],
+    "utility": 131519.06541232896,
+    "support": 817
+  },
+  {
+    "itemset": [
+      "WAP085",
+      "WAP084",
+      "WAP087",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 131464.29658658325,
+    "support": 970
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 131430.96830399445,
+    "support": 1045
+  },
+  {
+    "itemset": [
+      "WAP011",
+      "WAP012",
+      "WAP144",
+      "WAP145",
+      "WAP132",
+      "WAP131"
+    ],
+    "utility": 131360.38876619213,
+    "support": 1004
+  },
+  {
+    "itemset": [
+      "WAP118",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 131267.4773546339,
+    "support": 985
+  },
+  {
+    "itemset": [
+      "WAP073",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062"
+    ],
+    "utility": 131235.78156703786,
+    "support": 1356
+  },
+  {
+    "itemset": [
+      "WAP132",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 131019.75220524507,
+    "support": 1002
+  },
+  {
+    "itemset": [
+      "WAP070",
+      "WAP087",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 130973.34158882704,
+    "support": 1360
+  },
+  {
+    "itemset": [
+      "WAP074",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 130925.14346092181,
+    "support": 1315
+  },
+  {
+    "itemset": [
+      "WAP132",
+      "WAP062",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 130855.3258302326,
+    "support": 1006
+  },
+  {
+    "itemset": [
+      "WAP073",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 130844.2348649461,
+    "support": 1313
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP517",
+      "WAP496"
+    ],
+    "utility": 130831.65622322357,
+    "support": 1742
+  },
+  {
+    "itemset": [
+      "WAP083",
+      "WAP064",
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062"
+    ],
+    "utility": 130815.86970235976,
+    "support": 1067
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP087",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 130713.14242476488,
+    "support": 815
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 130710.45560724454,
+    "support": 1202
+  },
+  {
+    "itemset": [
+      "WAP489",
+      "WAP077",
+      "WAP078",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 130694.2097851623,
+    "support": 845
+  },
+  {
+    "itemset": [
+      "WAP065",
+      "WAP066",
+      "WAP061",
+      "WAP062",
+      "WAP077",
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 130676.34745841094,
+    "support": 738
+  }
+]

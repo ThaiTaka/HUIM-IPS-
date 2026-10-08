@@ -1,0 +1,12 @@
+{
+  "font": "C:\\Windows\\Fonts\\times.ttf",
+  "n_codepoints_in_font": 3716,
+  "files_scanned": [
+    "src/make_diagrams.py",
+    "src/make_slides.py",
+    "src/plots.py"
+  ],
+  "n_occurrences": 0,
+  "distinct_missing": [],
+  "all_occurrences": []
+}

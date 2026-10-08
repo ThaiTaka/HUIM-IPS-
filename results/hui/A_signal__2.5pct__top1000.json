@@ -1,0 +1,20 @@
+[
+  {
+    "itemset": [
+      "WAP517",
+      "WAP502",
+      "WAP496"
+    ],
+    "utility": 265363.0,
+    "support": 2882
+  },
+  {
+    "itemset": [
+      "WAP516",
+      "WAP495",
+      "WAP501"
+    ],
+    "utility": 236263.0,
+    "support": 2329
+  }
+]

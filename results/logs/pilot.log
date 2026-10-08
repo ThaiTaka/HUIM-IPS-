@@ -1,0 +1,16 @@
+2026-10-07 20:54:11,868 | INFO    | pilot | pilot subsample: 2501 rows, 13 classes
+2026-10-07 20:54:11,914 | INFO    | pilot | pilot transactions: 2489 non-empty (12 empty dropped)
+2026-10-07 20:54:11,951 | INFO    | pilot | model A_signal: total pilot DB utility = 1158850.00
+2026-10-07 20:54:12,091 | INFO    | pilot |   A_signal                5.000% ->       0 HUIs |   0.13s |    4.1MB | items 147/405 | COMPLETED
+2026-10-07 20:54:23,883 | INFO    | pilot |   A_signal                2.000% ->  300001 HUIs |  11.65s |  200.6MB | items 250/405 | ABORTED_RESOURCE_LIMIT
+2026-10-07 20:54:23,883 | INFO    | pilot |   -> aborted; stopping descent for A_signal
+2026-10-07 20:54:24,244 | INFO    | pilot | model B_discriminative: total pilot DB utility = 553027.88
+2026-10-07 20:54:24,738 | INFO    | pilot |   B_discriminative        5.000% ->       1 HUIs |   0.49s |    0.1MB | items  94/405 | COMPLETED
+2026-10-07 20:54:36,389 | INFO    | pilot |   B_discriminative        2.000% ->  129799 HUIs |  11.60s |   41.4MB | items 201/405 | COMPLETED
+2026-10-07 20:56:14,255 | INFO    | pilot |   B_discriminative        1.000% ->  300001 HUIs |  97.73s |  155.9MB | items 275/405 | ABORTED_RESOURCE_LIMIT
+2026-10-07 20:56:14,255 | INFO    | pilot |   -> aborted; stopping descent for B_discriminative
+2026-10-07 20:56:14,544 | INFO    | pilot | model C_rare_discriminative: total pilot DB utility = 791046.41
+2026-10-07 20:56:14,804 | INFO    | pilot |   C_rare_discriminative   5.000% ->       0 HUIs |   0.26s |    0.0MB | items 135/405 | COMPLETED
+2026-10-07 20:56:59,912 | INFO    | pilot |   C_rare_discriminative   2.000% ->    3209 HUIs |  45.11s |    0.0MB | items 231/405 | COMPLETED
+2026-10-07 20:57:11,810 | INFO    | pilot |   C_rare_discriminative   1.000% ->  300001 HUIs |  11.77s |  124.0MB | items 278/405 | ABORTED_RESOURCE_LIMIT
+2026-10-07 20:57:11,810 | INFO    | pilot |   -> aborted; stopping descent for C_rare_discriminative

@@ -1,0 +1,12 @@
+2026-10-07 20:28:32,852 | INFO    | audit | Reading trainingData.csv (D:\ips\ujiindoorloc\UJIndoorLoc\trainingData.csv)
+2026-10-07 20:28:34,420 | INFO    | audit | Reading validationData.csv (D:\ips\ujiindoorloc\UJIndoorLoc\validationData.csv)
+2026-10-07 20:28:37,512 | INFO    | audit | Wrote D:\ips\results\data_summary.json
+2026-10-07 20:28:37,512 | INFO    | audit | train: 19937 rows x 529 cols, 520 WAP cols
+2026-10-07 20:28:37,512 | INFO    | audit | value 100 occupies 96.54% of WAP cells; max value excluding 100 = 0.0
+2026-10-07 20:28:37,512 | INFO    | audit | detections/fingerprint: mean 18.00, min 0, max 51
+2026-10-07 20:29:41,021 | INFO    | audit | Reading trainingData.csv (D:\ips\ujiindoorloc\UJIndoorLoc\trainingData.csv)
+2026-10-07 20:29:42,681 | INFO    | audit | Reading validationData.csv (D:\ips\ujiindoorloc\UJIndoorLoc\validationData.csv)
+2026-10-07 20:29:46,045 | INFO    | audit | Wrote D:\ips\results\data_summary.json
+2026-10-07 20:29:46,045 | INFO    | audit | train: 19937 rows x 529 cols, 520 WAP cols
+2026-10-07 20:29:46,045 | INFO    | audit | value 100 occupies 96.54% of WAP cells; max value excluding 100 = 0.0
+2026-10-07 20:29:46,045 | INFO    | audit | detections/fingerprint: mean 18.00, min 0, max 51

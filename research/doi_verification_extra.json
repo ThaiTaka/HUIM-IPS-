@@ -1,0 +1,334 @@
+{
+  "torressospedra2015distance": {
+    "doi": "10.1016/j.eswa.2015.08.013",
+    "status": "VERIFIED",
+    "title": "Comprehensive analysis of distance and similarity measures for Wi-Fi fingerprinting indoor positioning systems",
+    "authors": [
+      "Joaquín Torres-Sospedra",
+      "Raúl Montoliu",
+      "Sergio Trilles",
+      "Óscar Belmonte",
+      "Joaquín Huerta"
+    ],
+    "n_authors": 5,
+    "year_issued": 2015,
+    "published_print": [
+      2015,
+      12
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "Expert Systems with Applications",
+    "short_container_title": "Expert Systems with Applications",
+    "publisher": "Elsevier BV",
+    "type": "journal-article",
+    "volume": "42",
+    "issue": "23",
+    "page": "9263-9278",
+    "issn": [
+      "0957-4174"
+    ],
+    "isbn": null,
+    "event": null,
+    "is_referenced_by_count": 264,
+    "url": "https://doi.org/10.1016/j.eswa.2015.08.013"
+  },
+  "chen2006power": {
+    "doi": "10.1109/tkde.2006.112",
+    "status": "VERIFIED",
+    "title": "Power-efficient access-point selection for indoor location estimation",
+    "authors": [
+      "Yiqiang Chen",
+      "Qiang Yang",
+      "Jie Yin",
+      "Xiaoyong Chai"
+    ],
+    "n_authors": 4,
+    "year_issued": 2006,
+    "published_print": [
+      2006,
+      7
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "IEEE Transactions on Knowledge and Data Engineering",
+    "short_container_title": "IEEE Trans. Knowl. Data Eng.",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "type": "journal-article",
+    "volume": "18",
+    "issue": "7",
+    "page": "877-888",
+    "issn": [
+      "1041-4347"
+    ],
+    "isbn": null,
+    "event": null,
+    "is_referenced_by_count": 258,
+    "url": "https://doi.org/10.1109/tkde.2006.112"
+  },
+  "apselect_sensors2016": {
+    "doi": "10.3390/s16050707",
+    "status": "VERIFIED",
+    "title": "Ultra Wideband Indoor Positioning Technologies: Analysis and Recent Advances",
+    "authors": [
+      "Abdulrahman Alarifi",
+      "AbdulMalik Al-Salman",
+      "Mansour Alsaleh",
+      "Ahmad Alnafessah",
+      "Suheer Al-Hadhrami",
+      "Mai Al-Ammar",
+      "Hend Al-Khalifa"
+    ],
+    "n_authors": 7,
+    "year_issued": 2016,
+    "published_print": [
+      null
+    ],
+    "published_online": [
+      2016,
+      5,
+      16
+    ],
+    "container_title": "Sensors",
+    "short_container_title": "Sensors",
+    "publisher": "MDPI AG",
+    "type": "journal-article",
+    "volume": "16",
+    "issue": "5",
+    "page": "707",
+    "issn": [
+      "1424-8220"
+    ],
+    "isbn": null,
+    "event": null,
+    "is_referenced_by_count": 992,
+    "url": "https://doi.org/10.3390/s16050707"
+  },
+  "ijgi2016": {
+    "doi": "10.3390/ijgi5100189",
+    "status": "VERIFIED",
+    "title": "Hidden Naive Bayes Indoor Fingerprinting Localization Based on Best-Discriminating AP Selection",
+    "authors": [
+      "Chunjing Song",
+      "Jian Wang",
+      "Guan Yuan"
+    ],
+    "n_authors": 3,
+    "year_issued": 2016,
+    "published_print": [
+      null
+    ],
+    "published_online": [
+      2016,
+      10,
+      10
+    ],
+    "container_title": "ISPRS International Journal of Geo-Information",
+    "short_container_title": "IJGI",
+    "publisher": "MDPI AG",
+    "type": "journal-article",
+    "volume": "5",
+    "issue": "10",
+    "page": "189",
+    "issn": [
+      "2220-9964"
+    ],
+    "isbn": null,
+    "event": null,
+    "is_referenced_by_count": 26,
+    "url": "https://doi.org/10.3390/ijgi5100189"
+  },
+  "youssef2005horus": {
+    "doi": "10.1145/1067170.1067193",
+    "status": "VERIFIED",
+    "title": "The Horus WLAN location determination system",
+    "authors": [
+      "Moustafa Youssef",
+      "Ashok Agrawala"
+    ],
+    "n_authors": 2,
+    "year_issued": 2005,
+    "published_print": [
+      2005,
+      6,
+      6
+    ],
+    "published_online": [
+      2005,
+      6,
+      6
+    ],
+    "container_title": "Proceedings of the 3rd international conference on Mobile systems, applications, and services",
+    "short_container_title": null,
+    "publisher": "ACM",
+    "type": "proceedings-article",
+    "volume": null,
+    "issue": null,
+    "page": "205-218",
+    "issn": null,
+    "isbn": null,
+    "event": "MobiSys05: The 3rd International Conference on Mobile Systems, Applications and Services 2005",
+    "is_referenced_by_count": 1298,
+    "url": "https://doi.org/10.1145/1067170.1067193"
+  },
+  "bahl2000radar": {
+    "doi": "10.1109/infcom.2000.832252",
+    "status": "VERIFIED",
+    "title": "RADAR: an in-building RF-based user location and tracking system",
+    "authors": [
+      "P. Bahl",
+      "V.N. Padmanabhan"
+    ],
+    "n_authors": 2,
+    "year_issued": null,
+    "published_print": [
+      null
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "Proceedings IEEE INFOCOM 2000. Conference on Computer Communications. Nineteenth Annual Joint Conference of the IEEE Computer and Communications Societies (Cat. No.00CH37064)",
+    "short_container_title": null,
+    "publisher": "IEEE",
+    "type": "proceedings-article",
+    "volume": "2",
+    "issue": null,
+    "page": "775-784",
+    "issn": null,
+    "isbn": null,
+    "event": "IEEE INFOCOM 2000. Conference on Computer Communications. Nineteenth Annual Joint Conference of the IEEE Computer and Communications Societies",
+    "is_referenced_by_count": 5182,
+    "url": "https://doi.org/10.1109/infcom.2000.832252"
+  },
+  "kaemarungsi2004modeling": {
+    "doi": "10.1109/infcom.2004.1356988",
+    "status": "VERIFIED",
+    "title": "Modeling of indoor positioning systems based on location fingerprinting",
+    "authors": [
+      "K. Kaemarungsi",
+      "P. Krishnamurthy"
+    ],
+    "n_authors": 2,
+    "year_issued": null,
+    "published_print": [
+      null
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "IEEE INFOCOM 2004",
+    "short_container_title": null,
+    "publisher": "IEEE",
+    "type": "proceedings-article",
+    "volume": "2",
+    "issue": null,
+    "page": "1012-1022",
+    "issn": null,
+    "isbn": null,
+    "event": "IEEE INFOCOM 2004",
+    "is_referenced_by_count": 395,
+    "url": "https://doi.org/10.1109/infcom.2004.1356988"
+  },
+  "fournierviger2017efim_closed": {
+    "doi": "10.1007/s10489-016-0830-y",
+    "status": "VERIFIED",
+    "title": "A semantic-enhanced trust based recommender system using ant colony optimization",
+    "authors": [
+      "Faezeh Sadat Gohari",
+      "Hassan Haghighi",
+      "Fereidoon Shams Aliee"
+    ],
+    "n_authors": 3,
+    "year_issued": 2016,
+    "published_print": [
+      2017,
+      3
+    ],
+    "published_online": [
+      2016,
+      9,
+      2
+    ],
+    "container_title": "Applied Intelligence",
+    "short_container_title": "Appl Intell",
+    "publisher": "Springer Science and Business Media LLC",
+    "type": "journal-article",
+    "volume": "46",
+    "issue": "2",
+    "page": "328-364",
+    "issn": [
+      "0924-669X",
+      "1573-7497"
+    ],
+    "isbn": null,
+    "event": null,
+    "is_referenced_by_count": 22,
+    "url": "https://doi.org/10.1007/s10489-016-0830-y"
+  },
+  "zihayat2014mining": {
+    "doi": "10.1016/j.eswa.2014.05.001",
+    "status": "VERIFIED",
+    "title": "HU-FCF: A hybrid user-based fuzzy collaborative filtering method in Recommender Systems",
+    "authors": [
+      "Le Hoang Son"
+    ],
+    "n_authors": 1,
+    "year_issued": 2014,
+    "published_print": [
+      2014,
+      11
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "Expert Systems with Applications",
+    "short_container_title": "Expert Systems with Applications",
+    "publisher": "Elsevier BV",
+    "type": "journal-article",
+    "volume": "41",
+    "issue": "15",
+    "page": "6861-6870",
+    "issn": [
+      "0957-4174"
+    ],
+    "isbn": null,
+    "event": null,
+    "is_referenced_by_count": 82,
+    "url": "https://doi.org/10.1016/j.eswa.2014.05.001"
+  },
+  "lin2016efficient": {
+    "doi": "10.1016/j.eswa.2015.09.003",
+    "status": "VERIFIED",
+    "title": "Certificate sharing system for secure certificate distribution in mobile environment",
+    "authors": [
+      "Sundeuk Kim",
+      "Hyun-Taek Oh",
+      "Young-Gab Kim"
+    ],
+    "n_authors": 3,
+    "year_issued": 2016,
+    "published_print": [
+      2016,
+      2
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "Expert Systems with Applications",
+    "short_container_title": "Expert Systems with Applications",
+    "publisher": "Elsevier BV",
+    "type": "journal-article",
+    "volume": "44",
+    "issue": null,
+    "page": "67-77",
+    "issn": [
+      "0957-4174"
+    ],
+    "isbn": null,
+    "event": null,
+    "is_referenced_by_count": 3,
+    "url": "https://doi.org/10.1016/j.eswa.2015.09.003"
+  }
+}

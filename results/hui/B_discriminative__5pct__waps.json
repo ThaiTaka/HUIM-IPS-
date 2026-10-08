@@ -1,0 +1,47 @@
+{
+  "n_waps_in_huis": 3,
+  "n_total_wap_columns": 520,
+  "feature_reduction_pct": 99.4231,
+  "rank_agreement_spearman_vs_utility_contribution": {
+    "n_huis": NaN,
+    "max_hui_utility": NaN,
+    "mean_hui_utility": NaN,
+    "support_weighted_contribution": NaN,
+    "n_top_huis": NaN
+  },
+  "per_wap": {
+    "WAP517": {
+      "n_huis": 1,
+      "utility_contribution": 81086.33726243924,
+      "max_hui_utility": 243259.01178731772,
+      "sum_hui_utility": 243259.01178731772,
+      "support_weighted_contribution": 233690823.9903499,
+      "n_top_huis": 1,
+      "min_hui_len": 3,
+      "max_hui_len": 3,
+      "mean_hui_utility": 243259.01178731772
+    },
+    "WAP502": {
+      "n_huis": 1,
+      "utility_contribution": 81086.33726243924,
+      "max_hui_utility": 243259.01178731772,
+      "sum_hui_utility": 243259.01178731772,
+      "support_weighted_contribution": 233690823.9903499,
+      "n_top_huis": 1,
+      "min_hui_len": 3,
+      "max_hui_len": 3,
+      "mean_hui_utility": 243259.01178731772
+    },
+    "WAP496": {
+      "n_huis": 1,
+      "utility_contribution": 81086.33726243924,
+      "max_hui_utility": 243259.01178731772,
+      "sum_hui_utility": 243259.01178731772,
+      "support_weighted_contribution": 233690823.9903499,
+      "n_top_huis": 1,
+      "min_hui_len": 3,
+      "max_hui_len": 3,
+      "mean_hui_utility": 243259.01178731772
+    }
+  }
+}

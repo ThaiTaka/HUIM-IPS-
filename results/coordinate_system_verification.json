@@ -1,0 +1,72 @@
+{
+  "question": "What coordinate system are UJIIndoorLoc's LONGITUDE/LATITUDE columns in?",
+  "why_it_matters": "The dataset documents no unit, and the projection determines whether a distance read off these columns is a true ground distance.",
+  "measured_bounds": {
+    "X_min": -7691.338399998844,
+    "X_max": -7300.818990092725,
+    "Y_min": 4864745.745015971,
+    "Y_max": 4865016.687799998,
+    "X_extent": 390.5194,
+    "Y_extent": 270.9428
+  },
+  "reference_location": {
+    "name": "Universitat Jaume I campus, Castello de la Plana, Spain",
+    "lat_deg": 39.9935,
+    "lon_deg": -0.0686,
+    "source": "campus location of the institution that published the dataset (Torres-Sospedra et al., IPIN 2014)",
+    "assumed_uncertainty_deg": 0.004
+  },
+  "candidates_tested": [
+    {
+      "candidate": "EPSG:3857 Web Mercator (pseudo-Mercator)",
+      "lat_deg": 39.992698,
+      "lon_deg": -0.067338,
+      "distance_to_uji_campus_m": 139.7,
+      "plausible": true
+    },
+    {
+      "candidate": "UTM zone 31N (EPSG:32631)",
+      "lat_deg": 43.762812,
+      "lon_deg": -3.304313,
+      "distance_to_uji_campus_m": 497330.9,
+      "plausible": false
+    },
+    {
+      "candidate": "UTM zone 30N (EPSG:32630)",
+      "lat_deg": 43.762812,
+      "lon_deg": -9.304313,
+      "distance_to_uji_campus_m": 871243.5,
+      "plausible": false
+    },
+    {
+      "candidate": "raw WGS84 degrees",
+      "lat_deg": 4864881.2164079845,
+      "lon_deg": -7496.078695045784,
+      "distance_to_uji_campus_m": 13685676.5,
+      "plausible": false
+    }
+  ],
+  "conclusion": {
+    "identified_as": "EPSG:3857 Web Mercator (pseudo-Mercator)",
+    "inverted_centroid_lat_deg": 39.992698,
+    "inverted_centroid_lon_deg": -0.067338,
+    "distance_to_uji_campus_m": 139.7,
+    "unit_of_the_columns": "metres (projected)",
+    "is_equidistant_projection": false,
+    "web_mercator_scale_factor_at_this_latitude": 1.305268,
+    "ground_distance_correction_factor": 0.766126,
+    "meaning": "Web Mercator is conformal, NOT equidistant: its scale factor is 1/cos(latitude). A distance of D read straight off these columns corresponds to about D x 0.7661 metres on the ground at latitude 39.9927 deg N.",
+    "consequence_for_this_study": "Positioning error is reported BOTH ways: raw projected distance (the convention the UJIIndoorLoc literature uses) and geodesically corrected ground distance.",
+    "true_extent_m": {
+      "x": 299.19,
+      "y": 207.58
+    },
+    "projected_extent_m": {
+      "x": 390.52,
+      "y": 270.94
+    },
+    "projected_bbox_area_m2": 105808.4,
+    "true_bbox_area_m2": 62104.2,
+    "note_on_the_published_area_figure": "Secondary literature quotes ~108,703 m2 for the site. That matches the PROJECTED bounding box, not the corrected one, which is further evidence that the published figure was itself computed in these projected coordinates."
+  }
+}

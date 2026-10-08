@@ -1,0 +1,16 @@
+# Disable ALL line-ending conversion.
+#
+# results/data_summary.json records the SHA-256 of trainingData.csv and
+# validationData.csv, and the report states that neither file was modified.
+# If git normalised their line endings on checkout, a clone would hold files
+# whose digests no longer match what the audit certifies. Treating every path
+# as binary-safe keeps that guarantee intact for anyone who clones the repo.
+* -text
+
+# Keep the generated Office documents and figures out of textual diffs.
+*.docx  binary
+*.pptx  binary
+*.pdf   binary
+*.png   binary
+*.zip   binary
+*.gz    binary

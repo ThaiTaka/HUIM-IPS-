@@ -1,0 +1,12 @@
+2026-10-07 21:22:56,062 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-07 21:22:56,100 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 21:22:56,546 | INFO    | refine | A_signal: bracket (2% COMPLETED, 130 HUIs) .. (1.5% ABORTED)
+2026-10-07 21:22:56,548 | INFO    | refine | B_discriminative: bracket (2% COMPLETED, 24621 HUIs) .. (1.5% ABORTED)
+2026-10-07 21:22:56,550 | INFO    | refine | C_rare_discriminative: bracket (2% COMPLETED, 1001 HUIs) .. (1.5% ABORTED)
+2026-10-07 21:32:57,478 | INFO    | refine | A_signal                  1.7321% ->      731 HUIs |  600.06s |    30.7MB | WAPs  67 | ABORTED_RESOURCE_LIMIT
+2026-10-07 21:42:57,753 | INFO    | refine | A_signal                  1.8612% ->     5372 HUIs |  600.07s |    20.9MB | WAPs  31 | ABORTED_RESOURCE_LIMIT
+2026-10-07 21:52:38,529 | INFO    | refine | A_signal                  1.9294% ->      853 HUIs |  578.51s |     3.8MB | WAPs  86 | COMPLETED
+2026-10-07 21:52:38,927 | INFO    | refine | B_discriminative: already have a completed run with 24621 HUIs (>= 20000); stopping refinement
+2026-10-07 21:53:07,466 | INFO    | refine | C_rare_discriminative     1.7321% ->    52902 HUIs |   26.76s |    22.1MB | WAPs  91 | COMPLETED
+2026-10-07 21:53:07,470 | INFO    | refine | C_rare_discriminative: already have a completed run with 52902 HUIs (>= 20000); stopping refinement
+2026-10-07 21:53:07,477 | INFO    | refine | added 4 refinement runs

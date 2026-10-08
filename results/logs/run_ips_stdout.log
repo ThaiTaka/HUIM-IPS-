@@ -1,0 +1,226 @@
+2026-10-08 06:57:32,195 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-08 06:57:32,237 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 06:57:32,778 | INFO    | ips | 520 WAP columns, 465 ever detected in training; H(Y)=3.6392 bits
+2026-10-08 06:57:32,799 | INFO    | ips | selecting k-NN config on dev_sub (14952 train_sub / 4985 dev_sub rows)
+2026-10-08 06:57:33,349 | INFO    | ips | dev k=1 metric=euclidean weights=uniform -> joint acc 0.9954
+2026-10-08 06:57:33,772 | INFO    | ips | dev k=3 metric=euclidean weights=uniform -> joint acc 0.9944
+2026-10-08 06:57:34,208 | INFO    | ips | dev k=5 metric=euclidean weights=uniform -> joint acc 0.9932
+2026-10-08 06:57:34,718 | INFO    | ips | dev k=7 metric=euclidean weights=uniform -> joint acc 0.9934
+2026-10-08 06:57:35,166 | INFO    | ips | dev k=9 metric=euclidean weights=uniform -> joint acc 0.9922
+2026-10-08 06:57:35,606 | INFO    | ips | dev k=11 metric=euclidean weights=uniform -> joint acc 0.9914
+2026-10-08 06:57:36,043 | INFO    | ips | dev k=1 metric=euclidean weights=distance -> joint acc 0.9954
+2026-10-08 06:57:36,480 | INFO    | ips | dev k=3 metric=euclidean weights=distance -> joint acc 0.9948
+2026-10-08 06:57:36,964 | INFO    | ips | dev k=5 metric=euclidean weights=distance -> joint acc 0.9934
+2026-10-08 06:57:37,437 | INFO    | ips | dev k=7 metric=euclidean weights=distance -> joint acc 0.9938
+2026-10-08 06:57:37,921 | INFO    | ips | dev k=9 metric=euclidean weights=distance -> joint acc 0.9936
+2026-10-08 06:57:38,394 | INFO    | ips | dev k=11 metric=euclidean weights=distance -> joint acc 0.9928
+2026-10-08 06:57:43,715 | INFO    | ips | dev k=1 metric=manhattan weights=uniform -> joint acc 0.9956
+2026-10-08 06:57:49,290 | INFO    | ips | dev k=3 metric=manhattan weights=uniform -> joint acc 0.9946
+2026-10-08 06:57:55,235 | INFO    | ips | dev k=5 metric=manhattan weights=uniform -> joint acc 0.9938
+2026-10-08 06:58:01,250 | INFO    | ips | dev k=7 metric=manhattan weights=uniform -> joint acc 0.9928
+2026-10-08 06:58:07,194 | INFO    | ips | dev k=9 metric=manhattan weights=uniform -> joint acc 0.9926
+2026-10-08 06:58:13,116 | INFO    | ips | dev k=11 metric=manhattan weights=uniform -> joint acc 0.9910
+2026-10-08 06:58:18,848 | INFO    | ips | dev k=1 metric=manhattan weights=distance -> joint acc 0.9956
+2026-10-08 06:58:24,495 | INFO    | ips | dev k=3 metric=manhattan weights=distance -> joint acc 0.9952
+2026-10-08 06:58:30,174 | INFO    | ips | dev k=5 metric=manhattan weights=distance -> joint acc 0.9946
+2026-10-08 06:58:35,810 | INFO    | ips | dev k=7 metric=manhattan weights=distance -> joint acc 0.9944
+2026-10-08 06:58:41,428 | INFO    | ips | dev k=9 metric=manhattan weights=distance -> joint acc 0.9936
+2026-10-08 06:58:47,056 | INFO    | ips | dev k=11 metric=manhattan weights=distance -> joint acc 0.9932
+2026-10-08 06:58:47,061 | INFO    | ips | FROZEN k-NN config: {'n_neighbors': 1, 'metric': 'manhattan', 'weights': 'uniform', 'selected_on': 'dev_sub of trainingData, ALL-WAP features', 'dev_joint_accuracy': 0.995587}
+2026-10-08 06:58:47,065 | INFO    | ips | 37 HUIM runs on disk, 19 produced at least one HUI
+2026-10-08 06:58:47,075 | INFO    | ips | primary HUI set for A_signal: A_signal__1.9294pct (853 HUIs, 86 WAPs)
+2026-10-08 06:58:47,075 | INFO    | ips | primary HUI set for B_discriminative: B_discriminative__2pct (24621 HUIs, 79 WAPs)
+2026-10-08 06:58:47,075 | INFO    | ips | primary HUI set for C_rare_discriminative: C_rare_discriminative__1.7321pct (52902 HUIs, 91 WAPs)
+2026-10-08 06:58:47,075 | INFO    | ips | control budgets: [3, 5, 6, 10, 14, 15, 19, 20, 25, 30, 31, 40, 45, 50, 53, 58, 67, 74, 75, 77, 79, 81, 86, 91, 100, 150, 200, 300, 465] (HUIM uses [3, 5, 6, 10, 14, 15, 19, 20, 25, 30, 31, 40, 45, 50, 53, 58, 67, 74, 75, 77, 79, 81, 86, 91])
+2026-10-08 06:58:47,084 | INFO    | ips | 190 conditions to evaluate
+2026-10-08 06:58:51,785 | INFO    | ips | [  1/190] baseline_all_520                               n= 520 red=  0.00% | bld 0.9874 flr 0.8794 joint 0.8776 | medErr 6.0
+2026-10-08 06:58:56,088 | INFO    | ips | [  2/190] baseline_detected_465                          n= 465 red= 10.58% | bld 0.9874 flr 0.8794 joint 0.8776 | medErr 6.0
+2026-10-08 06:58:56,392 | INFO    | ips | [  3/190] huim_union__A_signal__2.5pct                   n=   6 red= 98.85% | bld 0.4023 flr 0.2826 joint 0.1116 | medErr 101.8
+2026-10-08 06:58:56,788 | INFO    | ips | [  4/190] huim_union__A_signal__2pct                     n=  81 red= 84.42% | bld 0.9730 flr 0.6481 joint 0.6427 | medErr 15.7
+2026-10-08 06:58:57,245 | INFO    | ips | [  5/190] huim_union__A_signal__1.9294pct                n=  86 red= 83.46% | bld 0.9730 flr 0.6553 joint 0.6499 | medErr 15.8
+2026-10-08 06:58:57,464 | INFO    | ips | [  6/190] huim_union__A_signal__1.8612pct                n=  31 red= 94.04% | bld 0.2790 flr 0.2835 joint 0.0882 | medErr 107.0
+2026-10-08 06:58:57,834 | INFO    | ips | [  7/190] huim_union__A_signal__1.7321pct                n=  67 red= 87.12% | bld 0.7057 flr 0.4545 joint 0.3726 | medErr 46.0
+2026-10-08 06:58:58,223 | INFO    | ips | [  8/190] huim_union__A_signal__1.5pct                   n=  74 red= 85.77% | bld 0.7237 flr 0.5077 joint 0.4311 | medErr 38.1
+2026-10-08 06:58:58,783 | INFO    | ips | [  9/190] huim_union__B_discriminative__5pct             n=   3 red= 99.42% | bld 0.3681 flr 0.2745 joint 0.1035 | medErr 104.8
+2026-10-08 06:58:58,889 | INFO    | ips | [ 10/190] huim_union__B_discriminative__4pct             n=  19 red= 96.35% | bld 0.5077 flr 0.3699 joint 0.2214 | medErr 89.5
+2026-10-08 06:58:59,052 | INFO    | ips | [ 11/190] huim_union__B_discriminative__3.5pct           n=  25 red= 95.19% | bld 0.5104 flr 0.4158 joint 0.2673 | medErr 88.3
+2026-10-08 06:58:59,274 | INFO    | ips | [ 12/190] huim_union__B_discriminative__3pct             n=  40 red= 92.31% | bld 0.5040 flr 0.4392 joint 0.2898 | medErr 84.2
+2026-10-08 06:58:59,598 | INFO    | ips | [ 13/190] huim_union__B_discriminative__2.5pct           n=  58 red= 88.85% | bld 0.7939 flr 0.5734 joint 0.4969 | medErr 35.6
+2026-10-08 06:59:00,018 | INFO    | ips | [ 14/190] huim_union__B_discriminative__2pct             n=  79 red= 84.81% | bld 0.9712 flr 0.6724 joint 0.6679 | medErr 15.3
+2026-10-08 06:59:00,412 | INFO    | ips | [ 15/190] huim_union__B_discriminative__1.5pct           n=  77 red= 85.19% | bld 0.9730 flr 0.6706 joint 0.6589 | medErr 11.3
+2026-10-08 06:59:00,757 | INFO    | ips | [ 16/190] huim_union__C_rare_discriminative__3.5pct      n=   6 red= 98.85% | bld 0.4023 flr 0.2826 joint 0.1116 | medErr 101.8
+2026-10-08 06:59:01,256 | INFO    | ips | [ 17/190] huim_union__C_rare_discriminative__3pct        n=  14 red= 97.31% | bld 0.4896 flr 0.3546 joint 0.2061 | medErr 92.5
+2026-10-08 06:59:01,579 | INFO    | ips | [ 18/190] huim_union__C_rare_discriminative__2.5pct      n=  53 red= 89.81% | bld 0.9694 flr 0.6292 joint 0.6238 | medErr 17.0
+2026-10-08 06:59:01,996 | INFO    | ips | [ 19/190] huim_union__C_rare_discriminative__2pct        n=  81 red= 84.42% | bld 0.9721 flr 0.6958 joint 0.6904 | medErr 13.3
+2026-10-08 06:59:02,468 | INFO    | ips | [ 20/190] huim_union__C_rare_discriminative__1.7321pct   n=  91 red= 82.50% | bld 0.9721 flr 0.7255 joint 0.7156 | medErr 9.5
+2026-10-08 06:59:02,715 | INFO    | ips | [ 21/190] huim_union__C_rare_discriminative__1.5pct      n=  45 red= 91.35% | bld 0.7426 flr 0.5203 joint 0.4536 | medErr 41.2
+2026-10-08 06:59:03,472 | INFO    | ips | [ 22/190] huim_topn__A_signal__1.9294pct__n5             n=   5 red= 99.04% | bld 0.2727 flr 0.2808 joint 0.0828 | medErr 112.3
+2026-10-08 06:59:04,273 | INFO    | ips | [ 23/190] huim_topn__A_signal__1.9294pct__n10            n=  10 red= 98.08% | bld 0.2745 flr 0.2880 joint 0.0891 | medErr 109.2
+2026-10-08 06:59:05,054 | INFO    | ips | [ 24/190] huim_topn__A_signal__1.9294pct__n15            n=  15 red= 97.12% | bld 0.2745 flr 0.2862 joint 0.0882 | medErr 107.3
+2026-10-08 06:59:05,241 | INFO    | ips | [ 25/190] huim_topn__A_signal__1.9294pct__n20            n=  20 red= 96.15% | bld 0.2772 flr 0.2853 joint 0.0873 | medErr 107.3
+2026-10-08 06:59:05,458 | INFO    | ips | [ 26/190] huim_topn__A_signal__1.9294pct__n30            n=  30 red= 94.23% | bld 0.4392 flr 0.3114 joint 0.1620 | medErr 91.7
+2026-10-08 06:59:05,723 | INFO    | ips | [ 27/190] huim_topn__A_signal__1.9294pct__n40            n=  40 red= 92.31% | bld 0.4978 flr 0.3483 joint 0.1998 | medErr 84.7
+2026-10-08 06:59:06,011 | INFO    | ips | [ 28/190] huim_topn__A_signal__1.9294pct__n50            n=  50 red= 90.38% | bld 0.5022 flr 0.4014 joint 0.2502 | medErr 82.4
+2026-10-08 06:59:06,391 | INFO    | ips | [ 29/190] huim_topn__A_signal__1.9294pct__n75            n=  75 red= 85.58% | bld 0.8020 flr 0.5842 joint 0.5086 | medErr 27.3
+2026-10-08 06:59:06,857 | INFO    | ips | [ 30/190] huim_topn__B_discriminative__2pct__n5          n=   5 red= 99.04% | bld 0.4617 flr 0.2925 joint 0.1404 | medErr 96.9
+2026-10-08 06:59:07,172 | INFO    | ips | [ 31/190] huim_topn__B_discriminative__2pct__n10         n=  10 red= 98.08% | bld 0.4860 flr 0.3312 joint 0.1800 | medErr 92.1
+2026-10-08 06:59:07,655 | INFO    | ips | [ 32/190] huim_topn__B_discriminative__2pct__n15         n=  15 red= 97.12% | bld 0.5031 flr 0.3627 joint 0.2133 | medErr 89.0
+2026-10-08 06:59:07,762 | INFO    | ips | [ 33/190] huim_topn__B_discriminative__2pct__n20         n=  20 red= 96.15% | bld 0.5104 flr 0.3924 joint 0.2439 | medErr 88.3
+2026-10-08 06:59:07,925 | INFO    | ips | [ 34/190] huim_topn__B_discriminative__2pct__n30         n=  30 red= 94.23% | bld 0.5086 flr 0.3969 joint 0.2475 | medErr 88.2
+2026-10-08 06:59:08,137 | INFO    | ips | [ 35/190] huim_topn__B_discriminative__2pct__n40         n=  40 red= 92.31% | bld 0.5077 flr 0.4167 joint 0.2664 | medErr 86.0
+2026-10-08 06:59:08,415 | INFO    | ips | [ 36/190] huim_topn__B_discriminative__2pct__n50         n=  50 red= 90.38% | bld 0.5068 flr 0.4473 joint 0.2979 | medErr 84.2
+2026-10-08 06:59:08,804 | INFO    | ips | [ 37/190] huim_topn__B_discriminative__2pct__n75         n=  75 red= 85.58% | bld 0.9703 flr 0.6661 joint 0.6607 | medErr 15.4
+2026-10-08 06:59:09,132 | INFO    | ips | [ 38/190] huim_topn__C_rare_discriminative__1.7321pct__n5 n=   5 red= 99.04% | bld 0.4356 flr 0.2574 joint 0.1053 | medErr 98.3
+2026-10-08 06:59:09,618 | INFO    | ips | [ 39/190] huim_topn__C_rare_discriminative__1.7321pct__n10 n=  10 red= 98.08% | bld 0.4806 flr 0.3105 joint 0.1602 | medErr 94.7
+2026-10-08 06:59:10,096 | INFO    | ips | [ 40/190] huim_topn__C_rare_discriminative__1.7321pct__n15 n=  15 red= 97.12% | bld 0.4995 flr 0.3681 joint 0.2178 | medErr 91.3
+2026-10-08 06:59:10,212 | INFO    | ips | [ 41/190] huim_topn__C_rare_discriminative__1.7321pct__n20 n=  20 red= 96.15% | bld 0.5004 flr 0.3762 joint 0.2241 | medErr 89.7
+2026-10-08 06:59:10,374 | INFO    | ips | [ 42/190] huim_topn__C_rare_discriminative__1.7321pct__n30 n=  30 red= 94.23% | bld 0.5095 flr 0.4005 joint 0.2520 | medErr 87.0
+2026-10-08 06:59:10,588 | INFO    | ips | [ 43/190] huim_topn__C_rare_discriminative__1.7321pct__n40 n=  40 red= 92.31% | bld 0.5095 flr 0.4131 joint 0.2628 | medErr 86.0
+2026-10-08 06:59:10,870 | INFO    | ips | [ 44/190] huim_topn__C_rare_discriminative__1.7321pct__n50 n=  50 red= 90.38% | bld 0.7228 flr 0.4978 joint 0.4239 | medErr 45.6
+2026-10-08 06:59:11,257 | INFO    | ips | [ 45/190] huim_topn__C_rare_discriminative__1.7321pct__n75 n=  75 red= 85.58% | bld 0.9703 flr 0.6652 joint 0.6598 | medErr 14.5
+2026-10-08 06:59:11,743 | INFO    | ips | [ 46/190] control_top_support__n3                        n=   3 red= 99.42% | bld 0.4311 flr 0.2601 joint 0.1080 | medErr 98.4
+2026-10-08 06:59:12,210 | INFO    | ips | [ 47/190] control_top_mi__n3                             n=   3 red= 99.42% | bld 0.4194 flr 0.2502 joint 0.0972 | medErr 99.7
+2026-10-08 06:59:12,852 | INFO    | ips | [ 48/190] control_random__n3__s1                         n=   3 red= 99.42% | bld 0.3330 flr 0.3096 joint 0.1152 | medErr 115.4
+2026-10-08 06:59:13,273 | INFO    | ips | [ 49/190] control_random__n3__s2                         n=   3 red= 99.42% | bld 0.4023 flr 0.2988 joint 0.1251 | medErr 102.7
+2026-10-08 06:59:13,993 | INFO    | ips | [ 50/190] control_random__n3__s3                         n=   3 red= 99.42% | bld 0.3240 flr 0.2727 joint 0.0891 | medErr 111.7
+2026-10-08 06:59:14,423 | INFO    | ips | [ 51/190] control_top_support__n5                        n=   5 red= 99.04% | bld 0.4572 flr 0.2700 joint 0.1188 | medErr 97.0
+2026-10-08 06:59:14,851 | INFO    | ips | [ 52/190] control_top_mi__n5                             n=   5 red= 99.04% | bld 0.4554 flr 0.2844 joint 0.1341 | medErr 97.0
+2026-10-08 06:59:15,495 | INFO    | ips | [ 53/190] control_random__n5__s1                         n=   5 red= 99.04% | bld 0.3330 flr 0.3366 joint 0.1422 | medErr 129.8
+2026-10-08 06:59:16,117 | INFO    | ips | [ 54/190] control_random__n5__s2                         n=   5 red= 99.04% | bld 0.3762 flr 0.3294 joint 0.1467 | medErr 125.2
+2026-10-08 06:59:16,685 | INFO    | ips | [ 55/190] control_random__n5__s3                         n=   5 red= 99.04% | bld 0.3960 flr 0.2610 joint 0.1044 | medErr 100.6
+2026-10-08 06:59:17,057 | INFO    | ips | [ 56/190] control_top_support__n6                        n=   6 red= 98.85% | bld 0.4536 flr 0.2691 joint 0.1170 | medErr 98.4
+2026-10-08 06:59:17,563 | INFO    | ips | [ 57/190] control_top_mi__n6                             n=   6 red= 98.85% | bld 0.4599 flr 0.2862 joint 0.1359 | medErr 96.8
+2026-10-08 06:59:18,056 | INFO    | ips | [ 58/190] control_random__n6__s1                         n=   6 red= 98.85% | bld 0.5275 flr 0.3744 joint 0.2385 | medErr 99.1
+2026-10-08 06:59:18,729 | INFO    | ips | [ 59/190] control_random__n6__s2                         n=   6 red= 98.85% | bld 0.3924 flr 0.3294 joint 0.1566 | medErr 123.4
+2026-10-08 06:59:19,048 | INFO    | ips | [ 60/190] control_random__n6__s3                         n=   6 red= 98.85% | bld 0.5040 flr 0.2646 joint 0.1377 | medErr 89.0
+2026-10-08 06:59:19,469 | INFO    | ips | [ 61/190] control_top_support__n10                       n=  10 red= 98.08% | bld 0.4932 flr 0.3330 joint 0.1863 | medErr 95.2
+2026-10-08 06:59:19,818 | INFO    | ips | [ 62/190] control_top_mi__n10                            n=  10 red= 98.08% | bld 0.4986 flr 0.3393 joint 0.1899 | medErr 91.9
+2026-10-08 06:59:20,130 | INFO    | ips | [ 63/190] control_random__n10__s1                        n=  10 red= 98.08% | bld 0.3915 flr 0.3132 joint 0.1440 | medErr 104.1
+2026-10-08 06:59:20,853 | INFO    | ips | [ 64/190] control_random__n10__s2                        n=  10 red= 98.08% | bld 0.3897 flr 0.3285 joint 0.1458 | medErr 101.9
+2026-10-08 06:59:21,301 | INFO    | ips | [ 65/190] control_random__n10__s3                        n=  10 red= 98.08% | bld 0.3654 flr 0.2808 joint 0.1062 | medErr 98.9
+2026-10-08 06:59:21,732 | INFO    | ips | [ 66/190] control_top_support__n14                       n=  14 red= 97.31% | bld 0.4960 flr 0.3555 joint 0.2052 | medErr 93.6
+2026-10-08 06:59:22,276 | INFO    | ips | [ 67/190] control_top_mi__n14                            n=  14 red= 97.31% | bld 0.5050 flr 0.3474 joint 0.1980 | medErr 91.1
+2026-10-08 06:59:22,710 | INFO    | ips | [ 68/190] control_random__n14__s1                        n=  14 red= 97.31% | bld 0.4986 flr 0.3123 joint 0.1809 | medErr 87.6
+2026-10-08 06:59:23,457 | INFO    | ips | [ 69/190] control_random__n14__s2                        n=  14 red= 97.31% | bld 0.4581 flr 0.3420 joint 0.1863 | medErr 91.7
+2026-10-08 06:59:24,175 | INFO    | ips | [ 70/190] control_random__n14__s3                        n=  14 red= 97.31% | bld 0.4374 flr 0.3006 joint 0.1467 | medErr 95.7
+2026-10-08 06:59:24,561 | INFO    | ips | [ 71/190] control_top_support__n15                       n=  15 red= 97.12% | bld 0.4941 flr 0.3591 joint 0.2097 | medErr 93.4
+2026-10-08 06:59:24,960 | INFO    | ips | [ 72/190] control_top_mi__n15                            n=  15 red= 97.12% | bld 0.5068 flr 0.3564 joint 0.2079 | medErr 90.2
+2026-10-08 06:59:25,586 | INFO    | ips | [ 73/190] control_random__n15__s1                        n=  15 red= 97.12% | bld 0.4050 flr 0.3330 joint 0.1674 | medErr 119.9
+2026-10-08 06:59:26,091 | INFO    | ips | [ 74/190] control_random__n15__s2                        n=  15 red= 97.12% | bld 0.3825 flr 0.3060 joint 0.1422 | medErr 98.5
+2026-10-08 06:59:26,631 | INFO    | ips | [ 75/190] control_random__n15__s3                        n=  15 red= 97.12% | bld 0.4518 flr 0.3069 joint 0.1485 | medErr 94.9
+2026-10-08 06:59:26,777 | INFO    | ips | [ 76/190] control_top_support__n19                       n=  19 red= 96.35% | bld 0.5050 flr 0.3789 joint 0.2295 | medErr 92.1
+2026-10-08 06:59:26,966 | INFO    | ips | [ 77/190] control_top_mi__n19                            n=  19 red= 96.35% | bld 0.5004 flr 0.3708 joint 0.2178 | medErr 87.9
+2026-10-08 06:59:27,150 | INFO    | ips | [ 78/190] control_random__n19__s1                        n=  19 red= 96.35% | bld 0.7174 flr 0.2943 joint 0.2619 | medErr 45.0
+2026-10-08 06:59:27,332 | INFO    | ips | [ 79/190] control_random__n19__s2                        n=  19 red= 96.35% | bld 0.5824 flr 0.2052 joint 0.1629 | medErr 73.8
+2026-10-08 06:59:27,511 | INFO    | ips | [ 80/190] control_random__n19__s3                        n=  19 red= 96.35% | bld 0.6697 flr 0.1854 joint 0.1629 | medErr 49.7
+2026-10-08 06:59:27,707 | INFO    | ips | [ 81/190] control_top_support__n20                       n=  20 red= 96.15% | bld 0.5031 flr 0.3897 joint 0.2403 | medErr 91.5
+2026-10-08 06:59:27,864 | INFO    | ips | [ 82/190] control_top_mi__n20                            n=  20 red= 96.15% | bld 0.5031 flr 0.3816 joint 0.2286 | medErr 86.1
+2026-10-08 06:59:28,069 | INFO    | ips | [ 83/190] control_random__n20__s1                        n=  20 red= 96.15% | bld 0.7723 flr 0.3528 joint 0.3195 | medErr 31.1
+2026-10-08 06:59:28,225 | INFO    | ips | [ 84/190] control_random__n20__s2                        n=  20 red= 96.15% | bld 0.6859 flr 0.2250 joint 0.1935 | medErr 63.4
+2026-10-08 06:59:28,375 | INFO    | ips | [ 85/190] control_random__n20__s3                        n=  20 red= 96.15% | bld 0.5203 flr 0.3510 joint 0.2070 | medErr 84.3
+2026-10-08 06:59:28,576 | INFO    | ips | [ 86/190] control_top_support__n25                       n=  25 red= 95.19% | bld 0.5104 flr 0.4149 joint 0.2673 | medErr 88.8
+2026-10-08 06:59:28,829 | INFO    | ips | [ 87/190] control_top_mi__n25                            n=  25 red= 95.19% | bld 0.5077 flr 0.3960 joint 0.2475 | medErr 86.0
+2026-10-08 06:59:29,066 | INFO    | ips | [ 88/190] control_random__n25__s1                        n=  25 red= 95.19% | bld 0.6391 flr 0.3753 joint 0.2790 | medErr 46.3
+2026-10-08 06:59:29,295 | INFO    | ips | [ 89/190] control_random__n25__s2                        n=  25 red= 95.19% | bld 0.8029 flr 0.3096 joint 0.2925 | medErr 37.3
+2026-10-08 06:59:29,494 | INFO    | ips | [ 90/190] control_random__n25__s3                        n=  25 red= 95.19% | bld 0.6634 flr 0.2664 joint 0.2286 | medErr 49.4
+2026-10-08 06:59:29,762 | INFO    | ips | [ 91/190] control_top_support__n30                       n=  30 red= 94.23% | bld 0.5131 flr 0.4329 joint 0.2862 | medErr 86.7
+2026-10-08 06:59:29,980 | INFO    | ips | [ 92/190] control_top_mi__n30                            n=  30 red= 94.23% | bld 0.6823 flr 0.4266 joint 0.3402 | medErr 57.3
+2026-10-08 06:59:30,197 | INFO    | ips | [ 93/190] control_random__n30__s1                        n=  30 red= 94.23% | bld 0.5860 flr 0.3699 joint 0.2691 | medErr 76.0
+2026-10-08 06:59:30,396 | INFO    | ips | [ 94/190] control_random__n30__s2                        n=  30 red= 94.23% | bld 0.7921 flr 0.3258 joint 0.3024 | medErr 37.9
+2026-10-08 06:59:30,644 | INFO    | ips | [ 95/190] control_random__n30__s3                        n=  30 red= 94.23% | bld 0.6373 flr 0.4365 joint 0.3123 | medErr 58.4
+2026-10-08 06:59:30,903 | INFO    | ips | [ 96/190] control_top_support__n31                       n=  31 red= 94.04% | bld 0.5122 flr 0.4329 joint 0.2862 | medErr 86.7
+2026-10-08 06:59:31,135 | INFO    | ips | [ 97/190] control_top_mi__n31                            n=  31 red= 94.04% | bld 0.6814 flr 0.4221 joint 0.3357 | medErr 57.1
+2026-10-08 06:59:31,326 | INFO    | ips | [ 98/190] control_random__n31__s1                        n=  31 red= 94.04% | bld 0.6778 flr 0.3924 joint 0.3006 | medErr 45.0
+2026-10-08 06:59:31,572 | INFO    | ips | [ 99/190] control_random__n31__s2                        n=  31 red= 94.04% | bld 0.7849 flr 0.3249 joint 0.2997 | medErr 37.2
+2026-10-08 06:59:31,751 | INFO    | ips | [100/190] control_random__n31__s3                        n=  31 red= 94.04% | bld 0.7570 flr 0.3888 joint 0.3186 | medErr 38.0
+2026-10-08 06:59:31,979 | INFO    | ips | [101/190] control_top_support__n40                       n=  40 red= 92.31% | bld 0.5104 flr 0.4428 joint 0.2961 | medErr 86.3
+2026-10-08 06:59:32,226 | INFO    | ips | [102/190] control_top_mi__n40                            n=  40 red= 92.31% | bld 0.8551 flr 0.4608 joint 0.4329 | medErr 30.4
+2026-10-08 06:59:32,441 | INFO    | ips | [103/190] control_random__n40__s1                        n=  40 red= 92.31% | bld 0.8362 flr 0.4545 joint 0.4257 | medErr 23.1
+2026-10-08 06:59:32,653 | INFO    | ips | [104/190] control_random__n40__s2                        n=  40 red= 92.31% | bld 0.7786 flr 0.3474 joint 0.3204 | medErr 29.0
+2026-10-08 06:59:32,875 | INFO    | ips | [105/190] control_random__n40__s3                        n=  40 red= 92.31% | bld 0.7840 flr 0.3969 joint 0.3762 | medErr 27.2
+2026-10-08 06:59:33,185 | INFO    | ips | [106/190] control_top_support__n45                       n=  45 red= 91.35% | bld 0.6850 flr 0.4635 joint 0.3789 | medErr 52.8
+2026-10-08 06:59:33,487 | INFO    | ips | [107/190] control_top_mi__n45                            n=  45 red= 91.35% | bld 0.8722 flr 0.4644 joint 0.4437 | medErr 27.9
+2026-10-08 06:59:33,837 | INFO    | ips | [108/190] control_random__n45__s1                        n=  45 red= 91.35% | bld 0.8002 flr 0.4374 joint 0.4041 | medErr 28.1
+2026-10-08 06:59:34,144 | INFO    | ips | [109/190] control_random__n45__s2                        n=  45 red= 91.35% | bld 0.9037 flr 0.3969 joint 0.3879 | medErr 20.9
+2026-10-08 06:59:34,437 | INFO    | ips | [110/190] control_random__n45__s3                        n=  45 red= 91.35% | bld 0.8209 flr 0.4671 joint 0.4518 | medErr 22.0
+2026-10-08 06:59:34,770 | INFO    | ips | [111/190] control_top_support__n50                       n=  50 red= 90.38% | bld 0.8704 flr 0.4698 joint 0.4509 | medErr 25.5
+2026-10-08 06:59:35,092 | INFO    | ips | [112/190] control_top_mi__n50                            n=  50 red= 90.38% | bld 0.9532 flr 0.5995 joint 0.5851 | medErr 21.6
+2026-10-08 06:59:35,468 | INFO    | ips | [113/190] control_random__n50__s1                        n=  50 red= 90.38% | bld 0.8920 flr 0.4437 joint 0.4329 | medErr 20.8
+2026-10-08 06:59:35,792 | INFO    | ips | [114/190] control_random__n50__s2                        n=  50 red= 90.38% | bld 0.9235 flr 0.5266 joint 0.5158 | medErr 16.6
+2026-10-08 06:59:36,206 | INFO    | ips | [115/190] control_random__n50__s3                        n=  50 red= 90.38% | bld 0.8146 flr 0.4932 joint 0.4581 | medErr 18.0
+2026-10-08 06:59:36,536 | INFO    | ips | [116/190] control_top_support__n53                       n=  53 red= 89.81% | bld 0.9379 flr 0.5518 joint 0.5383 | medErr 21.6
+2026-10-08 06:59:36,925 | INFO    | ips | [117/190] control_top_mi__n53                            n=  53 red= 89.81% | bld 0.9541 flr 0.5923 joint 0.5797 | medErr 22.6
+2026-10-08 06:59:37,284 | INFO    | ips | [118/190] control_random__n53__s1                        n=  53 red= 89.81% | bld 0.9019 flr 0.5149 joint 0.5059 | medErr 19.8
+2026-10-08 06:59:37,643 | INFO    | ips | [119/190] control_random__n53__s2                        n=  53 red= 89.81% | bld 0.9298 flr 0.4914 joint 0.4725 | medErr 16.5
+2026-10-08 06:59:38,035 | INFO    | ips | [120/190] control_random__n53__s3                        n=  53 red= 89.81% | bld 0.8965 flr 0.5707 joint 0.5536 | medErr 16.1
+2026-10-08 06:59:38,417 | INFO    | ips | [121/190] control_top_support__n58                       n=  58 red= 88.85% | bld 0.9550 flr 0.5923 joint 0.5797 | medErr 20.4
+2026-10-08 06:59:38,850 | INFO    | ips | [122/190] control_top_mi__n58                            n=  58 red= 88.85% | bld 0.9694 flr 0.6256 joint 0.6184 | medErr 16.7
+2026-10-08 06:59:39,299 | INFO    | ips | [123/190] control_random__n58__s1                        n=  58 red= 88.85% | bld 0.8686 flr 0.5167 joint 0.5004 | medErr 17.9
+2026-10-08 06:59:39,660 | INFO    | ips | [124/190] control_random__n58__s2                        n=  58 red= 88.85% | bld 0.8515 flr 0.5248 joint 0.5113 | medErr 14.6
+2026-10-08 06:59:39,993 | INFO    | ips | [125/190] control_random__n58__s3                        n=  58 red= 88.85% | bld 0.9271 flr 0.5365 joint 0.5167 | medErr 16.8
+2026-10-08 06:59:40,349 | INFO    | ips | [126/190] control_top_support__n67                       n=  67 red= 87.12% | bld 0.9658 flr 0.6373 joint 0.6301 | medErr 17.1
+2026-10-08 06:59:40,697 | INFO    | ips | [127/190] control_top_mi__n67                            n=  67 red= 87.12% | bld 0.9685 flr 0.6652 joint 0.6553 | medErr 13.9
+2026-10-08 06:59:41,046 | INFO    | ips | [128/190] control_random__n67__s1                        n=  67 red= 87.12% | bld 0.8803 flr 0.6040 joint 0.5770 | medErr 14.6
+2026-10-08 06:59:41,414 | INFO    | ips | [129/190] control_random__n67__s2                        n=  67 red= 87.12% | bld 0.9046 flr 0.6157 joint 0.6040 | medErr 14.3
+2026-10-08 06:59:41,775 | INFO    | ips | [130/190] control_random__n67__s3                        n=  67 red= 87.12% | bld 0.9235 flr 0.4644 joint 0.4509 | medErr 19.6
+2026-10-08 06:59:42,230 | INFO    | ips | [131/190] control_top_support__n74                       n=  74 red= 85.77% | bld 0.9721 flr 0.6733 joint 0.6643 | medErr 11.6
+2026-10-08 06:59:42,610 | INFO    | ips | [132/190] control_top_mi__n74                            n=  74 red= 85.77% | bld 0.9721 flr 0.6994 joint 0.6895 | medErr 10.8
+2026-10-08 06:59:42,985 | INFO    | ips | [133/190] control_random__n74__s1                        n=  74 red= 85.77% | bld 0.9685 flr 0.5680 joint 0.5590 | medErr 15.6
+2026-10-08 06:59:43,359 | INFO    | ips | [134/190] control_random__n74__s2                        n=  74 red= 85.77% | bld 0.9721 flr 0.5779 joint 0.5743 | medErr 13.1
+2026-10-08 06:59:43,783 | INFO    | ips | [135/190] control_random__n74__s3                        n=  74 red= 85.77% | bld 0.8974 flr 0.4851 joint 0.4716 | medErr 19.9
+2026-10-08 06:59:44,181 | INFO    | ips | [136/190] control_top_support__n75                       n=  75 red= 85.58% | bld 0.9748 flr 0.6886 joint 0.6796 | medErr 10.9
+2026-10-08 06:59:44,568 | INFO    | ips | [137/190] control_top_mi__n75                            n=  75 red= 85.58% | bld 0.9721 flr 0.7084 joint 0.6985 | medErr 10.2
+2026-10-08 06:59:44,957 | INFO    | ips | [138/190] control_random__n75__s1                        n=  75 red= 85.58% | bld 0.9685 flr 0.5878 joint 0.5788 | medErr 15.1
+2026-10-08 06:59:45,344 | INFO    | ips | [139/190] control_random__n75__s2                        n=  75 red= 85.58% | bld 0.9685 flr 0.6211 joint 0.6148 | medErr 14.7
+2026-10-08 06:59:45,722 | INFO    | ips | [140/190] control_random__n75__s3                        n=  75 red= 85.58% | bld 0.9298 flr 0.5086 joint 0.4995 | medErr 18.3
+2026-10-08 06:59:46,140 | INFO    | ips | [141/190] control_top_support__n77                       n=  77 red= 85.19% | bld 0.9748 flr 0.6922 joint 0.6832 | medErr 10.9
+2026-10-08 06:59:46,530 | INFO    | ips | [142/190] control_top_mi__n77                            n=  77 red= 85.19% | bld 0.9712 flr 0.7129 joint 0.7021 | medErr 10.5
+2026-10-08 06:59:46,921 | INFO    | ips | [143/190] control_random__n77__s1                        n=  77 red= 85.19% | bld 0.9244 flr 0.5545 joint 0.5455 | medErr 16.8
+2026-10-08 06:59:47,319 | INFO    | ips | [144/190] control_random__n77__s2                        n=  77 red= 85.19% | bld 0.9721 flr 0.6526 joint 0.6472 | medErr 11.7
+2026-10-08 06:59:47,717 | INFO    | ips | [145/190] control_random__n77__s3                        n=  77 red= 85.19% | bld 0.8794 flr 0.5563 joint 0.5401 | medErr 15.5
+2026-10-08 06:59:48,115 | INFO    | ips | [146/190] control_top_support__n79                       n=  79 red= 84.81% | bld 0.9748 flr 0.7057 joint 0.6967 | medErr 10.8
+2026-10-08 06:59:48,530 | INFO    | ips | [147/190] control_top_mi__n79                            n=  79 red= 84.81% | bld 0.9721 flr 0.7129 joint 0.7021 | medErr 10.8
+2026-10-08 06:59:48,930 | INFO    | ips | [148/190] control_random__n79__s1                        n=  79 red= 84.81% | bld 0.9469 flr 0.6274 joint 0.6175 | medErr 13.2
+2026-10-08 06:59:49,328 | INFO    | ips | [149/190] control_random__n79__s2                        n=  79 red= 84.81% | bld 0.9703 flr 0.6850 joint 0.6832 | medErr 10.4
+2026-10-08 06:59:49,729 | INFO    | ips | [150/190] control_random__n79__s3                        n=  79 red= 84.81% | bld 0.9325 flr 0.4257 joint 0.4158 | medErr 22.6
+2026-10-08 06:59:50,141 | INFO    | ips | [151/190] control_top_support__n81                       n=  81 red= 84.42% | bld 0.9748 flr 0.7012 joint 0.6922 | medErr 10.9
+2026-10-08 06:59:50,563 | INFO    | ips | [152/190] control_top_mi__n81                            n=  81 red= 84.42% | bld 0.9721 flr 0.7111 joint 0.7003 | medErr 10.6
+2026-10-08 06:59:50,968 | INFO    | ips | [153/190] control_random__n81__s1                        n=  81 red= 84.42% | bld 0.9595 flr 0.6715 joint 0.6661 | medErr 11.6
+2026-10-08 06:59:51,377 | INFO    | ips | [154/190] control_random__n81__s2                        n=  81 red= 84.42% | bld 0.9622 flr 0.6733 joint 0.6634 | medErr 11.5
+2026-10-08 06:59:51,780 | INFO    | ips | [155/190] control_random__n81__s3                        n=  81 red= 84.42% | bld 0.9379 flr 0.4905 joint 0.4779 | medErr 18.6
+2026-10-08 06:59:52,220 | INFO    | ips | [156/190] control_top_support__n86                       n=  86 red= 83.46% | bld 0.9730 flr 0.7120 joint 0.7021 | medErr 10.1
+2026-10-08 06:59:52,665 | INFO    | ips | [157/190] control_top_mi__n86                            n=  86 red= 83.46% | bld 0.9712 flr 0.7246 joint 0.7138 | medErr 9.9
+2026-10-08 06:59:53,103 | INFO    | ips | [158/190] control_random__n86__s1                        n=  86 red= 83.46% | bld 0.9460 flr 0.6571 joint 0.6472 | medErr 14.4
+2026-10-08 06:59:53,532 | INFO    | ips | [159/190] control_random__n86__s2                        n=  86 red= 83.46% | bld 0.9667 flr 0.6823 joint 0.6742 | medErr 11.1
+2026-10-08 06:59:53,961 | INFO    | ips | [160/190] control_random__n86__s3                        n=  86 red= 83.46% | bld 0.9523 flr 0.6355 joint 0.6229 | medErr 15.3
+2026-10-08 06:59:54,441 | INFO    | ips | [161/190] control_top_support__n91                       n=  91 red= 82.50% | bld 0.9721 flr 0.7273 joint 0.7183 | medErr 9.9
+2026-10-08 06:59:54,952 | INFO    | ips | [162/190] control_top_mi__n91                            n=  91 red= 82.50% | bld 0.9757 flr 0.7525 joint 0.7444 | medErr 9.5
+2026-10-08 06:59:55,416 | INFO    | ips | [163/190] control_random__n91__s1                        n=  91 red= 82.50% | bld 0.9550 flr 0.7156 joint 0.7084 | medErr 11.1
+2026-10-08 06:59:55,928 | INFO    | ips | [164/190] control_random__n91__s2                        n=  91 red= 82.50% | bld 0.9460 flr 0.6787 joint 0.6724 | medErr 11.6
+2026-10-08 06:59:56,573 | INFO    | ips | [165/190] control_random__n91__s3                        n=  91 red= 82.50% | bld 0.9685 flr 0.7084 joint 0.7012 | medErr 12.5
+2026-10-08 06:59:57,227 | INFO    | ips | [166/190] control_top_support__n100                      n= 100 red= 80.77% | bld 0.8947 flr 0.7462 joint 0.7282 | medErr 8.7
+2026-10-08 06:59:57,849 | INFO    | ips | [167/190] control_top_mi__n100                           n= 100 red= 80.77% | bld 0.9424 flr 0.8191 joint 0.8056 | medErr 8.0
+2026-10-08 06:59:58,409 | INFO    | ips | [168/190] control_random__n100__s1                       n= 100 red= 80.77% | bld 0.9793 flr 0.6643 joint 0.6643 | medErr 9.5
+2026-10-08 06:59:58,958 | INFO    | ips | [169/190] control_random__n100__s2                       n= 100 red= 80.77% | bld 0.9766 flr 0.6841 joint 0.6787 | medErr 10.2
+2026-10-08 06:59:59,513 | INFO    | ips | [170/190] control_random__n100__s3                       n= 100 red= 80.77% | bld 0.9676 flr 0.7363 joint 0.7336 | medErr 10.4
+2026-10-08 07:00:00,390 | INFO    | ips | [171/190] control_top_support__n150                      n= 150 red= 71.15% | bld 0.9892 flr 0.8803 joint 0.8767 | medErr 6.8
+2026-10-08 07:00:01,243 | INFO    | ips | [172/190] control_top_mi__n150                           n= 150 red= 71.15% | bld 0.9865 flr 0.8731 joint 0.8695 | medErr 6.9
+2026-10-08 07:00:02,110 | INFO    | ips | [173/190] control_random__n150__s1                       n= 150 red= 71.15% | bld 0.9883 flr 0.7525 joint 0.7498 | medErr 8.2
+2026-10-08 07:00:03,012 | INFO    | ips | [174/190] control_random__n150__s2                       n= 150 red= 71.15% | bld 0.9613 flr 0.8056 joint 0.7984 | medErr 8.2
+2026-10-08 07:00:04,035 | INFO    | ips | [175/190] control_random__n150__s3                       n= 150 red= 71.15% | bld 0.9919 flr 0.7561 joint 0.7543 | medErr 9.4
+2026-10-08 07:00:05,361 | INFO    | ips | [176/190] control_top_support__n200                      n= 200 red= 61.54% | bld 0.9910 flr 0.8875 joint 0.8848 | medErr 6.2
+2026-10-08 07:00:06,703 | INFO    | ips | [177/190] control_top_mi__n200                           n= 200 red= 61.54% | bld 0.9928 flr 0.8722 joint 0.8695 | medErr 6.3
+2026-10-08 07:00:08,044 | INFO    | ips | [178/190] control_random__n200__s1                       n= 200 red= 61.54% | bld 0.9928 flr 0.8362 joint 0.8362 | medErr 7.0
+2026-10-08 07:00:09,364 | INFO    | ips | [179/190] control_random__n200__s2                       n= 200 red= 61.54% | bld 0.9892 flr 0.8533 joint 0.8497 | medErr 6.9
+2026-10-08 07:00:10,687 | INFO    | ips | [180/190] control_random__n200__s3                       n= 200 red= 61.54% | bld 0.9964 flr 0.8380 joint 0.8371 | medErr 7.0
+2026-10-08 07:00:12,525 | INFO    | ips | [181/190] control_top_support__n300                      n= 300 red= 42.31% | bld 0.9883 flr 0.8848 joint 0.8830 | medErr 6.0
+2026-10-08 07:00:14,329 | INFO    | ips | [182/190] control_top_mi__n300                           n= 300 red= 42.31% | bld 0.9883 flr 0.8848 joint 0.8830 | medErr 6.0
+2026-10-08 07:00:16,128 | INFO    | ips | [183/190] control_random__n300__s1                       n= 300 red= 42.31% | bld 0.9946 flr 0.8749 joint 0.8731 | medErr 6.6
+2026-10-08 07:00:17,935 | INFO    | ips | [184/190] control_random__n300__s2                       n= 300 red= 42.31% | bld 0.9865 flr 0.8515 joint 0.8506 | medErr 6.5
+2026-10-08 07:00:19,739 | INFO    | ips | [185/190] control_random__n300__s3                       n= 300 red= 42.31% | bld 0.9838 flr 0.8704 joint 0.8686 | medErr 6.6
+2026-10-08 07:00:22,551 | INFO    | ips | [186/190] control_top_support__n465                      n= 465 red= 10.58% | bld 0.9874 flr 0.8794 joint 0.8776 | medErr 6.0
+2026-10-08 07:00:25,451 | INFO    | ips | [187/190] control_top_mi__n465                           n= 465 red= 10.58% | bld 0.9874 flr 0.8794 joint 0.8776 | medErr 6.0
+2026-10-08 07:00:28,747 | INFO    | ips | [188/190] control_random__n465__s1                       n= 465 red= 10.58% | bld 0.9874 flr 0.8794 joint 0.8776 | medErr 6.0
+2026-10-08 07:00:31,912 | INFO    | ips | [189/190] control_random__n465__s2                       n= 465 red= 10.58% | bld 0.9874 flr 0.8794 joint 0.8776 | medErr 6.0
+2026-10-08 07:00:35,068 | INFO    | ips | [190/190] control_random__n465__s3                       n= 465 red= 10.58% | bld 0.9874 flr 0.8794 joint 0.8776 | medErr 6.1
+2026-10-08 07:00:37,145 | INFO    | ips | done in 185.7s -> D:\ips\results\metrics\ips_results.csv

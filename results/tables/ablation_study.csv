@@ -1,0 +1,31 @@
+Method,Utility Model,minUtil (% of total DB utility),WAP count,Reduction %,Building Acc %,Floor Acc %,Joint Acc %,Joint Macro F1,Median pos. error (coord. units),HUIM Runtime (s),HUIM Peak mem (MB),HUI Count,HUIM Status,Condition id,Note
+ALL WAP (primary baseline),-,-,520,0.0,98.74,87.94,87.76,0.8557,6.02,-,-,-,-,baseline_all_520,every WAP column; no selection
+ALL WAP detected in training,-,-,465,10.58,98.74,87.94,87.76,0.8557,6.02,-,-,-,-,baseline_detected_465,free reduction: removes columns that are the not-detected sentinel in every training row; owes nothing to HUIM
+HUIM union,A - Signal utility,2.5,6,98.85,40.23,28.26,11.16,0.0756,101.85,11.88,0.6,2,COMPLETED,huim_union__A_signal__2.5pct,union of WAPs over all mined HUIs
+HUIM union,A - Signal utility,2,81,84.42,97.3,64.81,64.27,0.6514,15.69,338.13,20.2,130,COMPLETED,huim_union__A_signal__2pct,union of WAPs over all mined HUIs
+HUIM union,A - Signal utility,1.9294,86,83.46,97.3,65.53,64.99,0.6618,15.75,578.51,3.8,853,COMPLETED,huim_union__A_signal__1.9294pct,union of WAPs over all mined HUIs
+HUIM union,A - Signal utility,1.8612,31,94.04,27.9,28.35,8.82,0.0615,106.97,600.07,20.9,5372,ABORTED_RESOURCE_LIMIT,huim_union__A_signal__1.8612pct,"union of WAPs over all mined HUIs; MINING ABORTED - HUI set is truncated, so this selection is biased by search order"
+HUIM union,A - Signal utility,1.7321,67,87.12,70.57,45.45,37.26,0.4297,46.02,600.06,30.7,731,ABORTED_RESOURCE_LIMIT,huim_union__A_signal__1.7321pct,"union of WAPs over all mined HUIs; MINING ABORTED - HUI set is truncated, so this selection is biased by search order"
+HUIM union,A - Signal utility,1.5,74,85.77,72.37,50.77,43.11,0.4837,38.05,600.89,354.7,593823,ABORTED_RESOURCE_LIMIT,huim_union__A_signal__1.5pct,"union of WAPs over all mined HUIs; MINING ABORTED - HUI set is truncated, so this selection is biased by search order"
+HUIM union,B - Discriminative utility,5,3,99.42,36.81,27.45,10.35,0.0606,104.81,2.41,0.0,1,COMPLETED,huim_union__B_discriminative__5pct,union of WAPs over all mined HUIs
+HUIM union,B - Discriminative utility,4,19,96.35,50.77,36.99,22.14,0.2357,89.46,3.95,0.0,19,COMPLETED,huim_union__B_discriminative__4pct,union of WAPs over all mined HUIs
+HUIM union,B - Discriminative utility,3.5,25,95.19,51.04,41.58,26.73,0.3038,88.35,5.31,0.0,55,COMPLETED,huim_union__B_discriminative__3.5pct,union of WAPs over all mined HUIs
+HUIM union,B - Discriminative utility,3,40,92.31,50.41,43.92,28.98,0.3634,84.22,7.62,0.0,285,COMPLETED,huim_union__B_discriminative__3pct,union of WAPs over all mined HUIs
+HUIM union,B - Discriminative utility,2.5,58,88.85,79.39,57.34,49.69,0.5303,35.57,12.24,0.6,1552,COMPLETED,huim_union__B_discriminative__2.5pct,union of WAPs over all mined HUIs
+HUIM union,B - Discriminative utility,2,79,84.81,97.12,67.24,66.79,0.632,15.32,23.29,0.1,24621,COMPLETED,huim_union__B_discriminative__2pct,union of WAPs over all mined HUIs
+HUIM union,B - Discriminative utility,1.5,77,85.19,97.3,67.06,65.89,0.5803,11.33,8.0,492.8,1000001,ABORTED_RESOURCE_LIMIT,huim_union__B_discriminative__1.5pct,"union of WAPs over all mined HUIs; MINING ABORTED - HUI set is truncated, so this selection is biased by search order"
+HUIM union,C - Rare-discriminative utility,3.5,6,98.85,40.23,28.26,11.16,0.0756,101.85,3.13,0.0,2,COMPLETED,huim_union__C_rare_discriminative__3.5pct,union of WAPs over all mined HUIs
+HUIM union,C - Rare-discriminative utility,3,14,97.31,48.96,35.46,20.61,0.1978,92.49,4.48,0.0,6,COMPLETED,huim_union__C_rare_discriminative__3pct,union of WAPs over all mined HUIs
+HUIM union,C - Rare-discriminative utility,2.5,53,89.81,96.94,62.92,62.38,0.5963,17.05,6.72,0.0,108,COMPLETED,huim_union__C_rare_discriminative__2.5pct,union of WAPs over all mined HUIs
+HUIM union,C - Rare-discriminative utility,2,81,84.42,97.21,69.58,69.04,0.6534,13.27,12.44,0.0,1001,COMPLETED,huim_union__C_rare_discriminative__2pct,union of WAPs over all mined HUIs
+HUIM union,C - Rare-discriminative utility,1.7321,91,82.5,97.21,72.55,71.56,0.663,9.52,26.76,22.1,52902,COMPLETED,huim_union__C_rare_discriminative__1.7321pct,union of WAPs over all mined HUIs
+HUIM union,C - Rare-discriminative utility,1.5,45,91.35,74.26,52.03,45.36,0.464,41.23,99.17,518.9,1000001,ABORTED_RESOURCE_LIMIT,huim_union__C_rare_discriminative__1.5pct,"union of WAPs over all mined HUIs; MINING ABORTED - HUI set is truncated, so this selection is biased by search order"
+HUIM top-n (best joint acc),A - Signal utility,1.9294,75,85.58,80.2,58.42,50.86,0.5804,27.34,578.51,3.8,853,COMPLETED,huim_topn__A_signal__1.9294pct__n75,top n WAPs by utility contribution over the HUI set
+HUIM top-n (smallest budget tested),A - Signal utility,1.9294,5,99.04,27.27,28.08,8.28,0.0342,112.31,578.51,3.8,853,COMPLETED,huim_topn__A_signal__1.9294pct__n5,smallest feature budget evaluated for this model
+HUIM top-n (best joint acc),B - Discriminative utility,2,75,85.58,97.03,66.61,66.07,0.6245,15.38,23.29,0.1,24621,COMPLETED,huim_topn__B_discriminative__2pct__n75,top n WAPs by utility contribution over the HUI set
+HUIM top-n (smallest budget tested),B - Discriminative utility,2,5,99.04,46.17,29.25,14.04,0.1093,96.86,23.29,0.1,24621,COMPLETED,huim_topn__B_discriminative__2pct__n5,smallest feature budget evaluated for this model
+HUIM top-n (best joint acc),C - Rare-discriminative utility,1.7321,75,85.58,97.03,66.52,65.98,0.6316,14.51,26.76,22.1,52902,COMPLETED,huim_topn__C_rare_discriminative__1.7321pct__n75,top n WAPs by utility contribution over the HUI set
+HUIM top-n (smallest budget tested),C - Rare-discriminative utility,1.7321,5,99.04,43.56,25.74,10.53,0.0659,98.32,26.76,22.1,52902,COMPLETED,huim_topn__C_rare_discriminative__1.7321pct__n5,smallest feature budget evaluated for this model
+Control: top-n by mutual information,-,-,75,85.58,97.21,70.84,69.85,0.6552,10.25,-,-,-,-,control_top_mi__n75,matched budget n=75; no itemset mining involved
+Control: top-n by detection count,-,-,75,85.58,97.48,68.86,67.96,0.6508,10.87,-,-,-,-,control_top_support__n75,matched budget n=75; no itemset mining involved
+Control: random n (mean of seeds),-,-,75,85.58,95.56,57.25,56.44,0.5686,16.02,-,-,-,-,control_random__n75__mean_of_3_seeds,matched budget n=75; mean over 3 seeds (joint acc range 49.95-61.48%)

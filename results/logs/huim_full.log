@@ -1,0 +1,41 @@
+2026-10-07 20:58:32,377 | INFO    | huim | utility database: 19861 non-empty transactions of 19937 rows (76 empty fingerprints dropped by the miner); 520 WAP columns
+2026-10-07 20:58:32,469 | INFO    | huim | === A_signal === total DB utility 9058242.00, TU in [9.00, 2173.00]
+2026-10-07 20:58:32,579 | INFO    | huim | A_signal                 20.000% (abs   1811648.40) ->        0 HUIs |    0.10s |     7.5MB | WAPs   0 | items  17/465 | COMPLETED
+2026-10-07 20:58:32,735 | INFO    | huim | A_signal                 15.000% (abs   1358736.30) ->        0 HUIs |    0.15s |     6.0MB | WAPs   0 | items  40/465 | COMPLETED
+2026-10-07 20:58:33,038 | INFO    | huim | A_signal                 10.000% (abs    905824.20) ->        0 HUIs |    0.30s |     3.3MB | WAPs   0 | items  56/465 | COMPLETED
+2026-10-07 20:58:33,572 | INFO    | huim | A_signal                  7.500% (abs    679368.15) ->        0 HUIs |    0.53s |     4.0MB | WAPs   0 | items  96/465 | COMPLETED
+2026-10-07 20:58:34,527 | INFO    | huim | A_signal                  5.000% (abs    452912.10) ->        0 HUIs |    0.95s |     4.1MB | WAPs   0 | items 151/465 | COMPLETED
+2026-10-07 20:58:36,101 | INFO    | huim | A_signal                  4.000% (abs    362329.68) ->        0 HUIs |    1.57s |     3.1MB | WAPs   0 | items 174/465 | COMPLETED
+2026-10-07 20:58:38,306 | INFO    | huim | A_signal                  3.500% (abs    317038.47) ->        0 HUIs |    2.20s |     1.5MB | WAPs   0 | items 199/465 | COMPLETED
+2026-10-07 20:58:41,797 | INFO    | huim | A_signal                  3.000% (abs    271747.26) ->        0 HUIs |    3.49s |     1.1MB | WAPs   0 | items 219/465 | COMPLETED
+2026-10-07 20:58:54,404 | INFO    | huim | A_signal                  2.500% (abs    226456.05) ->        2 HUIs |   11.88s |     0.6MB | WAPs   6 | items 231/465 | COMPLETED
+2026-10-07 21:04:32,553 | INFO    | huim | A_signal                  2.000% (abs    181164.84) ->      130 HUIs |  338.13s |    20.2MB | WAPs  81 | items 250/465 | COMPLETED
+2026-10-07 21:14:50,283 | INFO    | huim | A_signal                  1.500% (abs    135873.63) ->   593823 HUIs |  600.89s |   354.7MB | WAPs  74 | items 263/465 | ABORTED_RESOURCE_LIMIT
+2026-10-07 21:14:50,285 | WARNING | huim |   descent stopped for A_signal at 1.5% (time limit 600.0s exceeded (after 593823 HUIs, 600.0s, 15675392 search-tree nodes))
+2026-10-07 21:14:50,764 | INFO    | huim | === B_discriminative === total DB utility 4354299.06, TU in [2.37, 772.96]
+2026-10-07 21:14:51,000 | INFO    | huim | B_discriminative         20.000% (abs    870859.81) ->        0 HUIs |    0.23s |     0.0MB | WAPs   0 | items  41/465 | COMPLETED
+2026-10-07 21:14:51,394 | INFO    | huim | B_discriminative         15.000% (abs    653144.86) ->        0 HUIs |    0.39s |     0.0MB | WAPs   0 | items  47/465 | COMPLETED
+2026-10-07 21:14:52,045 | INFO    | huim | B_discriminative         10.000% (abs    435429.91) ->        0 HUIs |    0.65s |     0.0MB | WAPs   0 | items  60/465 | COMPLETED
+2026-10-07 21:14:53,000 | INFO    | huim | B_discriminative          7.500% (abs    326572.43) ->        0 HUIs |    0.95s |     0.0MB | WAPs   0 | items  72/465 | COMPLETED
+2026-10-07 21:14:55,414 | INFO    | huim | B_discriminative          5.000% (abs    217714.95) ->        1 HUIs |    2.41s |     0.0MB | WAPs   3 | items  93/465 | COMPLETED
+2026-10-07 21:14:59,371 | INFO    | huim | B_discriminative          4.000% (abs    174171.96) ->       19 HUIs |    3.95s |     0.0MB | WAPs  19 | items 107/465 | COMPLETED
+2026-10-07 21:15:04,688 | INFO    | huim | B_discriminative          3.500% (abs    152400.47) ->       55 HUIs |    5.31s |     0.0MB | WAPs  25 | items 116/465 | COMPLETED
+2026-10-07 21:15:12,324 | INFO    | huim | B_discriminative          3.000% (abs    130628.97) ->      285 HUIs |    7.62s |     0.0MB | WAPs  40 | items 147/465 | COMPLETED
+2026-10-07 21:15:24,608 | INFO    | huim | B_discriminative          2.500% (abs    108857.48) ->     1552 HUIs |   12.24s |     0.6MB | WAPs  58 | items 175/465 | COMPLETED
+2026-10-07 21:15:48,665 | INFO    | huim | B_discriminative          2.000% (abs     87085.98) ->    24621 HUIs |   23.29s |     0.1MB | WAPs  79 | items 204/465 | COMPLETED
+2026-10-07 21:16:21,114 | INFO    | huim | B_discriminative          1.500% (abs     65314.49) ->  1000001 HUIs |    8.00s |   492.8MB | WAPs  77 | items 235/465 | ABORTED_RESOURCE_LIMIT
+2026-10-07 21:16:21,116 | WARNING | huim |   descent stopped for B_discriminative at 1.5% (output limit 1000000 HUIs exceeded (after 1000001 HUIs, 6.7s, 1912614 search-tree nodes))
+2026-10-07 21:16:21,545 | INFO    | huim | === C_rare_discriminative === total DB utility 6211852.27, TU in [2.88, 965.28]
+2026-10-07 21:16:21,822 | INFO    | huim | C_rare_discriminative    20.000% (abs   1242370.45) ->        0 HUIs |    0.27s |     0.0MB | WAPs   0 | items  31/465 | COMPLETED
+2026-10-07 21:16:22,021 | INFO    | huim | C_rare_discriminative    15.000% (abs    931777.84) ->        0 HUIs |    0.19s |     0.0MB | WAPs   0 | items  45/465 | COMPLETED
+2026-10-07 21:16:22,497 | INFO    | huim | C_rare_discriminative    10.000% (abs    621185.23) ->        0 HUIs |    0.47s |     0.0MB | WAPs   0 | items  60/465 | COMPLETED
+2026-10-07 21:16:23,192 | INFO    | huim | C_rare_discriminative     7.500% (abs    465888.92) ->        0 HUIs |    0.69s |     0.0MB | WAPs   0 | items  80/465 | COMPLETED
+2026-10-07 21:16:24,596 | INFO    | huim | C_rare_discriminative     5.000% (abs    310592.61) ->        0 HUIs |    1.40s |     0.0MB | WAPs   0 | items 117/465 | COMPLETED
+2026-10-07 21:16:26,973 | INFO    | huim | C_rare_discriminative     4.000% (abs    248474.09) ->        0 HUIs |    2.37s |     0.0MB | WAPs   0 | items 148/465 | COMPLETED
+2026-10-07 21:16:30,108 | INFO    | huim | C_rare_discriminative     3.500% (abs    217414.83) ->        2 HUIs |    3.13s |     0.0MB | WAPs   6 | items 166/465 | COMPLETED
+2026-10-07 21:16:34,597 | INFO    | huim | C_rare_discriminative     3.000% (abs    186355.57) ->        6 HUIs |    4.48s |     0.0MB | WAPs  14 | items 188/465 | COMPLETED
+2026-10-07 21:16:41,328 | INFO    | huim | C_rare_discriminative     2.500% (abs    155296.31) ->      108 HUIs |    6.72s |     0.0MB | WAPs  53 | items 218/465 | COMPLETED
+2026-10-07 21:16:53,807 | INFO    | huim | C_rare_discriminative     2.000% (abs    124237.05) ->     1001 HUIs |   12.44s |     0.0MB | WAPs  81 | items 227/465 | COMPLETED
+2026-10-07 21:18:58,392 | INFO    | huim | C_rare_discriminative     1.500% (abs     93177.78) ->  1000001 HUIs |   99.17s |   518.9MB | WAPs  45 | items 259/465 | ABORTED_RESOURCE_LIMIT
+2026-10-07 21:18:58,394 | WARNING | huim |   descent stopped for C_rare_discriminative at 1.5% (output limit 1000000 HUIs exceeded (after 1000001 HUIs, 97.8s, 3134917 search-tree nodes))
+2026-10-07 21:19:00,619 | INFO    | huim | done in 1229.5s; 33 runs -> D:\ips\results\metrics\huim_runs.csv

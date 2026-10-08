@@ -1,0 +1,363 @@
+{
+  "timestamp_utc": "2026-10-08T00:23:00.478335+00:00",
+  "docx": {
+    "exists": true,
+    "size_kb": 1787.5,
+    "n_paragraphs": 831,
+    "n_tables": 48,
+    "n_embedded_images": 17,
+    "n_characters": 138354,
+    "approx_pages_at_2800_chars": 49.4,
+    "heading_counts": {
+      "Heading 1": 22,
+      "Heading 2": 104,
+      "Heading 3": 62
+    },
+    "fonts_used_in_runs": [
+      "Times New Roman"
+    ],
+    "fonts_ok": true,
+    "placeholders_found": [],
+    "has_references_section": true,
+    "has_cheatsheet": true,
+    "has_formulas": true,
+    "has_mandated_statement": true,
+    "mentions_metres_for_error": false,
+    "opens_ok": true
+  },
+  "pptx": {
+    "exists": true,
+    "size_kb": 1312.6,
+    "n_slides": 20,
+    "n_pictures": 14,
+    "n_tables": 4,
+    "n_slides_with_speaker_notes": 20,
+    "fonts_used": [
+      "Times New Roman"
+    ],
+    "fonts_ok": true,
+    "font_sizes_used_pt": [
+      10.0,
+      10.5,
+      11.0,
+      11.5,
+      12.0,
+      13.0,
+      15.0,
+      19.0,
+      26.0,
+      32.0
+    ],
+    "body_size_pt_mode": 13.0,
+    "slide_width_in": 13.333,
+    "slide_height_in": 7.5,
+    "placeholders_found": [],
+    "possible_text_overflow": [],
+    "overlapping_shapes": [
+      {
+        "slide": 1,
+        "kinds": "picture / text",
+        "overlap_in": 4.71,
+        "overlap_w_in": 10.4,
+        "overlap_h_in": 0.45
+      },
+      {
+        "slide": 7,
+        "kinds": "picture / text",
+        "overlap_in": 2.942,
+        "overlap_w_in": 10.9,
+        "overlap_h_in": 0.27
+      },
+      {
+        "slide": 8,
+        "kinds": "picture / table",
+        "overlap_in": 12.796,
+        "overlap_w_in": 12.0,
+        "overlap_h_in": 1.07
+      },
+      {
+        "slide": 11,
+        "kinds": "picture / text",
+        "overlap_in": 3.312,
+        "overlap_w_in": 10.35,
+        "overlap_h_in": 0.32
+      }
+    ],
+    "shapes_off_slide": [],
+    "has_references_slide": true,
+    "opens_ok": true
+  },
+  "figures": {
+    "n_png": 24,
+    "files": [
+      {
+        "png": "fig01_minutil_vs_hui_count.png",
+        "kb": 95.4,
+        "data_csv": "fig01_minutil_vs_hui_count.csv"
+      },
+      {
+        "png": "fig02_minutil_vs_runtime.png",
+        "kb": 96.1,
+        "data_csv": "fig02_minutil_vs_runtime.csv"
+      },
+      {
+        "png": "fig03_minutil_vs_peak_memory.png",
+        "kb": 79.2,
+        "data_csv": "fig03_minutil_vs_peak_memory.csv"
+      },
+      {
+        "png": "fig04_minutil_vs_selected_waps.png",
+        "kb": 96.4,
+        "data_csv": "fig04_minutil_vs_selected_waps.csv"
+      },
+      {
+        "png": "fig05_hui_length_distribution.png",
+        "kb": 113.2,
+        "data_csv": "fig05_hui_length_distribution.csv"
+      },
+      {
+        "png": "fig06_selected_waps_vs_accuracy.png",
+        "kb": 126.7,
+        "data_csv": "fig06_selected_waps_vs_accuracy.csv"
+      },
+      {
+        "png": "fig07_minutil_vs_search_nodes.png",
+        "kb": 101.6,
+        "data_csv": "fig07_minutil_vs_search_nodes.csv"
+      },
+      {
+        "png": "fig08_minutil_vs_items_surviving_twu.png",
+        "kb": 98.8,
+        "data_csv": "fig08_minutil_vs_items_surviving_twu.csv"
+      },
+      {
+        "png": "fig09_feature_reduction_vs_accuracy.png",
+        "kb": 120.9,
+        "data_csv": "fig09_feature_reduction_vs_accuracy.csv"
+      },
+      {
+        "png": "fig10_baseline_vs_huim_accuracies.png",
+        "kb": 57.6,
+        "data_csv": "fig10_baseline_vs_huim_accuracies.csv"
+      },
+      {
+        "png": "fig11_selected_waps_vs_positioning_error.png",
+        "kb": 124.2,
+        "data_csv": "fig11_selected_waps_vs_positioning_error.csv"
+      },
+      {
+        "png": "fig12_confusion_matrices.png",
+        "kb": 124.1,
+        "data_csv": "fig12_confusion_matrices.csv"
+      },
+      {
+        "png": "fig13_eda_rssi_and_sparsity.png",
+        "kb": 69.8,
+        "data_csv": "fig13_eda_rssi_and_sparsity.csv"
+      },
+      {
+        "png": "fig14_mutual_information_vs_support.png",
+        "kb": 117.9,
+        "data_csv": "fig14_mutual_information_vs_support.csv"
+      },
+      {
+        "png": "fig15_building_floor_distribution.png",
+        "kb": 35.7,
+        "data_csv": "fig15_building_floor_distribution.csv"
+      },
+      {
+        "png": "fig16_ips_time_and_memory.png",
+        "kb": 194.8,
+        "data_csv": "fig16_ips_time_and_memory.csv"
+      },
+      {
+        "png": "fig17_positioning_error_metres.png",
+        "kb": 105.6,
+        "data_csv": "fig17_positioning_error_metres.csv"
+      },
+      {
+        "png": "fig20_cover_illustration.png",
+        "kb": 85.7,
+        "data_csv": null
+      },
+      {
+        "png": "fig21_ips_workflow.png",
+        "kb": 71.6,
+        "data_csv": null
+      },
+      {
+        "png": "fig22_huim_concepts.png",
+        "kb": 70.1,
+        "data_csv": null
+      },
+      {
+        "png": "fig23_uji_to_utility.png",
+        "kb": 51.5,
+        "data_csv": null
+      },
+      {
+        "png": "fig24_efim_tree.png",
+        "kb": 103.3,
+        "data_csv": null
+      },
+      {
+        "png": "fig25_pipeline.png",
+        "kb": 72.9,
+        "data_csv": null
+      },
+      {
+        "png": "fig26_reverse_thinking_chain.png",
+        "kb": 87.2,
+        "data_csv": null
+      }
+    ],
+    "missing_data_csv": []
+  },
+  "builder_literal_scan": {
+    "n_literals_found": 5,
+    "n_unexplained": 0,
+    "literals": [
+      {
+        "file": "make_report.py",
+        "line": 261,
+        "token": "20.000",
+        "explained": "altitude of GPS satellites in km, stated in chapter 2 as background physics"
+      },
+      {
+        "file": "report_parts2.py",
+        "line": 193,
+        "token": "200.000",
+        "explained": "a deliberately arbitrary illustrative threshold used to explain why an absolute minUtil is meaningless; it is not a measured value"
+      },
+      {
+        "file": "report_parts3.py",
+        "line": 488,
+        "token": "108.703",
+        "explained": "the campus area in m2 quoted by secondary literature, discussed (and shown to be a PROJECTED area) in the coordinate-system section; not a result of this study"
+      },
+      {
+        "file": "report_parts4.py",
+        "line": 211,
+        "token": "200.000",
+        "explained": "a deliberately arbitrary illustrative threshold used to explain why an absolute minUtil is meaningless; it is not a measured value"
+      },
+      {
+        "file": "make_slides.py",
+        "line": 47,
+        "token": "13.333",
+        "explained": "PowerPoint slide width in inches (16:9 at 7.5in height)"
+      }
+    ],
+    "note": "Numeric literals in the document builders that could be mistaken for experimental values. Each is either matched against an allow-list with a stated reason, or reported as unexplained. Bibliographic numbers (DOIs, years, volumes, page ranges) are stripped before the scan."
+  },
+  "deliverables": [
+    {
+      "Deliverable": "1. Source code chạy được",
+      "Path": "src/, run_experiments.py",
+      "Status": "OK",
+      "n_files": 2
+    },
+    {
+      "Deliverable": "2. requirements.txt",
+      "Path": "requirements.txt",
+      "Status": "OK",
+      "n_files": 1
+    },
+    {
+      "Deliverable": "3. README.md",
+      "Path": "README.md",
+      "Status": "OK",
+      "n_files": 1
+    },
+    {
+      "Deliverable": "4. Unit tests",
+      "Path": "tests/test_efim.py, tests/test_utility.py",
+      "Status": "OK",
+      "n_files": 2
+    },
+    {
+      "Deliverable": "5. Data audit",
+      "Path": "results/data_audit.md, results/data_summary.json",
+      "Status": "OK",
+      "n_files": 2
+    },
+    {
+      "Deliverable": "6. Literature review",
+      "Path": "research/literature_review.md",
+      "Status": "OK",
+      "n_files": 1
+    },
+    {
+      "Deliverable": "7. Bibliography",
+      "Path": "research/references.bib, research/papers_table.csv",
+      "Status": "OK",
+      "n_files": 2
+    },
+    {
+      "Deliverable": "8. Utility models",
+      "Path": "src/utility_models.py",
+      "Status": "OK",
+      "n_files": 1
+    },
+    {
+      "Deliverable": "9. HUIM implementation",
+      "Path": "src/huim/efim.py, src/huim/brute_force.py",
+      "Status": "OK",
+      "n_files": 2
+    },
+    {
+      "Deliverable": "10. Experiment logs",
+      "Path": "results/logs/, results/*.json",
+      "Status": "OK",
+      "n_files": 11
+    },
+    {
+      "Deliverable": "11. Metrics CSV",
+      "Path": "results/metrics/huim_runs.csv, results/metrics/ips_results.csv",
+      "Status": "OK",
+      "n_files": 2
+    },
+    {
+      "Deliverable": "12. Charts",
+      "Path": "figures/*.png, figures/*.csv",
+      "Status": "OK",
+      "n_files": 41
+    },
+    {
+      "Deliverable": "13. Reverse-thinking analysis",
+      "Path": "research/reverse_thinking_analysis.md",
+      "Status": "OK",
+      "n_files": 1
+    },
+    {
+      "Deliverable": "14. Ablation study",
+      "Path": "results/tables/ablation_study.csv",
+      "Status": "OK",
+      "n_files": 1
+    },
+    {
+      "Deliverable": "15. Word report",
+      "Path": "report/HUIM_IPS_UJIIndoorLoc_Important_Knowledge.docx",
+      "Status": "OK",
+      "n_files": 1
+    },
+    {
+      "Deliverable": "16. PowerPoint",
+      "Path": "slides/HUIM_IPS_UJIIndoorLoc_Presentation.pptx",
+      "Status": "OK",
+      "n_files": 1
+    },
+    {
+      "Deliverable": "17. Speaker notes",
+      "Path": "slides/speaker_notes.md",
+      "Status": "OK",
+      "n_files": 1
+    },
+    {
+      "Deliverable": "18. FINAL_SUMMARY.md",
+      "Path": "FINAL_SUMMARY.md",
+      "Status": "OK",
+      "n_files": 1
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+condition,n_waps_selected,pos_median_error_ground_m,pos_p75_error_ground_m,pos_p90_error_ground_m,pos_p95_error_ground_m,pos_mean_error_ground_m,pos_median_error,pos_mean_error,joint_building_floor_accuracy
+baseline_all_520,520,4.6096,9.3883,17.0212,27.8141,9.277,6.0167,12.109,0.877588
+huim_union__A_signal__1.9294pct,86,12.0679,31.1827,51.6022,62.6739,20.5749,15.7518,26.8557,0.649865
+huim_union__B_discriminative__2pct,79,11.739,32.6821,59.112,81.5249,22.0649,15.3226,28.8006,0.667867
+huim_union__C_rare_discriminative__1.7321pct,91,7.2916,26.7142,59.0253,77.6533,19.1421,9.5175,24.9856,0.715572
+huim_topn__A_signal__1.9294pct__n75,75,20.9462,58.5248,89.8523,102.7357,34.3764,27.3404,44.8704,0.508551
+huim_topn__B_discriminative__2pct__n75,75,11.7796,33.4119,59.2029,81.5249,22.2967,15.3755,29.1032,0.660666
+huim_topn__C_rare_discriminative__1.7321pct__n75,75,11.1153,32.022,59.2029,91.07,22.0113,14.5085,28.7306,0.659766
+control_top_mi__n200,200,4.812,10.4187,18.5819,27.7265,8.7534,6.281,11.4255,0.869487
+control_top_support__n200,200,4.7611,9.5827,17.0212,26.8644,8.7743,6.2145,11.4528,0.884788

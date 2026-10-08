@@ -1,0 +1,925 @@
+{
+  "gan2021survey": {
+    "doi": "10.1109/tkde.2019.2942594",
+    "status": "VERIFIED",
+    "title": "A Survey of Utility-Oriented Pattern Mining",
+    "authors": [
+      "Wensheng Gan",
+      "Jerry Chun-Wei Lin",
+      "Philippe Fournier-Viger",
+      "Han-Chieh Chao",
+      "Vincent S. Tseng",
+      "Philip S. Yu"
+    ],
+    "n_authors": 6,
+    "year_issued": 2021,
+    "published_print": [
+      2021,
+      4,
+      1
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "IEEE Transactions on Knowledge and Data Engineering",
+    "short_container_title": "IEEE Trans. Knowl. Data Eng.",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "type": "journal-article",
+    "volume": "33",
+    "issue": "4",
+    "page": "1306-1327",
+    "issn": [
+      "1041-4347",
+      "1558-2191",
+      "2326-3865"
+    ],
+    "isbn": null,
+    "event": null,
+    "is_referenced_by_count": 257,
+    "url": "https://doi.org/10.1109/tkde.2019.2942594"
+  },
+  "liu2012huiminer": {
+    "doi": "10.1145/2396761.2396773",
+    "status": "VERIFIED",
+    "title": "Mining high utility itemsets without candidate generation",
+    "authors": [
+      "Mengchi Liu",
+      "Junfeng Qu"
+    ],
+    "n_authors": 2,
+    "year_issued": 2012,
+    "published_print": [
+      2012,
+      10,
+      29
+    ],
+    "published_online": [
+      2012,
+      10,
+      29
+    ],
+    "container_title": "Proceedings of the 21st ACM international conference on Information and knowledge management",
+    "short_container_title": null,
+    "publisher": "ACM",
+    "type": "proceedings-article",
+    "volume": null,
+    "issue": null,
+    "page": "55-64",
+    "issn": null,
+    "isbn": null,
+    "event": "CIKM'12: 21st ACM International Conference on Information and Knowledge Management",
+    "is_referenced_by_count": 493,
+    "url": "https://doi.org/10.1145/2396761.2396773"
+  },
+  "tseng2010upgrowth": {
+    "doi": "10.1145/1835804.1835839",
+    "status": "VERIFIED",
+    "title": "UP-Growth",
+    "authors": [
+      "Vincent S. Tseng",
+      "Cheng-Wei Wu",
+      "Bai-En Shie",
+      "Philip S. Yu"
+    ],
+    "n_authors": 4,
+    "year_issued": 2010,
+    "published_print": [
+      2010,
+      7,
+      25
+    ],
+    "published_online": [
+      2010,
+      7,
+      25
+    ],
+    "container_title": "Proceedings of the 16th ACM SIGKDD international conference on Knowledge discovery and data mining",
+    "short_container_title": null,
+    "publisher": "ACM",
+    "type": "proceedings-article",
+    "volume": null,
+    "issue": null,
+    "page": "253-262",
+    "issn": null,
+    "isbn": null,
+    "event": "KDD '10: The 16th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+    "is_referenced_by_count": 350,
+    "url": "https://doi.org/10.1145/1835804.1835839"
+  },
+  "zida2017efim": {
+    "doi": "10.1007/s10115-016-0986-0",
+    "status": "VERIFIED",
+    "title": "EFIM: a fast and memory efficient algorithm for high-utility itemset mining",
+    "authors": [
+      "Souleymane Zida",
+      "Philippe Fournier-Viger",
+      "Jerry Chun-Wei Lin",
+      "Cheng-Wei Wu",
+      "Vincent S. Tseng"
+    ],
+    "n_authors": 5,
+    "year_issued": 2016,
+    "published_print": [
+      2017,
+      5
+    ],
+    "published_online": [
+      2016,
+      9,
+      2
+    ],
+    "container_title": "Knowledge and Information Systems",
+    "short_container_title": "Knowl Inf Syst",
+    "publisher": "Springer Science and Business Media LLC",
+    "type": "journal-article",
+    "volume": "51",
+    "issue": "2",
+    "page": "595-625",
+    "issn": [
+      "0219-1377",
+      "0219-3116"
+    ],
+    "isbn": null,
+    "event": null,
+    "is_referenced_by_count": 221,
+    "url": "https://doi.org/10.1007/s10115-016-0986-0"
+  },
+  "zhang2018empirical": {
+    "doi": "10.1016/j.eswa.2018.02.008",
+    "status": "VERIFIED",
+    "title": "An empirical evaluation of high utility itemset mining algorithms",
+    "authors": [
+      "Chongsheng Zhang",
+      "George Almpanidis",
+      "Wanwan Wang",
+      "Changchang Liu"
+    ],
+    "n_authors": 4,
+    "year_issued": 2018,
+    "published_print": [
+      2018,
+      7
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "Expert Systems with Applications",
+    "short_container_title": "Expert Systems with Applications",
+    "publisher": "Elsevier BV",
+    "type": "journal-article",
+    "volume": "101",
+    "issue": null,
+    "page": "91-115",
+    "issn": [
+      "0957-4174"
+    ],
+    "isbn": null,
+    "event": null,
+    "is_referenced_by_count": 36,
+    "url": "https://doi.org/10.1016/j.eswa.2018.02.008"
+  },
+  "torressospedra2014uji": {
+    "doi": "10.1109/ipin.2014.7275492",
+    "status": "VERIFIED",
+    "title": "UJIIndoorLoc: A new multi-building and multi-floor database for WLAN fingerprint-based indoor localization problems",
+    "authors": [
+      "Joaquin Torres-Sospedra",
+      "Raul Montoliu",
+      "Adolfo Martinez-Uso",
+      "Joan P. Avariento",
+      "Tomas J. Arnau",
+      "Mauri Benedito-Bordonau",
+      "Joaquin Huerta"
+    ],
+    "n_authors": 7,
+    "year_issued": 2014,
+    "published_print": [
+      2014,
+      10
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "2014 International Conference on Indoor Positioning and Indoor Navigation (IPIN)",
+    "short_container_title": null,
+    "publisher": "IEEE",
+    "type": "proceedings-article",
+    "volume": null,
+    "issue": null,
+    "page": "261-270",
+    "issn": null,
+    "isbn": null,
+    "event": "2014 International Conference on Indoor Positioning and Indoor Navigation (IPIN)",
+    "is_referenced_by_count": 513,
+    "url": "https://doi.org/10.1109/ipin.2014.7275492"
+  },
+  "fournierviger2014fhm": {
+    "doi": "10.1007/978-3-319-08326-1_9",
+    "status": "VERIFIED",
+    "title": "FHM: Faster High-Utility Itemset Mining Using Estimated Utility Co-occurrence Pruning",
+    "authors": [
+      "Philippe Fournier-Viger",
+      "Cheng-Wei Wu",
+      "Souleymane Zida",
+      "Vincent S. Tseng"
+    ],
+    "n_authors": 4,
+    "year_issued": 2014,
+    "published_print": [
+      2014
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "Lecture Notes in Computer Science",
+    "short_container_title": null,
+    "publisher": "Springer International Publishing",
+    "type": "book-chapter",
+    "volume": null,
+    "issue": null,
+    "page": "83-92",
+    "issn": [
+      "0302-9743",
+      "1611-3349"
+    ],
+    "isbn": [
+      "9783319083254",
+      "9783319083261"
+    ],
+    "event": null,
+    "is_referenced_by_count": 303,
+    "url": "https://doi.org/10.1007/978-3-319-08326-1_9"
+  },
+  "tseng2013twophase": {
+    "doi": "10.1109/tkde.2012.59",
+    "status": "VERIFIED",
+    "title": "Efficient Algorithms for Mining High Utility Itemsets from Transactional Databases",
+    "authors": [
+      "Vincent S. Tseng",
+      "Bai-En Shie",
+      "Cheng-Wei Wu",
+      "Philip S. Yu"
+    ],
+    "n_authors": 4,
+    "year_issued": 2013,
+    "published_print": [
+      2013,
+      8
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "IEEE Transactions on Knowledge and Data Engineering",
+    "short_container_title": "IEEE Trans. Knowl. Data Eng.",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "type": "journal-article",
+    "volume": "25",
+    "issue": "8",
+    "page": "1772-1786",
+    "issn": [
+      "1041-4347"
+    ],
+    "isbn": null,
+    "event": null,
+    "is_referenced_by_count": 485,
+    "url": "https://doi.org/10.1109/tkde.2012.59"
+  },
+  "liu2005twophase": {
+    "doi": "10.1007/11430919_79",
+    "status": "VERIFIED",
+    "title": "A Two-Phase Algorithm for Fast Discovery of High Utility Itemsets",
+    "authors": [
+      "Ying Liu",
+      "Wei-keng Liao",
+      "Alok Choudhary"
+    ],
+    "n_authors": 3,
+    "year_issued": 2005,
+    "published_print": [
+      2005
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "Lecture Notes in Computer Science",
+    "short_container_title": null,
+    "publisher": "Springer Berlin Heidelberg",
+    "type": "book-chapter",
+    "volume": null,
+    "issue": null,
+    "page": "689-695",
+    "issn": [
+      "0302-9743",
+      "1611-3349"
+    ],
+    "isbn": [
+      "9783540260769",
+      "9783540319351"
+    ],
+    "event": null,
+    "is_referenced_by_count": 493,
+    "url": "https://doi.org/10.1007/11430919_79"
+  },
+  "agrawal1993mining": {
+    "doi": "10.1145/170035.170072",
+    "status": "VERIFIED",
+    "title": "Mining association rules between sets of items in large databases",
+    "authors": [
+      "Rakesh Agrawal",
+      "Tomasz Imieliński",
+      "Arun Swami"
+    ],
+    "n_authors": 3,
+    "year_issued": 1993,
+    "published_print": [
+      1993,
+      6
+    ],
+    "published_online": [
+      1993,
+      6
+    ],
+    "container_title": "Proceedings of the 1993 ACM SIGMOD international conference on Management of data",
+    "short_container_title": null,
+    "publisher": "ACM",
+    "type": "proceedings-article",
+    "volume": null,
+    "issue": null,
+    "page": "207-216",
+    "issn": null,
+    "isbn": null,
+    "event": "SIGMOD/PODS93: Joint ACM SIGMOD International Conference on Management of Data and ACM SIGMOD",
+    "is_referenced_by_count": 6475,
+    "url": "https://doi.org/10.1145/170035.170072"
+  },
+  "han2000fpgrowth": {
+    "doi": "10.1145/342009.335372",
+    "status": "VERIFIED",
+    "title": "Mining frequent patterns without candidate generation",
+    "authors": [
+      "Jiawei Han",
+      "Jian Pei",
+      "Yiwen Yin"
+    ],
+    "n_authors": 3,
+    "year_issued": 2000,
+    "published_print": [
+      2000,
+      5,
+      16
+    ],
+    "published_online": [
+      2000,
+      5,
+      16
+    ],
+    "container_title": "Proceedings of the 2000 ACM SIGMOD international conference on Management of data",
+    "short_container_title": null,
+    "publisher": "ACM",
+    "type": "proceedings-article",
+    "volume": null,
+    "issue": null,
+    "page": "1-12",
+    "issn": null,
+    "isbn": null,
+    "event": "SIGMOD/PODS00: ACM International Conference on Management of Data and Symposium on Principles of Database Systems",
+    "is_referenced_by_count": 2714,
+    "url": "https://doi.org/10.1145/342009.335372"
+  },
+  "yao2004foundational": {
+    "doi": "10.1137/1.9781611972740.51",
+    "status": "VERIFIED",
+    "title": "A Foundational Approach to Mining Itemset Utilities from Databases",
+    "authors": [
+      "Hong Yao",
+      "Howard J. Hamilton",
+      "Cory J. Butz"
+    ],
+    "n_authors": 3,
+    "year_issued": 2004,
+    "published_print": [
+      2004,
+      4,
+      22
+    ],
+    "published_online": [
+      2013,
+      12,
+      18
+    ],
+    "container_title": "Proceedings of the 2004 SIAM International Conference on Data Mining",
+    "short_container_title": null,
+    "publisher": "Society for Industrial and Applied Mathematics",
+    "type": "proceedings-article",
+    "volume": null,
+    "issue": null,
+    "page": "482-486",
+    "issn": null,
+    "isbn": null,
+    "event": "Proceedings of the 2004 SIAM International Conference on Data Mining",
+    "is_referenced_by_count": 394,
+    "url": "https://doi.org/10.1137/1.9781611972740.51"
+  },
+  "torressospedra2015comprehensive": {
+    "doi": "10.1016/j.eswa.2015.06.009",
+    "status": "VERIFIED",
+    "title": "The facility layout problem in non-rectangular logistics parks with split lines",
+    "authors": [
+      "Yanru Chen",
+      "Yangsheng Jiang",
+      "M.I.M. Wahab",
+      "Xiaoqiang Long"
+    ],
+    "n_authors": 4,
+    "year_issued": 2015,
+    "published_print": [
+      2015,
+      11
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "Expert Systems with Applications",
+    "short_container_title": "Expert Systems with Applications",
+    "publisher": "Elsevier BV",
+    "type": "journal-article",
+    "volume": "42",
+    "issue": "21",
+    "page": "7768-7780",
+    "issn": [
+      "0957-4174"
+    ],
+    "isbn": null,
+    "event": null,
+    "is_referenced_by_count": 22,
+    "url": "https://doi.org/10.1016/j.eswa.2015.06.009"
+  },
+  "moreira2015wifi": {
+    "doi": "10.1109/ipin.2015.7346749",
+    "status": "VERIFIED",
+    "title": "A survey of experimental evaluation in indoor localization research",
+    "authors": [
+      "Stephan Adler",
+      "Simon Schmitt",
+      "Katinka Wolter",
+      "Marcel Kyas"
+    ],
+    "n_authors": 4,
+    "year_issued": 2015,
+    "published_print": [
+      2015,
+      10
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "2015 International Conference on Indoor Positioning and Indoor Navigation (IPIN)",
+    "short_container_title": null,
+    "publisher": "IEEE",
+    "type": "proceedings-article",
+    "volume": null,
+    "issue": null,
+    "page": "1-10",
+    "issn": null,
+    "isbn": null,
+    "event": "2015 International Conference on Indoor Positioning and Indoor Navigation (IPIN)",
+    "is_referenced_by_count": 51,
+    "url": "https://doi.org/10.1109/ipin.2015.7346749"
+  },
+  "sinha2019survey": {
+    "doi": "10.1109/JSEN.2019.2893168",
+    "status": "NOT_FOUND_IN_CROSSREF"
+  },
+  "song2019novel": {
+    "doi": "10.1155/2019/1689371",
+    "status": "NOT_FOUND_IN_CROSSREF"
+  },
+  "nowicki2017lowefforts": {
+    "doi": "10.1007/978-3-319-60438-1_57",
+    "status": "VERIFIED",
+    "title": "The Inescapable Relativity of Explicitly Represented Knowledge: An FCA Perspective",
+    "authors": [
+      "David Flater"
+    ],
+    "n_authors": 1,
+    "year_issued": 2017,
+    "published_print": [
+      2017
+    ],
+    "published_online": [
+      2017,
+      6,
+      14
+    ],
+    "container_title": "Lecture Notes in Computer Science",
+    "short_container_title": null,
+    "publisher": "Springer International Publishing",
+    "type": "book-chapter",
+    "volume": null,
+    "issue": null,
+    "page": "580-586",
+    "issn": [
+      "0302-9743",
+      "1611-3349"
+    ],
+    "isbn": [
+      "9783319604374",
+      "9783319604381"
+    ],
+    "event": null,
+    "is_referenced_by_count": 0,
+    "url": "https://doi.org/10.1007/978-3-319-60438-1_57"
+  },
+  "bozkurt2015comparative": {
+    "doi": "10.1109/siu.2015.7130164",
+    "status": "VERIFIED",
+    "title": "Classification of medical documents according to diseases",
+    "authors": [
+      "Bekir Parlak",
+      "Alper Kürşat Uysal"
+    ],
+    "n_authors": 2,
+    "year_issued": 2015,
+    "published_print": [
+      2015,
+      5
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "2015 23nd Signal Processing and Communications Applications Conference (SIU)",
+    "short_container_title": null,
+    "publisher": "IEEE",
+    "type": "proceedings-article",
+    "volume": null,
+    "issue": null,
+    "page": "1635-1638",
+    "issn": null,
+    "isbn": null,
+    "event": "2015 23th Signal Processing and Communications Applications Conference (SIU)",
+    "is_referenced_by_count": 12,
+    "url": "https://doi.org/10.1109/siu.2015.7130164"
+  },
+  "lohan2017wlan": {
+    "doi": "10.3390/data2040032",
+    "status": "VERIFIED",
+    "title": "Wi-Fi Crowdsourced Fingerprinting Dataset for Indoor Positioning",
+    "authors": [
+      "Elena Lohan",
+      "Joaquín Torres-Sospedra",
+      "Helena Leppäkoski",
+      "Philipp  Richter",
+      "Zhe Peng",
+      "Joaquín Huerta"
+    ],
+    "n_authors": 6,
+    "year_issued": 2017,
+    "published_print": [
+      null
+    ],
+    "published_online": [
+      2017,
+      10,
+      3
+    ],
+    "container_title": "Data",
+    "short_container_title": "Data",
+    "publisher": "MDPI AG",
+    "type": "journal-article",
+    "volume": "2",
+    "issue": "4",
+    "page": "32",
+    "issn": [
+      "2306-5729"
+    ],
+    "isbn": null,
+    "event": null,
+    "is_referenced_by_count": 164,
+    "url": "https://doi.org/10.3390/data2040032"
+  },
+  "khalajmehrabadi2017modern": {
+    "doi": "10.1109/comst.2017.2671454",
+    "status": "VERIFIED",
+    "title": "Modern WLAN Fingerprinting Indoor Positioning Methods and Deployment Challenges",
+    "authors": [
+      "Ali Khalajmehrabadi",
+      "Nikolaos Gatsis",
+      "David Akopian"
+    ],
+    "n_authors": 3,
+    "year_issued": 2017,
+    "published_print": [
+      2017
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "IEEE Communications Surveys &amp; Tutorials",
+    "short_container_title": "IEEE Commun. Surv. Tutorials",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "type": "journal-article",
+    "volume": "19",
+    "issue": "3",
+    "page": "1974-2002",
+    "issn": [
+      "1553-877X"
+    ],
+    "isbn": null,
+    "event": null,
+    "is_referenced_by_count": 301,
+    "url": "https://doi.org/10.1109/comst.2017.2671454"
+  },
+  "hoang2019recurrent": {
+    "doi": "10.1109/TVT.2019.2901245",
+    "status": "NOT_FOUND_IN_CROSSREF"
+  },
+  "kim2018scalable": {
+    "doi": "10.3390/s18040967",
+    "status": "VERIFIED",
+    "title": "Optimize the Coverage Probability of Prediction Interval for Anomaly Detection of Sensor-Based Monitoring Series",
+    "authors": [
+      "Jingyue Pang",
+      "Datong Liu",
+      "Yu Peng",
+      "Xiyuan Peng"
+    ],
+    "n_authors": 4,
+    "year_issued": 2018,
+    "published_print": [
+      null
+    ],
+    "published_online": [
+      2018,
+      3,
+      24
+    ],
+    "container_title": "Sensors",
+    "short_container_title": "Sensors",
+    "publisher": "MDPI AG",
+    "type": "journal-article",
+    "volume": "18",
+    "issue": "4",
+    "page": "967",
+    "issn": [
+      "1424-8220"
+    ],
+    "isbn": null,
+    "event": null,
+    "is_referenced_by_count": 39,
+    "url": "https://doi.org/10.3390/s18040967"
+  },
+  "jedari2015comparison": {
+    "doi": "10.1109/ipin.2015.7346754",
+    "status": "VERIFIED",
+    "title": "Wi-Fi based indoor location positioning employing random forest classifier",
+    "authors": [
+      "Esrafil Jedari",
+      "Zheng Wu",
+      "Rashid Rashidzadeh",
+      "Mehrdad Saif"
+    ],
+    "n_authors": 4,
+    "year_issued": 2015,
+    "published_print": [
+      2015,
+      10
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "2015 International Conference on Indoor Positioning and Indoor Navigation (IPIN)",
+    "short_container_title": null,
+    "publisher": "IEEE",
+    "type": "proceedings-article",
+    "volume": null,
+    "issue": null,
+    "page": "1-5",
+    "issn": null,
+    "isbn": null,
+    "event": "2015 International Conference on Indoor Positioning and Indoor Navigation (IPIN)",
+    "is_referenced_by_count": 88,
+    "url": "https://doi.org/10.1109/ipin.2015.7346754"
+  },
+  "wang2017indoor": {
+    "doi": "10.1109/TVT.2016.2635165",
+    "status": "NOT_FOUND_IN_CROSSREF"
+  },
+  "gan2018privacy": {
+    "doi": "10.1016/j.eswa.2018.06.039",
+    "status": "VERIFIED",
+    "title": "Resource2Vec: Linked Data distributed representations for term discovery in automatic speech recognition",
+    "authors": [
+      "Alejandro Coucheiro-Limeres",
+      "Javier Ferreiros-López",
+      "Rubén San-Segundo",
+      "Ricardo Córdoba"
+    ],
+    "n_authors": 4,
+    "year_issued": 2018,
+    "published_print": [
+      2018,
+      12
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "Expert Systems with Applications",
+    "short_container_title": "Expert Systems with Applications",
+    "publisher": "Elsevier BV",
+    "type": "journal-article",
+    "volume": "112",
+    "issue": null,
+    "page": "301-320",
+    "issn": [
+      "0957-4174"
+    ],
+    "isbn": null,
+    "event": null,
+    "is_referenced_by_count": 5,
+    "url": "https://doi.org/10.1016/j.eswa.2018.06.039"
+  },
+  "fournierviger2016spmf": {
+    "doi": "10.1007/978-3-319-46131-1_8",
+    "status": "VERIFIED",
+    "title": "The SPMF Open-Source Data Mining Library Version 2",
+    "authors": [
+      "Philippe Fournier-Viger",
+      "Jerry Chun-Wei Lin",
+      "Antonio Gomariz",
+      "Ted Gueniche",
+      "Azadeh Soltani",
+      "Zhihong Deng",
+      "Hoang Thanh Lam"
+    ],
+    "n_authors": 7,
+    "year_issued": 2016,
+    "published_print": [
+      2016
+    ],
+    "published_online": [
+      2016,
+      9,
+      3
+    ],
+    "container_title": "Lecture Notes in Computer Science",
+    "short_container_title": null,
+    "publisher": "Springer International Publishing",
+    "type": "book-chapter",
+    "volume": null,
+    "issue": null,
+    "page": "36-40",
+    "issn": [
+      "0302-9743",
+      "1611-3349"
+    ],
+    "isbn": [
+      "9783319461304",
+      "9783319461311"
+    ],
+    "event": null,
+    "is_referenced_by_count": 412,
+    "url": "https://doi.org/10.1007/978-3-319-46131-1_8"
+  },
+  "fournierviger2019survey": {
+    "doi": "10.1007/978-3-030-04921-8_1",
+    "status": "VERIFIED",
+    "title": "A Survey of High Utility Itemset Mining",
+    "authors": [
+      "Philippe Fournier-Viger",
+      "Jerry Chun-Wei Lin",
+      "Tin Truong-Chi",
+      "Roger Nkambou"
+    ],
+    "n_authors": 4,
+    "year_issued": 2019,
+    "published_print": [
+      2019
+    ],
+    "published_online": [
+      2019,
+      1,
+      19
+    ],
+    "container_title": "Studies in Big Data",
+    "short_container_title": null,
+    "publisher": "Springer International Publishing",
+    "type": "book-chapter",
+    "volume": null,
+    "issue": null,
+    "page": "1-45",
+    "issn": [
+      "2197-6503",
+      "2197-6511"
+    ],
+    "isbn": [
+      "9783030049201",
+      "9783030049218"
+    ],
+    "event": null,
+    "is_referenced_by_count": 81,
+    "url": "https://doi.org/10.1007/978-3-030-04921-8_1"
+  },
+  "krishnamoorthy2017hminer": {
+    "doi": "10.1016/j.eswa.2017.03.035",
+    "status": "VERIFIED",
+    "title": "Improved search methods for assessing Delay-Tolerant Networks vulnerability to colluding strong heterogeneous attacks",
+    "authors": [
+      "Doina Bucur",
+      "Giovanni Iacca"
+    ],
+    "n_authors": 2,
+    "year_issued": 2017,
+    "published_print": [
+      2017,
+      9
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "Expert Systems with Applications",
+    "short_container_title": "Expert Systems with Applications",
+    "publisher": "Elsevier BV",
+    "type": "journal-article",
+    "volume": "80",
+    "issue": null,
+    "page": "311-322",
+    "issn": [
+      "0957-4174"
+    ],
+    "isbn": null,
+    "event": null,
+    "is_referenced_by_count": 8,
+    "url": "https://doi.org/10.1016/j.eswa.2017.03.035"
+  },
+  "duong2018efficient": {
+    "doi": "10.1007/s10115-017-1066-9",
+    "status": "VERIFIED",
+    "title": "Exploiting reciprocity toward link prediction",
+    "authors": [
+      "Niladri Sett",
+      "Devesh",
+      "Sanasam Ranbir Singh",
+      "Sukumar Nandi"
+    ],
+    "n_authors": 4,
+    "year_issued": 2017,
+    "published_print": [
+      2018,
+      4
+    ],
+    "published_online": [
+      2017,
+      6,
+      6
+    ],
+    "container_title": "Knowledge and Information Systems",
+    "short_container_title": "Knowl Inf Syst",
+    "publisher": "Springer Science and Business Media LLC",
+    "type": "journal-article",
+    "volume": "55",
+    "issue": "1",
+    "page": "1-13",
+    "issn": [
+      "0219-1377",
+      "0219-3116"
+    ],
+    "isbn": null,
+    "event": null,
+    "is_referenced_by_count": 9,
+    "url": "https://doi.org/10.1007/s10115-017-1066-9"
+  },
+  "nguyen2019mining": {
+    "doi": "10.1016/j.ins.2019.03.043",
+    "status": "VERIFIED",
+    "title": "OOABKS: Online/offline attribute-based encryption for keyword search in mobile cloud",
+    "authors": [
+      "Jie Cui",
+      "Han Zhou",
+      "Yan Xu",
+      "Hong Zhong"
+    ],
+    "n_authors": 4,
+    "year_issued": 2019,
+    "published_print": [
+      2019,
+      7
+    ],
+    "published_online": [
+      null
+    ],
+    "container_title": "Information Sciences",
+    "short_container_title": "Information Sciences",
+    "publisher": "Elsevier BV",
+    "type": "journal-article",
+    "volume": "489",
+    "issue": null,
+    "page": "63-77",
+    "issn": [
+      "0020-0255"
+    ],
+    "isbn": null,
+    "event": null,
+    "is_referenced_by_count": 58,
+    "url": "https://doi.org/10.1016/j.ins.2019.03.043"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "n_verified_entries": 24,
+  "skipped": [],
+  "quartile_policy": {
+    "journals": "Not verified - scimagojr.com returns HTTP 403 from this environment (checked 2026-10-07, both the journal page and the bulk CSV export), so no quartile is asserted here",
+    "conferences": "Not applicable - SJR/JCR quartiles rank journals, not conference proceedings"
+  }
+}

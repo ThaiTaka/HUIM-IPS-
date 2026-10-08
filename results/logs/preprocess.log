@@ -1,0 +1,102 @@
+2026-10-07 20:51:17,667 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 20:51:17,669 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 20:51:17,671 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 20:51:17,673 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 20:51:17,832 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 20:51:17,834 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 20:51:17,838 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 20:51:17,840 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 20:51:17,841 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 20:51:17,844 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 20:51:17,846 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 20:51:17,852 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 20:54:11,796 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-07 20:54:11,832 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 20:58:31,869 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-07 20:58:31,916 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 21:22:56,062 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-07 21:22:56,100 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 21:53:56,194 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-07 21:53:56,231 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 21:57:37,085 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-07 21:57:37,123 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:01:42,566 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-07 22:01:42,605 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:02:08,361 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-07 22:02:08,399 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:02:29,084 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-07 22:02:29,121 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:12:46,124 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:12:46,127 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:12:46,128 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:12:46,130 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:12:46,289 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:12:46,291 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:12:46,294 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:12:46,296 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:12:46,298 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:12:46,301 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:12:46,303 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:12:46,305 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:14:54,508 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-07 22:14:54,571 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:19:45,700 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-07 22:19:45,755 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:20:42,209 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-07 22:20:42,264 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:21:26,354 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:21:26,357 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:21:26,358 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:21:26,360 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:21:26,526 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:21:26,528 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:21:26,531 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:21:26,533 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:21:26,534 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:21:26,537 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:21:26,539 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-07 22:21:26,541 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 06:52:44,030 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-08 06:52:44,105 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 06:56:10,849 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-08 06:56:10,891 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 06:57:32,195 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-08 06:57:32,237 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:00:40,345 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-08 07:00:40,392 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:02:54,989 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-08 07:02:55,028 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:05:46,301 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-08 07:05:46,339 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:06:18,674 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-08 07:06:18,711 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:12:13,514 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-08 07:12:13,582 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:15:09,733 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:15:09,735 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:15:09,737 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:15:09,738 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:15:09,899 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:15:09,901 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:15:09,903 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:15:09,906 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:15:09,907 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:15:09,910 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:15:09,912 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:15:09,914 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:22:07,259 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-08 07:22:07,294 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:22:37,342 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-08 07:22:37,378 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:22:56,429 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:22:56,432 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:22:56,433 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:22:56,435 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:22:56,592 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:22:56,594 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:22:56,597 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:22:56,600 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:22:56,601 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:22:56,605 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:22:56,607 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-08 07:22:56,609 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]

@@ -1,0 +1,80 @@
+{
+  "n_waps_in_huis": 6,
+  "n_total_wap_columns": 520,
+  "feature_reduction_pct": 98.8462,
+  "rank_agreement_spearman_vs_utility_contribution": {
+    "n_huis": NaN,
+    "max_hui_utility": 1.0,
+    "mean_hui_utility": 1.0,
+    "support_weighted_contribution": 1.0,
+    "n_top_huis": NaN
+  },
+  "per_wap": {
+    "WAP516": {
+      "n_huis": 1,
+      "utility_contribution": 78754.33333333333,
+      "max_hui_utility": 236263.0,
+      "sum_hui_utility": 236263.0,
+      "support_weighted_contribution": 183418842.3333333,
+      "n_top_huis": 1,
+      "min_hui_len": 3,
+      "max_hui_len": 3,
+      "mean_hui_utility": 236263.0
+    },
+    "WAP495": {
+      "n_huis": 1,
+      "utility_contribution": 78754.33333333333,
+      "max_hui_utility": 236263.0,
+      "sum_hui_utility": 236263.0,
+      "support_weighted_contribution": 183418842.3333333,
+      "n_top_huis": 1,
+      "min_hui_len": 3,
+      "max_hui_len": 3,
+      "mean_hui_utility": 236263.0
+    },
+    "WAP501": {
+      "n_huis": 1,
+      "utility_contribution": 78754.33333333333,
+      "max_hui_utility": 236263.0,
+      "sum_hui_utility": 236263.0,
+      "support_weighted_contribution": 183418842.3333333,
+      "n_top_huis": 1,
+      "min_hui_len": 3,
+      "max_hui_len": 3,
+      "mean_hui_utility": 236263.0
+    },
+    "WAP517": {
+      "n_huis": 1,
+      "utility_contribution": 88454.33333333333,
+      "max_hui_utility": 265363.0,
+      "sum_hui_utility": 265363.0,
+      "support_weighted_contribution": 254925388.66666666,
+      "n_top_huis": 1,
+      "min_hui_len": 3,
+      "max_hui_len": 3,
+      "mean_hui_utility": 265363.0
+    },
+    "WAP502": {
+      "n_huis": 1,
+      "utility_contribution": 88454.33333333333,
+      "max_hui_utility": 265363.0,
+      "sum_hui_utility": 265363.0,
+      "support_weighted_contribution": 254925388.66666666,
+      "n_top_huis": 1,
+      "min_hui_len": 3,
+      "max_hui_len": 3,
+      "mean_hui_utility": 265363.0
+    },
+    "WAP496": {
+      "n_huis": 1,
+      "utility_contribution": 88454.33333333333,
+      "max_hui_utility": 265363.0,
+      "sum_hui_utility": 265363.0,
+      "support_weighted_contribution": 254925388.66666666,
+      "n_top_huis": 1,
+      "min_hui_len": 3,
+      "max_hui_len": 3,
+      "mean_hui_utility": 265363.0
+    }
+  }
+}

@@ -1,0 +1,15 @@
+# Pinned to the versions the reported results were produced with.
+# Python 3.12.10 on Windows 11 (see results/data_summary.json -> environment).
+#
+# install:  python -m pip install -r requirements.txt
+numpy==2.5.1
+pandas==3.0.6
+scikit-learn==1.9.1
+scipy==1.18.1
+matplotlib==3.11.2
+python-docx==1.2.0
+python-pptx==1.0.2
+psutil==7.2.2
+PyYAML==6.0.3
+requests==2.34.2
+pytest==9.1.1
