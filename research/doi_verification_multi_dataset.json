@@ -1,0 +1,21 @@
+{
+  "what": "Crossref check of the dataset paper cited for UJI_LIB_DB_Floor_3 in the multi-dataset report and deck (src/make_multi_dataset_report_docx.py, src/make_multi_dataset_deck.py). The DOI was resolved at api.crossref.org; title, authors and year match the work intended. DLULIB, HCXY and HUS ship without documentation in the dataset folder, so no source is cited for them.",
+  "checked_utc": "2026-10-13T03:00:00+00:00",
+  "method": "GET https://api.crossref.org/works/<doi>",
+  "n_checked": 1,
+  "n_matching": 1,
+  "sources": {
+    "MendozaSilva2018": {
+      "doi": "10.3390/data3010003",
+      "title": "Long-Term WiFi Fingerprinting Dataset for Research on Robust Indoor Positioning",
+      "authors": "Germán Mendoza-Silva; Philipp Richter; Joaquín Torres-Sospedra; Elena Lohan; Joaquín Huerta",
+      "year": 2018,
+      "container": "Data",
+      "volume": "3",
+      "issue": "1",
+      "page": "3",
+      "publisher": "MDPI AG",
+      "used_for": "Nguồn của bộ dữ liệu UJI_LIB_DB_Floor_3 (thư viện UJI, dữ liệu dài hạn 25 tháng)"
+    }
+  }
+}

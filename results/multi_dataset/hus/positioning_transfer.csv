@@ -1,0 +1,3 @@
+test_set,config,source,n_test,building_accuracy,floor_accuracy,joint_accuracy,mean_err_m,median_err_m,p75_err_m,p90_err_m,p95_err_m,max_err_m,mean_err_coord,share_within_2m,share_within_5m
+testcase1,"exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive",results/positioning_optimisation.json (selected on UJIIndoorLoc),205,1.0,1.0,1.0,0.0474,0.0,0.0,0.0,0.0,5.3437,0.0474,0.9951,0.9951
+testcase2,"exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive",results/positioning_optimisation.json (selected on UJIIndoorLoc),205,1.0,1.0,1.0,0.0293,0.0,0.0,0.0,0.0,4.0078,0.0293,0.9951,1.0

@@ -1,0 +1,1227 @@
+[
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 841811.0,
+    "support": 3799
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 810074.0,
+    "support": 3147
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 802151.0,
+    "support": 3151
+  },
+  {
+    "itemset": [
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 796725.0,
+    "support": 5454
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 791439.0,
+    "support": 4268
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 772511.0,
+    "support": 4150
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 761430.0,
+    "support": 3424
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP12"
+    ],
+    "utility": 759751.0,
+    "support": 4110
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 759364.0,
+    "support": 3481
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 754146.0,
+    "support": 2579
+  },
+  {
+    "itemset": [
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 753751.0,
+    "support": 6869
+  },
+  {
+    "itemset": [
+      "WAP_AP22",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 749482.0,
+    "support": 6701
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP12"
+    ],
+    "utility": 748328.0,
+    "support": 3386
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP9",
+      "WAP_AP12"
+    ],
+    "utility": 747476.0,
+    "support": 3424
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 732941.0,
+    "support": 3947
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP7"
+    ],
+    "utility": 728069.0,
+    "support": 3966
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 724257.0,
+    "support": 3260
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 720223.0,
+    "support": 3925
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 719666.0,
+    "support": 3261
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 719052.0,
+    "support": 3280
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 718788.0,
+    "support": 3254
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP7"
+    ],
+    "utility": 717991.0,
+    "support": 3280
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP12"
+    ],
+    "utility": 714555.0,
+    "support": 2787
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP12"
+    ],
+    "utility": 712565.0,
+    "support": 4428
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP22",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 710903.0,
+    "support": 3248
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP9",
+      "WAP_AP12"
+    ],
+    "utility": 709627.0,
+    "support": 3818
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP12"
+    ],
+    "utility": 707148.0,
+    "support": 3717
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP9",
+      "WAP_AP7"
+    ],
+    "utility": 706655.0,
+    "support": 3276
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP12"
+    ],
+    "utility": 701757.0,
+    "support": 3736
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 700106.0,
+    "support": 3245
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP12"
+    ],
+    "utility": 697981.0,
+    "support": 4570
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP12"
+    ],
+    "utility": 692527.0,
+    "support": 3072
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 690181.0,
+    "support": 2678
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP12"
+    ],
+    "utility": 689959.0,
+    "support": 4561
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 688237.0,
+    "support": 2664
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP11",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 683591.0,
+    "support": 4631
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP7"
+    ],
+    "utility": 682339.0,
+    "support": 4545
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP9",
+      "WAP_AP12"
+    ],
+    "utility": 679254.0,
+    "support": 3775
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP12"
+    ],
+    "utility": 679198.0,
+    "support": 5526
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 678621.0,
+    "support": 3593
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP7"
+    ],
+    "utility": 678154.0,
+    "support": 2680
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 676022.0,
+    "support": 2654
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP12"
+    ],
+    "utility": 674872.0,
+    "support": 4602
+  },
+  {
+    "itemset": [
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP12"
+    ],
+    "utility": 672440.0,
+    "support": 6082
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 671503.0,
+    "support": 2653
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP2",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 670422.0,
+    "support": 4474
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP9",
+      "WAP_AP7"
+    ],
+    "utility": 669591.0,
+    "support": 3679
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 666061.0,
+    "support": 4381
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP2",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 660525.0,
+    "support": 3633
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP9",
+      "WAP_AP12"
+    ],
+    "utility": 658829.0,
+    "support": 3556
+  },
+  {
+    "itemset": [
+      "WAP_AP42",
+      "WAP_AP34",
+      "WAP_AP19",
+      "WAP_AP41",
+      "WAP_AP11",
+      "WAP_AP33",
+      "WAP_AP12"
+    ],
+    "utility": 658824.0,
+    "support": 2483
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP11",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 656005.0,
+    "support": 3595
+  },
+  {
+    "itemset": [
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 653778.0,
+    "support": 3613
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 653448.0,
+    "support": 3538
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP7"
+    ],
+    "utility": 652540.0,
+    "support": 3569
+  },
+  {
+    "itemset": [
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 652473.0,
+    "support": 4422
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP22",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 644597.0,
+    "support": 3527
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP12"
+    ],
+    "utility": 644380.0,
+    "support": 2888
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP12"
+    ],
+    "utility": 642188.0,
+    "support": 3499
+  },
+  {
+    "itemset": [
+      "WAP_AP22",
+      "WAP_AP12"
+    ],
+    "utility": 640909.0,
+    "support": 8094
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22"
+    ],
+    "utility": 640395.0,
+    "support": 3527
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP7"
+    ],
+    "utility": 637259.0,
+    "support": 4332
+  },
+  {
+    "itemset": [
+      "WAP_AP34",
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP33",
+      "WAP_AP12"
+    ],
+    "utility": 635979.0,
+    "support": 3122
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP9"
+    ],
+    "utility": 635435.0,
+    "support": 3559
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP2",
+      "WAP_AP9",
+      "WAP_AP7"
+    ],
+    "utility": 634796.0,
+    "support": 4207
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP22",
+      "WAP_AP7"
+    ],
+    "utility": 634536.0,
+    "support": 3494
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP22",
+      "WAP_AP12"
+    ],
+    "utility": 633979.0,
+    "support": 3495
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 633111.0,
+    "support": 3401
+  },
+  {
+    "itemset": [
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP7"
+    ],
+    "utility": 630773.0,
+    "support": 5854
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP9",
+      "WAP_AP12"
+    ],
+    "utility": 629436.0,
+    "support": 3528
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 629104.0,
+    "support": 4280
+  },
+  {
+    "itemset": [
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 627200.0,
+    "support": 8439
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP9",
+      "WAP_AP7"
+    ],
+    "utility": 626494.0,
+    "support": 3500
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP9"
+    ],
+    "utility": 625843.0,
+    "support": 2895
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP7"
+    ],
+    "utility": 625547.0,
+    "support": 4249
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11"
+    ],
+    "utility": 625355.0,
+    "support": 4288
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP12"
+    ],
+    "utility": 624944.0,
+    "support": 3218
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP12"
+    ],
+    "utility": 624593.0,
+    "support": 2868
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP7"
+    ],
+    "utility": 623219.0,
+    "support": 3398
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP2",
+      "WAP_AP7"
+    ],
+    "utility": 622578.0,
+    "support": 5240
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 621920.0,
+    "support": 2771
+  },
+  {
+    "itemset": [
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 621751.0,
+    "support": 3368
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP9",
+      "WAP_AP12"
+    ],
+    "utility": 621081.0,
+    "support": 4013
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP7"
+    ],
+    "utility": 620863.0,
+    "support": 3397
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP12"
+    ],
+    "utility": 619734.0,
+    "support": 2868
+  },
+  {
+    "itemset": [
+      "WAP_AP42",
+      "WAP_AP34",
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP33",
+      "WAP_AP12"
+    ],
+    "utility": 618886.0,
+    "support": 2605
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP12"
+    ],
+    "utility": 618552.0,
+    "support": 4247
+  },
+  {
+    "itemset": [
+      "WAP_AP34",
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP33",
+      "WAP_AP22",
+      "WAP_AP12"
+    ],
+    "utility": 617140.0,
+    "support": 2454
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP2",
+      "WAP_AP22",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 615985.0,
+    "support": 3361
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP9",
+      "WAP_AP7"
+    ],
+    "utility": 614552.0,
+    "support": 3390
+  },
+  {
+    "itemset": [
+      "WAP_AP34",
+      "WAP_AP19",
+      "WAP_AP41",
+      "WAP_AP11",
+      "WAP_AP33",
+      "WAP_AP12"
+    ],
+    "utility": 614546.0,
+    "support": 2587
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP22",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 613802.0,
+    "support": 3362
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP7"
+    ],
+    "utility": 612563.0,
+    "support": 2845
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP9",
+      "WAP_AP7"
+    ],
+    "utility": 611760.0,
+    "support": 3408
+  },
+  {
+    "itemset": [
+      "WAP_AP42",
+      "WAP_AP34",
+      "WAP_AP19",
+      "WAP_AP41",
+      "WAP_AP11",
+      "WAP_AP33",
+      "WAP_AP22",
+      "WAP_AP12"
+    ],
+    "utility": 611146.0,
+    "support": 1937
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 608483.0,
+    "support": 3357
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 605748.0,
+    "support": 3377
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP7"
+    ],
+    "utility": 604971.0,
+    "support": 2781
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP7"
+    ],
+    "utility": 604501.0,
+    "support": 2767
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP7"
+    ],
+    "utility": 604409.0,
+    "support": 4119
+  },
+  {
+    "itemset": [
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 603067.0,
+    "support": 2754
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 603036.0,
+    "support": 2741
+  },
+  {
+    "itemset": [
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP9",
+      "WAP_AP12"
+    ],
+    "utility": 602432.0,
+    "support": 4174
+  },
+  {
+    "itemset": [
+      "WAP_AP42",
+      "WAP_AP34",
+      "WAP_AP19",
+      "WAP_AP41",
+      "WAP_AP11",
+      "WAP_AP12"
+    ],
+    "utility": 599029.0,
+    "support": 2571
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 598526.0,
+    "support": 2753
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP19",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 598401.0,
+    "support": 2740
+  },
+  {
+    "itemset": [
+      "WAP_AP42",
+      "WAP_AP19",
+      "WAP_AP41",
+      "WAP_AP11",
+      "WAP_AP33",
+      "WAP_AP12"
+    ],
+    "utility": 598301.0,
+    "support": 2563
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP2",
+      "WAP_AP11",
+      "WAP_AP22",
+      "WAP_AP9",
+      "WAP_AP7"
+    ],
+    "utility": 598228.0,
+    "support": 2764
+  },
+  {
+    "itemset": [
+      "WAP_AP19",
+      "WAP_AP2",
+      "WAP_AP7",
+      "WAP_AP12"
+    ],
+    "utility": 597314.0,
+    "support": 4076
+  },
+  {
+    "itemset": [
+      "WAP_AP9",
+      "WAP_AP7"
+    ],
+    "utility": 595044.0,
+    "support": 7862
+  }
+]

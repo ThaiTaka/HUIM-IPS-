@@ -1,0 +1,8 @@
+{
+  "command": "python -m pytest tests -q",
+  "summary_line": "130 passed, 1 skipped in 9.86s",
+  "returncode": 0,
+  "passed": 130,
+  "skipped": 1,
+  "timestamp_utc": "2026-10-13T04:35:27.552538+00:00"
+}

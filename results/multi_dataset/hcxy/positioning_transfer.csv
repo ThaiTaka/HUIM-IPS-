@@ -1,0 +1,2 @@
+test_set,config,source,n_test,building_accuracy,floor_accuracy,joint_accuracy,mean_err_m,median_err_m,p75_err_m,p90_err_m,p95_err_m,max_err_m,mean_err_coord,share_within_2m,share_within_5m
+test_HCXY,"exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive",results/positioning_optimisation.json (selected on UJIIndoorLoc),860,1.0,1.0,1.0,1.6159,1.2006,2.0992,3.3748,4.4304,7.9025,1.6159,0.7395,0.9581

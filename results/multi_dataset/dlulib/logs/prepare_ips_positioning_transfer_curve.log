@@ -1,0 +1,92 @@
+2026-10-13 11:08:54,347 | INFO    | multi | loaded dlulib in 0.3s
+2026-10-13 11:08:54,348 | INFO    | multi | ==== dlulib / prepare ====
+2026-10-13 11:08:54,413 | INFO    | multi | ==== dlulib / prepare done in 0.1s ====
+2026-10-13 11:08:54,413 | INFO    | multi | ==== dlulib / ips ====
+2026-10-13 11:08:54,418 | INFO    | prep | fit on 13000 training rows: 17 WAP columns, detected RSSI in [-99, -27]
+2026-10-13 11:08:54,710 | INFO    | ips | dev k=1 metric=euclidean weights=uniform -> joint acc 0.9812
+2026-10-13 11:08:54,800 | INFO    | ips | dev k=3 metric=euclidean weights=uniform -> joint acc 0.9818
+2026-10-13 11:08:54,902 | INFO    | ips | dev k=5 metric=euclidean weights=uniform -> joint acc 0.9837
+2026-10-13 11:08:55,163 | INFO    | ips | dev k=7 metric=euclidean weights=uniform -> joint acc 0.9828
+2026-10-13 11:08:55,293 | INFO    | ips | dev k=9 metric=euclidean weights=uniform -> joint acc 0.9806
+2026-10-13 11:08:55,405 | INFO    | ips | dev k=11 metric=euclidean weights=uniform -> joint acc 0.9797
+2026-10-13 11:08:55,503 | INFO    | ips | dev k=1 metric=euclidean weights=distance -> joint acc 0.9812
+2026-10-13 11:08:55,591 | INFO    | ips | dev k=3 metric=euclidean weights=distance -> joint acc 0.9822
+2026-10-13 11:08:55,685 | INFO    | ips | dev k=5 metric=euclidean weights=distance -> joint acc 0.9843
+2026-10-13 11:08:55,774 | INFO    | ips | dev k=7 metric=euclidean weights=distance -> joint acc 0.9840
+2026-10-13 11:08:55,864 | INFO    | ips | dev k=9 metric=euclidean weights=distance -> joint acc 0.9822
+2026-10-13 11:08:55,960 | INFO    | ips | dev k=11 metric=euclidean weights=distance -> joint acc 0.9812
+2026-10-13 11:08:56,189 | INFO    | ips | dev k=1 metric=manhattan weights=uniform -> joint acc 0.9858
+2026-10-13 11:08:56,443 | INFO    | ips | dev k=3 metric=manhattan weights=uniform -> joint acc 0.9843
+2026-10-13 11:08:56,701 | INFO    | ips | dev k=5 metric=manhattan weights=uniform -> joint acc 0.9865
+2026-10-13 11:08:56,968 | INFO    | ips | dev k=7 metric=manhattan weights=uniform -> joint acc 0.9868
+2026-10-13 11:08:57,219 | INFO    | ips | dev k=9 metric=manhattan weights=uniform -> joint acc 0.9865
+2026-10-13 11:08:57,448 | INFO    | ips | dev k=11 metric=manhattan weights=uniform -> joint acc 0.9852
+2026-10-13 11:08:57,649 | INFO    | ips | dev k=1 metric=manhattan weights=distance -> joint acc 0.9858
+2026-10-13 11:08:57,844 | INFO    | ips | dev k=3 metric=manhattan weights=distance -> joint acc 0.9849
+2026-10-13 11:08:58,042 | INFO    | ips | dev k=5 metric=manhattan weights=distance -> joint acc 0.9874
+2026-10-13 11:08:58,254 | INFO    | ips | dev k=7 metric=manhattan weights=distance -> joint acc 0.9880
+2026-10-13 11:08:58,476 | INFO    | ips | dev k=9 metric=manhattan weights=distance -> joint acc 0.9877
+2026-10-13 11:08:58,688 | INFO    | ips | dev k=11 metric=manhattan weights=distance -> joint acc 0.9868
+2026-10-13 11:08:58,688 | INFO    | multi | dlulib: frozen k-NN {'n_neighbors': 7, 'metric': 'manhattan', 'weights': 'distance', 'selected_on': 'dev_sub of trainingData, ALL-WAP features', 'dev_joint_accuracy': 0.988}
+2026-10-13 11:08:58,760 | INFO    | multi | dlulib: 174 conditions x 1 test sets
+2026-10-13 11:09:37,387 | INFO    | multi |   25/174 conditions
+2026-10-13 11:10:01,808 | INFO    | multi |   50/174 conditions
+2026-10-13 11:10:22,205 | INFO    | multi |   75/174 conditions
+2026-10-13 11:10:42,160 | INFO    | multi |   100/174 conditions
+2026-10-13 11:10:48,929 | INFO    | multi |   125/174 conditions
+2026-10-13 11:11:11,971 | INFO    | multi |   150/174 conditions
+2026-10-13 11:11:39,497 | INFO    | multi |   174/174 conditions
+2026-10-13 11:11:41,506 | INFO    | multi | ==== dlulib / ips done in 167.1s ====
+2026-10-13 11:11:41,506 | INFO    | multi | ==== dlulib / positioning ====
+2026-10-13 11:11:41,550 | INFO    | multi | dlulib: 6 dev folds grouped by GROUP
+2026-10-13 11:11:41,967 | INFO    | optpos | dev lists positive    euclidean    0.4s
+2026-10-13 11:11:44,122 | INFO    | optpos | dev lists positive    manhattan    0.9s
+2026-10-13 11:11:46,598 | INFO    | optpos | dev lists positive    braycurtis   1.3s
+2026-10-13 11:11:50,421 | INFO    | optpos | dev lists positive    cosine       2.6s
+2026-10-13 11:11:52,049 | INFO    | optpos | dev lists powed       euclidean    0.4s
+2026-10-13 11:11:54,159 | INFO    | optpos | dev lists powed       manhattan    0.9s
+2026-10-13 11:11:56,594 | INFO    | optpos | dev lists powed       braycurtis   1.2s
+2026-10-13 11:12:00,404 | INFO    | optpos | dev lists powed       cosine       2.6s
+2026-10-13 11:12:01,990 | INFO    | optpos | dev lists exponential euclidean    0.4s
+2026-10-13 11:12:04,063 | INFO    | optpos | dev lists exponential manhattan    0.9s
+2026-10-13 11:12:06,490 | INFO    | optpos | dev lists exponential braycurtis   1.2s
+2026-10-13 11:12:10,265 | INFO    | optpos | dev lists exponential cosine       2.6s
+2026-10-13 11:12:11,525 | INFO    | optpos | S0 positive+manhattan, k=1, w=1/d^0 -> dev mean 3.458 m
+2026-10-13 11:12:11,525 | INFO    | optpos | S1 powed+braycurtis, k=1, w=1/d^0 -> dev mean 2.858 m
+2026-10-13 11:12:11,525 | INFO    | optpos | S2 powed+braycurtis, k=7, w=1/d^4 -> dev mean 2.540 m
+2026-10-13 11:12:12,789 | INFO    | optpos | dev offset lists powed       delta  -9.0 dB   1.3s
+2026-10-13 11:12:14,067 | INFO    | optpos | dev offset lists powed       delta  -6.0 dB   1.3s
+2026-10-13 11:12:15,326 | INFO    | optpos | dev offset lists powed       delta  -3.0 dB   1.3s
+2026-10-13 11:12:16,575 | INFO    | optpos | dev offset lists powed       delta  +3.0 dB   1.2s
+2026-10-13 11:12:17,840 | INFO    | optpos | dev offset lists powed       delta  +6.0 dB   1.3s
+2026-10-13 11:12:19,119 | INFO    | optpos | dev offset lists powed       delta  +9.0 dB   1.3s
+2026-10-13 11:12:19,299 | INFO    | optpos | S3 powed+braycurtis, k=10, w=1/d^4, offset +-3 dB -> dev mean 2.631 m
+2026-10-13 11:12:19,315 | INFO    | optpos | S4 powed+braycurtis, k=7, w=1/d^4, ensemble with exponential -> dev mean 2.531 m
+2026-10-13 11:12:19,348 | INFO    | multi | dlulib: SELECTED on dev powed+braycurtis, k=7, w=1/d^4
+2026-10-13 11:12:19,350 | INFO    | prep | fit on 13000 training rows: 17 WAP columns, detected RSSI in [-99, -27]
+2026-10-13 11:12:20,248 | INFO    | multi | dlulib Testing    S0 study k-NN as regressor              mean 4.179 m  median 3.236 m  joint 0.9922
+2026-10-13 11:12:21,231 | INFO    | multi | dlulib Testing    S1 best representation x distance (k=1) mean 4.006 m  median 2.683 m  joint 0.9938
+2026-10-13 11:12:21,990 | INFO    | multi | dlulib Testing    S2 + k and 1/d^p weighting              mean 3.433 m  median 2.522 m  joint 0.9948
+2026-10-13 11:12:23,085 | INFO    | multi | dlulib Testing    baseline_all                                  17 WAP  study 4.18 m -> opt 3.43 m
+2026-10-13 11:12:23,837 | INFO    | multi | dlulib Testing    baseline_detected                             17 WAP  study 4.18 m -> opt 3.43 m
+2026-10-13 11:12:24,593 | INFO    | multi | dlulib Testing    huim_union__A_signal__1pct                    17 WAP  study 4.18 m -> opt 3.43 m
+2026-10-13 11:12:25,341 | INFO    | multi | dlulib Testing    huim_union__B_discriminative__1pct            17 WAP  study 4.18 m -> opt 3.43 m
+2026-10-13 11:12:26,202 | INFO    | multi | dlulib Testing    huim_union__C_rare_discriminative__1pct       17 WAP  study 4.18 m -> opt 3.43 m
+2026-10-13 11:12:26,936 | INFO    | multi | dlulib Testing    huim_topn__A_signal__1pct__n17                17 WAP  study 4.18 m -> opt 3.43 m
+2026-10-13 11:12:27,690 | INFO    | multi | dlulib Testing    huim_topn__B_discriminative__1pct__n17        17 WAP  study 4.18 m -> opt 3.43 m
+2026-10-13 11:12:28,436 | INFO    | multi | dlulib Testing    huim_topn__C_rare_discriminative__1pct__n17   17 WAP  study 4.18 m -> opt 3.43 m
+2026-10-13 11:12:29,203 | INFO    | multi | dlulib Testing    control_top_mi__n17                           17 WAP  study 4.18 m -> opt 3.43 m
+2026-10-13 11:12:29,938 | INFO    | multi | dlulib Testing    control_top_support__n17                      17 WAP  study 4.18 m -> opt 3.43 m
+2026-10-13 11:12:31,519 | INFO    | multi | ==== dlulib / positioning done in 50.0s ====
+2026-10-13 11:12:31,519 | INFO    | multi | ==== dlulib / transfer ====
+2026-10-13 11:12:38,744 | INFO    | multi | dlulib Testing    UJI config as-is: mean 3.951 m, joint 0.9942
+2026-10-13 11:12:38,747 | INFO    | multi | ==== dlulib / transfer done in 7.2s ====
+2026-10-13 11:12:38,748 | INFO    | multi | ==== dlulib / curve ====
+2026-10-13 11:12:49,675 | INFO    | multi |   curve 20/138
+2026-10-13 11:12:59,990 | INFO    | multi |   curve 40/138
+2026-10-13 11:13:09,888 | INFO    | multi |   curve 60/138
+2026-10-13 11:13:17,890 | INFO    | multi |   curve 80/138
+2026-10-13 11:13:28,178 | INFO    | multi |   curve 100/138
+2026-10-13 11:13:40,462 | INFO    | multi |   curve 120/138
+2026-10-13 11:13:53,257 | INFO    | multi | dlulib: curve over 138 WAP sets
+2026-10-13 11:13:53,259 | INFO    | multi | ==== dlulib / curve done in 74.5s ====

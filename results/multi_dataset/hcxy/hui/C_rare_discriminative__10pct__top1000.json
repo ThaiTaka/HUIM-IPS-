@@ -1,0 +1,115 @@
+[
+  {
+    "itemset": [
+      "WAP_MAC191",
+      "WAP_MAC333",
+      "WAP_MAC228",
+      "WAP_MAC230",
+      "WAP_MAC314",
+      "WAP_MAC173",
+      "WAP_MAC324",
+      "WAP_MAC327",
+      "WAP_MAC292",
+      "WAP_MAC297",
+      "WAP_MAC293",
+      "WAP_MAC308",
+      "WAP_MAC318",
+      "WAP_MAC319",
+      "WAP_MAC232",
+      "WAP_MAC246",
+      "WAP_MAC302"
+    ],
+    "utility": 1130848.8966425841,
+    "support": 1753
+  },
+  {
+    "itemset": [
+      "WAP_MAC191",
+      "WAP_MAC333",
+      "WAP_MAC174",
+      "WAP_MAC228",
+      "WAP_MAC230",
+      "WAP_MAC314",
+      "WAP_MAC173",
+      "WAP_MAC324",
+      "WAP_MAC327",
+      "WAP_MAC292",
+      "WAP_MAC297",
+      "WAP_MAC293",
+      "WAP_MAC308",
+      "WAP_MAC318",
+      "WAP_MAC319",
+      "WAP_MAC232",
+      "WAP_MAC246",
+      "WAP_MAC302"
+    ],
+    "utility": 1122044.413092456,
+    "support": 1642
+  },
+  {
+    "itemset": [
+      "WAP_MAC191",
+      "WAP_MAC333",
+      "WAP_MAC228",
+      "WAP_MAC230",
+      "WAP_MAC314",
+      "WAP_MAC173",
+      "WAP_MAC324",
+      "WAP_MAC327",
+      "WAP_MAC297",
+      "WAP_MAC293",
+      "WAP_MAC308",
+      "WAP_MAC318",
+      "WAP_MAC319",
+      "WAP_MAC232",
+      "WAP_MAC246",
+      "WAP_MAC302"
+    ],
+    "utility": 1099581.9183795534,
+    "support": 1821
+  },
+  {
+    "itemset": [
+      "WAP_MAC191",
+      "WAP_MAC333",
+      "WAP_MAC228",
+      "WAP_MAC230",
+      "WAP_MAC314",
+      "WAP_MAC324",
+      "WAP_MAC327",
+      "WAP_MAC292",
+      "WAP_MAC297",
+      "WAP_MAC293",
+      "WAP_MAC308",
+      "WAP_MAC318",
+      "WAP_MAC319",
+      "WAP_MAC232",
+      "WAP_MAC246",
+      "WAP_MAC302"
+    ],
+    "utility": 1097907.7001916405,
+    "support": 1809
+  },
+  {
+    "itemset": [
+      "WAP_MAC191",
+      "WAP_MAC333",
+      "WAP_MAC228",
+      "WAP_MAC230",
+      "WAP_MAC314",
+      "WAP_MAC173",
+      "WAP_MAC324",
+      "WAP_MAC327",
+      "WAP_MAC292",
+      "WAP_MAC297",
+      "WAP_MAC293",
+      "WAP_MAC308",
+      "WAP_MAC318",
+      "WAP_MAC319",
+      "WAP_MAC232",
+      "WAP_MAC246"
+    ],
+    "utility": 1097803.6052804596,
+    "support": 1792
+  }
+]

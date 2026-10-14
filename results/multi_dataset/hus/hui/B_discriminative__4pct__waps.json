@@ -1,0 +1,69 @@
+{
+  "n_waps_in_huis": 5,
+  "n_total_wap_columns": 5,
+  "feature_reduction_pct": 0.0,
+  "rank_agreement_spearman_vs_utility_contribution": {
+    "n_huis": 0.9487,
+    "max_hui_utility": NaN,
+    "mean_hui_utility": 0.7,
+    "support_weighted_contribution": 1.0,
+    "n_top_huis": 0.9487
+  },
+  "per_wap": {
+    "WAP_AP1": {
+      "n_huis": 16,
+      "utility_contribution": 7941179.757743448,
+      "max_hui_utility": 1832037.1460177333,
+      "sum_hui_utility": 22022033.168141864,
+      "support_weighted_contribution": 162794185033.74066,
+      "n_top_huis": 16,
+      "min_hui_len": 1,
+      "max_hui_len": 5,
+      "mean_hui_utility": 1376377.0730088665
+    },
+    "WAP_AP2": {
+      "n_huis": 14,
+      "utility_contribution": 4483680.373022793,
+      "max_hui_utility": 1832037.1460177333,
+      "sum_hui_utility": 14658749.88564447,
+      "support_weighted_contribution": 91915447646.96727,
+      "n_top_huis": 14,
+      "min_hui_len": 2,
+      "max_hui_len": 5,
+      "mean_hui_utility": 1047053.5632603193
+    },
+    "WAP_AP3": {
+      "n_huis": 16,
+      "utility_contribution": 7457126.418044123,
+      "max_hui_utility": 1832037.1460177333,
+      "sum_hui_utility": 20989386.043449976,
+      "support_weighted_contribution": 152871091569.9045,
+      "n_top_huis": 16,
+      "min_hui_len": 1,
+      "max_hui_len": 5,
+      "mean_hui_utility": 1311836.6277156235
+    },
+    "WAP_AP4": {
+      "n_huis": 15,
+      "utility_contribution": 4669417.582423706,
+      "max_hui_utility": 1832037.1460177333,
+      "sum_hui_utility": 15116837.540055254,
+      "support_weighted_contribution": 95723060439.68599,
+      "n_top_huis": 15,
+      "min_hui_len": 2,
+      "max_hui_len": 5,
+      "mean_hui_utility": 1007789.169337017
+    },
+    "WAP_AP5": {
+      "n_huis": 14,
+      "utility_contribution": 4587613.613543137,
+      "max_hui_utility": 1832037.1460177333,
+      "sum_hui_utility": 14923307.2251508,
+      "support_weighted_contribution": 94046079077.63431,
+      "n_top_huis": 14,
+      "min_hui_len": 2,
+      "max_hui_len": 5,
+      "mean_hui_utility": 1065950.5160822
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "key": "hcxy",
+  "title": "HCXY (1 tầng, 347 MAC)",
+  "sources": [
+    "hcxy/train_HCXY.txt",
+    "hcxy/test_HCXY.txt",
+    "hcxy/mapxy_HCXY.txt"
+  ],
+  "n_wap_columns": 347,
+  "n_buildings": 1,
+  "n_building_floor_classes": 1,
+  "location_label": "RP (reference point)",
+  "ground_factor": 1.0,
+  "coordinates": "mapxy_HCXY.txt, no unit documented; read as metres (nearest RP spacing 0.59-1.2, a survey grid)",
+  "cv_group": "RP - leave-positions-out: none of the 86 test RPs is a training RP (overlap 0)",
+  "n_cv_groups": 379,
+  "x_range": [
+    857.803,
+    975.127
+  ],
+  "y_range": [
+    878.257,
+    919.259
+  ],
+  "train": {
+    "rows": 11370,
+    "positions": 379,
+    "floors": [
+      0
+    ],
+    "detections_per_row_mean": 36.388,
+    "rows_with_no_detection": 0,
+    "rssi_min": -98.0,
+    "rssi_max": -3.0,
+    "aps_ever_detected": 345
+  },
+  "tests": {
+    "test_HCXY": {
+      "rows": 860,
+      "positions": 86,
+      "floors": [
+        0
+      ],
+      "detections_per_row_mean": 42.401,
+      "rows_with_no_detection": 0,
+      "rssi_min": -98.0,
+      "rssi_max": -14.0,
+      "aps_ever_detected": 260,
+      "positions_also_in_training": 0
+    }
+  },
+  "cleaning": [],
+  "empty_folders_in_dataset_root": [
+    "UJI_LIB_DB_Floor_5",
+    "syl",
+    "tuji"
+  ]
+}

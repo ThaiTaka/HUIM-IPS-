@@ -1,0 +1,179 @@
+{
+  "n_waps_in_huis": 15,
+  "n_total_wap_columns": 17,
+  "feature_reduction_pct": 11.7647,
+  "rank_agreement_spearman_vs_utility_contribution": {
+    "n_huis": 0.9536,
+    "max_hui_utility": 0.9298,
+    "mean_hui_utility": 0.9964,
+    "support_weighted_contribution": 0.975,
+    "n_top_huis": 0.9274
+  },
+  "per_wap": {
+    "WAP_AP9": {
+      "n_huis": 235,
+      "utility_contribution": 4156882.2866730103,
+      "max_hui_utility": 135076.02309984772,
+      "sum_hui_utility": 22276596.756779283,
+      "support_weighted_contribution": 3344050670.2087026,
+      "n_top_huis": 0,
+      "min_hui_len": 3,
+      "max_hui_len": 9,
+      "mean_hui_utility": 94794.02875225227
+    },
+    "WAP_AP13": {
+      "n_huis": 8263,
+      "utility_contribution": 322774066.3549001,
+      "max_hui_utility": 769356.7004469624,
+      "sum_hui_utility": 2230632934.4987373,
+      "support_weighted_contribution": 803400418819.9672,
+      "n_top_huis": 1,
+      "min_hui_len": 1,
+      "max_hui_len": 14,
+      "mean_hui_utility": 269954.36699730577
+    },
+    "WAP_AP2": {
+      "n_huis": 8194,
+      "utility_contribution": 341324829.46115047,
+      "max_hui_utility": 934312.0197016454,
+      "sum_hui_utility": 2354726385.37469,
+      "support_weighted_contribution": 910777824319.9006,
+      "n_top_huis": 30,
+      "min_hui_len": 1,
+      "max_hui_len": 14,
+      "mean_hui_utility": 287372.02652851964
+    },
+    "WAP_AP1": {
+      "n_huis": 8320,
+      "utility_contribution": 366582359.8018605,
+      "max_hui_utility": 1070147.085561991,
+      "sum_hui_utility": 2492888577.0859694,
+      "support_weighted_contribution": 996863965500.2574,
+      "n_top_huis": 65,
+      "min_hui_len": 1,
+      "max_hui_len": 14,
+      "mean_hui_utility": 299626.03089975595
+    },
+    "WAP_AP12": {
+      "n_huis": 8331,
+      "utility_contribution": 365349101.6411776,
+      "max_hui_utility": 938899.6111377424,
+      "sum_hui_utility": 2488718714.213203,
+      "support_weighted_contribution": 986989188048.4785,
+      "n_top_huis": 29,
+      "min_hui_len": 1,
+      "max_hui_len": 14,
+      "mean_hui_utility": 298729.8900748053
+    },
+    "WAP_AP6": {
+      "n_huis": 8342,
+      "utility_contribution": 389036097.396418,
+      "max_hui_utility": 1070147.085561991,
+      "sum_hui_utility": 2622434752.524285,
+      "support_weighted_contribution": 1074630411789.7906,
+      "n_top_huis": 91,
+      "min_hui_len": 1,
+      "max_hui_len": 14,
+      "mean_hui_utility": 314365.23046323244
+    },
+    "WAP_AP7": {
+      "n_huis": 8354,
+      "utility_contribution": 393517801.575356,
+      "max_hui_utility": 1070147.085561991,
+      "sum_hui_utility": 2649982444.610853,
+      "support_weighted_contribution": 1112063741785.1665,
+      "n_top_huis": 95,
+      "min_hui_len": 1,
+      "max_hui_len": 14,
+      "mean_hui_utility": 317211.2095536094
+    },
+    "WAP_AP3": {
+      "n_huis": 8364,
+      "utility_contribution": 414022359.90113395,
+      "max_hui_utility": 1070147.085561991,
+      "sum_hui_utility": 2770767656.281884,
+      "support_weighted_contribution": 1187361139856.669,
+      "n_top_huis": 100,
+      "min_hui_len": 1,
+      "max_hui_len": 14,
+      "mean_hui_utility": 331273.0339887475
+    },
+    "WAP_AP11": {
+      "n_huis": 8282,
+      "utility_contribution": 343961956.8537391,
+      "max_hui_utility": 889626.5568498092,
+      "sum_hui_utility": 2359615095.2760673,
+      "support_weighted_contribution": 910693693738.4977,
+      "n_top_huis": 15,
+      "min_hui_len": 1,
+      "max_hui_len": 14,
+      "mean_hui_utility": 284908.84994881274
+    },
+    "WAP_AP10": {
+      "n_huis": 8290,
+      "utility_contribution": 361177540.55239725,
+      "max_hui_utility": 1012917.9716103595,
+      "sum_hui_utility": 2468132176.014844,
+      "support_weighted_contribution": 998564098904.6777,
+      "n_top_huis": 48,
+      "min_hui_len": 1,
+      "max_hui_len": 14,
+      "mean_hui_utility": 297724.02605727914
+    },
+    "WAP_AP5": {
+      "n_huis": 8182,
+      "utility_contribution": 337765715.99201757,
+      "max_hui_utility": 983134.110695282,
+      "sum_hui_utility": 2330012695.575385,
+      "support_weighted_contribution": 912504920333.1044,
+      "n_top_huis": 35,
+      "min_hui_len": 2,
+      "max_hui_len": 14,
+      "mean_hui_utility": 284773.00117029884
+    },
+    "WAP_AP8": {
+      "n_huis": 8179,
+      "utility_contribution": 337203278.180596,
+      "max_hui_utility": 888727.2506290411,
+      "sum_hui_utility": 2327002072.935967,
+      "support_weighted_contribution": 907328450187.3701,
+      "n_top_huis": 24,
+      "min_hui_len": 1,
+      "max_hui_len": 14,
+      "mean_hui_utility": 284509.36213913275
+    },
+    "WAP_AP4": {
+      "n_huis": 8166,
+      "utility_contribution": 326445477.7741532,
+      "max_hui_utility": 935640.5373424295,
+      "sum_hui_utility": 2255154553.6256013,
+      "support_weighted_contribution": 840471207965.2158,
+      "n_top_huis": 24,
+      "min_hui_len": 1,
+      "max_hui_len": 14,
+      "mean_hui_utility": 276163.9179066374
+    },
+    "WAP_AP17": {
+      "n_huis": 8147,
+      "utility_contribution": 207104918.94434375,
+      "max_hui_utility": 360173.7263611466,
+      "sum_hui_utility": 1469017043.3062024,
+      "support_weighted_contribution": 303297614452.3371,
+      "n_top_huis": 0,
+      "min_hui_len": 2,
+      "max_hui_len": 14,
+      "mean_hui_utility": 180313.86317739074
+    },
+    "WAP_AP16": {
+      "n_huis": 8168,
+      "utility_contribution": 283611954.4709797,
+      "max_hui_utility": 596019.4233056989,
+      "sum_hui_utility": 1967029954.7525473,
+      "support_weighted_contribution": 600543773165.5223,
+      "n_top_huis": 0,
+      "min_hui_len": 1,
+      "max_hui_len": 14,
+      "mean_hui_utility": 240821.4929912521
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "key": "uji_lib3",
+  "title": "UJI Library tầng 3 (dài hạn 25 tháng)",
+  "sources": [
+    "UJI_LIB_DB_Floor_3/Data-Training.xlsx",
+    "UJI_LIB_DB_Floor_3/Test-01.xlsx",
+    "UJI_LIB_DB_Floor_3/Test-02.xlsx"
+  ],
+  "n_wap_columns": 620,
+  "n_buildings": 1,
+  "n_building_floor_classes": 1,
+  "location_label": "RP (reference point)",
+  "ground_factor": 1.0,
+  "coordinates": "local metric grid (metres)",
+  "cv_group": "Month - leave-months-out: both test sets span the same 25 months as training and differ from it by collection session; no user/device column exists (one phone)",
+  "n_cv_groups": 25,
+  "x_range": [
+    4.1347719,
+    12.91385188
+  ],
+  "y_range": [
+    16.69981527,
+    29.21654402
+  ],
+  "train": {
+    "rows": 11520,
+    "positions": 24,
+    "floors": [
+      3
+    ],
+    "detections_per_row_mean": 19.284,
+    "rows_with_no_detection": 0,
+    "rssi_min": -98.0,
+    "rssi_max": -35.0,
+    "aps_ever_detected": 306
+  },
+  "tests": {
+    "Test-01": {
+      "rows": 7200,
+      "positions": 24,
+      "floors": [
+        3
+      ],
+      "detections_per_row_mean": 19.011,
+      "rows_with_no_detection": 0,
+      "rssi_min": -100.0,
+      "rssi_max": -35.0,
+      "aps_ever_detected": 261,
+      "positions_also_in_training": 24
+    },
+    "Test-02": {
+      "rows": 7200,
+      "positions": 24,
+      "floors": [
+        3
+      ],
+      "detections_per_row_mean": 21.188,
+      "rows_with_no_detection": 0,
+      "rssi_min": -99.0,
+      "rssi_max": -36.0,
+      "aps_ever_detected": 262,
+      "positions_also_in_training": 0
+    }
+  },
+  "cleaning": [
+    "Data-Training.xlsx: dropped 2 rows without x/y/Floor/Month (Excel rows [11522, 11523]); they are summary rows below the data, not fingerprints",
+    "Test-01.xlsx: dropped 5 rows without x/y/Floor/Month (Excel rows [7202, 7203, 7204, 7205, 7206]); they are summary rows below the data, not fingerprints"
+  ],
+  "empty_folders_in_dataset_root": [
+    "UJI_LIB_DB_Floor_5",
+    "syl",
+    "tuji"
+  ]
+}

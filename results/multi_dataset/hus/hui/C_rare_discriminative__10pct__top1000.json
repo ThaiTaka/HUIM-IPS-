@@ -1,0 +1,268 @@
+[
+  {
+    "itemset": [
+      "WAP_AP1",
+      "WAP_AP2",
+      "WAP_AP3",
+      "WAP_AP4",
+      "WAP_AP5"
+    ],
+    "utility": 5.782368999999598,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP2",
+      "WAP_AP3",
+      "WAP_AP4",
+      "WAP_AP5"
+    ],
+    "utility": 4.861651999999612,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP1",
+      "WAP_AP2",
+      "WAP_AP4",
+      "WAP_AP5"
+    ],
+    "utility": 4.807860999999617,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP1",
+      "WAP_AP2",
+      "WAP_AP3",
+      "WAP_AP5"
+    ],
+    "utility": 4.5159369999997105,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP1",
+      "WAP_AP3",
+      "WAP_AP4",
+      "WAP_AP5"
+    ],
+    "utility": 4.483768999999715,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP1",
+      "WAP_AP2",
+      "WAP_AP3",
+      "WAP_AP4"
+    ],
+    "utility": 4.460256999999737,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP2",
+      "WAP_AP4",
+      "WAP_AP5"
+    ],
+    "utility": 3.8871439999996316,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP2",
+      "WAP_AP3",
+      "WAP_AP5"
+    ],
+    "utility": 3.5952199999997254,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP4",
+      "WAP_AP5"
+    ],
+    "utility": 3.563051999999729,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP1",
+      "WAP_AP2",
+      "WAP_AP5"
+    ],
+    "utility": 3.54142899999973,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP2",
+      "WAP_AP3",
+      "WAP_AP4"
+    ],
+    "utility": 3.5395399999997514,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP1",
+      "WAP_AP4",
+      "WAP_AP5"
+    ],
+    "utility": 3.509260999999734,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP1",
+      "WAP_AP2",
+      "WAP_AP4"
+    ],
+    "utility": 3.485748999999756,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP1",
+      "WAP_AP3",
+      "WAP_AP5"
+    ],
+    "utility": 3.2173369999998274,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP1",
+      "WAP_AP2",
+      "WAP_AP3"
+    ],
+    "utility": 3.1938249999998494,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP1",
+      "WAP_AP3",
+      "WAP_AP4"
+    ],
+    "utility": 3.1616569999998534,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP2",
+      "WAP_AP5"
+    ],
+    "utility": 2.6207119999997444,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP4",
+      "WAP_AP5"
+    ],
+    "utility": 2.5885439999997484,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP2",
+      "WAP_AP4"
+    ],
+    "utility": 2.5650319999997704,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP5"
+    ],
+    "utility": 2.296619999999842,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP2",
+      "WAP_AP3"
+    ],
+    "utility": 2.2731079999998642,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP1",
+      "WAP_AP5"
+    ],
+    "utility": 2.2428289999998468,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP3",
+      "WAP_AP4"
+    ],
+    "utility": 2.240939999999868,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP1",
+      "WAP_AP2"
+    ],
+    "utility": 2.2193169999998688,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP1",
+      "WAP_AP4"
+    ],
+    "utility": 2.187148999999873,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP1",
+      "WAP_AP3"
+    ],
+    "utility": 1.8952249999999662,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP5"
+    ],
+    "utility": 1.3221119999998612,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP2"
+    ],
+    "utility": 1.2985999999998834,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP4"
+    ],
+    "utility": 1.2664319999998872,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP3"
+    ],
+    "utility": 0.9745079999999807,
+    "support": 20500
+  },
+  {
+    "itemset": [
+      "WAP_AP1"
+    ],
+    "utility": 0.9207169999999854,
+    "support": 20500
+  }
+]

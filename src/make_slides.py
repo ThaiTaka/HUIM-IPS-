@@ -676,6 +676,15 @@ def build() -> dict:
         acc_lines.append(
             f"Trung vị DƯỚI dải 7–8 m; trung bình TRÊN dải, vì phân bố có đuôi "
             f"dài (p95 = {base['pos_p95_error_ground_m']:.1f} m).")
+    if (RESULTS / "positioning_optimisation.json").exists():
+        po12 = pd.read_csv(METRICS / "positioning_ablation.csv").iloc[-1]
+        acc_lines.append(
+            f"Mô hình tối ưu (nhóm tô nền): trung bình "
+            f"{po12['val_mean_ground_m']:.2f} m, trung vị "
+            f"{po12['val_median_ground_m']:.2f} m thực địa — cả hai DƯỚI dải "
+            f"7–8 m (toạ độ chiếu: trung bình {po12['val_mean_projected_m']:.2f} "
+            f"m); {po12['val_share_within_8m'] * 100:.1f}% fingerprint sai số "
+            f"≤ 8 m, p90 = {po12['val_p90_ground_m']:.1f} m.")
     if C_coord and C_coord.get("conclusion", {}).get("identified_as"):
         cc2 = C_coord["conclusion"]
         acc_lines.append(
@@ -701,6 +710,47 @@ def build() -> dict:
            "lệch 497 và 871 km. Và vì Web Mercator bảo giác chứ không bảo "
            "khoảng cách, em báo cáo cả hai con số — con số chiếu để so với "
            "literature, con số thực địa vì nó đúng về vật lý.")
+
+    # ------------------- 12b tối ưu sai số theo mét (PHASE I3, nếu đã chạy)
+    pop = RESULTS / "positioning_optimisation.json"
+    if pop.exists():
+        PO = load_json(pop)
+        PA = pd.read_csv(METRICS / "positioning_ablation.csv")
+        s0r, sel = PA[PA["stage"] == "S0"].iloc[0], PA.iloc[-1]
+        s = D.slide()
+        y = D.title(s, "Tối ưu sai số định vị theo mét",
+                    "Chọn trên fold 'giữ lại người đo' của trainingData; "
+                    "validationData chỉ để đánh giá")
+        bot = D.pic(s, "fig18_positioning_optimisation.png", 0.55,
+                    y + 0.02, w=12.2, max_bottom=5.05)
+        D.para(s, [
+            f"Sai số trung bình {s0r['val_mean_ground_m']:.2f} m → "
+            f"{sel['val_mean_ground_m']:.2f} m thực địa "
+            f"(-{(1 - sel['val_mean_ground_m'] / s0r['val_mean_ground_m']) * 100:.0f}%); "
+            f"trung vị {s0r['val_median_ground_m']:.2f} → "
+            f"{sel['val_median_ground_m']:.2f} m; joint accuracy "
+            f"{pc(s0r['val_joint_building_floor_accuracy'])} → "
+            f"{pc(sel['val_joint_building_floor_accuracy'])}.",
+            f"Mô hình được chọn: {PO['selected_label']}.",
+            "Cải thiện chủ yếu nhờ khoảng cách Bray-Curtis và k láng giềng có "
+            "trọng số; dò độ lệch thiết bị và ensemble chỉ nâng độ chính xác "
+            "tầng, không giảm thêm sai số mét trên validation.",
+            "Tập WAP của HUIM cũng giảm sai số nhưng vẫn xa dải 7–8 m: kết luận "
+            "về HUIM không đổi.",
+        ], 0.55, bot + 0.1, 12.25, max(0.5, 7.35 - bot - 0.1), bullet=True)
+        D.note(s, "Slide 12b — Tối ưu sai số theo mét",
+               "Tôi cần nói gì: k-NN của nghiên cứu (k=1, Manhattan) được chọn "
+               "cho bài toán phân loại tầng trên một phép chia ngẫu nhiên, nên "
+               "không phải bộ ước lượng toạ độ tốt. Em tối ưu riêng phần ước "
+               "lượng toạ độ.\n\n"
+               "Thông điệp chính: mọi lựa chọn được làm trên các fold giữ lại "
+               "người đo của trainingData; validationData chỉ chấm điểm mỗi "
+               "bước đúng một lần.\n\n"
+               "Nếu cô hỏi sâu: bước dò độ lệch thiết bị và ensemble thắng trên "
+               "dev nhưng không thắng trên validation về sai số mét — em vẫn giữ "
+               "mô hình mà giao thức chọn, vì chọn lại theo validation là dùng "
+               "tập kiểm tra để chọn mô hình. Mọi con số kiểm chứng được trong "
+               "verification/kiem_chung_thu_cong.xlsx.")
 
     # -------------------------------- 13 thời gian và bộ nhớ của IPS
     if COST is not None and len(COST):

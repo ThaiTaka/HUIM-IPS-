@@ -56,6 +56,25 @@ def find_dataset() -> dict:
     return found
 
 
+def relocate(recorded: str | Path) -> Path:
+    """Result files store absolute paths (e.g. huim_runs.csv -> path_wap_stats),
+    which break as soon as the project folder is moved or cloned elsewhere:
+    the committed CSV still says D:\\ips\\results\\hui\\... . Anything under a
+    'results' folder is re-anchored onto this checkout."""
+    from pathlib import PurePosixPath, PureWindowsPath
+    p = Path(recorded)
+    if p.exists():
+        return p
+    s = str(recorded)
+    parts = PureWindowsPath(s).parts if "\\" in s else PurePosixPath(s).parts
+    if "results" in parts:
+        i = len(parts) - 1 - parts[::-1].index("results")
+        cand = PROJECT_ROOT.joinpath(*parts[i:])
+        if cand.exists():
+            return cand
+    return p
+
+
 def sha256(path: Path, chunk: int = 1 << 20) -> str:
     import hashlib
     h = hashlib.sha256()

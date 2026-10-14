@@ -1,6 +1,6 @@
-condition,n_waps_selected,feature_reduction_pct,building_accuracy,floor_accuracy,joint_building_floor_accuracy,joint_macro_f1
-baseline_all_520,520,0.0,0.987399,0.879388,0.877588,0.85567
-baseline_detected_465,465,10.5769,0.987399,0.879388,0.877588,0.85567
-huim_topn__A_signal__1.9294pct__n75,75,85.5769,0.80198,0.584158,0.508551,0.580414
-huim_topn__B_discriminative__2pct__n75,75,85.5769,0.970297,0.666067,0.660666,0.624545
-huim_topn__C_rare_discriminative__1.7321pct__n75,75,85.5769,0.970297,0.665167,0.659766,0.631579
+condition,utility_model,rel_minutil_pct,abs_minutil,total_db_utility,n_waps_selected,feature_reduction_pct,building_accuracy,floor_accuracy,joint_building_floor_accuracy,joint_macro_f1
+baseline_all_520,,,,,520,0.0,0.987399,0.879388,0.877588,0.85567
+baseline_detected_465,,,,,465,10.5769,0.987399,0.879388,0.877588,0.85567
+huim_topn__A_signal__1.9294pct__n75,A_signal,1.9294,174769.721148,9058242.0,75,85.5769,0.80198,0.584158,0.508551,0.580414
+huim_topn__B_discriminative__2pct__n75,B_discriminative,2.0,87085.981274,4354299.063711,75,85.5769,0.970297,0.666067,0.660666,0.624545
+huim_topn__C_rare_discriminative__1.7321pct__n75,C_rare_discriminative,1.7321,107595.493208,6211852.272251,75,85.5769,0.970297,0.665167,0.659766,0.631579

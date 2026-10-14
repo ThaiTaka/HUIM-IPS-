@@ -110,14 +110,30 @@ metrics:
                    building_macro_f1, floor_macro_f1, floor_within_1_accuracy,
                    confusion_matrix]
   positioning_error:
-    unit: "dataset coordinate units"
-    reported_as_metres: false
-    reason: "neither the UCI attribute description nor the authors' own page
-             states a coordinate system or unit for LONGITUDE/LATITUDE"
+    coordinate_system: "EPSG:3857 Web Mercator, identified empirically by
+                        src/verify_coordinates.py (the dataset documents none)"
+    reported_as: [projected metres (literature convention),
+                  ground metres = projected x cos(latitude) = x 0.766126]
   mining: [runtime_s, peak_memory_delta_mb, n_huis, hui_length_distribution,
            unique_waps_in_huis, items_after_twu_pruning, search_nodes_visited,
            transactions_saved_by_merging]
   diagnostics: [val_rows_with_no_selected_wap_detected]
+
+positioning_optimisation:  # src/optimize_positioning.py (PHASE I3)
+  selection_split: "GroupKFold(6) over USERID on trainingData (leave-users-out)"
+  selection_criterion: mean ground-metre error on the dev folds
+  validation_used_for: evaluation only, once per stage
+  stages: [S0 study k-NN, S1 representation x distance at k=1,
+           S2 + k and 1/d^p weights, S3 + device-offset search,
+           S4 + ensemble of two representations]
+  grids:
+    representations: [positive, powed, exponential]
+    distances: [euclidean, manhattan, braycurtis, cosine]
+    k: "1..20, 25, 30"
+    weight_power_p: [0, 1, 2, 3, 4]
+    device_offset_db: "+-3, +-6, +-9 in steps of 3"
+  min_gain_m: 0.05          # a stage is adopted only if it buys this on dev
+  neighbour_ties: "ordered by (distance, training row)"
 
 memory_measurement:
   method: "background RSS sampling, 20 ms interval"

@@ -1,0 +1,12 @@
+{
+  "run": "C_rare_discriminative__1.7321pct",
+  "itemset": [
+    "WAP096",
+    "WAP501"
+  ],
+  "u_efim": 110053.37594695322,
+  "support": 1789,
+  "minutil_abs": 107595.49324731264,
+  "minutil_pct": 1.7321,
+  "total_db_utility": 6211852.274540306
+}

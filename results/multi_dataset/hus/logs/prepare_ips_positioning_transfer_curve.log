@@ -1,0 +1,99 @@
+2026-10-13 11:18:57,441 | INFO    | multi | loaded hus in 0.1s
+2026-10-13 11:18:57,441 | INFO    | multi | ==== hus / prepare ====
+2026-10-13 11:18:57,487 | INFO    | multi | ==== hus / prepare done in 0.0s ====
+2026-10-13 11:18:57,487 | INFO    | multi | ==== hus / ips ====
+2026-10-13 11:18:57,489 | INFO    | prep | fit on 20500 training rows: 5 WAP columns, detected RSSI in [-86, -21]
+2026-10-13 11:18:57,707 | INFO    | ips | dev k=1 metric=euclidean weights=uniform -> joint acc 0.8016
+2026-10-13 11:18:57,825 | INFO    | ips | dev k=3 metric=euclidean weights=uniform -> joint acc 0.6691
+2026-10-13 11:18:57,940 | INFO    | ips | dev k=5 metric=euclidean weights=uniform -> joint acc 0.6638
+2026-10-13 11:18:58,078 | INFO    | ips | dev k=7 metric=euclidean weights=uniform -> joint acc 0.6636
+2026-10-13 11:18:58,226 | INFO    | ips | dev k=9 metric=euclidean weights=uniform -> joint acc 0.6663
+2026-10-13 11:18:58,354 | INFO    | ips | dev k=11 metric=euclidean weights=uniform -> joint acc 0.6603
+2026-10-13 11:18:58,489 | INFO    | ips | dev k=1 metric=euclidean weights=distance -> joint acc 0.8016
+2026-10-13 11:18:58,640 | INFO    | ips | dev k=3 metric=euclidean weights=distance -> joint acc 0.7865
+2026-10-13 11:18:58,800 | INFO    | ips | dev k=5 metric=euclidean weights=distance -> joint acc 0.7928
+2026-10-13 11:18:58,960 | INFO    | ips | dev k=7 metric=euclidean weights=distance -> joint acc 0.7986
+2026-10-13 11:18:59,143 | INFO    | ips | dev k=9 metric=euclidean weights=distance -> joint acc 0.8043
+2026-10-13 11:18:59,324 | INFO    | ips | dev k=11 metric=euclidean weights=distance -> joint acc 0.8041
+2026-10-13 11:18:59,431 | INFO    | ips | dev k=1 metric=manhattan weights=uniform -> joint acc 0.8006
+2026-10-13 11:18:59,552 | INFO    | ips | dev k=3 metric=manhattan weights=uniform -> joint acc 0.6775
+2026-10-13 11:18:59,683 | INFO    | ips | dev k=5 metric=manhattan weights=uniform -> joint acc 0.6691
+2026-10-13 11:18:59,838 | INFO    | ips | dev k=7 metric=manhattan weights=uniform -> joint acc 0.6671
+2026-10-13 11:18:59,988 | INFO    | ips | dev k=9 metric=manhattan weights=uniform -> joint acc 0.6661
+2026-10-13 11:19:00,148 | INFO    | ips | dev k=11 metric=manhattan weights=uniform -> joint acc 0.6654
+2026-10-13 11:19:00,261 | INFO    | ips | dev k=1 metric=manhattan weights=distance -> joint acc 0.8006
+2026-10-13 11:19:00,389 | INFO    | ips | dev k=3 metric=manhattan weights=distance -> joint acc 0.7951
+2026-10-13 11:19:00,547 | INFO    | ips | dev k=5 metric=manhattan weights=distance -> joint acc 0.7982
+2026-10-13 11:19:00,733 | INFO    | ips | dev k=7 metric=manhattan weights=distance -> joint acc 0.8029
+2026-10-13 11:19:00,920 | INFO    | ips | dev k=9 metric=manhattan weights=distance -> joint acc 0.8074
+2026-10-13 11:19:01,131 | INFO    | ips | dev k=11 metric=manhattan weights=distance -> joint acc 0.8119
+2026-10-13 11:19:01,132 | INFO    | multi | hus: frozen k-NN {'n_neighbors': 11, 'metric': 'manhattan', 'weights': 'distance', 'selected_on': 'dev_sub of trainingData, ALL-WAP features', 'dev_joint_accuracy': 0.811902}
+2026-10-13 11:19:01,170 | INFO    | multi | hus: 87 conditions x 2 test sets
+2026-10-13 11:19:06,738 | INFO    | multi |   25/87 conditions
+2026-10-13 11:19:12,254 | INFO    | multi |   50/87 conditions
+2026-10-13 11:19:17,254 | INFO    | multi |   75/87 conditions
+2026-10-13 11:19:19,903 | INFO    | multi |   87/87 conditions
+2026-10-13 11:19:21,848 | INFO    | multi | ==== hus / ips done in 24.4s ====
+2026-10-13 11:19:21,848 | INFO    | multi | ==== hus / positioning ====
+2026-10-13 11:19:21,864 | INFO    | multi | hus: 6 dev folds grouped by row (shuffled KFold)
+2026-10-13 11:19:22,778 | INFO    | optpos | dev lists positive    euclidean    0.9s
+2026-10-13 11:19:25,982 | INFO    | optpos | dev lists positive    manhattan    1.2s
+2026-10-13 11:19:29,606 | INFO    | optpos | dev lists positive    braycurtis   1.7s
+2026-10-13 11:19:38,062 | INFO    | optpos | dev lists positive    cosine       6.6s
+2026-10-13 11:19:40,709 | INFO    | optpos | dev lists powed       euclidean    0.7s
+2026-10-13 11:19:43,870 | INFO    | optpos | dev lists powed       manhattan    1.2s
+2026-10-13 11:19:47,502 | INFO    | optpos | dev lists powed       braycurtis   1.7s
+2026-10-13 11:19:55,976 | INFO    | optpos | dev lists powed       cosine       6.6s
+2026-10-13 11:19:58,607 | INFO    | optpos | dev lists exponential euclidean    0.7s
+2026-10-13 11:20:01,754 | INFO    | optpos | dev lists exponential manhattan    1.2s
+2026-10-13 11:20:05,411 | INFO    | optpos | dev lists exponential braycurtis   1.7s
+2026-10-13 11:20:14,137 | INFO    | optpos | dev lists exponential cosine       6.8s
+2026-10-13 11:20:16,092 | INFO    | optpos | S0 positive+manhattan, k=1, w=1/d^0 -> dev mean 0.405 m
+2026-10-13 11:20:16,092 | INFO    | optpos | S1 exponential+euclidean, k=1, w=1/d^0 -> dev mean 0.398 m
+2026-10-13 11:20:16,092 | INFO    | optpos | S2 exponential+euclidean, k=1, w=1/d^0 -> dev mean 0.398 m
+2026-10-13 11:20:16,783 | INFO    | optpos | dev offset lists exponential delta  -9.0 dB   0.7s
+2026-10-13 11:20:17,481 | INFO    | optpos | dev offset lists exponential delta  -6.0 dB   0.7s
+2026-10-13 11:20:18,186 | INFO    | optpos | dev offset lists exponential delta  -3.0 dB   0.7s
+2026-10-13 11:20:18,882 | INFO    | optpos | dev offset lists exponential delta  +3.0 dB   0.7s
+2026-10-13 11:20:19,576 | INFO    | optpos | dev offset lists exponential delta  +6.0 dB   0.7s
+2026-10-13 11:20:20,277 | INFO    | optpos | dev offset lists exponential delta  +9.0 dB   0.7s
+2026-10-13 11:20:20,429 | INFO    | optpos | S3 exponential+euclidean, k=4, w=1/d^4, offset +-3 dB -> dev mean 0.542 m
+2026-10-13 11:20:20,435 | INFO    | optpos | S4 exponential+euclidean, k=1, w=1/d^0, ensemble with powed -> dev mean 0.396 m
+2026-10-13 11:20:20,474 | INFO    | multi | hus: SELECTED on dev exponential+euclidean, k=1, w=1/d^0
+2026-10-13 11:20:20,475 | INFO    | prep | fit on 20500 training rows: 5 WAP columns, detected RSSI in [-86, -21]
+2026-10-13 11:20:20,615 | INFO    | multi | hus testcase1  S0 study k-NN as regressor              mean 0.048 m  median 0.000 m  joint 1.0000
+2026-10-13 11:20:20,659 | INFO    | multi | hus testcase1  S1 best representation x distance (k=1) mean 0.068 m  median 0.000 m  joint 1.0000
+2026-10-13 11:20:20,688 | INFO    | multi | hus testcase1  S2 + k and 1/d^p weighting              mean 0.068 m  median 0.000 m  joint 1.0000
+2026-10-13 11:20:20,815 | INFO    | multi | hus testcase2  S0 study k-NN as regressor              mean 0.029 m  median 0.000 m  joint 1.0000
+2026-10-13 11:20:20,859 | INFO    | multi | hus testcase2  S1 best representation x distance (k=1) mean 0.057 m  median 0.000 m  joint 1.0000
+2026-10-13 11:20:20,889 | INFO    | multi | hus testcase2  S2 + k and 1/d^p weighting              mean 0.057 m  median 0.000 m  joint 1.0000
+2026-10-13 11:20:20,962 | INFO    | multi | hus testcase1  baseline_all                                   5 WAP  study 0.05 m -> opt 0.07 m
+2026-10-13 11:20:20,995 | INFO    | multi | hus testcase2  baseline_all                                   5 WAP  study 0.03 m -> opt 0.06 m
+2026-10-13 11:20:21,029 | INFO    | multi | hus testcase1  baseline_detected                              5 WAP  study 0.05 m -> opt 0.07 m
+2026-10-13 11:20:21,060 | INFO    | multi | hus testcase2  baseline_detected                              5 WAP  study 0.03 m -> opt 0.06 m
+2026-10-13 11:20:21,095 | INFO    | multi | hus testcase1  huim_union__A_signal__20pct                    5 WAP  study 0.05 m -> opt 0.07 m
+2026-10-13 11:20:21,125 | INFO    | multi | hus testcase2  huim_union__A_signal__20pct                    5 WAP  study 0.03 m -> opt 0.06 m
+2026-10-13 11:20:21,157 | INFO    | multi | hus testcase1  huim_union__B_discriminative__20pct            5 WAP  study 0.05 m -> opt 0.07 m
+2026-10-13 11:20:21,188 | INFO    | multi | hus testcase2  huim_union__B_discriminative__20pct            5 WAP  study 0.03 m -> opt 0.06 m
+2026-10-13 11:20:21,219 | INFO    | multi | hus testcase1  huim_union__C_rare_discriminative__20pct       5 WAP  study 0.05 m -> opt 0.07 m
+2026-10-13 11:20:21,251 | INFO    | multi | hus testcase2  huim_union__C_rare_discriminative__20pct       5 WAP  study 0.03 m -> opt 0.06 m
+2026-10-13 11:20:21,282 | INFO    | multi | hus testcase1  huim_topn__A_signal__0.125pct__n5              5 WAP  study 0.05 m -> opt 0.07 m
+2026-10-13 11:20:21,314 | INFO    | multi | hus testcase2  huim_topn__A_signal__0.125pct__n5              5 WAP  study 0.03 m -> opt 0.06 m
+2026-10-13 11:20:21,345 | INFO    | multi | hus testcase1  huim_topn__B_discriminative__0.125pct__n5      5 WAP  study 0.05 m -> opt 0.07 m
+2026-10-13 11:20:21,376 | INFO    | multi | hus testcase2  huim_topn__B_discriminative__0.125pct__n5      5 WAP  study 0.03 m -> opt 0.06 m
+2026-10-13 11:20:21,406 | INFO    | multi | hus testcase1  huim_topn__C_rare_discriminative__0.125pct__n5   5 WAP  study 0.05 m -> opt 0.07 m
+2026-10-13 11:20:21,436 | INFO    | multi | hus testcase2  huim_topn__C_rare_discriminative__0.125pct__n5   5 WAP  study 0.03 m -> opt 0.06 m
+2026-10-13 11:20:21,466 | INFO    | multi | hus testcase1  control_top_mi__n5                             5 WAP  study 0.05 m -> opt 0.07 m
+2026-10-13 11:20:21,500 | INFO    | multi | hus testcase2  control_top_mi__n5                             5 WAP  study 0.03 m -> opt 0.06 m
+2026-10-13 11:20:21,530 | INFO    | multi | hus testcase1  control_top_support__n5                        5 WAP  study 0.05 m -> opt 0.07 m
+2026-10-13 11:20:21,559 | INFO    | multi | hus testcase2  control_top_support__n5                        5 WAP  study 0.03 m -> opt 0.06 m
+2026-10-13 11:20:23,167 | INFO    | multi | ==== hus / positioning done in 61.3s ====
+2026-10-13 11:20:23,167 | INFO    | multi | ==== hus / transfer ====
+2026-10-13 11:20:23,437 | INFO    | multi | hus testcase1  UJI config as-is: mean 0.047 m, joint 1.0000
+2026-10-13 11:20:23,678 | INFO    | multi | hus testcase2  UJI config as-is: mean 0.029 m, joint 1.0000
+2026-10-13 11:20:23,682 | INFO    | multi | ==== hus / transfer done in 0.5s ====
+2026-10-13 11:20:23,682 | INFO    | multi | ==== hus / curve ====
+2026-10-13 11:20:24,270 | INFO    | multi |   curve 20/42
+2026-10-13 11:20:24,905 | INFO    | multi |   curve 40/42
+2026-10-13 11:20:24,975 | INFO    | multi | hus: curve over 42 WAP sets
+2026-10-13 11:20:24,976 | INFO    | multi | ==== hus / curve done in 1.3s ====

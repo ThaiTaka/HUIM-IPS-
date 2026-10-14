@@ -84,6 +84,14 @@ class Ctx:
         self.base465 = b.iloc[0] if len(b) else None
         self.cfg = self.ips["protocol"]["frozen_knn_config"]
         self.o = self.obs
+        # PHASE I3 (positioning optimisation) is optional: its section is
+        # written only when its result files exist
+        po = RESULTS / "positioning_optimisation.json"
+        self.PO = load_json(po) if po.exists() else None
+        self.PAB = (pd.read_csv(METRICS / "positioning_ablation.csv")
+                    if self.PO else None)
+        self.PCN = (pd.read_csv(METRICS / "positioning_conditions.csv")
+                    if self.PO else None)
 
 
 # ===========================================================================

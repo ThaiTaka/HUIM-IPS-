@@ -22,7 +22,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from utils import METRICS, RESEARCH, RESULTS, dump_json, load_json
+from utils import METRICS, RESEARCH, RESULTS, dump_json, load_json, relocate
 
 MODEL_LABEL = {"A_signal": "Model A (signal utility)",
                "B_discriminative": "Model B (discriminative utility)",
@@ -147,7 +147,7 @@ def collect() -> dict:
         if not len(comp):
             continue
         r = comp.loc[comp["n_huis"].idxmax()]
-        ws = load_json(Path(r["path_wap_stats"]))
+        ws = load_json(relocate(r["path_wap_stats"]))
         order = sorted(ws["per_wap"],
                        key=lambda w: (-ws["per_wap"][w]["utility_contribution"], w))
         sets[model] = {"run_tag": r["run_tag"],

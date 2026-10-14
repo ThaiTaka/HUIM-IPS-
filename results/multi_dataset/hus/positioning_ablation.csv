@@ -1,0 +1,7 @@
+test_set,stage,what,config,dev_mean_ground_m,dev_median_ground_m,dev_p75_ground_m,dev_p90_ground_m,dev_p95_ground_m,dev_max_ground_m,dev_mean_projected_m,dev_share_within_8m,test_n_test,test_building_accuracy,test_floor_accuracy,test_joint_accuracy,test_mean_err_m,test_median_err_m,test_p75_err_m,test_p90_err_m,test_p95_err_m,test_max_err_m,test_mean_err_coord,test_share_within_2m,test_share_within_5m
+testcase1,S0,study k-NN as regressor,"positive+manhattan, k=11, w=1/d^1",0.4509,0.0,0.5266,1.4952,2.2361,8.0156,0.4509,0.9988,205,1.0,1.0,1.0,0.0481,0.0,0.0,0.0,0.0,5.3437,0.0481,0.9951,0.9951
+testcase1,S1,best representation x distance (k=1),"exponential+euclidean, k=1, w=1/d^0",0.3977,0.0,0.0,1.5,2.8284,8.7321,0.3977,0.9954,205,1.0,1.0,1.0,0.0681,0.0,0.0,0.0,0.0,8.0156,0.0681,0.9902,0.9951
+testcase1,S2,+ k and 1/d^p weighting,"exponential+euclidean, k=1, w=1/d^0",0.3977,0.0,0.0,1.5,2.8284,8.7321,0.3977,0.9954,205,1.0,1.0,1.0,0.0681,0.0,0.0,0.0,0.0,8.0156,0.0681,0.9902,0.9951
+testcase2,S0,study k-NN as regressor,"positive+manhattan, k=11, w=1/d^1",0.4509,0.0,0.5266,1.4952,2.2361,8.0156,0.4509,0.9988,205,1.0,1.0,1.0,0.0293,0.0,0.0,0.0,0.0,4.0078,0.0293,0.9951,1.0
+testcase2,S1,best representation x distance (k=1),"exponential+euclidean, k=1, w=1/d^0",0.3977,0.0,0.0,1.5,2.8284,8.7321,0.3977,0.9954,205,1.0,1.0,1.0,0.057,0.0,0.0,0.0,0.0,8.0156,0.057,0.9902,0.9951
+testcase2,S2,+ k and 1/d^p weighting,"exponential+euclidean, k=1, w=1/d^0",0.3977,0.0,0.0,1.5,2.8284,8.7321,0.3977,0.9954,205,1.0,1.0,1.0,0.057,0.0,0.0,0.0,0.0,8.0156,0.057,0.9902,0.9951

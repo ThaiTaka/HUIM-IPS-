@@ -1,0 +1,55 @@
+dataset,dataset_name,n_buildings,n_floor_classes,n_train,test_set,n_test,method,wap_set,n_waps,config,building_accuracy,floor_accuracy,joint_accuracy,mean_err_m,median_err_m,p75_err_m,p90_err_m,p95_err_m,ms_per_fp,huim_minutil_pct,huim_mining_s
+uji,UJIIndoorLoc,3,13,19937,validationData,1111,k-NN nghiên cứu (S0),all,520,"positive+manhattan, k=1, w=1/d^0",0.987399,0.879388,0.877588,9.277,4.6096,9.3883,17.0212,27.8141,4.9694,,
+uji,UJIIndoorLoc,3,13,19937,validationData,1111,Tối ưu PHASE I3 (S4),all,520,"exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive",0.9991,0.946895,0.946895,5.3558,3.5224,6.8973,11.8922,16.0926,30.7912,,
+uji,UJIIndoorLoc,3,13,19937,validationData,1111,"Cấu hình UJI 5,36 m áp nguyên",all,520,"exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive",0.9991,0.946895,0.946895,5.3558,3.5224,6.8973,11.8922,16.0926,,,
+uji,UJIIndoorLoc,3,13,19937,validationData,1111,Tối ưu + HUIM Model A,huim_union__A_signal__1.9294pct,86,"exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive",0.975698,0.664266,0.657966,19.3568,10.7007,28.3763,54.6132,63.688,5.5935,1.9294,578.5112
+uji,UJIIndoorLoc,3,13,19937,validationData,1111,Tối ưu + HUIM Model B,huim_union__B_discriminative__2pct,79,"exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive",0.975698,0.691269,0.684968,19.9128,9.0208,27.7142,55.5867,75.0126,7.2841,2.0,23.2861
+uji,UJIIndoorLoc,3,13,19937,validationData,1111,Tối ưu + HUIM Model C,huim_union__C_rare_discriminative__1.7321pct,91,"exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive",0.982898,0.742574,0.734473,17.4882,6.3429,20.4916,54.7887,71.9133,5.9199,1.7321,26.7647
+uji_lib3,UJI_LIB tầng 3,1,1,11520,Test-01,7200,k-NN nghiên cứu (S0),all,620,"positive+manhattan, k=5, w=1/d^1",1.0,1.0,1.0,1.3341,0.8541,1.8368,3.5549,4.4094,3.6149,,
+uji_lib3,UJI_LIB tầng 3,1,1,11520,Test-01,7200,Tối ưu PHASE I3 (S2),all,620,"exponential+braycurtis, k=3, w=1/d^4",1.0,1.0,1.0,1.208,0.5839,1.7881,3.3409,4.4293,2.6999,,
+uji_lib3,UJI_LIB tầng 3,1,1,11520,Test-01,7200,"Cấu hình UJI 5,36 m áp nguyên",all,620,"exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive",1.0,1.0,1.0,1.3476,0.9001,1.8803,3.3234,4.2798,,,
+uji_lib3,UJI_LIB tầng 3,1,1,11520,Test-01,7200,Tối ưu + HUIM Model A,huim_union__A_signal__1pct,83,"exponential+braycurtis, k=3, w=1/d^4",1.0,1.0,1.0,1.2064,0.5828,1.7881,3.3752,4.4317,0.4289,1.0,328.7459
+uji_lib3,UJI_LIB tầng 3,1,1,11520,Test-01,7200,Tối ưu + HUIM Model B,huim_union__B_discriminative__1pct,87,"exponential+braycurtis, k=3, w=1/d^4",1.0,1.0,1.0,1.1931,0.5692,1.7881,3.3416,4.4219,0.4498,1.0,290.9913
+uji_lib3,UJI_LIB tầng 3,1,1,11520,Test-01,7200,Tối ưu + HUIM Model C,huim_union__C_rare_discriminative__1pct,79,"exponential+braycurtis, k=3, w=1/d^4",1.0,1.0,1.0,1.2254,0.587,1.7881,3.4058,4.4432,0.4162,1.0,241.4865
+uji_lib3,UJI_LIB tầng 3,1,1,11520,Test-02,7200,k-NN nghiên cứu (S0),all,620,"positive+manhattan, k=5, w=1/d^1",1.0,1.0,1.0,1.9398,1.5007,2.6129,3.683,4.5323,,,
+uji_lib3,UJI_LIB tầng 3,1,1,11520,Test-02,7200,Tối ưu PHASE I3 (S2),all,620,"exponential+braycurtis, k=3, w=1/d^4",1.0,1.0,1.0,2.0277,1.5432,2.603,3.9624,5.3676,,,
+uji_lib3,UJI_LIB tầng 3,1,1,11520,Test-02,7200,"Cấu hình UJI 5,36 m áp nguyên",all,620,"exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive",1.0,1.0,1.0,1.9081,1.5201,2.5699,3.6314,4.4456,,,
+uji_lib3,UJI_LIB tầng 3,1,1,11520,Test-02,7200,Tối ưu + HUIM Model A,huim_union__A_signal__1pct,83,"exponential+braycurtis, k=3, w=1/d^4",1.0,1.0,1.0,2.0378,1.5628,2.6029,3.9774,5.2219,,1.0,328.7459
+uji_lib3,UJI_LIB tầng 3,1,1,11520,Test-02,7200,Tối ưu + HUIM Model B,huim_union__B_discriminative__1pct,87,"exponential+braycurtis, k=3, w=1/d^4",1.0,1.0,1.0,2.0386,1.5424,2.5998,4.0476,5.3895,,1.0,290.9913
+uji_lib3,UJI_LIB tầng 3,1,1,11520,Test-02,7200,Tối ưu + HUIM Model C,huim_union__C_rare_discriminative__1pct,79,"exponential+braycurtis, k=3, w=1/d^4",1.0,1.0,1.0,2.0488,1.5457,2.6083,4.0447,5.3895,,1.0,241.4865
+dlulib,DLULIB,1,3,13000,Testing,6500,k-NN nghiên cứu (S0),all,17,"positive+manhattan, k=7, w=1/d^1",1.0,0.992154,0.992154,4.1786,3.2357,5.5024,8.4399,10.9544,0.1668,,
+dlulib,DLULIB,1,3,13000,Testing,6500,Tối ưu PHASE I3 (S2),all,17,"powed+braycurtis, k=7, w=1/d^4",1.0,0.994769,0.994769,3.4335,2.5222,4.5833,7.2851,9.4556,0.1392,,
+dlulib,DLULIB,1,3,13000,Testing,6500,"Cấu hình UJI 5,36 m áp nguyên",all,17,"exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive",1.0,0.994154,0.994154,3.9509,3.1274,5.2337,7.9841,9.931,,,
+dlulib,DLULIB,1,3,13000,Testing,6500,Tối ưu + HUIM Model A,huim_union__A_signal__1pct,17,"powed+braycurtis, k=7, w=1/d^4",1.0,0.994769,0.994769,3.4335,2.5222,4.5833,7.2851,9.4556,0.1363,1.0,2.3091
+dlulib,DLULIB,1,3,13000,Testing,6500,Tối ưu + HUIM Model B,huim_union__B_discriminative__1pct,17,"powed+braycurtis, k=7, w=1/d^4",1.0,0.994769,0.994769,3.4335,2.5222,4.5833,7.2851,9.4556,0.1314,1.0,2.088
+dlulib,DLULIB,1,3,13000,Testing,6500,Tối ưu + HUIM Model C,huim_union__C_rare_discriminative__1pct,17,"powed+braycurtis, k=7, w=1/d^4",1.0,0.994769,0.994769,3.4335,2.5222,4.5833,7.2851,9.4556,0.1338,1.0,2.1115
+hcxy,HCXY,1,1,11370,test_HCXY,860,k-NN nghiên cứu (S0),all,347,"positive+manhattan, k=7, w=1/d^1",1.0,1.0,1.0,1.9308,1.2675,2.3841,5.0072,6.0303,2.663,,
+hcxy,HCXY,1,1,11370,test_HCXY,860,Tối ưu PHASE I3 (S2),all,347,"powed+braycurtis, k=30, w=1/d^3",1.0,1.0,1.0,1.5468,1.117,2.0476,3.1186,4.0144,1.542,,
+hcxy,HCXY,1,1,11370,test_HCXY,860,"Cấu hình UJI 5,36 m áp nguyên",all,347,"exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive",1.0,1.0,1.0,1.6159,1.2006,2.0992,3.3748,4.4304,,,
+hcxy,HCXY,1,1,11370,test_HCXY,860,Tối ưu + HUIM Model A,huim_union__A_signal__6.1237pct,67,"powed+braycurtis, k=30, w=1/d^3",1.0,1.0,1.0,2.1195,1.5139,2.8491,4.7934,6.3329,0.33,6.1237,55.6546
+hcxy,HCXY,1,1,11370,test_HCXY,860,Tối ưu + HUIM Model B,huim_union__B_discriminative__6.1237pct,73,"powed+braycurtis, k=30, w=1/d^3",1.0,1.0,1.0,2.1497,1.5949,2.8321,4.6977,5.6975,0.3645,6.1237,603.7095
+hcxy,HCXY,1,1,11370,test_HCXY,860,Tối ưu + HUIM Model C,huim_union__C_rare_discriminative__5pct,82,"powed+braycurtis, k=30, w=1/d^3",1.0,1.0,1.0,2.1199,1.5745,2.6651,4.5707,5.991,0.3959,5.0,153.8446
+hus_dedup,HUS (bỏ dòng chép),1,1,20091,testcase1,205,k-NN nghiên cứu (S0),all,5,"positive+manhattan, k=11, w=1/d^1",1.0,1.0,1.0,0.422,0.0,0.3751,1.3755,1.9586,0.5314,,
+hus_dedup,HUS (bỏ dòng chép),1,1,20091,testcase1,205,Tối ưu PHASE I3 (S2),all,5,"powed+manhattan, k=4, w=1/d^4",1.0,1.0,1.0,0.3905,0.0,0.228,1.4257,2.4185,0.1772,,
+hus_dedup,HUS (bỏ dòng chép),1,1,20091,testcase1,205,"Cấu hình UJI 5,36 m áp nguyên",all,5,"exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive",1.0,1.0,1.0,0.5362,0.0,0.684,1.8881,2.537,,,
+hus_dedup,HUS (bỏ dòng chép),1,1,20091,testcase1,205,Tối ưu + HUIM Model A,huim_union__A_signal__20pct,5,"powed+manhattan, k=4, w=1/d^4",1.0,1.0,1.0,0.3905,0.0,0.228,1.4257,2.4185,0.1704,20.0,0.1781
+hus_dedup,HUS (bỏ dòng chép),1,1,20091,testcase1,205,Tối ưu + HUIM Model B,huim_union__B_discriminative__20pct,5,"powed+manhattan, k=4, w=1/d^4",1.0,1.0,1.0,0.3905,0.0,0.228,1.4257,2.4185,0.1698,20.0,0.302
+hus_dedup,HUS (bỏ dòng chép),1,1,20091,testcase1,205,Tối ưu + HUIM Model C,huim_union__C_rare_discriminative__20pct,5,"powed+manhattan, k=4, w=1/d^4",1.0,1.0,1.0,0.3905,0.0,0.228,1.4257,2.4185,0.1606,20.0,0.1797
+hus_dedup,HUS (bỏ dòng chép),1,1,20091,testcase2,205,k-NN nghiên cứu (S0),all,5,"positive+manhattan, k=11, w=1/d^1",1.0,1.0,1.0,0.3305,0.0,0.0959,1.162,1.9999,,,
+hus_dedup,HUS (bỏ dòng chép),1,1,20091,testcase2,205,Tối ưu PHASE I3 (S2),all,5,"powed+manhattan, k=4, w=1/d^4",1.0,1.0,1.0,0.2535,0.0,0.0,0.5997,1.7694,,,
+hus_dedup,HUS (bỏ dòng chép),1,1,20091,testcase2,205,"Cấu hình UJI 5,36 m áp nguyên",all,5,"exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive",1.0,1.0,1.0,0.3502,0.0,0.0375,1.1058,2.3316,,,
+hus_dedup,HUS (bỏ dòng chép),1,1,20091,testcase2,205,Tối ưu + HUIM Model A,huim_union__A_signal__20pct,5,"powed+manhattan, k=4, w=1/d^4",1.0,1.0,1.0,0.2535,0.0,0.0,0.5997,1.7694,,20.0,0.1781
+hus_dedup,HUS (bỏ dòng chép),1,1,20091,testcase2,205,Tối ưu + HUIM Model B,huim_union__B_discriminative__20pct,5,"powed+manhattan, k=4, w=1/d^4",1.0,1.0,1.0,0.2535,0.0,0.0,0.5997,1.7694,,20.0,0.302
+hus_dedup,HUS (bỏ dòng chép),1,1,20091,testcase2,205,Tối ưu + HUIM Model C,huim_union__C_rare_discriminative__20pct,5,"powed+manhattan, k=4, w=1/d^4",1.0,1.0,1.0,0.2535,0.0,0.0,0.5997,1.7694,,20.0,0.1797
+hus,HUS nguyên bản,1,1,20500,testcase1,205,k-NN nghiên cứu (S0),all,5,"positive+manhattan, k=11, w=1/d^1",1.0,1.0,1.0,0.0481,0.0,0.0,0.0,0.0,0.572,,
+hus,HUS nguyên bản,1,1,20500,testcase1,205,Tối ưu PHASE I3 (S2),all,5,"exponential+euclidean, k=1, w=1/d^0",1.0,1.0,1.0,0.0681,0.0,0.0,0.0,0.0,0.1302,,
+hus,HUS nguyên bản,1,1,20500,testcase1,205,"Cấu hình UJI 5,36 m áp nguyên",all,5,"exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive",1.0,1.0,1.0,0.0474,0.0,0.0,0.0,0.0,,,
+hus,HUS nguyên bản,1,1,20500,testcase1,205,Tối ưu + HUIM Model A,huim_union__A_signal__20pct,5,"exponential+euclidean, k=1, w=1/d^0",1.0,1.0,1.0,0.0681,0.0,0.0,0.0,0.0,0.1402,20.0,0.1706
+hus,HUS nguyên bản,1,1,20500,testcase1,205,Tối ưu + HUIM Model B,huim_union__B_discriminative__20pct,5,"exponential+euclidean, k=1, w=1/d^0",1.0,1.0,1.0,0.0681,0.0,0.0,0.0,0.0,0.1375,20.0,0.2529
+hus,HUS nguyên bản,1,1,20500,testcase1,205,Tối ưu + HUIM Model C,huim_union__C_rare_discriminative__20pct,5,"exponential+euclidean, k=1, w=1/d^0",1.0,1.0,1.0,0.0681,0.0,0.0,0.0,0.0,0.1416,20.0,0.1592
+hus,HUS nguyên bản,1,1,20500,testcase2,205,k-NN nghiên cứu (S0),all,5,"positive+manhattan, k=11, w=1/d^1",1.0,1.0,1.0,0.0293,0.0,0.0,0.0,0.0,,,
+hus,HUS nguyên bản,1,1,20500,testcase2,205,Tối ưu PHASE I3 (S2),all,5,"exponential+euclidean, k=1, w=1/d^0",1.0,1.0,1.0,0.057,0.0,0.0,0.0,0.0,,,
+hus,HUS nguyên bản,1,1,20500,testcase2,205,"Cấu hình UJI 5,36 m áp nguyên",all,5,"exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive",1.0,1.0,1.0,0.0293,0.0,0.0,0.0,0.0,,,
+hus,HUS nguyên bản,1,1,20500,testcase2,205,Tối ưu + HUIM Model A,huim_union__A_signal__20pct,5,"exponential+euclidean, k=1, w=1/d^0",1.0,1.0,1.0,0.057,0.0,0.0,0.0,0.0,,20.0,0.1706
+hus,HUS nguyên bản,1,1,20500,testcase2,205,Tối ưu + HUIM Model B,huim_union__B_discriminative__20pct,5,"exponential+euclidean, k=1, w=1/d^0",1.0,1.0,1.0,0.057,0.0,0.0,0.0,0.0,,20.0,0.2529
+hus,HUS nguyên bản,1,1,20500,testcase2,205,Tối ưu + HUIM Model C,huim_union__C_rare_discriminative__20pct,5,"exponential+euclidean, k=1, w=1/d^0",1.0,1.0,1.0,0.057,0.0,0.0,0.0,0.0,,20.0,0.1592

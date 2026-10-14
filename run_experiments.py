@@ -9,18 +9,25 @@
 Phases run in the order mandated by the project brief:
 
     audit       PHASE A   read-only inspection of the two CSVs
+    coordinates PHASE A   identify the coordinate system (Web Mercator)
     literature  PHASE B   DOI verification + literature review (needs network)
     tests       PHASE F   unit tests; EFIM vs brute-force oracle
     pilot       PHASE G   small-sample calibration of the minUtil grid
     huim        PHASE H   full HUIM experiment
     refine      PHASE H2  adaptive refinement of the grid
     ips         PHASE I   indoor positioning evaluation
+    ips_cost    PHASE I   time and memory of the positioning system
+    positioning PHASE I3  positioning error optimisation (metres)
+    verify_*    PHASE V   independent re-computation of HUIM and IPS results
     figures     PHASE J   charts + schematics
     ablation    PHASE J   ablation table
     reverse     PHASE K   reverse-thinking analysis
     report      PHASE L   Word report
     slides      PHASE M   PowerPoint + speaker notes
+    kit         PHASE V   Excel workbook for checking every number by hand
     summary     PHASE N   FINAL_SUMMARY.md + deliverable verification
+    code_guide  PHASE N   Word guide to every Python file
+    multi_*     PHASE X   the same study on the other datasets (new folder)
 
 Nothing downstream of `huim` invents numbers: each phase reads the files the
 previous one wrote, so a phase that has not run yet makes the next one fail
@@ -41,6 +48,8 @@ sys.path.insert(0, str(SRC))
 
 PHASES = [
     ("audit", "PHASE A  data audit", [sys.executable, "src/inspect_data.py"]),
+    ("coordinates", "PHASE A  coordinate system of LONGITUDE/LATITUDE",
+     [sys.executable, "src/verify_coordinates.py"]),
     ("audit_md", "PHASE A  render data_audit.md",
      [sys.executable, "src/make_audit_report.py"]),
     ("literature", "PHASE B  DOI verification (network)",
@@ -57,6 +66,15 @@ PHASES = [
     ("refine", "PHASE H2 adaptive grid refinement",
      [sys.executable, "src/run_huim_refine.py"]),
     ("ips", "PHASE I  IPS evaluation", [sys.executable, "src/run_ips.py"]),
+    ("ips_cost", "PHASE I  IPS time and memory",
+     [sys.executable, "src/run_ips_cost.py"]),
+    ("positioning", "PHASE I3 positioning error optimisation",
+     [sys.executable, "src/optimize_positioning.py"]),
+    ("verify_huim", "PHASE V  re-compute every HUI from the raw CSV",
+     [sys.executable, "src/verify_huim.py"]),
+    ("verify_positioning", "PHASE V  re-compute accuracy and metres "
+                           "(standard library only)",
+     [sys.executable, "src/verify_positioning.py"]),
     ("reverse", "PHASE K  reverse-thinking analysis",
      [sys.executable, "src/make_reverse_analysis.py"]),
     ("figures", "PHASE J  charts", [sys.executable, "src/plots.py"]),
@@ -67,8 +85,21 @@ PHASES = [
     ("report", "PHASE L  Word report", [sys.executable, "src/build_report.py"]),
     ("slides", "PHASE M  PowerPoint + speaker notes",
      [sys.executable, "src/make_slides.py"]),
+    ("abc_slides", "PHASE M  refresh the charts of the 4-slide Model A/B/C "
+                   "deck", [sys.executable, "src/update_modelabc_slides.py"]),
+    ("kit", "PHASE V  Excel workbook for manual checking",
+     [sys.executable, "src/make_verification_kit.py"]),
     ("summary", "PHASE N  FINAL_SUMMARY.md + verification",
      [sys.executable, "src/make_final_summary.py"]),
+    ("code_guide", "PHASE N  Word guide to every Python file",
+     [sys.executable, "src/make_code_guide.py"]),
+    ("multi_dataset", "PHASE X  the whole study on every dataset of "
+                      "dataset-20261013T020803Z-1-001 (hours)",
+     [sys.executable, "src/run_multi_dataset.py", "--dataset", "all"]),
+    ("multi_summary", "PHASE X  cross-dataset comparison, figures 40-42",
+     [sys.executable, "src/make_multi_dataset_summary.py"]),
+    ("multi_kit", "PHASE X  Excel workbook checking the cross-dataset numbers",
+     [sys.executable, "src/make_multi_dataset_kit.py"]),
 ]
 
 # Phases that need the internet. They are skipped (with a warning) rather than

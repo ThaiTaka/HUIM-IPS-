@@ -1,0 +1,105 @@
+{
+ "what": "Crossref check of the extra sources cited next to formulas in the Version 2 deck (src/make_deck_v2.py). Each DOI was resolved at api.crossref.org; title, authors and year match the work intended.",
+ "checked_utc": "2026-10-13T01:45:09+00:00",
+ "method": "GET https://api.crossref.org/works/<doi>",
+ "n_checked": 8,
+ "n_matching": 8,
+ "sources": {
+  "Shannon1948": {
+   "doi": "10.1002/j.1538-7305.1948.tb01338.x",
+   "title": "A Mathematical Theory of Communication",
+   "authors": "C. E. Shannon",
+   "year": 1948,
+   "container": "Bell System Technical Journal",
+   "volume": "27",
+   "issue": "3",
+   "page": "379-423",
+   "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+   "used_for": "Định nghĩa entropy H(Y) và mutual information I(A;Y) (Mô hình B, C)"
+  },
+  "SparckJones1972": {
+   "doi": "10.1108/eb026526",
+   "title": "A STATISTICAL INTERPRETATION OF TERM SPECIFICITY AND ITS APPLICATION IN RETRIEVAL",
+   "authors": "KAREN SPARCK JONES",
+   "year": 1972,
+   "container": "Journal of Documentation",
+   "volume": "28",
+   "issue": "1",
+   "page": "11-21",
+   "publisher": "Emerald",
+   "used_for": "Thừa số log(N / số văn bản chứa mục) - IDF (Mô hình C)"
+  },
+  "BrayCurtis1957": {
+   "doi": "10.2307/1942268",
+   "title": "An Ordination of the Upland Forest Communities of Southern Wisconsin",
+   "authors": "J. Roger Bray; J. T. Curtis",
+   "year": 1957,
+   "container": "Ecological Monographs",
+   "volume": "27",
+   "issue": "4",
+   "page": "325-349",
+   "publisher": "Wiley",
+   "used_for": "Khoảng cách Bray-Curtis (Version 2)"
+  },
+  "Shepard1968": {
+   "doi": "10.1145/800186.810616",
+   "title": "A two-dimensional interpolation function for irregularly-spaced data",
+   "authors": "Donald Shepard",
+   "year": 1968,
+   "container": "Proceedings of the 1968 23rd ACM national conference on   -",
+   "volume": null,
+   "issue": null,
+   "page": "517-524",
+   "publisher": "ACM Press",
+   "used_for": "Trọng số nghịch đảo khoảng cách mũ p, w = 1/d^p (Version 2)"
+  },
+  "Snyder1987": {
+   "doi": "10.3133/pp1395",
+   "title": "Map projections: A working manual",
+   "authors": "John P. Snyder",
+   "year": 1987,
+   "container": "Professional Paper",
+   "volume": null,
+   "issue": null,
+   "page": null,
+   "publisher": "US Geological Survey",
+   "used_for": "Hệ số tỉ lệ của phép chiếu Mercator, sec(vĩ độ) (mét thực địa)"
+  },
+  "Spearman1904": {
+   "doi": "10.2307/1412159",
+   "title": "The Proof and Measurement of Association between Two Things",
+   "authors": "C. Spearman",
+   "year": 1904,
+   "container": "The American Journal of Psychology",
+   "volume": "15",
+   "issue": "1",
+   "page": "72",
+   "publisher": "University of Illinois Press",
+   "used_for": "Hệ số tương quan hạng Spearman rho"
+  },
+  "Jaccard1912": {
+   "doi": "10.1111/j.1469-8137.1912.tb05611.x",
+   "title": "THE DISTRIBUTION OF THE FLORA IN THE ALPINE ZONE.",
+   "authors": "Paul Jaccard",
+   "year": 1912,
+   "container": "New Phytologist",
+   "volume": "11",
+   "issue": "2",
+   "page": "37-50",
+   "publisher": "Wiley",
+   "used_for": "Hệ số Jaccard so sánh hai tập WAP"
+  },
+  "Efron1979": {
+   "doi": "10.1214/aos/1176344552",
+   "title": "Bootstrap Methods: Another Look at the Jackknife",
+   "authors": "B. Efron",
+   "year": 1979,
+   "container": "The Annals of Statistics",
+   "volume": "7",
+   "issue": "1",
+   "page": null,
+   "publisher": "Institute of Mathematical Statistics",
+   "used_for": "Khoảng tin cậy bootstrap (Version 2)"
+  }
+ }
+}

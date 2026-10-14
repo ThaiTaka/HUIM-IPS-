@@ -1,0 +1,97 @@
+2026-10-13 11:13:58,362 | INFO    | multi | loaded hcxy in 0.9s
+2026-10-13 11:13:58,363 | INFO    | multi | ==== hcxy / prepare ====
+2026-10-13 11:13:58,455 | INFO    | multi | ==== hcxy / prepare done in 0.1s ====
+2026-10-13 11:13:58,455 | INFO    | multi | ==== hcxy / ips ====
+2026-10-13 11:13:58,474 | INFO    | prep | fit on 11370 training rows: 347 WAP columns, detected RSSI in [-98, -3]
+2026-10-13 11:13:59,157 | INFO    | ips | dev k=1 metric=euclidean weights=uniform -> joint acc 0.9972
+2026-10-13 11:13:59,420 | INFO    | ips | dev k=3 metric=euclidean weights=uniform -> joint acc 0.9884
+2026-10-13 11:13:59,723 | INFO    | ips | dev k=5 metric=euclidean weights=uniform -> joint acc 0.9821
+2026-10-13 11:14:00,072 | INFO    | ips | dev k=7 metric=euclidean weights=uniform -> joint acc 0.9775
+2026-10-13 11:14:00,359 | INFO    | ips | dev k=9 metric=euclidean weights=uniform -> joint acc 0.9729
+2026-10-13 11:14:00,683 | INFO    | ips | dev k=11 metric=euclidean weights=uniform -> joint acc 0.9662
+2026-10-13 11:14:00,988 | INFO    | ips | dev k=1 metric=euclidean weights=distance -> joint acc 0.9972
+2026-10-13 11:14:01,290 | INFO    | ips | dev k=3 metric=euclidean weights=distance -> joint acc 0.9961
+2026-10-13 11:14:01,603 | INFO    | ips | dev k=5 metric=euclidean weights=distance -> joint acc 0.9958
+2026-10-13 11:14:01,918 | INFO    | ips | dev k=7 metric=euclidean weights=distance -> joint acc 0.9954
+2026-10-13 11:14:02,242 | INFO    | ips | dev k=9 metric=euclidean weights=distance -> joint acc 0.9954
+2026-10-13 11:14:02,567 | INFO    | ips | dev k=11 metric=euclidean weights=distance -> joint acc 0.9947
+2026-10-13 11:14:04,732 | INFO    | ips | dev k=1 metric=manhattan weights=uniform -> joint acc 0.9979
+2026-10-13 11:14:06,958 | INFO    | ips | dev k=3 metric=manhattan weights=uniform -> joint acc 0.9937
+2026-10-13 11:14:09,162 | INFO    | ips | dev k=5 metric=manhattan weights=uniform -> joint acc 0.9944
+2026-10-13 11:14:11,377 | INFO    | ips | dev k=7 metric=manhattan weights=uniform -> joint acc 0.9909
+2026-10-13 11:14:13,583 | INFO    | ips | dev k=9 metric=manhattan weights=uniform -> joint acc 0.9873
+2026-10-13 11:14:15,718 | INFO    | ips | dev k=11 metric=manhattan weights=uniform -> joint acc 0.9852
+2026-10-13 11:14:17,928 | INFO    | ips | dev k=1 metric=manhattan weights=distance -> joint acc 0.9979
+2026-10-13 11:14:20,188 | INFO    | ips | dev k=3 metric=manhattan weights=distance -> joint acc 0.9979
+2026-10-13 11:14:22,443 | INFO    | ips | dev k=5 metric=manhattan weights=distance -> joint acc 0.9979
+2026-10-13 11:14:24,703 | INFO    | ips | dev k=7 metric=manhattan weights=distance -> joint acc 0.9986
+2026-10-13 11:14:26,976 | INFO    | ips | dev k=9 metric=manhattan weights=distance -> joint acc 0.9986
+2026-10-13 11:14:29,262 | INFO    | ips | dev k=11 metric=manhattan weights=distance -> joint acc 0.9982
+2026-10-13 11:14:29,264 | INFO    | multi | hcxy: frozen k-NN {'n_neighbors': 7, 'metric': 'manhattan', 'weights': 'distance', 'selected_on': 'dev_sub of trainingData, ALL-WAP features', 'dev_joint_accuracy': 0.998593}
+2026-10-13 11:14:29,300 | INFO    | multi | hcxy: 135 conditions x 1 test sets
+2026-10-13 11:14:38,455 | INFO    | multi |   25/135 conditions
+2026-10-13 11:14:42,638 | INFO    | multi |   50/135 conditions
+2026-10-13 11:14:47,630 | INFO    | multi |   75/135 conditions
+2026-10-13 11:14:56,819 | INFO    | multi |   100/135 conditions
+2026-10-13 11:15:12,997 | INFO    | multi |   125/135 conditions
+2026-10-13 11:15:29,777 | INFO    | multi |   135/135 conditions
+2026-10-13 11:15:31,808 | INFO    | multi | ==== hcxy / ips done in 93.4s ====
+2026-10-13 11:15:31,808 | INFO    | multi | ==== hcxy / positioning ====
+2026-10-13 11:15:31,866 | INFO    | multi | hcxy: 6 dev folds grouped by GROUP
+2026-10-13 11:15:33,155 | INFO    | optpos | dev lists positive    euclidean    1.3s
+2026-10-13 11:15:44,598 | INFO    | optpos | dev lists positive    manhattan   10.4s
+2026-10-13 11:15:57,990 | INFO    | optpos | dev lists positive    braycurtis  12.3s
+2026-10-13 11:16:01,810 | INFO    | optpos | dev lists positive    cosine       2.8s
+2026-10-13 11:16:03,962 | INFO    | optpos | dev lists powed       euclidean    1.1s
+2026-10-13 11:16:15,171 | INFO    | optpos | dev lists powed       manhattan   10.2s
+2026-10-13 11:16:28,499 | INFO    | optpos | dev lists powed       braycurtis  12.3s
+2026-10-13 11:16:32,259 | INFO    | optpos | dev lists powed       cosine       2.7s
+2026-10-13 11:16:34,427 | INFO    | optpos | dev lists exponential euclidean    1.1s
+2026-10-13 11:16:45,703 | INFO    | optpos | dev lists exponential manhattan   10.2s
+2026-10-13 11:16:59,063 | INFO    | optpos | dev lists exponential braycurtis  12.4s
+2026-10-13 11:17:02,896 | INFO    | optpos | dev lists exponential cosine       2.8s
+2026-10-13 11:17:03,918 | INFO    | optpos | S0 positive+manhattan, k=1, w=1/d^0 -> dev mean 2.061 m
+2026-10-13 11:17:03,919 | INFO    | optpos | S1 powed+braycurtis, k=1, w=1/d^0 -> dev mean 1.827 m
+2026-10-13 11:17:03,919 | INFO    | optpos | S2 powed+braycurtis, k=30, w=1/d^3 -> dev mean 1.413 m
+2026-10-13 11:17:16,371 | INFO    | optpos | dev offset lists powed       delta  -9.0 dB  12.5s
+2026-10-13 11:17:28,854 | INFO    | optpos | dev offset lists powed       delta  -6.0 dB  12.5s
+2026-10-13 11:17:41,332 | INFO    | optpos | dev offset lists powed       delta  -3.0 dB  12.5s
+2026-10-13 11:17:53,871 | INFO    | optpos | dev offset lists powed       delta  +3.0 dB  12.5s
+2026-10-13 11:18:06,349 | INFO    | optpos | dev offset lists powed       delta  +6.0 dB  12.5s
+2026-10-13 11:18:18,938 | INFO    | optpos | dev offset lists powed       delta  +9.0 dB  12.6s
+2026-10-13 11:18:19,577 | INFO    | optpos | S3 powed+braycurtis, k=30, w=1/d^2, offset +-3 dB -> dev mean 1.474 m
+2026-10-13 11:18:19,634 | INFO    | optpos | S4 powed+braycurtis, k=30, w=1/d^3, ensemble with exponential -> dev mean 1.391 m
+2026-10-13 11:18:19,672 | INFO    | multi | hcxy: SELECTED on dev powed+braycurtis, k=30, w=1/d^3
+2026-10-13 11:18:19,694 | INFO    | prep | fit on 11370 training rows: 347 WAP columns, detected RSSI in [-98, -3]
+2026-10-13 11:18:21,625 | INFO    | multi | hcxy test_HCXY  S0 study k-NN as regressor              mean 1.931 m  median 1.268 m  joint 1.0000
+2026-10-13 11:18:22,904 | INFO    | multi | hcxy test_HCXY  S1 best representation x distance (k=1) mean 1.760 m  median 1.342 m  joint 1.0000
+2026-10-13 11:18:24,141 | INFO    | multi | hcxy test_HCXY  S2 + k and 1/d^p weighting              mean 1.547 m  median 1.117 m  joint 1.0000
+2026-10-13 11:18:25,486 | INFO    | multi | hcxy test_HCXY  baseline_all                                 347 WAP  study 1.93 m -> opt 1.55 m
+2026-10-13 11:18:26,741 | INFO    | multi | hcxy test_HCXY  baseline_detected                            345 WAP  study 1.93 m -> opt 1.55 m
+2026-10-13 11:18:27,014 | INFO    | multi | hcxy test_HCXY  huim_union__A_signal__6.1237pct               67 WAP  study 2.73 m -> opt 2.12 m
+2026-10-13 11:18:27,309 | INFO    | multi | hcxy test_HCXY  huim_union__B_discriminative__6.1237pct       73 WAP  study 2.65 m -> opt 2.15 m
+2026-10-13 11:18:27,655 | INFO    | multi | hcxy test_HCXY  huim_union__C_rare_discriminative__5pct       82 WAP  study 2.74 m -> opt 2.12 m
+2026-10-13 11:18:27,845 | INFO    | multi | hcxy test_HCXY  huim_topn__A_signal__6.1237pct__n40           40 WAP  study 3.30 m -> opt 2.95 m
+2026-10-13 11:18:28,054 | INFO    | multi | hcxy test_HCXY  huim_topn__B_discriminative__6.777pct__n50    50 WAP  study 2.78 m -> opt 2.62 m
+2026-10-13 11:18:28,171 | INFO    | multi | hcxy test_HCXY  huim_topn__C_rare_discriminative__7.5pct__n20  20 WAP  study 31.17 m -> opt 30.56 m
+2026-10-13 11:18:28,450 | INFO    | multi | hcxy test_HCXY  control_top_mi__n67                           67 WAP  study 2.44 m -> opt 1.80 m
+2026-10-13 11:18:28,719 | INFO    | multi | hcxy test_HCXY  control_top_support__n67                      67 WAP  study 2.79 m -> opt 2.14 m
+2026-10-13 11:18:29,013 | INFO    | multi | hcxy test_HCXY  control_top_mi__n73                           73 WAP  study 2.22 m -> opt 1.76 m
+2026-10-13 11:18:29,318 | INFO    | multi | hcxy test_HCXY  control_top_support__n73                      73 WAP  study 2.61 m -> opt 2.01 m
+2026-10-13 11:18:29,663 | INFO    | multi | hcxy test_HCXY  control_top_mi__n82                           82 WAP  study 2.33 m -> opt 1.88 m
+2026-10-13 11:18:30,006 | INFO    | multi | hcxy test_HCXY  control_top_support__n82                      82 WAP  study 2.39 m -> opt 1.89 m
+2026-10-13 11:18:30,192 | INFO    | multi | hcxy test_HCXY  control_top_mi__n40                           40 WAP  study 2.63 m -> opt 2.04 m
+2026-10-13 11:18:30,382 | INFO    | multi | hcxy test_HCXY  control_top_support__n40                      40 WAP  study 2.35 m -> opt 1.90 m
+2026-10-13 11:18:30,610 | INFO    | multi | hcxy test_HCXY  control_top_mi__n50                           50 WAP  study 2.53 m -> opt 1.93 m
+2026-10-13 11:18:30,830 | INFO    | multi | hcxy test_HCXY  control_top_support__n50                      50 WAP  study 2.72 m -> opt 2.09 m
+2026-10-13 11:18:30,959 | INFO    | multi | hcxy test_HCXY  control_top_mi__n20                           20 WAP  study 3.55 m -> opt 3.50 m
+2026-10-13 11:18:31,078 | INFO    | multi | hcxy test_HCXY  control_top_support__n20                      20 WAP  study 3.40 m -> opt 3.48 m
+2026-10-13 11:18:32,670 | INFO    | multi | ==== hcxy / positioning done in 180.9s ====
+2026-10-13 11:18:32,670 | INFO    | multi | ==== hcxy / transfer ====
+2026-10-13 11:18:43,836 | INFO    | multi | hcxy test_HCXY  UJI config as-is: mean 1.616 m, joint 1.0000
+2026-10-13 11:18:43,846 | INFO    | multi | ==== hcxy / transfer done in 11.2s ====
+2026-10-13 11:18:43,846 | INFO    | multi | ==== hcxy / curve ====
+2026-10-13 11:18:48,549 | INFO    | multi |   curve 20/55
+2026-10-13 11:18:50,293 | INFO    | multi |   curve 40/55
+2026-10-13 11:18:53,025 | INFO    | multi | hcxy: curve over 55 WAP sets
+2026-10-13 11:18:53,028 | INFO    | multi | ==== hcxy / curve done in 9.2s ====

@@ -1,0 +1,68 @@
+{
+  "key": "uji",
+  "title": "UJIIndoorLoc (3 tòa, 13 tầng)",
+  "sources": [
+    "ujiindoorloc_raw/trainingData.csv",
+    "ujiindoorloc_raw/validationData.csv"
+  ],
+  "n_wap_columns": 520,
+  "n_buildings": 3,
+  "n_building_floor_classes": 13,
+  "location_label": "BUILDINGID_FLOOR",
+  "ground_factor": 0.766126,
+  "coordinates": "EPSG:3857 Web Mercator; ground metres = projected x 0.766126 (src/verify_coordinates.py)",
+  "cv_group": "USERID - leave-users-out, exactly as PHASE I3 of the study (validationData is another user, other phones, 4 months later)",
+  "n_cv_groups": 18,
+  "x_range": [
+    -7691.338399998844,
+    -7300.818990092725
+  ],
+  "y_range": [
+    4864745.745015971,
+    4865016.687799998
+  ],
+  "train": {
+    "rows": 19937,
+    "positions": 933,
+    "floors": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "detections_per_row_mean": 17.995,
+    "rows_with_no_detection": 76,
+    "rssi_min": -104.0,
+    "rssi_max": 0.0,
+    "aps_ever_detected": 465
+  },
+  "tests": {
+    "validationData": {
+      "rows": 1111,
+      "positions": 1053,
+      "floors": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "detections_per_row_mean": 16.475,
+      "rows_with_no_detection": 0,
+      "rssi_min": -102.0,
+      "rssi_max": -34.0,
+      "aps_ever_detected": 367,
+      "positions_also_in_training": 18
+    }
+  },
+  "cleaning": [
+    "trainingData.csv: SHA-256 identical to the copy the study used (ujiindoorloc\\UJIndoorLoc\\trainingData.csv)",
+    "validationData.csv: SHA-256 identical to the copy the study used (ujiindoorloc\\UJIndoorLoc\\validationData.csv)"
+  ],
+  "empty_folders_in_dataset_root": [
+    "UJI_LIB_DB_Floor_5",
+    "syl",
+    "tuji"
+  ]
+}

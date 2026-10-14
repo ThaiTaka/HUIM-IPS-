@@ -1,7 +1,7 @@
 {
   "source_files": {
-    "huim": "D:\\ips\\results\\metrics\\huim_runs.csv",
-    "ips": "D:\\ips\\results\\metrics\\ips_results.csv"
+    "huim": "D:\\HUIM-IPS-\\results\\metrics\\huim_runs.csv",
+    "ips": "D:\\HUIM-IPS-\\results\\metrics\\ips_results.csv"
   },
   "observation_1_threshold_vs_hui_count": {
     "A_signal": {

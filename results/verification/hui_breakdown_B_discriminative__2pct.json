@@ -1,0 +1,12 @@
+{
+  "run": "B_discriminative__2pct",
+  "itemset": [
+    "WAP118",
+    "WAP517"
+  ],
+  "u_efim": 89889.74792197629,
+  "support": 1832,
+  "minutil_abs": 87085.98129728805,
+  "minutil_pct": 2.0,
+  "total_db_utility": 4354299.064864403
+}

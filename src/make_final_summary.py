@@ -680,6 +680,48 @@ def build_summary() -> str:
                   f"thì cây chậm hơn duyệt vét cạn. Thuật toán index được ghi "
                   f"lại trong log cho từng phép đo.\n")
 
+    pop = RESULTS / "positioning_optimisation.json"
+    if pop.exists():
+        PO = load_json(pop)
+        PA = pd.read_csv(METRICS / "positioning_ablation.csv")
+        s0, sel = PA[PA["stage"] == "S0"].iloc[0], PA.iloc[-1]
+        A("### 5.5c. Tối ưu sai số định vị theo mét (PHASE I3)\n")
+        A("k-NN của PHASE I (k=1, Manhattan) được chọn cho bài toán PHÂN LOẠI "
+          "tầng trên một phép chia ngẫu nhiên; PHASE I3 tối ưu riêng phần ước "
+          f"lượng toạ độ. Chọn trên {PO['protocol']['selection_split']}; tiêu "
+          "chí là sai số trung bình (mét thực địa) trên các fold dev; "
+          "validationData chỉ chấm điểm mỗi bước đúng một lần.\n")
+        A("| Bước | Cấu hình | Dev TB (m) | Val TB (m) | Val trung vị (m) | "
+          "Joint acc |")
+        A("|---|---|---|---|---|---|")
+        for _, r in PA.iterrows():
+            A(f"| {r['stage']} {r['what']} | {r['config']} | "
+              f"{r['dev_mean_ground_m']:.2f} | {r['val_mean_ground_m']:.2f} | "
+              f"{r['val_median_ground_m']:.2f} | "
+              f"{pc(r['val_joint_building_floor_accuracy'])} |")
+        A("")
+        A(f"[EXPERIMENT RESULT] Mô hình được giao thức chọn ({sel['stage']}): "
+          f"sai số trung bình **{sel['val_mean_ground_m']:.2f} m** thực địa so "
+          f"với {s0['val_mean_ground_m']:.2f} m "
+          f"({(1 - sel['val_mean_ground_m'] / s0['val_mean_ground_m']) * 100:.0f}% "
+          f"thấp hơn), trung vị {sel['val_median_ground_m']:.2f} m, joint "
+          f"accuracy {pc(sel['val_joint_building_floor_accuracy'])}.\n")
+        best = PA.loc[PA["val_mean_ground_m"].idxmin()]
+        A(f"[OUR INTERPRETATION] Phần lớn cải thiện đến từ khoảng cách "
+          f"Bray-Curtis/cosine và k láng giềng có trọng số. Dò độ lệch thiết bị "
+          f"và ensemble thắng trên dev nhưng không giảm thêm sai số mét trên "
+          f"validation (thấp nhất là {best['stage']}, "
+          f"{best['val_mean_ground_m']:.2f} m); chúng chỉ nâng độ chính xác "
+          f"tầng. Mô hình giữ nguyên lựa chọn của giao thức.\n")
+        for name in ("huim_checks.json", "positioning_checks.json"):
+            p = RESULTS / "verification" / name
+            if p.exists():
+                v = load_json(p)
+                A(f"Kiểm chứng độc lập `{name}`: {v['n_checks']} phép kiểm "
+                  f"tra, {v['n_failed']} thất bại.")
+        A("Bộ kiểm chứng thủ công bằng Excel: "
+          "`verification/kiem_chung_thu_cong.xlsx`.\n")
+
     A("### 5.6. Một kết quả ĐI NGƯỢC kỳ vọng — và nó là hạn chế lớn nhất của "
       "thiết kế\n")
     A(f"[EXPERIMENT RESULT] Top-10 AP được phát hiện nhiều nhất và top-10 AP "

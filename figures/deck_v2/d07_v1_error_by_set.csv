@@ -1,0 +1,7 @@
+condition,median,mean,p90
+baseline_all_520,4.6096,9.277,17.0212
+control_top_support__n200,4.7611,8.7743,17.0212
+control_top_mi__n91,7.2627,18.5436,60.2603
+huim_union__C_rare_discriminative__1.7321pct,7.2916,19.1421,59.0253
+huim_union__A_signal__1.9294pct,12.0679,20.5749,51.6022
+huim_union__B_discriminative__2pct,11.739,22.0649,59.112

@@ -216,6 +216,89 @@ def ch12(D: Doc, C) -> None:
 
 
 # ===========================================================================
+def positioning_optimisation(D: Doc, C) -> None:
+    """13.1.1 - PHASE I3: the positioning error in metres, optimised with a
+    selection protocol that never looks at validationData."""
+    PO, A, N = C.PO, C.PAB, C.PCN
+    s0 = A[A["stage"] == "S0"].iloc[0]
+    sel = A.iloc[-1]
+    best_val = A.loc[A["val_mean_ground_m"].idxmin()]
+    cfg = PO["selected_config"]
+    D.h(3, "13.1.1. Tối ưu sai số định vị theo mét (PHASE I3)")
+    D.rich([("Vì sao k-NN của nghiên cứu chưa phải bộ ước lượng toạ độ tốt. ", "b"),
+            ("Cấu hình k = 1, Manhattan được chọn cho bài toán PHÂN LOẠI tòa "
+             "nhà-tầng, trên một phép chia NGẪU NHIÊN của trainingData. Phép chia "
+             "đó đặt các fingerprint đo tại cùng một điểm tham chiếu vào cả hai "
+             "phía, nên láng giềng gần nhất gần như luôn là 'anh em sinh đôi' của "
+             "truy vấn và k = 1 thắng. validationData lại do người khác đo, phần "
+             "lớn bằng điện thoại khác, bốn tháng sau, tại các vị trí mới. Với "
+             "k = 1, toạ độ dự đoán CHÍNH LÀ một vị trí huấn luyện, nên mỗi láng "
+             "giềng sai thành một sai số trọn vẹn; RSSI lại là số nguyên nên "
+             "khoảng cách hoà nhau rất thường gặp và kết quả phụ thuộc cách phá "
+             "hoà.", "")])
+    D.rich([("Giao thức chọn — validationData không được dùng để chọn gì. ", "b"),
+            (f"Phép chia chọn: {PO['protocol']['selection_split']}. Mỗi fold dev "
+             f"chỉ gồm người đo mà mô hình chưa thấy — mô phỏng gần nhất điều "
+             f"kiện của validationData. Tiêu chí: sai số trung bình (mét thực địa) trên các "
+             f"fold dev. Năm bước, mỗi bước giữ cấu hình tốt nhất của bước trước "
+             f"và chỉ được nhận nếu giảm sai số dev ít nhất "
+             f"{PO['protocol']['min_gain_m']} m. validationData được đánh giá "
+             f"ĐÚNG MỘT LẦN cho mỗi bước, ở cuối.", "")])
+    rows = []
+    for _, r in A.iterrows():
+        rows.append({"Bước": r["stage"], "Thêm gì": r["what"],
+                     "Cấu hình": r["config"],
+                     "Dev TB (m)": f"{r['dev_mean_ground_m']:.2f}",
+                     "Val TB (m)": f"{r['val_mean_ground_m']:.2f}",
+                     "Val trung vị (m)": f"{r['val_median_ground_m']:.2f}",
+                     "Val p90 (m)": f"{r['val_p90_ground_m']:.2f}",
+                     "Joint acc": pc(r["val_joint_building_floor_accuracy"])})
+    D.table(pd.DataFrame(rows),
+            "Từng bước tối ưu: sai số trên fold dev (dùng để CHỌN) và trên "
+            "validationData (chỉ để BÁO CÁO). Mét thực địa.", font_pt=8,
+            widths=[0.45, 1.3, 2.0, 0.6, 0.6, 0.7, 0.6, 0.7])
+    D.figure(FIGURES / "fig18_positioning_optimisation.png",
+             f"Trái: phân bố sai số (CDF) của từng bước trên "
+             f"{nf(C.va['n_rows'])} fingerprint kiểm định. Phải: sai số trung "
+             f"bình của mỗi tập WAP trước và sau khi tối ưu, HUIM ghi kèm "
+             f"ngưỡng minUtil", width_in=6.4)
+    D.rich([("Kết quả, đọc trung thực. ", "b"),
+            (f"Mô hình được giao thức chọn là {sel['stage']} "
+             f"({PO['selected_label']}): sai số trung bình "
+             f"{sel['val_mean_ground_m']:.2f} m thực địa so với "
+             f"{s0['val_mean_ground_m']:.2f} m của k-NN gốc "
+             f"({(1 - sel['val_mean_ground_m'] / s0['val_mean_ground_m']) * 100:.0f}% "
+             f"thấp hơn), trung vị {sel['val_median_ground_m']:.2f} m, "
+             f"{sel['val_share_within_8m'] * 100:.1f}% fingerprint có sai số "
+             f"<= 8 m, và joint accuracy "
+             f"{pc(sel['val_joint_building_floor_accuracy'])}. Theo quy ước toạ "
+             f"độ chiếu của literature, sai số trung bình là "
+             f"{sel['val_mean_projected_m']:.2f} m. ", ""),
+            (f"Phần lớn cải thiện đến từ bước S1-S2 (khoảng cách Bray-Curtis/"
+             f"cosine và k láng giềng có trọng số). Bước dò độ lệch thiết bị và "
+             f"ensemble giảm sai số trên dev nhưng KHÔNG giảm thêm trên "
+             f"validation (bước thấp nhất trên validation là "
+             f"{best_val['stage']} với {best_val['val_mean_ground_m']:.2f} m); "
+             f"chúng nâng độ chính xác tầng. Việc giữ {sel['stage']} là do giao "
+             f"thức quyết định trước — chọn lại theo số validation sẽ là dùng tập "
+             f"kiểm tra để chọn mô hình.", "")])
+    hu = N[N["condition"].str.startswith("huim_union")]
+    if len(hu):
+        parts = "; ".join(
+            f"{r['label'].replace(chr(10), ', ')}: "
+            f"{r['study_mean_ground_m']:.1f} -> {r['opt_mean_ground_m']:.1f} m"
+            for _, r in hu.iterrows())
+        D.rich([("Với các tập WAP do HUIM chọn. ", "b"),
+                (f"Áp nguyên mô hình đã chọn lên tập WAP của HUIM: {parts}. Sai "
+                 f"số giảm nhưng vẫn xa dải 7–8 m, và đối chứng top-n cùng số WAP "
+                 f"vẫn tốt hơn (bảng positioning_conditions.csv). Kết luận chính "
+                 f"của chương này về HUIM không đổi; mọi so sánh HUIM với đối "
+                 f"chứng ở các mục sau vẫn dùng k-NN đóng băng của PHASE I.", "")])
+    D.p("Kiểm chứng: verification/kiem_chung_thu_cong.xlsx tính lại mọi con số "
+        "này bằng công thức Excel; src/verify_positioning.py tính lại bằng Python "
+        "thuần (csv + math).", italic=True, size=10.5)
+
+
 def ch13(D: Doc, C) -> None:
     I, b = C.I, C.base
     D.h(1, "13. Kết quả IPS")
@@ -303,7 +386,10 @@ def ch13(D: Doc, C) -> None:
              f"kê nào, nếu không con số sẽ gây hiểu nhầm.", "")])
     D.figure(FIGURES / "fig17_positioning_error_metres.png",
              "Sai số định vị (mét thực địa) so với dải mục tiêu 7–8 m, cho "
-             "baseline và các cấu hình chính", width_in=6.2)
+             "baseline và các cấu hình chính"
+             + (" (nhóm tô nền là mô hình tối ưu PHASE I3, xem mục 13.1.1; các "
+                "cột còn lại dùng k-NN đóng băng của PHASE I)"
+                if C.PO is not None else ""), width_in=6.2)
     D.rich([("Dự đoán từ chương 3 được kiểm chứng. ", "b"),
             (f"Audit đã dự đoán trước (mục 3.7) rằng phân loại toà nhà sẽ gần "
              f"như được giải quyết, còn tầng mới là phần khó, dựa trên việc "
@@ -322,6 +408,8 @@ def ch13(D: Doc, C) -> None:
                  f"joint accuracy {pc(C.base465['joint_building_floor_accuracy'])}"
                  f" (baseline: {pc(b['joint_building_floor_accuracy'])}). "
                  "Phần này KHÔNG được ghi công cho HUIM.", "")])
+    if C.PO is not None:
+        positioning_optimisation(D, C)
 
     D.h(2, "13.2. Chọn AP bằng union của HUI (minUtil là núm duy nhất)")
     U = I[I["family"] == "huim_union"]

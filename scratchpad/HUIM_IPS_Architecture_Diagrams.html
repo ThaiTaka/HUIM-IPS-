@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUIM-IPS Architecture Diagrams</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: #1a5490;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .diagram-section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+        .diagram-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1a5490;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #1a5490;
+        }
+        .diagram-description {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        svg {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #fafafa;
+        }
+        .legend {
+            margin-top: 15px;
+            font-size: 12px;
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 4px solid #1a5490;
+        }
+        .legend-item {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            margin-right: 10px;
+        }
+        @media print {
+            body { padding: 0; }
+            .container { box-shadow: none; padding: 0; }
+            .diagram-section { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏗️ HUIM-IPS Architecture Diagrams</h1>
+        <p class="subtitle">High Utility Itemset Mining for Wi-Fi Indoor Positioning System</p>
+
+        <!-- Diagram 1: Pipeline Phases -->
+        <div class="diagram-section">
+            <div class="diagram-title">1. Pipeline: 13 Phases</div>
+            <div class="diagram-description">
+                Toàn bộ quy trình từ data audit đến báo cáo cuối cùng. Mỗi phase có đầu vào/đầu ra rõ ràng.
+            </div>
+            <svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+                <!-- Row 1 -->
+                <rect x="20" y="20" width="140" height="60" fill="#e8f4f8" stroke="#1a5490" stroke-width="2" rx="4"/>
+                <text x="90" y="55" text-anchor="middle" font-weight="bold">PHASE A</text>
+                <text x="90" y="70" text-anchor="middle" font-size="12" fill="#666">Data Audit</text>
+
+                <path d="M 160 50 L 190 50" stroke="#1a5490" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+                <rect x="190" y="20" width="140" height="60" fill="#e8f4f8" stroke="#1a5490" stroke-width="2" rx="4"/>
+                <text x="260" y="55" text-anchor="middle" font-weight="bold">PHASE B</text>
+                <text x="260" y="70" text-anchor="middle" font-size="12" fill="#666">Literature</text>
+
+                <path d="M 330 50 L 360 50" stroke="#1a5490" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+                <rect x="360" y="20" width="140" height="60" fill="#e8f4f8" stroke="#1a5490" stroke-width="2" rx="4"/>
+                <text x="430" y="55" text-anchor="middle" font-weight="bold">PHASE F</text>
+                <text x="430" y="70" text-anchor="middle" font-size="12" fill="#666">Unit Tests</text>
+
+                <path d="M 500 50 L 530 50" stroke="#1a5490" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+                <rect x="530" y="20" width="140" height="60" fill="#e8f4f8" stroke="#1a5490" stroke-width="2" rx="4"/>
+                <text x="600" y="55" text-anchor="middle" font-weight="bold">PHASE G</text>
+                <text x="600" y="70" text-anchor="middle" font-size="12" fill="#666">Pilot Grid</text>
+
+                <path d="M 670 50 L 700 50" stroke="#1a5490" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+                <rect x="700" y="20" width="140" height="60" fill="#e8f4f8" stroke="#1a5490" stroke-width="2" rx="4"/>
+                <text x="770" y="55" text-anchor="middle" font-weight="bold">PHASE H</text>
+                <text x="770" y="70" text-anchor="middle" font-size="12" fill="#666">EFIM Mining</text>
+
+                <path d="M 840 50 L 870 50" stroke="#1a5490" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+                <rect x="870" y="20" width="110" height="60" fill="#fff3cd" stroke="#ff9800" stroke-width="2" rx="4"/>
+                <text x="925" y="50" text-anchor="middle" font-weight="bold">PHASE</text>
+                <text x="925" y="65" text-anchor="middle" font-weight="bold">H2</text>
+
+                <!-- Row 2 -->
+                <path d="M 90 80 L 90 110" stroke="#1a5490" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+                <rect x="20" y="110" width="140" height="60" fill="#f0e8f8" stroke="#7b2cbf" stroke-width="2" rx="4"/>
+                <text x="90" y="145" text-anchor="middle" font-weight="bold">PHASE I</text>
+                <text x="90" y="160" text-anchor="middle" font-size="12" fill="#666">IPS Eval</text>
+
+                <path d="M 160 140 L 190 140" stroke="#1a5490" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+                <rect x="190" y="110" width="140" height="60" fill="#f0e8f8" stroke="#7b2cbf" stroke-width="2" rx="4"/>
+                <text x="260" y="145" text-anchor="middle" font-weight="bold">PHASE I3</text>
+                <text x="260" y="160" text-anchor="middle" font-size="12" fill="#666">Optimize</text>
+
+                <path d="M 330 140 L 360 140" stroke="#1a5490" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+                <rect x="360" y="110" width="140" height="60" fill="#e8f8e8" stroke="#27ae60" stroke-width="2" rx="4"/>
+                <text x="430" y="145" text-anchor="middle" font-weight="bold">PHASE V</text>
+                <text x="430" y="160" text-anchor="middle" font-size="12" fill="#666">Verify</text>
+
+                <path d="M 500 140 L 530 140" stroke="#1a5490" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+                <rect x="530" y="110" width="140" height="60" fill="#e8f8e8" stroke="#27ae60" stroke-width="2" rx="4"/>
+                <text x="600" y="145" text-anchor="middle" font-weight="bold">PHASE J</text>
+                <text x="600" y="160" text-anchor="middle" font-size="12" fill="#666">Charts</text>
+
+                <path d="M 670 140 L 700 140" stroke="#1a5490" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+                <rect x="700" y="110" width="140" height="60" fill="#e8f8e8" stroke="#27ae60" stroke-width="2" rx="4"/>
+                <text x="770" y="145" text-anchor="middle" font-weight="bold">PHASE K</text>
+                <text x="770" y="160" text-anchor="middle" font-size="12" fill="#666">Reverse</text>
+
+                <path d="M 840 140 L 870 140" stroke="#1a5490" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+                <rect x="870" y="110" width="110" height="60" fill="#e8f8e8" stroke="#27ae60" stroke-width="2" rx="4"/>
+                <text x="925" y="145" text-anchor="middle" font-weight="bold">PHASE L</text>
+                <text x="925" y="160" text-anchor="middle" font-size="12" fill="#666">Report</text>
+
+                <!-- Row 3 -->
+                <path d="M 260 170 L 260 200" stroke="#1a5490" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+                <rect x="190" y="200" width="140" height="60" fill="#f8e8e8" stroke="#c0392b" stroke-width="2" rx="4"/>
+                <text x="260" y="235" text-anchor="middle" font-weight="bold">PHASE M</text>
+                <text x="260" y="250" text-anchor="middle" font-size="12" fill="#666">Slides</text>
+
+                <path d="M 330 230 L 360 230" stroke="#1a5490" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+                <rect x="360" y="200" width="140" height="60" fill="#f8e8e8" stroke="#c0392b" stroke-width="2" rx="4"/>
+                <text x="430" y="235" text-anchor="middle" font-weight="bold">PHASE N</text>
+                <text x="430" y="250" text-anchor="middle" font-size="12" fill="#666">Summary</text>
+
+                <!-- Legend -->
+                <g font-size="12" fill="#666">
+                    <text x="20" y="330">Legend:</text>
+                    <rect x="20" y="340" width="15" height="15" fill="#e8f4f8" stroke="#1a5490"/>
+                    <text x="40" y="352">Preparation phases</text>
+
+                    <rect x="240" y="340" width="15" height="15" fill="#f0e8f8" stroke="#7b2cbf"/>
+                    <text x="260" y="352">Core experiment phases</text>
+
+                    <rect x="500" y="340" width="15" height="15" fill="#e8f8e8" stroke="#27ae60"/>
+                    <text x="520" y="352">Verification & output phases</text>
+
+                    <rect x="800" y="340" width="15" height="15" fill="#fff3cd" stroke="#ff9800"/>
+                    <text x="820" y="352">Optional refinement</text>
+                </g>
+
+                <defs>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="#1a5490"/>
+                    </marker>
+                </defs>
+            </svg>
+            <div class="legend">
+                <strong>Ghi chú:</strong><br>
+                • <strong>PHASE H:</strong> EFIM mining trên trainingData (tìm High Utility Itemsets)<br>
+                • <strong>PHASE H2:</strong> Adaptive refinement của θ grid (optional)<br>
+                • <strong>PHASE I:</strong> Positioning evaluation trên validationData (chỉ 1 lần, không tái sử dụng)<br>
+                • <strong>PHASE I3:</strong> Optimize positioning error trong mét<br>
+                • <strong>PHASE V:</strong> Verify lại từng HUI và kết quả positioning từ scratch
+            </div>
+        </div>
+
+        <!-- Diagram 2: Data Flow & Leakage Policy -->
+        <div class="diagram-section">
+            <div class="diagram-title">2. Data Flow & Leakage Policy</div>
+            <div class="diagram-description">
+                Dòng dữ liệu từ raw CSV đến kết quả cuối. Validation data chỉ dùng 1 lần ở bước evaluation cuối.
+            </div>
+            <svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+                <!-- trainingData -->
+                <rect x="20" y="20" width="150" height="80" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="4"/>
+                <text x="95" y="50" text-anchor="middle" font-weight="bold" font-size="14">trainingData</text>
+                <text x="95" y="70" text-anchor="middle" font-size="12">19,937 mẫu</text>
+                <text x="95" y="85" text-anchor="middle" font-size="11" fill="#666">(phát hiện từng AP)</text>
+
+                <!-- Preprocessing branches -->
+                <path d="M 170 35 L 240 35" stroke="#1976d2" stroke-width="2" marker-end="url(#arrowhead2)"/>
+                <rect x="240" y="10" width="130" height="50" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2" rx="4"/>
+                <text x="305" y="40" text-anchor="middle" font-size="12"><tspan font-weight="bold">RSSI bounds</tspan></text>
+                <text x="305" y="53" text-anchor="middle" font-size="11" fill="#666">(min/max của detect)</text>
+
+                <path d="M 170 65 L 240 65" stroke="#1976d2" stroke-width="2" marker-end="url(#arrowhead2)"/>
+                <rect x="240" y="55" width="130" height="50" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2" rx="4"/>
+                <text x="305" y="85" text-anchor="middle" font-size="12"><tspan font-weight="bold">Mutual Info</tspan></text>
+                <text x="305" y="98" text-anchor="middle" font-size="11" fill="#666">(Models B/C)</text>
+
+                <path d="M 170 95 L 240 95" stroke="#1976d2" stroke-width="2" marker-end="url(#arrowhead2)"/>
+                <rect x="240" y="100" width="130" height="50" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2" rx="4"/>
+                <text x="305" y="130" text-anchor="middle" font-size="12"><tspan font-weight="bold">EFIM mining</tspan></text>
+                <text x="305" y="143" text-anchor="middle" font-size="11" fill="#666">(θ grid search)</text>
+
+                <!-- Converter -->
+                <path d="M 385 40 L 430 40" stroke="#666" stroke-width="2" marker-end="url(#arrowhead3)"/>
+                <path d="M 385 80 L 430 80" stroke="#666" stroke-width="2" marker-end="url(#arrowhead3)"/>
+                <path d="M 385 125 L 430 125" stroke="#666" stroke-width="2" marker-end="url(#arrowhead3)"/>
+
+                <rect x="430" y="20" width="100" height="120" fill="#e8f5e9" stroke="#388e3c" stroke-width="2" rx="4"/>
+                <text x="480" y="50" text-anchor="middle" font-weight="bold" font-size="13">k-NN Config</text>
+                <text x="480" y="70" text-anchor="middle" font-size="11">(k, metric,</text>
+                <text x="480" y="85" text-anchor="middle" font-size="11">weights) từ</text>
+                <text x="480" y="100" text-anchor="middle" font-size="11">train_sub/dev_sub</text>
+                <text x="480" y="115" text-anchor="middle" font-size="11">(75%/25%)</text>
+
+                <!-- Train classifier -->
+                <path d="M 545 60 L 600 60" stroke="#1976d2" stroke-width="2" marker-end="url(#arrowhead2)"/>
+                <rect x="600" y="30" width="140" height="60" fill="#fff3e0" stroke="#e65100" stroke-width="2" rx="4"/>
+                <text x="670" y="60" text-anchor="middle" font-weight="bold">Train Classifier</text>
+                <text x="670" y="75" text-anchor="middle" font-size="11">Full trainingData</text>
+
+                <!-- validationData -->
+                <rect x="770" y="20" width="120" height="80" fill="#ffebee" stroke="#d32f2f" stroke-width="3" rx="4"/>
+                <text x="830" y="50" text-anchor="middle" font-weight="bold" font-size="14">validationData</text>
+                <text x="830" y="70" text-anchor="middle" font-size="12">1,111 mẫu</text>
+                <text x="830" y="84" text-anchor="middle" font-size="11" fill="#c00">⚠️ 1 lần duy nhất</text>
+
+                <!-- Evaluation -->
+                <path d="M 740 60 L 770 60" stroke="#d32f2f" stroke-width="3" marker-end="url(#arrowhead4)"/>
+
+                <!-- Output -->
+                <path d="M 830 100 L 830 150" stroke="#d32f2f" stroke-width="2" marker-end="url(#arrowhead4)"/>
+                <rect x="750" y="150" width="160" height="70" fill="#f5f5f5" stroke="#666" stroke-width="2" rx="4"/>
+                <text x="830" y="175" text-anchor="middle" font-weight="bold">Output:</text>
+                <text x="830" y="192" text-anchor="middle" font-size="11">• Accuracy (%)</text>
+                <text x="830" y="207" text-anchor="middle" font-size="11">• Error (metres)</text>
+
+                <!-- Note -->
+                <rect x="20" y="300" width="860" height="170" fill="#fff3cd" stroke="#ff9800" stroke-width="1" rx="4"/>
+                <text x="30" y="325" font-weight="bold" font-size="13" fill="#ff6f00">🔒 Leakage Policy (Quy tắc bảo vệ dữ liệu):</text>
+                <text x="30" y="345" font-size="12">✓ trainingData dùng để: RSSI bounds, Mutual Information, EFIM mining, AP selection, k-NN hyperparameter search, train classifier</text>
+                <text x="30" y="365" font-size="12">✓ validationData dùng chỉ 1 lần: Final evaluation (⚠️ KHÔNG dùng lại để tune hay select)</text>
+                <text x="30" y="385" font-size="12">✓ train_sub / dev_sub: 75%/25% split từ trainingData, dùng để grid search k-NN</text>
+                <text x="30" y="405" font-size="12">✓ Full trainingData: Train classifier cuối cùng (sau khi k-NN config đã frozen)</text>
+                <text x="30" y="425" font-size="12">💡 Kết quả: Sai số thực tế trên validation = ground truth, không bị overfitting từ dữ liệu test</text>
+                <text x="30" y="445" font-size="12">📋 Code: build_external_utility(..., split_name="training") → raise nếu không match</text>
+
+                <defs>
+                    <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="#1976d2"/>
+                    </marker>
+                    <marker id="arrowhead3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="#666"/>
+                    </marker>
+                    <marker id="arrowhead4" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="#d32f2f"/>
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+
+        <!-- Diagram 3: Component Architecture -->
+        <div class="diagram-section">
+            <div class="diagram-title">3. Component Architecture & Data Files</div>
+            <div class="diagram-description">
+                Cấu trúc thư mục và module Python chính. Mỗi module có nhiệm vụ rõ ràng và không ảnh hưởng lẫn nhau.
+            </div>
+            <svg viewBox="0 0 1000 550" xmlns="http://www.w3.org/2000/svg">
+                <!-- src/ -->
+                <rect x="20" y="20" width="940" height="500" fill="#f9f9f9" stroke="#999" stroke-width="2" stroke-dasharray="5,5" rx="4"/>
+                <text x="30" y="40" font-weight="bold" font-size="14">src/ — Python Modules</text>
+
+                <!-- Preprocessing -->
+                <g>
+                    <rect x="30" y="60" width="200" height="140" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="4"/>
+                    <text x="130" y="80" text-anchor="middle" font-weight="bold" font-size="13">Preprocessing</text>
+                    <text x="40" y="105" font-size="11">• preprocess_uji.py</text>
+                    <text x="50" y="120" font-size="10" fill="#666">  q(i,T) RSSI→1..100</text>
+                    <text x="40" y="135" font-size="11">• utility_models.py</text>
+                    <text x="50" y="150" font-size="10" fill="#666">  Models A/B/C</text>
+                    <text x="50" y="163" font-size="10" fill="#666">  Leakage gate</text>
+                    <text x="40" y="178" font-size="11">• feature_selection.py</text>
+                    <text x="50" y="191" font-size="10" fill="#666">  HUI → ranked APs</text>
+                </g>
+
+                <!-- HUIM -->
+                <g>
+                    <rect x="250" y="60" width="200" height="140" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2" rx="4"/>
+                    <text x="350" y="80" text-anchor="middle" font-weight="bold" font-size="13">HUIM Mining</text>
+                    <text x="260" y="105" font-size="11">• huim/efim.py</text>
+                    <text x="270" y="120" font-size="10" fill="#666">  Local utility</text>
+                    <text x="270" y="133" font-size="10" fill="#666">  FUC, pruning</text>
+                    <text x="260" y="148" font-size="11">• huim/brute_force.py</text>
+                    <text x="270" y="163" font-size="10" fill="#666">  Oracle (verify)</text>
+                    <text x="260" y="178" font-size="11">• run_huim.py</text>
+                    <text x="270" y="191" font-size="10" fill="#666">  θ grid → HUI</text>
+                </g>
+
+                <!-- IPS -->
+                <g>
+                    <rect x="470" y="60" width="200" height="140" fill="#e8f5e9" stroke="#388e3c" stroke-width="2" rx="4"/>
+                    <text x="570" y="80" text-anchor="middle" font-weight="bold" font-size="13">IPS Evaluation</text>
+                    <text x="480" y="105" font-size="11">• ips_model.py</text>
+                    <text x="490" y="120" font-size="10" fill="#666">  k-NN grid search</text>
+                    <text x="490" y="133" font-size="10" fill="#666">  Metrics</text>
+                    <text x="480" y="148" font-size="11">• run_ips.py</text>
+                    <text x="490" y="163" font-size="10" fill="#666">  Evaluate conditions</text>
+                    <text x="480" y="178" font-size="11">• optimize_positioning.py</text>
+                    <text x="490" y="191" font-size="10" fill="#666">  Error in metres</text>
+                </g>
+
+                <!-- Verification & Output -->
+                <g>
+                    <rect x="690" y="60" width="250" height="140" fill="#fff3e0" stroke="#e65100" stroke-width="2" rx="4"/>
+                    <text x="815" y="80" text-anchor="middle" font-weight="bold" font-size="13">Verification & Output</text>
+                    <text x="700" y="105" font-size="11">• verify_huim.py</text>
+                    <text x="710" y="118" font-size="10" fill="#666">  Recompute HUI from CSV</text>
+                    <text x="700" y="133" font-size="11">• verify_positioning.py</text>
+                    <text x="710" y="146" font-size="10" fill="#666">  Recompute error (stdlib)</text>
+                    <text x="700" y="161" font-size="11">• plots.py, make_diagrams.py</text>
+                    <text x="710" y="174" font-size="10" fill="#666">  Charts & schematics</text>
+                    <text x="700" y="189" font-size="11">• make_report.py</text>
+                    <text x="710" y="202" font-size="10" fill="#666">  DOCX report</text>
+                </g>
+
+                <!-- Data files -->
+                <g>
+                    <rect x="30" y="220" width="910" height="280" fill="#fafafa" stroke="#999" stroke-width="1" rx="4"/>
+                    <text x="40" y="240" font-weight="bold" font-size="13">📊 Data & Results Flow</text>
+
+                    <!-- Input -->
+                    <rect x="40" y="260" width="120" height="100" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="4"/>
+                    <text x="100" y="280" text-anchor="middle" font-weight="bold" font-size="12">Input CSVs</text>
+                    <text x="100" y="298" text-anchor="middle" font-size="11">trainingData</text>
+                    <text x="100" y="315" text-anchor="middle" font-size="11">validationData</text>
+                    <text x="100" y="332" text-anchor="middle" font-size="10" fill="#666">(read-only)</text>
+                    <text x="100" y="348" text-anchor="middle" font-size="10" fill="#666">19,937+1,111</text>
+
+                    <!-- Arrow -->
+                    <path d="M 160 310 L 190 310" stroke="#1976d2" stroke-width="2" marker-end="url(#arrowhead5)"/>
+
+                    <!-- Processing -->
+                    <rect x="190" y="260" width="130" height="100" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2" rx="4"/>
+                    <text x="255" y="280" text-anchor="middle" font-weight="bold" font-size="12">Process</text>
+                    <text x="255" y="298" text-anchor="middle" font-size="10">Preprocess</text>
+                    <text x="255" y="313" text-anchor="middle" font-size="10">EFIM mining</text>
+                    <text x="255" y="328" text-anchor="middle" font-size="10">IPS eval</text>
+                    <text x="255" y="343" text-anchor="middle" font-size="10">Verify</text>
+
+                    <!-- Arrow -->
+                    <path d="M 320 310 L 350 310" stroke="#1976d2" stroke-width="2" marker-end="url(#arrowhead5)"/>
+
+                    <!-- Intermediate Results -->
+                    <rect x="350" y="260" width="130" height="100" fill="#e8f5e9" stroke="#388e3c" stroke-width="2" rx="4"/>
+                    <text x="415" y="280" text-anchor="middle" font-weight="bold" font-size="12">results/</text>
+                    <text x="415" y="298" text-anchor="middle" font-size="10">metrics/</text>
+                    <text x="415" y="313" text-anchor="middle" font-size="10">*_runs.csv</text>
+                    <text x="415" y="328" text-anchor="middle" font-size="10">ips_results</text>
+                    <text x="415" y="343" text-anchor="middle" font-size="10">hui/, predictions/</text>
+
+                    <!-- Arrow -->
+                    <path d="M 480 310 L 510 310" stroke="#1976d2" stroke-width="2" marker-end="url(#arrowhead5)"/>
+
+                    <!-- Output -->
+                    <rect x="510" y="260" width="130" height="100" fill="#fff3e0" stroke="#e65100" stroke-width="2" rx="4"/>
+                    <text x="575" y="280" text-anchor="middle" font-weight="bold" font-size="12">Output</text>
+                    <text x="575" y="298" text-anchor="middle" font-size="10">figures/</text>
+                    <text x="575" y="313" text-anchor="middle" font-size="10">report/</text>
+                    <text x="575" y="328" text-anchor="middle" font-size="10">slides/</text>
+                    <text x="575" y="343" text-anchor="middle" font-size="10">FINAL_SUMMARY</text>
+
+                    <!-- Arrow -->
+                    <path d="M 640 310 L 670 310" stroke="#1976d2" stroke-width="2" marker-end="url(#arrowhead5)"/>
+
+                    <!-- Final -->
+                    <rect x="670" y="260" width="260" height="100" fill="#ffebee" stroke="#d32f2f" stroke-width="2" rx="4"/>
+                    <text x="800" y="280" text-anchor="middle" font-weight="bold" font-size="12">✓ Reports & Presentations</text>
+                    <text x="800" y="298" text-anchor="middle" font-size="11">• HUIM_IPS_UJIIndoorLoc_Important_Knowledge.docx</text>
+                    <text x="800" y="315" text-anchor="middle" font-size="11">• HUIM_IPS_UJIIndoorLoc_Presentation.pptx</text>
+                    <text x="800" y="332" text-anchor="middle" font-size="11">• speaker_notes.md</text>
+                    <text x="800" y="348" text-anchor="middle" font-size="11">• FINAL_SUMMARY.md</text>
+
+                    <!-- Legend for results folder -->
+                    <text x="40" y="375" font-weight="bold" font-size="12">📁 results/ — Chi tiết:</text>
+                    <text x="50" y="395" font-size="11">• data_summary.json: SHA-256 của input CSVs</text>
+                    <text x="50" y="412" font-size="11">• metrics/: huim_runs.csv (θ, HUI count, runtime), ips_results.csv (accuracy, error m)</text>
+                    <text x="50" y="429" font-size="11">• hui/: Per-run HUI sets (JSON/JSONL), WAP statistics</text>
+                    <text x="50" y="446" font-size="11">• verification/: Recomputed HUI & positioning numbers (JSON, CSV)</text>
+                    <text x="50" y="463" font-size="11">• deliverables.csv, verification.json: Final checklist</text>
+                    <text x="50" y="480" font-size="11">• logs/: Stdout từ mỗi phase</text>
+                </g>
+
+                <defs>
+                    <marker id="arrowhead5" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="#1976d2"/>
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+
+        <!-- Diagram 4: EFIM Algorithm -->
+        <div class="diagram-section">
+            <div class="diagram-title">4. EFIM Mining: Algorithm Workflow</div>
+            <div class="diagram-description">
+                Quy trình tìm High Utility Itemsets. Bắt đầu từ θ (minUtil percentage), kết thúc với danh sách HUI được sắp xếp.
+            </div>
+            <svg viewBox="0 0 1000 450" xmlns="http://www.w3.org/2000/svg">
+                <!-- Input -->
+                <rect x="30" y="20" width="180" height="80" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="4"/>
+                <text x="120" y="45" text-anchor="middle" font-weight="bold">Input: θ</text>
+                <text x="120" y="65" text-anchor="middle" font-size="12">Threshold %</text>
+                <text x="120" y="82" text-anchor="middle" font-size="11" fill="#666">(e.g., 1.9294%)</text>
+
+                <path d="M 210 60 L 250 60" stroke="#666" stroke-width="2" marker-end="url(#arrowhead6)"/>
+
+                <!-- Calculate minUtil -->
+                <rect x="250" y="20" width="180" height="80" fill="#fff3e0" stroke="#e65100" stroke-width="2" rx="4"/>
+                <text x="340" y="45" text-anchor="middle" font-weight="bold">Calc minUtil</text>
+                <text x="340" y="65" text-anchor="middle" font-size="11">minUtil =</text>
+                <text x="340" y="80" text-anchor="middle" font-size="11">θ × Total_DB_Utility</text>
+
+                <path d="M 430 60 L 470 60" stroke="#666" stroke-width="2" marker-end="url(#arrowhead6)"/>
+
+                <!-- Transaction database -->
+                <rect x="470" y="20" width="180" height="80" fill="#e8f5e9" stroke="#388e3c" stroke-width="2" rx="4"/>
+                <text x="560" y="45" text-anchor="middle" font-weight="bold">Transaction DB</text>
+                <text x="560" y="65" text-anchor="middle" font-size="11">Sorted by utility</text>
+                <text x="560" y="82" text-anchor="middle" font-size="11" fill="#666">descending</text>
+
+                <path d="M 650 60 L 690 60" stroke="#666" stroke-width="2" marker-end="url(#arrowhead6)"/>
+
+                <!-- EFIM Search -->
+                <rect x="690" y="20" width="260" height="80" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2" rx="4"/>
+                <text x="820" y="40" text-anchor="middle" font-weight="bold" font-size="13">EFIM Depth-First Search</text>
+                <text x="820" y="60" text-anchor="middle" font-size="11">• Local utility pruning</text>
+                <text x="820" y="75" text-anchor="middle" font-size="11">• Subtree utility pruning (TWU)</text>
+                <text x="820" y="90" text-anchor="middle" font-size="11">• FUC (Fast Utility Counting)</text>
+
+                <!-- Main search -->
+                <g>
+                    <rect x="40" y="130" width="900" height="280" fill="#fafafa" stroke="#999" stroke-width="1" rx="4"/>
+                    <text x="50" y="150" font-weight="bold" font-size="13">🌳 Search Tree Exploration</text>
+
+                    <!-- Step 1 -->
+                    <circle cx="100" cy="190" r="40" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+                    <text x="100" y="185" text-anchor="middle" font-weight="bold" font-size="12">1-itemsets</text>
+                    <text x="100" y="200" text-anchor="middle" font-size="11">(single APs)</text>
+
+                    <path d="M 140 190 L 180 190" stroke="#666" stroke-width="2" marker-end="url(#arrowhead6)"/>
+
+                    <!-- Step 2 -->
+                    <circle cx="220" cy="190" r="40" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+                    <text x="220" y="185" text-anchor="middle" font-weight="bold" font-size="12">2-itemsets</text>
+                    <text x="220" y="200" text-anchor="middle" font-size="11">(AP pairs)</text>
+
+                    <path d="M 260 190 L 300 190" stroke="#666" stroke-width="2" marker-end="url(#arrowhead6)"/>
+
+                    <!-- Step 3 -->
+                    <circle cx="340" cy="190" r="40" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+                    <text x="340" y="185" text-anchor="middle" font-weight="bold" font-size="12">3-itemsets</text>
+                    <text x="340" y="200" text-anchor="middle" font-size="11">(AP triplets)</text>
+
+                    <path d="M 380 190 L 420 190" stroke="#666" stroke-width="2" marker-end="url(#arrowhead6)"/>
+
+                    <!-- Continue -->
+                    <text x="460" y="195" font-size="12" font-weight="bold">... continue until ...</text>
+
+                    <!-- Stopping conditions -->
+                    <rect x="40" y="250" width="900" height="140" fill="#fff3cd" stroke="#ff9800" stroke-width="2" rx="4"/>
+                    <text x="50" y="270" font-weight="bold" font-size="12">⏸️ Stopping Conditions (Khi nào dừng?):</text>
+                    <text x="60" y="290" font-size="11">1. 🎯 <strong>No more HUI found</strong> → Threshold quá cao, không có itemset nào ≥ minUtil</text>
+                    <text x="60" y="308" font-size="11">2. ⏱️ <strong>600 seconds timeout</strong> → Quá lâu, dừng và trả kết quả từng phần</text>
+                    <text x="60" y="326" font-size="11">3. 📊 <strong>1,000,000 HUI limit</strong> → Quá nhiều itemset, không lưu hết được</text>
+                    <text x="60" y="344" font-size="11">4. 🔪 <strong>Pruning cuts all branches</strong> → Tất cả nhánh bị xóa vì TWU &lt; minUtil, không còn gì để explore</text>
+                    <text x="60" y="362" font-size="11">5. ✅ <strong>Enumeration completes</strong> → Tìm xong tất cả HUI trên thế hệ hiện tại, threshold đã optimal</text>
+                </g>
+
+                <!-- Output -->
+                <path d="M 820 410 L 820 430" stroke="#666" stroke-width="2"/>
+                <rect x="730" y="430" width="180" height="60" fill="#e8f5e9" stroke="#388e3c" stroke-width="2" rx="4"/>
+                <text x="820" y="450" text-anchor="middle" font-weight="bold">Output: HUI Set</text>
+                <text x="820" y="465" text-anchor="middle" font-size="11">(itemsets ≥ minUtil)</text>
+                <text x="820" y="478" text-anchor="middle" font-size="10" fill="#666">(sorted by utility)</text>
+
+                <defs>
+                    <marker id="arrowhead6" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="#666"/>
+                    </marker>
+                </defs>
+            </svg>
+            <div class="legend">
+                <strong>EFIM = Efficient High Utility Itemset Mining (Tìm kiếm nhanh gọn)</strong><br>
+                • Sử dụng <strong>local utility</strong> để loại bỏ item không đạt ngưỡng<br>
+                • Sử dụng <strong>subtree utility (TWU)</strong> để xóa nhánh không có HUI<br>
+                • Sử dụng <strong>FUC</strong> để tính utility nhanh bằng cách merge transaction<br>
+                • Kết quả: Toàn bộ HUI có utility ≥ minUtil (không bỏ sót, không có thừa)
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #ddd; text-align: center; color: #666; font-size: 12px;">
+            <p><strong>HUIM-IPS Architecture Diagrams</strong> — Generated for HUIM applied to Wi-Fi Indoor Positioning System</p>
+            <p>Source: README.md, Phases documentation, Python module layout</p>
+            <p style="margin-top: 10px; color: #999;">Print-friendly • Screenshot-friendly • Suitable for presentation to advisors</p>
+        </div>
+    </div>
+</body>
+</html>

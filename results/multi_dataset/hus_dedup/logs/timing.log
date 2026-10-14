@@ -1,0 +1,12 @@
+2026-10-13 11:32:30,352 | INFO    | multi | loaded hus_dedup in 0.1s
+2026-10-13 11:32:30,353 | INFO    | multi | ==== hus_dedup / timing ====
+2026-10-13 11:32:30,369 | INFO    | prep | fit on 20091 training rows: 5 WAP columns, detected RSSI in [-86, -21]
+2026-10-13 11:32:31,063 | INFO    | multi | hus_dedup baseline_all                                   5 WAP | study 0.531 ms/fp | opt 0.177 ms/fp
+2026-10-13 11:32:31,678 | INFO    | multi | hus_dedup baseline_detected                              5 WAP | study 0.606 ms/fp | opt 0.166 ms/fp
+2026-10-13 11:32:32,267 | INFO    | multi | hus_dedup huim_union__A_signal__20pct                    5 WAP | study 0.535 ms/fp | opt 0.170 ms/fp
+2026-10-13 11:32:32,875 | INFO    | multi | hus_dedup huim_union__B_discriminative__20pct            5 WAP | study 0.568 ms/fp | opt 0.170 ms/fp
+2026-10-13 11:32:33,462 | INFO    | multi | hus_dedup huim_union__C_rare_discriminative__20pct       5 WAP | study 0.532 ms/fp | opt 0.161 ms/fp
+2026-10-13 11:32:34,048 | INFO    | multi | hus_dedup huim_topn__A_signal__0.125pct__n5              5 WAP | study 0.524 ms/fp | opt 0.174 ms/fp
+2026-10-13 11:32:34,624 | INFO    | multi | hus_dedup huim_topn__B_discriminative__0.125pct__n5      5 WAP | study 0.514 ms/fp | opt 0.167 ms/fp
+2026-10-13 11:32:35,231 | INFO    | multi | hus_dedup huim_topn__C_rare_discriminative__0.125pct__n5   5 WAP | study 0.548 ms/fp | opt 0.175 ms/fp
+2026-10-13 11:32:37,278 | INFO    | multi | ==== hus_dedup / timing done in 6.9s ====

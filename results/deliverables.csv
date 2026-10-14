@@ -8,9 +8,9 @@ Deliverable,Path,Status,n_files
 7. Bibliography,"research/references.bib, research/papers_table.csv",OK,2
 8. Utility models,src/utility_models.py,OK,1
 9. HUIM implementation,"src/huim/efim.py, src/huim/brute_force.py",OK,2
-10. Experiment logs,"results/logs/, results/*.json",OK,11
+10. Experiment logs,"results/logs/, results/*.json",OK,12
 11. Metrics CSV,"results/metrics/huim_runs.csv, results/metrics/ips_results.csv",OK,2
-12. Charts,"figures/*.png, figures/*.csv",OK,41
+12. Charts,"figures/*.png, figures/*.csv",OK,45
 13. Reverse-thinking analysis,research/reverse_thinking_analysis.md,OK,1
 14. Ablation study,results/tables/ablation_study.csv,OK,1
 15. Word report,report/HUIM_IPS_UJIIndoorLoc_Important_Knowledge.docx,OK,1

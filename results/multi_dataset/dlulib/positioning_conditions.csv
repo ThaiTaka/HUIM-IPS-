@@ -1,0 +1,11 @@
+test_set,condition,family,utility_model,rel_minutil_pct,n_waps,feature_reduction_pct,study_building_accuracy,study_floor_accuracy,study_mean_err_m,study_median_err_m,opt_n_test,opt_building_accuracy,opt_floor_accuracy,opt_joint_accuracy,opt_mean_err_m,opt_median_err_m,opt_p75_err_m,opt_p90_err_m,opt_p95_err_m,opt_max_err_m,opt_mean_err_coord,opt_share_within_2m,opt_share_within_5m
+Testing,baseline_all,baseline,,,17,0.0,1.0,0.992154,4.1786,3.2357,6500,1.0,0.994769,0.994769,3.4335,2.5222,4.5833,7.2851,9.4556,30.4255,3.4335,0.4006,0.7863
+Testing,baseline_detected,baseline,,,17,0.0,1.0,0.992154,4.1786,3.2357,6500,1.0,0.994769,0.994769,3.4335,2.5222,4.5833,7.2851,9.4556,30.4255,3.4335,0.4006,0.7863
+Testing,huim_union__A_signal__1pct,huim_union,A_signal,1.0,17,0.0,1.0,0.992154,4.1786,3.237,6500,1.0,0.994769,0.994769,3.4335,2.5222,4.5833,7.2851,9.4556,30.4255,3.4335,0.4006,0.7863
+Testing,huim_union__B_discriminative__1pct,huim_union,B_discriminative,1.0,17,0.0,1.0,0.992154,4.179,3.2341,6500,1.0,0.994769,0.994769,3.4335,2.5222,4.5833,7.2851,9.4556,30.4255,3.4335,0.4006,0.7863
+Testing,huim_union__C_rare_discriminative__1pct,huim_union,C_rare_discriminative,1.0,17,0.0,1.0,0.992,4.1783,3.2321,6500,1.0,0.994769,0.994769,3.4335,2.5222,4.5833,7.2851,9.4556,30.4255,3.4335,0.4006,0.7863
+Testing,huim_topn__A_signal__1pct__n17,huim_topn,A_signal,1.0,17,0.0,1.0,0.992154,4.1786,3.237,6500,1.0,0.994769,0.994769,3.4335,2.5222,4.5833,7.2851,9.4556,30.4255,3.4335,0.4006,0.7863
+Testing,huim_topn__B_discriminative__1pct__n17,huim_topn,B_discriminative,1.0,17,0.0,1.0,0.992154,4.179,3.2341,6500,1.0,0.994769,0.994769,3.4335,2.5222,4.5833,7.2851,9.4556,30.4255,3.4335,0.4006,0.7863
+Testing,huim_topn__C_rare_discriminative__1pct__n17,huim_topn,C_rare_discriminative,1.0,17,0.0,1.0,0.992,4.1783,3.2321,6500,1.0,0.994769,0.994769,3.4335,2.5222,4.5833,7.2851,9.4556,30.4255,3.4335,0.4006,0.7863
+Testing,control_top_mi__n17,control_top_mi,,,17,0.0,1.0,0.992154,4.1784,3.2341,6500,1.0,0.994769,0.994769,3.4335,2.5222,4.5833,7.2851,9.4556,30.4255,3.4335,0.4006,0.7863
+Testing,control_top_support__n17,control_top_support,,,17,0.0,1.0,0.992154,4.1784,3.237,6500,1.0,0.994769,0.994769,3.4335,2.5222,4.5833,7.2851,9.4556,30.4255,3.4335,0.4006,0.7863

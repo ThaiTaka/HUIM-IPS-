@@ -1,0 +1,12 @@
+2026-10-13 11:31:24,953 | INFO    | multi | loaded dlulib in 0.2s
+2026-10-13 11:31:24,954 | INFO    | multi | ==== dlulib / timing ====
+2026-10-13 11:31:24,967 | INFO    | prep | fit on 13000 training rows: 17 WAP columns, detected RSSI in [-99, -27]
+2026-10-13 11:31:26,460 | INFO    | multi | dlulib baseline_all                                  17 WAP | study 0.167 ms/fp | opt 0.139 ms/fp
+2026-10-13 11:31:27,777 | INFO    | multi | dlulib baseline_detected                             17 WAP | study 0.162 ms/fp | opt 0.133 ms/fp
+2026-10-13 11:31:29,101 | INFO    | multi | dlulib huim_union__A_signal__1pct                    17 WAP | study 0.161 ms/fp | opt 0.136 ms/fp
+2026-10-13 11:31:30,388 | INFO    | multi | dlulib huim_union__B_discriminative__1pct            17 WAP | study 0.158 ms/fp | opt 0.131 ms/fp
+2026-10-13 11:31:31,760 | INFO    | multi | dlulib huim_union__C_rare_discriminative__1pct       17 WAP | study 0.166 ms/fp | opt 0.134 ms/fp
+2026-10-13 11:31:33,094 | INFO    | multi | dlulib huim_topn__A_signal__1pct__n17                17 WAP | study 0.166 ms/fp | opt 0.135 ms/fp
+2026-10-13 11:31:34,440 | INFO    | multi | dlulib huim_topn__B_discriminative__1pct__n17        17 WAP | study 0.163 ms/fp | opt 0.140 ms/fp
+2026-10-13 11:31:35,773 | INFO    | multi | dlulib huim_topn__C_rare_discriminative__1pct__n17   17 WAP | study 0.164 ms/fp | opt 0.136 ms/fp
+2026-10-13 11:31:37,893 | INFO    | multi | ==== dlulib / timing done in 12.9s ====

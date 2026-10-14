@@ -1,0 +1,10 @@
+2026-10-13 10:45:33,180 | INFO    | multi | loaded uji in 2.5s
+2026-10-13 10:45:33,180 | INFO    | multi | ==== uji / transfer ====
+2026-10-13 10:46:11,622 | INFO    | multi | uji validationData UJI config as-is: mean 5.356 m, joint 0.9469
+2026-10-13 10:46:11,658 | INFO    | multi | ==== uji / transfer done in 38.5s ====
+2026-10-13 10:46:11,659 | INFO    | multi | ==== uji / curve ====
+2026-10-13 10:48:13,488 | INFO    | multi |   curve 20/66
+2026-10-13 10:48:52,363 | INFO    | multi |   curve 40/66
+2026-10-13 10:49:49,900 | INFO    | multi |   curve 60/66
+2026-10-13 10:50:21,899 | INFO    | multi | uji: curve over 66 WAP sets
+2026-10-13 10:50:21,905 | INFO    | multi | ==== uji / curve done in 250.2s ====

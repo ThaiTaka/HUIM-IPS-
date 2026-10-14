@@ -1,0 +1,222 @@
+{
+  "dataset": "uji",
+  "label": "BUILDINGID_FLOOR",
+  "frozen_knn_config": {
+    "n_neighbors": 1,
+    "metric": "manhattan",
+    "weights": "uniform",
+    "selected_on": "dev_sub of trainingData, ALL-WAP features",
+    "dev_joint_accuracy": 0.995587
+  },
+  "knn_grid_search_trace": [
+    {
+      "n_neighbors": 1,
+      "metric": "euclidean",
+      "weights": "uniform",
+      "dev_joint_accuracy": 0.995386
+    },
+    {
+      "n_neighbors": 3,
+      "metric": "euclidean",
+      "weights": "uniform",
+      "dev_joint_accuracy": 0.994383
+    },
+    {
+      "n_neighbors": 5,
+      "metric": "euclidean",
+      "weights": "uniform",
+      "dev_joint_accuracy": 0.99318
+    },
+    {
+      "n_neighbors": 7,
+      "metric": "euclidean",
+      "weights": "uniform",
+      "dev_joint_accuracy": 0.99338
+    },
+    {
+      "n_neighbors": 9,
+      "metric": "euclidean",
+      "weights": "uniform",
+      "dev_joint_accuracy": 0.992177
+    },
+    {
+      "n_neighbors": 11,
+      "metric": "euclidean",
+      "weights": "uniform",
+      "dev_joint_accuracy": 0.991374
+    },
+    {
+      "n_neighbors": 1,
+      "metric": "euclidean",
+      "weights": "distance",
+      "dev_joint_accuracy": 0.995386
+    },
+    {
+      "n_neighbors": 3,
+      "metric": "euclidean",
+      "weights": "distance",
+      "dev_joint_accuracy": 0.994784
+    },
+    {
+      "n_neighbors": 5,
+      "metric": "euclidean",
+      "weights": "distance",
+      "dev_joint_accuracy": 0.99338
+    },
+    {
+      "n_neighbors": 7,
+      "metric": "euclidean",
+      "weights": "distance",
+      "dev_joint_accuracy": 0.993781
+    },
+    {
+      "n_neighbors": 9,
+      "metric": "euclidean",
+      "weights": "distance",
+      "dev_joint_accuracy": 0.993581
+    },
+    {
+      "n_neighbors": 11,
+      "metric": "euclidean",
+      "weights": "distance",
+      "dev_joint_accuracy": 0.992778
+    },
+    {
+      "n_neighbors": 1,
+      "metric": "manhattan",
+      "weights": "uniform",
+      "dev_joint_accuracy": 0.995587
+    },
+    {
+      "n_neighbors": 3,
+      "metric": "manhattan",
+      "weights": "uniform",
+      "dev_joint_accuracy": 0.994584
+    },
+    {
+      "n_neighbors": 5,
+      "metric": "manhattan",
+      "weights": "uniform",
+      "dev_joint_accuracy": 0.993781
+    },
+    {
+      "n_neighbors": 7,
+      "metric": "manhattan",
+      "weights": "uniform",
+      "dev_joint_accuracy": 0.992778
+    },
+    {
+      "n_neighbors": 9,
+      "metric": "manhattan",
+      "weights": "uniform",
+      "dev_joint_accuracy": 0.992578
+    },
+    {
+      "n_neighbors": 11,
+      "metric": "manhattan",
+      "weights": "uniform",
+      "dev_joint_accuracy": 0.990973
+    },
+    {
+      "n_neighbors": 1,
+      "metric": "manhattan",
+      "weights": "distance",
+      "dev_joint_accuracy": 0.995587
+    },
+    {
+      "n_neighbors": 3,
+      "metric": "manhattan",
+      "weights": "distance",
+      "dev_joint_accuracy": 0.995186
+    },
+    {
+      "n_neighbors": 5,
+      "metric": "manhattan",
+      "weights": "distance",
+      "dev_joint_accuracy": 0.994584
+    },
+    {
+      "n_neighbors": 7,
+      "metric": "manhattan",
+      "weights": "distance",
+      "dev_joint_accuracy": 0.994383
+    },
+    {
+      "n_neighbors": 9,
+      "metric": "manhattan",
+      "weights": "distance",
+      "dev_joint_accuracy": 0.993581
+    },
+    {
+      "n_neighbors": 11,
+      "metric": "manhattan",
+      "weights": "distance",
+      "dev_joint_accuracy": 0.99318
+    }
+  ],
+  "label_entropy_H_Y_bits": 3.63916,
+  "n_wap_columns": 520,
+  "n_waps_detected": 465,
+  "budgets": [
+    5,
+    10,
+    15,
+    20,
+    30,
+    40,
+    50,
+    75,
+    100,
+    150,
+    200,
+    300,
+    465
+  ],
+  "primary_hui_sets": {
+    "A_signal": {
+      "run_tag": "A_signal__1.9294pct",
+      "pct": 1.9294,
+      "n_huis": 853,
+      "runtime_s": 578.5112,
+      "n_waps": 86
+    },
+    "B_discriminative": {
+      "run_tag": "B_discriminative__2pct",
+      "pct": 2.0,
+      "n_huis": 24621,
+      "runtime_s": 23.2861,
+      "n_waps": 79
+    },
+    "C_rare_discriminative": {
+      "run_tag": "C_rare_discriminative__1.7321pct",
+      "pct": 1.7321,
+      "n_huis": 52902,
+      "runtime_s": 26.7647,
+      "n_waps": 91
+    }
+  },
+  "random_seed": 20251007,
+  "environment": {
+    "python_version": "3.13.14",
+    "python_implementation": "CPython",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 141 Stepping 1, GenuineIntel",
+    "cpu_count_logical": 12,
+    "packages": {
+      "numpy": "2.5.3",
+      "pandas": "3.0.6",
+      "sklearn": "1.9.1",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.2",
+      "docx": "1.2.0",
+      "pptx": "1.0.2",
+      "psutil": "7.2.2",
+      "yaml": "6.0.3"
+    },
+    "ram_total_gb": 15.73,
+    "cpu_count_physical": 6,
+    "cpu_model": "11th Gen Intel(R) Core(TM) i5-11400H @ 2.70GHz"
+  },
+  "timestamp_utc": "2026-10-13T02:58:04.117264+00:00"
+}

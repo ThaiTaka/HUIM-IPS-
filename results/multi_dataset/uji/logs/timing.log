@@ -1,0 +1,12 @@
+2026-10-13 11:22:14,020 | INFO    | multi | loaded uji in 2.4s
+2026-10-13 11:22:14,021 | INFO    | multi | ==== uji / timing ====
+2026-10-13 11:22:14,114 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-13 11:24:54,119 | INFO    | multi | uji baseline_all                                 520 WAP | study 4.969 ms/fp | opt 30.791 ms/fp
+2026-10-13 11:27:16,497 | INFO    | multi | uji baseline_detected                            465 WAP | study 4.442 ms/fp | opt 27.325 ms/fp
+2026-10-13 11:27:45,128 | INFO    | multi | uji huim_union__A_signal__1.9294pct               86 WAP | study 0.815 ms/fp | opt 5.593 ms/fp
+2026-10-13 11:28:17,373 | INFO    | multi | uji huim_union__B_discriminative__2pct            79 WAP | study 0.763 ms/fp | opt 7.284 ms/fp
+2026-10-13 11:28:47,836 | INFO    | multi | uji huim_union__C_rare_discriminative__1.7321pct  91 WAP | study 0.901 ms/fp | opt 5.920 ms/fp
+2026-10-13 11:29:12,467 | INFO    | multi | uji huim_topn__A_signal__1.9294pct__n75           75 WAP | study 0.717 ms/fp | opt 4.827 ms/fp
+2026-10-13 11:29:37,127 | INFO    | multi | uji huim_topn__B_discriminative__2pct__n75        75 WAP | study 0.719 ms/fp | opt 4.821 ms/fp
+2026-10-13 11:30:01,889 | INFO    | multi | uji huim_topn__C_rare_discriminative__1.7321pct__n75  75 WAP | study 0.723 ms/fp | opt 4.842 ms/fp
+2026-10-13 11:30:03,910 | INFO    | multi | ==== uji / timing done in 469.9s ====

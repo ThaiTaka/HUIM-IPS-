@@ -1,0 +1,160 @@
+2026-10-13 08:57:10,609 | INFO    | deck_v2 | slide  1  Bìa
+2026-10-13 08:57:10,675 | INFO    | deck_v2 | slide  2  Version 2 có gì mới?
+2026-10-13 08:57:10,721 | INFO    | deck_v2 | slide  3  HUIM là gì?
+2026-10-13 08:57:10,737 | INFO    | deck_v2 | slide  4  HUIM và IPS
+2026-10-13 08:57:29,394 | INFO    | deck_v2 | slide  1  Bìa
+2026-10-13 08:57:29,431 | INFO    | deck_v2 | slide  2  Version 2 có gì mới?
+2026-10-13 08:57:29,463 | INFO    | deck_v2 | slide  3  HUIM là gì?
+2026-10-13 08:57:29,484 | INFO    | deck_v2 | slide  4  HUIM và IPS
+2026-10-13 08:57:30,061 | INFO    | deck_v2 | slide  5  Định nghĩa toán học
+2026-10-13 08:57:30,092 | INFO    | deck_v2 | slide  6  Mô hình hóa Utility trong IPS
+2026-10-13 08:57:30,294 | INFO    | deck_v2 | slide  7  Ba cách định nghĩa p(i)
+2026-10-13 08:57:30,328 | INFO    | deck_v2 | slide  8  Tổng quan 5 bước tiền xử lý
+2026-10-13 08:57:30,559 | INFO    | deck_v2 | slide  9  Bước 1: chuẩn hoá RSSI
+2026-10-13 08:57:30,596 | INFO    | deck_v2 | slide 10  Bước 2: transaction
+2026-10-13 08:57:30,742 | INFO    | deck_v2 | slide 11  Bước 3: external utility
+2026-10-13 08:57:30,855 | INFO    | deck_v2 | slide 12  Từ fingerprint đến HUIM
+2026-10-13 08:57:30,936 | INFO    | deck_v2 | slide 13  Thuật toán EFIM
+2026-10-13 08:57:31,230 | INFO    | deck_v2 | slide 14  EFIM: hai cận trên
+2026-10-13 08:57:31,368 | INFO    | deck_v2 | slide 15  Tiền xử lý bên trong EFIM
+2026-10-13 08:57:31,400 | INFO    | deck_v2 | slide 16  Thực nghiệm trên UJIIndoorLoc
+2026-10-13 08:57:32,364 | INFO    | deck_v2 | slide 17  minUtil và số HUI
+2026-10-13 08:57:32,792 | INFO    | deck_v2 | slide 18  p(i) quyết định chi phí
+2026-10-13 08:57:35,336 | INFO    | deck_v2 | slide 19  Runtime và bộ nhớ
+2026-10-13 08:57:35,828 | INFO    | deck_v2 | slide 20  HUIM vs đối chứng
+2026-10-13 08:57:36,336 | INFO    | deck_v2 | slide 21  Feature Reduction và Accuracy
+2026-10-13 08:57:37,167 | INFO    | deck_v2 | slide 22  Thời gian và bộ nhớ
+2026-10-13 08:57:37,787 | INFO    | deck_v2 | slide 23  Sai số mét Version 1
+2026-10-13 08:57:37,794 | INFO    | deck_v2 | slide 24  Version 2
+2026-10-13 08:57:37,826 | INFO    | deck_v2 | slide 25  Vì sao V1 sai số lớn?
+2026-10-13 08:57:37,893 | INFO    | deck_v2 | slide 26  Giao thức chọn mô hình
+2026-10-13 08:57:38,352 | INFO    | deck_v2 | slide 27  Công thức Version 2
+2026-10-13 08:57:38,806 | INFO    | deck_v2 | slide 28  Kết quả S0–S4
+2026-10-13 08:57:39,258 | INFO    | deck_v2 | slide 29  Phân bố sai số
+2026-10-13 08:57:39,889 | INFO    | deck_v2 | slide 30  V2 trên tập WAP HUIM
+2026-10-13 08:57:39,942 | INFO    | deck_v2 | slide 31  So sánh V1–V2: số liệu
+2026-10-13 08:57:39,980 | INFO    | deck_v2 | slide 32  So sánh V1–V2: phương pháp
+2026-10-13 08:57:40,019 | INFO    | deck_v2 | slide 33  Đính chính slide V1
+2026-10-13 08:57:40,044 | INFO    | deck_v2 | slide 34  Kiểm chứng độc lập
+2026-10-13 08:57:40,054 | INFO    | deck_v2 | slide 35  Kết luận
+2026-10-13 08:57:40,065 | INFO    | deck_v2 | slide 36  Hướng nghiên cứu
+2026-10-13 08:57:40,089 | INFO    | deck_v2 | slide 38  Tài liệu tham khảo 2
+2026-10-13 08:57:40,452 | INFO    | deck_v2 | wrote D:\HUIM-IPS-\slides\HUIM_va_IPS_V2.pptx (38 slides)
+2026-10-13 08:58:01,239 | INFO    | deck_v2 | wrote D:\HUIM-IPS-\HUIM và IPS - V2.pdf
+2026-10-13 09:01:27,181 | INFO    | deck_v2 | slide  1  Bìa
+2026-10-13 09:01:27,216 | INFO    | deck_v2 | slide  2  Version 2 có gì mới?
+2026-10-13 09:01:27,242 | INFO    | deck_v2 | slide  3  HUIM là gì?
+2026-10-13 09:01:27,263 | INFO    | deck_v2 | slide  4  HUIM và IPS
+2026-10-13 09:01:27,773 | INFO    | deck_v2 | slide  5  Định nghĩa toán học
+2026-10-13 09:01:27,804 | INFO    | deck_v2 | slide  6  Mô hình hóa Utility trong IPS
+2026-10-13 09:01:27,998 | INFO    | deck_v2 | slide  7  Ba cách định nghĩa p(i)
+2026-10-13 09:01:28,031 | INFO    | deck_v2 | slide  8  Tổng quan 5 bước tiền xử lý
+2026-10-13 09:01:28,171 | INFO    | deck_v2 | slide  9  Bước 1: chuẩn hoá RSSI
+2026-10-13 09:01:28,198 | INFO    | deck_v2 | slide 10  Bước 2: transaction
+2026-10-13 09:01:28,343 | INFO    | deck_v2 | slide 11  Bước 3: external utility
+2026-10-13 09:01:28,461 | INFO    | deck_v2 | slide 12  Từ fingerprint đến HUIM
+2026-10-13 09:01:28,574 | INFO    | deck_v2 | slide 13  Thuật toán EFIM
+2026-10-13 09:01:28,846 | INFO    | deck_v2 | slide 14  EFIM: hai cận trên
+2026-10-13 09:01:28,919 | INFO    | deck_v2 | slide 15  Tiền xử lý bên trong EFIM
+2026-10-13 09:01:28,952 | INFO    | deck_v2 | slide 16  Thực nghiệm trên UJIIndoorLoc
+2026-10-13 09:01:29,854 | INFO    | deck_v2 | slide 17  minUtil và số HUI
+2026-10-13 09:01:30,223 | INFO    | deck_v2 | slide 18  p(i) quyết định chi phí
+2026-10-13 09:01:32,543 | INFO    | deck_v2 | slide 19  Runtime và bộ nhớ
+2026-10-13 09:01:33,021 | INFO    | deck_v2 | slide 20  HUIM vs đối chứng
+2026-10-13 09:01:33,521 | INFO    | deck_v2 | slide 21  Feature Reduction và Accuracy
+2026-10-13 09:01:34,333 | INFO    | deck_v2 | slide 22  Thời gian và bộ nhớ
+2026-10-13 09:01:34,861 | INFO    | deck_v2 | slide 23  Sai số mét Version 1
+2026-10-13 09:01:34,870 | INFO    | deck_v2 | slide 24  Version 2
+2026-10-13 09:01:34,899 | INFO    | deck_v2 | slide 25  Vì sao V1 sai số lớn?
+2026-10-13 09:01:34,959 | INFO    | deck_v2 | slide 26  Giao thức chọn mô hình
+2026-10-13 09:01:35,409 | INFO    | deck_v2 | slide 27  Công thức Version 2
+2026-10-13 09:01:35,845 | INFO    | deck_v2 | slide 28  Kết quả S0–S4
+2026-10-13 09:01:36,286 | INFO    | deck_v2 | slide 29  Phân bố sai số
+2026-10-13 09:01:36,899 | INFO    | deck_v2 | slide 30  V2 trên tập WAP HUIM
+2026-10-13 09:01:36,962 | INFO    | deck_v2 | slide 31  So sánh V1–V2: số liệu
+2026-10-13 09:01:36,995 | INFO    | deck_v2 | slide 32  So sánh V1–V2: phương pháp
+2026-10-13 09:01:37,034 | INFO    | deck_v2 | slide 33  Đính chính slide V1
+2026-10-13 09:01:37,058 | INFO    | deck_v2 | slide 34  Kiểm chứng độc lập
+2026-10-13 09:01:37,067 | INFO    | deck_v2 | slide 35  Kết luận
+2026-10-13 09:01:37,076 | INFO    | deck_v2 | slide 36  Hướng nghiên cứu
+2026-10-13 09:01:37,101 | INFO    | deck_v2 | slide 38  Tài liệu tham khảo 2
+2026-10-13 09:01:37,448 | INFO    | deck_v2 | wrote D:\HUIM-IPS-\slides\HUIM_va_IPS_V2.pptx (38 slides)
+2026-10-13 09:01:56,598 | INFO    | deck_v2 | wrote D:\HUIM-IPS-\HUIM và IPS - V2.pdf
+2026-10-13 09:02:39,369 | INFO    | deck_v2 | slide  1  Bìa
+2026-10-13 09:02:39,413 | INFO    | deck_v2 | slide  2  Version 2 có gì mới?
+2026-10-13 09:02:39,441 | INFO    | deck_v2 | slide  3  HUIM là gì?
+2026-10-13 09:02:39,456 | INFO    | deck_v2 | slide  4  HUIM và IPS
+2026-10-13 09:02:39,991 | INFO    | deck_v2 | slide  5  Định nghĩa toán học
+2026-10-13 09:02:40,023 | INFO    | deck_v2 | slide  6  Mô hình hóa Utility trong IPS
+2026-10-13 09:02:40,254 | INFO    | deck_v2 | slide  7  Ba cách định nghĩa p(i)
+2026-10-13 09:02:40,295 | INFO    | deck_v2 | slide  8  Tổng quan 5 bước tiền xử lý
+2026-10-13 09:02:40,448 | INFO    | deck_v2 | slide  9  Bước 1: chuẩn hoá RSSI
+2026-10-13 09:02:40,483 | INFO    | deck_v2 | slide 10  Bước 2: transaction
+2026-10-13 09:02:40,640 | INFO    | deck_v2 | slide 11  Bước 3: external utility
+2026-10-13 09:02:40,790 | INFO    | deck_v2 | slide 12  Từ fingerprint đến HUIM
+2026-10-13 09:02:40,860 | INFO    | deck_v2 | slide 13  Thuật toán EFIM
+2026-10-13 09:02:41,119 | INFO    | deck_v2 | slide 14  EFIM: hai cận trên
+2026-10-13 09:02:41,182 | INFO    | deck_v2 | slide 15  Tiền xử lý bên trong EFIM
+2026-10-13 09:02:41,214 | INFO    | deck_v2 | slide 16  Thực nghiệm trên UJIIndoorLoc
+2026-10-13 09:02:42,156 | INFO    | deck_v2 | slide 17  minUtil và số HUI
+2026-10-13 09:02:42,525 | INFO    | deck_v2 | slide 18  p(i) quyết định chi phí
+2026-10-13 09:02:44,860 | INFO    | deck_v2 | slide 19  Runtime và bộ nhớ
+2026-10-13 09:02:45,329 | INFO    | deck_v2 | slide 20  HUIM vs đối chứng
+2026-10-13 09:02:45,834 | INFO    | deck_v2 | slide 21  Feature Reduction và Accuracy
+2026-10-13 09:02:46,630 | INFO    | deck_v2 | slide 22  Thời gian và bộ nhớ
+2026-10-13 09:02:47,174 | INFO    | deck_v2 | slide 23  Sai số mét Version 1
+2026-10-13 09:02:47,184 | INFO    | deck_v2 | slide 24  Version 2
+2026-10-13 09:02:47,210 | INFO    | deck_v2 | slide 25  Vì sao V1 sai số lớn?
+2026-10-13 09:02:47,274 | INFO    | deck_v2 | slide 26  Giao thức chọn mô hình
+2026-10-13 09:02:47,719 | INFO    | deck_v2 | slide 27  Công thức Version 2
+2026-10-13 09:02:48,178 | INFO    | deck_v2 | slide 28  Kết quả S0–S4
+2026-10-13 09:02:48,615 | INFO    | deck_v2 | slide 29  Phân bố sai số
+2026-10-13 09:02:49,219 | INFO    | deck_v2 | slide 30  V2 trên tập WAP HUIM
+2026-10-13 09:02:49,274 | INFO    | deck_v2 | slide 31  So sánh V1–V2: số liệu
+2026-10-13 09:02:49,306 | INFO    | deck_v2 | slide 32  So sánh V1–V2: phương pháp
+2026-10-13 09:02:49,346 | INFO    | deck_v2 | slide 33  Đính chính slide V1
+2026-10-13 09:02:49,371 | INFO    | deck_v2 | slide 34  Kiểm chứng độc lập
+2026-10-13 09:02:49,386 | INFO    | deck_v2 | slide 35  Kết luận
+2026-10-13 09:02:49,397 | INFO    | deck_v2 | slide 36  Hướng nghiên cứu
+2026-10-13 09:02:49,424 | INFO    | deck_v2 | slide 38  Tài liệu tham khảo 2
+2026-10-13 09:02:49,751 | INFO    | deck_v2 | wrote D:\HUIM-IPS-\slides\HUIM_va_IPS_V2.pptx (38 slides)
+2026-10-13 09:03:08,668 | INFO    | deck_v2 | wrote D:\HUIM-IPS-\HUIM và IPS - V2.pdf
+2026-10-13 09:03:53,575 | INFO    | deck_v2 | slide  1  Bìa
+2026-10-13 09:03:53,611 | INFO    | deck_v2 | slide  2  Version 2 có gì mới?
+2026-10-13 09:03:53,642 | INFO    | deck_v2 | slide  3  HUIM là gì?
+2026-10-13 09:03:53,660 | INFO    | deck_v2 | slide  4  HUIM và IPS
+2026-10-13 09:03:54,174 | INFO    | deck_v2 | slide  5  Định nghĩa toán học
+2026-10-13 09:03:54,202 | INFO    | deck_v2 | slide  6  Mô hình hóa Utility trong IPS
+2026-10-13 09:03:54,397 | INFO    | deck_v2 | slide  7  Ba cách định nghĩa p(i)
+2026-10-13 09:03:54,430 | INFO    | deck_v2 | slide  8  Tổng quan 5 bước tiền xử lý
+2026-10-13 09:03:54,561 | INFO    | deck_v2 | slide  9  Bước 1: chuẩn hoá RSSI
+2026-10-13 09:03:54,595 | INFO    | deck_v2 | slide 10  Bước 2: transaction
+2026-10-13 09:03:54,748 | INFO    | deck_v2 | slide 11  Bước 3: external utility
+2026-10-13 09:03:54,876 | INFO    | deck_v2 | slide 12  Từ fingerprint đến HUIM
+2026-10-13 09:03:54,961 | INFO    | deck_v2 | slide 13  Thuật toán EFIM
+2026-10-13 09:03:55,223 | INFO    | deck_v2 | slide 14  EFIM: hai cận trên
+2026-10-13 09:03:55,286 | INFO    | deck_v2 | slide 15  Tiền xử lý bên trong EFIM
+2026-10-13 09:03:55,321 | INFO    | deck_v2 | slide 16  Thực nghiệm trên UJIIndoorLoc
+2026-10-13 09:03:56,213 | INFO    | deck_v2 | slide 17  minUtil và số HUI
+2026-10-13 09:03:56,590 | INFO    | deck_v2 | slide 18  p(i) quyết định chi phí
+2026-10-13 09:03:58,907 | INFO    | deck_v2 | slide 19  Runtime và bộ nhớ
+2026-10-13 09:03:59,374 | INFO    | deck_v2 | slide 20  HUIM vs đối chứng
+2026-10-13 09:03:59,884 | INFO    | deck_v2 | slide 21  Feature Reduction và Accuracy
+2026-10-13 09:04:00,703 | INFO    | deck_v2 | slide 22  Thời gian và bộ nhớ
+2026-10-13 09:04:01,256 | INFO    | deck_v2 | slide 23  Sai số mét Version 1
+2026-10-13 09:04:01,268 | INFO    | deck_v2 | slide 24  Version 2
+2026-10-13 09:04:01,298 | INFO    | deck_v2 | slide 25  Vì sao V1 sai số lớn?
+2026-10-13 09:04:01,364 | INFO    | deck_v2 | slide 26  Giao thức chọn mô hình
+2026-10-13 09:04:01,805 | INFO    | deck_v2 | slide 27  Công thức Version 2
+2026-10-13 09:04:02,282 | INFO    | deck_v2 | slide 28  Kết quả S0–S4
+2026-10-13 09:04:02,708 | INFO    | deck_v2 | slide 29  Phân bố sai số
+2026-10-13 09:04:03,322 | INFO    | deck_v2 | slide 30  V2 trên tập WAP HUIM
+2026-10-13 09:04:03,382 | INFO    | deck_v2 | slide 31  So sánh V1–V2: số liệu
+2026-10-13 09:04:03,421 | INFO    | deck_v2 | slide 32  So sánh V1–V2: phương pháp
+2026-10-13 09:04:03,461 | INFO    | deck_v2 | slide 33  Đính chính slide V1
+2026-10-13 09:04:03,486 | INFO    | deck_v2 | slide 34  Kiểm chứng độc lập
+2026-10-13 09:04:03,501 | INFO    | deck_v2 | slide 35  Kết luận
+2026-10-13 09:04:03,509 | INFO    | deck_v2 | slide 36  Hướng nghiên cứu
+2026-10-13 09:04:03,536 | INFO    | deck_v2 | slide 38  Tài liệu tham khảo 2
+2026-10-13 09:04:03,876 | INFO    | deck_v2 | wrote D:\HUIM-IPS-\slides\HUIM_va_IPS_V2.pptx (38 slides)
+2026-10-13 09:04:18,809 | INFO    | deck_v2 | wrote D:\HUIM-IPS-\HUIM và IPS - V2.pdf

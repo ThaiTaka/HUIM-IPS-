@@ -38,7 +38,7 @@ from ips_model import (RANDOM_SEED, KNNConfig, evaluate_once, select_knn_config,
                        split_train_dev)
 from preprocess_uji import NOT_DETECTED, fit_preprocessor, joint_label, load_splits
 from utils import (HUI_DIR, METRICS, RESULTS, dump_json, environment_info,
-                   get_logger, load_json)
+                   get_logger, load_json, relocate)
 from utility_models import conditional_entropy_reduction, discretise
 
 LOG = get_logger("ips", "ips_full.log")
@@ -125,7 +125,7 @@ def main() -> None:
 
     primary_per_model: dict[str, dict] = {}
     for _, r in huim_with_huis.iterrows():
-        ws = load_json(Path(r["path_wap_stats"]))
+        ws = load_json(relocate(r["path_wap_stats"]))
         order = sorted(ws["per_wap"],
                        key=lambda w: (-ws["per_wap"][w]["utility_contribution"], w))
         conditions.append(({

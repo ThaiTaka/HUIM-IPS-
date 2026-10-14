@@ -1,0 +1,139 @@
+2026-10-13 09:49:14,773 | INFO    | multi | loaded hus_dedup in 0.2s
+2026-10-13 09:49:14,773 | INFO    | multi | ==== hus_dedup / prepare ====
+2026-10-13 09:49:14,872 | INFO    | multi | ==== hus_dedup / prepare done in 0.1s ====
+2026-10-13 09:49:14,872 | INFO    | multi | ==== hus_dedup / huim ====
+2026-10-13 09:49:14,875 | INFO    | prep | fit on 20091 training rows: 5 WAP columns, detected RSSI in [-86, -21]
+2026-10-13 09:49:15,005 | INFO    | multi | hus_dedup: 20091 non-empty transactions, 5 WAP columns, label RP (reference point)
+2026-10-13 09:49:15,227 | INFO    | multi | A_signal                20.0000% ->       29 HUIs |    0.18s |    8.1MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:15,434 | INFO    | multi | A_signal                15.0000% ->       31 HUIs |    0.19s |    4.2MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:15,634 | INFO    | multi | A_signal                10.0000% ->       31 HUIs |    0.19s |    3.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:15,920 | INFO    | multi | A_signal                 7.5000% ->       31 HUIs |    0.27s |    1.9MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:16,128 | INFO    | multi | A_signal                 5.0000% ->       31 HUIs |    0.19s |    0.3MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:16,334 | INFO    | multi | A_signal                 4.0000% ->       31 HUIs |    0.19s |    0.9MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:16,531 | INFO    | multi | A_signal                 3.5000% ->       31 HUIs |    0.18s |    0.2MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:16,729 | INFO    | multi | A_signal                 3.0000% ->       31 HUIs |    0.18s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:16,922 | INFO    | multi | A_signal                 2.5000% ->       31 HUIs |    0.18s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:17,125 | INFO    | multi | A_signal                 2.0000% ->       31 HUIs |    0.19s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:17,321 | INFO    | multi | A_signal                 1.5000% ->       31 HUIs |    0.18s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:17,531 | INFO    | multi | A_signal                 1.0000% ->       31 HUIs |    0.19s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:17,729 | INFO    | multi | A_signal                 0.5000% ->       31 HUIs |    0.18s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:17,933 | INFO    | multi | A_signal                 0.2500% ->       31 HUIs |    0.19s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:18,128 | INFO    | multi | A_signal                 0.1250% ->       31 HUIs |    0.18s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:20,839 | INFO    | multi | B_discriminative        20.0000% ->       24 HUIs |    0.30s |    7.4MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:21,041 | INFO    | multi | B_discriminative        15.0000% ->       24 HUIs |    0.18s |    5.2MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:21,287 | INFO    | multi | B_discriminative        10.0000% ->       24 HUIs |    0.23s |    3.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:21,507 | INFO    | multi | B_discriminative         7.5000% ->       24 HUIs |    0.20s |    2.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:21,728 | INFO    | multi | B_discriminative         5.0000% ->       26 HUIs |    0.21s |    1.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:21,955 | INFO    | multi | B_discriminative         4.0000% ->       27 HUIs |    0.20s |    0.8MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:22,165 | INFO    | multi | B_discriminative         3.5000% ->       28 HUIs |    0.19s |    1.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:22,372 | INFO    | multi | B_discriminative         3.0000% ->       28 HUIs |    0.19s |    0.7MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:22,565 | INFO    | multi | B_discriminative         2.5000% ->       30 HUIs |    0.18s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:22,768 | INFO    | multi | B_discriminative         2.0000% ->       30 HUIs |    0.19s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:22,966 | INFO    | multi | B_discriminative         1.5000% ->       30 HUIs |    0.18s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:23,170 | INFO    | multi | B_discriminative         1.0000% ->       30 HUIs |    0.18s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:23,428 | INFO    | multi | B_discriminative         0.5000% ->       30 HUIs |    0.23s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:23,638 | INFO    | multi | B_discriminative         0.2500% ->       31 HUIs |    0.20s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:23,839 | INFO    | multi | B_discriminative         0.1250% ->       31 HUIs |    0.19s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:25,954 | INFO    | multi | C_rare_discriminative   20.0000% ->       29 HUIs |    0.18s |    0.2MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:26,165 | INFO    | multi | C_rare_discriminative   15.0000% ->       31 HUIs |    0.19s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:26,363 | INFO    | multi | C_rare_discriminative   10.0000% ->       31 HUIs |    0.18s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:26,575 | INFO    | multi | C_rare_discriminative    7.5000% ->       31 HUIs |    0.20s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:26,777 | INFO    | multi | C_rare_discriminative    5.0000% ->       31 HUIs |    0.19s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:26,982 | INFO    | multi | C_rare_discriminative    4.0000% ->       31 HUIs |    0.19s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:27,238 | INFO    | multi | C_rare_discriminative    3.5000% ->       31 HUIs |    0.22s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:27,519 | INFO    | multi | C_rare_discriminative    3.0000% ->       31 HUIs |    0.25s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:27,731 | INFO    | multi | C_rare_discriminative    2.5000% ->       31 HUIs |    0.20s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:27,934 | INFO    | multi | C_rare_discriminative    2.0000% ->       31 HUIs |    0.19s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:28,135 | INFO    | multi | C_rare_discriminative    1.5000% ->       31 HUIs |    0.19s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:28,332 | INFO    | multi | C_rare_discriminative    1.0000% ->       31 HUIs |    0.18s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:28,551 | INFO    | multi | C_rare_discriminative    0.5000% ->       31 HUIs |    0.20s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:28,914 | INFO    | multi | C_rare_discriminative    0.2500% ->       31 HUIs |    0.35s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:29,121 | INFO    | multi | C_rare_discriminative    0.1250% ->       31 HUIs |    0.19s |    0.0MB | WAPs   5 | COMPLETED
+2026-10-13 09:49:30,859 | INFO    | multi | ==== hus_dedup / huim done in 16.0s ====
+2026-10-13 09:49:30,860 | INFO    | multi | ==== hus_dedup / ips ====
+2026-10-13 09:49:30,861 | INFO    | prep | fit on 20091 training rows: 5 WAP columns, detected RSSI in [-86, -21]
+2026-10-13 09:49:31,202 | INFO    | ips | dev k=1 metric=euclidean weights=uniform -> joint acc 0.7864
+2026-10-13 09:49:31,345 | INFO    | ips | dev k=3 metric=euclidean weights=uniform -> joint acc 0.6787
+2026-10-13 09:49:31,513 | INFO    | ips | dev k=5 metric=euclidean weights=uniform -> joint acc 0.6679
+2026-10-13 09:49:31,766 | INFO    | ips | dev k=7 metric=euclidean weights=uniform -> joint acc 0.6711
+2026-10-13 09:49:32,029 | INFO    | ips | dev k=9 metric=euclidean weights=uniform -> joint acc 0.6661
+2026-10-13 09:49:32,226 | INFO    | ips | dev k=11 metric=euclidean weights=uniform -> joint acc 0.6588
+2026-10-13 09:49:32,492 | INFO    | ips | dev k=1 metric=euclidean weights=distance -> joint acc 0.7864
+2026-10-13 09:49:32,680 | INFO    | ips | dev k=3 metric=euclidean weights=distance -> joint acc 0.7850
+2026-10-13 09:49:32,908 | INFO    | ips | dev k=5 metric=euclidean weights=distance -> joint acc 0.7906
+2026-10-13 09:49:33,119 | INFO    | ips | dev k=7 metric=euclidean weights=distance -> joint acc 0.7955
+2026-10-13 09:49:33,350 | INFO    | ips | dev k=9 metric=euclidean weights=distance -> joint acc 0.7975
+2026-10-13 09:49:33,597 | INFO    | ips | dev k=11 metric=euclidean weights=distance -> joint acc 0.7981
+2026-10-13 09:49:33,731 | INFO    | ips | dev k=1 metric=manhattan weights=uniform -> joint acc 0.7934
+2026-10-13 09:49:33,975 | INFO    | ips | dev k=3 metric=manhattan weights=uniform -> joint acc 0.6848
+2026-10-13 09:49:34,218 | INFO    | ips | dev k=5 metric=manhattan weights=uniform -> joint acc 0.6745
+2026-10-13 09:49:34,439 | INFO    | ips | dev k=7 metric=manhattan weights=uniform -> joint acc 0.6699
+2026-10-13 09:49:34,690 | INFO    | ips | dev k=9 metric=manhattan weights=uniform -> joint acc 0.6701
+2026-10-13 09:49:34,967 | INFO    | ips | dev k=11 metric=manhattan weights=uniform -> joint acc 0.6641
+2026-10-13 09:49:35,110 | INFO    | ips | dev k=1 metric=manhattan weights=distance -> joint acc 0.7934
+2026-10-13 09:49:35,348 | INFO    | ips | dev k=3 metric=manhattan weights=distance -> joint acc 0.7922
+2026-10-13 09:49:35,603 | INFO    | ips | dev k=5 metric=manhattan weights=distance -> joint acc 0.7937
+2026-10-13 09:49:35,881 | INFO    | ips | dev k=7 metric=manhattan weights=distance -> joint acc 0.7983
+2026-10-13 09:49:36,191 | INFO    | ips | dev k=9 metric=manhattan weights=distance -> joint acc 0.8035
+2026-10-13 09:49:36,512 | INFO    | ips | dev k=11 metric=manhattan weights=distance -> joint acc 0.8043
+2026-10-13 09:49:36,512 | INFO    | multi | hus_dedup: frozen k-NN {'n_neighbors': 11, 'metric': 'manhattan', 'weights': 'distance', 'selected_on': 'dev_sub of trainingData, ALL-WAP features', 'dev_joint_accuracy': 0.8043}
+2026-10-13 09:49:36,622 | INFO    | multi | hus_dedup: 87 conditions x 2 test sets
+2026-10-13 09:49:44,884 | INFO    | multi |   25/87 conditions
+2026-10-13 09:49:53,496 | INFO    | multi |   50/87 conditions
+2026-10-13 09:50:01,199 | INFO    | multi |   75/87 conditions
+2026-10-13 09:50:06,338 | INFO    | multi |   87/87 conditions
+2026-10-13 09:50:08,285 | INFO    | multi | ==== hus_dedup / ips done in 37.4s ====
+2026-10-13 09:50:08,285 | INFO    | multi | ==== hus_dedup / positioning ====
+2026-10-13 09:50:08,307 | INFO    | multi | hus_dedup: 6 dev folds grouped by row (shuffled KFold)
+2026-10-13 09:50:10,202 | INFO    | optpos | dev lists positive    euclidean    1.9s
+2026-10-13 09:50:15,999 | INFO    | optpos | dev lists positive    manhattan    3.6s
+2026-10-13 09:50:22,907 | INFO    | optpos | dev lists positive    braycurtis   4.7s
+2026-10-13 09:50:31,986 | INFO    | optpos | dev lists positive    cosine       7.0s
+2026-10-13 09:50:35,126 | INFO    | optpos | dev lists powed       euclidean    1.0s
+2026-10-13 09:50:38,869 | INFO    | optpos | dev lists powed       manhattan    1.6s
+2026-10-13 09:50:43,510 | INFO    | optpos | dev lists powed       braycurtis   2.5s
+2026-10-13 09:50:52,350 | INFO    | optpos | dev lists powed       cosine       6.8s
+2026-10-13 09:50:55,733 | INFO    | optpos | dev lists exponential euclidean    1.2s
+2026-10-13 09:50:59,785 | INFO    | optpos | dev lists exponential manhattan    1.9s
+2026-10-13 09:51:03,958 | INFO    | optpos | dev lists exponential braycurtis   2.0s
+2026-10-13 09:51:13,770 | INFO    | optpos | dev lists exponential cosine       7.7s
+2026-10-13 09:51:16,074 | INFO    | optpos | S0 positive+manhattan, k=1, w=1/d^0 -> dev mean 0.409 m
+2026-10-13 09:51:16,075 | INFO    | optpos | S1 exponential+euclidean, k=1, w=1/d^0 -> dev mean 0.406 m
+2026-10-13 09:51:16,075 | INFO    | optpos | S2 powed+manhattan, k=4, w=1/d^4 -> dev mean 0.405 m
+2026-10-13 09:51:18,314 | INFO    | optpos | dev offset lists powed       delta  -9.0 dB   2.2s
+2026-10-13 09:51:21,012 | INFO    | optpos | dev offset lists powed       delta  -6.0 dB   2.7s
+2026-10-13 09:51:23,632 | INFO    | optpos | dev offset lists powed       delta  -3.0 dB   2.6s
+2026-10-13 09:51:25,994 | INFO    | optpos | dev offset lists powed       delta  +3.0 dB   2.4s
+2026-10-13 09:51:28,451 | INFO    | optpos | dev offset lists powed       delta  +6.0 dB   2.5s
+2026-10-13 09:51:31,397 | INFO    | optpos | dev offset lists powed       delta  +9.0 dB   2.9s
+2026-10-13 09:51:31,620 | INFO    | optpos | S3 powed+manhattan, k=7, w=1/d^4, offset +-3 dB -> dev mean 0.544 m
+2026-10-13 09:51:31,643 | INFO    | optpos | S4 powed+manhattan, k=4, w=1/d^4, ensemble with positive -> dev mean 0.403 m
+2026-10-13 09:51:31,686 | INFO    | multi | hus_dedup: SELECTED on dev powed+manhattan, k=4, w=1/d^4
+2026-10-13 09:51:31,688 | INFO    | prep | fit on 20091 training rows: 5 WAP columns, detected RSSI in [-86, -21]
+2026-10-13 09:51:31,841 | INFO    | multi | hus_dedup testcase1  S0 study k-NN as regressor              mean 0.422 m  median 0.000 m  joint 1.0000
+2026-10-13 09:51:31,889 | INFO    | multi | hus_dedup testcase1  S1 best representation x distance (k=1) mean 0.409 m  median 0.000 m  joint 1.0000
+2026-10-13 09:51:31,973 | INFO    | multi | hus_dedup testcase1  S2 + k and 1/d^p weighting              mean 0.391 m  median 0.000 m  joint 1.0000
+2026-10-13 09:51:32,162 | INFO    | multi | hus_dedup testcase2  S0 study k-NN as regressor              mean 0.331 m  median 0.000 m  joint 1.0000
+2026-10-13 09:51:32,221 | INFO    | multi | hus_dedup testcase2  S1 best representation x distance (k=1) mean 0.228 m  median 0.000 m  joint 1.0000
+2026-10-13 09:51:32,265 | INFO    | multi | hus_dedup testcase2  S2 + k and 1/d^p weighting              mean 0.254 m  median 0.000 m  joint 1.0000
+2026-10-13 09:51:32,348 | INFO    | multi | hus_dedup testcase1  baseline_all                                   5 WAP  study 0.42 m -> opt 0.39 m
+2026-10-13 09:51:32,395 | INFO    | multi | hus_dedup testcase2  baseline_all                                   5 WAP  study 0.33 m -> opt 0.25 m
+2026-10-13 09:51:32,442 | INFO    | multi | hus_dedup testcase1  baseline_detected                              5 WAP  study 0.42 m -> opt 0.39 m
+2026-10-13 09:51:32,487 | INFO    | multi | hus_dedup testcase2  baseline_detected                              5 WAP  study 0.33 m -> opt 0.25 m
+2026-10-13 09:51:32,534 | INFO    | multi | hus_dedup testcase1  huim_union__A_signal__20pct                    5 WAP  study 0.42 m -> opt 0.39 m
+2026-10-13 09:51:32,580 | INFO    | multi | hus_dedup testcase2  huim_union__A_signal__20pct                    5 WAP  study 0.33 m -> opt 0.25 m
+2026-10-13 09:51:32,626 | INFO    | multi | hus_dedup testcase1  huim_union__B_discriminative__20pct            5 WAP  study 0.42 m -> opt 0.39 m
+2026-10-13 09:51:32,676 | INFO    | multi | hus_dedup testcase2  huim_union__B_discriminative__20pct            5 WAP  study 0.33 m -> opt 0.25 m
+2026-10-13 09:51:32,724 | INFO    | multi | hus_dedup testcase1  huim_union__C_rare_discriminative__20pct       5 WAP  study 0.42 m -> opt 0.39 m
+2026-10-13 09:51:32,770 | INFO    | multi | hus_dedup testcase2  huim_union__C_rare_discriminative__20pct       5 WAP  study 0.33 m -> opt 0.25 m
+2026-10-13 09:51:32,817 | INFO    | multi | hus_dedup testcase1  huim_topn__A_signal__0.125pct__n5              5 WAP  study 0.42 m -> opt 0.39 m
+2026-10-13 09:51:32,865 | INFO    | multi | hus_dedup testcase2  huim_topn__A_signal__0.125pct__n5              5 WAP  study 0.33 m -> opt 0.25 m
+2026-10-13 09:51:32,912 | INFO    | multi | hus_dedup testcase1  huim_topn__B_discriminative__0.125pct__n5      5 WAP  study 0.42 m -> opt 0.39 m
+2026-10-13 09:51:32,956 | INFO    | multi | hus_dedup testcase2  huim_topn__B_discriminative__0.125pct__n5      5 WAP  study 0.33 m -> opt 0.25 m
+2026-10-13 09:51:33,002 | INFO    | multi | hus_dedup testcase1  huim_topn__C_rare_discriminative__0.125pct__n5   5 WAP  study 0.42 m -> opt 0.39 m
+2026-10-13 09:51:33,048 | INFO    | multi | hus_dedup testcase2  huim_topn__C_rare_discriminative__0.125pct__n5   5 WAP  study 0.33 m -> opt 0.25 m
+2026-10-13 09:51:33,084 | INFO    | multi | hus_dedup testcase1  control_top_mi__n5                             5 WAP  study 0.42 m -> opt 0.39 m
+2026-10-13 09:51:33,121 | INFO    | multi | hus_dedup testcase2  control_top_mi__n5                             5 WAP  study 0.33 m -> opt 0.25 m
+2026-10-13 09:51:33,165 | INFO    | multi | hus_dedup testcase1  control_top_support__n5                        5 WAP  study 0.42 m -> opt 0.39 m
+2026-10-13 09:51:33,206 | INFO    | multi | hus_dedup testcase2  control_top_support__n5                        5 WAP  study 0.33 m -> opt 0.25 m
+2026-10-13 09:51:34,886 | INFO    | multi | ==== hus_dedup / positioning done in 86.6s ====

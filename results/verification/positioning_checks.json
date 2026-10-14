@@ -1,0 +1,151 @@
+{
+  "what": "pure-Python re-computation of the positioning results",
+  "n_checks": 24,
+  "n_failed": 0,
+  "checks": [
+    {
+      "check": "Web Mercator factor vs ips_model.py",
+      "recomputed": 0.766126,
+      "reported": 0.766126,
+      "result": "PASS"
+    },
+    {
+      "check": "study k-NN: building accuracy",
+      "recomputed": 0.987399,
+      "reported": 0.987399,
+      "result": "PASS"
+    },
+    {
+      "check": "study k-NN: floor accuracy",
+      "recomputed": 0.879388,
+      "reported": 0.879388,
+      "result": "PASS"
+    },
+    {
+      "check": "study k-NN: joint accuracy",
+      "recomputed": 0.877588,
+      "reported": 0.877588,
+      "result": "PASS"
+    },
+    {
+      "check": "study k-NN: (x, y) = weighted mean of neighbours",
+      "recomputed": 9.313225746154785e-10,
+      "reported": 0.0,
+      "result": "PASS"
+    },
+    {
+      "check": "study k-NN: mean error, projected m",
+      "recomputed": 12.109007,
+      "reported": 12.109,
+      "result": "PASS"
+    },
+    {
+      "check": "study k-NN: mean error, ground m",
+      "recomputed": 9.27703,
+      "reported": 9.277,
+      "result": "PASS"
+    },
+    {
+      "check": "study k-NN: median error, ground m",
+      "recomputed": 4.609561,
+      "reported": 4.6096,
+      "result": "PASS"
+    },
+    {
+      "check": "study k-NN: p75 error, ground m",
+      "recomputed": 9.388287,
+      "reported": 9.3883,
+      "result": "PASS"
+    },
+    {
+      "check": "study k-NN: p90 error, ground m",
+      "recomputed": 17.021232,
+      "reported": 17.0212,
+      "result": "PASS"
+    },
+    {
+      "check": "study k-NN: p95 error, ground m",
+      "recomputed": 27.814136,
+      "reported": 27.8141,
+      "result": "PASS"
+    },
+    {
+      "check": "optimised: building accuracy",
+      "recomputed": 0.9991,
+      "reported": 0.9991,
+      "result": "PASS"
+    },
+    {
+      "check": "optimised: floor accuracy",
+      "recomputed": 0.946895,
+      "reported": 0.946895,
+      "result": "PASS"
+    },
+    {
+      "check": "optimised: joint accuracy",
+      "recomputed": 0.946895,
+      "reported": 0.946895,
+      "result": "PASS"
+    },
+    {
+      "check": "optimised: (x, y) = weighted mean of neighbours",
+      "recomputed": 1.862645149230957e-09,
+      "reported": 0.0,
+      "result": "PASS"
+    },
+    {
+      "check": "optimised: mean error, projected m",
+      "recomputed": 6.990783,
+      "reported": 6.9908,
+      "result": "PASS"
+    },
+    {
+      "check": "optimised: mean error, ground m",
+      "recomputed": 5.355823,
+      "reported": 5.3558,
+      "result": "PASS"
+    },
+    {
+      "check": "optimised: median error, ground m",
+      "recomputed": 3.522451,
+      "reported": 3.5224,
+      "result": "PASS"
+    },
+    {
+      "check": "optimised: p75 error, ground m",
+      "recomputed": 6.897292,
+      "reported": 6.8973,
+      "result": "PASS"
+    },
+    {
+      "check": "optimised: p90 error, ground m",
+      "recomputed": 11.892222,
+      "reported": 11.8922,
+      "result": "PASS"
+    },
+    {
+      "check": "optimised: p95 error, ground m",
+      "recomputed": 16.092565,
+      "reported": 16.0926,
+      "result": "PASS"
+    },
+    {
+      "check": "E. study k-NN (positive + Manhattan, k=1): nearest training row",
+      "recomputed": 25,
+      "reported": 25,
+      "result": "PASS"
+    },
+    {
+      "check": "E. optimised, member 1 (exponential + Bray-Curtis): nearest training row",
+      "recomputed": 25,
+      "reported": 25,
+      "result": "PASS"
+    },
+    {
+      "check": "E. optimised, member 2 (positive + Bray-Curtis): nearest training row",
+      "recomputed": 25,
+      "reported": 25,
+      "result": "PASS"
+    }
+  ]
+}

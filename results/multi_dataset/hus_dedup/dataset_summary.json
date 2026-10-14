@@ -1,0 +1,76 @@
+{
+  "key": "hus_dedup",
+  "title": "HUS - bỏ dòng test bị chép từ train (1 phòng, 5 AP)",
+  "sources": [
+    "hus/hus_trainall.txt",
+    "hus/testcase1.txt",
+    "hus/testcase2.txt",
+    "hus/hus_mapXY.txt"
+  ],
+  "n_wap_columns": 5,
+  "n_buildings": 1,
+  "n_building_floor_classes": 1,
+  "location_label": "RP (reference point)",
+  "ground_factor": 1.0,
+  "coordinates": "hus_mapXY.txt grid, 0.5 spacing, read as metres",
+  "cv_group": "none - the files carry no user, device, session or sample index, and both test cases revisit the training RPs; dev folds are a shuffled 6-fold KFold over rows",
+  "n_cv_groups": null,
+  "x_range": [
+    0.0,
+    8.5
+  ],
+  "y_range": [
+    0.5,
+    6.0
+  ],
+  "train": {
+    "rows": 20091,
+    "positions": 205,
+    "floors": [
+      0
+    ],
+    "detections_per_row_mean": 5.0,
+    "rows_with_no_detection": 0,
+    "rssi_min": -86.0,
+    "rssi_max": -21.0,
+    "aps_ever_detected": 5
+  },
+  "tests": {
+    "testcase1": {
+      "rows": 205,
+      "positions": 205,
+      "floors": [
+        0
+      ],
+      "detections_per_row_mean": 5.0,
+      "rows_with_no_detection": 0,
+      "rssi_min": -76.0,
+      "rssi_max": -26.0,
+      "aps_ever_detected": 5,
+      "positions_also_in_training": 205
+    },
+    "testcase2": {
+      "rows": 205,
+      "positions": 205,
+      "floors": [
+        0
+      ],
+      "detections_per_row_mean": 5.0,
+      "rows_with_no_detection": 0,
+      "rssi_min": -75.0,
+      "rssi_max": -27.0,
+      "aps_ever_detected": 5,
+      "positions_also_in_training": 205
+    }
+  },
+  "cleaning": [
+    "testcase1.txt: 204 of 205 rows are exact copies of a hus_trainall row (same RP, same 5 RSSIs)",
+    "testcase2.txt: 205 of 205 rows are exact copies of a hus_trainall row (same RP, same 5 RSSIs)",
+    "dedup: removed 409 training rows that the test cases copy; training keeps 20091 rows"
+  ],
+  "empty_folders_in_dataset_root": [
+    "UJI_LIB_DB_Floor_5",
+    "syl",
+    "tuji"
+  ]
+}

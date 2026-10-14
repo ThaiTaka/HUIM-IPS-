@@ -1,0 +1,12 @@
+{
+  "run": "A_signal__1.9294pct",
+  "itemset": [
+    "WAP517",
+    "WAP502"
+  ],
+  "u_efim": 199080.0,
+  "support": 3354,
+  "minutil_abs": 174769.72114799998,
+  "minutil_pct": 1.9294,
+  "total_db_utility": 9058242.0
+}

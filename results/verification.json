@@ -1,17 +1,17 @@
 {
-  "timestamp_utc": "2026-10-08T00:23:00.478335+00:00",
+  "timestamp_utc": "2026-10-09T04:06:35.859931+00:00",
   "docx": {
     "exists": true,
-    "size_kb": 1787.5,
-    "n_paragraphs": 831,
-    "n_tables": 48,
-    "n_embedded_images": 17,
-    "n_characters": 138354,
-    "approx_pages_at_2800_chars": 49.4,
+    "size_kb": 2182.2,
+    "n_paragraphs": 841,
+    "n_tables": 49,
+    "n_embedded_images": 18,
+    "n_characters": 141956,
+    "approx_pages_at_2800_chars": 50.7,
     "heading_counts": {
       "Heading 1": 22,
       "Heading 2": 104,
-      "Heading 3": 62
+      "Heading 3": 63
     },
     "fonts_used_in_runs": [
       "Times New Roman"
@@ -27,11 +27,11 @@
   },
   "pptx": {
     "exists": true,
-    "size_kb": 1312.6,
-    "n_slides": 20,
-    "n_pictures": 14,
+    "size_kb": 1687.5,
+    "n_slides": 21,
+    "n_pictures": 15,
     "n_tables": 4,
-    "n_slides_with_speaker_notes": 20,
+    "n_slides_with_speaker_notes": 21,
     "fonts_used": [
       "Times New Roman"
     ],
@@ -88,7 +88,7 @@
     "opens_ok": true
   },
   "figures": {
-    "n_png": 24,
+    "n_png": 26,
     "files": [
       {
         "png": "fig01_minutil_vs_hui_count.png",
@@ -117,7 +117,7 @@
       },
       {
         "png": "fig06_selected_waps_vs_accuracy.png",
-        "kb": 126.7,
+        "kb": 141.1,
         "data_csv": "fig06_selected_waps_vs_accuracy.csv"
       },
       {
@@ -132,22 +132,22 @@
       },
       {
         "png": "fig09_feature_reduction_vs_accuracy.png",
-        "kb": 120.9,
+        "kb": 151.7,
         "data_csv": "fig09_feature_reduction_vs_accuracy.csv"
       },
       {
         "png": "fig10_baseline_vs_huim_accuracies.png",
-        "kb": 57.6,
+        "kb": 75.8,
         "data_csv": "fig10_baseline_vs_huim_accuracies.csv"
       },
       {
         "png": "fig11_selected_waps_vs_positioning_error.png",
-        "kb": 124.2,
+        "kb": 131.3,
         "data_csv": "fig11_selected_waps_vs_positioning_error.csv"
       },
       {
         "png": "fig12_confusion_matrices.png",
-        "kb": 124.1,
+        "kb": 125.1,
         "data_csv": "fig12_confusion_matrices.csv"
       },
       {
@@ -167,13 +167,23 @@
       },
       {
         "png": "fig16_ips_time_and_memory.png",
-        "kb": 194.8,
+        "kb": 265.1,
         "data_csv": "fig16_ips_time_and_memory.csv"
       },
       {
         "png": "fig17_positioning_error_metres.png",
-        "kb": 105.6,
+        "kb": 158.5,
         "data_csv": "fig17_positioning_error_metres.csv"
+      },
+      {
+        "png": "fig18_positioning_optimisation.png",
+        "kb": 221.6,
+        "data_csv": "fig18_positioning_optimisation.csv"
+      },
+      {
+        "png": "fig19_minutil_vs_union_selection.png",
+        "kb": 236.6,
+        "data_csv": "fig19_minutil_vs_union_selection.csv"
       },
       {
         "png": "fig20_cover_illustration.png",
@@ -219,7 +229,7 @@
     "literals": [
       {
         "file": "make_report.py",
-        "line": 261,
+        "line": 269,
         "token": "20.000",
         "explained": "altitude of GPS satellites in km, stated in chapter 2 as background physics"
       },
@@ -309,7 +319,7 @@
       "Deliverable": "10. Experiment logs",
       "Path": "results/logs/, results/*.json",
       "Status": "OK",
-      "n_files": 11
+      "n_files": 12
     },
     {
       "Deliverable": "11. Metrics CSV",
@@ -321,7 +331,7 @@
       "Deliverable": "12. Charts",
       "Path": "figures/*.png, figures/*.csv",
       "Status": "OK",
-      "n_files": 41
+      "n_files": 45
     },
     {
       "Deliverable": "13. Reverse-thinking analysis",

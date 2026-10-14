@@ -1,0 +1,43 @@
+2026-10-13 09:41:32,754 | INFO    | multi | loaded uji_lib3 in 4.4s
+2026-10-13 09:41:32,755 | INFO    | multi | ==== uji_lib3 / prepare ====
+2026-10-13 09:41:32,995 | INFO    | multi | ==== uji_lib3 / prepare done in 0.2s ====
+2026-10-13 09:41:32,995 | INFO    | multi | ==== uji_lib3 / huim ====
+2026-10-13 09:41:33,029 | INFO    | prep | fit on 11520 training rows: 620 WAP columns, detected RSSI in [-98, -35]
+2026-10-13 09:41:33,601 | INFO    | multi | uji_lib3: 11520 non-empty transactions, 620 WAP columns, label RP (reference point)
+2026-10-13 09:41:34,194 | INFO    | multi | A_signal                20.0000% ->        0 HUIs |    0.52s |   14.0MB | WAPs   0 | COMPLETED
+2026-10-13 09:41:35,559 | INFO    | multi | A_signal                15.0000% ->        0 HUIs |    1.35s |    4.6MB | WAPs   0 | COMPLETED
+2026-10-13 09:41:38,171 | INFO    | multi | A_signal                10.0000% ->      110 HUIs |    2.58s |    4.6MB | WAPs  12 | COMPLETED
+2026-10-13 09:41:42,334 | INFO    | multi | A_signal                 7.5000% ->      460 HUIs |    4.12s |    0.5MB | WAPs  21 | COMPLETED
+2026-10-13 09:41:50,401 | INFO    | multi | A_signal                 5.0000% ->     5581 HUIs |    7.81s |    0.8MB | WAPs  32 | COMPLETED
+2026-10-13 09:42:03,952 | INFO    | multi | A_signal                 4.0000% ->    17287 HUIs |   12.66s |    3.8MB | WAPs  43 | COMPLETED
+2026-10-13 09:42:21,748 | INFO    | multi | A_signal                 3.5000% ->    30970 HUIs |   16.53s |    6.5MB | WAPs  45 | COMPLETED
+2026-10-13 09:42:45,907 | INFO    | multi | A_signal                 3.0000% ->    57633 HUIs |   22.95s |   11.9MB | WAPs  49 | COMPLETED
+2026-10-13 09:43:25,254 | INFO    | multi | A_signal                 2.5000% ->   114701 HUIs |   36.98s |   34.1MB | WAPs  61 | COMPLETED
+2026-10-13 09:44:40,102 | INFO    | multi | A_signal                 2.0000% ->   233606 HUIs |   69.36s |   74.8MB | WAPs  67 | COMPLETED
+2026-10-13 09:47:25,726 | INFO    | multi | A_signal                 1.5000% ->   568656 HUIs |  152.83s |  179.6MB | WAPs  72 | COMPLETED
+2026-10-13 09:53:20,928 | INFO    | multi | A_signal                 1.0000% ->  1000001 HUIs |  328.75s |  275.3MB | WAPs  83 | ABORTED_RESOURCE_LIMIT
+2026-10-13 09:53:25,456 | INFO    | multi | B_discriminative        20.0000% ->        8 HUIs |    1.43s |    0.2MB | WAPs   8 | COMPLETED
+2026-10-13 09:53:28,892 | INFO    | multi | B_discriminative        15.0000% ->      121 HUIs |    3.41s |    0.0MB | WAPs  12 | COMPLETED
+2026-10-13 09:53:33,469 | INFO    | multi | B_discriminative        10.0000% ->      841 HUIs |    4.46s |    0.0MB | WAPs  23 | COMPLETED
+2026-10-13 09:53:41,597 | INFO    | multi | B_discriminative         7.5000% ->     4261 HUIs |    7.84s |    0.0MB | WAPs  31 | COMPLETED
+2026-10-13 09:53:57,919 | INFO    | multi | B_discriminative         5.0000% ->    26174 HUIs |   14.91s |    0.1MB | WAPs  43 | COMPLETED
+2026-10-13 09:54:32,249 | INFO    | multi | B_discriminative         4.0000% ->    58840 HUIs |   31.98s |    0.0MB | WAPs  51 | COMPLETED
+2026-10-13 09:55:19,118 | INFO    | multi | B_discriminative         3.5000% ->    91498 HUIs |   44.86s |    0.1MB | WAPs  58 | COMPLETED
+2026-10-13 09:55:55,926 | INFO    | multi | B_discriminative         3.0000% ->   145391 HUIs |   33.62s |    2.2MB | WAPs  60 | COMPLETED
+2026-10-13 09:57:00,974 | INFO    | multi | B_discriminative         2.5000% ->   241309 HUIs |   59.61s |    3.5MB | WAPs  66 | COMPLETED
+2026-10-13 09:58:46,441 | INFO    | multi | B_discriminative         2.0000% ->   440648 HUIs |   96.83s |   51.8MB | WAPs  72 | COMPLETED
+2026-10-13 10:04:40,486 | INFO    | multi | B_discriminative         1.5000% ->   979199 HUIs |  317.35s |  274.9MB | WAPs  82 | COMPLETED
+2026-10-13 10:09:55,025 | INFO    | multi | B_discriminative         1.0000% ->  1000001 HUIs |  290.99s |  182.1MB | WAPs  87 | ABORTED_RESOURCE_LIMIT
+2026-10-13 10:09:58,356 | INFO    | multi | C_rare_discriminative   20.0000% ->        0 HUIs |    0.60s |    0.0MB | WAPs   0 | COMPLETED
+2026-10-13 10:09:59,680 | INFO    | multi | C_rare_discriminative   15.0000% ->        0 HUIs |    1.30s |    0.0MB | WAPs   0 | COMPLETED
+2026-10-13 10:10:02,600 | INFO    | multi | C_rare_discriminative   10.0000% ->       84 HUIs |    2.88s |    0.0MB | WAPs  16 | COMPLETED
+2026-10-13 10:10:06,738 | INFO    | multi | C_rare_discriminative    7.5000% ->     1061 HUIs |    3.99s |    0.0MB | WAPs  18 | COMPLETED
+2026-10-13 10:10:17,505 | INFO    | multi | C_rare_discriminative    5.0000% ->    13127 HUIs |   10.00s |    0.0MB | WAPs  31 | COMPLETED
+2026-10-13 10:10:36,594 | INFO    | multi | C_rare_discriminative    4.0000% ->    36291 HUIs |   17.36s |    0.0MB | WAPs  37 | COMPLETED
+2026-10-13 10:10:59,969 | INFO    | multi | C_rare_discriminative    3.5000% ->    63645 HUIs |   21.59s |    0.0MB | WAPs  46 | COMPLETED
+2026-10-13 10:11:30,270 | INFO    | multi | C_rare_discriminative    3.0000% ->   114666 HUIs |   27.79s |    0.0MB | WAPs  52 | COMPLETED
+2026-10-13 10:12:22,174 | INFO    | multi | C_rare_discriminative    2.5000% ->   202763 HUIs |   46.47s |    3.1MB | WAPs  56 | COMPLETED
+2026-10-13 10:13:55,826 | INFO    | multi | C_rare_discriminative    2.0000% ->   386176 HUIs |   84.44s |    0.0MB | WAPs  68 | COMPLETED
+2026-10-13 10:17:32,373 | INFO    | multi | C_rare_discriminative    1.5000% ->   925013 HUIs |  196.82s |  227.6MB | WAPs  74 | COMPLETED
+2026-10-13 10:22:09,388 | INFO    | multi | C_rare_discriminative    1.0000% ->  1000001 HUIs |  241.49s |  165.3MB | WAPs  79 | ABORTED_RESOURCE_LIMIT
+2026-10-13 10:22:11,993 | INFO    | multi | ==== uji_lib3 / huim done in 2439.0s ====

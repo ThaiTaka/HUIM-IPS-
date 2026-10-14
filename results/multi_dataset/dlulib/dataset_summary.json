@@ -1,0 +1,73 @@
+{
+  "key": "dlulib",
+  "title": "DLULIB (1 tòa, 3 tầng)",
+  "sources": [
+    "dlulib/DLULIB_Floor_1/Training_DLULIB_Floor1_All_20.xlsx",
+    "dlulib/DLULIB_Floor_1/Testing_DLULIB_Floor1.xlsx",
+    "dlulib/DLULIB_Floor_2/Training_DLULIB_Floor2_All_20.xlsx",
+    "dlulib/DLULIB_Floor_2/Testing_DLULIB_Floor2.xlsx",
+    "dlulib/DLULIB_Floor_3/Training_DLULIB_Floor3_All_20.xlsx",
+    "dlulib/DLULIB_Floor_3/Testing_DLULIB_Floor3.xlsx"
+  ],
+  "n_wap_columns": 17,
+  "n_buildings": 1,
+  "n_building_floor_classes": 3,
+  "location_label": "BUILDINGID_FLOOR",
+  "ground_factor": 1.0,
+  "coordinates": "local metric grid (metres), RP spacing 1.2 m",
+  "cv_group": "SampleTimes - leave-sample-indices-out: the test set revisits every training RP with the same phones, so a dev fold must keep each RP in training and hold out other samples of it",
+  "n_cv_groups": 20,
+  "x_range": [
+    0.8,
+    35.6
+  ],
+  "y_range": [
+    0.8,
+    15.2
+  ],
+  "train": {
+    "rows": 13000,
+    "positions": 650,
+    "floors": [
+      1,
+      2,
+      3
+    ],
+    "detections_per_row_mean": 10.017,
+    "rows_with_no_detection": 0,
+    "rssi_min": -99.0,
+    "rssi_max": -27.0,
+    "aps_ever_detected": 17
+  },
+  "tests": {
+    "Testing": {
+      "rows": 6500,
+      "positions": 650,
+      "floors": [
+        1,
+        2,
+        3
+      ],
+      "detections_per_row_mean": 10.125,
+      "rows_with_no_detection": 0,
+      "rssi_min": -99.0,
+      "rssi_max": -25.0,
+      "aps_ever_detected": 17,
+      "positions_also_in_training": 650
+    }
+  },
+  "cleaning": [
+    "Training_DLULIB_Floor1_All_20.xlsx: 6280 rows; 40869 cells at -100 mapped to 'not detected' (100)",
+    "Testing_DLULIB_Floor1.xlsx: 3140 rows; 22819 cells at -100 mapped to 'not detected' (100)",
+    "Training_DLULIB_Floor2_All_20.xlsx: 3720 rows; 23219 cells at -100 mapped to 'not detected' (100)",
+    "Testing_DLULIB_Floor2.xlsx: 1860 rows; 11477 cells at -100 mapped to 'not detected' (100)",
+    "Training_DLULIB_Floor3_All_20.xlsx: 3000 rows; 26690 cells at -100 mapped to 'not detected' (100)",
+    "Testing_DLULIB_Floor3.xlsx: 1500 rows; 10393 cells at -100 mapped to 'not detected' (100)",
+    "Training_DLULIB_Floor*_Mean.xlsx not used: one averaged fingerprint per RP; the study trains on raw samples (the *_All_20 files)"
+  ],
+  "empty_folders_in_dataset_root": [
+    "UJI_LIB_DB_Floor_5",
+    "syl",
+    "tuji"
+  ]
+}

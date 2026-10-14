@@ -101,7 +101,15 @@ Ngôn ngữ nói tự nhiên — KHÔNG đọc chữ trên slide.
 
 **Nếu cô hỏi sâu:** Bộ dữ liệu KHÔNG ghi đơn vị toạ độ. Em xác định bằng thực nghiệm: nghịch đảo từng phép chiếu ứng viên rồi đo khoảng cách tới campus UJI. Web Mercator trúng trong 140 m, UTM lệch 497 và 871 km. Và vì Web Mercator bảo giác chứ không bảo khoảng cách, em báo cáo cả hai con số — con số chiếu để so với literature, con số thực địa vì nó đúng về vật lý.
 
-## Slide 13 — Thời gian và bộ nhớ
+## Slide 13 — Slide 12b — Tối ưu sai số theo mét
+
+**Tôi cần nói gì:** k-NN của nghiên cứu (k=1, Manhattan) được chọn cho bài toán phân loại tầng trên một phép chia ngẫu nhiên, nên không phải bộ ước lượng toạ độ tốt. Em tối ưu riêng phần ước lượng toạ độ.
+
+**Thông điệp chính:** mọi lựa chọn được làm trên các fold giữ lại người đo của trainingData; validationData chỉ chấm điểm mỗi bước đúng một lần.
+
+**Nếu cô hỏi sâu:** bước dò độ lệch thiết bị và ensemble thắng trên dev nhưng không thắng trên validation về sai số mét — em vẫn giữ mô hình mà giao thức chọn, vì chọn lại theo validation là dùng tập kiểm tra để chọn mô hình. Mọi con số kiểm chứng được trong verification/kiem_chung_thu_cong.xlsx.
+
+## Slide 14 — Thời gian và bộ nhớ
 
 **Tôi cần nói gì:** Đây là tiêu chí thứ hai nhóm đặt ra. Chi phí khai thác HUIM đã nói ở slide trước; slide này là chi phí của chính hệ thống định vị.
 
@@ -109,7 +117,7 @@ Ngôn ngữ nói tự nhiên — KHÔNG đọc chữ trên slide.
 
 **Nếu cô hỏi sâu:** Em đo với n_jobs=1 để con số là chi phí một lõi, khả chuyển. Ở số chiều nhỏ nhất đường cong không đơn điệu vì scikit-learn chuyển sang chỉ mục kd_tree, mà trên dữ liệu thưa thì cây chậm hơn duyệt vét cạn — em có ghi lại thuật toán index trong log để chứng minh.
 
-## Slide 14 — Baseline vs HUIM
+## Slide 15 — Baseline vs HUIM
 
 **Tôi cần nói gì:** Đọc ba cột của baseline, rồi so với HUIM tốt nhất. Nhấn rằng Building gần như được giải quyết còn Floor là phần khó.
 
@@ -117,7 +125,7 @@ Ngôn ngữ nói tự nhiên — KHÔNG đọc chữ trên slide.
 
 **Nếu cô hỏi sâu:** Cả ba accuracy suy ra từ CÙNG một dự đoán nhãn joint, nên chúng nhất quán theo cấu trúc — mô hình không thể được ghi công 'đúng tầng' khi nó dự đoán sai toà nhà.
 
-## Slide 15 — Ablation
+## Slide 16 — Ablation
 
 **Tôi cần nói gì:** Ablation không chỉ so HUIM với 'dùng tất cả'. Phải có đối chứng ở CÙNG ngân sách đặc trưng, nếu không thì không phân biệt được CHỌN đặc trưng với XOÁ đặc trưng.
 
@@ -125,7 +133,7 @@ Ngôn ngữ nói tự nhiên — KHÔNG đọc chữ trên slide.
 
 **Nếu cô hỏi sâu:** Nếu HUIM không vượt top-n theo MI thì đó là kết quả ÂM và em báo cáo đúng như vậy — giá trị nằm ở chỗ đã thiết lập được phép so sánh đó.
 
-## Slide 16 — Giảm chiều và accuracy
+## Slide 17 — Giảm chiều và accuracy
 
 **Tôi cần nói gì:** Đây là slide trả lời RQ4-RQ6. Đi từ phải sang: giảm chiều tăng thì accuracy đi về đâu. So HUIM với ba đường đối chứng.
 
@@ -133,7 +141,7 @@ Ngôn ngữ nói tự nhiên — KHÔNG đọc chữ trên slide.
 
 **Nếu cô hỏi sâu:** Em KHÔNG gọi đây là Pareto front, vì chưa kiểm tra điều kiện Pareto một cách hình thức. Em chỉ nói có trade-off. Ở ngân sách nhỏ, một phần sụt giảm là do MẤT ĐỘ PHỦ chứ không phải mất khả năng phân biệt — em log riêng số fingerprint kiểm định không phát hiện được AP nào trong tập đã chọn.
 
-## Slide 17 — Tư duy ngược
+## Slide 18 — Tư duy ngược
 
 **Tôi cần nói gì:** Đi dọc chuỗi ở giữa, từ trên xuống: hành vi quan sát được → cơ chế bùng nổ → vai trò của chặn trên → lý thuyết (utility không có downward closure) → ý nghĩa cho IPS.
 
@@ -141,7 +149,7 @@ Ngôn ngữ nói tự nhiên — KHÔNG đọc chữ trên slide.
 
 **Nếu cô hỏi sâu:** Các con số trong chuỗi lấy đúng từ log, và phân tích đầy đủ 8 quan sát nằm trong research/reverse_thinking_analysis.md — file đó và chương 15 của báo cáo Word đọc cùng một file JSON nên không thể lệch nhau.
 
-## Slide 18 — Làm được / không làm được
+## Slide 19 — Làm được / không làm được
 
 **Tôi cần nói gì:** Cột trái chỉ ghi điều số liệu chứng minh. Cột phải ghi điều em KHÔNG khẳng định.
 
@@ -149,7 +157,7 @@ Ngôn ngữ nói tự nhiên — KHÔNG đọc chữ trên slide.
 
 **Nếu cô hỏi sâu:** Điểm quan trọng nhất ở cột phải là dòng cuối — HUIM là bài toán không giám sát, không có gì trong định nghĩa của nó tối ưu một mục tiêu phân loại. Vì vậy không có định lý nào để viện dẫn, chỉ có số liệu đối chứng.
 
-## Slide 19 — Kết luận
+## Slide 20 — Kết luận
 
 **Tôi cần nói gì:** Trả lời trực tiếp từng câu hỏi nghiên cứu bằng con số. Không dùng từ 'vượt trội'.
 
@@ -157,7 +165,7 @@ Ngôn ngữ nói tự nhiên — KHÔNG đọc chữ trên slide.
 
 **Nếu cô hỏi sâu:** Nếu cô hỏi 'vậy có nên dùng HUIM cho IPS không', câu trả lời trung thực là: dựa trên thực nghiệm này, HUIM là một cách hợp lệ để chọn nhóm AP nhưng chưa chứng minh được là tốt hơn các tiêu chí information-theoretic đơn giản hơn — và bảng đối chứng ngân sách khớp nhau là bằng chứng duy nhất em đưa ra.
 
-## Slide 20 — Tài liệu tham khảo
+## Slide 21 — Tài liệu tham khảo
 
 **Tôi cần nói gì:** Tám nguồn mạnh nhất. Nhấn rằng metadata lấy từ Crossref chứ không từ trí nhớ.
 

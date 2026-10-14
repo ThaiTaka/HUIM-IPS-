@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUIM-IPS Decision Diagram</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 40px 20px;
+            color: #fff;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #0f3460;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            border: 2px solid #00d4ff;
+        }
+        h1 {
+            text-align: center;
+            color: #00d4ff;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #a0a0a0;
+            margin-bottom: 40px;
+            font-size: 13px;
+        }
+        svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .legend {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid #00d4ff;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+        .legend-title {
+            font-weight: bold;
+            color: #00d4ff;
+            margin-bottom: 10px;
+        }
+        .legend-item {
+            margin-bottom: 8px;
+            color: #ddd;
+        }
+        @media print {
+            body { padding: 0; }
+            .container { box-shadow: none; border: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 QUY TRÌNH CHỌN NGƯỠNG & LỰA CHỌN AP</h1>
+        <p class="subtitle">HUIM-IPS: High Utility Itemset Mining for Indoor Positioning System</p>
+
+        <svg viewBox="0 0 900 800" xmlns="http://www.w3.org/2000/svg">
+            <!-- Define gradients -->
+            <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.3" />
+                    <stop offset="100%" style="stop-color:#0099cc;stop-opacity:0.1" />
+                </linearGradient>
+                <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:0.3" />
+                    <stop offset="100%" style="stop-color:#cc3333;stop-opacity:0.1" />
+                </linearGradient>
+                <linearGradient id="grad3" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#4ecdc4;stop-opacity:0.3" />
+                    <stop offset="100%" style="stop-color:#2a9d8f;stop-opacity:0.1" />
+                </linearGradient>
+                <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                    <polygon points="0 0, 10 3, 0 6" fill="#00d4ff"/>
+                </marker>
+                <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                    <polygon points="0 0, 10 3, 0 6" fill="#ff6b6b"/>
+                </marker>
+                <marker id="arrow-teal" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                    <polygon points="0 0, 10 3, 0 6" fill="#4ecdc4"/>
+                </marker>
+            </defs>
+
+            <!-- Header Box -->
+            <g>
+                <rect x="150" y="20" width="600" height="90" fill="url(#grad1)" stroke="#00d4ff" stroke-width="2" rx="8"/>
+                <text x="450" y="50" text-anchor="middle" font-size="16" font-weight="bold" fill="#00d4ff">
+                    PHASE H: Tìm Kiếm Ngưỡng θ Tối Ưu
+                </text>
+                <text x="450" y="70" text-anchor="middle" font-size="13" fill="#a0a0a0">
+                    EFIM Mining: Từ θ cao → θ thấp, theo dõi HUI count & runtime
+                </text>
+                <text x="450" y="88" text-anchor="middle" font-size="12" fill="#888">
+                    Tìm điểm cân bằng: HUI nhiều ⚡ không quá timeout (600s)
+                </text>
+            </g>
+
+            <!-- Arrow down -->
+            <path d="M 450 110 L 450 160" stroke="#00d4ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+            <!-- Decision Diamond -->
+            <g>
+                <polygon points="450,160 550,220 450,280 350,220" fill="url(#grad1)" stroke="#00d4ff" stroke-width="2"/>
+                <text x="450" y="215" text-anchor="middle" font-size="14" font-weight="bold" fill="#00d4ff">
+                    Quyết Định
+                </text>
+                <text x="450" y="235" text-anchor="middle" font-size="12" fill="#a0a0a0">
+                    Chọn θ chính?
+                </text>
+            </g>
+
+            <!-- Left branch: Normal case -->
+            <g>
+                <!-- Arrow left -->
+                <path d="M 350 220 L 250 220" stroke="#ff6b6b" stroke-width="3" marker-end="url(#arrow-red)"/>
+                <text x="290" y="205" text-anchor="middle" font-size="12" font-weight="bold" fill="#ff6b6b">
+                    HUI ổn định (85-95%)
+                </text>
+
+                <!-- Left box -->
+                <rect x="50" y="160" width="200" height="120" fill="url(#grad2)" stroke="#ff6b6b" stroke-width="2" rx="8"/>
+                <text x="150" y="185" text-anchor="middle" font-size="13" font-weight="bold" fill="#ff6b6b">
+                    Nhánh Chuẩn
+                </text>
+                <text x="150" y="205" text-anchor="middle" font-size="11" fill="#e0e0e0">
+                    θ ở vùng ổn định
+                </text>
+                <text x="150" y="222" text-anchor="middle" font-size="11" fill="#e0e0e0">
+                    (Linear: HUI tăng từ</text>
+                <text x="150" y="237" text-anchor="middle" font-size="11" fill="#e0e0e0">
+                    10 → 100 → 1K)
+                </text>
+                <text x="150" y="254" text-anchor="middle" font-size="10" fill="#888">
+                    Runtime: &lt;100s
+                </text>
+            </g>
+
+            <!-- Right branch: Phase transition case -->
+            <g>
+                <!-- Arrow right -->
+                <path d="M 550 220 L 650 220" stroke="#4ecdc4" stroke-width="3" marker-end="url(#arrow-teal)"/>
+                <text x="610" y="205" text-anchor="middle" font-size="12" font-weight="bold" fill="#4ecdc4">
+                    Chuyển pha (1.5-2%)
+                </text>
+
+                <!-- Right box -->
+                <rect x="650" y="160" width="250" height="120" fill="url(#grad3)" stroke="#4ecdc4" stroke-width="2" rx="8"/>
+                <text x="775" y="185" text-anchor="middle" font-size="13" font-weight="bold" fill="#4ecdc4">
+                    Nhánh Chuyên Gia
+                </text>
+                <text x="775" y="205" text-anchor="middle" font-size="11" fill="#e0e0e0">
+                    Refinement: θ từ 2% → 1.5%
+                </text>
+                <text x="775" y="222" text-anchor="middle" font-size="11" fill="#e0e0e0">
+                    (Exponential: HUI tăng</text>
+                <text x="775" y="237" text-anchor="middle" font-size="11" fill="#e0e0e0">
+                    từ 100 → 1K → 1M)
+                </text>
+                <text x="775" y="254" text-anchor="middle" font-size="10" fill="#888">
+                    Runtime: 100s-600s
+                </text>
+            </g>
+
+            <!-- Merge arrows -->
+            <path d="M 150 280 L 300 340" stroke="#ff6b6b" stroke-width="2" marker-end="url(#arrow-red)"/>
+            <path d="M 750 280 L 600 340" stroke="#4ecdc4" stroke-width="2" marker-end="url(#arrow-teal)"/>
+
+            <!-- Output box -->
+            <g>
+                <rect x="300" y="340" width="300" height="140" fill="url(#grad1)" stroke="#00d4ff" stroke-width="2" rx="8"/>
+                <text x="450" y="365" text-anchor="middle" font-size="14" font-weight="bold" fill="#00d4ff">
+                    ✓ θ Chính Được Chọn
+                </text>
+                <text x="450" y="390" text-anchor="middle" font-size="12" fill="#e0e0e0">
+                    HUI Set với θ cuối cùng
+                </text>
+                <text x="450" y="410" text-anchor="middle" font-size="12" fill="#e0e0e0">
+                    (ví dụ: 1.9294% cho UJI)
+                </text>
+                <text x="450" y="435" text-anchor="middle" font-size="11" fill="#a0a0a0">
+                    Tính toán: Feature reduction %
+                </text>
+                <text x="450" y="452" text-anchor="middle" font-size="11" fill="#a0a0a0">
+                    + AP union từ HUI set
+                </text>
+                <text x="450" y="469" text-anchor="middle" font-size="10" fill="#888">
+                    → Đầu vào cho PHASE I (IPS eval)
+                </text>
+            </g>
+
+            <!-- Arrow down to IPS -->
+            <path d="M 450 480 L 450 530" stroke="#00d4ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+            <!-- PHASE I box -->
+            <g>
+                <rect x="250" y="530" width="400" height="100" fill="url(#grad1)" stroke="#00d4ff" stroke-width="2" rx="8"/>
+                <text x="450" y="555" text-anchor="middle" font-size="14" font-weight="bold" fill="#00d4ff">
+                    PHASE I: Đánh Giá IPS
+                </text>
+                <text x="450" y="575" text-anchor="middle" font-size="12" fill="#e0e0e0">
+                    k-NN classification trên validationData
+                </text>
+                <text x="450" y="595" text-anchor="middle" font-size="12" fill="#e0e0e0">
+                    với AP union được chọn từ HUI
+                </text>
+                <text x="450" y="612" text-anchor="middle" font-size="11" fill="#a0a0a0">
+                    → Kết quả: Accuracy (%), Positioning error (metres)
+                </text>
+            </g>
+
+            <!-- Details box -->
+            <g>
+                <rect x="50" y="660" width="800" height="120" fill="rgba(0,212,255,0.05)" stroke="#00d4ff" stroke-width="1" stroke-dasharray="5,5" rx="8"/>
+                <text x="60" y="680" font-size="12" font-weight="bold" fill="#00d4ff">📌 Tiêu Chí Dừng (Khi nào chọn θ?):</text>
+
+                <text x="70" y="702" font-size="11" fill="#e0e0e0">
+                    1. ⏱️ <tspan font-weight="bold">Timeout 600s:</tspan> Nếu θ tiếp theo quá chậm, giữ θ hiện tại
+                </text>
+                <text x="70" y="720" font-size="11" fill="#e0e0e0">
+                    2. 📊 <tspan font-weight="bold">HUI limit 1M:</tspan> Nếu >1M itemset, dừng để không hết bộ nhớ
+                </text>
+                <text x="70" y="738" font-size="11" fill="#e0e0e0">
+                    3. 🎯 <tspan font-weight="bold">Chuyển pha:</tspan> Khi HUI bắt đầu tăng exponential, refinement để tìm điểm cân bằng
+                </text>
+                <text x="70" y="756" font-size="11" fill="#e0e0e0">
+                    4. ✅ <tspan font-weight="bold">Ổn định:</tspan> Nếu HUI ổn định ở mức hợp lý, chọn θ đó (không cần refinement)
+                </text>
+            </g>
+        </svg>
+
+        <div class="legend">
+            <div class="legend-title">📌 Giải Thích:</div>
+            <div class="legend-item">
+                <strong>PHASE H (Tìm θ):</strong> Grid search từ θ cao (20%) → thấp (1-2%), mỗi θ chạy EFIM một lần
+            </div>
+            <div class="legend-item">
+                <strong>Nhánh Chuẩn (đỏ):</strong> Khi HUI count ổn định, tuyến tính (10→100→1K). Runtime nhanh &lt;100s. Chọn θ này làm chính.
+            </div>
+            <div class="legend-item">
+                <strong>Nhánh Chuyên Gia (xanh):</strong> Khi HUI bắt đầu tăng exponential (vùng chuyển pha 1.5-2%). Chạy refinement với θ nhỏ hơn để tìm điểm optimal. Runtime 100-600s.
+            </div>
+            <div class="legend-item">
+                <strong>θ Chính:</strong> Được lựa chọn dựa trên tiêu chí: balanced HUI count (không quá ít, không quá nhiều) + runtime hợp lý + feature reduction tốt
+            </div>
+            <div class="legend-item">
+                <strong>PHASE I:</strong> Dùng HUI set từ θ chính để lựa chọn AP (union, top-n, etc.), sau đó đánh giá k-NN trên validation data
+            </div>
+            <div class="legend-item">
+                <strong>Ví dụ UJIIndoorLoc:</strong> θ chính = 1.9294%, HUI count = 853, AP selected = 86 (83.5% reduction từ 520 AP)
+            </div>
+        </div>
+    </div>
+</body>
+</html>

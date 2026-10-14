@@ -1,0 +1,12 @@
+2026-10-13 11:31:43,469 | INFO    | multi | loaded hcxy in 0.9s
+2026-10-13 11:31:43,470 | INFO    | multi | ==== hcxy / timing ====
+2026-10-13 11:31:43,519 | INFO    | prep | fit on 11370 training rows: 347 WAP columns, detected RSSI in [-98, -3]
+2026-10-13 11:31:57,842 | INFO    | multi | hcxy baseline_all                                 347 WAP | study 2.663 ms/fp | opt 1.542 ms/fp
+2026-10-13 11:32:10,355 | INFO    | multi | hcxy baseline_detected                            345 WAP | study 2.175 ms/fp | opt 1.443 ms/fp
+2026-10-13 11:32:13,019 | INFO    | multi | hcxy huim_union__A_signal__6.1237pct               67 WAP | study 0.440 ms/fp | opt 0.330 ms/fp
+2026-10-13 11:32:15,947 | INFO    | multi | hcxy huim_union__B_discriminative__6.1237pct       73 WAP | study 0.483 ms/fp | opt 0.364 ms/fp
+2026-10-13 11:32:19,158 | INFO    | multi | hcxy huim_union__C_rare_discriminative__5pct       82 WAP | study 0.529 ms/fp | opt 0.396 ms/fp
+2026-10-13 11:32:20,854 | INFO    | multi | hcxy huim_topn__A_signal__6.1237pct__n40           40 WAP | study 0.271 ms/fp | opt 0.216 ms/fp
+2026-10-13 11:32:22,908 | INFO    | multi | hcxy huim_topn__B_discriminative__6.777pct__n50    50 WAP | study 0.340 ms/fp | opt 0.266 ms/fp
+2026-10-13 11:32:23,908 | INFO    | multi | hcxy huim_topn__C_rare_discriminative__7.5pct__n20  20 WAP | study 0.161 ms/fp | opt 0.124 ms/fp
+2026-10-13 11:32:25,935 | INFO    | multi | ==== hcxy / timing done in 42.5s ====

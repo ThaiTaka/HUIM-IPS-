@@ -1,0 +1,57 @@
+2026-10-13 10:18:21,140 | INFO    | multi | loaded uji in 3.2s
+2026-10-13 10:18:21,141 | INFO    | multi | ==== uji / positioning ====
+2026-10-13 10:18:21,283 | INFO    | multi | uji: 6 dev folds grouped by GROUP
+2026-10-13 10:18:26,277 | INFO    | optpos | dev lists positive    euclidean    5.0s
+2026-10-13 10:19:17,984 | INFO    | optpos | dev lists positive    manhattan   49.5s
+2026-10-13 10:20:18,836 | INFO    | optpos | dev lists positive    braycurtis  58.3s
+2026-10-13 10:20:29,892 | INFO    | optpos | dev lists positive    cosine       8.9s
+2026-10-13 10:20:36,148 | INFO    | optpos | dev lists powed       euclidean    4.1s
+2026-10-13 10:21:26,048 | INFO    | optpos | dev lists powed       manhattan   47.7s
+2026-10-13 10:22:40,264 | INFO    | optpos | dev lists powed       braycurtis  71.9s
+2026-10-13 10:22:53,577 | INFO    | optpos | dev lists powed       cosine      11.2s
+2026-10-13 10:23:05,183 | INFO    | optpos | dev lists exponential euclidean    8.9s
+2026-10-13 10:24:43,165 | INFO    | optpos | dev lists exponential manhattan   95.2s
+2026-10-13 10:26:49,028 | INFO    | optpos | dev lists exponential braycurtis 122.9s
+2026-10-13 10:27:04,628 | INFO    | optpos | dev lists exponential cosine      13.3s
+2026-10-13 10:27:07,226 | INFO    | optpos | S0 positive+manhattan, k=1, w=1/d^0 -> dev mean 12.308 m
+2026-10-13 10:27:07,226 | INFO    | optpos | S1 positive+cosine, k=1, w=1/d^0 -> dev mean 7.602 m
+2026-10-13 10:27:07,226 | INFO    | optpos | S2 exponential+braycurtis, k=12, w=1/d^4 -> dev mean 6.758 m
+2026-10-13 10:28:48,723 | INFO    | optpos | dev offset lists exponential delta  -9.0 dB 101.5s
+2026-10-13 10:29:43,357 | INFO    | optpos | dev offset lists exponential delta  -6.0 dB  54.6s
+2026-10-13 10:30:37,359 | INFO    | optpos | dev offset lists exponential delta  -3.0 dB  54.0s
+2026-10-13 10:31:50,450 | INFO    | optpos | dev offset lists exponential delta  +3.0 dB  73.1s
+2026-10-13 10:32:51,937 | INFO    | optpos | dev offset lists exponential delta  +6.0 dB  61.5s
+2026-10-13 10:33:47,610 | INFO    | optpos | dev offset lists exponential delta  +9.0 dB  55.7s
+2026-10-13 10:33:48,074 | INFO    | optpos | S3 exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB -> dev mean 6.332 m
+2026-10-13 10:34:43,500 | INFO    | optpos | dev offset lists positive    delta  -9.0 dB  55.4s
+2026-10-13 10:35:37,560 | INFO    | optpos | dev offset lists positive    delta  -6.0 dB  54.1s
+2026-10-13 10:36:34,932 | INFO    | optpos | dev offset lists positive    delta  -3.0 dB  57.4s
+2026-10-13 10:37:29,452 | INFO    | optpos | dev offset lists positive    delta  +3.0 dB  54.5s
+2026-10-13 10:38:44,698 | INFO    | optpos | dev offset lists positive    delta  +6.0 dB  75.2s
+2026-10-13 10:39:56,372 | INFO    | optpos | dev offset lists positive    delta  +9.0 dB  71.7s
+2026-10-13 10:39:56,514 | INFO    | optpos | S4 exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive -> dev mean 6.208 m
+2026-10-13 10:39:56,575 | INFO    | multi | uji: SELECTED on dev exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive
+2026-10-13 10:39:56,651 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-13 10:40:04,662 | INFO    | multi | uji validationData S0 study k-NN as regressor              mean 9.277 m  median 4.610 m  joint 0.8776
+2026-10-13 10:40:06,123 | INFO    | multi | uji validationData S1 best representation x distance (k=1) mean 6.659 m  median 4.611 m  joint 0.9217
+2026-10-13 10:40:10,913 | INFO    | multi | uji validationData S2 + k and 1/d^p weighting              mean 5.296 m  median 3.389 m  joint 0.9370
+2026-10-13 10:40:30,125 | INFO    | multi | uji validationData S3 + device-offset search               mean 5.308 m  median 3.487 m  joint 0.9469
+2026-10-13 10:41:18,501 | INFO    | multi | uji validationData S4 + ensemble of two representations    mean 5.356 m  median 3.522 m  joint 0.9469
+2026-10-13 10:42:31,830 | INFO    | multi | uji validationData baseline_all                                 520 WAP  study 9.28 m -> opt 5.36 m
+2026-10-13 10:43:35,388 | INFO    | multi | uji validationData baseline_detected                            465 WAP  study 9.28 m -> opt 5.35 m
+2026-10-13 10:43:42,596 | INFO    | multi | uji validationData huim_union__A_signal__1.9294pct               86 WAP  study 20.57 m -> opt 19.36 m
+2026-10-13 10:43:49,169 | INFO    | multi | uji validationData huim_union__B_discriminative__2pct            79 WAP  study 22.06 m -> opt 19.91 m
+2026-10-13 10:43:57,000 | INFO    | multi | uji validationData huim_union__C_rare_discriminative__1.7321pct  91 WAP  study 19.14 m -> opt 17.49 m
+2026-10-13 10:44:03,600 | INFO    | multi | uji validationData huim_topn__A_signal__1.9294pct__n75           75 WAP  study 34.38 m -> opt 32.59 m
+2026-10-13 10:44:09,910 | INFO    | multi | uji validationData huim_topn__B_discriminative__2pct__n75        75 WAP  study 22.30 m -> opt 20.13 m
+2026-10-13 10:44:16,587 | INFO    | multi | uji validationData huim_topn__C_rare_discriminative__1.7321pct__n75  75 WAP  study 22.01 m -> opt 20.68 m
+2026-10-13 10:44:24,300 | INFO    | multi | uji validationData control_top_mi__n86                           86 WAP  study 20.14 m -> opt 19.37 m
+2026-10-13 10:44:33,287 | INFO    | multi | uji validationData control_top_support__n86                      86 WAP  study 18.19 m -> opt 16.36 m
+2026-10-13 10:44:39,994 | INFO    | multi | uji validationData control_top_mi__n79                           79 WAP  study 20.54 m -> opt 19.75 m
+2026-10-13 10:44:46,415 | INFO    | multi | uji validationData control_top_support__n79                      79 WAP  study 18.28 m -> opt 16.61 m
+2026-10-13 10:44:53,753 | INFO    | multi | uji validationData control_top_mi__n91                           91 WAP  study 18.54 m -> opt 14.73 m
+2026-10-13 10:45:01,197 | INFO    | multi | uji validationData control_top_support__n91                      91 WAP  study 17.86 m -> opt 15.79 m
+2026-10-13 10:45:07,228 | INFO    | multi | uji validationData control_top_mi__n75                           75 WAP  study 20.41 m -> opt 19.99 m
+2026-10-13 10:45:13,488 | INFO    | multi | uji validationData control_top_support__n75                      75 WAP  study 18.31 m -> opt 16.62 m
+2026-10-13 10:45:16,083 | INFO    | multi | uji reproduction check: {'study_selected_label': 'exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive', 'study_mean_ground_m': 5.3558, 'generic_mean_ground_m': 5.3558, 'study_joint_accuracy': 0.946895, 'generic_joint_accuracy': 0.946895, 'match': True}
+2026-10-13 10:45:16,100 | INFO    | multi | ==== uji / positioning done in 1615.0s ====

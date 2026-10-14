@@ -1,0 +1,123 @@
+2026-10-13 10:22:53,880 | INFO    | multi | loaded uji_lib3 in 7.5s
+2026-10-13 10:22:53,881 | INFO    | multi | ==== uji_lib3 / prepare ====
+2026-10-13 10:22:54,129 | INFO    | multi | ==== uji_lib3 / prepare done in 0.2s ====
+2026-10-13 10:22:54,129 | INFO    | multi | ==== uji_lib3 / ips ====
+2026-10-13 10:22:54,158 | INFO    | prep | fit on 11520 training rows: 620 WAP columns, detected RSSI in [-98, -35]
+2026-10-13 10:22:55,726 | INFO    | ips | dev k=1 metric=euclidean weights=uniform -> joint acc 0.8233
+2026-10-13 10:22:56,363 | INFO    | ips | dev k=3 metric=euclidean weights=uniform -> joint acc 0.8191
+2026-10-13 10:22:57,131 | INFO    | ips | dev k=5 metric=euclidean weights=uniform -> joint acc 0.8128
+2026-10-13 10:22:58,175 | INFO    | ips | dev k=7 metric=euclidean weights=uniform -> joint acc 0.8059
+2026-10-13 10:22:59,451 | INFO    | ips | dev k=9 metric=euclidean weights=uniform -> joint acc 0.7847
+2026-10-13 10:23:00,555 | INFO    | ips | dev k=11 metric=euclidean weights=uniform -> joint acc 0.7837
+2026-10-13 10:23:01,693 | INFO    | ips | dev k=1 metric=euclidean weights=distance -> joint acc 0.8233
+2026-10-13 10:23:02,732 | INFO    | ips | dev k=3 metric=euclidean weights=distance -> joint acc 0.8351
+2026-10-13 10:23:03,871 | INFO    | ips | dev k=5 metric=euclidean weights=distance -> joint acc 0.8292
+2026-10-13 10:23:04,978 | INFO    | ips | dev k=7 metric=euclidean weights=distance -> joint acc 0.8233
+2026-10-13 10:23:05,630 | INFO    | ips | dev k=9 metric=euclidean weights=distance -> joint acc 0.8073
+2026-10-13 10:23:06,236 | INFO    | ips | dev k=11 metric=euclidean weights=distance -> joint acc 0.8024
+2026-10-13 10:23:12,623 | INFO    | ips | dev k=1 metric=manhattan weights=uniform -> joint acc 0.8705
+2026-10-13 10:23:20,570 | INFO    | ips | dev k=3 metric=manhattan weights=uniform -> joint acc 0.8580
+2026-10-13 10:23:29,593 | INFO    | ips | dev k=5 metric=manhattan weights=uniform -> joint acc 0.8573
+2026-10-13 10:23:39,272 | INFO    | ips | dev k=7 metric=manhattan weights=uniform -> joint acc 0.8434
+2026-10-13 10:23:48,291 | INFO    | ips | dev k=9 metric=manhattan weights=uniform -> joint acc 0.8340
+2026-10-13 10:23:55,906 | INFO    | ips | dev k=11 metric=manhattan weights=uniform -> joint acc 0.8191
+2026-10-13 10:24:05,276 | INFO    | ips | dev k=1 metric=manhattan weights=distance -> joint acc 0.8705
+2026-10-13 10:24:13,865 | INFO    | ips | dev k=3 metric=manhattan weights=distance -> joint acc 0.8701
+2026-10-13 10:24:22,792 | INFO    | ips | dev k=5 metric=manhattan weights=distance -> joint acc 0.8764
+2026-10-13 10:24:32,055 | INFO    | ips | dev k=7 metric=manhattan weights=distance -> joint acc 0.8594
+2026-10-13 10:24:41,321 | INFO    | ips | dev k=9 metric=manhattan weights=distance -> joint acc 0.8573
+2026-10-13 10:24:49,675 | INFO    | ips | dev k=11 metric=manhattan weights=distance -> joint acc 0.8503
+2026-10-13 10:24:49,687 | INFO    | multi | uji_lib3: frozen k-NN {'n_neighbors': 5, 'metric': 'manhattan', 'weights': 'distance', 'selected_on': 'dev_sub of trainingData, ALL-WAP features', 'dev_joint_accuracy': 0.876389}
+2026-10-13 10:24:49,868 | INFO    | multi | uji_lib3: 261 conditions x 2 test sets
+2026-10-13 10:29:34,107 | INFO    | multi |   25/261 conditions
+2026-10-13 10:30:48,351 | INFO    | multi |   50/261 conditions
+2026-10-13 10:32:02,874 | INFO    | multi |   75/261 conditions
+2026-10-13 10:32:56,713 | INFO    | multi |   100/261 conditions
+2026-10-13 10:34:05,851 | INFO    | multi |   125/261 conditions
+2026-10-13 10:35:40,261 | INFO    | multi |   150/261 conditions
+2026-10-13 10:37:35,058 | INFO    | multi |   175/261 conditions
+2026-10-13 10:40:26,125 | INFO    | multi |   200/261 conditions
+2026-10-13 10:44:18,493 | INFO    | multi |   225/261 conditions
+2026-10-13 10:48:43,474 | INFO    | multi |   250/261 conditions
+2026-10-13 10:53:15,304 | INFO    | multi |   261/261 conditions
+2026-10-13 10:53:17,363 | INFO    | multi | ==== uji_lib3 / ips done in 1823.2s ====
+2026-10-13 10:53:17,363 | INFO    | multi | ==== uji_lib3 / positioning ====
+2026-10-13 10:53:17,410 | INFO    | multi | uji_lib3: 6 dev folds grouped by GROUP
+2026-10-13 10:53:19,259 | INFO    | optpos | dev lists positive    euclidean    1.8s
+2026-10-13 10:53:37,499 | INFO    | optpos | dev lists positive    manhattan   17.1s
+2026-10-13 10:53:59,049 | INFO    | optpos | dev lists positive    braycurtis  20.5s
+2026-10-13 10:54:03,607 | INFO    | optpos | dev lists positive    cosine       3.5s
+2026-10-13 10:54:06,451 | INFO    | optpos | dev lists powed       euclidean    1.8s
+2026-10-13 10:54:24,623 | INFO    | optpos | dev lists powed       manhattan   17.1s
+2026-10-13 10:54:46,171 | INFO    | optpos | dev lists powed       braycurtis  20.5s
+2026-10-13 10:54:50,670 | INFO    | optpos | dev lists powed       cosine       3.4s
+2026-10-13 10:54:53,584 | INFO    | optpos | dev lists exponential euclidean    1.8s
+2026-10-13 10:55:11,823 | INFO    | optpos | dev lists exponential manhattan   17.1s
+2026-10-13 10:55:33,455 | INFO    | optpos | dev lists exponential braycurtis  20.6s
+2026-10-13 10:55:38,038 | INFO    | optpos | dev lists exponential cosine       3.4s
+2026-10-13 10:55:39,106 | INFO    | optpos | S0 positive+manhattan, k=1, w=1/d^0 -> dev mean 1.580 m
+2026-10-13 10:55:39,106 | INFO    | optpos | S1 exponential+braycurtis, k=1, w=1/d^0 -> dev mean 1.405 m
+2026-10-13 10:55:39,106 | INFO    | optpos | S2 exponential+braycurtis, k=3, w=1/d^4 -> dev mean 1.358 m
+2026-10-13 10:56:00,012 | INFO    | optpos | dev offset lists exponential delta  -9.0 dB  20.9s
+2026-10-13 10:56:20,881 | INFO    | optpos | dev offset lists exponential delta  -6.0 dB  20.9s
+2026-10-13 10:56:41,829 | INFO    | optpos | dev offset lists exponential delta  -3.0 dB  20.9s
+2026-10-13 10:57:02,785 | INFO    | optpos | dev offset lists exponential delta  +3.0 dB  21.0s
+2026-10-13 10:57:23,719 | INFO    | optpos | dev offset lists exponential delta  +6.0 dB  20.9s
+2026-10-13 10:57:44,659 | INFO    | optpos | dev offset lists exponential delta  +9.0 dB  20.9s
+2026-10-13 10:57:44,777 | INFO    | optpos | S3 exponential+braycurtis, k=3, w=1/d^4, offset +-3 dB -> dev mean 1.391 m
+2026-10-13 10:57:44,790 | INFO    | optpos | S4 exponential+braycurtis, k=3, w=1/d^4, ensemble with positive -> dev mean 1.359 m
+2026-10-13 10:57:44,830 | INFO    | multi | uji_lib3: SELECTED on dev exponential+braycurtis, k=3, w=1/d^4
+2026-10-13 10:57:44,858 | INFO    | prep | fit on 11520 training rows: 620 WAP columns, detected RSSI in [-98, -35]
+2026-10-13 10:58:11,188 | INFO    | multi | uji_lib3 Test-01    S0 study k-NN as regressor              mean 1.334 m  median 0.854 m  joint 1.0000
+2026-10-13 10:58:27,369 | INFO    | multi | uji_lib3 Test-01    S1 best representation x distance (k=1) mean 1.189 m  median 0.000 m  joint 1.0000
+2026-10-13 10:58:43,372 | INFO    | multi | uji_lib3 Test-01    S2 + k and 1/d^p weighting              mean 1.208 m  median 0.584 m  joint 1.0000
+2026-10-13 10:59:09,450 | INFO    | multi | uji_lib3 Test-02    S0 study k-NN as regressor              mean 1.940 m  median 1.501 m  joint 1.0000
+2026-10-13 10:59:25,593 | INFO    | multi | uji_lib3 Test-02    S1 best representation x distance (k=1) mean 2.349 m  median 2.049 m  joint 1.0000
+2026-10-13 10:59:41,909 | INFO    | multi | uji_lib3 Test-02    S2 + k and 1/d^p weighting              mean 2.028 m  median 1.543 m  joint 1.0000
+2026-10-13 10:59:58,367 | INFO    | multi | uji_lib3 Test-01    baseline_all                                 620 WAP  study 1.33 m -> opt 1.21 m
+2026-10-13 11:00:14,216 | INFO    | multi | uji_lib3 Test-02    baseline_all                                 620 WAP  study 1.94 m -> opt 2.03 m
+2026-10-13 11:00:22,199 | INFO    | multi | uji_lib3 Test-01    baseline_detected                            306 WAP  study 1.33 m -> opt 1.21 m
+2026-10-13 11:00:30,145 | INFO    | multi | uji_lib3 Test-02    baseline_detected                            306 WAP  study 1.94 m -> opt 2.03 m
+2026-10-13 11:00:32,622 | INFO    | multi | uji_lib3 Test-01    huim_union__A_signal__1pct                    83 WAP  study 1.29 m -> opt 1.21 m
+2026-10-13 11:00:35,077 | INFO    | multi | uji_lib3 Test-02    huim_union__A_signal__1pct                    83 WAP  study 1.93 m -> opt 2.04 m
+2026-10-13 11:00:37,724 | INFO    | multi | uji_lib3 Test-01    huim_union__B_discriminative__1pct            87 WAP  study 1.28 m -> opt 1.19 m
+2026-10-13 11:00:40,334 | INFO    | multi | uji_lib3 Test-02    huim_union__B_discriminative__1pct            87 WAP  study 1.93 m -> opt 2.04 m
+2026-10-13 11:00:42,625 | INFO    | multi | uji_lib3 Test-01    huim_union__C_rare_discriminative__1pct       79 WAP  study 1.30 m -> opt 1.23 m
+2026-10-13 11:00:44,914 | INFO    | multi | uji_lib3 Test-02    huim_union__C_rare_discriminative__1pct       79 WAP  study 1.94 m -> opt 2.05 m
+2026-10-13 11:00:46,422 | INFO    | multi | uji_lib3 Test-01    huim_topn__A_signal__1.5pct__n50              50 WAP  study 1.47 m -> opt 1.47 m
+2026-10-13 11:00:47,953 | INFO    | multi | uji_lib3 Test-02    huim_topn__A_signal__1.5pct__n50              50 WAP  study 2.08 m -> opt 2.20 m
+2026-10-13 11:00:50,113 | INFO    | multi | uji_lib3 Test-01    huim_topn__B_discriminative__1.5pct__n75      75 WAP  study 1.31 m -> opt 1.25 m
+2026-10-13 11:00:52,310 | INFO    | multi | uji_lib3 Test-02    huim_topn__B_discriminative__1.5pct__n75      75 WAP  study 1.94 m -> opt 2.05 m
+2026-10-13 11:00:53,802 | INFO    | multi | uji_lib3 Test-01    huim_topn__C_rare_discriminative__1.5pct__n50  50 WAP  study 1.57 m -> opt 1.53 m
+2026-10-13 11:00:55,318 | INFO    | multi | uji_lib3 Test-02    huim_topn__C_rare_discriminative__1.5pct__n50  50 WAP  study 2.12 m -> opt 2.24 m
+2026-10-13 11:00:57,734 | INFO    | multi | uji_lib3 Test-01    control_top_mi__n83                           83 WAP  study 1.28 m -> opt 1.20 m
+2026-10-13 11:01:00,181 | INFO    | multi | uji_lib3 Test-02    control_top_mi__n83                           83 WAP  study 1.93 m -> opt 2.04 m
+2026-10-13 11:01:03,040 | INFO    | multi | uji_lib3 Test-01    control_top_support__n83                      83 WAP  study 1.29 m -> opt 1.22 m
+2026-10-13 11:01:05,922 | INFO    | multi | uji_lib3 Test-02    control_top_support__n83                      83 WAP  study 1.92 m -> opt 2.04 m
+2026-10-13 11:01:08,451 | INFO    | multi | uji_lib3 Test-01    control_top_mi__n87                           87 WAP  study 1.29 m -> opt 1.19 m
+2026-10-13 11:01:10,995 | INFO    | multi | uji_lib3 Test-02    control_top_mi__n87                           87 WAP  study 1.92 m -> opt 2.03 m
+2026-10-13 11:01:13,534 | INFO    | multi | uji_lib3 Test-01    control_top_support__n87                      87 WAP  study 1.30 m -> opt 1.22 m
+2026-10-13 11:01:16,034 | INFO    | multi | uji_lib3 Test-02    control_top_support__n87                      87 WAP  study 1.93 m -> opt 2.04 m
+2026-10-13 11:01:18,338 | INFO    | multi | uji_lib3 Test-01    control_top_mi__n79                           79 WAP  study 1.29 m -> opt 1.21 m
+2026-10-13 11:01:20,680 | INFO    | multi | uji_lib3 Test-02    control_top_mi__n79                           79 WAP  study 1.93 m -> opt 2.05 m
+2026-10-13 11:01:22,977 | INFO    | multi | uji_lib3 Test-01    control_top_support__n79                      79 WAP  study 1.29 m -> opt 1.22 m
+2026-10-13 11:01:25,280 | INFO    | multi | uji_lib3 Test-02    control_top_support__n79                      79 WAP  study 1.92 m -> opt 2.04 m
+2026-10-13 11:01:26,794 | INFO    | multi | uji_lib3 Test-01    control_top_mi__n50                           50 WAP  study 1.34 m -> opt 1.30 m
+2026-10-13 11:01:28,360 | INFO    | multi | uji_lib3 Test-02    control_top_mi__n50                           50 WAP  study 1.98 m -> opt 2.10 m
+2026-10-13 11:01:29,873 | INFO    | multi | uji_lib3 Test-01    control_top_support__n50                      50 WAP  study 1.42 m -> opt 1.39 m
+2026-10-13 11:01:31,390 | INFO    | multi | uji_lib3 Test-02    control_top_support__n50                      50 WAP  study 2.03 m -> opt 2.16 m
+2026-10-13 11:01:33,544 | INFO    | multi | uji_lib3 Test-01    control_top_mi__n75                           75 WAP  study 1.29 m -> opt 1.23 m
+2026-10-13 11:01:35,695 | INFO    | multi | uji_lib3 Test-02    control_top_mi__n75                           75 WAP  study 1.95 m -> opt 2.07 m
+2026-10-13 11:01:37,874 | INFO    | multi | uji_lib3 Test-01    control_top_support__n75                      75 WAP  study 1.29 m -> opt 1.23 m
+2026-10-13 11:01:40,033 | INFO    | multi | uji_lib3 Test-02    control_top_support__n75                      75 WAP  study 1.93 m -> opt 2.05 m
+2026-10-13 11:01:41,692 | INFO    | multi | ==== uji_lib3 / positioning done in 504.3s ====
+2026-10-13 11:01:41,693 | INFO    | multi | ==== uji_lib3 / transfer ====
+2026-10-13 11:04:18,017 | INFO    | multi | uji_lib3 Test-01    UJI config as-is: mean 1.348 m, joint 1.0000
+2026-10-13 11:07:15,502 | INFO    | multi | uji_lib3 Test-02    UJI config as-is: mean 1.908 m, joint 1.0000
+2026-10-13 11:07:15,522 | INFO    | multi | ==== uji_lib3 / transfer done in 333.8s ====
+2026-10-13 11:07:15,522 | INFO    | multi | ==== uji_lib3 / curve ====
+2026-10-13 11:07:59,410 | INFO    | multi |   curve 20/64
+2026-10-13 11:08:13,379 | INFO    | multi |   curve 40/64
+2026-10-13 11:08:38,808 | INFO    | multi |   curve 60/64
+2026-10-13 11:08:47,823 | INFO    | multi | uji_lib3: curve over 64 WAP sets
+2026-10-13 11:08:47,826 | INFO    | multi | ==== uji_lib3 / curve done in 92.3s ====

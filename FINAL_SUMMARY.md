@@ -1,6 +1,6 @@
 # FINAL SUMMARY — HUIM trong Indoor Positioning System (UJIIndoorLoc)
 
-> Sinh tự động bởi `src/make_final_summary.py` lúc 2026-10-08T00:23:01+00:00 (UTC). Mọi con số đọc từ `results/`. Không có giá trị nào nhập tay.
+> Sinh tự động bởi `src/make_final_summary.py` lúc 2026-10-09T04:06:36+00:00 (UTC). Mọi con số đọc từ `results/`. Không có giá trị nào nhập tay.
 
 ---
 
@@ -196,6 +196,26 @@ Chi phí khai thác HUIM ở mục 5.2; đây là nửa còn lại — nơi vi�
 [OUR INTERPRETATION] Giảm chiều cho lợi ích gần như TUYẾN TÍNH về cả thời gian lẫn bộ nhớ, và đây là phần giá trị KHÔNG gây tranh cãi của toàn bộ hướng tiếp cận. Điều gây tranh cãi là **ai** chọn tập đặc trưng: trên dữ liệu này, tiêu chí đối chứng đơn giản chọn tốt hơn HUIM.
 
 [FACT FROM DATA] Đường cong thời gian không đơn điệu ở số chiều nhỏ nhất (10 WAP): scikit-learn chuyển sang chỉ mục `kd_tree`, mà trên dữ liệu thưa thì cây chậm hơn duyệt vét cạn. Thuật toán index được ghi lại trong log cho từng phép đo.
+
+### 5.5c. Tối ưu sai số định vị theo mét (PHASE I3)
+
+k-NN của PHASE I (k=1, Manhattan) được chọn cho bài toán PHÂN LOẠI tầng trên một phép chia ngẫu nhiên; PHASE I3 tối ưu riêng phần ước lượng toạ độ. Chọn trên GroupKFold(6) over USERID on trainingData (leave-users-out); tiêu chí là sai số trung bình (mét thực địa) trên các fold dev; validationData chỉ chấm điểm mỗi bước đúng một lần.
+
+| Bước | Cấu hình | Dev TB (m) | Val TB (m) | Val trung vị (m) | Joint acc |
+|---|---|---|---|---|---|
+| S0 study k-NN as regressor | positive+manhattan, k=1, w=1/d^0 | 12.31 | 9.28 | 4.61 | 87.76% |
+| S1 best representation x distance (k=1) | positive+cosine, k=1, w=1/d^0 | 7.60 | 6.66 | 4.61 | 92.17% |
+| S2 + k and 1/d^p weighting | exponential+braycurtis, k=12, w=1/d^4 | 6.76 | 5.30 | 3.39 | 93.70% |
+| S3 + device-offset search | exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB | 6.33 | 5.31 | 3.49 | 94.69% |
+| S4 + ensemble of two representations | exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive | 6.21 | 5.36 | 3.52 | 94.69% |
+
+[EXPERIMENT RESULT] Mô hình được giao thức chọn (S4): sai số trung bình **5.36 m** thực địa so với 9.28 m (42% thấp hơn), trung vị 3.52 m, joint accuracy 94.69%.
+
+[OUR INTERPRETATION] Phần lớn cải thiện đến từ khoảng cách Bray-Curtis/cosine và k láng giềng có trọng số. Dò độ lệch thiết bị và ensemble thắng trên dev nhưng không giảm thêm sai số mét trên validation (thấp nhất là S2, 5.30 m); chúng chỉ nâng độ chính xác tầng. Mô hình giữ nguyên lựa chọn của giao thức.
+
+Kiểm chứng độc lập `huim_checks.json`: 28 phép kiểm tra, 0 thất bại.
+Kiểm chứng độc lập `positioning_checks.json`: 24 phép kiểm tra, 0 thất bại.
+Bộ kiểm chứng thủ công bằng Excel: `verification/kiem_chung_thu_cong.xlsx`.
 
 ### 5.6. Một kết quả ĐI NGƯỢC kỳ vọng — và nó là hạn chế lớn nhất của thiết kế
 

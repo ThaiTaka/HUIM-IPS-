@@ -1,0 +1,10 @@
+2026-10-13 09:52:19,758 | INFO    | multi | loaded hus_dedup in 0.4s
+2026-10-13 09:52:19,758 | INFO    | multi | ==== hus_dedup / transfer ====
+2026-10-13 09:52:21,756 | INFO    | multi | hus_dedup testcase1  UJI config as-is: mean 0.536 m, joint 1.0000
+2026-10-13 09:52:23,193 | INFO    | multi | hus_dedup testcase2  UJI config as-is: mean 0.350 m, joint 1.0000
+2026-10-13 09:52:23,213 | INFO    | multi | ==== hus_dedup / transfer done in 3.5s ====
+2026-10-13 09:52:23,213 | INFO    | multi | ==== hus_dedup / curve ====
+2026-10-13 09:52:25,177 | INFO    | multi |   curve 20/42
+2026-10-13 09:52:26,993 | INFO    | multi |   curve 40/42
+2026-10-13 09:52:27,161 | INFO    | multi | hus_dedup: curve over 42 WAP sets
+2026-10-13 09:52:27,165 | INFO    | multi | ==== hus_dedup / curve done in 4.0s ====

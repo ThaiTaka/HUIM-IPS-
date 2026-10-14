@@ -1,0 +1,60 @@
+2026-10-09 10:07:19,613 | INFO    | optpos | dev protocol: 6 leave-users-out folds over trainingData (18 users); validationData untouched until the end
+2026-10-09 10:07:23,273 | INFO    | optpos | dev lists positive    euclidean    3.7s
+2026-10-09 10:08:11,315 | INFO    | optpos | dev lists positive    manhattan   46.7s
+2026-10-09 10:09:02,649 | INFO    | optpos | dev lists positive    braycurtis  50.0s
+2026-10-09 10:09:10,725 | INFO    | optpos | dev lists positive    cosine       6.9s
+2026-10-09 10:09:15,724 | INFO    | optpos | dev lists powed       euclidean    3.7s
+2026-10-09 10:09:59,090 | INFO    | optpos | dev lists powed       manhattan   42.2s
+2026-10-09 10:10:49,084 | INFO    | optpos | dev lists powed       braycurtis  48.7s
+2026-10-09 10:10:58,150 | INFO    | optpos | dev lists powed       cosine       7.6s
+2026-10-09 10:11:03,747 | INFO    | optpos | dev lists exponential euclidean    4.3s
+2026-10-09 10:11:54,240 | INFO    | optpos | dev lists exponential manhattan   49.2s
+2026-10-09 10:12:39,852 | INFO    | optpos | dev lists exponential braycurtis  44.2s
+2026-10-09 10:12:47,248 | INFO    | optpos | dev lists exponential cosine       6.3s
+2026-10-09 10:12:48,340 | INFO    | optpos | S0 positive+manhattan, k=1, w=1/d^0 -> dev mean 12.308 m
+2026-10-09 10:12:48,341 | INFO    | optpos | S1 positive+cosine, k=1, w=1/d^0 -> dev mean 7.602 m
+2026-10-09 10:12:48,341 | INFO    | optpos | S2 exponential+braycurtis, k=12, w=1/d^4 -> dev mean 6.758 m
+2026-10-09 10:13:43,729 | INFO    | optpos | dev offset lists exponential delta  -9.0 dB  55.4s
+2026-10-09 10:14:37,189 | INFO    | optpos | dev offset lists exponential delta  -6.0 dB  53.5s
+2026-10-09 10:15:29,249 | INFO    | optpos | dev offset lists exponential delta  -3.0 dB  52.1s
+2026-10-09 10:16:15,480 | INFO    | optpos | dev offset lists exponential delta  +3.0 dB  46.2s
+2026-10-09 10:17:01,418 | INFO    | optpos | dev offset lists exponential delta  +6.0 dB  45.9s
+2026-10-09 10:17:56,314 | INFO    | optpos | dev offset lists exponential delta  +9.0 dB  54.9s
+2026-10-09 10:17:56,599 | INFO    | optpos | S3 exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB -> dev mean 6.332 m
+2026-10-09 10:18:46,288 | INFO    | optpos | dev offset lists positive    delta  -9.0 dB  49.7s
+2026-10-09 10:19:41,041 | INFO    | optpos | dev offset lists positive    delta  -6.0 dB  54.8s
+2026-10-09 10:20:27,229 | INFO    | optpos | dev offset lists positive    delta  -3.0 dB  46.2s
+2026-10-09 10:21:13,233 | INFO    | optpos | dev offset lists positive    delta  +3.0 dB  46.0s
+2026-10-09 10:21:58,946 | INFO    | optpos | dev offset lists positive    delta  +6.0 dB  45.7s
+2026-10-09 10:22:50,500 | INFO    | optpos | dev offset lists positive    delta  +9.0 dB  51.6s
+2026-10-09 10:22:50,581 | INFO    | optpos | S4 exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive -> dev mean 6.208 m
+2026-10-09 10:22:50,607 | INFO    | optpos | SELECTED on dev: exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive
+2026-10-09 10:22:55,796 | INFO    | optpos | VALIDATION S0 study k-NN as regressor                  mean 9.277 m  median 4.610 m  joint acc 0.8776
+2026-10-09 10:22:56,458 | INFO    | optpos | VALIDATION S1 best representation x distance (k=1)     mean 6.659 m  median 4.611 m  joint acc 0.9217
+2026-10-09 10:22:59,454 | INFO    | optpos | VALIDATION S2 + k and 1/d^p weighting                  mean 5.296 m  median 3.389 m  joint acc 0.9370
+2026-10-09 10:23:13,753 | INFO    | optpos | VALIDATION S3 + device-offset search                   mean 5.308 m  median 3.487 m  joint acc 0.9469
+2026-10-09 10:23:49,383 | INFO    | optpos | VALIDATION S4 + ensemble of two representations        mean 5.356 m  median 3.522 m  joint acc 0.9469
+2026-10-09 10:23:49,516 | INFO    | optpos | device offset chosen on validation: {'-6 dB': 0.2295, '-3 dB': 0.189, '+0 dB': 0.2088, '+3 dB': 0.1854, '+6 dB': 0.1872}
+2026-10-09 10:24:18,421 | INFO    | optpos | baseline_all_520                                 520 WAP  study 9.28 m -> optimised 5.36 m
+2026-10-09 10:24:44,117 | INFO    | optpos | baseline_detected_465                            465 WAP  study 9.28 m -> optimised 5.35 m
+2026-10-09 10:25:00,755 | INFO    | optpos | control_top_mi__n200                             200 WAP  study 8.75 m -> optimised 5.54 m
+2026-10-09 10:25:12,100 | INFO    | optpos | control_top_support__n200                        200 WAP  study 8.77 m -> optimised 5.54 m
+2026-10-09 10:25:17,203 | INFO    | optpos | huim_union__A_signal__1.9294pct                   86 WAP  study 20.57 m -> optimised 19.36 m
+2026-10-09 10:25:21,997 | INFO    | optpos | huim_union__B_discriminative__2pct                79 WAP  study 22.06 m -> optimised 19.91 m
+2026-10-09 10:25:27,347 | INFO    | optpos | huim_union__C_rare_discriminative__1.7321pct      91 WAP  study 19.14 m -> optimised 17.49 m
+2026-10-09 10:25:31,784 | INFO    | optpos | huim_topn__A_signal__1.9294pct__n75               75 WAP  study 34.38 m -> optimised 32.59 m
+2026-10-09 10:25:36,199 | INFO    | optpos | huim_topn__B_discriminative__2pct__n75            75 WAP  study 22.30 m -> optimised 20.13 m
+2026-10-09 10:25:40,632 | INFO    | optpos | huim_topn__C_rare_discriminative__1.7321pct__n75  75 WAP  study 22.01 m -> optimised 20.68 m
+2026-10-09 10:25:46,180 | INFO    | optpos | control_top_mi__n91                               91 WAP  study 18.54 m -> optimised 14.73 m
+2026-10-09 10:28:49,149 | INFO    | optpos | control_top_support__n91                          91 WAP  study 17.86 m -> optimised 15.79 m
+2026-10-09 10:28:53,496 | INFO    | optpos | control_top_mi__n86                               86 WAP  study 20.14 m -> optimised 19.37 m
+2026-10-09 10:28:57,688 | INFO    | optpos | control_top_support__n86                          86 WAP  study 18.19 m -> optimised 16.36 m
+2026-10-09 10:29:01,476 | INFO    | optpos | control_top_mi__n79                               79 WAP  study 20.54 m -> optimised 19.75 m
+2026-10-09 10:29:05,249 | INFO    | optpos | control_top_support__n79                          79 WAP  study 18.28 m -> optimised 16.61 m
+2026-10-09 10:29:09,077 | INFO    | optpos | control_top_mi__n75                               75 WAP  study 20.41 m -> optimised 19.99 m
+2026-10-09 10:29:12,796 | INFO    | optpos | control_top_support__n75                          75 WAP  study 18.31 m -> optimised 16.62 m
+2026-10-09 10:29:15,438 | INFO    | optpos | done in 1327s
+2026-10-09 10:31:31,326 | INFO    | optpos | redrew fig18 from the saved selection
+2026-10-09 10:32:30,413 | INFO    | optpos | redrew fig18 from the saved selection
+2026-10-09 10:33:22,317 | INFO    | optpos | redrew fig18 from the saved selection
+2026-10-09 11:05:55,876 | INFO    | optpos | redrew fig18 from the saved selection

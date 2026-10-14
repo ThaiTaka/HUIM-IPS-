@@ -1,0 +1,176 @@
+{
+  "what": "independent re-computation of the HUIM results from trainingData.csv",
+  "n_checks": 28,
+  "n_failed": 0,
+  "checks": [
+    {
+      "run": "A_signal__1.9294pct",
+      "check": "1 threshold",
+      "result": "PASS",
+      "detail": "1.9294% x 9,058,242.0000 = 174,769.7211; huim_runs.csv says 174,769.7211"
+    },
+    {
+      "run": "A_signal__1.9294pct",
+      "check": "2 q(i,T) and p(i)",
+      "result": "PASS",
+      "detail": "q identical: True; max |p_project - p_here| = 0.00e+00 over 520 WAPs, 0.00e+00 over the 0 WAPs at the 1e-6 floor (MI ~ 0)"
+    },
+    {
+      "run": "A_signal__1.9294pct",
+      "check": "3 soundness u(X) >= minUtil",
+      "result": "PASS",
+      "detail": "853 HUIs (saved list A_signal__1.9294pct.jsonl.gz); smallest recomputed u(X) = 174,772.0000 vs minUtil 174,769.7211; 0 below"
+    },
+    {
+      "run": "A_signal__1.9294pct",
+      "check": "4 exact utilities",
+      "result": "PASS",
+      "detail": "max relative difference EFIM vs recomputed = 0.00e+00"
+    },
+    {
+      "run": "A_signal__1.9294pct",
+      "check": "5 exact supports",
+      "result": "PASS",
+      "detail": "0 supports differ"
+    },
+    {
+      "run": "A_signal__1.9294pct",
+      "check": "6 completeness length 1",
+      "result": "PASS",
+      "detail": "exhaustive search finds 0 itemsets with u >= minUtil, EFIM reported 0; missing 0, extra 0"
+    },
+    {
+      "run": "A_signal__1.9294pct",
+      "check": "6 completeness length 2",
+      "result": "PASS",
+      "detail": "exhaustive search finds 3 itemsets with u >= minUtil, EFIM reported 3; missing 0, extra 0"
+    },
+    {
+      "run": "A_signal__1.9294pct",
+      "check": "6 completeness length 3",
+      "result": "PASS",
+      "detail": "exhaustive search finds 8 itemsets with u >= minUtil, EFIM reported 8; missing 0, extra 0"
+    },
+    {
+      "run": "A_signal__1.9294pct",
+      "check": "7 WAP union = IPS feature set",
+      "result": "PASS",
+      "detail": "union of HUIs = 86 WAPs; ips_results.csv uses 86"
+    },
+    {
+      "run": "B_discriminative__2pct",
+      "check": "1 threshold",
+      "result": "PASS",
+      "detail": "2% x 4,354,299.0649 = 87,085.9813; huim_runs.csv says 87,085.9813"
+    },
+    {
+      "run": "B_discriminative__2pct",
+      "check": "2 q(i,T) and p(i)",
+      "result": "PASS",
+      "detail": "q identical: True; max |p_project - p_here| = 3.13e-10 over 465 WAPs, 1.00e-06 over the 55 WAPs at the 1e-6 floor (MI ~ 0)"
+    },
+    {
+      "run": "B_discriminative__2pct",
+      "check": "3 soundness u(X) >= minUtil",
+      "result": "PASS",
+      "detail": "24,621 HUIs (saved list B_discriminative__2pct.jsonl.gz); smallest recomputed u(X) = 87,086.3740 vs minUtil 87,085.9813; 0 below"
+    },
+    {
+      "run": "B_discriminative__2pct",
+      "check": "4 exact utilities",
+      "result": "PASS",
+      "detail": "max relative difference EFIM vs recomputed = 2.90e-10"
+    },
+    {
+      "run": "B_discriminative__2pct",
+      "check": "5 exact supports",
+      "result": "PASS",
+      "detail": "0 supports differ"
+    },
+    {
+      "run": "B_discriminative__2pct",
+      "check": "6 completeness length 1",
+      "result": "PASS",
+      "detail": "exhaustive search finds 4 itemsets with u >= minUtil, EFIM reported 4; missing 0, extra 0"
+    },
+    {
+      "run": "B_discriminative__2pct",
+      "check": "6 completeness length 2",
+      "result": "PASS",
+      "detail": "exhaustive search finds 68 itemsets with u >= minUtil, EFIM reported 68; missing 0, extra 0"
+    },
+    {
+      "run": "B_discriminative__2pct",
+      "check": "6 completeness length 3",
+      "result": "PASS",
+      "detail": "exhaustive search finds 357 itemsets with u >= minUtil, EFIM reported 357; missing 0, extra 0"
+    },
+    {
+      "run": "B_discriminative__2pct",
+      "check": "7 WAP union = IPS feature set",
+      "result": "PASS",
+      "detail": "union of HUIs = 79 WAPs; ips_results.csv uses 79"
+    },
+    {
+      "run": "C_rare_discriminative__1.7321pct",
+      "check": "1 threshold",
+      "result": "PASS",
+      "detail": "1.7321% x 6,211,852.2745 = 107,595.4932; huim_runs.csv says 107,595.4932"
+    },
+    {
+      "run": "C_rare_discriminative__1.7321pct",
+      "check": "2 q(i,T) and p(i)",
+      "result": "PASS",
+      "detail": "q identical: True; max |p_project - p_here| = 9.77e-10 over 465 WAPs, 1.00e-06 over the 55 WAPs at the 1e-6 floor (MI ~ 0)"
+    },
+    {
+      "run": "C_rare_discriminative__1.7321pct",
+      "check": "0 re-mined list",
+      "result": "PASS",
+      "detail": "52,902 HUIs re-mined; huim_runs.csv records 52,902"
+    },
+    {
+      "run": "C_rare_discriminative__1.7321pct",
+      "check": "3 soundness u(X) >= minUtil",
+      "result": "PASS",
+      "detail": "52,902 HUIs (re-mined with src/huim/efim.py (COMPLETED); the saved file kept only the top-1000); smallest recomputed u(X) = 107,595.4938 vs minUtil 107,595.4932; 0 below"
+    },
+    {
+      "run": "C_rare_discriminative__1.7321pct",
+      "check": "4 exact utilities",
+      "result": "PASS",
+      "detail": "max relative difference EFIM vs recomputed = 2.73e-14"
+    },
+    {
+      "run": "C_rare_discriminative__1.7321pct",
+      "check": "5 exact supports",
+      "result": "PASS",
+      "detail": "0 supports differ"
+    },
+    {
+      "run": "C_rare_discriminative__1.7321pct",
+      "check": "6 completeness length 1",
+      "result": "PASS",
+      "detail": "exhaustive search finds 3 itemsets with u >= minUtil, EFIM reported 3; missing 0, extra 0"
+    },
+    {
+      "run": "C_rare_discriminative__1.7321pct",
+      "check": "6 completeness length 2",
+      "result": "PASS",
+      "detail": "exhaustive search finds 37 itemsets with u >= minUtil, EFIM reported 37; missing 0, extra 0"
+    },
+    {
+      "run": "C_rare_discriminative__1.7321pct",
+      "check": "6 completeness length 3",
+      "result": "PASS",
+      "detail": "exhaustive search finds 203 itemsets with u >= minUtil, EFIM reported 203; missing 0, extra 0"
+    },
+    {
+      "run": "C_rare_discriminative__1.7321pct",
+      "check": "7 WAP union = IPS feature set",
+      "result": "PASS",
+      "detail": "union of HUIs = 91 WAPs; ips_results.csv uses 91"
+    }
+  ],
+  "seconds": 141.2
+}

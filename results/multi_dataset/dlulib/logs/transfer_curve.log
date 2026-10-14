@@ -1,0 +1,13 @@
+2026-10-13 09:48:26,250 | INFO    | multi | loaded dlulib in 0.2s
+2026-10-13 09:48:26,251 | INFO    | multi | ==== dlulib / transfer ====
+2026-10-13 09:48:38,900 | INFO    | multi | dlulib Testing    UJI config as-is: mean 3.951 m, joint 0.9942
+2026-10-13 09:48:38,908 | INFO    | multi | ==== dlulib / transfer done in 12.7s ====
+2026-10-13 09:48:38,908 | INFO    | multi | ==== dlulib / curve ====
+2026-10-13 09:48:56,092 | INFO    | multi |   curve 20/138
+2026-10-13 09:49:11,762 | INFO    | multi |   curve 40/138
+2026-10-13 09:49:24,881 | INFO    | multi |   curve 60/138
+2026-10-13 09:49:35,832 | INFO    | multi |   curve 80/138
+2026-10-13 09:49:49,747 | INFO    | multi |   curve 100/138
+2026-10-13 09:50:06,749 | INFO    | multi |   curve 120/138
+2026-10-13 09:50:26,702 | INFO    | multi | dlulib: curve over 138 WAP sets
+2026-10-13 09:50:26,704 | INFO    | multi | ==== dlulib / curve done in 107.8s ====
