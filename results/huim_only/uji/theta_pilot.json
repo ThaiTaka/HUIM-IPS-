@@ -1,0 +1,16 @@
+{
+ "purpose": "choose theta for UJIIndoorLoc before the full 6-fold dev search (theta = 10% costs about 25 minutes of mining per fold)",
+ "data": "dev folds 1 and 2 of GroupKFold(6) over USERID on trainingData; validationData not used",
+ "scorer": "best over gamma/tau, beta, sigma, kf=3|10, m, p, with the floor-first rule",
+ "results_dev_mean_m": {
+  "theta 30%, no smoothing": 9.145,
+  "theta 30%, p = IDF, no smoothing": 8.747,
+  "theta 30%, p = mutual information, no smoothing": 9.673,
+  "theta 20%, sigma 0": 8.415,
+  "theta 20%, best sigma (6 m)": 7.742,
+  "theta 10%, sigma 0": 7.816,
+  "theta 10%, best sigma (6 m)": 7.138
+ },
+ "decision": "theta = 10%, external utility p = 1",
+ "per_cell_budget": "10 s or 10 000 HUIs, theta x 1.25 on overflow"
+}

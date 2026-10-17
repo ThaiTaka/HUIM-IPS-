@@ -111,23 +111,25 @@ def fig61():
 def fig62():
     G = pd.read_csv(OUT_ROOT / "uji" / "dev_grid.csv")
     sel = json.load(open(OUT_ROOT / "uji" / "selection.json", encoding="utf-8"))
-    best = G.groupby(["theta_pct", "m"]).dev_mean_m.min().reset_index()
+    G = G[G.theta_pct == sel["theta_pct"]]
+    best = G.groupby(["sigma", "m"]).dev_mean_m.min().reset_index()
     fig, ax = plt.subplots(figsize=(7, 4))
-    cols = {30.0: BLUE, 50.0: ORANGE, 70.0: AQUA}
-    for th, g in best.groupby("theta_pct"):
-        ax.plot(g.m, g.dev_mean_m, "-o", color=cols.get(th, GRAY), lw=2, ms=6,
-                label=f"θ = {th:g}% (minUtil theo ô)")
-    ax.scatter([sel["params"]["m"]], [sel["dev_mean_m"]], s=170, facecolor="none",
+    cols = [GRAY, YELLOW, BLUE, ORANGE, AQUA]
+    for (sg, g), c in zip(best.groupby("sigma"), cols):
+        lab = "không làm mượt" if sg == 0 else f"σ = {sg:g} m"
+        ax.plot(g.m, g.dev_mean_m, "-o", color=c, lw=2, ms=6, label=lab)
+    sp = sel["params"]
+    ax.scatter([sp["m"]], [sel["dev_mean_m"]], s=170, facecolor="none",
                edgecolor=INK, lw=1.4, zorder=5)
-    ax.annotate(f"chọn: θ {sel['theta_pct']:g}%, m={sel['params']['m']}\ndev {sel['dev_mean_m']:.2f} m",
-                (sel["params"]["m"], sel["dev_mean_m"]), xytext=(14, 18),
+    ax.annotate(f"chọn: σ={sp['sigma']:g} m, m={sp['m']}\ndev {sel['dev_mean_m']:.2f} m",
+                (sp["m"], sel["dev_mean_m"]), xytext=(14, 18),
                 textcoords="offset points", fontsize=8)
     ax.axhline(TARGET_M, color=RED, ls="--", lw=1.2)
     ax.set_xlabel("m = số ô điểm cao nhất dùng để ước lượng toạ độ")
     ax.set_ylabel("Sai số TB trên dev (m)")
     ax.set_ylim(0, max(TARGET_M + 1, best.dev_mean_m.max() * 1.1))
     ax.legend(fontsize=8.5, loc="lower right")
-    ax.set_title("UJIIndoorLoc: chọn tham số trên dev (6 fold, theo người dùng)", fontsize=10.5)
+    ax.set_title(f"UJIIndoorLoc, θ = {sel['theta_pct']:g}%: chọn tham số trên dev (6 fold theo người dùng)", fontsize=10)
     save(fig, "fig62_huim_only_dev", best)
 
 

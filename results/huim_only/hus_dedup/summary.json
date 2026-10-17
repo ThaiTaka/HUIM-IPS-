@@ -63,17 +63,18 @@
         8.0
       ]
     },
+    "theta_note": "theta chosen on the dev folds with the other parameters",
     "rule": "lowest dev mean error over all dev rows; ties -> larger theta (fewer HUIs)",
-    "timestamp_utc": "2026-10-17T09:36:15.336004+00:00"
+    "timestamp_utc": "2026-10-17T10:03:39.298658+00:00"
   },
   "model": {
     "n_cells": 205,
     "n_huis": 6352,
-    "mining_seconds": 0.34,
+    "mining_seconds": 0.23,
     "cells_escalated": 0,
     "theta_used_median_pct": 10.0,
-    "cell_time_limit_s": 5.0,
-    "cell_max_huis": 2000,
+    "cell_time_limit_s": 10.0,
+    "cell_max_huis": 10000,
     "escalate": 1.25,
     "n_aps": 5,
     "aps_in_some_hui": 5
@@ -93,7 +94,7 @@
       "mean_err_coord": 1.303,
       "share_within_2m": 0.839,
       "share_within_5m": 0.9902,
-      "ms_per_fp": 0.0717,
+      "ms_per_fp": 0.0762,
       "below_target": true
     },
     "testcase2": {
@@ -110,7 +111,7 @@
       "mean_err_coord": 1.5362,
       "share_within_2m": 0.7512,
       "share_within_5m": 0.9756,
-      "ms_per_fp": 0.0656,
+      "ms_per_fp": 0.071,
       "below_target": true
     }
   },
@@ -136,5 +137,5 @@
     "ram_total_gb": 15.72,
     "cpu_count_physical": 4
   },
-  "timestamp_utc": "2026-10-17T09:36:15.991715+00:00"
+  "timestamp_utc": "2026-10-17T10:03:39.778216+00:00"
 }

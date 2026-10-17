@@ -46,6 +46,12 @@ SIGMA_GRID = [0.0, 3.0, 6.0, 10.0]
 KF_GRID = [3, 10]
 M_GRID = [5, 8, 12]
 P_GRID = [4.0, 8.0]
+# UJIIndoorLoc: theta = 10% costs ~25 min per fold, so it was fixed beforehand
+# by a pilot on dev folds 1 and 2 (theta_pilot.json); the test data played no part.
+THETA_BY_DATASET = {"uji": [10.0]}
+THETA_NOTE = {"uji": "fixed at 10% by a pilot on dev folds 1-2 of trainingData "
+                     "(results/huim_only/uji/theta_pilot.json); every other "
+                     "parameter chosen on all 6 dev folds"}
 TARGET_M = 7.0
 ORDER = ["uji", "uji_lib3", "dlulib", "hcxy", "hus", "hus_dedup"]
 LOG = get_logger("huim_only", "huim_only.log")
@@ -76,35 +82,70 @@ def err_m(xy, true_xy, gf):
 
 
 # ===================================================================== select
-def stage_select(b: Bundle) -> None:
-    out = outdir(b.key)
-    _prep, Q, cell, XY, BF = inputs(b)
-    folds = folds_for(b, len(Q))
+def thetas(key: str) -> list[float]:
+    return THETA_BY_DATASET.get(key, THETA_GRID)
+
+
+def grid():
     outer = list(itertools.product(GT_GRID, BETA_GRID, SIGMA_GRID))
     inner = list(itertools.product(KF_GRID, M_GRID, P_GRID))
     configs = [Params(g, t, be, m, p, sg, kf) for (g, t), be, sg in outer
                for kf, m, p in inner]
+    return outer, inner, configs
+
+
+def stage_dev_part(b: Bundle, theta: float, fold: int) -> None:
+    """One (theta, dev fold): mine the training part, score the held-out part
+    for every configuration. Written to dev_parts/ so folds can run in
+    parallel processes."""
+    out = outdir(b.key)
+    (out / "dev_parts").mkdir(exist_ok=True)
+    _prep, Q, cell, XY, BF = inputs(b)
+    tri, dvi = folds_for(b, len(Q))[fold]
+    outer, inner, configs = grid()
+    t0 = time.perf_counter()
+    pos = HUIPositioner(theta, ground_factor=b.ground_factor).fit(
+        Q[tri], cell[tri], XY[tri], BF[tri])
+    P, V = pos.components(Q[dvi], GT_GRID)
+    err = np.zeros((len(configs), len(dvi)), np.float32)
+    flo = np.zeros((len(configs), len(dvi)), bool)
+    i = 0
+    for (g, t), be, sg in outer:
+        S = pos.cell_scores(P[(g, t)], V, be, sg)
+        fl = {kf: pos.floor_of(S, kf) for kf in KF_GRID}
+        for kf, m, p in inner:
+            xy, *_ = pos.locate(S, fl[kf], m, p)
+            err[i] = err_m(xy, XY[dvi], b.ground_factor)
+            flo[i] = fl[kf] == BF[dvi]
+            i += 1
+    np.savez_compressed(out / "dev_parts" / f"theta{theta:g}_fold{fold}.npz",
+                        dvi=dvi, err=err, flo=flo, n_huis=len(pos.hui_items),
+                        mining_s=pos.fit_seconds,
+                        seconds=time.perf_counter() - t0)
+    LOG.info("%s dev part theta %g fold %d: %d HUIs, mined %.0fs, total %.0fs",
+             b.key, theta, fold, len(pos.hui_items), pos.fit_seconds,
+             time.perf_counter() - t0)
+
+
+def stage_select(b: Bundle) -> None:
+    """Merge the dev parts (running any that are missing) and select."""
+    out = outdir(b.key)
+    n = len(b.train)
+    folds = folds_for(b, n)
+    _o, _i, configs = grid()
     rows = []
-    for theta in THETA_GRID:
-        err = np.zeros((len(configs), len(Q)))
-        flo = np.zeros((len(configs), len(Q)), bool)
-        t0 = time.perf_counter()
-        n_huis = []
-        for tri, dvi in folds:
-            pos = HUIPositioner(theta, ground_factor=b.ground_factor).fit(
-                Q[tri], cell[tri], XY[tri], BF[tri])
-            n_huis.append(len(pos.hui_items))
-            P, V = pos.components(Q[dvi], GT_GRID)
-            i = 0
-            for (g, t), be, sg in outer:
-                S = pos.cell_scores(P[(g, t)], V, be, sg)
-                fl = {kf: pos.floor_of(S, kf) for kf in KF_GRID}
-                for kf, m, p in inner:
-                    xy, *_ = pos.locate(S, fl[kf], m, p)
-                    err[i, dvi] = err_m(xy, XY[dvi], b.ground_factor)
-                    flo[i, dvi] = fl[kf] == BF[dvi]
-                    i += 1
-            del pos, P, V
+    for theta in thetas(b.key):
+        err = np.zeros((len(configs), n))
+        flo = np.zeros((len(configs), n), bool)
+        info = []
+        for k in range(len(folds)):
+            f = out / "dev_parts" / f"theta{theta:g}_fold{k}.npz"
+            if not f.exists():
+                stage_dev_part(b, theta, k)
+            z = np.load(f)
+            err[:, z["dvi"]] = z["err"]
+            flo[:, z["dvi"]] = z["flo"]
+            info.append(int(z["n_huis"]))
         for i, prm in enumerate(configs):
             e = err[i]
             rows.append({"theta_pct": theta, **asdict(prm),
@@ -113,12 +154,11 @@ def stage_select(b: Bundle) -> None:
                          "dev_p90_m": round(float(np.percentile(e, 90)), 4),
                          "dev_joint_accuracy": round(float(flo[i].mean()), 6)})
         D = pd.DataFrame(rows)
-        D.to_csv(out / "dev_grid.csv", index=False)
         best = D[D.theta_pct == theta].sort_values("dev_mean_m").iloc[0]
-        LOG.info("%s theta %g: %d folds in %.0fs, HUIs/fold %s; best dev %.3f m "
-                 "(%s)", b.key, theta, len(folds), time.perf_counter() - t0,
-                 n_huis, best.dev_mean_m, params_of(best).label())
+        LOG.info("%s theta %g: HUIs/fold %s; best dev %.3f m (%s)", b.key, theta,
+                 info, best.dev_mean_m, params_of(best).label())
     D = pd.DataFrame(rows)
+    D.to_csv(out / "dev_grid.csv", index=False)
     best = D.sort_values(["dev_mean_m", "theta_pct"], ascending=[True, False]).iloc[0]
     prm = params_of(best)
     dump_json({"dataset": b.key, "theta_pct": float(best.theta_pct),
@@ -128,9 +168,11 @@ def stage_select(b: Bundle) -> None:
                "dev_joint_accuracy": float(best.dev_joint_accuracy),
                "dev_folds": f"{len(folds)} folds, {b.group_note}",
                "n_configurations": len(D),
-               "grids": {"theta_pct": THETA_GRID, "gamma_tau": GT_GRID,
+               "grids": {"theta_pct": thetas(b.key), "gamma_tau": GT_GRID,
                          "beta": BETA_GRID, "sigma_m": SIGMA_GRID,
                          "kf": KF_GRID, "m": M_GRID, "p": P_GRID},
+               "theta_note": THETA_NOTE.get(b.key, "theta chosen on the dev folds "
+                                                   "with the other parameters"),
                "rule": "lowest dev mean error over all dev rows; ties -> "
                        "larger theta (fewer HUIs)",
                "timestamp_utc": datetime.now(timezone.utc).isoformat()},
@@ -209,8 +251,13 @@ STAGES = {"select": stage_select, "final": stage_final}
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dataset", default="all")
-    ap.add_argument("--stage", default="all", choices=["all", *STAGES])
+    ap.add_argument("--stage", default="all", choices=["all", "dev_part", *STAGES])
+    ap.add_argument("--theta", type=float)
+    ap.add_argument("--fold", type=int)
     a = ap.parse_args()
+    if a.stage == "dev_part":
+        stage_dev_part(load(a.dataset), a.theta, a.fold)
+        return
     keys = ORDER if a.dataset == "all" else a.dataset.split(",")
     for key in keys:
         if key not in DATASETS:

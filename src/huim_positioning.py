@@ -53,11 +53,11 @@ from scipy import sparse
 
 from huim.efim import mine_efim
 
-CELL_TIME_S = 5.0
-CELL_MAX_HUIS = 2000
+CELL_TIME_S = 10.0
+CELL_MAX_HUIS = 10000
 ESCALATE = 1.25
 MAX_ESCALATIONS = 60
-BATCH = 64
+BATCH = 16
 
 
 @dataclass

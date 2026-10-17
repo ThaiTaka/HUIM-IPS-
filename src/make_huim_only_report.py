@@ -17,8 +17,8 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from huim_positioning import CELL_MAX_HUIS, CELL_TIME_S, ESCALATE
 from report_builder import Doc
-from run_huim_only import (BETA_GRID, GT_GRID, M_GRID, ORDER, OUT_ROOT,
-                           P_GRID, TARGET_M, THETA_GRID)
+from run_huim_only import (BETA_GRID, GT_GRID, KF_GRID, M_GRID, ORDER,
+                           OUT_ROOT, P_GRID, SIGMA_GRID, TARGET_M, THETA_GRID)
 from utils import FIGURES, PROJECT_ROOT, RESULTS
 
 FIG = FIGURES / "huim_only"
@@ -141,8 +141,12 @@ def build() -> Doc:
     d.formula("V_c(T) = Σ_{i∈T∩I_c} q(i,T) / Σ_{i∈T} q(i,T),   I_c = ∪ HUI_c",
               "Độ phủ: phần utility của truy vấn được các mẫu của ô c giải thích.")
     d.formula("score_c(T) = P_c(T) · V_c(T)^β")
-    d.formula("(x̂, ŷ) = Σ_{c∈top-m} a_c (x_c, y_c),   a_c = score_c^p / Σ score^p;   tòa_tầng = bỏ phiếu theo a_c",
-              "m ô điểm cao nhất cho toạ độ; tòa và tầng do chính các ô đó bỏ phiếu.")
+    d.formula("S_c(T) = Σ_{c'} score_{c'}(T) · K(c',c),   K(c',c) ∝ exp(−d(c',c)² / 2σ²) nếu c', c cùng tòa_tầng",
+              "Làm mượt không gian: một ô được các ô lân cận cùng tầng (trong khoảng σ mét) có mẫu khớp tốt “ủng hộ”. Chỉ dùng vị trí các ô.")
+    d.formula("tòa_tầng(T) = argmax_f  trung bình kf giá trị S_c lớn nhất trong tầng f",
+              "Quyết định tầng trước: tầng có kf ô khớp HUI tốt nhất.")
+    d.formula("(x̂, ŷ) = Σ_{c∈top-m của tầng đã chọn} a_c (x_c, y_c),   a_c = S_c^p / Σ S^p",
+              "Toạ độ: trung bình có trọng số của tâm m ô tốt nhất TRONG tầng đã chọn.")
     d.p("Ghi chú trung thực: bước cuối là trung bình có trọng số của tâm các ô — giống về hình thức "
         "với bước cuối của weighted k-NN. Khác biệt cốt lõi là ở chỗ ô nào được chọn và với trọng số "
         "nào: ở đây hoàn toàn do điểm khớp HUI quyết định; không có khoảng cách fingerprint nào được tính.",
@@ -151,11 +155,21 @@ def build() -> Doc:
     d.h(2, "5.1. Giao thức")
     d.table(pd.DataFrame([
         {"Bước": "Chuẩn hoá RSSI, khai thác EFIM theo ô", "Dữ liệu": "huấn luyện"},
-        {"Bước": f"Chọn θ ∈ {THETA_GRID}, (γ,τ) ∈ {GT_GRID}, β ∈ {BETA_GRID}, m ∈ {M_GRID}, p ∈ {P_GRID}",
+        {"Bước": f"Chọn θ ∈ {sel['grids']['theta_pct']}, (γ,τ) ∈ {GT_GRID}, β ∈ {BETA_GRID}, σ ∈ {SIGMA_GRID} m, kf ∈ {KF_GRID}, m ∈ {M_GRID}, p ∈ {P_GRID}",
          "Dữ liệu": "dev: " + sel["dev_folds"]},
         {"Bước": "Khai thác lại toàn bộ tập huấn luyện ở θ đã chọn", "Dữ liệu": "huấn luyện"},
         {"Bước": "Đánh giá", "Dữ liệu": "tập test, một lần"},
     ]), f"Dữ liệu dùng ở từng bước ({sel['n_configurations']} cấu hình trên dev)", font_pt=8.5)
+    pil = OUT_ROOT / "uji" / "theta_pilot.json"
+    if pil.exists():
+        PJ = J(pil)
+        d.p("Với UJIIndoorLoc, θ được cố định TRƯỚC khi tìm các tham số còn lại, bằng một thí nghiệm "
+            "trên 2 fold dev (θ = 10% tốn khoảng 25 phút khai thác mỗi fold). Thí nghiệm này chỉ dùng "
+            "trainingData; nó cũng là nơi các cải tiến làm mượt không gian và quyết định tầng trước "
+            "được đề xuất:", align="justify")
+        d.table(pd.DataFrame([{"Biến thể (2 fold dev)": k, "Dev TB (m)": f2(v)}
+                              for k, v in PJ["results_dev_mean_m"].items()]),
+                "UJIIndoorLoc: thí nghiệm chọn θ và utility ngoài trên dev (results/huim_only/uji/theta_pilot.json)", font_pt=8.5)
 
     d.h(1, "6. Kết quả trên UJIIndoorLoc")
     d.p(f"Cấu hình chọn trên dev: θ = {f2(sel['theta_pct'], 0)}%, {prm and sel['label']}. Mô hình cuối: "
@@ -164,7 +178,7 @@ def build() -> Doc:
         f"{mdl['aps_in_some_hui']}/{mdl['n_aps']} AP xuất hiện trong ít nhất một HUI.", align="justify")
     d.figure(FIG / "fig62_huim_only_dev.png", "Sai số trên dev theo θ và m (mỗi điểm là cấu hình tốt nhất của các tham số còn lại)", 5.4)
     abl = []
-    for name, col in (("β (độ phủ)", "beta"), ("τ (khớp cường độ)", "tau"), ("γ (khớp mềm)", "gamma"), ("p (độ sắc trọng số)", "p")):
+    for name, col in (("σ (làm mượt, m)", "sigma"), ("kf (quyết định tầng)", "kf"), ("β (độ phủ)", "beta"), ("τ (khớp cường độ)", "tau"), ("γ (khớp mềm)", "gamma"), ("m (số ô)", "m"), ("p (độ sắc trọng số)", "p")):
         for v, g in G[G.theta_pct == sel["theta_pct"]].groupby(col):
             abl.append({"Thành phần": name, "Giá trị": f2(v, 0), "Dev TB tốt nhất (m)": f2(g.dev_mean_m.min()),
                         "Tòa+tầng dev": pct(g.loc[g.dev_mean_m.idxmin(), "dev_joint_accuracy"])})
@@ -218,6 +232,7 @@ def build() -> Doc:
     d.bullets([
         "Ô = điểm tham chiếu của tập huấn luyện; vị trí ước lượng là tổ hợp lồi của tâm các ô, nên không thể nằm ngoài vùng đã khảo sát.",
         "Bước cuối (trung bình có trọng số của m ô) giống về hình thức với weighted k-NN; điểm khác là trọng số do khớp HUI quyết định.",
+        "Với UJIIndoorLoc, θ được cố định bằng thí nghiệm trên 2 fold dev thay vì tìm trên cả 6 fold vì chi phí khai thác; các tham số khác được tìm trên đủ 6 fold.",
         "Các tham số γ, τ, β, m, p, θ được chọn trên dev; tập test chấm một lần, không chọn lại sau khi xem test.",
         f"Ngân sách {f2(CELL_TIME_S, 0)} s/ô làm một số ô dày đặc phải chạy ở θ cao hơn θ chọn; số ô bị ảnh hưởng ghi trong cell_runs.csv.",
         "EFIM viết bằng Python; thời gian khai thác và định vị là của cài đặt này.",

@@ -58,3 +58,35 @@
 2026-10-17 09:36:15,760 | INFO    | huim_only | hus_dedup testcase1: HUIM-only mean 1.303 m, median 1.051 m, joint 1.0000, 0.07 ms/fp
 2026-10-17 09:36:15,789 | INFO    | huim_only | hus_dedup testcase2: HUIM-only mean 1.536 m, median 1.297 m, joint 1.0000, 0.07 ms/fp
 2026-10-17 09:36:15,993 | INFO    | huim_only | hus_dedup stage final done in 1s
+2026-10-17 10:02:04,511 | INFO    | huim_only | hus_dedup dev part theta 10 fold 0: 6351 HUIs, mined 0s, total 6s
+2026-10-17 10:02:11,072 | INFO    | huim_only | hus_dedup dev part theta 10 fold 1: 6352 HUIs, mined 0s, total 6s
+2026-10-17 10:02:16,213 | INFO    | huim_only | hus_dedup dev part theta 10 fold 2: 6352 HUIs, mined 0s, total 5s
+2026-10-17 10:02:21,452 | INFO    | huim_only | hus_dedup dev part theta 10 fold 3: 6352 HUIs, mined 0s, total 5s
+2026-10-17 10:02:26,590 | INFO    | huim_only | hus_dedup dev part theta 10 fold 4: 6352 HUIs, mined 0s, total 5s
+2026-10-17 10:02:31,857 | INFO    | huim_only | hus_dedup dev part theta 10 fold 5: 6351 HUIs, mined 0s, total 5s
+2026-10-17 10:02:32,096 | INFO    | huim_only | hus_dedup theta 10: HUIs/fold [6351, 6352, 6352, 6352, 6352, 6351]; best dev 1.428 m (gamma=1, tau=20, beta=3, sigma=0 m, kf=3, m=5, p=8)
+2026-10-17 10:02:37,660 | INFO    | huim_only | hus_dedup dev part theta 20 fold 0: 5936 HUIs, mined 0s, total 6s
+2026-10-17 10:02:43,225 | INFO    | huim_only | hus_dedup dev part theta 20 fold 1: 5939 HUIs, mined 0s, total 5s
+2026-10-17 10:02:48,407 | INFO    | huim_only | hus_dedup dev part theta 20 fold 2: 5938 HUIs, mined 0s, total 5s
+2026-10-17 10:02:53,510 | INFO    | huim_only | hus_dedup dev part theta 20 fold 3: 5941 HUIs, mined 0s, total 5s
+2026-10-17 10:02:58,804 | INFO    | huim_only | hus_dedup dev part theta 20 fold 4: 5938 HUIs, mined 0s, total 5s
+2026-10-17 10:03:04,447 | INFO    | huim_only | hus_dedup dev part theta 20 fold 5: 5937 HUIs, mined 0s, total 6s
+2026-10-17 10:03:04,699 | INFO    | huim_only | hus_dedup theta 20: HUIs/fold [5936, 5939, 5938, 5941, 5938, 5937]; best dev 1.431 m (gamma=1, tau=20, beta=3, sigma=0 m, kf=3, m=5, p=8)
+2026-10-17 10:03:10,609 | INFO    | huim_only | hus_dedup dev part theta 30 fold 0: 5299 HUIs, mined 0s, total 6s
+2026-10-17 10:03:16,213 | INFO    | huim_only | hus_dedup dev part theta 30 fold 1: 5298 HUIs, mined 0s, total 5s
+2026-10-17 10:03:21,632 | INFO    | huim_only | hus_dedup dev part theta 30 fold 2: 5301 HUIs, mined 0s, total 5s
+2026-10-17 10:03:27,136 | INFO    | huim_only | hus_dedup dev part theta 30 fold 3: 5300 HUIs, mined 0s, total 5s
+2026-10-17 10:03:33,413 | INFO    | huim_only | hus_dedup dev part theta 30 fold 4: 5300 HUIs, mined 0s, total 6s
+2026-10-17 10:03:39,052 | INFO    | huim_only | hus_dedup dev part theta 30 fold 5: 5301 HUIs, mined 0s, total 6s
+2026-10-17 10:03:39,289 | INFO    | huim_only | hus_dedup theta 30: HUIs/fold [5299, 5298, 5301, 5300, 5300, 5301]; best dev 1.449 m (gamma=1, tau=20, beta=3, sigma=0 m, kf=3, m=5, p=8)
+2026-10-17 10:03:39,299 | INFO    | huim_only | hus_dedup SELECTED on dev: theta 10%, gamma=1, tau=20, beta=1, sigma=0 m, kf=3, m=5, p=8 -> dev 1.428 m
+2026-10-17 10:03:39,300 | INFO    | huim_only | hus_dedup stage select done in 100s
+2026-10-17 10:03:39,548 | INFO    | huim_only | hus_dedup final model: 205 cells, 6352 HUIs, mined in 0.2s
+2026-10-17 10:03:39,604 | INFO    | huim_only | hus_dedup testcase1: HUIM-only mean 1.303 m, median 1.051 m, joint 1.0000, 0.08 ms/fp
+2026-10-17 10:03:39,634 | INFO    | huim_only | hus_dedup testcase2: HUIM-only mean 1.536 m, median 1.297 m, joint 1.0000, 0.07 ms/fp
+2026-10-17 10:03:39,779 | INFO    | huim_only | hus_dedup stage final done in 0s
+2026-10-17 10:03:59,944 | INFO    | huim_only | hus dev part theta 10 fold 0: 6351 HUIs, mined 0s, total 7s
+2026-10-17 10:04:05,974 | INFO    | huim_only | hus dev part theta 10 fold 1: 6351 HUIs, mined 0s, total 6s
+2026-10-17 10:04:12,460 | INFO    | huim_only | hus dev part theta 10 fold 2: 6352 HUIs, mined 0s, total 6s
+2026-10-17 10:04:19,305 | INFO    | huim_only | hus dev part theta 10 fold 3: 6351 HUIs, mined 0s, total 7s
+2026-10-17 10:04:25,231 | INFO    | huim_only | hus dev part theta 10 fold 4: 6352 HUIs, mined 0s, total 6s
