@@ -1,0 +1,127 @@
+{
+  "dataset": "hus",
+  "zone_rule": "single floor: 8 k-means clusters of the training positions (seed 20251007)",
+  "n_zones": 8,
+  "zone_sizes": {
+    "Z0": 1900,
+    "Z1": 2700,
+    "Z2": 3000,
+    "Z3": 2700,
+    "Z4": 2800,
+    "Z5": 2300,
+    "Z6": 2900,
+    "Z7": 2200
+  },
+  "theta_grid_pct": [
+    10.0,
+    7.0,
+    5.0,
+    4.0,
+    3.0
+  ],
+  "models": {
+    "A": "A_signal",
+    "B": "B_discriminative"
+  },
+  "budget": {
+    "zone_time_limit_s": 120.0,
+    "max_huis": 1000000,
+    "escalate": 1.25,
+    "max_escalations": 8,
+    "n_spatial_zones": 8
+  },
+  "n_wap_columns": 5,
+  "sets": {
+    "huim_zone__A_signal__10pct": [
+      "WAP_AP1",
+      "WAP_AP2",
+      "WAP_AP3",
+      "WAP_AP4",
+      "WAP_AP5"
+    ],
+    "huim_zone__A_signal__7pct": [
+      "WAP_AP1",
+      "WAP_AP2",
+      "WAP_AP3",
+      "WAP_AP4",
+      "WAP_AP5"
+    ],
+    "huim_zone__A_signal__5pct": [
+      "WAP_AP1",
+      "WAP_AP2",
+      "WAP_AP3",
+      "WAP_AP4",
+      "WAP_AP5"
+    ],
+    "huim_zone__A_signal__4pct": [
+      "WAP_AP1",
+      "WAP_AP2",
+      "WAP_AP3",
+      "WAP_AP4",
+      "WAP_AP5"
+    ],
+    "huim_zone__A_signal__3pct": [
+      "WAP_AP1",
+      "WAP_AP2",
+      "WAP_AP3",
+      "WAP_AP4",
+      "WAP_AP5"
+    ],
+    "huim_zone__B_discriminative__10pct": [
+      "WAP_AP1",
+      "WAP_AP2",
+      "WAP_AP3",
+      "WAP_AP4",
+      "WAP_AP5"
+    ],
+    "huim_zone__B_discriminative__7pct": [
+      "WAP_AP1",
+      "WAP_AP2",
+      "WAP_AP3",
+      "WAP_AP4",
+      "WAP_AP5"
+    ],
+    "huim_zone__B_discriminative__5pct": [
+      "WAP_AP1",
+      "WAP_AP2",
+      "WAP_AP3",
+      "WAP_AP4",
+      "WAP_AP5"
+    ],
+    "huim_zone__B_discriminative__4pct": [
+      "WAP_AP1",
+      "WAP_AP2",
+      "WAP_AP3",
+      "WAP_AP4",
+      "WAP_AP5"
+    ],
+    "huim_zone__B_discriminative__3pct": [
+      "WAP_AP1",
+      "WAP_AP2",
+      "WAP_AP3",
+      "WAP_AP4",
+      "WAP_AP5"
+    ]
+  },
+  "environment": {
+    "python_version": "3.13.16",
+    "python_implementation": "CPython",
+    "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "cpu_count_logical": 4,
+    "packages": {
+      "numpy": "2.5.1",
+      "pandas": "3.0.6",
+      "sklearn": "1.9.1",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.2",
+      "docx": "1.2.0",
+      "pptx": "1.0.2",
+      "psutil": "7.2.2",
+      "yaml": "6.0.3"
+    },
+    "ram_total_gb": 15.72,
+    "cpu_count_physical": 4
+  }
+}

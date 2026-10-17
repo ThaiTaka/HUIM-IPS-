@@ -1,0 +1,12 @@
+set,n_waps,ms_per_fp,mean_err_m
+huim_zone__A_signal__10pct,136,6.4114,8.7138
+huim_zone__B_discriminative__10pct,144,6.7366,8.0799
+huim_zone__B_discriminative__7pct,177,8.5637,6.1359
+huim_zone__A_signal__7pct,195,8.7815,5.871
+huim_zone__A_signal__5pct,209,8.8236,5.376
+huim_zone__B_discriminative__5pct,214,9.6931,5.3684
+huim_zone__A_signal__4pct,219,9.6774,5.3389
+huim_zone__B_discriminative__4pct,222,10.3408,5.3024
+huim_zone__B_discriminative__3pct,232,10.5395,5.3102
+huim_zone__A_signal__3pct,240,10.8198,5.2974
+all_aps,520,24.129,5.3562

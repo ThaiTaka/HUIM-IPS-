@@ -1,0 +1,20 @@
+{
+  "dataset": "uji_lib3",
+  "positioner": "exponential+braycurtis, k=3, w=1/d^4",
+  "positioner_config": {
+    "representation": "exponential",
+    "distance": "braycurtis",
+    "k": 3,
+    "power": 4.0,
+    "offset_range": 0,
+    "ensemble_with": ""
+  },
+  "positioner_source": "results/multi_dataset/uji_lib3/positioning.json (selected on dev folds with all APs)",
+  "dev_folds": "6 folds, Month - leave-months-out: both test sets span the same 25 months as training and differ from it by collection session; no user/device column exists (one phone)",
+  "rule": "lowest dev mean error among the HUIM-zone sets; ties -> fewer WAPs",
+  "selected_set": "huim_zone__B_discriminative__3pct",
+  "selected_n_waps": 90,
+  "selected_dev_mean_m": 1.3381,
+  "all_aps_dev_mean_m": 1.3582,
+  "timestamp_utc": "2026-10-17T05:32:34.893295+00:00"
+}

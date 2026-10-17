@@ -1,0 +1,20 @@
+{
+  "dataset": "hus",
+  "positioner": "exponential+euclidean, k=1, w=1/d^0",
+  "positioner_config": {
+    "representation": "exponential",
+    "distance": "euclidean",
+    "k": 1,
+    "power": 0.0,
+    "offset_range": 0,
+    "ensemble_with": ""
+  },
+  "positioner_source": "results/multi_dataset/hus/positioning.json (selected on dev folds with all APs)",
+  "dev_folds": "6 folds, none - the files carry no user, device, session or sample index, and both test cases revisit the training RPs; dev folds are a shuffled 6-fold KFold over rows",
+  "rule": "lowest dev mean error among the HUIM-zone sets; ties -> fewer WAPs",
+  "selected_set": "huim_zone__A_signal__10pct",
+  "selected_n_waps": 5,
+  "selected_dev_mean_m": 0.3973,
+  "all_aps_dev_mean_m": 0.3973,
+  "timestamp_utc": "2026-10-17T03:42:59.826531+00:00"
+}

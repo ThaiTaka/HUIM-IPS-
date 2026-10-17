@@ -1,0 +1,133 @@
+{
+  "dataset": "hus",
+  "title": "HUS nguyên bản (1 phòng, 5 AP)",
+  "positioner": "exponential+euclidean, k=1, w=1/d^0",
+  "selection": {
+    "dataset": "hus",
+    "positioner": "exponential+euclidean, k=1, w=1/d^0",
+    "positioner_config": {
+      "representation": "exponential",
+      "distance": "euclidean",
+      "k": 1,
+      "power": 0.0,
+      "offset_range": 0,
+      "ensemble_with": ""
+    },
+    "positioner_source": "results/multi_dataset/hus/positioning.json (selected on dev folds with all APs)",
+    "dev_folds": "6 folds, none - the files carry no user, device, session or sample index, and both test cases revisit the training RPs; dev folds are a shuffled 6-fold KFold over rows",
+    "rule": "lowest dev mean error among the HUIM-zone sets; ties -> fewer WAPs",
+    "selected_set": "huim_zone__A_signal__10pct",
+    "selected_n_waps": 5,
+    "selected_dev_mean_m": 0.3973,
+    "all_aps_dev_mean_m": 0.3973,
+    "timestamp_utc": "2026-10-17T03:42:59.826531+00:00"
+  },
+  "tests": {
+    "testcase1": {
+      "n_test": 205,
+      "huim_zone": {
+        "set": "huim_zone__A_signal__10pct",
+        "n_waps": 5,
+        "feature_reduction_pct": 0.0,
+        "building_accuracy": 1.0,
+        "floor_accuracy": 1.0,
+        "joint_accuracy": 1.0,
+        "mean_err_m": 0.0681,
+        "median_err_m": 0.0,
+        "p75_err_m": 0.0,
+        "p90_err_m": 0.0,
+        "p95_err_m": 0.0,
+        "ms_per_fp": 0.0865
+      },
+      "all_aps": {
+        "n_waps": 5,
+        "joint_accuracy": 1.0,
+        "mean_err_m": 0.0681,
+        "median_err_m": 0.0,
+        "p90_err_m": 0.0,
+        "ms_per_fp": 0.16
+      },
+      "controls_same_budget_mean_err_m": {
+        "top_support": 0.0681,
+        "top_mi": 0.0681,
+        "random_mean_of_3": 0.0681,
+        "random_each": [
+          0.0681,
+          0.0681,
+          0.0681
+        ]
+      },
+      "global_huim_best": {
+        "set": "huim_union__A_signal__20pct",
+        "n_waps": 5,
+        "mean_err_m": 0.0681
+      },
+      "below_target": true,
+      "target_m": 7.0
+    },
+    "testcase2": {
+      "n_test": 205,
+      "huim_zone": {
+        "set": "huim_zone__A_signal__10pct",
+        "n_waps": 5,
+        "feature_reduction_pct": 0.0,
+        "building_accuracy": 1.0,
+        "floor_accuracy": 1.0,
+        "joint_accuracy": 1.0,
+        "mean_err_m": 0.057,
+        "median_err_m": 0.0,
+        "p75_err_m": 0.0,
+        "p90_err_m": 0.0,
+        "p95_err_m": 0.0,
+        "ms_per_fp": 0.0999
+      },
+      "all_aps": {
+        "n_waps": 5,
+        "joint_accuracy": 1.0,
+        "mean_err_m": 0.057,
+        "median_err_m": 0.0,
+        "p90_err_m": 0.0,
+        "ms_per_fp": 0.0754
+      },
+      "controls_same_budget_mean_err_m": {
+        "top_support": 0.057,
+        "top_mi": 0.057,
+        "random_mean_of_3": 0.057,
+        "random_each": [
+          0.057,
+          0.057,
+          0.057
+        ]
+      },
+      "global_huim_best": {
+        "set": "huim_union__A_signal__20pct",
+        "n_waps": 5,
+        "mean_err_m": 0.057
+      },
+      "below_target": true,
+      "target_m": 7.0
+    }
+  },
+  "environment": {
+    "python_version": "3.13.16",
+    "python_implementation": "CPython",
+    "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "cpu_count_logical": 4,
+    "packages": {
+      "numpy": "2.5.1",
+      "pandas": "3.0.6",
+      "sklearn": "1.9.1",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.2",
+      "docx": "1.2.0",
+      "pptx": "1.0.2",
+      "psutil": "7.2.2",
+      "yaml": "6.0.3"
+    },
+    "ram_total_gb": 15.72,
+    "cpu_count_physical": 4
+  },
+  "timestamp_utc": "2026-10-17T03:43:00.525491+00:00"
+}

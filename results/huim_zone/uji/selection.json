@@ -1,0 +1,20 @@
+{
+  "dataset": "uji",
+  "positioner": "exponential+braycurtis, k=12, w=1/d^4, offset +-6 dB, ensemble with positive",
+  "positioner_config": {
+    "representation": "exponential",
+    "distance": "braycurtis",
+    "k": 12,
+    "power": 4.0,
+    "offset_range": 6,
+    "ensemble_with": "positive"
+  },
+  "positioner_source": "results/multi_dataset/uji/positioning.json (selected on dev folds with all APs)",
+  "dev_folds": "6 folds, USERID - leave-users-out, exactly as PHASE I3 of the study (validationData is another user, other phones, 4 months later)",
+  "rule": "lowest dev mean error among the HUIM-zone sets; ties -> fewer WAPs",
+  "selected_set": "huim_zone__A_signal__3pct",
+  "selected_n_waps": 240,
+  "selected_dev_mean_m": 6.2501,
+  "all_aps_dev_mean_m": 6.2086,
+  "timestamp_utc": "2026-10-17T05:01:10.652322+00:00"
+}

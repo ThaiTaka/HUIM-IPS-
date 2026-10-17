@@ -1,0 +1,2839 @@
+{
+  "set": "huim_zone__A_signal__7pct",
+  "dataset": "hus_dedup",
+  "utility_model": "A_signal",
+  "theta_pct": 7.0,
+  "zone_rule": "single floor: 8 k-means clusters of the training positions (seed 20251007)",
+  "selected_waps": [
+    "WAP_AP1",
+    "WAP_AP2",
+    "WAP_AP3",
+    "WAP_AP4",
+    "WAP_AP5"
+  ],
+  "external_utility": {
+    "WAP_AP1": 1.0,
+    "WAP_AP2": 1.0,
+    "WAP_AP3": 1.0,
+    "WAP_AP4": 1.0,
+    "WAP_AP5": 1.0
+  },
+  "zones": [
+    {
+      "zone": "Z0",
+      "n_transactions": 2842,
+      "n_items": 5,
+      "total_utility": 787967.0,
+      "theta_requested_pct": 7.0,
+      "theta_used_pct": 7.0,
+      "abs_minutil": 55157.69,
+      "n_attempts": 1,
+      "n_huis": 31,
+      "status": "COMPLETED",
+      "runtime_s": 0.0147,
+      "search_nodes": 31,
+      "n_waps": 5,
+      "waps": [
+        "WAP_AP1",
+        "WAP_AP2",
+        "WAP_AP3",
+        "WAP_AP4",
+        "WAP_AP5"
+      ],
+      "witnesses": [
+        {
+          "wap": "WAP_AP1",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 787967.0,
+          "support": 2842
+        },
+        {
+          "wap": "WAP_AP2",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 787967.0,
+          "support": 2842
+        },
+        {
+          "wap": "WAP_AP3",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 787967.0,
+          "support": 2842
+        },
+        {
+          "wap": "WAP_AP4",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 787967.0,
+          "support": 2842
+        },
+        {
+          "wap": "WAP_AP5",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 787967.0,
+          "support": 2842
+        }
+      ],
+      "top_huis": [
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 787967.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 686624.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 620883.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 615727.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 614849.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 613785.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 519540.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 514384.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 513506.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 512442.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 448643.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 447765.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 446701.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 442609.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 441545.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 440667.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 347300.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 346422.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 345358.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 341266.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 340202.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 339324.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4"
+          ],
+          "utility": 275525.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP5"
+          ],
+          "utility": 274461.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3"
+          ],
+          "utility": 273583.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2"
+          ],
+          "utility": 268427.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP4"
+          ],
+          "utility": 174182.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP5"
+          ],
+          "utility": 173118.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP3"
+          ],
+          "utility": 172240.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP2"
+          ],
+          "utility": 167084.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1"
+          ],
+          "utility": 101343.0,
+          "support": 2842
+        }
+      ]
+    },
+    {
+      "zone": "Z1",
+      "n_transactions": 2548,
+      "n_items": 5,
+      "total_utility": 695028.0,
+      "theta_requested_pct": 7.0,
+      "theta_used_pct": 7.0,
+      "abs_minutil": 48651.96,
+      "n_attempts": 1,
+      "n_huis": 31,
+      "status": "COMPLETED",
+      "runtime_s": 0.0142,
+      "search_nodes": 31,
+      "n_waps": 5,
+      "waps": [
+        "WAP_AP1",
+        "WAP_AP2",
+        "WAP_AP3",
+        "WAP_AP4",
+        "WAP_AP5"
+      ],
+      "witnesses": [
+        {
+          "wap": "WAP_AP1",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 695028.0,
+          "support": 2548
+        },
+        {
+          "wap": "WAP_AP2",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 695028.0,
+          "support": 2548
+        },
+        {
+          "wap": "WAP_AP3",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 695028.0,
+          "support": 2548
+        },
+        {
+          "wap": "WAP_AP4",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 695028.0,
+          "support": 2548
+        },
+        {
+          "wap": "WAP_AP5",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 695028.0,
+          "support": 2548
+        }
+      ],
+      "top_huis": [
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 695028.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 593469.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 573556.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 539520.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 537606.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 535961.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 471997.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 437961.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 436047.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 434402.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 418048.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 416134.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 414489.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 382098.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 380453.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 378539.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 316489.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 314575.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 312930.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2"
+          ],
+          "utility": 280539.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP5"
+          ],
+          "utility": 278894.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4"
+          ],
+          "utility": 276980.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 260626.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 258981.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 257067.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3"
+          ],
+          "utility": 223031.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2"
+          ],
+          "utility": 159067.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP5"
+          ],
+          "utility": 157422.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP4"
+          ],
+          "utility": 155508.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1"
+          ],
+          "utility": 121472.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP3"
+          ],
+          "utility": 101559.0,
+          "support": 2548
+        }
+      ]
+    },
+    {
+      "zone": "Z2",
+      "n_transactions": 2548,
+      "n_items": 5,
+      "total_utility": 731431.0,
+      "theta_requested_pct": 7.0,
+      "theta_used_pct": 7.0,
+      "abs_minutil": 51200.17,
+      "n_attempts": 1,
+      "n_huis": 31,
+      "status": "COMPLETED",
+      "runtime_s": 0.0111,
+      "search_nodes": 31,
+      "n_waps": 5,
+      "waps": [
+        "WAP_AP1",
+        "WAP_AP2",
+        "WAP_AP3",
+        "WAP_AP4",
+        "WAP_AP5"
+      ],
+      "witnesses": [
+        {
+          "wap": "WAP_AP1",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 731431.0,
+          "support": 2548
+        },
+        {
+          "wap": "WAP_AP2",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 731431.0,
+          "support": 2548
+        },
+        {
+          "wap": "WAP_AP3",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 731431.0,
+          "support": 2548
+        },
+        {
+          "wap": "WAP_AP4",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 731431.0,
+          "support": 2548
+        },
+        {
+          "wap": "WAP_AP5",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 731431.0,
+          "support": 2548
+        }
+      ],
+      "top_huis": [
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 731431.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 614744.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 611159.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 582266.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 576351.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 541204.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 494472.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 465579.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 461994.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 459664.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 456079.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 427186.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 424517.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 420932.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 392039.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 386124.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 345307.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 339392.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 310499.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP5"
+          ],
+          "utility": 306914.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 304245.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 275352.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2"
+          ],
+          "utility": 271767.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 269437.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4"
+          ],
+          "utility": 265852.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3"
+          ],
+          "utility": 236959.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP5"
+          ],
+          "utility": 190227.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2"
+          ],
+          "utility": 155080.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP4"
+          ],
+          "utility": 149165.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP3"
+          ],
+          "utility": 120272.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1"
+          ],
+          "utility": 116687.0,
+          "support": 2548
+        }
+      ]
+    },
+    {
+      "zone": "Z3",
+      "n_transactions": 3235,
+      "n_items": 5,
+      "total_utility": 894533.0,
+      "theta_requested_pct": 7.0,
+      "theta_used_pct": 7.0,
+      "abs_minutil": 62617.31,
+      "n_attempts": 1,
+      "n_huis": 31,
+      "status": "COMPLETED",
+      "runtime_s": 0.0166,
+      "search_nodes": 31,
+      "n_waps": 5,
+      "waps": [
+        "WAP_AP1",
+        "WAP_AP2",
+        "WAP_AP3",
+        "WAP_AP4",
+        "WAP_AP5"
+      ],
+      "witnesses": [
+        {
+          "wap": "WAP_AP1",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 894533.0,
+          "support": 3235
+        },
+        {
+          "wap": "WAP_AP2",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 894533.0,
+          "support": 3235
+        },
+        {
+          "wap": "WAP_AP3",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 894533.0,
+          "support": 3235
+        },
+        {
+          "wap": "WAP_AP4",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 894533.0,
+          "support": 3235
+        },
+        {
+          "wap": "WAP_AP5",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 894533.0,
+          "support": 3235
+        }
+      ],
+      "top_huis": [
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 894533.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 771778.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 735707.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 702509.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 693948.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 674190.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 612952.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 579754.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 571193.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 551435.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 543683.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 535122.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 515364.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 501924.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 482166.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 473605.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 420928.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 412367.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 392609.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 379169.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 359411.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 350850.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4"
+          ],
+          "utility": 343098.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP5"
+          ],
+          "utility": 323340.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2"
+          ],
+          "utility": 314779.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3"
+          ],
+          "utility": 281581.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP4"
+          ],
+          "utility": 220343.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP5"
+          ],
+          "utility": 200585.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP2"
+          ],
+          "utility": 192024.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP3"
+          ],
+          "utility": 158826.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1"
+          ],
+          "utility": 122755.0,
+          "support": 3235
+        }
+      ]
+    },
+    {
+      "zone": "Z4",
+      "n_transactions": 2156,
+      "n_items": 5,
+      "total_utility": 629548.0,
+      "theta_requested_pct": 7.0,
+      "theta_used_pct": 7.0,
+      "abs_minutil": 44068.36,
+      "n_attempts": 1,
+      "n_huis": 31,
+      "status": "COMPLETED",
+      "runtime_s": 0.0077,
+      "search_nodes": 31,
+      "n_waps": 5,
+      "waps": [
+        "WAP_AP1",
+        "WAP_AP2",
+        "WAP_AP3",
+        "WAP_AP4",
+        "WAP_AP5"
+      ],
+      "witnesses": [
+        {
+          "wap": "WAP_AP1",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 629548.0,
+          "support": 2156
+        },
+        {
+          "wap": "WAP_AP2",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 629548.0,
+          "support": 2156
+        },
+        {
+          "wap": "WAP_AP3",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 629548.0,
+          "support": 2156
+        },
+        {
+          "wap": "WAP_AP4",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 629548.0,
+          "support": 2156
+        },
+        {
+          "wap": "WAP_AP5",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 629548.0,
+          "support": 2156
+        }
+      ],
+      "top_huis": [
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 629548.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 534905.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 520421.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 501715.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 481776.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 479375.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 425778.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 407072.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 392588.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 387133.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 384732.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 372649.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 370248.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 353943.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 351542.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 331603.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 297945.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 278006.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 275605.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2"
+          ],
+          "utility": 259300.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP5"
+          ],
+          "utility": 256899.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 244816.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 242415.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4"
+          ],
+          "utility": 236960.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 222476.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3"
+          ],
+          "utility": 203770.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP2"
+          ],
+          "utility": 150173.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP5"
+          ],
+          "utility": 147772.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP4"
+          ],
+          "utility": 127833.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1"
+          ],
+          "utility": 109127.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP3"
+          ],
+          "utility": 94643.0,
+          "support": 2156
+        }
+      ]
+    },
+    {
+      "zone": "Z5",
+      "n_transactions": 2450,
+      "n_items": 5,
+      "total_utility": 679261.0,
+      "theta_requested_pct": 7.0,
+      "theta_used_pct": 7.0,
+      "abs_minutil": 47548.27,
+      "n_attempts": 1,
+      "n_huis": 31,
+      "status": "COMPLETED",
+      "runtime_s": 0.0089,
+      "search_nodes": 31,
+      "n_waps": 5,
+      "waps": [
+        "WAP_AP1",
+        "WAP_AP2",
+        "WAP_AP3",
+        "WAP_AP4",
+        "WAP_AP5"
+      ],
+      "witnesses": [
+        {
+          "wap": "WAP_AP1",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 679261.0,
+          "support": 2450
+        },
+        {
+          "wap": "WAP_AP2",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 679261.0,
+          "support": 2450
+        },
+        {
+          "wap": "WAP_AP3",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 679261.0,
+          "support": 2450
+        },
+        {
+          "wap": "WAP_AP4",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 679261.0,
+          "support": 2450
+        },
+        {
+          "wap": "WAP_AP5",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 679261.0,
+          "support": 2450
+        }
+      ],
+      "top_huis": [
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 679261.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 587555.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 538047.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 533440.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 533384.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 524618.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 446341.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 441734.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 441678.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 432912.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 392226.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 392170.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 387563.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 383404.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 378797.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 378741.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 300520.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 300464.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2"
+          ],
+          "utility": 295857.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 291698.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4"
+          ],
+          "utility": 287091.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP5"
+          ],
+          "utility": 287035.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 246349.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 237583.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 237527.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3"
+          ],
+          "utility": 232920.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP2"
+          ],
+          "utility": 154643.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP4"
+          ],
+          "utility": 145877.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP5"
+          ],
+          "utility": 145821.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1"
+          ],
+          "utility": 141214.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP3"
+          ],
+          "utility": 91706.0,
+          "support": 2450
+        }
+      ]
+    },
+    {
+      "zone": "Z6",
+      "n_transactions": 2058,
+      "n_items": 5,
+      "total_utility": 587029.0,
+      "theta_requested_pct": 7.0,
+      "theta_used_pct": 7.0,
+      "abs_minutil": 41092.03,
+      "n_attempts": 1,
+      "n_huis": 31,
+      "status": "COMPLETED",
+      "runtime_s": 0.0082,
+      "search_nodes": 31,
+      "n_waps": 5,
+      "waps": [
+        "WAP_AP1",
+        "WAP_AP2",
+        "WAP_AP3",
+        "WAP_AP4",
+        "WAP_AP5"
+      ],
+      "witnesses": [
+        {
+          "wap": "WAP_AP1",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 587029.0,
+          "support": 2058
+        },
+        {
+          "wap": "WAP_AP2",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 587029.0,
+          "support": 2058
+        },
+        {
+          "wap": "WAP_AP3",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 587029.0,
+          "support": 2058
+        },
+        {
+          "wap": "WAP_AP4",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 587029.0,
+          "support": 2058
+        },
+        {
+          "wap": "WAP_AP5",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 587029.0,
+          "support": 2058
+        }
+      ],
+      "top_huis": [
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 587029.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 500755.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 482830.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 464380.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 451841.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 448310.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 396556.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 378106.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 365567.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 362036.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 360181.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 347642.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 344111.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 329192.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 325661.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 313122.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 273907.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 261368.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 257837.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 242918.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 239387.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 226848.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2"
+          ],
+          "utility": 224993.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP5"
+          ],
+          "utility": 221462.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4"
+          ],
+          "utility": 208923.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3"
+          ],
+          "utility": 190473.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP2"
+          ],
+          "utility": 138719.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP5"
+          ],
+          "utility": 135188.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP4"
+          ],
+          "utility": 122649.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP3"
+          ],
+          "utility": 104199.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1"
+          ],
+          "utility": 86274.0,
+          "support": 2058
+        }
+      ]
+    },
+    {
+      "zone": "Z7",
+      "n_transactions": 2254,
+      "n_items": 5,
+      "total_utility": 661815.0,
+      "theta_requested_pct": 7.0,
+      "theta_used_pct": 7.0,
+      "abs_minutil": 46327.05,
+      "n_attempts": 1,
+      "n_huis": 31,
+      "status": "COMPLETED",
+      "runtime_s": 0.0087,
+      "search_nodes": 31,
+      "n_waps": 5,
+      "waps": [
+        "WAP_AP1",
+        "WAP_AP2",
+        "WAP_AP3",
+        "WAP_AP4",
+        "WAP_AP5"
+      ],
+      "witnesses": [
+        {
+          "wap": "WAP_AP1",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 661815.0,
+          "support": 2254
+        },
+        {
+          "wap": "WAP_AP2",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 661815.0,
+          "support": 2254
+        },
+        {
+          "wap": "WAP_AP3",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 661815.0,
+          "support": 2254
+        },
+        {
+          "wap": "WAP_AP4",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 661815.0,
+          "support": 2254
+        },
+        {
+          "wap": "WAP_AP5",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 661815.0,
+          "support": 2254
+        }
+      ],
+      "top_huis": [
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 661815.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 558606.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 550151.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 516384.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 516151.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 505968.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 446942.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 413175.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 412942.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 404720.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 404487.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 402759.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 394304.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 370720.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 360537.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 360304.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 301511.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 301278.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 291095.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 267511.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2"
+          ],
+          "utility": 259056.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 257328.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 257095.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4"
+          ],
+          "utility": 248873.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP5"
+          ],
+          "utility": 248640.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3"
+          ],
+          "utility": 214873.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP2"
+          ],
+          "utility": 155847.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP4"
+          ],
+          "utility": 145664.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP5"
+          ],
+          "utility": 145431.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP3"
+          ],
+          "utility": 111664.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1"
+          ],
+          "utility": 103209.0,
+          "support": 2254
+        }
+      ]
+    }
+  ]
+}

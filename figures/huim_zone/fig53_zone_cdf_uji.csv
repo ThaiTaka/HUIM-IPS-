@@ -1,0 +1,16 @@
+curve,percentile,err_m
+AP do HUIM theo vùng chọn,50,3.5169
+AP do HUIM theo vùng chọn,75,6.8202
+AP do HUIM theo vùng chọn,90,11.5277
+AP do HUIM theo vùng chọn,95,15.6992
+AP do HUIM theo vùng chọn,mean,5.2974
+Toàn bộ 520 WAP,50,3.5224
+Toàn bộ 520 WAP,75,6.8973
+Toàn bộ 520 WAP,90,11.8922
+Toàn bộ 520 WAP,95,16.0926
+Toàn bộ 520 WAP,mean,5.3562
+"k-NN gốc (k=1), 520 WAP",50,4.6096
+"k-NN gốc (k=1), 520 WAP",75,9.3883
+"k-NN gốc (k=1), 520 WAP",90,17.0212
+"k-NN gốc (k=1), 520 WAP",95,27.8141
+"k-NN gốc (k=1), 520 WAP",mean,9.277
