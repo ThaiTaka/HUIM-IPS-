@@ -3,33 +3,29 @@
   "title": "UJIIndoorLoc (3 tòa, 13 tầng)",
   "selection": {
     "dataset": "uji",
-    "theta_pct": 30.0,
+    "theta_pct": 10.0,
     "params": {
-      "gamma": 1.0,
-      "tau": 40.0,
-      "beta": 1.0,
-      "m": 8,
-      "p": 8.0
+      "gamma": 2.0,
+      "tau": 20.0,
+      "beta": 3.0,
+      "m": 12,
+      "p": 8.0,
+      "sigma": 3.0,
+      "kf": 10
     },
-    "label": "gamma=1, tau=40, beta=1, m=8, p=8",
-    "dev_mean_m": 8.2717,
-    "dev_median_m": 5.8487,
-    "dev_joint_accuracy": 0.732507,
+    "label": "gamma=2, tau=20, beta=3, sigma=3 m, kf=10, m=12, p=8",
+    "dev_mean_m": 7.6993,
+    "dev_median_m": 4.8784,
+    "dev_joint_accuracy": 0.73968,
     "dev_folds": "6 folds, USERID - leave-users-out, exactly as PHASE I3 of the study (validationData is another user, other phones, 4 months later)",
-    "n_configurations": 648,
+    "n_configurations": 288,
     "grids": {
       "theta_pct": [
-        30.0,
-        50.0,
-        70.0
+        10.0
       ],
       "gamma_tau": [
         [
           1.0,
-          10.0
-        ],
-        [
-          1.0,
           20.0
         ],
         [
@@ -38,65 +34,65 @@
         ],
         [
           2.0,
-          10.0
-        ],
-        [
-          2.0,
           20.0
-        ],
-        [
-          2.0,
-          40.0
         ]
       ],
       "beta": [
         1.0,
+        3.0
+      ],
+      "sigma_m": [
+        0.0,
         3.0,
-        5.0
+        6.0,
+        10.0
+      ],
+      "kf": [
+        3,
+        10
       ],
       "m": [
-        3,
         5,
         8,
         12
       ],
       "p": [
-        2.0,
         4.0,
         8.0
       ]
     },
+    "theta_note": "fixed at 10% by a pilot on dev folds 1-2 of trainingData (results/huim_only/uji/theta_pilot.json); every other parameter chosen on all 6 dev folds",
     "rule": "lowest dev mean error over all dev rows; ties -> larger theta (fewer HUIs)",
-    "timestamp_utc": "2026-10-17T09:09:48.437175+00:00"
+    "timestamp_utc": "2026-10-17T10:55:45.558804+00:00"
   },
   "model": {
     "n_cells": 933,
-    "n_huis": 520909,
-    "mining_seconds": 55.58,
-    "cells_escalated": 561,
-    "theta_used_median_pct": 37.5,
-    "cell_time_limit_s": 5.0,
-    "cell_max_huis": 2000,
+    "n_huis": 3615894,
+    "mining_seconds": 618.02,
+    "cells_escalated": 802,
+    "theta_used_median_pct": 30.517578125,
+    "cell_time_limit_s": 10.0,
+    "cell_max_huis": 10000,
     "escalate": 1.25,
     "n_aps": 520,
-    "aps_in_some_hui": 365
+    "aps_in_some_hui": 383
   },
   "tests": {
     "validationData": {
       "n_test": 1111,
       "building_accuracy": 1.0,
-      "floor_accuracy": 0.79658,
-      "joint_accuracy": 0.79658,
-      "mean_err_m": 7.6591,
-      "median_err_m": 6.129,
-      "p75_err_m": 10.3176,
-      "p90_err_m": 15.0315,
-      "p95_err_m": 18.8811,
-      "max_err_m": 54.7326,
-      "mean_err_coord": 9.9972,
-      "share_within_2m": 0.1188,
-      "share_within_5m": 0.4086,
-      "ms_per_fp": 17.6123,
+      "floor_accuracy": 0.761476,
+      "joint_accuracy": 0.761476,
+      "mean_err_m": 8.1755,
+      "median_err_m": 6.2966,
+      "p75_err_m": 11.2803,
+      "p90_err_m": 17.0728,
+      "p95_err_m": 22.9423,
+      "max_err_m": 48.0806,
+      "mean_err_coord": 10.6712,
+      "share_within_2m": 0.1404,
+      "share_within_5m": 0.4095,
+      "ms_per_fp": 129.4955,
       "below_target": false
     }
   },
@@ -122,5 +118,5 @@
     "ram_total_gb": 15.72,
     "cpu_count_physical": 4
   },
-  "timestamp_utc": "2026-10-17T09:11:07.748783+00:00"
+  "timestamp_utc": "2026-10-17T11:08:51.174447+00:00"
 }
