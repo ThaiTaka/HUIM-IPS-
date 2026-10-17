@@ -153,3 +153,4 @@
 2026-10-17 11:25:23,913 | INFO    | huim_only | hcxy dev part theta 10 fold 0: 337945 HUIs, mined 534s, total 559s
 2026-10-17 11:35:19,664 | INFO    | huim_only | hcxy dev part theta 10 fold 1: 381574 HUIs, mined 566s, total 596s
 2026-10-17 11:45:20,131 | INFO    | huim_only | hcxy dev part theta 10 fold 2: 358892 HUIs, mined 575s, total 600s
+2026-10-17 11:55:09,584 | INFO    | huim_only | hcxy dev part theta 10 fold 3: 363842 HUIs, mined 562s, total 589s
