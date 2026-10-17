@@ -9,18 +9,17 @@
     "m": 12,
     "p": 8.0,
     "sigma": 3.0,
-    "kf": 10
+    "kf": 20
   },
-  "label": "gamma=2, tau=20, beta=3, sigma=3 m, kf=10, m=12, p=8",
-  "dev_mean_m": 7.6688,
-  "dev_median_m": 4.9762,
-  "dev_joint_accuracy": 0.839846,
+  "label": "gamma=2, tau=20, beta=3, sigma=3 m, kf=20, m=12, p=8",
+  "dev_mean_m": 7.6532,
+  "dev_median_m": 4.9812,
+  "dev_joint_accuracy": 0.838391,
   "dev_folds": "6 folds, PHONEID - leave-phones-out (GroupKFold over the 16 training phones): validationData is 9 unseen phones of 11",
-  "n_configurations": 864,
+  "n_configurations": 2880,
   "grids": {
     "utility": [
       "abs",
-      "rel",
       "rank"
     ],
     "theta_pct": [
@@ -52,19 +51,24 @@
     ],
     "kf": [
       3,
-      10
+      10,
+      20
     ],
     "m": [
       5,
       8,
-      12
+      12,
+      20,
+      30
     ],
     "p": [
       4.0,
-      8.0
+      8.0,
+      12.0,
+      16.0
     ]
   },
   "theta_note": "fixed at 20% (pilot on dev folds, theta_pilot.json): 10% mines ~4M HUIs per fold and, with user folds, did not transfer to new phones; every other parameter, and the internal utility, chosen on all 6 dev folds",
   "rule": "lowest dev mean error over all dev rows; ties -> larger theta (fewer HUIs)",
-  "timestamp_utc": "2026-10-17T13:28:31.194311+00:00"
+  "timestamp_utc": "2026-10-17T14:47:42.627661+00:00"
 }

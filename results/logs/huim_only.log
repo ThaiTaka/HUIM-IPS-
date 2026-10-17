@@ -209,3 +209,13 @@
 2026-10-17 14:41:47,337 | INFO    | huim_only | uji dev part abs theta 20 fold 3: 3072191 HUIs, mined 361s, total 864s
 2026-10-17 14:42:38,230 | INFO    | huim_only | hcxy dev part abs theta 20 fold 1: 336316 HUIs, mined 423s, total 449s
 2026-10-17 14:42:52,469 | INFO    | huim_only | uji dev part abs theta 20 fold 4: 2763788 HUIs, mined 340s, total 765s
+2026-10-17 14:47:27,992 | INFO    | huim_only | uji dev part abs theta 20 fold 5: 3041539 HUIs, mined 326s, total 817s
+2026-10-17 14:47:38,945 | INFO    | huim_only | uji abs theta 20: HUIs/fold [3099005, 3074903, 3120434, 3072191, 2763788, 3041539]; best dev 7.685 m (gamma=2, tau=20, beta=3, sigma=3 m, kf=3, m=12, p=8)
+2026-10-17 14:47:42,602 | INFO    | huim_only | uji rank theta 20: HUIs/fold [3225283, 3063901, 3281832, 3217204, 2998148, 3289477]; best dev 7.653 m (gamma=2, tau=20, beta=3, sigma=3 m, kf=20, m=12, p=8)
+2026-10-17 14:47:42,628 | INFO    | huim_only | uji SELECTED on dev: utility rank, theta 20%, gamma=2, tau=20, beta=3, sigma=3 m, kf=20, m=12, p=8 -> dev 7.653 m
+2026-10-17 14:47:42,630 | INFO    | huim_only | uji stage select done in 7s
+2026-10-17 14:49:50,541 | INFO    | huim_only | hcxy dev part abs theta 20 fold 2: 317001 HUIs, mined 409s, total 432s
+2026-10-17 14:54:48,993 | INFO    | huim_only | uji final model: 933 cells, 3238416 HUIs, mined in 418.5s
+2026-10-17 14:57:17,887 | INFO    | huim_only | hcxy dev part abs theta 20 fold 3: 329300 HUIs, mined 423s, total 447s
+2026-10-17 14:57:32,009 | INFO    | huim_only | uji validationData: HUIM-only mean 8.059 m, median 6.152 m, joint 0.8038, 136.35 ms/fp
+2026-10-17 14:57:37,754 | INFO    | huim_only | uji stage final done in 595s
