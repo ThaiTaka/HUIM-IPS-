@@ -415,3 +415,8 @@
 2026-10-17 07:16:03,664 | INFO    | huim_zone | hus_dedup testcase1 SELECTED huim_zone__A_signal__10pct: 5 WAP, 0.391 m (all APs 0.391 m)
 2026-10-17 07:16:03,669 | INFO    | huim_zone | hus_dedup testcase2 SELECTED huim_zone__A_signal__10pct: 5 WAP, 0.254 m (all APs 0.254 m)
 2026-10-17 07:16:03,671 | INFO    | huim_zone | hus_dedup stage evaluate done in 3s
+2026-10-17 07:34:52,071 | INFO    | huim_zone | hcxy huim_zone__A_signal__10pct             8 zones ->  137/347 WAPs  1175.4s  (escalated zones: 7)
+2026-10-17 07:35:23,911 | INFO    | huim_zone | hcxy huim_zone__A_signal__7pct              8 zones ->  136/347 WAPs  31.8s  (escalated zones: 1)
+2026-10-17 07:35:23,925 | INFO    | huim_zone | hcxy huim_zone__A_signal__5pct              8 zones ->  136/347 WAPs  0.0s  (escalated zones: 0)
+2026-10-17 07:35:23,942 | INFO    | huim_zone | hcxy huim_zone__A_signal__4pct              8 zones ->  136/347 WAPs  0.0s  (escalated zones: 0)
+2026-10-17 07:35:23,956 | INFO    | huim_zone | hcxy huim_zone__A_signal__3pct              8 zones ->  136/347 WAPs  0.0s  (escalated zones: 0)
