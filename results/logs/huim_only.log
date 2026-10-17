@@ -226,3 +226,13 @@
 2026-10-17 15:24:45,984 | INFO    | huim_only | hcxy dev part abs theta 30 fold 1: 316950 HUIs, mined 349s, total 371s
 2026-10-17 15:29:17,987 | INFO    | huim_only | hcxy abs theta 10: HUIs/fold [337945, 381574, 358892, 363842, 372630, 350567]; best dev 2.483 m (gamma=2, tau=20, beta=3, sigma=0 m, kf=10, m=8, p=4)
 2026-10-17 15:29:18,151 | INFO    | huim_only | hcxy abs theta 20: HUIs/fold [327982, 336316, 317001, 329300, 332793, 345288]; best dev 2.663 m (gamma=2, tau=20, beta=3, sigma=0 m, kf=10, m=5, p=4)
+2026-10-17 15:35:11,153 | INFO    | huim_only | hcxy dev part abs theta 30 fold 2: 299097 HUIs, mined 331s, total 353s
+2026-10-17 15:40:59,613 | INFO    | huim_only | hcxy dev part abs theta 30 fold 3: 324598 HUIs, mined 324s, total 348s
+2026-10-17 15:46:51,566 | INFO    | huim_only | hcxy dev part abs theta 30 fold 4: 345650 HUIs, mined 327s, total 352s
+2026-10-17 15:52:45,012 | INFO    | huim_only | hcxy dev part abs theta 30 fold 5: 290668 HUIs, mined 332s, total 353s
+2026-10-17 15:52:45,124 | INFO    | huim_only | hcxy abs theta 30: HUIs/fold [304822, 316950, 299097, 324598, 345650, 290668]; best dev 2.490 m (gamma=2, tau=20, beta=3, sigma=0 m, kf=10, m=8, p=4)
+2026-10-17 15:52:45,136 | INFO    | huim_only | hcxy SELECTED on dev: utility abs, theta 10%, gamma=2, tau=20, beta=3, sigma=0 m, kf=3, m=8, p=4 -> dev 2.483 m
+2026-10-17 15:52:45,137 | INFO    | huim_only | hcxy stage select done in 1407s
+2026-10-17 16:04:02,803 | INFO    | huim_only | hcxy final model: 379 cells, 433090 HUIs, mined in 675.9s
+2026-10-17 16:04:14,766 | INFO    | huim_only | hcxy test_HCXY: HUIM-only mean 2.821 m, median 2.140 m, joint 1.0000, 11.58 ms/fp
+2026-10-17 16:04:15,947 | INFO    | huim_only | hcxy stage final done in 691s

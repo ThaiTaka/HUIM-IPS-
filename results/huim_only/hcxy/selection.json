@@ -1,32 +1,34 @@
 {
   "dataset": "hcxy",
-  "theta_pct": 30.0,
+  "utility": "abs",
+  "theta_pct": 10.0,
   "params": {
     "gamma": 2.0,
-    "tau": 40.0,
+    "tau": 20.0,
     "beta": 3.0,
-    "m": 5,
-    "p": 4.0
+    "m": 8,
+    "p": 4.0,
+    "sigma": 0.0,
+    "kf": 3
   },
-  "label": "gamma=2, tau=40, beta=3, m=5, p=4",
-  "dev_mean_m": 2.6531,
-  "dev_median_m": 2.087,
+  "label": "gamma=2, tau=20, beta=3, sigma=0 m, kf=3, m=8, p=4",
+  "dev_mean_m": 2.4834,
+  "dev_median_m": 1.9314,
   "dev_joint_accuracy": 1.0,
   "dev_folds": "6 folds, RP - leave-positions-out: none of the 86 test RPs is a training RP (overlap 0)",
-  "n_configurations": 648,
+  "n_configurations": 864,
   "grids": {
+    "utility": [
+      "abs"
+    ],
     "theta_pct": [
-      30.0,
-      50.0,
-      70.0
+      10.0,
+      20.0,
+      30.0
     ],
     "gamma_tau": [
       [
         1.0,
-        10.0
-      ],
-      [
-        1.0,
         20.0
       ],
       [
@@ -35,34 +37,34 @@
       ],
       [
         2.0,
-        10.0
-      ],
-      [
-        2.0,
         20.0
-      ],
-      [
-        2.0,
-        40.0
       ]
     ],
     "beta": [
       1.0,
+      3.0
+    ],
+    "sigma_m": [
+      0.0,
       3.0,
-      5.0
+      6.0,
+      10.0
+    ],
+    "kf": [
+      3,
+      10
     ],
     "m": [
-      3,
       5,
       8,
       12
     ],
     "p": [
-      2.0,
       4.0,
       8.0
     ]
   },
+  "theta_note": "theta chosen on the dev folds with the other parameters",
   "rule": "lowest dev mean error over all dev rows; ties -> larger theta (fewer HUIs)",
-  "timestamp_utc": "2026-10-17T09:08:22.884972+00:00"
+  "timestamp_utc": "2026-10-17T15:52:45.135404+00:00"
 }
