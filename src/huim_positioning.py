@@ -113,8 +113,9 @@ class HUIPositioner:
 
     def __init__(self, theta: float, cell_time_s: float = CELL_TIME_S,
                  cell_max_huis: int = CELL_MAX_HUIS,
-                 ground_factor: float = 1.0) -> None:
+                 ground_factor: float = 1.0, window_m: float = 0.0) -> None:
         self.theta = theta
+        self.window_m = window_m
         self.ground_factor = ground_factor
         self.cell_time_s = cell_time_s
         self.cell_max_huis = cell_max_huis
@@ -130,8 +131,22 @@ class HUIPositioner:
         items, util, supp, cid = [], [], [], []
         cells, cxy, cbf, crun = [], [], [], []
         t0 = time.perf_counter()
-        for c in np.unique(cell):
-            rows = np.flatnonzero(cell == c)
+        ucells = np.unique(cell)
+        own = {c: np.flatnonzero(cell == c) for c in ucells}
+        cen = np.array([xy[own[c]].mean(axis=0) for c in ucells])
+        cfl = []
+        for c in ucells:
+            labs, cnt = np.unique(bf[own[c]], return_counts=True)
+            cfl.append(labs[cnt.argmax()])
+        cfl = np.array(cfl)
+        for ci, c in enumerate(ucells):
+            if self.window_m > 0:
+                near = np.flatnonzero((cfl == cfl[ci]) & (np.sqrt(
+                    ((cen - cen[ci]) ** 2).sum(axis=1)) * self.ground_factor
+                    <= self.window_m))
+                rows = np.concatenate([own[ucells[j]] for j in near])
+            else:
+                rows = own[c]
             db = [{int(j): float(Q[i, j]) for j in np.flatnonzero(Q[i])} for i in rows]
             db = [t for t in db if t]
             if not db:
@@ -152,9 +167,8 @@ class HUIPositioner:
                 th *= ESCALATE
             k = len(cells)
             cells.append(c)
-            cxy.append(xy[rows].mean(axis=0))
-            labs, cnt = np.unique(bf[rows], return_counts=True)
-            cbf.append(labs[cnt.argmax()])
+            cxy.append(cen[ci])
+            cbf.append(cfl[ci])
             crun.append({"cell": c, "n_transactions": len(db),
                          "total_utility": tot, "theta_used_pct": th,
                          "abs_minutil": tot * th / 100.0, "n_attempts": att,
