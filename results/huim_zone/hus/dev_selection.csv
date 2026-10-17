@@ -1,0 +1,12 @@
+set,n_waps,dev_joint_accuracy,dev_mean_ground_m,dev_median_ground_m,dev_p75_ground_m,dev_p90_ground_m,dev_p95_ground_m,dev_max_ground_m,dev_mean_projected_m,dev_share_within_8m,dev_seconds
+all_aps,5,1.0,0.3973,0.0,0.0,1.5,2.8284,8.7321,0.3973,0.9954,0.6
+huim_zone__A_signal__10pct,5,1.0,0.3973,0.0,0.0,1.5,2.8284,8.7321,0.3973,0.9954,0.6
+huim_zone__A_signal__7pct,5,1.0,0.3973,0.0,0.0,1.5,2.8284,8.7321,0.3973,0.9954,0.6
+huim_zone__A_signal__5pct,5,1.0,0.3973,0.0,0.0,1.5,2.8284,8.7321,0.3973,0.9954,0.6
+huim_zone__A_signal__4pct,5,1.0,0.3973,0.0,0.0,1.5,2.8284,8.7321,0.3973,0.9954,0.7
+huim_zone__A_signal__3pct,5,1.0,0.3973,0.0,0.0,1.5,2.8284,8.7321,0.3973,0.9954,0.7
+huim_zone__B_discriminative__10pct,5,1.0,0.3973,0.0,0.0,1.5,2.8284,8.7321,0.3973,0.9954,0.7
+huim_zone__B_discriminative__7pct,5,1.0,0.3973,0.0,0.0,1.5,2.8284,8.7321,0.3973,0.9954,0.7
+huim_zone__B_discriminative__5pct,5,1.0,0.3973,0.0,0.0,1.5,2.8284,8.7321,0.3973,0.9954,0.7
+huim_zone__B_discriminative__4pct,5,1.0,0.3973,0.0,0.0,1.5,2.8284,8.7321,0.3973,0.9954,0.7
+huim_zone__B_discriminative__3pct,5,1.0,0.3973,0.0,0.0,1.5,2.8284,8.7321,0.3973,0.9954,0.6

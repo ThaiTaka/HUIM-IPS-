@@ -1,0 +1,128 @@
+2026-10-17 03:42:51,578 | INFO    | huim_zone | hus huim_zone__A_signal__10pct             8 zones ->    5/5 WAPs  0.1s  (escalated zones: 0)
+2026-10-17 03:42:51,672 | INFO    | huim_zone | hus huim_zone__A_signal__7pct              8 zones ->    5/5 WAPs  0.1s  (escalated zones: 0)
+2026-10-17 03:42:51,771 | INFO    | huim_zone | hus huim_zone__A_signal__5pct              8 zones ->    5/5 WAPs  0.1s  (escalated zones: 0)
+2026-10-17 03:42:51,868 | INFO    | huim_zone | hus huim_zone__A_signal__4pct              8 zones ->    5/5 WAPs  0.1s  (escalated zones: 0)
+2026-10-17 03:42:52,046 | INFO    | huim_zone | hus huim_zone__A_signal__3pct              8 zones ->    5/5 WAPs  0.2s  (escalated zones: 0)
+2026-10-17 03:42:52,177 | INFO    | huim_zone | hus huim_zone__B_discriminative__10pct     8 zones ->    5/5 WAPs  0.1s  (escalated zones: 0)
+2026-10-17 03:42:52,274 | INFO    | huim_zone | hus huim_zone__B_discriminative__7pct      8 zones ->    5/5 WAPs  0.1s  (escalated zones: 0)
+2026-10-17 03:42:52,385 | INFO    | huim_zone | hus huim_zone__B_discriminative__5pct      8 zones ->    5/5 WAPs  0.1s  (escalated zones: 0)
+2026-10-17 03:42:52,485 | INFO    | huim_zone | hus huim_zone__B_discriminative__4pct      8 zones ->    5/5 WAPs  0.1s  (escalated zones: 0)
+2026-10-17 03:42:52,590 | INFO    | huim_zone | hus huim_zone__B_discriminative__3pct      8 zones ->    5/5 WAPs  0.1s  (escalated zones: 0)
+2026-10-17 03:42:52,717 | INFO    | huim_zone | hus stage mine done in 3s
+2026-10-17 03:42:53,314 | INFO    | huim_zone | hus dev all_aps                                 5 WAP  mean 0.397 m
+2026-10-17 03:42:53,895 | INFO    | huim_zone | hus dev huim_zone__A_signal__10pct              5 WAP  mean 0.397 m
+2026-10-17 03:42:54,537 | INFO    | huim_zone | hus dev huim_zone__A_signal__7pct               5 WAP  mean 0.397 m
+2026-10-17 03:42:55,156 | INFO    | huim_zone | hus dev huim_zone__A_signal__5pct               5 WAP  mean 0.397 m
+2026-10-17 03:42:55,811 | INFO    | huim_zone | hus dev huim_zone__A_signal__4pct               5 WAP  mean 0.397 m
+2026-10-17 03:42:56,513 | INFO    | huim_zone | hus dev huim_zone__A_signal__3pct               5 WAP  mean 0.397 m
+2026-10-17 03:42:57,172 | INFO    | huim_zone | hus dev huim_zone__B_discriminative__10pct      5 WAP  mean 0.397 m
+2026-10-17 03:42:57,874 | INFO    | huim_zone | hus dev huim_zone__B_discriminative__7pct       5 WAP  mean 0.397 m
+2026-10-17 03:42:58,539 | INFO    | huim_zone | hus dev huim_zone__B_discriminative__5pct       5 WAP  mean 0.397 m
+2026-10-17 03:42:59,194 | INFO    | huim_zone | hus dev huim_zone__B_discriminative__4pct       5 WAP  mean 0.397 m
+2026-10-17 03:42:59,823 | INFO    | huim_zone | hus dev huim_zone__B_discriminative__3pct       5 WAP  mean 0.397 m
+2026-10-17 03:42:59,826 | INFO    | huim_zone | hus SELECTED on dev: huim_zone__A_signal__10pct (5 WAP, dev 0.397 m)
+2026-10-17 03:42:59,827 | INFO    | huim_zone | hus stage select done in 7s
+2026-10-17 03:42:59,911 | INFO    | huim_zone | hus testcase1  all_aps                                 5 WAP  mean 0.068 m  joint 1.0000
+2026-10-17 03:42:59,935 | INFO    | huim_zone | hus testcase1  huim_zone__A_signal__10pct              5 WAP  mean 0.068 m  joint 1.0000
+2026-10-17 03:42:59,954 | INFO    | huim_zone | hus testcase1  huim_zone__A_signal__7pct               5 WAP  mean 0.068 m  joint 1.0000
+2026-10-17 03:42:59,972 | INFO    | huim_zone | hus testcase1  huim_zone__A_signal__5pct               5 WAP  mean 0.068 m  joint 1.0000
+2026-10-17 03:42:59,990 | INFO    | huim_zone | hus testcase1  huim_zone__A_signal__4pct               5 WAP  mean 0.068 m  joint 1.0000
+2026-10-17 03:43:00,007 | INFO    | huim_zone | hus testcase1  huim_zone__A_signal__3pct               5 WAP  mean 0.068 m  joint 1.0000
+2026-10-17 03:43:00,025 | INFO    | huim_zone | hus testcase1  huim_zone__B_discriminative__10pct      5 WAP  mean 0.068 m  joint 1.0000
+2026-10-17 03:43:00,043 | INFO    | huim_zone | hus testcase1  huim_zone__B_discriminative__7pct       5 WAP  mean 0.068 m  joint 1.0000
+2026-10-17 03:43:00,061 | INFO    | huim_zone | hus testcase1  huim_zone__B_discriminative__5pct       5 WAP  mean 0.068 m  joint 1.0000
+2026-10-17 03:43:00,081 | INFO    | huim_zone | hus testcase1  huim_zone__B_discriminative__4pct       5 WAP  mean 0.068 m  joint 1.0000
+2026-10-17 03:43:00,100 | INFO    | huim_zone | hus testcase1  huim_zone__B_discriminative__3pct       5 WAP  mean 0.068 m  joint 1.0000
+2026-10-17 03:43:00,118 | INFO    | huim_zone | hus testcase1  control_top_support__n5                 5 WAP  mean 0.068 m  joint 1.0000
+2026-10-17 03:43:00,137 | INFO    | huim_zone | hus testcase1  control_top_mi__n5                      5 WAP  mean 0.068 m  joint 1.0000
+2026-10-17 03:43:00,154 | INFO    | huim_zone | hus testcase1  control_random_s1__n5                   5 WAP  mean 0.068 m  joint 1.0000
+2026-10-17 03:43:00,173 | INFO    | huim_zone | hus testcase1  control_random_s2__n5                   5 WAP  mean 0.068 m  joint 1.0000
+2026-10-17 03:43:00,190 | INFO    | huim_zone | hus testcase1  control_random_s3__n5                   5 WAP  mean 0.068 m  joint 1.0000
+2026-10-17 03:43:00,213 | INFO    | huim_zone | hus testcase2  all_aps                                 5 WAP  mean 0.057 m  joint 1.0000
+2026-10-17 03:43:00,240 | INFO    | huim_zone | hus testcase2  huim_zone__A_signal__10pct              5 WAP  mean 0.057 m  joint 1.0000
+2026-10-17 03:43:00,264 | INFO    | huim_zone | hus testcase2  huim_zone__A_signal__7pct               5 WAP  mean 0.057 m  joint 1.0000
+2026-10-17 03:43:00,281 | INFO    | huim_zone | hus testcase2  huim_zone__A_signal__5pct               5 WAP  mean 0.057 m  joint 1.0000
+2026-10-17 03:43:00,298 | INFO    | huim_zone | hus testcase2  huim_zone__A_signal__4pct               5 WAP  mean 0.057 m  joint 1.0000
+2026-10-17 03:43:00,318 | INFO    | huim_zone | hus testcase2  huim_zone__A_signal__3pct               5 WAP  mean 0.057 m  joint 1.0000
+2026-10-17 03:43:00,337 | INFO    | huim_zone | hus testcase2  huim_zone__B_discriminative__10pct      5 WAP  mean 0.057 m  joint 1.0000
+2026-10-17 03:43:00,356 | INFO    | huim_zone | hus testcase2  huim_zone__B_discriminative__7pct       5 WAP  mean 0.057 m  joint 1.0000
+2026-10-17 03:43:00,374 | INFO    | huim_zone | hus testcase2  huim_zone__B_discriminative__5pct       5 WAP  mean 0.057 m  joint 1.0000
+2026-10-17 03:43:00,395 | INFO    | huim_zone | hus testcase2  huim_zone__B_discriminative__4pct       5 WAP  mean 0.057 m  joint 1.0000
+2026-10-17 03:43:00,415 | INFO    | huim_zone | hus testcase2  huim_zone__B_discriminative__3pct       5 WAP  mean 0.057 m  joint 1.0000
+2026-10-17 03:43:00,434 | INFO    | huim_zone | hus testcase2  control_top_support__n5                 5 WAP  mean 0.057 m  joint 1.0000
+2026-10-17 03:43:00,453 | INFO    | huim_zone | hus testcase2  control_top_mi__n5                      5 WAP  mean 0.057 m  joint 1.0000
+2026-10-17 03:43:00,472 | INFO    | huim_zone | hus testcase2  control_random_s1__n5                   5 WAP  mean 0.057 m  joint 1.0000
+2026-10-17 03:43:00,492 | INFO    | huim_zone | hus testcase2  control_random_s2__n5                   5 WAP  mean 0.057 m  joint 1.0000
+2026-10-17 03:43:00,512 | INFO    | huim_zone | hus testcase2  control_random_s3__n5                   5 WAP  mean 0.057 m  joint 1.0000
+2026-10-17 03:43:00,520 | INFO    | huim_zone | hus testcase1 SELECTED huim_zone__A_signal__10pct: 5 WAP, 0.068 m (all APs 0.068 m)
+2026-10-17 03:43:00,524 | INFO    | huim_zone | hus testcase2 SELECTED huim_zone__A_signal__10pct: 5 WAP, 0.057 m (all APs 0.057 m)
+2026-10-17 03:43:00,526 | INFO    | huim_zone | hus stage evaluate done in 1s
+2026-10-17 03:43:01,634 | INFO    | huim_zone | dlulib huim_zone__A_signal__10pct             3 zones ->   15/17 WAPs  0.7s  (escalated zones: 0)
+2026-10-17 03:43:02,353 | INFO    | huim_zone | dlulib huim_zone__A_signal__7pct              3 zones ->   16/17 WAPs  0.7s  (escalated zones: 0)
+2026-10-17 03:43:03,183 | INFO    | huim_zone | dlulib huim_zone__A_signal__5pct              3 zones ->   17/17 WAPs  0.8s  (escalated zones: 0)
+2026-10-17 03:43:04,227 | INFO    | huim_zone | dlulib huim_zone__A_signal__4pct              3 zones ->   17/17 WAPs  1.0s  (escalated zones: 0)
+2026-10-17 03:43:05,482 | INFO    | huim_zone | dlulib huim_zone__A_signal__3pct              3 zones ->   17/17 WAPs  1.3s  (escalated zones: 0)
+2026-10-17 03:43:06,131 | INFO    | huim_zone | dlulib huim_zone__B_discriminative__10pct     3 zones ->   14/17 WAPs  0.6s  (escalated zones: 0)
+2026-10-17 03:43:06,882 | INFO    | huim_zone | dlulib huim_zone__B_discriminative__7pct      3 zones ->   16/17 WAPs  0.8s  (escalated zones: 0)
+2026-10-17 03:43:07,787 | INFO    | huim_zone | dlulib huim_zone__B_discriminative__5pct      3 zones ->   17/17 WAPs  0.9s  (escalated zones: 0)
+2026-10-17 03:43:08,740 | INFO    | huim_zone | dlulib huim_zone__B_discriminative__4pct      3 zones ->   17/17 WAPs  1.0s  (escalated zones: 0)
+2026-10-17 03:43:09,995 | INFO    | huim_zone | dlulib huim_zone__B_discriminative__3pct      3 zones ->   17/17 WAPs  1.3s  (escalated zones: 0)
+2026-10-17 03:43:09,998 | INFO    | huim_zone | dlulib stage mine done in 9s
+2026-10-17 03:43:11,053 | INFO    | huim_zone | dlulib dev all_aps                                17 WAP  mean 2.540 m
+2026-10-17 03:43:11,990 | INFO    | huim_zone | dlulib dev huim_zone__A_signal__10pct             15 WAP  mean 2.595 m
+2026-10-17 03:43:13,055 | INFO    | huim_zone | dlulib dev huim_zone__A_signal__7pct              16 WAP  mean 2.559 m
+2026-10-17 03:43:13,997 | INFO    | huim_zone | dlulib dev huim_zone__A_signal__5pct              17 WAP  mean 2.540 m
+2026-10-17 03:43:15,018 | INFO    | huim_zone | dlulib dev huim_zone__A_signal__4pct              17 WAP  mean 2.540 m
+2026-10-17 03:43:15,861 | INFO    | huim_zone | dlulib dev huim_zone__A_signal__3pct              17 WAP  mean 2.540 m
+2026-10-17 03:43:16,702 | INFO    | huim_zone | dlulib dev huim_zone__B_discriminative__10pct     14 WAP  mean 2.673 m
+2026-10-17 03:43:17,670 | INFO    | huim_zone | dlulib dev huim_zone__B_discriminative__7pct      16 WAP  mean 2.559 m
+2026-10-17 03:43:18,530 | INFO    | huim_zone | dlulib dev huim_zone__B_discriminative__5pct      17 WAP  mean 2.540 m
+2026-10-17 03:43:19,462 | INFO    | huim_zone | dlulib dev huim_zone__B_discriminative__4pct      17 WAP  mean 2.540 m
+2026-10-17 03:43:20,343 | INFO    | huim_zone | dlulib dev huim_zone__B_discriminative__3pct      17 WAP  mean 2.540 m
+2026-10-17 03:43:20,346 | INFO    | huim_zone | dlulib SELECTED on dev: huim_zone__A_signal__5pct (17 WAP, dev 2.540 m)
+2026-10-17 03:43:20,348 | INFO    | huim_zone | dlulib stage select done in 10s
+2026-10-17 03:43:21,122 | INFO    | huim_zone | dlulib Testing    all_aps                                17 WAP  mean 3.433 m  joint 0.9948
+2026-10-17 03:43:21,544 | INFO    | huim_zone | dlulib Testing    huim_zone__A_signal__10pct             15 WAP  mean 3.551 m  joint 0.9937
+2026-10-17 03:43:21,958 | INFO    | huim_zone | dlulib Testing    huim_zone__A_signal__7pct              16 WAP  mean 3.504 m  joint 0.9945
+2026-10-17 03:43:22,592 | INFO    | huim_zone | dlulib Testing    huim_zone__A_signal__5pct              17 WAP  mean 3.433 m  joint 0.9948
+2026-10-17 03:43:23,035 | INFO    | huim_zone | dlulib Testing    huim_zone__A_signal__4pct              17 WAP  mean 3.433 m  joint 0.9948
+2026-10-17 03:43:23,614 | INFO    | huim_zone | dlulib Testing    huim_zone__A_signal__3pct              17 WAP  mean 3.433 m  joint 0.9948
+2026-10-17 03:43:24,080 | INFO    | huim_zone | dlulib Testing    huim_zone__B_discriminative__10pct     14 WAP  mean 3.597 m  joint 0.9932
+2026-10-17 03:43:24,514 | INFO    | huim_zone | dlulib Testing    huim_zone__B_discriminative__7pct      16 WAP  mean 3.504 m  joint 0.9945
+2026-10-17 03:43:25,010 | INFO    | huim_zone | dlulib Testing    huim_zone__B_discriminative__5pct      17 WAP  mean 3.433 m  joint 0.9948
+2026-10-17 03:43:25,448 | INFO    | huim_zone | dlulib Testing    huim_zone__B_discriminative__4pct      17 WAP  mean 3.433 m  joint 0.9948
+2026-10-17 03:43:25,947 | INFO    | huim_zone | dlulib Testing    huim_zone__B_discriminative__3pct      17 WAP  mean 3.433 m  joint 0.9948
+2026-10-17 03:43:26,333 | INFO    | huim_zone | dlulib Testing    control_top_support__n14               14 WAP  mean 3.597 m  joint 0.9932
+2026-10-17 03:43:26,722 | INFO    | huim_zone | dlulib Testing    control_top_mi__n14                    14 WAP  mean 3.597 m  joint 0.9932
+2026-10-17 03:43:27,170 | INFO    | huim_zone | dlulib Testing    control_random_s1__n14                 14 WAP  mean 3.817 m  joint 0.9931
+2026-10-17 03:43:27,576 | INFO    | huim_zone | dlulib Testing    control_random_s2__n14                 14 WAP  mean 3.646 m  joint 0.9922
+2026-10-17 03:43:27,980 | INFO    | huim_zone | dlulib Testing    control_random_s3__n14                 14 WAP  mean 3.705 m  joint 0.9906
+2026-10-17 03:43:28,435 | INFO    | huim_zone | dlulib Testing    control_top_support__n15               15 WAP  mean 3.551 m  joint 0.9937
+2026-10-17 03:43:28,892 | INFO    | huim_zone | dlulib Testing    control_top_mi__n15                    15 WAP  mean 3.551 m  joint 0.9937
+2026-10-17 03:43:29,345 | INFO    | huim_zone | dlulib Testing    control_random_s1__n15                 15 WAP  mean 3.530 m  joint 0.9937
+2026-10-17 03:43:29,840 | INFO    | huim_zone | dlulib Testing    control_random_s2__n15                 15 WAP  mean 3.684 m  joint 0.9925
+2026-10-17 03:43:30,335 | INFO    | huim_zone | dlulib Testing    control_random_s3__n15                 15 WAP  mean 3.659 m  joint 0.9934
+2026-10-17 03:43:30,850 | INFO    | huim_zone | dlulib Testing    control_top_support__n16               16 WAP  mean 3.504 m  joint 0.9945
+2026-10-17 03:43:31,317 | INFO    | huim_zone | dlulib Testing    control_top_mi__n16                    16 WAP  mean 3.504 m  joint 0.9945
+2026-10-17 03:43:31,794 | INFO    | huim_zone | dlulib Testing    control_random_s1__n16                 16 WAP  mean 3.498 m  joint 0.9940
+2026-10-17 03:43:32,207 | INFO    | huim_zone | dlulib Testing    control_random_s2__n16                 16 WAP  mean 3.492 m  joint 0.9935
+2026-10-17 03:43:32,721 | INFO    | huim_zone | dlulib Testing    control_random_s3__n16                 16 WAP  mean 3.487 m  joint 0.9937
+2026-10-17 03:43:33,215 | INFO    | huim_zone | dlulib Testing    control_top_support__n17               17 WAP  mean 3.433 m  joint 0.9948
+2026-10-17 03:43:33,830 | INFO    | huim_zone | dlulib Testing    control_top_mi__n17                    17 WAP  mean 3.433 m  joint 0.9948
+2026-10-17 03:43:34,265 | INFO    | huim_zone | dlulib Testing    control_random_s1__n17                 17 WAP  mean 3.433 m  joint 0.9948
+2026-10-17 03:43:34,812 | INFO    | huim_zone | dlulib Testing    control_random_s2__n17                 17 WAP  mean 3.433 m  joint 0.9948
+2026-10-17 03:43:35,265 | INFO    | huim_zone | dlulib Testing    control_random_s3__n17                 17 WAP  mean 3.433 m  joint 0.9948
+2026-10-17 03:43:35,273 | INFO    | huim_zone | dlulib Testing SELECTED huim_zone__A_signal__5pct: 17 WAP, 3.433 m (all APs 3.433 m)
+2026-10-17 03:43:35,275 | INFO    | huim_zone | dlulib stage evaluate done in 15s
+2026-10-17 03:51:32,655 | INFO    | huim_zone | uji huim_zone__A_signal__10pct            13 zones ->  136/520 WAPs  466.0s  (escalated zones: 2)
+2026-10-17 04:04:46,371 | INFO    | huim_zone | uji huim_zone__A_signal__10pct            13 zones ->  136/520 WAPs  469.8s  (escalated zones: 2)
+2026-10-17 04:05:01,136 | INFO    | huim_zone | uji huim_zone__A_signal__7pct             13 zones ->  195/520 WAPs  14.8s  (escalated zones: 0)
+2026-10-17 04:06:39,296 | INFO    | huim_zone | uji huim_zone__A_signal__5pct             13 zones ->  209/520 WAPs  98.2s  (escalated zones: 1)
+2026-10-17 04:08:59,502 | INFO    | huim_zone | uji huim_zone__A_signal__4pct             13 zones ->  219/520 WAPs  140.2s  (escalated zones: 2)
+2026-10-17 04:11:08,941 | INFO    | huim_zone | uji huim_zone__A_signal__3pct             13 zones ->  240/520 WAPs  129.4s  (escalated zones: 1)
+2026-10-17 04:19:58,229 | INFO    | huim_zone | uji huim_zone__B_discriminative__10pct    13 zones ->  144/520 WAPs  528.0s  (escalated zones: 2)
+2026-10-17 04:20:18,560 | INFO    | huim_zone | uji huim_zone__B_discriminative__7pct     13 zones ->  177/520 WAPs  20.3s  (escalated zones: 0)
+2026-10-17 04:22:44,669 | INFO    | huim_zone | uji huim_zone__B_discriminative__5pct     13 zones ->  214/520 WAPs  146.1s  (escalated zones: 2)
+2026-10-17 04:24:49,991 | INFO    | huim_zone | uji huim_zone__B_discriminative__4pct     13 zones ->  222/520 WAPs  125.3s  (escalated zones: 1)
+2026-10-17 04:28:17,638 | INFO    | huim_zone | uji huim_zone__B_discriminative__3pct     13 zones ->  232/520 WAPs  207.6s  (escalated zones: 1)
+2026-10-17 04:28:17,760 | INFO    | huim_zone | uji stage mine done in 1882s

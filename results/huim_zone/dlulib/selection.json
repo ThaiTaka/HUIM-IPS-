@@ -1,0 +1,20 @@
+{
+  "dataset": "dlulib",
+  "positioner": "powed+braycurtis, k=7, w=1/d^4",
+  "positioner_config": {
+    "representation": "powed",
+    "distance": "braycurtis",
+    "k": 7,
+    "power": 4.0,
+    "offset_range": 0,
+    "ensemble_with": ""
+  },
+  "positioner_source": "results/multi_dataset/dlulib/positioning.json (selected on dev folds with all APs)",
+  "dev_folds": "6 folds, SampleTimes - leave-sample-indices-out: the test set revisits every training RP with the same phones, so a dev fold must keep each RP in training and hold out other samples of it",
+  "rule": "lowest dev mean error among the HUIM-zone sets; ties -> fewer WAPs",
+  "selected_set": "huim_zone__A_signal__5pct",
+  "selected_n_waps": 17,
+  "selected_dev_mean_m": 2.5396,
+  "all_aps_dev_mean_m": 2.5396,
+  "timestamp_utc": "2026-10-17T03:43:20.346160+00:00"
+}
