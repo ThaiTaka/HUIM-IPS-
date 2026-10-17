@@ -45,9 +45,13 @@ THETA_GRID = [10.0, 20.0, 30.0]
 GT_GRID = [(1.0, 20.0), (1.0, 40.0), (2.0, 20.0)]
 BETA_GRID = [1.0, 3.0]
 SIGMA_GRID = [0.0, 3.0, 6.0, 10.0]
-KF_GRID = [3, 10, 20]
-M_GRID = [5, 8, 12, 20, 30]
-P_GRID = [4.0, 8.0, 12.0, 16.0]
+KF_GRID = [3, 10]
+M_GRID = [5, 8, 12]
+P_GRID = [4.0, 8.0]
+# UJIIndoorLoc: m, p and kf were selected on the edges of the grid above, so
+# its grid was widened; the other datasets keep the grid above
+WIDE = {"kf": [3, 10, 20], "m": [5, 8, 12, 20, 30], "p": [4.0, 8.0, 12.0, 16.0]}
+WIDE_GRID_DATASETS = {"uji"}
 # UJIIndoorLoc: theta = 10% costs ~25 min per fold, so it was fixed beforehand
 # by a pilot on dev folds 1 and 2 (theta_pilot.json); the test data played no part.
 THETA_BY_DATASET = {"uji": [20.0]}
@@ -117,9 +121,16 @@ def thetas(key: str) -> list[float]:
     return THETA_BY_DATASET.get(key, THETA_GRID)
 
 
-def grid():
+def inner_grid(key: str) -> tuple[list, list, list]:
+    if key in WIDE_GRID_DATASETS:
+        return WIDE["kf"], WIDE["m"], WIDE["p"]
+    return KF_GRID, M_GRID, P_GRID
+
+
+def grid(key: str):
+    kfs, ms, ps = inner_grid(key)
     outer = list(itertools.product(GT_GRID, BETA_GRID, SIGMA_GRID))
-    inner = list(itertools.product(KF_GRID, M_GRID, P_GRID))
+    inner = list(itertools.product(kfs, ms, ps))
     configs = [Params(g, t, be, m, p, sg, kf) for (g, t), be, sg in outer
                for kf, m, p in inner]
     return outer, inner, configs
@@ -137,7 +148,7 @@ def stage_dev_part(b: Bundle, theta: float, fold: int, kind: str = "abs") -> Non
     (out / "dev_parts").mkdir(exist_ok=True)
     _prep, Q, cell, XY, BF = inputs(b, kind)
     tri, dvi = folds_for(b, len(Q))[fold]
-    outer, inner, configs = grid()
+    outer, inner, configs = grid(b.key)
     t0 = time.perf_counter()
     pos = HUIPositioner(theta, ground_factor=b.ground_factor).fit(
         Q[tri], cell[tri], XY[tri], BF[tri])
@@ -147,7 +158,7 @@ def stage_dev_part(b: Bundle, theta: float, fold: int, kind: str = "abs") -> Non
     i = 0
     for (g, t), be, sg in outer:
         S = pos.cell_scores(P[(g, t)], V, be, sg)
-        fl = {kf: pos.floor_of(S, kf) for kf in KF_GRID}
+        fl = {kf: pos.floor_of(S, kf) for kf in inner_grid(b.key)[0]}
         for kf, m, p in inner:
             xy, *_ = pos.locate(S, fl[kf], m, p)
             err[i] = err_m(xy, XY[dvi], b.ground_factor)
@@ -167,7 +178,7 @@ def stage_select(b: Bundle) -> None:
     out = outdir(b.key)
     n = len(b.train)
     folds = folds_for(b, n)
-    _o, _i, configs = grid()
+    _o, _i, configs = grid(b.key)
     rows = []
     for kind, theta in itertools.product(utilities(b.key), thetas(b.key)):
         err = np.zeros((len(configs), n))
@@ -207,7 +218,8 @@ def stage_select(b: Bundle) -> None:
                "grids": {"utility": utilities(b.key),
                          "theta_pct": thetas(b.key), "gamma_tau": GT_GRID,
                          "beta": BETA_GRID, "sigma_m": SIGMA_GRID,
-                         "kf": KF_GRID, "m": M_GRID, "p": P_GRID},
+                         "kf": inner_grid(b.key)[0], "m": inner_grid(b.key)[1],
+                         "p": inner_grid(b.key)[2]},
                "theta_note": THETA_NOTE.get(b.key, "theta chosen on the dev folds "
                                                    "with the other parameters"),
                "rule": "lowest dev mean error over all dev rows; ties -> "
