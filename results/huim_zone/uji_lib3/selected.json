@@ -1,0 +1,133 @@
+{
+  "dataset": "uji_lib3",
+  "title": "UJI Library tầng 3 (dài hạn 25 tháng)",
+  "positioner": "exponential+braycurtis, k=3, w=1/d^4",
+  "selection": {
+    "dataset": "uji_lib3",
+    "positioner": "exponential+braycurtis, k=3, w=1/d^4",
+    "positioner_config": {
+      "representation": "exponential",
+      "distance": "braycurtis",
+      "k": 3,
+      "power": 4.0,
+      "offset_range": 0,
+      "ensemble_with": ""
+    },
+    "positioner_source": "results/multi_dataset/uji_lib3/positioning.json (selected on dev folds with all APs)",
+    "dev_folds": "6 folds, Month - leave-months-out: both test sets span the same 25 months as training and differ from it by collection session; no user/device column exists (one phone)",
+    "rule": "lowest dev mean error among the HUIM-zone sets; ties -> fewer WAPs",
+    "selected_set": "huim_zone__B_discriminative__3pct",
+    "selected_n_waps": 90,
+    "selected_dev_mean_m": 1.3381,
+    "all_aps_dev_mean_m": 1.3582,
+    "timestamp_utc": "2026-10-17T05:32:34.893295+00:00"
+  },
+  "tests": {
+    "Test-01": {
+      "n_test": 7200,
+      "huim_zone": {
+        "set": "huim_zone__B_discriminative__3pct",
+        "n_waps": 90,
+        "feature_reduction_pct": 85.4839,
+        "building_accuracy": 1.0,
+        "floor_accuracy": 1.0,
+        "joint_accuracy": 1.0,
+        "mean_err_m": 1.197,
+        "median_err_m": 0.5773,
+        "p75_err_m": 1.7881,
+        "p90_err_m": 3.342,
+        "p95_err_m": 4.4163,
+        "ms_per_fp": 0.2337
+      },
+      "all_aps": {
+        "n_waps": 620,
+        "joint_accuracy": 1.0,
+        "mean_err_m": 1.208,
+        "median_err_m": 0.5839,
+        "p90_err_m": 3.3409,
+        "ms_per_fp": 1.7017
+      },
+      "controls_same_budget_mean_err_m": {
+        "top_support": 1.2011,
+        "top_mi": 1.1941,
+        "random_mean_of_3": 2.196066666666667,
+        "random_each": [
+          1.8041,
+          3.0539,
+          1.7302
+        ]
+      },
+      "global_huim_best": {
+        "set": "huim_union__B_discriminative__1pct",
+        "n_waps": 87,
+        "mean_err_m": 1.1931
+      },
+      "below_target": true,
+      "target_m": 7.0
+    },
+    "Test-02": {
+      "n_test": 7200,
+      "huim_zone": {
+        "set": "huim_zone__B_discriminative__3pct",
+        "n_waps": 90,
+        "feature_reduction_pct": 85.4839,
+        "building_accuracy": 1.0,
+        "floor_accuracy": 1.0,
+        "joint_accuracy": 1.0,
+        "mean_err_m": 2.0229,
+        "median_err_m": 1.5328,
+        "p75_err_m": 2.5866,
+        "p90_err_m": 3.9949,
+        "p95_err_m": 5.2642,
+        "ms_per_fp": 0.24
+      },
+      "all_aps": {
+        "n_waps": 620,
+        "joint_accuracy": 1.0,
+        "mean_err_m": 2.0277,
+        "median_err_m": 1.5432,
+        "p90_err_m": 3.9624,
+        "ms_per_fp": 1.788
+      },
+      "controls_same_budget_mean_err_m": {
+        "top_support": 2.0371,
+        "top_mi": 2.021,
+        "random_mean_of_3": 2.7117,
+        "random_each": [
+          2.4184,
+          3.3873,
+          2.3294
+        ]
+      },
+      "global_huim_best": {
+        "set": "huim_union__A_signal__1pct",
+        "n_waps": 83,
+        "mean_err_m": 2.0378
+      },
+      "below_target": true,
+      "target_m": 7.0
+    }
+  },
+  "environment": {
+    "python_version": "3.13.16",
+    "python_implementation": "CPython",
+    "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "cpu_count_logical": 4,
+    "packages": {
+      "numpy": "2.5.1",
+      "pandas": "3.0.6",
+      "sklearn": "1.9.1",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.2",
+      "docx": "1.2.0",
+      "pptx": "1.0.2",
+      "psutil": "7.2.2",
+      "yaml": "6.0.3"
+    },
+    "ram_total_gb": 15.72,
+    "cpu_count_physical": 4
+  },
+  "timestamp_utc": "2026-10-17T05:36:12.706727+00:00"
+}
