@@ -120,3 +120,16 @@
 2026-10-17 10:27:05,233 | INFO    | huim_only | uji dev part theta 10 fold 0: 3317109 HUIs, mined 648s, total 1390s
 2026-10-17 10:29:40,991 | INFO    | huim_only | dlulib dev part theta 10 fold 3: 2887838 HUIs, mined 44s, total 297s
 2026-10-17 10:34:50,871 | INFO    | huim_only | dlulib dev part theta 10 fold 4: 2878374 HUIs, mined 44s, total 310s
+2026-10-17 10:39:44,936 | INFO    | huim_only | dlulib dev part theta 10 fold 5: 2856847 HUIs, mined 49s, total 294s
+2026-10-17 10:39:45,295 | INFO    | huim_only | dlulib theta 10: HUIs/fold [2915493, 2866376, 2843902, 2887838, 2878374, 2856847]; best dev 4.476 m (gamma=1, tau=20, beta=1, sigma=0 m, kf=3, m=5, p=8)
+2026-10-17 10:40:16,735 | INFO    | huim_only | uji dev part theta 10 fold 4: 3109956 HUIs, mined 516s, total 969s
+2026-10-17 10:41:12,743 | INFO    | huim_only | uji dev part theta 10 fold 3: 3414976 HUIs, mined 573s, total 1077s
+2026-10-17 10:43:30,209 | INFO    | huim_only | dlulib dev part theta 20 fold 0: 1679373 HUIs, mined 18s, total 225s
+2026-10-17 10:45:34,845 | INFO    | huim_only | uji dev part theta 10 fold 5: 3470804 HUIs, mined 594s, total 1106s
+2026-10-17 10:47:08,826 | INFO    | huim_only | dlulib dev part theta 20 fold 1: 1654980 HUIs, mined 19s, total 218s
+2026-10-17 10:49:59,858 | INFO    | huim_only | dlulib dev part theta 20 fold 2: 1651894 HUIs, mined 19s, total 171s
+2026-10-17 10:52:59,436 | INFO    | huim_only | dlulib dev part theta 20 fold 3: 1674098 HUIs, mined 19s, total 179s
+2026-10-17 10:55:45,549 | INFO    | huim_only | uji theta 10: HUIs/fold [3317109, 3992263, 3938341, 3414976, 3109956, 3470804]; best dev 7.699 m (gamma=2, tau=20, beta=3, sigma=3 m, kf=10, m=12, p=8)
+2026-10-17 10:55:45,559 | INFO    | huim_only | uji SELECTED on dev: theta 10%, gamma=2, tau=20, beta=3, sigma=3 m, kf=10, m=12, p=8 -> dev 7.699 m
+2026-10-17 10:55:45,559 | INFO    | huim_only | uji stage select done in 0s
+2026-10-17 10:55:47,880 | INFO    | huim_only | dlulib dev part theta 20 fold 4: 1627050 HUIs, mined 18s, total 168s
