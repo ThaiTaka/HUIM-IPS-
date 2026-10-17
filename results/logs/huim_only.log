@@ -159,3 +159,30 @@
 2026-10-17 13:28:31,183 | INFO    | huim_only | uji rank theta 20: HUIs/fold [3225283, 3063901, 3281832, 3217204, 2998148, 3289477]; best dev 7.669 m (gamma=2, tau=20, beta=3, sigma=3 m, kf=10, m=12, p=8)
 2026-10-17 13:28:31,195 | INFO    | huim_only | uji SELECTED on dev: utility rank, theta 20%, gamma=2, tau=20, beta=3, sigma=3 m, kf=10, m=12, p=8 -> dev 7.669 m
 2026-10-17 13:28:31,196 | INFO    | huim_only | uji stage select done in 2s
+2026-10-17 13:29:09,913 | INFO    | huim_only | uji_lib3 dev part abs theta 10 fold 0: 90364 HUIs, mined 14s, total 24s
+2026-10-17 13:29:34,244 | INFO    | huim_only | uji_lib3 dev part abs theta 10 fold 1: 73172 HUIs, mined 21s, total 23s
+2026-10-17 13:30:03,338 | INFO    | huim_only | uji_lib3 dev part abs theta 10 fold 2: 80254 HUIs, mined 26s, total 28s
+2026-10-17 13:30:36,181 | INFO    | huim_only | uji_lib3 dev part abs theta 10 fold 3: 78256 HUIs, mined 29s, total 32s
+2026-10-17 13:31:07,395 | INFO    | huim_only | uji_lib3 dev part abs theta 10 fold 4: 85634 HUIs, mined 28s, total 30s
+2026-10-17 13:31:37,942 | INFO    | huim_only | uji_lib3 dev part abs theta 10 fold 5: 72854 HUIs, mined 27s, total 30s
+2026-10-17 13:31:38,101 | INFO    | huim_only | uji_lib3 abs theta 10: HUIs/fold [90364, 73172, 80254, 78256, 85634, 72854]; best dev 2.740 m (gamma=1, tau=20, beta=3, sigma=0 m, kf=3, m=12, p=8)
+2026-10-17 13:31:42,109 | INFO    | huim_only | uji_lib3 dev part abs theta 20 fold 0: 2353 HUIs, mined 1s, total 3s
+2026-10-17 13:31:45,613 | INFO    | huim_only | uji_lib3 dev part abs theta 20 fold 1: 17394 HUIs, mined 2s, total 3s
+2026-10-17 13:31:49,593 | INFO    | huim_only | uji_lib3 dev part abs theta 20 fold 2: 20108 HUIs, mined 2s, total 4s
+2026-10-17 13:31:53,395 | INFO    | huim_only | uji_lib3 dev part abs theta 20 fold 3: 11530 HUIs, mined 2s, total 3s
+2026-10-17 13:31:58,015 | INFO    | huim_only | uji_lib3 dev part abs theta 20 fold 4: 12602 HUIs, mined 3s, total 4s
+2026-10-17 13:32:01,367 | INFO    | huim_only | uji_lib3 dev part abs theta 20 fold 5: 17620 HUIs, mined 2s, total 3s
+2026-10-17 13:32:01,478 | INFO    | huim_only | uji_lib3 abs theta 20: HUIs/fold [2353, 17394, 20108, 11530, 12602, 17620]; best dev 3.343 m (gamma=1, tau=20, beta=1, sigma=0 m, kf=3, m=5, p=8)
+2026-10-17 13:32:05,274 | INFO    | huim_only | uji_lib3 dev part abs theta 30 fold 0: 7 HUIs, mined 0s, total 3s
+2026-10-17 13:32:07,515 | INFO    | huim_only | uji_lib3 dev part abs theta 30 fold 1: 28 HUIs, mined 1s, total 1s
+2026-10-17 13:32:09,805 | INFO    | huim_only | uji_lib3 dev part abs theta 30 fold 2: 32 HUIs, mined 1s, total 2s
+2026-10-17 13:32:12,017 | INFO    | huim_only | uji_lib3 dev part abs theta 30 fold 3: 42 HUIs, mined 1s, total 2s
+2026-10-17 13:32:13,494 | INFO    | huim_only | uji_lib3 dev part abs theta 30 fold 4: 38 HUIs, mined 0s, total 1s
+2026-10-17 13:32:14,821 | INFO    | huim_only | uji_lib3 dev part abs theta 30 fold 5: 28 HUIs, mined 0s, total 1s
+2026-10-17 13:32:14,923 | INFO    | huim_only | uji_lib3 abs theta 30: HUIs/fold [7, 28, 32, 42, 38, 28]; best dev 5.152 m (gamma=2, tau=20, beta=3, sigma=10 m, kf=10, m=12, p=4)
+2026-10-17 13:32:14,937 | INFO    | huim_only | uji_lib3 SELECTED on dev: utility abs, theta 10%, gamma=1, tau=20, beta=3, sigma=0 m, kf=3, m=12, p=8 -> dev 2.740 m
+2026-10-17 13:32:14,937 | INFO    | huim_only | uji_lib3 stage select done in 210s
+2026-10-17 13:32:39,133 | INFO    | huim_only | uji_lib3 final model: 24 cells, 63176 HUIs, mined in 23.7s
+2026-10-17 13:32:46,645 | INFO    | huim_only | uji_lib3 Test-01: HUIM-only mean 2.570 m, median 2.171 m, joint 1.0000, 0.85 ms/fp
+2026-10-17 13:32:54,310 | INFO    | huim_only | uji_lib3 Test-02: HUIM-only mean 2.679 m, median 2.308 m, joint 1.0000, 0.87 ms/fp
+2026-10-17 13:32:54,601 | INFO    | huim_only | uji_lib3 stage final done in 40s
