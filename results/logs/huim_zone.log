@@ -126,3 +126,81 @@
 2026-10-17 04:24:49,991 | INFO    | huim_zone | uji huim_zone__B_discriminative__4pct     13 zones ->  222/520 WAPs  125.3s  (escalated zones: 1)
 2026-10-17 04:28:17,638 | INFO    | huim_zone | uji huim_zone__B_discriminative__3pct     13 zones ->  232/520 WAPs  207.6s  (escalated zones: 1)
 2026-10-17 04:28:17,760 | INFO    | huim_zone | uji stage mine done in 1882s
+2026-10-17 04:35:12,256 | INFO    | huim_zone | uji dev all_aps                               520 WAP  mean 6.209 m
+2026-10-17 04:36:55,148 | INFO    | huim_zone | uji dev huim_zone__A_signal__10pct            136 WAP  mean 8.974 m
+2026-10-17 04:39:24,269 | INFO    | huim_zone | uji dev huim_zone__A_signal__7pct             195 WAP  mean 6.876 m
+2026-10-17 04:41:59,740 | INFO    | huim_zone | uji dev huim_zone__A_signal__5pct             209 WAP  mean 6.553 m
+2026-10-17 04:44:49,109 | INFO    | huim_zone | uji dev huim_zone__A_signal__4pct             219 WAP  mean 6.431 m
+2026-10-17 04:47:55,511 | INFO    | huim_zone | uji dev huim_zone__A_signal__3pct             240 WAP  mean 6.250 m
+2026-10-17 04:49:52,137 | INFO    | huim_zone | uji dev huim_zone__B_discriminative__10pct    144 WAP  mean 8.824 m
+2026-10-17 04:52:28,123 | INFO    | huim_zone | uji dev huim_zone__B_discriminative__7pct     177 WAP  mean 6.580 m
+2026-10-17 04:55:27,030 | INFO    | huim_zone | uji dev huim_zone__B_discriminative__5pct     214 WAP  mean 6.481 m
+2026-10-17 04:58:16,956 | INFO    | huim_zone | uji dev huim_zone__B_discriminative__4pct     222 WAP  mean 6.377 m
+2026-10-17 05:01:10,649 | INFO    | huim_zone | uji dev huim_zone__B_discriminative__3pct     232 WAP  mean 6.291 m
+2026-10-17 05:01:10,652 | INFO    | huim_zone | uji SELECTED on dev: huim_zone__A_signal__3pct (240 WAP, dev 6.250 m)
+2026-10-17 05:01:10,654 | INFO    | huim_zone | uji stage select done in 1973s
+2026-10-17 05:01:38,515 | INFO    | huim_zone | uji validationData all_aps                               520 WAP  mean 5.356 m  joint 0.9469
+2026-10-17 05:01:45,751 | INFO    | huim_zone | uji validationData huim_zone__A_signal__10pct            136 WAP  mean 8.714 m  joint 0.8740
+2026-10-17 05:01:55,542 | INFO    | huim_zone | uji validationData huim_zone__A_signal__7pct             195 WAP  mean 5.871 m  joint 0.9325
+2026-10-17 05:02:05,354 | INFO    | huim_zone | uji validationData huim_zone__A_signal__5pct             209 WAP  mean 5.376 m  joint 0.9415
+2026-10-17 05:02:16,115 | INFO    | huim_zone | uji validationData huim_zone__A_signal__4pct             219 WAP  mean 5.339 m  joint 0.9424
+2026-10-17 05:02:28,344 | INFO    | huim_zone | uji validationData huim_zone__A_signal__3pct             240 WAP  mean 5.297 m  joint 0.9442
+2026-10-17 05:02:35,838 | INFO    | huim_zone | uji validationData huim_zone__B_discriminative__10pct    144 WAP  mean 8.080 m  joint 0.8776
+2026-10-17 05:02:45,370 | INFO    | huim_zone | uji validationData huim_zone__B_discriminative__7pct     177 WAP  mean 6.136 m  joint 0.9172
+2026-10-17 05:02:56,266 | INFO    | huim_zone | uji validationData huim_zone__B_discriminative__5pct     214 WAP  mean 5.368 m  joint 0.9388
+2026-10-17 05:03:07,776 | INFO    | huim_zone | uji validationData huim_zone__B_discriminative__4pct     222 WAP  mean 5.302 m  joint 0.9415
+2026-10-17 05:03:19,510 | INFO    | huim_zone | uji validationData huim_zone__B_discriminative__3pct     232 WAP  mean 5.310 m  joint 0.9433
+2026-10-17 05:03:26,476 | INFO    | huim_zone | uji validationData control_top_support__n136             136 WAP  mean 7.432 m  joint 0.8956
+2026-10-17 05:03:33,367 | INFO    | huim_zone | uji validationData control_top_mi__n136                  136 WAP  mean 7.731 m  joint 0.9091
+2026-10-17 05:03:40,624 | INFO    | huim_zone | uji validationData control_random_s1__n136               136 WAP  mean 10.399 m  joint 0.7534
+2026-10-17 05:03:47,414 | INFO    | huim_zone | uji validationData control_random_s2__n136               136 WAP  mean 9.167 m  joint 0.8209
+2026-10-17 05:03:54,367 | INFO    | huim_zone | uji validationData control_random_s3__n136               136 WAP  mean 9.537 m  joint 0.7939
+2026-10-17 05:04:01,674 | INFO    | huim_zone | uji validationData control_top_support__n144             144 WAP  mean 6.831 m  joint 0.9091
+2026-10-17 05:04:09,565 | INFO    | huim_zone | uji validationData control_top_mi__n144                  144 WAP  mean 6.922 m  joint 0.9253
+2026-10-17 05:04:16,638 | INFO    | huim_zone | uji validationData control_random_s1__n144               144 WAP  mean 10.386 m  joint 0.8011
+2026-10-17 05:04:23,869 | INFO    | huim_zone | uji validationData control_random_s2__n144               144 WAP  mean 11.093 m  joint 0.8047
+2026-10-17 05:04:30,974 | INFO    | huim_zone | uji validationData control_random_s3__n144               144 WAP  mean 22.207 m  joint 0.6976
+2026-10-17 05:04:39,866 | INFO    | huim_zone | uji validationData control_top_support__n177             177 WAP  mean 6.076 m  joint 0.9280
+2026-10-17 05:04:48,833 | INFO    | huim_zone | uji validationData control_top_mi__n177                  177 WAP  mean 6.051 m  joint 0.9343
+2026-10-17 05:04:57,695 | INFO    | huim_zone | uji validationData control_random_s1__n177               177 WAP  mean 8.659 m  joint 0.8749
+2026-10-17 05:05:06,237 | INFO    | huim_zone | uji validationData control_random_s2__n177               177 WAP  mean 9.764 m  joint 0.8164
+2026-10-17 05:05:14,963 | INFO    | huim_zone | uji validationData control_random_s3__n177               177 WAP  mean 8.286 m  joint 0.8668
+2026-10-17 05:05:24,672 | INFO    | huim_zone | uji validationData control_top_support__n195             195 WAP  mean 5.554 m  joint 0.9379
+2026-10-17 05:05:34,423 | INFO    | huim_zone | uji validationData control_top_mi__n195                  195 WAP  mean 5.843 m  joint 0.9388
+2026-10-17 05:05:44,321 | INFO    | huim_zone | uji validationData control_random_s1__n195               195 WAP  mean 8.040 m  joint 0.8803
+2026-10-17 05:05:53,958 | INFO    | huim_zone | uji validationData control_random_s2__n195               195 WAP  mean 7.242 m  joint 0.8551
+2026-10-17 05:06:04,167 | INFO    | huim_zone | uji validationData control_random_s3__n195               195 WAP  mean 8.035 m  joint 0.8722
+2026-10-17 05:06:14,867 | INFO    | huim_zone | uji validationData control_top_support__n209             209 WAP  mean 5.392 m  joint 0.9460
+2026-10-17 05:06:25,882 | INFO    | huim_zone | uji validationData control_top_mi__n209                  209 WAP  mean 5.462 m  joint 0.9406
+2026-10-17 05:06:36,861 | INFO    | huim_zone | uji validationData control_random_s1__n209               209 WAP  mean 7.052 m  joint 0.8740
+2026-10-17 05:06:47,477 | INFO    | huim_zone | uji validationData control_random_s2__n209               209 WAP  mean 7.016 m  joint 0.9109
+2026-10-17 05:06:57,791 | INFO    | huim_zone | uji validationData control_random_s3__n209               209 WAP  mean 6.461 m  joint 0.9100
+2026-10-17 05:07:08,746 | INFO    | huim_zone | uji validationData control_top_support__n214             214 WAP  mean 5.380 m  joint 0.9451
+2026-10-17 05:07:19,728 | INFO    | huim_zone | uji validationData control_top_mi__n214                  214 WAP  mean 5.395 m  joint 0.9433
+2026-10-17 05:07:30,680 | INFO    | huim_zone | uji validationData control_random_s1__n214               214 WAP  mean 6.562 m  joint 0.8929
+2026-10-17 05:07:41,308 | INFO    | huim_zone | uji validationData control_random_s2__n214               214 WAP  mean 6.356 m  joint 0.9064
+2026-10-17 05:07:52,020 | INFO    | huim_zone | uji validationData control_random_s3__n214               214 WAP  mean 6.342 m  joint 0.9217
+2026-10-17 05:08:03,186 | INFO    | huim_zone | uji validationData control_top_support__n219             219 WAP  mean 5.387 m  joint 0.9460
+2026-10-17 05:08:14,316 | INFO    | huim_zone | uji validationData control_top_mi__n219                  219 WAP  mean 5.356 m  joint 0.9442
+2026-10-17 05:08:25,464 | INFO    | huim_zone | uji validationData control_random_s1__n219               219 WAP  mean 10.180 m  joint 0.8245
+2026-10-17 05:08:36,978 | INFO    | huim_zone | uji validationData control_random_s2__n219               219 WAP  mean 6.413 m  joint 0.9217
+2026-10-17 05:08:48,382 | INFO    | huim_zone | uji validationData control_random_s3__n219               219 WAP  mean 6.689 m  joint 0.9037
+2026-10-17 05:08:59,661 | INFO    | huim_zone | uji validationData control_top_support__n222             222 WAP  mean 5.378 m  joint 0.9460
+2026-10-17 05:09:10,586 | INFO    | huim_zone | uji validationData control_top_mi__n222                  222 WAP  mean 5.360 m  joint 0.9442
+2026-10-17 05:09:21,783 | INFO    | huim_zone | uji validationData control_random_s1__n222               222 WAP  mean 8.772 m  joint 0.8587
+2026-10-17 05:09:32,923 | INFO    | huim_zone | uji validationData control_random_s2__n222               222 WAP  mean 6.599 m  joint 0.9082
+2026-10-17 05:09:44,085 | INFO    | huim_zone | uji validationData control_random_s3__n222               222 WAP  mean 6.931 m  joint 0.9100
+2026-10-17 05:09:55,675 | INFO    | huim_zone | uji validationData control_top_support__n232             232 WAP  mean 5.364 m  joint 0.9469
+2026-10-17 05:10:07,646 | INFO    | huim_zone | uji validationData control_top_mi__n232                  232 WAP  mean 5.361 m  joint 0.9451
+2026-10-17 05:10:19,302 | INFO    | huim_zone | uji validationData control_random_s1__n232               232 WAP  mean 6.156 m  joint 0.9136
+2026-10-17 05:10:30,855 | INFO    | huim_zone | uji validationData control_random_s2__n232               232 WAP  mean 6.500 m  joint 0.9118
+2026-10-17 05:10:42,946 | INFO    | huim_zone | uji validationData control_random_s3__n232               232 WAP  mean 6.894 m  joint 0.9028
+2026-10-17 05:10:55,377 | INFO    | huim_zone | uji validationData control_top_support__n240             240 WAP  mean 5.325 m  joint 0.9469
+2026-10-17 05:11:07,302 | INFO    | huim_zone | uji validationData control_top_mi__n240                  240 WAP  mean 5.305 m  joint 0.9469
+2026-10-17 05:11:19,057 | INFO    | huim_zone | uji validationData control_random_s1__n240               240 WAP  mean 6.486 m  joint 0.9082
+2026-10-17 05:11:31,377 | INFO    | huim_zone | uji validationData control_random_s2__n240               240 WAP  mean 6.066 m  joint 0.9163
+2026-10-17 05:11:43,851 | INFO    | huim_zone | uji validationData control_random_s3__n240               240 WAP  mean 6.438 m  joint 0.8974
+2026-10-17 05:11:43,860 | INFO    | huim_zone | uji validationData SELECTED huim_zone__A_signal__3pct: 240 WAP, 5.297 m (all APs 5.356 m)
+2026-10-17 05:11:43,863 | INFO    | huim_zone | uji stage evaluate done in 633s
+2026-10-17 05:11:54,861 | INFO    | huim_zone | uji_lib3 huim_zone__A_signal__10pct             8 zones ->   52/620 WAPs  5.1s  (escalated zones: 0)
+2026-10-17 05:12:12,090 | INFO    | huim_zone | uji_lib3 huim_zone__A_signal__7pct              8 zones ->   71/620 WAPs  17.2s  (escalated zones: 0)
