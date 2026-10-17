@@ -422,3 +422,6 @@
 2026-10-17 11:35:19,739 | INFO    | prep | fit on 11370 training rows: 347 WAP columns, detected RSSI in [-98, -3]
 2026-10-17 11:45:20,219 | INFO    | prep | fit on 11370 training rows: 347 WAP columns, detected RSSI in [-98, -3]
 2026-10-17 11:55:09,657 | INFO    | prep | fit on 11370 training rows: 347 WAP columns, detected RSSI in [-98, -3]
+2026-10-17 13:28:40,860 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-17 13:28:41,761 | INFO    | prep | fit on 11370 training rows: 347 WAP columns, detected RSSI in [-98, -3]
+2026-10-17 13:28:45,405 | INFO    | prep | fit on 11520 training rows: 620 WAP columns, detected RSSI in [-98, -35]

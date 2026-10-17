@@ -154,3 +154,8 @@
 2026-10-17 11:35:19,664 | INFO    | huim_only | hcxy dev part theta 10 fold 1: 381574 HUIs, mined 566s, total 596s
 2026-10-17 11:45:20,131 | INFO    | huim_only | hcxy dev part theta 10 fold 2: 358892 HUIs, mined 575s, total 600s
 2026-10-17 11:55:09,584 | INFO    | huim_only | hcxy dev part theta 10 fold 3: 363842 HUIs, mined 562s, total 589s
+2026-10-17 13:28:30,075 | INFO    | huim_only | uji abs theta 20: HUIs/fold [3099005, 3074903, 3120434, 3072191, 2763788, 3041539]; best dev 7.685 m (gamma=2, tau=20, beta=3, sigma=3 m, kf=3, m=12, p=8)
+2026-10-17 13:28:30,652 | INFO    | huim_only | uji rel theta 20: HUIs/fold [3268895, 3202044, 3247999, 3188384, 2851776, 3101559]; best dev 8.362 m (gamma=2, tau=20, beta=3, sigma=0 m, kf=3, m=5, p=4)
+2026-10-17 13:28:31,183 | INFO    | huim_only | uji rank theta 20: HUIs/fold [3225283, 3063901, 3281832, 3217204, 2998148, 3289477]; best dev 7.669 m (gamma=2, tau=20, beta=3, sigma=3 m, kf=10, m=12, p=8)
+2026-10-17 13:28:31,195 | INFO    | huim_only | uji SELECTED on dev: utility rank, theta 20%, gamma=2, tau=20, beta=3, sigma=3 m, kf=10, m=12, p=8 -> dev 7.669 m
+2026-10-17 13:28:31,196 | INFO    | huim_only | uji stage select done in 2s

@@ -1,6 +1,7 @@
 {
   "dataset": "uji",
-  "theta_pct": 10.0,
+  "utility": "rank",
+  "theta_pct": 20.0,
   "params": {
     "gamma": 2.0,
     "tau": 20.0,
@@ -11,14 +12,19 @@
     "kf": 10
   },
   "label": "gamma=2, tau=20, beta=3, sigma=3 m, kf=10, m=12, p=8",
-  "dev_mean_m": 7.6993,
-  "dev_median_m": 4.8784,
-  "dev_joint_accuracy": 0.73968,
-  "dev_folds": "6 folds, USERID - leave-users-out, exactly as PHASE I3 of the study (validationData is another user, other phones, 4 months later)",
-  "n_configurations": 288,
+  "dev_mean_m": 7.6688,
+  "dev_median_m": 4.9762,
+  "dev_joint_accuracy": 0.839846,
+  "dev_folds": "6 folds, PHONEID - leave-phones-out (GroupKFold over the 16 training phones): validationData is 9 unseen phones of 11",
+  "n_configurations": 864,
   "grids": {
+    "utility": [
+      "abs",
+      "rel",
+      "rank"
+    ],
     "theta_pct": [
-      10.0
+      20.0
     ],
     "gamma_tau": [
       [
@@ -58,7 +64,7 @@
       8.0
     ]
   },
-  "theta_note": "fixed at 10% by a pilot on dev folds 1-2 of trainingData (results/huim_only/uji/theta_pilot.json); every other parameter chosen on all 6 dev folds",
+  "theta_note": "fixed at 20% (pilot on dev folds, theta_pilot.json): 10% mines ~4M HUIs per fold and, with user folds, did not transfer to new phones; every other parameter, and the internal utility, chosen on all 6 dev folds",
   "rule": "lowest dev mean error over all dev rows; ties -> larger theta (fewer HUIs)",
-  "timestamp_utc": "2026-10-17T10:55:45.558804+00:00"
+  "timestamp_utc": "2026-10-17T13:28:31.194311+00:00"
 }

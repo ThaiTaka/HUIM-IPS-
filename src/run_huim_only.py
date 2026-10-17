@@ -32,10 +32,12 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from huim_positioning import (CELL_MAX_HUIS, CELL_TIME_S, ESCALATE,
+                              internal_utility,
                               HUIPositioner, Params)
 from multi_datasets import DATASETS, Bundle, bf_label, load
 from preprocess_uji import fit_preprocessor
-from run_multi_dataset import folds_for, metrics
+from run_multi_dataset import folds_for as _folds_default, metrics
+from sklearn.model_selection import GroupKFold
 from utils import RESULTS, dump_json, environment_info, get_logger, load_json
 
 OUT_ROOT = RESULTS / "huim_only"
@@ -48,10 +50,18 @@ M_GRID = [5, 8, 12]
 P_GRID = [4.0, 8.0]
 # UJIIndoorLoc: theta = 10% costs ~25 min per fold, so it was fixed beforehand
 # by a pilot on dev folds 1 and 2 (theta_pilot.json); the test data played no part.
-THETA_BY_DATASET = {"uji": [10.0]}
-THETA_NOTE = {"uji": "fixed at 10% by a pilot on dev folds 1-2 of trainingData "
-                     "(results/huim_only/uji/theta_pilot.json); every other "
-                     "parameter chosen on all 6 dev folds"}
+THETA_BY_DATASET = {"uji": [20.0]}
+THETA_NOTE = {"uji": "fixed at 20% (pilot on dev folds, theta_pilot.json): "
+                     "10% mines ~4M HUIs per fold and, with user folds, did not "
+                     "transfer to new phones; every other parameter, and the "
+                     "internal utility, chosen on all 6 dev folds"}
+# internal utility q(i,T): huim_positioning.internal_utility
+UTILITY_BY_DATASET = {"uji": ["abs", "rel", "rank"]}
+# UJIIndoorLoc: 9 of the 11 validationData phones never occur in trainingData,
+# so the dev folds hold out PHONES (leave-devices-out) rather than users
+FOLD_GROUP = {"uji": "PHONEID"}
+FOLD_NOTE = {"uji": "PHONEID - leave-phones-out (GroupKFold over the 16 "
+                    "training phones): validationData is 9 unseen phones of 11"}
 TARGET_M = 7.0
 ORDER = ["uji", "uji_lib3", "dlulib", "hcxy", "hus", "hus_dedup"]
 LOG = get_logger("huim_only", "huim_only.log")
@@ -65,10 +75,31 @@ def outdir(key: str) -> Path:
     return p
 
 
-def inputs(b: Bundle):
+def utilities(key: str) -> list[str]:
+    return UTILITY_BY_DATASET.get(key, ["abs"])
+
+
+def folds_for(b: Bundle, n: int):
+    col = FOLD_GROUP.get(b.key)
+    if col:
+        return list(GroupKFold(n_splits=6).split(np.zeros(n), groups=b.train[col]))
+    return _folds_default(b, n)
+
+
+def fold_note(b: Bundle) -> str:
+    col = FOLD_GROUP.get(b.key)
+    return FOLD_NOTE[b.key] if col else b.group_note
+
+
+def q_matrix(prep, df, kind: str) -> np.ndarray:
+    W = df[prep.wap_cols].to_numpy(np.float64)
+    return internal_utility(W, kind, prep.rssi_min_train, prep.rssi_max_train)
+
+
+def inputs(b: Bundle, kind: str = "abs"):
     tr = b.train
     prep = fit_preprocessor(tr)
-    Q = prep.internal_utility_matrix(tr).astype(np.float64)
+    Q = q_matrix(prep, tr, kind)
     return prep, Q, tr["RP"].to_numpy(), tr[["X", "Y"]].to_numpy(np.float64), bf_label(tr)
 
 
@@ -94,13 +125,17 @@ def grid():
     return outer, inner, configs
 
 
-def stage_dev_part(b: Bundle, theta: float, fold: int) -> None:
+def part_path(out: Path, kind: str, theta: float, fold: int) -> Path:
+    return out / "dev_parts" / f"{kind}_theta{theta:g}_fold{fold}.npz"
+
+
+def stage_dev_part(b: Bundle, theta: float, fold: int, kind: str = "abs") -> None:
     """One (theta, dev fold): mine the training part, score the held-out part
     for every configuration. Written to dev_parts/ so folds can run in
     parallel processes."""
     out = outdir(b.key)
     (out / "dev_parts").mkdir(exist_ok=True)
-    _prep, Q, cell, XY, BF = inputs(b)
+    _prep, Q, cell, XY, BF = inputs(b, kind)
     tri, dvi = folds_for(b, len(Q))[fold]
     outer, inner, configs = grid()
     t0 = time.perf_counter()
@@ -118,12 +153,12 @@ def stage_dev_part(b: Bundle, theta: float, fold: int) -> None:
             err[i] = err_m(xy, XY[dvi], b.ground_factor)
             flo[i] = fl[kf] == BF[dvi]
             i += 1
-    np.savez_compressed(out / "dev_parts" / f"theta{theta:g}_fold{fold}.npz",
+    np.savez_compressed(part_path(out, kind, theta, fold),
                         dvi=dvi, err=err, flo=flo, n_huis=len(pos.hui_items),
                         mining_s=pos.fit_seconds,
                         seconds=time.perf_counter() - t0)
-    LOG.info("%s dev part theta %g fold %d: %d HUIs, mined %.0fs, total %.0fs",
-             b.key, theta, fold, len(pos.hui_items), pos.fit_seconds,
+    LOG.info("%s dev part %s theta %g fold %d: %d HUIs, mined %.0fs, total %.0fs",
+             b.key, kind, theta, fold, len(pos.hui_items), pos.fit_seconds,
              time.perf_counter() - t0)
 
 
@@ -134,41 +169,43 @@ def stage_select(b: Bundle) -> None:
     folds = folds_for(b, n)
     _o, _i, configs = grid()
     rows = []
-    for theta in thetas(b.key):
+    for kind, theta in itertools.product(utilities(b.key), thetas(b.key)):
         err = np.zeros((len(configs), n))
         flo = np.zeros((len(configs), n), bool)
         info = []
         for k in range(len(folds)):
-            f = out / "dev_parts" / f"theta{theta:g}_fold{k}.npz"
+            f = part_path(out, kind, theta, k)
             if not f.exists():
-                stage_dev_part(b, theta, k)
+                stage_dev_part(b, theta, k, kind)
             z = np.load(f)
             err[:, z["dvi"]] = z["err"]
             flo[:, z["dvi"]] = z["flo"]
             info.append(int(z["n_huis"]))
         for i, prm in enumerate(configs):
             e = err[i]
-            rows.append({"theta_pct": theta, **asdict(prm),
+            rows.append({"utility": kind, "theta_pct": theta, **asdict(prm),
                          "dev_mean_m": round(float(e.mean()), 4),
                          "dev_median_m": round(float(np.median(e)), 4),
                          "dev_p90_m": round(float(np.percentile(e, 90)), 4),
                          "dev_joint_accuracy": round(float(flo[i].mean()), 6)})
         D = pd.DataFrame(rows)
-        best = D[D.theta_pct == theta].sort_values("dev_mean_m").iloc[0]
-        LOG.info("%s theta %g: HUIs/fold %s; best dev %.3f m (%s)", b.key, theta,
+        best = D[(D.theta_pct == theta) & (D.utility == kind)].sort_values("dev_mean_m").iloc[0]
+        LOG.info("%s %s theta %g: HUIs/fold %s; best dev %.3f m (%s)", b.key, kind, theta,
                  info, best.dev_mean_m, params_of(best).label())
     D = pd.DataFrame(rows)
     D.to_csv(out / "dev_grid.csv", index=False)
     best = D.sort_values(["dev_mean_m", "theta_pct"], ascending=[True, False]).iloc[0]
     prm = params_of(best)
-    dump_json({"dataset": b.key, "theta_pct": float(best.theta_pct),
+    dump_json({"dataset": b.key, "utility": str(best.utility),
+               "theta_pct": float(best.theta_pct),
                "params": asdict(prm), "label": prm.label(),
                "dev_mean_m": float(best.dev_mean_m),
                "dev_median_m": float(best.dev_median_m),
                "dev_joint_accuracy": float(best.dev_joint_accuracy),
-               "dev_folds": f"{len(folds)} folds, {b.group_note}",
+               "dev_folds": f"{len(folds)} folds, {fold_note(b)}",
                "n_configurations": len(D),
-               "grids": {"theta_pct": thetas(b.key), "gamma_tau": GT_GRID,
+               "grids": {"utility": utilities(b.key),
+                         "theta_pct": thetas(b.key), "gamma_tau": GT_GRID,
                          "beta": BETA_GRID, "sigma_m": SIGMA_GRID,
                          "kf": KF_GRID, "m": M_GRID, "p": P_GRID},
                "theta_note": THETA_NOTE.get(b.key, "theta chosen on the dev folds "
@@ -177,8 +214,8 @@ def stage_select(b: Bundle) -> None:
                        "larger theta (fewer HUIs)",
                "timestamp_utc": datetime.now(timezone.utc).isoformat()},
               out / "selection.json")
-    LOG.info("%s SELECTED on dev: theta %g%%, %s -> dev %.3f m", b.key,
-             best.theta_pct, prm.label(), best.dev_mean_m)
+    LOG.info("%s SELECTED on dev: utility %s, theta %g%%, %s -> dev %.3f m",
+             b.key, best.utility, best.theta_pct, prm.label(), best.dev_mean_m)
 
 
 # ====================================================================== final
@@ -186,7 +223,8 @@ def stage_final(b: Bundle) -> None:
     out = outdir(b.key)
     sel = load_json(out / "selection.json")
     prm = Params(**sel["params"])
-    prep, Q, cell, XY, BF = inputs(b)
+    kind = sel.get("utility", "abs")
+    prep, Q, cell, XY, BF = inputs(b, kind)
     pos = HUIPositioner(sel["theta_pct"], ground_factor=b.ground_factor).fit(Q, cell, XY, BF)
     LOG.info("%s final model: %d cells, %d HUIs, mined in %.1fs", b.key,
              len(pos.cells), len(pos.hui_items), pos.fit_seconds)
@@ -203,7 +241,7 @@ def stage_final(b: Bundle) -> None:
     runs.to_csv(out / "cell_runs.csv", index=False)
     rows, tests = [], {}
     for tname, te in b.tests.items():
-        Qt = prep.internal_utility_matrix(te).astype(np.float64)
+        Qt = q_matrix(prep, te, kind)
         t0 = time.perf_counter()
         xy, bf, top, a, sc = pos.predict(Qt, prm)
         ms = (time.perf_counter() - t0) / len(Qt) * 1000.0
@@ -254,9 +292,10 @@ def main() -> None:
     ap.add_argument("--stage", default="all", choices=["all", "dev_part", *STAGES])
     ap.add_argument("--theta", type=float)
     ap.add_argument("--fold", type=int)
+    ap.add_argument("--utility", default="abs")
     a = ap.parse_args()
     if a.stage == "dev_part":
-        stage_dev_part(load(a.dataset), a.theta, a.fold)
+        stage_dev_part(load(a.dataset), a.theta, a.fold, a.utility)
         return
     keys = ORDER if a.dataset == "all" else a.dataset.split(",")
     for key in keys:
