@@ -100,6 +100,15 @@ PHASES = [
      [sys.executable, "src/make_multi_dataset_summary.py"]),
     ("multi_kit", "PHASE X  Excel workbook checking the cross-dataset numbers",
      [sys.executable, "src/make_multi_dataset_kit.py"]),
+    ("huim_zone", "PHASE Z  zone-wise HUIM selects the APs, every dataset "
+                  "(about 1.5 h)",
+     [sys.executable, "src/run_huim_zone.py", "--dataset", "all"]),
+    ("verify_huim_zone", "PHASE ZV re-compute every PHASE Z number",
+     [sys.executable, "src/verify_huim_zone.py"]),
+    ("huim_zone_figures", "PHASE ZJ charts fig50-fig55",
+     [sys.executable, "src/plots_huim_zone.py"]),
+    ("huim_zone_report", "PHASE ZL Word report of PHASE Z",
+     [sys.executable, "src/make_huim_zone_report.py"]),
 ]
 
 # Phases that need the internet. They are skipped (with a warning) rather than
