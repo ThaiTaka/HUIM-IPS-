@@ -220,3 +220,7 @@
 2026-10-17 14:57:32,009 | INFO    | huim_only | uji validationData: HUIM-only mean 8.059 m, median 6.152 m, joint 0.8038, 136.35 ms/fp
 2026-10-17 14:57:37,754 | INFO    | huim_only | uji stage final done in 595s
 2026-10-17 15:04:31,351 | INFO    | huim_only | hcxy dev part abs theta 20 fold 4: 332793 HUIs, mined 408s, total 433s
+2026-10-17 15:12:16,220 | INFO    | huim_only | hcxy dev part abs theta 20 fold 5: 345288 HUIs, mined 432s, total 465s
+2026-10-17 15:12:16,350 | INFO    | huim_only | hcxy abs theta 20: HUIs/fold [327982, 336316, 317001, 329300, 332793, 345288]; best dev 2.663 m (gamma=2, tau=20, beta=3, sigma=0 m, kf=10, m=5, p=4)
+2026-10-17 15:18:34,566 | INFO    | huim_only | hcxy dev part abs theta 30 fold 0: 304822 HUIs, mined 347s, total 378s
+2026-10-17 15:24:45,984 | INFO    | huim_only | hcxy dev part abs theta 30 fold 1: 316950 HUIs, mined 349s, total 371s
