@@ -443,3 +443,7 @@
 2026-10-17 13:32:12,066 | INFO    | prep | fit on 11520 training rows: 620 WAP columns, detected RSSI in [-98, -35]
 2026-10-17 13:32:13,532 | INFO    | prep | fit on 11520 training rows: 620 WAP columns, detected RSSI in [-98, -35]
 2026-10-17 13:32:14,959 | INFO    | prep | fit on 11520 training rows: 620 WAP columns, detected RSSI in [-98, -35]
+2026-10-17 13:38:25,363 | INFO    | prep | fit on 11370 training rows: 347 WAP columns, detected RSSI in [-98, -3]
+2026-10-17 13:39:19,291 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-17 13:39:19,496 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-17 13:39:19,518 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]

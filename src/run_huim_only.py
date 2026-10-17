@@ -45,9 +45,9 @@ THETA_GRID = [10.0, 20.0, 30.0]
 GT_GRID = [(1.0, 20.0), (1.0, 40.0), (2.0, 20.0)]
 BETA_GRID = [1.0, 3.0]
 SIGMA_GRID = [0.0, 3.0, 6.0, 10.0]
-KF_GRID = [3, 10]
-M_GRID = [5, 8, 12]
-P_GRID = [4.0, 8.0]
+KF_GRID = [3, 10, 20]
+M_GRID = [5, 8, 12, 20, 30]
+P_GRID = [4.0, 8.0, 12.0, 16.0]
 # UJIIndoorLoc: theta = 10% costs ~25 min per fold, so it was fixed beforehand
 # by a pilot on dev folds 1 and 2 (theta_pilot.json); the test data played no part.
 THETA_BY_DATASET = {"uji": [20.0]}
@@ -56,7 +56,7 @@ THETA_NOTE = {"uji": "fixed at 20% (pilot on dev folds, theta_pilot.json): "
                      "transfer to new phones; every other parameter, and the "
                      "internal utility, chosen on all 6 dev folds"}
 # internal utility q(i,T): huim_positioning.internal_utility
-UTILITY_BY_DATASET = {"uji": ["abs", "rel", "rank"]}
+UTILITY_BY_DATASET = {"uji": ["abs", "rank"]}
 # UJIIndoorLoc: 9 of the 11 validationData phones never occur in trainingData,
 # so the dev folds hold out PHONES (leave-devices-out) rather than users
 FOLD_GROUP = {"uji": "PHONEID"}

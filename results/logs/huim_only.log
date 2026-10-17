@@ -186,3 +186,7 @@
 2026-10-17 13:32:46,645 | INFO    | huim_only | uji_lib3 Test-01: HUIM-only mean 2.570 m, median 2.171 m, joint 1.0000, 0.85 ms/fp
 2026-10-17 13:32:54,310 | INFO    | huim_only | uji_lib3 Test-02: HUIM-only mean 2.679 m, median 2.308 m, joint 1.0000, 0.87 ms/fp
 2026-10-17 13:32:54,601 | INFO    | huim_only | uji_lib3 stage final done in 40s
+2026-10-17 13:35:49,756 | INFO    | huim_only | uji final model: 933 cells, 3238416 HUIs, mined in 420.0s
+2026-10-17 13:38:25,259 | INFO    | huim_only | hcxy dev part abs theta 10 fold 0: 337945 HUIs, mined 558s, total 583s
+2026-10-17 13:38:33,888 | INFO    | huim_only | uji validationData: HUIM-only mean 7.997 m, median 6.147 m, joint 0.7993, 136.86 ms/fp
+2026-10-17 13:38:39,232 | INFO    | huim_only | uji stage final done in 598s
