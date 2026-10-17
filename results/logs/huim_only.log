@@ -119,3 +119,4 @@
 2026-10-17 10:24:43,749 | INFO    | huim_only | dlulib dev part theta 10 fold 2: 2843902 HUIs, mined 47s, total 289s
 2026-10-17 10:27:05,233 | INFO    | huim_only | uji dev part theta 10 fold 0: 3317109 HUIs, mined 648s, total 1390s
 2026-10-17 10:29:40,991 | INFO    | huim_only | dlulib dev part theta 10 fold 3: 2887838 HUIs, mined 44s, total 297s
+2026-10-17 10:34:50,871 | INFO    | huim_only | dlulib dev part theta 10 fold 4: 2878374 HUIs, mined 44s, total 310s

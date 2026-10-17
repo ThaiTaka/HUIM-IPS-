@@ -402,3 +402,4 @@
 2026-10-17 10:24:43,950 | INFO    | prep | fit on 13000 training rows: 17 WAP columns, detected RSSI in [-99, -27]
 2026-10-17 10:27:08,570 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
 2026-10-17 10:29:41,215 | INFO    | prep | fit on 13000 training rows: 17 WAP columns, detected RSSI in [-99, -27]
+2026-10-17 10:34:51,086 | INFO    | prep | fit on 13000 training rows: 17 WAP columns, detected RSSI in [-99, -27]
