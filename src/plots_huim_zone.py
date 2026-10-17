@@ -33,7 +33,7 @@ BLUE, ORANGE, AQUA, YELLOW = "#2a78d6", "#eb6834", "#1baf7a", "#eda100"
 GRAY, INK, MUTED = "#8a8a85", "#1c1c1a", "#6b6b66"
 MODEL_COLOR = {"A_signal": BLUE, "B_discriminative": ORANGE}
 TITLES = {"uji": "UJIIndoorLoc", "uji_lib3": "UJI_LIB tầng 3", "dlulib": "DLULIB",
-          "hcxy": "HCXY", "hus": "HUS", "hus_dedup": "HUS (khử trùng lặp)"}
+          "hcxy": "HCXY", "hus": "HUS", "hus_dedup": "HUS-dedup"}
 
 plt.rcParams.update({"font.family": "serif",
                      "font.serif": ["Times New Roman", "DejaVu Serif"],
@@ -167,7 +167,7 @@ def fig52():
                          "global_huim_mean_err_m": (T["global_huim_best"] or {}).get("mean_err_m"),
                          "below_7m": T["below_target"]})
     df = pd.DataFrame(rows)
-    fig, ax = plt.subplots(figsize=(11, 4.4))
+    fig, ax = plt.subplots(figsize=(13, 4.6))
     x = np.arange(len(df))
     w = 0.38
     b1 = ax.bar(x - w / 2, df.all_mean_err_m, w, color=GRAY, label="Toàn bộ AP", edgecolor="white", lw=2)

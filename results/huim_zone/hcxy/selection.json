@@ -1,0 +1,20 @@
+{
+  "dataset": "hcxy",
+  "positioner": "powed+braycurtis, k=30, w=1/d^3",
+  "positioner_config": {
+    "representation": "powed",
+    "distance": "braycurtis",
+    "k": 30,
+    "power": 3.0,
+    "offset_range": 0,
+    "ensemble_with": ""
+  },
+  "positioner_source": "results/multi_dataset/hcxy/positioning.json (selected on dev folds with all APs)",
+  "dev_folds": "6 folds, RP - leave-positions-out: none of the 86 test RPs is a training RP (overlap 0)",
+  "rule": "lowest dev mean error among the HUIM-zone sets; ties -> fewer WAPs",
+  "selected_set": "huim_zone__A_signal__10pct",
+  "selected_n_waps": 137,
+  "selected_dev_mean_m": 1.4261,
+  "all_aps_dev_mean_m": 1.4131,
+  "timestamp_utc": "2026-10-17T08:00:38.177151+00:00"
+}

@@ -420,3 +420,50 @@
 2026-10-17 07:35:23,925 | INFO    | huim_zone | hcxy huim_zone__A_signal__5pct              8 zones ->  136/347 WAPs  0.0s  (escalated zones: 0)
 2026-10-17 07:35:23,942 | INFO    | huim_zone | hcxy huim_zone__A_signal__4pct              8 zones ->  136/347 WAPs  0.0s  (escalated zones: 0)
 2026-10-17 07:35:23,956 | INFO    | huim_zone | hcxy huim_zone__A_signal__3pct              8 zones ->  136/347 WAPs  0.0s  (escalated zones: 0)
+2026-10-17 07:59:40,253 | INFO    | huim_zone | hcxy huim_zone__B_discriminative__10pct     8 zones ->  132/347 WAPs  1455.7s  (escalated zones: 8)
+2026-10-17 07:59:40,270 | INFO    | huim_zone | hcxy huim_zone__B_discriminative__7pct      8 zones ->  132/347 WAPs  0.0s  (escalated zones: 0)
+2026-10-17 07:59:40,287 | INFO    | huim_zone | hcxy huim_zone__B_discriminative__5pct      8 zones ->  132/347 WAPs  0.0s  (escalated zones: 0)
+2026-10-17 07:59:40,303 | INFO    | huim_zone | hcxy huim_zone__B_discriminative__4pct      8 zones ->  132/347 WAPs  0.0s  (escalated zones: 0)
+2026-10-17 07:59:40,319 | INFO    | huim_zone | hcxy huim_zone__B_discriminative__3pct      8 zones ->  132/347 WAPs  0.0s  (escalated zones: 0)
+2026-10-17 07:59:40,541 | INFO    | huim_zone | hcxy stage mine done in 2666s
+2026-10-17 07:59:52,081 | INFO    | huim_zone | hcxy dev all_aps                               347 WAP  mean 1.413 m
+2026-10-17 07:59:56,964 | INFO    | huim_zone | hcxy dev huim_zone__A_signal__10pct            137 WAP  mean 1.426 m
+2026-10-17 08:00:01,401 | INFO    | huim_zone | hcxy dev huim_zone__A_signal__7pct             136 WAP  mean 1.429 m
+2026-10-17 08:00:05,711 | INFO    | huim_zone | hcxy dev huim_zone__A_signal__5pct             136 WAP  mean 1.429 m
+2026-10-17 08:00:09,972 | INFO    | huim_zone | hcxy dev huim_zone__A_signal__4pct             136 WAP  mean 1.429 m
+2026-10-17 08:00:14,728 | INFO    | huim_zone | hcxy dev huim_zone__A_signal__3pct             136 WAP  mean 1.429 m
+2026-10-17 08:00:19,181 | INFO    | huim_zone | hcxy dev huim_zone__B_discriminative__10pct    132 WAP  mean 1.443 m
+2026-10-17 08:00:23,308 | INFO    | huim_zone | hcxy dev huim_zone__B_discriminative__7pct     132 WAP  mean 1.443 m
+2026-10-17 08:00:28,491 | INFO    | huim_zone | hcxy dev huim_zone__B_discriminative__5pct     132 WAP  mean 1.443 m
+2026-10-17 08:00:33,271 | INFO    | huim_zone | hcxy dev huim_zone__B_discriminative__4pct     132 WAP  mean 1.443 m
+2026-10-17 08:00:38,173 | INFO    | huim_zone | hcxy dev huim_zone__B_discriminative__3pct     132 WAP  mean 1.443 m
+2026-10-17 08:00:38,177 | INFO    | huim_zone | hcxy SELECTED on dev: huim_zone__A_signal__10pct (137 WAP, dev 1.426 m)
+2026-10-17 08:00:38,179 | INFO    | huim_zone | hcxy stage select done in 58s
+2026-10-17 08:00:39,715 | INFO    | huim_zone | hcxy test_HCXY  all_aps                               347 WAP  mean 1.547 m  joint 1.0000
+2026-10-17 08:00:40,253 | INFO    | huim_zone | hcxy test_HCXY  huim_zone__A_signal__10pct            137 WAP  mean 1.502 m  joint 1.0000
+2026-10-17 08:00:40,616 | INFO    | huim_zone | hcxy test_HCXY  huim_zone__A_signal__7pct             136 WAP  mean 1.515 m  joint 1.0000
+2026-10-17 08:00:40,946 | INFO    | huim_zone | hcxy test_HCXY  huim_zone__A_signal__5pct             136 WAP  mean 1.515 m  joint 1.0000
+2026-10-17 08:00:41,271 | INFO    | huim_zone | hcxy test_HCXY  huim_zone__A_signal__4pct             136 WAP  mean 1.515 m  joint 1.0000
+2026-10-17 08:00:41,672 | INFO    | huim_zone | hcxy test_HCXY  huim_zone__A_signal__3pct             136 WAP  mean 1.515 m  joint 1.0000
+2026-10-17 08:00:42,022 | INFO    | huim_zone | hcxy test_HCXY  huim_zone__B_discriminative__10pct    132 WAP  mean 1.578 m  joint 1.0000
+2026-10-17 08:00:42,463 | INFO    | huim_zone | hcxy test_HCXY  huim_zone__B_discriminative__7pct     132 WAP  mean 1.578 m  joint 1.0000
+2026-10-17 08:00:42,836 | INFO    | huim_zone | hcxy test_HCXY  huim_zone__B_discriminative__5pct     132 WAP  mean 1.578 m  joint 1.0000
+2026-10-17 08:00:43,149 | INFO    | huim_zone | hcxy test_HCXY  huim_zone__B_discriminative__4pct     132 WAP  mean 1.578 m  joint 1.0000
+2026-10-17 08:00:43,498 | INFO    | huim_zone | hcxy test_HCXY  huim_zone__B_discriminative__3pct     132 WAP  mean 1.578 m  joint 1.0000
+2026-10-17 08:00:43,968 | INFO    | huim_zone | hcxy test_HCXY  control_top_support__n132             132 WAP  mean 1.617 m  joint 1.0000
+2026-10-17 08:00:44,311 | INFO    | huim_zone | hcxy test_HCXY  control_top_mi__n132                  132 WAP  mean 1.611 m  joint 1.0000
+2026-10-17 08:00:44,771 | INFO    | huim_zone | hcxy test_HCXY  control_random_s1__n132               132 WAP  mean 2.370 m  joint 1.0000
+2026-10-17 08:00:45,171 | INFO    | huim_zone | hcxy test_HCXY  control_random_s2__n132               132 WAP  mean 2.099 m  joint 1.0000
+2026-10-17 08:00:45,597 | INFO    | huim_zone | hcxy test_HCXY  control_random_s3__n132               132 WAP  mean 1.949 m  joint 1.0000
+2026-10-17 08:00:46,112 | INFO    | huim_zone | hcxy test_HCXY  control_top_support__n136             136 WAP  mean 1.606 m  joint 1.0000
+2026-10-17 08:00:46,520 | INFO    | huim_zone | hcxy test_HCXY  control_top_mi__n136                  136 WAP  mean 1.601 m  joint 1.0000
+2026-10-17 08:00:46,870 | INFO    | huim_zone | hcxy test_HCXY  control_random_s1__n136               136 WAP  mean 2.663 m  joint 1.0000
+2026-10-17 08:00:47,287 | INFO    | huim_zone | hcxy test_HCXY  control_random_s2__n136               136 WAP  mean 1.988 m  joint 1.0000
+2026-10-17 08:00:47,802 | INFO    | huim_zone | hcxy test_HCXY  control_random_s3__n136               136 WAP  mean 1.949 m  joint 1.0000
+2026-10-17 08:00:48,310 | INFO    | huim_zone | hcxy test_HCXY  control_top_support__n137             137 WAP  mean 1.608 m  joint 1.0000
+2026-10-17 08:00:48,769 | INFO    | huim_zone | hcxy test_HCXY  control_top_mi__n137                  137 WAP  mean 1.600 m  joint 1.0000
+2026-10-17 08:00:49,279 | INFO    | huim_zone | hcxy test_HCXY  control_random_s1__n137               137 WAP  mean 2.061 m  joint 1.0000
+2026-10-17 08:00:49,805 | INFO    | huim_zone | hcxy test_HCXY  control_random_s2__n137               137 WAP  mean 2.016 m  joint 1.0000
+2026-10-17 08:00:50,217 | INFO    | huim_zone | hcxy test_HCXY  control_random_s3__n137               137 WAP  mean 1.980 m  joint 1.0000
+2026-10-17 08:00:50,227 | INFO    | huim_zone | hcxy test_HCXY SELECTED huim_zone__A_signal__10pct: 137 WAP, 1.502 m (all APs 1.547 m)
+2026-10-17 08:00:50,230 | INFO    | huim_zone | hcxy stage evaluate done in 12s

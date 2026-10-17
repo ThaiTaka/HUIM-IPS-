@@ -1,0 +1,91 @@
+{
+  "dataset": "hcxy",
+  "title": "HCXY (1 tầng, 347 MAC)",
+  "positioner": "powed+braycurtis, k=30, w=1/d^3",
+  "selection": {
+    "dataset": "hcxy",
+    "positioner": "powed+braycurtis, k=30, w=1/d^3",
+    "positioner_config": {
+      "representation": "powed",
+      "distance": "braycurtis",
+      "k": 30,
+      "power": 3.0,
+      "offset_range": 0,
+      "ensemble_with": ""
+    },
+    "positioner_source": "results/multi_dataset/hcxy/positioning.json (selected on dev folds with all APs)",
+    "dev_folds": "6 folds, RP - leave-positions-out: none of the 86 test RPs is a training RP (overlap 0)",
+    "rule": "lowest dev mean error among the HUIM-zone sets; ties -> fewer WAPs",
+    "selected_set": "huim_zone__A_signal__10pct",
+    "selected_n_waps": 137,
+    "selected_dev_mean_m": 1.4261,
+    "all_aps_dev_mean_m": 1.4131,
+    "timestamp_utc": "2026-10-17T08:00:38.177151+00:00"
+  },
+  "tests": {
+    "test_HCXY": {
+      "n_test": 860,
+      "huim_zone": {
+        "set": "huim_zone__A_signal__10pct",
+        "n_waps": 137,
+        "feature_reduction_pct": 60.5187,
+        "building_accuracy": 1.0,
+        "floor_accuracy": 1.0,
+        "joint_accuracy": 1.0,
+        "mean_err_m": 1.5018,
+        "median_err_m": 1.0892,
+        "p75_err_m": 2.107,
+        "p90_err_m": 3.1866,
+        "p95_err_m": 4.2176,
+        "ms_per_fp": 0.5331
+      },
+      "all_aps": {
+        "n_waps": 347,
+        "joint_accuracy": 1.0,
+        "mean_err_m": 1.5468,
+        "median_err_m": 1.117,
+        "p90_err_m": 3.1186,
+        "ms_per_fp": 1.0058
+      },
+      "controls_same_budget_mean_err_m": {
+        "top_support": 1.6077,
+        "top_mi": 1.6004,
+        "random_mean_of_3": 2.0190333333333332,
+        "random_each": [
+          2.0607,
+          2.0163,
+          1.9801
+        ]
+      },
+      "global_huim_best": {
+        "set": "huim_union__A_signal__6.1237pct",
+        "n_waps": 67,
+        "mean_err_m": 2.1195
+      },
+      "below_target": true,
+      "target_m": 7.0
+    }
+  },
+  "environment": {
+    "python_version": "3.13.16",
+    "python_implementation": "CPython",
+    "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "cpu_count_logical": 4,
+    "packages": {
+      "numpy": "2.5.1",
+      "pandas": "3.0.6",
+      "sklearn": "1.9.1",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.2",
+      "docx": "1.2.0",
+      "pptx": "1.0.2",
+      "psutil": "7.2.2",
+      "yaml": "6.0.3"
+    },
+    "ram_total_gb": 15.72,
+    "cpu_count_physical": 4
+  },
+  "timestamp_utc": "2026-10-17T08:00:50.227926+00:00"
+}
