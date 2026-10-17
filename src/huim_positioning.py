@@ -60,6 +60,39 @@ MAX_ESCALATIONS = 60
 BATCH = 16
 
 
+NOT_DETECTED = 100
+REL_WINDOW_DB = 40.0
+
+
+def internal_utility(W: np.ndarray, kind: str, lo: float = -104.0,
+                     hi: float = 0.0) -> np.ndarray:
+    """q(i,T) in [1, 100] for detected APs, 0 otherwise.
+
+    abs   absolute strength: round(1 + (RSSI - lo)/(hi - lo) x 99)
+    rel   strength relative to the strongest AP of the same fingerprint:
+          round(1 + clip((RSSI - max_T RSSI + W)/W, 0, 1) x 99), W = 40 dB.
+          A phone that reads every AP k dB lower gets the same q.
+    rank  rank of the AP inside its fingerprint, strongest = 100, weakest = 1.
+          Invariant to any monotone distortion of a phone's RSSI scale.
+    """
+    det = W != NOT_DETECTED
+    if kind == "abs":
+        v = np.clip((W - lo) / (hi - lo), 0, 1)
+    elif kind == "rel":
+        mx = np.where(det, W, -np.inf).max(axis=1, keepdims=True)
+        v = np.clip((W - mx + REL_WINDOW_DB) / REL_WINDOW_DB, 0, 1)
+    elif kind == "rank":
+        R = np.where(det, W, -np.inf)
+        order = np.argsort(np.argsort(-R, axis=1, kind="stable"), axis=1)
+        n = det.sum(axis=1, keepdims=True)
+        v = np.where(n > 1, (n - 1 - order) / np.maximum(n - 1, 1), 1.0)
+    else:
+        raise ValueError(kind)
+    q = np.where(det, np.rint(1 + np.nan_to_num(v) * 99), 0)
+    q[det & (q < 1)] = 1
+    return q
+
+
 @dataclass
 class Params:
     gamma: float = 1.0

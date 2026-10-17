@@ -148,3 +148,8 @@
 2026-10-17 11:07:55,145 | INFO    | huim_only | dlulib final model: 650 cells, 2878077 HUIs, mined in 43.7s
 2026-10-17 11:08:45,771 | INFO    | huim_only | uji validationData: HUIM-only mean 8.175 m, median 6.297 m, joint 0.7615, 129.50 ms/fp
 2026-10-17 11:08:51,428 | INFO    | huim_only | uji stage final done in 786s
+2026-10-17 11:16:00,923 | INFO    | huim_only | dlulib Testing: HUIM-only mean 6.010 m, median 4.881 m, joint 0.9680, 73.41 ms/fp
+2026-10-17 11:16:04,029 | INFO    | huim_only | dlulib stage final done in 536s
+2026-10-17 11:25:23,913 | INFO    | huim_only | hcxy dev part theta 10 fold 0: 337945 HUIs, mined 534s, total 559s
+2026-10-17 11:35:19,664 | INFO    | huim_only | hcxy dev part theta 10 fold 1: 381574 HUIs, mined 566s, total 596s
+2026-10-17 11:45:20,131 | INFO    | huim_only | hcxy dev part theta 10 fold 2: 358892 HUIs, mined 575s, total 600s
