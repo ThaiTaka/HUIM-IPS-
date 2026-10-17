@@ -28,14 +28,20 @@ For every HUI X of cell c:
                     I_c = every WAP occurring in some HUI of c
     cell score      score_c(T) = P_c(T) x V_c(T)^beta
 
-The m best-scoring cells give the estimate:
-    (x, y)          = sum_c a_c (x_c, y_c),  a_c = score_c^p / sum score^p
-    building-floor  = the a-weighted vote of the same cells
+Locating:
+    smoothing       S_c = sum_c' score_c' K(c', c), K = Gaussian of the ground
+                    distance between cell positions (width sigma), same
+                    building-floor only, rows normalised - a cell is supported
+                    by the pattern matches of its neighbours
+    building-floor  the floor whose kf best cells have the highest mean S
+    (x, y)          = sum_c a_c (x_c, y_c) over the m best cells OF THAT FLOOR,
+                    a_c = S_c^p / sum S^p
 
 P_c asks "how much of cell c's high-utility pattern mass does T contain, at the
 right strength"; V_c asks "how much of T is explained by c's patterns". Both
-are computed from HUI_c only. (gamma, tau, beta, m, p, theta) are chosen on dev
-folds of the training data.
+are computed from HUI_c only; the cell positions are the only other input.
+(theta, gamma, tau, beta, sigma, kf, m, p) are chosen on dev folds of the
+training data.
 """
 from __future__ import annotations
 
@@ -61,18 +67,22 @@ class Params:
     beta: float = 3.0
     m: int = 5
     p: float = 4.0
+    sigma: float = 0.0
+    kf: int = 1
 
     def label(self) -> str:
         return (f"gamma={self.gamma:g}, tau={self.tau:g}, beta={self.beta:g}, "
-                f"m={self.m}, p={self.p:g}")
+                f"sigma={self.sigma:g} m, kf={self.kf}, m={self.m}, p={self.p:g}")
 
 
 class HUIPositioner:
     """Mines one HUI set per cell and positions queries by HUI matching."""
 
     def __init__(self, theta: float, cell_time_s: float = CELL_TIME_S,
-                 cell_max_huis: int = CELL_MAX_HUIS) -> None:
+                 cell_max_huis: int = CELL_MAX_HUIS,
+                 ground_factor: float = 1.0) -> None:
         self.theta = theta
+        self.ground_factor = ground_factor
         self.cell_time_s = cell_time_s
         self.cell_max_huis = cell_max_huis
 
@@ -136,8 +146,9 @@ class HUIPositioner:
 
     def _index(self) -> None:
         nH, nC = len(self.hui_items), len(self.cells)
-        lens = np.array([len(x) for x in self.hui_items], np.float32)
-        indptr = np.concatenate([[0], np.cumsum(lens)]).astype(np.int64)
+        n_items = np.array([len(x) for x in self.hui_items], np.int64)
+        indptr = np.concatenate([[0], np.cumsum(n_items)])
+        lens = n_items.astype(np.float32)
         ind = (np.concatenate(self.hui_items).astype(np.int64) if nH
                else np.zeros(0, np.int64))
         self.H = sparse.csr_matrix((np.ones(len(ind), np.float32), ind, indptr),
@@ -177,25 +188,52 @@ class HUIPositioner:
                 np.maximum(q.sum(axis=1, keepdims=True), 1.0)
         return P, V
 
-    def estimate(self, P: np.ndarray, V: np.ndarray, prm: Params):
-        S = P * V ** prm.beta
-        m = min(prm.m, S.shape[1])
+    def cell_scores(self, P: np.ndarray, V: np.ndarray, beta: float,
+                    sigma: float) -> np.ndarray:
+        """score_c = P_c V_c^beta, then spread over same-floor cells within
+        about sigma ground metres: S' = S K, K[c,c'] = g(c,c') / sum_c'' g(c,c''),
+        g = exp(-d(c,c')^2 / 2 sigma^2) if c, c' share a building-floor."""
+        S = P * V ** beta
+        if sigma > 0:
+            S = S @ self._kernel(sigma)
+        return S
+
+    def _kernel(self, sigma: float) -> np.ndarray:
+        if getattr(self, "_kcache", (None,))[0] != sigma:
+            d2 = ((self.cell_xy[:, None, :] - self.cell_xy[None, :, :]) ** 2
+                  ).sum(-1) * self.ground_factor ** 2
+            K = np.exp(-d2 / (2 * sigma ** 2)) * (
+                self.cell_bf[:, None] == self.cell_bf[None, :])
+            self._kcache = (sigma, (K / K.sum(axis=1, keepdims=True)).astype(np.float32))
+        return self._kcache[1]
+
+    def floor_of(self, S: np.ndarray, kf: int) -> np.ndarray:
+        """Building-floor = the floor whose kf best cells score highest on
+        average."""
+        floors = np.unique(self.cell_bf)
+        fs = np.stack([-np.sort(-S[:, self.cell_bf == f], axis=1)[:, :kf].mean(axis=1)
+                       for f in floors], axis=1)
+        return floors[fs.argmax(axis=1)]
+
+    def locate(self, S: np.ndarray, floor: np.ndarray, m: int, p: float):
+        """(x, y) from the m best cells of the chosen floor."""
+        S = np.where(self.cell_bf[None, :] == floor[:, None], S, -1.0)
+        m = min(m, S.shape[1])
         top = np.argpartition(-S, m - 1, axis=1)[:, :m]
         o = np.argsort(-np.take_along_axis(S, top, 1), axis=1)
         top = np.take_along_axis(top, o, 1)
-        sc = np.take_along_axis(S, top, 1).astype(np.float64)
-        a = sc ** prm.p
+        sc = np.clip(np.take_along_axis(S, top, 1), 0, None).astype(np.float64)
+        a = sc ** p
         z = a.sum(axis=1, keepdims=True)
         a = np.where(z > 0, a / np.where(z > 0, z, 1), 1.0 / m)
         xy = np.einsum("ij,ijk->ik", a, self.cell_xy[top])
-        labs = self.cell_bf[top]
-        bf = np.empty(len(S), dtype=object)
-        for i in range(len(S)):
-            v: dict = {}
-            for l, ww in zip(labs[i], a[i]):
-                v[l] = v.get(l, 0.0) + ww
-            bf[i] = max(v, key=v.get)
-        return xy, bf.astype(str), top, a, sc
+        return xy, top, a, sc
+
+    def estimate(self, P: np.ndarray, V: np.ndarray, prm: Params):
+        S = self.cell_scores(P, V, prm.beta, prm.sigma)
+        floor = self.floor_of(S, prm.kf)
+        xy, top, a, sc = self.locate(S, floor, prm.m, prm.p)
+        return xy, floor.astype(str), top, a, sc
 
     def predict(self, Qq: np.ndarray, prm: Params):
         P, V = self.components(Qq, [(prm.gamma, prm.tau)])

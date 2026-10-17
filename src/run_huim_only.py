@@ -39,12 +39,13 @@ from run_multi_dataset import folds_for, metrics
 from utils import RESULTS, dump_json, environment_info, get_logger, load_json
 
 OUT_ROOT = RESULTS / "huim_only"
-THETA_GRID = [30.0, 50.0, 70.0]
-GT_GRID = [(1.0, 10.0), (1.0, 20.0), (1.0, 40.0), (2.0, 10.0), (2.0, 20.0),
-           (2.0, 40.0)]
-BETA_GRID = [1.0, 3.0, 5.0]
-M_GRID = [3, 5, 8, 12]
-P_GRID = [2.0, 4.0, 8.0]
+THETA_GRID = [10.0, 20.0, 30.0]
+GT_GRID = [(1.0, 20.0), (1.0, 40.0), (2.0, 20.0)]
+BETA_GRID = [1.0, 3.0]
+SIGMA_GRID = [0.0, 3.0, 6.0, 10.0]
+KF_GRID = [3, 10]
+M_GRID = [5, 8, 12]
+P_GRID = [4.0, 8.0]
 TARGET_M = 7.0
 ORDER = ["uji", "uji_lib3", "dlulib", "hcxy", "hus", "hus_dedup"]
 LOG = get_logger("huim_only", "huim_only.log")
@@ -65,6 +66,11 @@ def inputs(b: Bundle):
     return prep, Q, tr["RP"].to_numpy(), tr[["X", "Y"]].to_numpy(np.float64), bf_label(tr)
 
 
+def params_of(r) -> Params:
+    return Params(float(r.gamma), float(r.tau), float(r.beta), int(r.m),
+                  float(r.p), float(r.sigma), int(r.kf))
+
+
 def err_m(xy, true_xy, gf):
     return np.sqrt(((xy - true_xy) ** 2).sum(axis=1)) * gf
 
@@ -74,22 +80,31 @@ def stage_select(b: Bundle) -> None:
     out = outdir(b.key)
     _prep, Q, cell, XY, BF = inputs(b)
     folds = folds_for(b, len(Q))
-    configs = [Params(g, t, be, m, p) for (g, t), be, m, p in
-               itertools.product(GT_GRID, BETA_GRID, M_GRID, P_GRID)]
+    outer = list(itertools.product(GT_GRID, BETA_GRID, SIGMA_GRID))
+    inner = list(itertools.product(KF_GRID, M_GRID, P_GRID))
+    configs = [Params(g, t, be, m, p, sg, kf) for (g, t), be, sg in outer
+               for kf, m, p in inner]
     rows = []
     for theta in THETA_GRID:
-        err = {i: np.zeros(len(Q)) for i in range(len(configs))}
-        flo = {i: np.zeros(len(Q), bool) for i in range(len(configs))}
+        err = np.zeros((len(configs), len(Q)))
+        flo = np.zeros((len(configs), len(Q)), bool)
         t0 = time.perf_counter()
         n_huis = []
         for tri, dvi in folds:
-            pos = HUIPositioner(theta).fit(Q[tri], cell[tri], XY[tri], BF[tri])
+            pos = HUIPositioner(theta, ground_factor=b.ground_factor).fit(
+                Q[tri], cell[tri], XY[tri], BF[tri])
             n_huis.append(len(pos.hui_items))
             P, V = pos.components(Q[dvi], GT_GRID)
-            for i, prm in enumerate(configs):
-                xy, bf, *_ = pos.estimate(P[(prm.gamma, prm.tau)], V, prm)
-                err[i][dvi] = err_m(xy, XY[dvi], b.ground_factor)
-                flo[i][dvi] = bf == BF[dvi]
+            i = 0
+            for (g, t), be, sg in outer:
+                S = pos.cell_scores(P[(g, t)], V, be, sg)
+                fl = {kf: pos.floor_of(S, kf) for kf in KF_GRID}
+                for kf, m, p in inner:
+                    xy, *_ = pos.locate(S, fl[kf], m, p)
+                    err[i, dvi] = err_m(xy, XY[dvi], b.ground_factor)
+                    flo[i, dvi] = fl[kf] == BF[dvi]
+                    i += 1
+            del pos, P, V
         for i, prm in enumerate(configs):
             e = err[i]
             rows.append({"theta_pct": theta, **asdict(prm),
@@ -102,12 +117,10 @@ def stage_select(b: Bundle) -> None:
         best = D[D.theta_pct == theta].sort_values("dev_mean_m").iloc[0]
         LOG.info("%s theta %g: %d folds in %.0fs, HUIs/fold %s; best dev %.3f m "
                  "(%s)", b.key, theta, len(folds), time.perf_counter() - t0,
-                 n_huis, best.dev_mean_m,
-                 Params(best.gamma, best.tau, best.beta, int(best.m), best.p).label())
+                 n_huis, best.dev_mean_m, params_of(best).label())
     D = pd.DataFrame(rows)
     best = D.sort_values(["dev_mean_m", "theta_pct"], ascending=[True, False]).iloc[0]
-    prm = Params(float(best.gamma), float(best.tau), float(best.beta),
-                 int(best.m), float(best.p))
+    prm = params_of(best)
     dump_json({"dataset": b.key, "theta_pct": float(best.theta_pct),
                "params": asdict(prm), "label": prm.label(),
                "dev_mean_m": float(best.dev_mean_m),
@@ -116,7 +129,8 @@ def stage_select(b: Bundle) -> None:
                "dev_folds": f"{len(folds)} folds, {b.group_note}",
                "n_configurations": len(D),
                "grids": {"theta_pct": THETA_GRID, "gamma_tau": GT_GRID,
-                         "beta": BETA_GRID, "m": M_GRID, "p": P_GRID},
+                         "beta": BETA_GRID, "sigma_m": SIGMA_GRID,
+                         "kf": KF_GRID, "m": M_GRID, "p": P_GRID},
                "rule": "lowest dev mean error over all dev rows; ties -> "
                        "larger theta (fewer HUIs)",
                "timestamp_utc": datetime.now(timezone.utc).isoformat()},
@@ -131,7 +145,7 @@ def stage_final(b: Bundle) -> None:
     sel = load_json(out / "selection.json")
     prm = Params(**sel["params"])
     prep, Q, cell, XY, BF = inputs(b)
-    pos = HUIPositioner(sel["theta_pct"]).fit(Q, cell, XY, BF)
+    pos = HUIPositioner(sel["theta_pct"], ground_factor=b.ground_factor).fit(Q, cell, XY, BF)
     LOG.info("%s final model: %d cells, %d HUIs, mined in %.1fs", b.key,
              len(pos.cells), len(pos.hui_items), pos.fit_seconds)
     lens = np.array([len(x) for x in pos.hui_items])

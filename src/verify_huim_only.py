@@ -9,8 +9,9 @@ prediction files only. It does not call EFIM, HUIPositioner or the metric code.
       support recomputed by scanning the cell's rows, >= minUtil
   M3  completeness up to length 2, EVERY cell: each 1- and 2-itemset whose
       recomputed utility reaches minUtil is in the saved model
-  M4  for N_QUERY random test rows: the cell scores, the top-m cells, the
-      weights and (x, y) recomputed with plain Python loops over the HUIs
+  M4  for N_QUERY random test rows: the cell scores, the spatial smoothing,
+      the floor decision, the top-m cells, the weights and (x, y) recomputed
+      with plain Python loops over the HUIs
   M5  mean / median error and building-floor accuracy recounted from the
       prediction files
   M6  the selected configuration is the dev-grid minimum
@@ -121,6 +122,17 @@ def check(key: str) -> dict:
 
     tot_u = {c: sum(U[k] for k in ks) for c, ks in by_cell.items()}
     cxy = cells[["x", "y"]].to_numpy()
+    cbf = cells["building_floor"].astype(str).tolist()
+    kern = None
+    if prm.get("sigma", 0) > 0:
+        sg = prm["sigma"]
+        kern = []
+        for c1 in range(len(cells)):
+            row = [math.exp(-(((cxy[c1, 0] - cxy[c2, 0]) ** 2 + (cxy[c1, 1] - cxy[c2, 1]) ** 2)
+                              * b.ground_factor ** 2) / (2 * sg * sg)) if cbf[c1] == cbf[c2] else 0.0
+                   for c2 in range(len(cells))]
+            z = sum(row)
+            kern.append([v / z for v in row])
     for tname, T in S["tests"].items():
         P = pd.read_csv(out / "predictions" / f"{tname}.csv")
         te = b.tests[tname]
@@ -144,14 +156,33 @@ def check(key: str) -> dict:
                     pc += U[k] / tot_u[c] * frac ** prm["gamma"] * ag
                 cov = sum(q[j] for j in items_c) / max(qs, 1.0)
                 score.append(pc * cov ** prm["beta"])
-            order = sorted(range(len(score)), key=lambda c: -score[c])[:prm["m"]]
-            a = [score[c] ** prm["p"] for c in order]
+            if prm.get("sigma", 0) > 0:
+                sm = []
+                for c2 in range(len(cells)):
+                    acc = 0.0
+                    for c1 in range(len(cells)):
+                        if cbf[c1] != cbf[c2]:
+                            continue
+                        acc += score[c1] * kern[c1][c2]
+                    sm.append(acc)
+                score = sm
+            floors = sorted(set(cbf))
+            fsc = {}
+            for f in floors:
+                v = sorted((score[c] for c in range(len(cells)) if cbf[c] == f), reverse=True)[:prm.get("kf", 1)]
+                fsc[f] = sum(v) / len(v)
+            fl = max(floors, key=lambda f: fsc[f])
+            cand = [c for c in range(len(cells)) if cbf[c] == fl]
+            order = sorted(cand, key=lambda c: -score[c])[:prm["m"]]
+            a = [max(score[c], 0.0) ** prm["p"] for c in order]
             z = sum(a)
             a = [x / z for x in a] if z > 0 else [1 / len(a)] * len(a)
             x = sum(w * cxy[c, 0] for w, c in zip(a, order))
             y = sum(w * cxy[c, 1] for w, c in zip(a, order))
+            bad_floor = fl != P.loc[i, "pred_building_floor"]
             same_top = set(order) == {int(P.loc[i, f"cell{j + 1}_index"]) for j in range(len(order))}
-            bad += not (same_top and close(x, P.loc[i, "pred_x"], 1e-4) and close(y, P.loc[i, "pred_y"], 1e-4))
+            bad += not (same_top and not bad_floor and close(x, P.loc[i, "pred_x"], 1e-4)
+                        and close(y, P.loc[i, "pred_y"], 1e-4))
         add(f"M4 {tname}: scores, top cells and (x,y) recomputed", bad == 0,
             f"{N_QUERY} rows, {bad} mismatches")
         e = [math.hypot(r.true_x - r.pred_x, r.true_y - r.pred_y) * b.ground_factor

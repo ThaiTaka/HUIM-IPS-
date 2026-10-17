@@ -1,0 +1,143 @@
+{
+  "dataset": "uji_lib3",
+  "title": "UJI Library tầng 3 (dài hạn 25 tháng)",
+  "selection": {
+    "dataset": "uji_lib3",
+    "theta_pct": 30.0,
+    "params": {
+      "gamma": 1.0,
+      "tau": 10.0,
+      "beta": 1.0,
+      "m": 12,
+      "p": 2.0
+    },
+    "label": "gamma=1, tau=10, beta=1, m=12, p=2",
+    "dev_mean_m": 5.467,
+    "dev_median_m": 5.0972,
+    "dev_joint_accuracy": 1.0,
+    "dev_folds": "6 folds, Month - leave-months-out: both test sets span the same 25 months as training and differ from it by collection session; no user/device column exists (one phone)",
+    "n_configurations": 648,
+    "grids": {
+      "theta_pct": [
+        30.0,
+        50.0,
+        70.0
+      ],
+      "gamma_tau": [
+        [
+          1.0,
+          10.0
+        ],
+        [
+          1.0,
+          20.0
+        ],
+        [
+          1.0,
+          40.0
+        ],
+        [
+          2.0,
+          10.0
+        ],
+        [
+          2.0,
+          20.0
+        ],
+        [
+          2.0,
+          40.0
+        ]
+      ],
+      "beta": [
+        1.0,
+        3.0,
+        5.0
+      ],
+      "m": [
+        3,
+        5,
+        8,
+        12
+      ],
+      "p": [
+        2.0,
+        4.0,
+        8.0
+      ]
+    },
+    "rule": "lowest dev mean error over all dev rows; ties -> larger theta (fewer HUIs)",
+    "timestamp_utc": "2026-10-17T09:10:43.743193+00:00"
+  },
+  "model": {
+    "n_cells": 24,
+    "n_huis": 4,
+    "mining_seconds": 0.41,
+    "cells_escalated": 0,
+    "theta_used_median_pct": 30.0,
+    "cell_time_limit_s": 5.0,
+    "cell_max_huis": 2000,
+    "escalate": 1.25,
+    "n_aps": 620,
+    "aps_in_some_hui": 17
+  },
+  "tests": {
+    "Test-01": {
+      "n_test": 7200,
+      "building_accuracy": 1.0,
+      "floor_accuracy": 1.0,
+      "joint_accuracy": 1.0,
+      "mean_err_m": 4.6299,
+      "median_err_m": 4.6089,
+      "p75_err_m": 5.6619,
+      "p90_err_m": 8.7767,
+      "p95_err_m": 8.9583,
+      "max_err_m": 13.2641,
+      "mean_err_coord": 4.6299,
+      "share_within_2m": 0.1875,
+      "share_within_5m": 0.6342,
+      "ms_per_fp": 0.0086,
+      "below_target": true
+    },
+    "Test-02": {
+      "n_test": 7200,
+      "building_accuracy": 1.0,
+      "floor_accuracy": 1.0,
+      "joint_accuracy": 1.0,
+      "mean_err_m": 5.0439,
+      "median_err_m": 5.204,
+      "p75_err_m": 6.4677,
+      "p90_err_m": 9.4619,
+      "p95_err_m": 9.8244,
+      "max_err_m": 13.6278,
+      "mean_err_coord": 5.0439,
+      "share_within_2m": 0.1229,
+      "share_within_5m": 0.4854,
+      "ms_per_fp": 0.009,
+      "below_target": true
+    }
+  },
+  "target_m": 7.0,
+  "environment": {
+    "python_version": "3.13.16",
+    "python_implementation": "CPython",
+    "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "cpu_count_logical": 4,
+    "packages": {
+      "numpy": "2.5.1",
+      "pandas": "3.0.6",
+      "sklearn": "1.9.1",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.2",
+      "docx": "1.2.0",
+      "pptx": "1.0.2",
+      "psutil": "7.2.2",
+      "yaml": "6.0.3"
+    },
+    "ram_total_gb": 15.72,
+    "cpu_count_physical": 4
+  },
+  "timestamp_utc": "2026-10-17T09:10:45.419929+00:00"
+}
