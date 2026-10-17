@@ -1,0 +1,126 @@
+{
+  "dataset": "dlulib",
+  "title": "DLULIB (1 tòa, 3 tầng)",
+  "selection": {
+    "dataset": "dlulib",
+    "theta_pct": 30.0,
+    "params": {
+      "gamma": 2.0,
+      "tau": 10.0,
+      "beta": 1.0,
+      "m": 8,
+      "p": 8.0
+    },
+    "label": "gamma=2, tau=10, beta=1, m=8, p=8",
+    "dev_mean_m": 4.5862,
+    "dev_median_m": 3.6923,
+    "dev_joint_accuracy": 0.955462,
+    "dev_folds": "6 folds, SampleTimes - leave-sample-indices-out: the test set revisits every training RP with the same phones, so a dev fold must keep each RP in training and hold out other samples of it",
+    "n_configurations": 648,
+    "grids": {
+      "theta_pct": [
+        30.0,
+        50.0,
+        70.0
+      ],
+      "gamma_tau": [
+        [
+          1.0,
+          10.0
+        ],
+        [
+          1.0,
+          20.0
+        ],
+        [
+          1.0,
+          40.0
+        ],
+        [
+          2.0,
+          10.0
+        ],
+        [
+          2.0,
+          20.0
+        ],
+        [
+          2.0,
+          40.0
+        ]
+      ],
+      "beta": [
+        1.0,
+        3.0,
+        5.0
+      ],
+      "m": [
+        3,
+        5,
+        8,
+        12
+      ],
+      "p": [
+        2.0,
+        4.0,
+        8.0
+      ]
+    },
+    "rule": "lowest dev mean error over all dev rows; ties -> larger theta (fewer HUIs)",
+    "timestamp_utc": "2026-10-17T08:52:59.701208+00:00"
+  },
+  "model": {
+    "n_cells": 650,
+    "n_huis": 323877,
+    "mining_seconds": 7.63,
+    "cells_escalated": 139,
+    "theta_used_median_pct": 30.0,
+    "cell_time_limit_s": 5.0,
+    "cell_max_huis": 2000,
+    "escalate": 1.25,
+    "n_aps": 17,
+    "aps_in_some_hui": 17
+  },
+  "tests": {
+    "Testing": {
+      "n_test": 6500,
+      "building_accuracy": 1.0,
+      "floor_accuracy": 0.953077,
+      "joint_accuracy": 0.953077,
+      "mean_err_m": 6.4794,
+      "median_err_m": 5.5676,
+      "p75_err_m": 8.5631,
+      "p90_err_m": 12.1893,
+      "p95_err_m": 15.3863,
+      "max_err_m": 29.6762,
+      "mean_err_coord": 6.4794,
+      "share_within_2m": 0.1211,
+      "share_within_5m": 0.4418,
+      "ms_per_fp": 7.6778,
+      "below_target": true
+    }
+  },
+  "target_m": 7.0,
+  "environment": {
+    "python_version": "3.13.16",
+    "python_implementation": "CPython",
+    "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "cpu_count_logical": 4,
+    "packages": {
+      "numpy": "2.5.1",
+      "pandas": "3.0.6",
+      "sklearn": "1.9.1",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.2",
+      "docx": "1.2.0",
+      "pptx": "1.0.2",
+      "psutil": "7.2.2",
+      "yaml": "6.0.3"
+    },
+    "ram_total_gb": 15.72,
+    "cpu_count_physical": 4
+  },
+  "timestamp_utc": "2026-10-17T08:53:59.545242+00:00"
+}

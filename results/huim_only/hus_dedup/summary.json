@@ -1,0 +1,143 @@
+{
+  "dataset": "hus_dedup",
+  "title": "HUS - bỏ dòng test bị chép từ train (1 phòng, 5 AP)",
+  "selection": {
+    "dataset": "hus_dedup",
+    "theta_pct": 30.0,
+    "params": {
+      "gamma": 1.0,
+      "tau": 10.0,
+      "beta": 1.0,
+      "m": 3,
+      "p": 8.0
+    },
+    "label": "gamma=1, tau=10, beta=1, m=3, p=8",
+    "dev_mean_m": 1.371,
+    "dev_median_m": 1.0377,
+    "dev_joint_accuracy": 1.0,
+    "dev_folds": "6 folds, none - the files carry no user, device, session or sample index, and both test cases revisit the training RPs; dev folds are a shuffled 6-fold KFold over rows",
+    "n_configurations": 648,
+    "grids": {
+      "theta_pct": [
+        30.0,
+        50.0,
+        70.0
+      ],
+      "gamma_tau": [
+        [
+          1.0,
+          10.0
+        ],
+        [
+          1.0,
+          20.0
+        ],
+        [
+          1.0,
+          40.0
+        ],
+        [
+          2.0,
+          10.0
+        ],
+        [
+          2.0,
+          20.0
+        ],
+        [
+          2.0,
+          40.0
+        ]
+      ],
+      "beta": [
+        1.0,
+        3.0,
+        5.0
+      ],
+      "m": [
+        3,
+        5,
+        8,
+        12
+      ],
+      "p": [
+        2.0,
+        4.0,
+        8.0
+      ]
+    },
+    "rule": "lowest dev mean error over all dev rows; ties -> larger theta (fewer HUIs)",
+    "timestamp_utc": "2026-10-17T08:42:20.237289+00:00"
+  },
+  "model": {
+    "n_cells": 205,
+    "n_huis": 5300,
+    "mining_seconds": 0.34,
+    "cells_escalated": 0,
+    "theta_used_median_pct": 30.0,
+    "cell_time_limit_s": 5.0,
+    "cell_max_huis": 2000,
+    "escalate": 1.25,
+    "n_aps": 5,
+    "aps_in_some_hui": 5
+  },
+  "tests": {
+    "testcase1": {
+      "n_test": 205,
+      "building_accuracy": 1.0,
+      "floor_accuracy": 1.0,
+      "joint_accuracy": 1.0,
+      "mean_err_m": 1.3123,
+      "median_err_m": 1.008,
+      "p75_err_m": 1.7935,
+      "p90_err_m": 2.7137,
+      "p95_err_m": 3.5463,
+      "max_err_m": 6.6988,
+      "mean_err_coord": 1.3123,
+      "share_within_2m": 0.8049,
+      "share_within_5m": 0.9854,
+      "ms_per_fp": 0.0486,
+      "below_target": true
+    },
+    "testcase2": {
+      "n_test": 205,
+      "building_accuracy": 1.0,
+      "floor_accuracy": 1.0,
+      "joint_accuracy": 1.0,
+      "mean_err_m": 1.4899,
+      "median_err_m": 1.0733,
+      "p75_err_m": 1.9268,
+      "p90_err_m": 3.0478,
+      "p95_err_m": 3.9663,
+      "max_err_m": 7.7323,
+      "mean_err_coord": 1.4899,
+      "share_within_2m": 0.761,
+      "share_within_5m": 0.9756,
+      "ms_per_fp": 0.0405,
+      "below_target": true
+    }
+  },
+  "target_m": 7.0,
+  "environment": {
+    "python_version": "3.13.16",
+    "python_implementation": "CPython",
+    "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "cpu_count_logical": 4,
+    "packages": {
+      "numpy": "2.5.1",
+      "pandas": "3.0.6",
+      "sklearn": "1.9.1",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.2",
+      "docx": "1.2.0",
+      "pptx": "1.0.2",
+      "psutil": "7.2.2",
+      "yaml": "6.0.3"
+    },
+    "ram_total_gb": 15.72,
+    "cpu_count_physical": 4
+  },
+  "timestamp_utc": "2026-10-17T08:42:20.880591+00:00"
+}

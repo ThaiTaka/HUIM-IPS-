@@ -109,6 +109,15 @@ PHASES = [
      [sys.executable, "src/plots_huim_zone.py"]),
     ("huim_zone_report", "PHASE ZL Word report of PHASE Z",
      [sys.executable, "src/make_huim_zone_report.py"]),
+    ("huim_only", "PHASE Q  positioning by HUI matching alone, no k-NN "
+                  "(about 1 h)",
+     [sys.executable, "src/run_huim_only.py", "--dataset", "all"]),
+    ("verify_huim_only", "PHASE QV re-compute every PHASE Q number",
+     [sys.executable, "src/verify_huim_only.py"]),
+    ("huim_only_figures", "PHASE QJ charts fig60-fig63",
+     [sys.executable, "src/plots_huim_only.py"]),
+    ("huim_only_report", "PHASE QL Word report of PHASE Q",
+     [sys.executable, "src/make_huim_only_report.py"]),
 ]
 
 # Phases that need the internet. They are skipped (with a warning) rather than

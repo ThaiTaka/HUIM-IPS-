@@ -1,0 +1,2 @@
+test_set,n_test,building_accuracy,floor_accuracy,joint_accuracy,mean_err_m,median_err_m,p75_err_m,p90_err_m,p95_err_m,max_err_m,mean_err_coord,share_within_2m,share_within_5m,ms_per_fp
+Testing,6500,1.0,0.953077,0.953077,6.4794,5.5676,8.5631,12.1893,15.3863,29.6762,6.4794,0.1211,0.4418,7.6778
