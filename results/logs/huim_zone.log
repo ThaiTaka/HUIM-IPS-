@@ -356,3 +356,62 @@
 2026-10-17 05:54:52,160 | INFO    | huim_zone | hcxy huim_zone__A_signal__5pct              8 zones ->  136/347 WAPs  0.0s  (escalated zones: 0)
 2026-10-17 05:54:52,174 | INFO    | huim_zone | hcxy huim_zone__A_signal__4pct              8 zones ->  136/347 WAPs  0.0s  (escalated zones: 0)
 2026-10-17 05:54:52,188 | INFO    | huim_zone | hcxy huim_zone__A_signal__3pct              8 zones ->  136/347 WAPs  0.0s  (escalated zones: 0)
+2026-10-17 07:15:15,290 | INFO    | huim_zone | hus_dedup huim_zone__A_signal__10pct             8 zones ->    5/5 WAPs  0.1s  (escalated zones: 0)
+2026-10-17 07:15:15,596 | INFO    | huim_zone | hus_dedup huim_zone__A_signal__7pct              8 zones ->    5/5 WAPs  0.1s  (escalated zones: 0)
+2026-10-17 07:15:15,707 | INFO    | huim_zone | hus_dedup huim_zone__A_signal__5pct              8 zones ->    5/5 WAPs  0.1s  (escalated zones: 0)
+2026-10-17 07:15:15,862 | INFO    | huim_zone | hus_dedup huim_zone__A_signal__4pct              8 zones ->    5/5 WAPs  0.2s  (escalated zones: 0)
+2026-10-17 07:15:16,034 | INFO    | huim_zone | hus_dedup huim_zone__A_signal__3pct              8 zones ->    5/5 WAPs  0.2s  (escalated zones: 0)
+2026-10-17 07:15:16,271 | INFO    | huim_zone | hus_dedup huim_zone__B_discriminative__10pct     8 zones ->    5/5 WAPs  0.2s  (escalated zones: 0)
+2026-10-17 07:15:16,403 | INFO    | huim_zone | hus_dedup huim_zone__B_discriminative__7pct      8 zones ->    5/5 WAPs  0.1s  (escalated zones: 0)
+2026-10-17 07:15:16,580 | INFO    | huim_zone | hus_dedup huim_zone__B_discriminative__5pct      8 zones ->    5/5 WAPs  0.2s  (escalated zones: 0)
+2026-10-17 07:15:16,765 | INFO    | huim_zone | hus_dedup huim_zone__B_discriminative__4pct      8 zones ->    5/5 WAPs  0.2s  (escalated zones: 0)
+2026-10-17 07:15:16,931 | INFO    | huim_zone | hus_dedup huim_zone__B_discriminative__3pct      8 zones ->    5/5 WAPs  0.2s  (escalated zones: 0)
+2026-10-17 07:15:17,746 | INFO    | huim_zone | hus_dedup stage mine done in 5s
+2026-10-17 07:15:21,663 | INFO    | huim_zone | hus_dedup dev all_aps                                 5 WAP  mean 0.405 m
+2026-10-17 07:15:25,532 | INFO    | huim_zone | hus_dedup dev huim_zone__A_signal__10pct              5 WAP  mean 0.405 m
+2026-10-17 07:15:29,428 | INFO    | huim_zone | hus_dedup dev huim_zone__A_signal__7pct               5 WAP  mean 0.405 m
+2026-10-17 07:15:33,277 | INFO    | huim_zone | hus_dedup dev huim_zone__A_signal__5pct               5 WAP  mean 0.405 m
+2026-10-17 07:15:37,258 | INFO    | huim_zone | hus_dedup dev huim_zone__A_signal__4pct               5 WAP  mean 0.405 m
+2026-10-17 07:15:40,960 | INFO    | huim_zone | hus_dedup dev huim_zone__A_signal__3pct               5 WAP  mean 0.405 m
+2026-10-17 07:15:44,705 | INFO    | huim_zone | hus_dedup dev huim_zone__B_discriminative__10pct      5 WAP  mean 0.405 m
+2026-10-17 07:15:48,591 | INFO    | huim_zone | hus_dedup dev huim_zone__B_discriminative__7pct       5 WAP  mean 0.405 m
+2026-10-17 07:15:52,467 | INFO    | huim_zone | hus_dedup dev huim_zone__B_discriminative__5pct       5 WAP  mean 0.405 m
+2026-10-17 07:15:56,292 | INFO    | huim_zone | hus_dedup dev huim_zone__B_discriminative__4pct       5 WAP  mean 0.405 m
+2026-10-17 07:16:00,249 | INFO    | huim_zone | hus_dedup dev huim_zone__B_discriminative__3pct       5 WAP  mean 0.405 m
+2026-10-17 07:16:00,252 | INFO    | huim_zone | hus_dedup SELECTED on dev: huim_zone__A_signal__10pct (5 WAP, dev 0.405 m)
+2026-10-17 07:16:00,253 | INFO    | huim_zone | hus_dedup stage select done in 43s
+2026-10-17 07:16:00,421 | INFO    | huim_zone | hus_dedup testcase1  all_aps                                 5 WAP  mean 0.391 m  joint 1.0000
+2026-10-17 07:16:00,544 | INFO    | huim_zone | hus_dedup testcase1  huim_zone__A_signal__10pct              5 WAP  mean 0.391 m  joint 1.0000
+2026-10-17 07:16:00,649 | INFO    | huim_zone | hus_dedup testcase1  huim_zone__A_signal__7pct               5 WAP  mean 0.391 m  joint 1.0000
+2026-10-17 07:16:00,749 | INFO    | huim_zone | hus_dedup testcase1  huim_zone__A_signal__5pct               5 WAP  mean 0.391 m  joint 1.0000
+2026-10-17 07:16:00,849 | INFO    | huim_zone | hus_dedup testcase1  huim_zone__A_signal__4pct               5 WAP  mean 0.391 m  joint 1.0000
+2026-10-17 07:16:00,952 | INFO    | huim_zone | hus_dedup testcase1  huim_zone__A_signal__3pct               5 WAP  mean 0.391 m  joint 1.0000
+2026-10-17 07:16:01,051 | INFO    | huim_zone | hus_dedup testcase1  huim_zone__B_discriminative__10pct      5 WAP  mean 0.391 m  joint 1.0000
+2026-10-17 07:16:01,157 | INFO    | huim_zone | hus_dedup testcase1  huim_zone__B_discriminative__7pct       5 WAP  mean 0.391 m  joint 1.0000
+2026-10-17 07:16:01,257 | INFO    | huim_zone | hus_dedup testcase1  huim_zone__B_discriminative__5pct       5 WAP  mean 0.391 m  joint 1.0000
+2026-10-17 07:16:01,368 | INFO    | huim_zone | hus_dedup testcase1  huim_zone__B_discriminative__4pct       5 WAP  mean 0.391 m  joint 1.0000
+2026-10-17 07:16:01,469 | INFO    | huim_zone | hus_dedup testcase1  huim_zone__B_discriminative__3pct       5 WAP  mean 0.391 m  joint 1.0000
+2026-10-17 07:16:01,571 | INFO    | huim_zone | hus_dedup testcase1  control_top_support__n5                 5 WAP  mean 0.391 m  joint 1.0000
+2026-10-17 07:16:01,681 | INFO    | huim_zone | hus_dedup testcase1  control_top_mi__n5                      5 WAP  mean 0.391 m  joint 1.0000
+2026-10-17 07:16:01,781 | INFO    | huim_zone | hus_dedup testcase1  control_random_s1__n5                   5 WAP  mean 0.391 m  joint 1.0000
+2026-10-17 07:16:01,882 | INFO    | huim_zone | hus_dedup testcase1  control_random_s2__n5                   5 WAP  mean 0.391 m  joint 1.0000
+2026-10-17 07:16:01,985 | INFO    | huim_zone | hus_dedup testcase1  control_random_s3__n5                   5 WAP  mean 0.391 m  joint 1.0000
+2026-10-17 07:16:02,088 | INFO    | huim_zone | hus_dedup testcase2  all_aps                                 5 WAP  mean 0.254 m  joint 1.0000
+2026-10-17 07:16:02,204 | INFO    | huim_zone | hus_dedup testcase2  huim_zone__A_signal__10pct              5 WAP  mean 0.254 m  joint 1.0000
+2026-10-17 07:16:02,316 | INFO    | huim_zone | hus_dedup testcase2  huim_zone__A_signal__7pct               5 WAP  mean 0.254 m  joint 1.0000
+2026-10-17 07:16:02,416 | INFO    | huim_zone | hus_dedup testcase2  huim_zone__A_signal__5pct               5 WAP  mean 0.254 m  joint 1.0000
+2026-10-17 07:16:02,517 | INFO    | huim_zone | hus_dedup testcase2  huim_zone__A_signal__4pct               5 WAP  mean 0.254 m  joint 1.0000
+2026-10-17 07:16:02,622 | INFO    | huim_zone | hus_dedup testcase2  huim_zone__A_signal__3pct               5 WAP  mean 0.254 m  joint 1.0000
+2026-10-17 07:16:02,717 | INFO    | huim_zone | hus_dedup testcase2  huim_zone__B_discriminative__10pct      5 WAP  mean 0.254 m  joint 1.0000
+2026-10-17 07:16:02,818 | INFO    | huim_zone | hus_dedup testcase2  huim_zone__B_discriminative__7pct       5 WAP  mean 0.254 m  joint 1.0000
+2026-10-17 07:16:02,917 | INFO    | huim_zone | hus_dedup testcase2  huim_zone__B_discriminative__5pct       5 WAP  mean 0.254 m  joint 1.0000
+2026-10-17 07:16:03,005 | INFO    | huim_zone | hus_dedup testcase2  huim_zone__B_discriminative__4pct       5 WAP  mean 0.254 m  joint 1.0000
+2026-10-17 07:16:03,101 | INFO    | huim_zone | hus_dedup testcase2  huim_zone__B_discriminative__3pct       5 WAP  mean 0.254 m  joint 1.0000
+2026-10-17 07:16:03,199 | INFO    | huim_zone | hus_dedup testcase2  control_top_support__n5                 5 WAP  mean 0.254 m  joint 1.0000
+2026-10-17 07:16:03,321 | INFO    | huim_zone | hus_dedup testcase2  control_top_mi__n5                      5 WAP  mean 0.254 m  joint 1.0000
+2026-10-17 07:16:03,433 | INFO    | huim_zone | hus_dedup testcase2  control_random_s1__n5                   5 WAP  mean 0.254 m  joint 1.0000
+2026-10-17 07:16:03,542 | INFO    | huim_zone | hus_dedup testcase2  control_random_s2__n5                   5 WAP  mean 0.254 m  joint 1.0000
+2026-10-17 07:16:03,649 | INFO    | huim_zone | hus_dedup testcase2  control_random_s3__n5                   5 WAP  mean 0.254 m  joint 1.0000
+2026-10-17 07:16:03,664 | INFO    | huim_zone | hus_dedup testcase1 SELECTED huim_zone__A_signal__10pct: 5 WAP, 0.391 m (all APs 0.391 m)
+2026-10-17 07:16:03,669 | INFO    | huim_zone | hus_dedup testcase2 SELECTED huim_zone__A_signal__10pct: 5 WAP, 0.254 m (all APs 0.254 m)
+2026-10-17 07:16:03,671 | INFO    | huim_zone | hus_dedup stage evaluate done in 3s

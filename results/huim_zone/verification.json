@@ -1,8 +1,697 @@
 {
  "datasets": [
   {
+   "dataset": "uji",
+   "checks": [
+    {
+     "check": "Z0 huim_zone__A_signal__10pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__A_signal__10pct: zone total utility",
+     "ok": true,
+     "detail": "13 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__A_signal__10pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__A_signal__10pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "248 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__A_signal__10pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "145106 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__A_signal__10pct: union of zones",
+     "ok": true,
+     "detail": "136 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__A_signal__7pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__A_signal__7pct: zone total utility",
+     "ok": true,
+     "detail": "13 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__A_signal__7pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__A_signal__7pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "420 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__A_signal__7pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "145106 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__A_signal__7pct: union of zones",
+     "ok": true,
+     "detail": "195 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__A_signal__5pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__A_signal__5pct: zone total utility",
+     "ok": true,
+     "detail": "13 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__A_signal__5pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__A_signal__5pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "527 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__A_signal__5pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "145106 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__A_signal__5pct: union of zones",
+     "ok": true,
+     "detail": "209 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__A_signal__4pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__A_signal__4pct: zone total utility",
+     "ok": true,
+     "detail": "13 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__A_signal__4pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__A_signal__4pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "578 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__A_signal__4pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "145106 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__A_signal__4pct: union of zones",
+     "ok": true,
+     "detail": "219 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__A_signal__3pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__A_signal__3pct: zone total utility",
+     "ok": true,
+     "detail": "13 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__A_signal__3pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__A_signal__3pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "646 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__A_signal__3pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "145106 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__A_signal__3pct: union of zones",
+     "ok": true,
+     "detail": "240 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__10pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__B_discriminative__10pct: zone total utility",
+     "ok": true,
+     "detail": "13 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__B_discriminative__10pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__B_discriminative__10pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "297 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__B_discriminative__10pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "145106 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__B_discriminative__10pct: union of zones",
+     "ok": true,
+     "detail": "144 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__7pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__B_discriminative__7pct: zone total utility",
+     "ok": true,
+     "detail": "13 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__B_discriminative__7pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__B_discriminative__7pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "419 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__B_discriminative__7pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "145106 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__B_discriminative__7pct: union of zones",
+     "ok": true,
+     "detail": "177 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__5pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__B_discriminative__5pct: zone total utility",
+     "ok": true,
+     "detail": "13 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__B_discriminative__5pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__B_discriminative__5pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "538 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__B_discriminative__5pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "145106 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__B_discriminative__5pct: union of zones",
+     "ok": true,
+     "detail": "214 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__4pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__B_discriminative__4pct: zone total utility",
+     "ok": true,
+     "detail": "13 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__B_discriminative__4pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__B_discriminative__4pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "578 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__B_discriminative__4pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "145106 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__B_discriminative__4pct: union of zones",
+     "ok": true,
+     "detail": "222 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__3pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__B_discriminative__3pct: zone total utility",
+     "ok": true,
+     "detail": "13 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__B_discriminative__3pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__B_discriminative__3pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "630 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__B_discriminative__3pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "145106 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__B_discriminative__3pct: union of zones",
+     "ok": true,
+     "detail": "232 WAPs"
+    },
+    {
+     "check": "P4 selected set has the lowest dev error",
+     "ok": true,
+     "detail": "huim_zone__A_signal__3pct dev 6.2501"
+    },
+    {
+     "check": "P1 validationData: mean error",
+     "ok": true,
+     "detail": "recomputed 5.2974 m, reported 5.2974"
+    },
+    {
+     "check": "P1 validationData: median error",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "check": "P2 validationData: (x,y) from neighbours",
+     "ok": true,
+     "detail": "1111 rows, 0 position / 0 weight mismatches"
+    },
+    {
+     "check": "P3 validationData: accuracies",
+     "ok": true,
+     "detail": "building 1.0000, joint 0.9442"
+    }
+   ],
+   "n_checks": 65,
+   "n_failed": 0
+  },
+  {
+   "dataset": "uji_lib3",
+   "checks": [
+    {
+     "check": "Z0 huim_zone__A_signal__10pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__A_signal__10pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__A_signal__10pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__A_signal__10pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "185 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__A_signal__10pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "100972 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__A_signal__10pct: union of zones",
+     "ok": true,
+     "detail": "52 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__A_signal__7pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__A_signal__7pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__A_signal__7pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__A_signal__7pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "270 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__A_signal__7pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "100972 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__A_signal__7pct: union of zones",
+     "ok": true,
+     "detail": "71 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__A_signal__5pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__A_signal__5pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__A_signal__5pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__A_signal__5pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "328 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__A_signal__5pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "100972 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__A_signal__5pct: union of zones",
+     "ok": true,
+     "detail": "82 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__A_signal__4pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__A_signal__4pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__A_signal__4pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__A_signal__4pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "364 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__A_signal__4pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "100972 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__A_signal__4pct: union of zones",
+     "ok": true,
+     "detail": "83 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__A_signal__3pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__A_signal__3pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__A_signal__3pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__A_signal__3pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "373 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__A_signal__3pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "100972 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__A_signal__3pct: union of zones",
+     "ok": true,
+     "detail": "86 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__10pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__B_discriminative__10pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__B_discriminative__10pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__B_discriminative__10pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "244 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__B_discriminative__10pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "100972 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__B_discriminative__10pct: union of zones",
+     "ok": true,
+     "detail": "64 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__7pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__B_discriminative__7pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__B_discriminative__7pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__B_discriminative__7pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "312 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__B_discriminative__7pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "100972 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__B_discriminative__7pct: union of zones",
+     "ok": true,
+     "detail": "75 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__5pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__B_discriminative__5pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__B_discriminative__5pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__B_discriminative__5pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "361 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__B_discriminative__5pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "100972 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__B_discriminative__5pct: union of zones",
+     "ok": true,
+     "detail": "84 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__4pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__B_discriminative__4pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__B_discriminative__4pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__B_discriminative__4pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "391 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__B_discriminative__4pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "100972 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__B_discriminative__4pct: union of zones",
+     "ok": true,
+     "detail": "89 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__3pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__B_discriminative__3pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__B_discriminative__3pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__B_discriminative__3pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "406 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__B_discriminative__3pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "100972 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__B_discriminative__3pct: union of zones",
+     "ok": true,
+     "detail": "90 WAPs"
+    },
+    {
+     "check": "P4 selected set has the lowest dev error",
+     "ok": true,
+     "detail": "huim_zone__B_discriminative__3pct dev 1.3381"
+    },
+    {
+     "check": "P1 Test-01: mean error",
+     "ok": true,
+     "detail": "recomputed 1.1970 m, reported 1.197"
+    },
+    {
+     "check": "P1 Test-01: median error",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "check": "P2 Test-01: (x,y) from neighbours",
+     "ok": true,
+     "detail": "7200 rows, 0 position / 0 weight mismatches"
+    },
+    {
+     "check": "P3 Test-01: accuracies",
+     "ok": true,
+     "detail": "building 1.0000, joint 1.0000"
+    },
+    {
+     "check": "P1 Test-02: mean error",
+     "ok": true,
+     "detail": "recomputed 2.0229 m, reported 2.0229"
+    },
+    {
+     "check": "P1 Test-02: median error",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "check": "P2 Test-02: (x,y) from neighbours",
+     "ok": true,
+     "detail": "7200 rows, 0 position / 0 weight mismatches"
+    },
+    {
+     "check": "P3 Test-02: accuracies",
+     "ok": true,
+     "detail": "building 1.0000, joint 1.0000"
+    }
+   ],
+   "n_checks": 69,
+   "n_failed": 0
+  },
+  {
    "dataset": "dlulib",
    "checks": [
+    {
+     "check": "Z0 huim_zone__A_signal__10pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
     {
      "check": "Z1 huim_zone__A_signal__10pct: zone total utility",
      "ok": true,
@@ -27,6 +716,11 @@
      "check": "Z5 huim_zone__A_signal__10pct: union of zones",
      "ok": true,
      "detail": "15 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__A_signal__7pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
     },
     {
      "check": "Z1 huim_zone__A_signal__7pct: zone total utility",
@@ -54,6 +748,11 @@
      "detail": "16 WAPs"
     },
     {
+     "check": "Z0 huim_zone__A_signal__5pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
      "check": "Z1 huim_zone__A_signal__5pct: zone total utility",
      "ok": true,
      "detail": "3 zones, 0 mismatches"
@@ -77,6 +776,11 @@
      "check": "Z5 huim_zone__A_signal__5pct: union of zones",
      "ok": true,
      "detail": "17 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__A_signal__4pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
     },
     {
      "check": "Z1 huim_zone__A_signal__4pct: zone total utility",
@@ -104,6 +808,11 @@
      "detail": "17 WAPs"
     },
     {
+     "check": "Z0 huim_zone__A_signal__3pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
      "check": "Z1 huim_zone__A_signal__3pct: zone total utility",
      "ok": true,
      "detail": "3 zones, 0 mismatches"
@@ -127,6 +836,11 @@
      "check": "Z5 huim_zone__A_signal__3pct: union of zones",
      "ok": true,
      "detail": "17 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__10pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
     },
     {
      "check": "Z1 huim_zone__B_discriminative__10pct: zone total utility",
@@ -154,6 +868,11 @@
      "detail": "14 WAPs"
     },
     {
+     "check": "Z0 huim_zone__B_discriminative__7pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
      "check": "Z1 huim_zone__B_discriminative__7pct: zone total utility",
      "ok": true,
      "detail": "3 zones, 0 mismatches"
@@ -177,6 +896,11 @@
      "check": "Z5 huim_zone__B_discriminative__7pct: union of zones",
      "ok": true,
      "detail": "16 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__5pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
     },
     {
      "check": "Z1 huim_zone__B_discriminative__5pct: zone total utility",
@@ -204,6 +928,11 @@
      "detail": "17 WAPs"
     },
     {
+     "check": "Z0 huim_zone__B_discriminative__4pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
      "check": "Z1 huim_zone__B_discriminative__4pct: zone total utility",
      "ok": true,
      "detail": "3 zones, 0 mismatches"
@@ -227,6 +956,11 @@
      "check": "Z5 huim_zone__B_discriminative__4pct: union of zones",
      "ok": true,
      "detail": "17 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__3pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
     },
     {
      "check": "Z1 huim_zone__B_discriminative__3pct: zone total utility",
@@ -279,12 +1013,17 @@
      "detail": "building 1.0000, joint 0.9948"
     }
    ],
-   "n_checks": 55,
+   "n_checks": 65,
    "n_failed": 0
   },
   {
    "dataset": "hus",
    "checks": [
+    {
+     "check": "Z0 huim_zone__A_signal__10pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
     {
      "check": "Z1 huim_zone__A_signal__10pct: zone total utility",
      "ok": true,
@@ -309,6 +1048,11 @@
      "check": "Z5 huim_zone__A_signal__10pct: union of zones",
      "ok": true,
      "detail": "5 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__A_signal__7pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
     },
     {
      "check": "Z1 huim_zone__A_signal__7pct: zone total utility",
@@ -336,6 +1080,11 @@
      "detail": "5 WAPs"
     },
     {
+     "check": "Z0 huim_zone__A_signal__5pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
      "check": "Z1 huim_zone__A_signal__5pct: zone total utility",
      "ok": true,
      "detail": "8 zones, 0 mismatches"
@@ -359,6 +1108,11 @@
      "check": "Z5 huim_zone__A_signal__5pct: union of zones",
      "ok": true,
      "detail": "5 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__A_signal__4pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
     },
     {
      "check": "Z1 huim_zone__A_signal__4pct: zone total utility",
@@ -386,6 +1140,11 @@
      "detail": "5 WAPs"
     },
     {
+     "check": "Z0 huim_zone__A_signal__3pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
      "check": "Z1 huim_zone__A_signal__3pct: zone total utility",
      "ok": true,
      "detail": "8 zones, 0 mismatches"
@@ -409,6 +1168,11 @@
      "check": "Z5 huim_zone__A_signal__3pct: union of zones",
      "ok": true,
      "detail": "5 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__10pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
     },
     {
      "check": "Z1 huim_zone__B_discriminative__10pct: zone total utility",
@@ -436,6 +1200,11 @@
      "detail": "5 WAPs"
     },
     {
+     "check": "Z0 huim_zone__B_discriminative__7pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
      "check": "Z1 huim_zone__B_discriminative__7pct: zone total utility",
      "ok": true,
      "detail": "8 zones, 0 mismatches"
@@ -459,6 +1228,11 @@
      "check": "Z5 huim_zone__B_discriminative__7pct: union of zones",
      "ok": true,
      "detail": "5 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__5pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
     },
     {
      "check": "Z1 huim_zone__B_discriminative__5pct: zone total utility",
@@ -486,6 +1260,11 @@
      "detail": "5 WAPs"
     },
     {
+     "check": "Z0 huim_zone__B_discriminative__4pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
      "check": "Z1 huim_zone__B_discriminative__4pct: zone total utility",
      "ok": true,
      "detail": "8 zones, 0 mismatches"
@@ -509,6 +1288,11 @@
      "check": "Z5 huim_zone__B_discriminative__4pct: union of zones",
      "ok": true,
      "detail": "5 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__3pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
     },
     {
      "check": "Z1 huim_zone__B_discriminative__3pct: zone total utility",
@@ -581,10 +1365,362 @@
      "detail": "building 1.0000, joint 1.0000"
     }
    ],
-   "n_checks": 59,
+   "n_checks": 69,
+   "n_failed": 0
+  },
+  {
+   "dataset": "hus_dedup",
+   "checks": [
+    {
+     "check": "Z0 huim_zone__A_signal__10pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__A_signal__10pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__A_signal__10pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__A_signal__10pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "40 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__A_signal__10pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "120 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__A_signal__10pct: union of zones",
+     "ok": true,
+     "detail": "5 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__A_signal__7pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__A_signal__7pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__A_signal__7pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__A_signal__7pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "40 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__A_signal__7pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "120 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__A_signal__7pct: union of zones",
+     "ok": true,
+     "detail": "5 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__A_signal__5pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__A_signal__5pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__A_signal__5pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__A_signal__5pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "40 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__A_signal__5pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "120 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__A_signal__5pct: union of zones",
+     "ok": true,
+     "detail": "5 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__A_signal__4pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__A_signal__4pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__A_signal__4pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__A_signal__4pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "40 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__A_signal__4pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "120 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__A_signal__4pct: union of zones",
+     "ok": true,
+     "detail": "5 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__A_signal__3pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__A_signal__3pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__A_signal__3pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__A_signal__3pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "40 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__A_signal__3pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "120 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__A_signal__3pct: union of zones",
+     "ok": true,
+     "detail": "5 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__10pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__B_discriminative__10pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__B_discriminative__10pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__B_discriminative__10pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "40 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__B_discriminative__10pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "120 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__B_discriminative__10pct: union of zones",
+     "ok": true,
+     "detail": "5 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__7pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__B_discriminative__7pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__B_discriminative__7pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__B_discriminative__7pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "40 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__B_discriminative__7pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "120 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__B_discriminative__7pct: union of zones",
+     "ok": true,
+     "detail": "5 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__5pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__B_discriminative__5pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__B_discriminative__5pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__B_discriminative__5pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "40 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__B_discriminative__5pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "120 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__B_discriminative__5pct: union of zones",
+     "ok": true,
+     "detail": "5 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__4pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__B_discriminative__4pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__B_discriminative__4pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__B_discriminative__4pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "40 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__B_discriminative__4pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "120 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__B_discriminative__4pct: union of zones",
+     "ok": true,
+     "detail": "5 WAPs"
+    },
+    {
+     "check": "Z0 huim_zone__B_discriminative__3pct: every zone run complete (no truncated HUI set)",
+     "ok": true,
+     "detail": "0 incomplete zones"
+    },
+    {
+     "check": "Z1 huim_zone__B_discriminative__3pct: zone total utility",
+     "ok": true,
+     "detail": "8 zones, 0 mismatches"
+    },
+    {
+     "check": "Z2 huim_zone__B_discriminative__3pct: minUtil = theta x total",
+     "ok": true,
+     "detail": "0 mismatches"
+    },
+    {
+     "check": "Z3 huim_zone__B_discriminative__3pct: witness HUIs recomputed",
+     "ok": true,
+     "detail": "40 witnesses, 0 failures"
+    },
+    {
+     "check": "Z4 huim_zone__B_discriminative__3pct: 1/2-itemsets >= minUtil are selected",
+     "ok": true,
+     "detail": "120 itemsets scanned, 0 missed"
+    },
+    {
+     "check": "Z5 huim_zone__B_discriminative__3pct: union of zones",
+     "ok": true,
+     "detail": "5 WAPs"
+    },
+    {
+     "check": "P4 selected set has the lowest dev error",
+     "ok": true,
+     "detail": "huim_zone__A_signal__10pct dev 0.4051"
+    },
+    {
+     "check": "P1 testcase1: mean error",
+     "ok": true,
+     "detail": "recomputed 0.3905 m, reported 0.3905"
+    },
+    {
+     "check": "P1 testcase1: median error",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "check": "P2 testcase1: (x,y) from neighbours",
+     "ok": true,
+     "detail": "205 rows, 0 position / 0 weight mismatches"
+    },
+    {
+     "check": "P3 testcase1: accuracies",
+     "ok": true,
+     "detail": "building 1.0000, joint 1.0000"
+    },
+    {
+     "check": "P1 testcase2: mean error",
+     "ok": true,
+     "detail": "recomputed 0.2535 m, reported 0.2535"
+    },
+    {
+     "check": "P1 testcase2: median error",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "check": "P2 testcase2: (x,y) from neighbours",
+     "ok": true,
+     "detail": "205 rows, 0 position / 0 weight mismatches"
+    },
+    {
+     "check": "P3 testcase2: accuracies",
+     "ok": true,
+     "detail": "building 1.0000, joint 1.0000"
+    }
+   ],
+   "n_checks": 69,
    "n_failed": 0
   }
  ],
- "n_checks": 114,
+ "n_checks": 337,
  "n_failed": 0
 }

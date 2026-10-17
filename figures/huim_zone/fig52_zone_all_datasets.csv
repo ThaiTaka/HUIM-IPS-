@@ -1,0 +1,9 @@
+dataset,title,test_set,all_waps,all_mean_err_m,huim_zone_waps,huim_zone_mean_err_m,huim_zone_set,global_huim_mean_err_m,below_7m
+uji,UJIIndoorLoc,validationData,520,5.3562,240,5.2974,huim_zone__A_signal__3pct,17.4882,True
+uji_lib3,UJI_LIB tầng 3,Test-01,620,1.208,90,1.197,huim_zone__B_discriminative__3pct,1.1931,True
+uji_lib3,UJI_LIB tầng 3,Test-02,620,2.0277,90,2.0229,huim_zone__B_discriminative__3pct,2.0378,True
+dlulib,DLULIB,Testing,17,3.4335,17,3.4335,huim_zone__A_signal__5pct,3.4335,True
+hus,HUS,testcase1,5,0.0681,5,0.0681,huim_zone__A_signal__10pct,0.0681,True
+hus,HUS,testcase2,5,0.057,5,0.057,huim_zone__A_signal__10pct,0.057,True
+hus_dedup,HUS (khử trùng lặp),testcase1,5,0.3905,5,0.3905,huim_zone__A_signal__10pct,0.3905,True
+hus_dedup,HUS (khử trùng lặp),testcase2,5,0.2535,5,0.2535,huim_zone__A_signal__10pct,0.2535,True

@@ -80,7 +80,7 @@ def fig50():
         a2.plot(g.theta_pct, g.dev_mean_ground_m, "--s", color=c, lw=1.4, ms=5,
                 alpha=0.75, label=f"{lab}: dev (chọn ngưỡng)")
     a1.axhline(520, color=GRAY, lw=1, ls=":")
-    a1.text(9.9, 505, "520 WAP (toàn bộ)", ha="right", va="top", fontsize=8, color=MUTED)
+    a1.text(3.1, 505, "520 WAP (toàn bộ)", ha="right", va="top", fontsize=8, color=MUTED)
     a1.set_xlabel("θ = minUtil theo vùng (% tổng utility của vùng)")
     a1.set_ylabel("Số WAP được HUIM theo vùng chọn")
     a1.set_ylim(0, 540)
@@ -88,8 +88,8 @@ def fig50():
     a1.legend(fontsize=8, loc="center left")
     a1.set_title("(a) θ giảm → mỗi tầng giữ thêm AP", fontsize=10)
     a2.axhline(a["mean_err_m"], color=GRAY, lw=1.2, ls=":")
-    a2.text(9.9, a["mean_err_m"] + 0.08, f"520 WAP: {a['mean_err_m']:.2f} m",
-            ha="right", fontsize=8, color=MUTED)
+    a2.text(8.0, a["mean_err_m"] - 0.06, f"toàn bộ 520 WAP: {a['mean_err_m']:.2f} m",
+            ha="center", va="top", fontsize=8, color=MUTED)
     target_line(a2)
     a2.text(3.05, TARGET_M + 0.08, "ngưỡng yêu cầu 7 m", ha="right", fontsize=8,
             color="#c62828")
@@ -139,8 +139,9 @@ def fig51():
     for yy, v in zip(y, df.mean_err_m):
         ax.text(v + 0.25, yy, f"{v:.2f} m", va="center", fontsize=8.5, color=INK)
     target_line(ax, horizontal=False)
-    ax.text(TARGET_M + 0.2, len(df) - 0.4, "7 m", color="#c62828", fontsize=8.5)
+    ax.text(TARGET_M + 0.2, -0.75, "7 m", color="#c62828", fontsize=8.5)
     ax.set_yticks(y)
+    ax.set_ylim(-0.9, len(df) - 0.4)
     ax.set_yticklabels(df.label, fontsize=8.5)
     ax.set_xlabel("Sai số trung bình trên validationData (m, thực địa), cùng bộ định vị PHASE I3")
     ax.set_xlim(0, df.mean_err_m.max() * 1.15)
@@ -225,15 +226,18 @@ def fig54():
     x = np.arange(len(df))
     ax.bar(x, df.n_items_seen, 0.7, color="#d9d9d4", label="AP thấy được trong tầng", edgecolor="white", lw=2)
     ax.bar(x, df.n_waps_selected, 0.7, color=BLUE, label="AP thuộc ít nhất một HUI của tầng", edgecolor="white", lw=2)
+    th0 = float(name.split("__")[2][:-3])
     for xx, (_, r) in zip(x, df.iterrows()):
-        ax.text(xx, r.n_items_seen + 3, f"{r.n_waps_selected}/{r.n_items_seen}", ha="center", fontsize=7.5)
-        if r.theta_used_pct > float(name.split("__")[2][:-3]) + 1e-9:
-            ax.text(xx, -14, f"θ {r.theta_used_pct:.2f}%", ha="center", fontsize=6.5, color=MUTED)
+        lab = f"{r.n_waps_selected}/{r.n_items_seen}"
+        if r.theta_used_pct > th0 + 1e-9:
+            lab += f"\nθ {r.theta_used_pct:.2f}%"
+        ax.text(xx, r.n_items_seen + 3, lab, ha="center", va="bottom", fontsize=7.2)
     ax.set_xticks(x)
     ax.set_xticklabels([f"tòa {z.split('_')[0]}\ntầng {z.split('_')[1]}" for z in df.zone], fontsize=7.5)
     ax.set_ylabel("Số AP")
     ax.set_title(f"UJIIndoorLoc, {name}: AP mỗi tòa–tầng đóng góp (hợp = {len(H['selected_waps'])} WAP)", fontsize=10)
-    ax.legend(fontsize=8, loc="upper right")
+    ax.set_ylim(0, df.n_items_seen.max() * 1.22)
+    ax.legend(fontsize=8, loc="upper center", bbox_to_anchor=(0.5, -0.16), ncol=2)
     ax.grid(axis="x", visible=False)
     save(fig, "fig54_zone_per_zone_waps", df)
 

@@ -402,3 +402,35 @@ recorded in `results/multi_dataset/<key>/dataset_summary.json`:
   rows of the primary test set = the size of UJIIndoorLoc validationData,
   `n_jobs=-1`); run it alone. EFIM runtimes were measured with other jobs on
   the machine and are comparable within a dataset, less so across datasets.
+
+---
+
+## 9. Zone-wise HUIM: HUIM as the AP selector of the positioning system (PHASE Z)
+
+PHASE H mined one database for the whole site; its largest complete AP set
+(79–91 WAPs) gives 17–20 m on UJIIndoorLoc, so the 5.36 m of PHASE I3 came
+from all 520 APs, not from HUIM. PHASE Z changes how HUIM is applied and keeps
+the positioner fixed:
+
+1. split the training fingerprints into zones — building-floor classes, or
+   8 k-means clusters of the training positions on a single-floor site;
+2. mine each zone with EFIM at minUtil_z = θ% of that zone's total utility
+   (a zone that exceeds its budget is re-mined at θ × 1.25 until complete);
+3. the positioning features are the union of the WAPs occurring in the zones'
+   HUIs — the positioner never sees any other column;
+4. utility model (A or B) and θ ∈ {10, 7, 5, 4, 3}% are chosen on the dev
+   folds of the training data; each test set is scored once.
+
+```bash
+python src/run_huim_zone.py --dataset all     # mine, select on dev, evaluate
+python src/verify_huim_zone.py                # independent re-computation
+python src/plots_huim_zone.py                 # figures/huim_zone/fig50-55 (+ CSV)
+python src/make_huim_zone_report.py           # report/Bao_Cao_HUIM_IPS_Theo_Vung.docx
+```
+
+Outputs per dataset in `results/huim_zone/<key>/`: `zone_mining.csv`,
+`hui/<set>.json` (per zone: minUtil, selected WAPs, one witness HUI per WAP),
+`ap_sets.json`, `dev_selection.csv`, `selection.json`, `test_results.csv`
+(every AP set, the all-AP baseline and matched-budget controls),
+`predictions/`, `selected.json`. The headline numbers are in the report and in
+`results/huim_zone/<key>/selected.json`.

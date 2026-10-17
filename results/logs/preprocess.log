@@ -313,3 +313,5 @@
 2026-10-17 03:57:48,981 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
 2026-10-17 05:11:48,788 | INFO    | prep | fit on 11520 training rows: 620 WAP columns, detected RSSI in [-98, -35]
 2026-10-17 05:36:13,932 | INFO    | prep | fit on 11370 training rows: 347 WAP columns, detected RSSI in [-98, -3]
+2026-10-17 07:15:12,520 | INFO    | prep | fit on 20091 training rows: 5 WAP columns, detected RSSI in [-86, -21]
+2026-10-17 07:15:14,313 | INFO    | prep | fit on 11370 training rows: 347 WAP columns, detected RSSI in [-98, -3]

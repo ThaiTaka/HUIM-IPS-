@@ -101,8 +101,7 @@ def build(D: Data) -> Doc:
              "Access Point (AP) hữu ích, rồi chỉ các AP đó được dùng để định vị trên "
              "UJIIndoorLoc và các dataset còn lại; sai số trung bình phải dưới "
              f"{f2(TARGET_M, 0)} m.", "")])
-    d.rich([("Kết quả trên UJIIndoorLoc (validationData, "
-             f"{T['n_test']:,} fingerprint): ".replace(",", " "), "b"),
+    d.rich([(f"Kết quả trên UJIIndoorLoc (validationData, {f2(T['n_test'], 0)} fingerprint): ", "b"),
             (f"HUIM theo vùng chọn {n_sel}/{al['n_waps']} WAP (giảm "
              f"{f2(hz['feature_reduction_pct'])}% số chiều). Định vị chỉ bằng {n_sel} WAP "
              f"đó cho sai số trung bình {f2(hz['mean_err_m'])} m, trung vị "
@@ -271,8 +270,11 @@ def build(D: Data) -> Doc:
         f"So với HUIM toàn cục cùng bộ định vị, đổi sang HUIM theo vùng giảm sai số {f2(gain_glob)} m ({f2(gb['mean_err_m'])} → {f2(hz['mean_err_m'])} m).",
         f"So với dùng toàn bộ AP: {f2(hz['mean_err_m'])} m so với {f2(al['mean_err_m'])} m ({'thấp hơn' if hz['mean_err_m'] < al['mean_err_m'] else 'cao hơn'} {f2(abs(al['mean_err_m'] - hz['mean_err_m']))} m), trong khi thời gian định vị giảm từ {f2(al['ms_per_fp'])} xuống {f2(hz['ms_per_fp'])} ms/fingerprint.",
         f"So với đối chứng cùng {n_sel} WAP: ngẫu nhiên {f2(rnd)} m, top-n theo số lần phát hiện {f2(ctl['top_support'])} m, top-n theo MI {f2(ctl['top_mi'])} m. " + (
-            "HUIM theo vùng tốt hơn cả ba." if hz["mean_err_m"] < min(rnd, ctl["top_support"], ctl["top_mi"]) else
-            "Ở cùng ngân sách, HUIM theo vùng tốt hơn chọn ngẫu nhiên; ở mức này các tiêu chí xếp hạng đơn giản đạt sai số gần tương đương — đây là đối chứng phải đọc trung thực."),
+            (f"HUIM theo vùng tốt hơn chọn ngẫu nhiên {f2(rnd - hz['mean_err_m'])} m. " if hz["mean_err_m"] < rnd else "") + (
+            "So với hai tiêu chí xếp hạng đơn giản, sai số chênh dưới 0,1 m, tức là ngang nhau: ở ngân sách này, cái HUIM theo vùng mang lại là TỰ XÁC ĐỊNH được ngân sách (bao nhiêu AP là đủ) và tập AP phủ đủ mọi tầng, còn thứ hạng từng AP thì tiêu chí đơn giản cũng làm được tương đương. Đây là đối chứng phải đọc trung thực."
+            if abs(hz["mean_err_m"] - min(ctl["top_support"], ctl["top_mi"])) < 0.1 else
+            ("HUIM theo vùng tốt hơn cả hai tiêu chí xếp hạng đơn giản." if hz["mean_err_m"] < min(ctl["top_support"], ctl["top_mi"])
+             else "Tiêu chí xếp hạng đơn giản tốt hơn HUIM theo vùng ở cùng ngân sách."))),
     ])
 
     # ------------------------------------------------------------------ 7
@@ -321,6 +323,9 @@ def build(D: Data) -> Doc:
     d.h(1, "9. Hạn chế")
     d.bullets([
         "Chia vùng dùng nhãn tòa_tầng của dữ liệu huấn luyện. Đây là thông tin có giám sát, dùng giống như Model B đã dùng; nó không chạm dữ liệu test, nhưng HUIM theo vùng không còn là khai thác hoàn toàn không giám sát.",
+        "Ngân sách theo vùng ({t:g} s) làm các tầng dày đặc phải nâng ngưỡng: ở tập được chọn của UJIIndoorLoc, ".format(t=ZONE_TIME_S) + "; ".join(
+            f"vùng {r.zone} chạy ở θ {f2(r.theta_used_pct)}% và giữ {r.n_waps}/{r.n_items} AP" for r in zsel.itertuples()
+            if r.theta_used_pct > float(theta_of(uset)) * 1.5) + ". Một vùng không đóng góp AP nào vẫn được định vị nhờ AP của các vùng lân cận (sai số toàn cục vẫn đạt), nhưng một bản EFIM nhanh hơn (ví dụ SPMF/Java) hoặc ngân sách lớn hơn sẽ cho các vùng này ngưỡng thấp hơn.",
         "θ và mô hình utility được chọn trên dev fold, rồi đánh giá một lần trên test. Mọi θ được báo cáo để thấy độ nhạy; không chọn lại sau khi xem test.",
         "Kết quả phụ thuộc bộ định vị PHASE I3 đã chọn với toàn bộ AP; không tinh chỉnh lại bộ định vị cho từng tập AP (nếu làm, lợi thế sẽ thuộc về HUIM).",
         "Với dataset ít AP (HUS 5, DLULIB 17), HUIM gần như không loại AP nào; giá trị của HUIM thể hiện rõ ở dataset nhiều AP (UJIIndoorLoc 520, UJI_LIB 620, HCXY 347).",

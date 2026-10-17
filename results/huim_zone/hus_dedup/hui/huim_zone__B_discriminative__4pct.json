@@ -1,0 +1,2574 @@
+{
+  "set": "huim_zone__B_discriminative__4pct",
+  "dataset": "hus_dedup",
+  "utility_model": "B_discriminative",
+  "theta_pct": 4.0,
+  "zone_rule": "single floor: 8 k-means clusters of the training positions (seed 20251007)",
+  "selected_waps": [
+    "WAP_AP1",
+    "WAP_AP2",
+    "WAP_AP3",
+    "WAP_AP4",
+    "WAP_AP5"
+  ],
+  "external_utility": {
+    "WAP_AP1": 1.0,
+    "WAP_AP2": 0.005942795766274028,
+    "WAP_AP3": 0.8117303103892921,
+    "WAP_AP4": 0.052409442636311955,
+    "WAP_AP5": 0.03478554759991486
+  },
+  "zones": [
+    {
+      "zone": "Z0",
+      "n_transactions": 2842,
+      "n_items": 5,
+      "total_utility": 257299.160716,
+      "theta_requested_pct": 4.0,
+      "theta_used_pct": 4.0,
+      "abs_minutil": 10291.966429,
+      "n_attempts": 1,
+      "n_huis": 26,
+      "status": "COMPLETED",
+      "runtime_s": 0.0186,
+      "search_nodes": 29,
+      "n_waps": 5,
+      "waps": [
+        "WAP_AP1",
+        "WAP_AP2",
+        "WAP_AP3",
+        "WAP_AP4",
+        "WAP_AP5"
+      ],
+      "witnesses": [
+        {
+          "wap": "WAP_AP1",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 257299.16071594312,
+          "support": 2842
+        },
+        {
+          "wap": "WAP_AP2",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 257299.16071594312,
+          "support": 2842
+        },
+        {
+          "wap": "WAP_AP3",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 257299.16071594312,
+          "support": 2842
+        },
+        {
+          "wap": "WAP_AP4",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 257299.16071594312,
+          "support": 2842
+        },
+        {
+          "wap": "WAP_AP5",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 257299.16071594312,
+          "support": 2842
+        }
+      ],
+      "top_huis": [
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 257299.16071594312,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 256306.21462813098,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 251277.15628654105,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 250284.21019872892,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 248170.3791786651,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 247177.43309085298,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 242148.37474926305,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3"
+          ],
+          "utility": 241155.42866145092,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 155956.16071594312,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 154963.21462813098,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 149934.15628654105,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 148941.21019872892,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 146827.3791786651,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 145834.43309085298,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 140805.37474926305,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP3"
+          ],
+          "utility": 139812.42866145092,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 117486.7320544922,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 116493.78596668007,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 111464.72762509013,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4"
+          ],
+          "utility": 110471.781537278,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 108357.9505172142,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP5"
+          ],
+          "utility": 107365.00442940206,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2"
+          ],
+          "utility": 102335.94608781213,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP1"
+          ],
+          "utility": 101343.0,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 16143.732054492179,
+          "support": 2842
+        },
+        {
+          "items": [
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 15150.785966680054,
+          "support": 2842
+        }
+      ]
+    },
+    {
+      "zone": "Z1",
+      "n_transactions": 2548,
+      "n_items": 5,
+      "total_utility": 218481.919367,
+      "theta_requested_pct": 4.0,
+      "theta_used_pct": 4.0,
+      "abs_minutil": 8739.276775,
+      "n_attempts": 1,
+      "n_huis": 27,
+      "status": "COMPLETED",
+      "runtime_s": 0.016,
+      "search_nodes": 29,
+      "n_waps": 5,
+      "waps": [
+        "WAP_AP1",
+        "WAP_AP2",
+        "WAP_AP3",
+        "WAP_AP4",
+        "WAP_AP5"
+      ],
+      "witnesses": [
+        {
+          "wap": "WAP_AP1",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 218481.91936674181,
+          "support": 2548
+        },
+        {
+          "wap": "WAP_AP2",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 218481.91936674181,
+          "support": 2548
+        },
+        {
+          "wap": "WAP_AP3",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 218481.91936674181,
+          "support": 2548
+        },
+        {
+          "wap": "WAP_AP4",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 218481.91936674181,
+          "support": 2548
+        },
+        {
+          "wap": "WAP_AP5",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 218481.91936674181,
+          "support": 2548
+        }
+      ],
+      "top_huis": [
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 218481.91936674181,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 217536.6166725879,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 213005.90889246805,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 212060.60619831414,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 210331.83176125423,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 209386.52906710032,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 204855.82128698047,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3"
+          ],
+          "utility": 203910.51859282656,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 136043.40077391526,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 135098.09807976134,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 130567.39029964148,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4"
+          ],
+          "utility": 129622.08760548757,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 127893.31316842767,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP5"
+          ],
+          "utility": 126948.01047427376,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2"
+          ],
+          "utility": 122417.30269415391,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1"
+          ],
+          "utility": 121472.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 97009.91936674181,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 96064.6166725879,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 91533.90889246805,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 90588.60619831414,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 88859.83176125425,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 87914.52906710033,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 83383.82128698048,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP3"
+          ],
+          "utility": 82438.51859282657,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 14571.400773915251,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 13626.098079761337,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 9095.390299641489,
+          "support": 2548
+        }
+      ]
+    },
+    {
+      "zone": "Z2",
+      "n_transactions": 2548,
+      "n_items": 5,
+      "total_utility": 229671.841533,
+      "theta_requested_pct": 4.0,
+      "theta_used_pct": 4.0,
+      "abs_minutil": 9186.873661,
+      "n_attempts": 1,
+      "n_huis": 26,
+      "status": "COMPLETED",
+      "runtime_s": 0.0158,
+      "search_nodes": 29,
+      "n_waps": 5,
+      "waps": [
+        "WAP_AP1",
+        "WAP_AP2",
+        "WAP_AP3",
+        "WAP_AP4",
+        "WAP_AP5"
+      ],
+      "witnesses": [
+        {
+          "wap": "WAP_AP1",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 229671.84153270963,
+          "support": 2548
+        },
+        {
+          "wap": "WAP_AP2",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 229671.84153270963,
+          "support": 2548
+        },
+        {
+          "wap": "WAP_AP3",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 229671.84153270963,
+          "support": 2548
+        },
+        {
+          "wap": "WAP_AP4",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 229671.84153270963,
+          "support": 2548
+        },
+        {
+          "wap": "WAP_AP5",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 229671.84153270963,
+          "support": 2548
+        }
+      ],
+      "top_huis": [
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 229671.84153270963,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 228750.23276527584,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 223054.69116942066,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 222133.08240198687,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 221854.1870218642,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 220932.5782544304,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 215237.03665857523,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3"
+          ],
+          "utility": 214315.42789114144,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 132043.4136415682,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 131121.8048741344,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 125426.2632782792,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4"
+          ],
+          "utility": 124504.65451084543,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 124225.75913072276,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP5"
+          ],
+          "utility": 123304.15036328898,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2"
+          ],
+          "utility": 117608.60876743378,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP1"
+          ],
+          "utility": 116687.0,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 112984.84153270963,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 112063.23276527585,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 106367.69116942065,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 105446.08240198687,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 105167.1870218642,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 104245.57825443042,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 98550.03665857522,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP3"
+          ],
+          "utility": 97628.42789114144,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 15356.41364156818,
+          "support": 2548
+        },
+        {
+          "items": [
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 14434.80487413441,
+          "support": 2548
+        }
+      ]
+    },
+    {
+      "zone": "Z3",
+      "n_transactions": 3235,
+      "n_items": 5,
+      "total_utility": 271345.550576,
+      "theta_requested_pct": 4.0,
+      "theta_used_pct": 4.0,
+      "abs_minutil": 10853.822023,
+      "n_attempts": 1,
+      "n_huis": 28,
+      "status": "COMPLETED",
+      "runtime_s": 0.0266,
+      "search_nodes": 29,
+      "n_waps": 5,
+      "waps": [
+        "WAP_AP1",
+        "WAP_AP2",
+        "WAP_AP3",
+        "WAP_AP4",
+        "WAP_AP5"
+      ],
+      "witnesses": [
+        {
+          "wap": "WAP_AP1",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 271345.55057625443,
+          "support": 3235
+        },
+        {
+          "wap": "WAP_AP2",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 271345.55057625443,
+          "support": 3235
+        },
+        {
+          "wap": "WAP_AP3",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 271345.55057625443,
+          "support": 3235
+        },
+        {
+          "wap": "WAP_AP4",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 271345.55057625443,
+          "support": 3235
+        },
+        {
+          "wap": "WAP_AP5",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 271345.55057625443,
+          "support": 3235
+        }
+      ],
+      "top_huis": [
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 271345.55057625443,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 270204.39116203145,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 264368.0915109255,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 263226.9320967025,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 259797.4967574416,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 258656.33734321862,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 252820.03769211267,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3"
+          ],
+          "utility": 251678.8782778897,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 148590.55057625443,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 147449.39116203142,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 142421.67229836475,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 141613.0915109255,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 141280.51288414173,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 140471.93209670248,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 137042.49675744164,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 135901.33734321862,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 135444.2132330358,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4"
+          ],
+          "utility": 134303.0538188128,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 130873.61847955194,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 130065.03769211269,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP5"
+          ],
+          "utility": 129732.45906532893,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP3"
+          ],
+          "utility": 128923.87827788969,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2"
+          ],
+          "utility": 123896.159414223,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP1"
+          ],
+          "utility": 122755.0,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 19666.672298364756,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 18525.51288414175,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 12689.213233035814,
+          "support": 3235
+        },
+        {
+          "items": [
+            "WAP_AP4"
+          ],
+          "utility": 11548.05381881281,
+          "support": 3235
+        }
+      ]
+    },
+    {
+      "zone": "Z4",
+      "n_transactions": 2156,
+      "n_items": 5,
+      "total_utility": 198684.025455,
+      "theta_requested_pct": 4.0,
+      "theta_used_pct": 4.0,
+      "abs_minutil": 7947.361018,
+      "n_attempts": 1,
+      "n_huis": 26,
+      "status": "COMPLETED",
+      "runtime_s": 0.0185,
+      "search_nodes": 29,
+      "n_waps": 5,
+      "waps": [
+        "WAP_AP1",
+        "WAP_AP2",
+        "WAP_AP3",
+        "WAP_AP4",
+        "WAP_AP5"
+      ],
+      "witnesses": [
+        {
+          "wap": "WAP_AP1",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 198684.02545524482,
+          "support": 2156
+        },
+        {
+          "wap": "WAP_AP2",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 198684.02545524482,
+          "support": 2156
+        },
+        {
+          "wap": "WAP_AP3",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 198684.02545524482,
+          "support": 2156
+        },
+        {
+          "wap": "WAP_AP4",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 198684.02545524482,
+          "support": 2156
+        },
+        {
+          "wap": "WAP_AP5",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 198684.02545524482,
+          "support": 2156
+        }
+      ],
+      "top_huis": [
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 198684.02545524482,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 197791.57798663617,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 193543.69551531022,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 192651.24804670157,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 191984.3691747172,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 191091.92170610855,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 186844.0392347826,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3"
+          ],
+          "utility": 185951.59176617395,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 121859.4336890709,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 120966.98622046223,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 116719.1037491363,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4"
+          ],
+          "utility": 115826.65628052763,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 115159.77740854326,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP5"
+          ],
+          "utility": 114267.3299399346,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2"
+          ],
+          "utility": 110019.44746860866,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP1"
+          ],
+          "utility": 109127.0,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 89557.02545524483,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 88664.57798663617,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 84416.69551531023,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 83524.24804670157,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 82857.3691747172,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 81964.92170610854,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 77717.0392347826,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP3"
+          ],
+          "utility": 76824.59176617394,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 12732.433689070906,
+          "support": 2156
+        },
+        {
+          "items": [
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 11839.986220462237,
+          "support": 2156
+        }
+      ]
+    },
+    {
+      "zone": "Z5",
+      "n_transactions": 2450,
+      "n_items": 5,
+      "total_utility": 229291.34721,
+      "theta_requested_pct": 4.0,
+      "theta_used_pct": 4.0,
+      "abs_minutil": 9171.653888,
+      "n_attempts": 1,
+      "n_huis": 26,
+      "status": "COMPLETED",
+      "runtime_s": 0.0163,
+      "search_nodes": 29,
+      "n_waps": 5,
+      "waps": [
+        "WAP_AP1",
+        "WAP_AP2",
+        "WAP_AP3",
+        "WAP_AP4",
+        "WAP_AP5"
+      ],
+      "witnesses": [
+        {
+          "wap": "WAP_AP1",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 229291.34721026852,
+          "support": 2450
+        },
+        {
+          "wap": "WAP_AP2",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 229291.34721026852,
+          "support": 2450
+        },
+        {
+          "wap": "WAP_AP3",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 229291.34721026852,
+          "support": 2450
+        },
+        {
+          "wap": "WAP_AP4",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 229291.34721026852,
+          "support": 2450
+        },
+        {
+          "wap": "WAP_AP5",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 229291.34721026852,
+          "support": 2450
+        }
+      ],
+      "top_huis": [
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 229291.34721026852,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 228372.3354445846,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 224218.88387370136,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 223299.87210801744,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 221646.0149468113,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 220727.0031811274,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 216573.55161024415,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3"
+          ],
+          "utility": 215654.53984456023,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 154850.8073657083,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 153931.79560002437,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 149778.34402914112,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4"
+          ],
+          "utility": 148859.3322634572,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 147205.47510225108,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP5"
+          ],
+          "utility": 146286.46333656716,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2"
+          ],
+          "utility": 142133.0117656839,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP1"
+          ],
+          "utility": 141214.0,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 88077.34721026852,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 87158.3354445846,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 83004.88387370137,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 82085.87210801746,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 80432.0149468113,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 79513.00318112738,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 75359.55161024415,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP3"
+          ],
+          "utility": 74440.53984456023,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 13636.807365708282,
+          "support": 2450
+        },
+        {
+          "items": [
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 12717.795600024372,
+          "support": 2450
+        }
+      ]
+    },
+    {
+      "zone": "Z6",
+      "n_transactions": 2058,
+      "n_items": 5,
+      "total_utility": 182810.419637,
+      "theta_requested_pct": 4.0,
+      "theta_used_pct": 4.0,
+      "abs_minutil": 7312.416785,
+      "n_attempts": 1,
+      "n_huis": 26,
+      "status": "COMPLETED",
+      "runtime_s": 0.0129,
+      "search_nodes": 29,
+      "n_waps": 5,
+      "waps": [
+        "WAP_AP1",
+        "WAP_AP2",
+        "WAP_AP3",
+        "WAP_AP4",
+        "WAP_AP5"
+      ],
+      "witnesses": [
+        {
+          "wap": "WAP_AP1",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 182810.41963699367,
+          "support": 2058
+        },
+        {
+          "wap": "WAP_AP2",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 182810.41963699367,
+          "support": 2058
+        },
+        {
+          "wap": "WAP_AP3",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 182810.41963699367,
+          "support": 2058
+        },
+        {
+          "wap": "WAP_AP4",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 182810.41963699367,
+          "support": 2058
+        },
+        {
+          "wap": "WAP_AP5",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 182810.41963699367,
+          "support": 2058
+        }
+      ],
+      "top_huis": [
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 182810.41963699367,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 181986.04095109188,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 178107.83102805642,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 177283.45234215463,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 176382.45390709268,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 175558.0752211909,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 171679.86529815543,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3"
+          ],
+          "utility": 170855.48661225365,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 98228.93302474,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 97404.55433883824,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 96536.41963699367,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 95712.0409510919,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 93526.34441580276,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4"
+          ],
+          "utility": 92701.96572990099,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 91833.83102805642,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 91800.96729483902,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 91009.45234215465,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP5"
+          ],
+          "utility": 90976.58860893725,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 90108.45390709268,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 89284.07522119091,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2"
+          ],
+          "utility": 87098.37868590177,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP1"
+          ],
+          "utility": 86274.0,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 85405.86529815543,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP3"
+          ],
+          "utility": 84581.48661225366,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 11954.93302474001,
+          "support": 2058
+        },
+        {
+          "items": [
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 11130.554338838243,
+          "support": 2058
+        }
+      ]
+    },
+    {
+      "zone": "Z7",
+      "n_transactions": 2254,
+      "n_items": 5,
+      "total_utility": 207469.286296,
+      "theta_requested_pct": 4.0,
+      "theta_used_pct": 4.0,
+      "abs_minutil": 8298.771452,
+      "n_attempts": 1,
+      "n_huis": 27,
+      "status": "COMPLETED",
+      "runtime_s": 0.0145,
+      "search_nodes": 29,
+      "n_waps": 5,
+      "waps": [
+        "WAP_AP1",
+        "WAP_AP2",
+        "WAP_AP3",
+        "WAP_AP4",
+        "WAP_AP5"
+      ],
+      "witnesses": [
+        {
+          "wap": "WAP_AP1",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 207469.28629627518,
+          "support": 2254
+        },
+        {
+          "wap": "WAP_AP2",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 207469.28629627518,
+          "support": 2254
+        },
+        {
+          "wap": "WAP_AP3",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 207469.28629627518,
+          "support": 2254
+        },
+        {
+          "wap": "WAP_AP4",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 207469.28629627518,
+          "support": 2254
+        },
+        {
+          "wap": "WAP_AP5",
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 207469.28629627518,
+          "support": 2254
+        }
+      ],
+      "top_huis": [
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 207469.28629627518,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 206543.11940448868,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 202410.389323272,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 201484.22243148548,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 199835.11724409947,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 198908.95035231297,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 194776.22027109627,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP3"
+          ],
+          "utility": 193850.05337930977,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 116828.23291696538,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 115902.06602517888,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 111769.3359439622,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP4"
+          ],
+          "utility": 110843.1690521757,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2",
+            "WAP_AP5"
+          ],
+          "utility": 109194.0638647897,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP5"
+          ],
+          "utility": 108267.8969730032,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 104260.28629627515,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1",
+            "WAP_AP2"
+          ],
+          "utility": 104135.1668917865,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 103334.11940448865,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP1"
+          ],
+          "utility": 103209.0,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 99201.38932327196,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP4"
+          ],
+          "utility": 98275.22243148545,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 96626.11724409944,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP3",
+            "WAP_AP5"
+          ],
+          "utility": 95699.95035231294,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP3"
+          ],
+          "utility": 91567.22027109626,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP3"
+          ],
+          "utility": 90641.05337930976,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 13619.232916965397,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP4",
+            "WAP_AP5"
+          ],
+          "utility": 12693.066025178887,
+          "support": 2254
+        },
+        {
+          "items": [
+            "WAP_AP2",
+            "WAP_AP4"
+          ],
+          "utility": 8560.335943962207,
+          "support": 2254
+        }
+      ]
+    }
+  ]
+}

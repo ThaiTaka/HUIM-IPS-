@@ -1,0 +1,11 @@
+set,utility_model,theta_pct,n_waps,dev_mean_ground_m,mean_err_m,joint_accuracy,selected_on_dev
+huim_zone__A_signal__10pct,A_signal,10.0,136,8.9739,8.7138,0.873987,False
+huim_zone__A_signal__7pct,A_signal,7.0,195,6.8764,5.871,0.932493,False
+huim_zone__A_signal__5pct,A_signal,5.0,209,6.5535,5.376,0.941494,False
+huim_zone__A_signal__4pct,A_signal,4.0,219,6.4312,5.3389,0.942394,False
+huim_zone__A_signal__3pct,A_signal,3.0,240,6.2501,5.2974,0.944194,True
+huim_zone__B_discriminative__10pct,B_discriminative,10.0,144,8.8237,8.0799,0.877588,False
+huim_zone__B_discriminative__7pct,B_discriminative,7.0,177,6.5803,6.1359,0.917192,False
+huim_zone__B_discriminative__5pct,B_discriminative,5.0,214,6.481,5.3684,0.938794,False
+huim_zone__B_discriminative__4pct,B_discriminative,4.0,222,6.3774,5.3024,0.941494,False
+huim_zone__B_discriminative__3pct,B_discriminative,3.0,232,6.2909,5.3102,0.943294,False

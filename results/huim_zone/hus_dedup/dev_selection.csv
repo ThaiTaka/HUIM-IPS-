@@ -1,0 +1,12 @@
+set,n_waps,dev_joint_accuracy,dev_mean_ground_m,dev_median_ground_m,dev_p75_ground_m,dev_p90_ground_m,dev_p95_ground_m,dev_max_ground_m,dev_mean_projected_m,dev_share_within_8m,dev_seconds
+all_aps,5,1.0,0.4051,0.0,0.2578,1.4142,2.4501,8.0156,0.4051,0.9987,3.9
+huim_zone__A_signal__10pct,5,1.0,0.4051,0.0,0.2578,1.4142,2.4501,8.0156,0.4051,0.9987,3.9
+huim_zone__A_signal__7pct,5,1.0,0.4051,0.0,0.2578,1.4142,2.4501,8.0156,0.4051,0.9987,3.9
+huim_zone__A_signal__5pct,5,1.0,0.4051,0.0,0.2578,1.4142,2.4501,8.0156,0.4051,0.9987,3.8
+huim_zone__A_signal__4pct,5,1.0,0.4051,0.0,0.2578,1.4142,2.4501,8.0156,0.4051,0.9987,4.0
+huim_zone__A_signal__3pct,5,1.0,0.4051,0.0,0.2578,1.4142,2.4501,8.0156,0.4051,0.9987,3.7
+huim_zone__B_discriminative__10pct,5,1.0,0.4051,0.0,0.2578,1.4142,2.4501,8.0156,0.4051,0.9987,3.7
+huim_zone__B_discriminative__7pct,5,1.0,0.4051,0.0,0.2578,1.4142,2.4501,8.0156,0.4051,0.9987,3.9
+huim_zone__B_discriminative__5pct,5,1.0,0.4051,0.0,0.2578,1.4142,2.4501,8.0156,0.4051,0.9987,3.9
+huim_zone__B_discriminative__4pct,5,1.0,0.4051,0.0,0.2578,1.4142,2.4501,8.0156,0.4051,0.9987,3.8
+huim_zone__B_discriminative__3pct,5,1.0,0.4051,0.0,0.2578,1.4142,2.4501,8.0156,0.4051,0.9987,4.0
