@@ -40,6 +40,9 @@ def J(p: Path):
     return json.load(open(p, encoding="utf-8"))
 
 
+FINAL = {"uji": HO / "uji" / "v6"}      # UJIIndoorLoc: v6 (HUI-evidence re-ranking) is final
+
+
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "du_doan").mkdir(exist_ok=True)
@@ -53,11 +56,13 @@ def main() -> None:
         gf = float(D["ground_factor"])
         runs = pd.read_csv(HO / k / "cell_runs.csv")
         tests = {}
-        for t, T in S["tests"].items():
-            P = pd.read_csv(HO / k / "predictions" / f"{t}.csv")
-            m = sel["params"]["m"]
-            cols = PRED_COLS + [c for j in range(1, m + 1)
-                                for c in (f"cell{j}_index", f"cell{j}_weight")]
+        fin = FINAL.get(k)
+        S6 = J(fin / "summary.json") if fin else None
+        for t, T in (S6 or S)["tests"].items():
+            P = pd.read_csv((fin or HO / k) / "predictions" / f"{t}.csv")
+            m = S6["m"] if S6 else sel["params"]["m"]
+            cols = PRED_COLS + (["v4_x", "v4_y", "v4_err_m"] if S6 else []) + [
+                c for j in range(1, m + 1) for c in (f"cell{j}_index", f"cell{j}_weight")]
             P[cols].to_csv(OUT / "du_doan" / f"{k}__{t}.csv", index=False)
             row = {"dataset": k, "ten": TITLE[k], "tap_test": t, "so_mau": T["n_test"],
                    "sai_so_tb_m": T["mean_err_m"], "trung_vi_m": T["median_err_m"],
@@ -65,6 +70,7 @@ def main() -> None:
                    "dung_toa": T["building_accuracy"], "dung_tang": T["floor_accuracy"],
                    "dung_toa_tang": T["joint_accuracy"], "ty_le_duoi_5m": T["share_within_5m"],
                    "ms_moi_fp": T["ms_per_fp"], "duoi_7m": T["below_target"],
+                   "sai_so_chuan_tb_m": round(float(P.err_m.std(ddof=1) / np.sqrt(len(P))), 4),
                    "he_so_met": gf}
             res.append(row)
             tests[t] = row
@@ -89,6 +95,19 @@ def main() -> None:
                      "giao_dich_tb_moi_o": round(float(runs.n_transactions.mean()), 2)})
         data["datasets"][k] = {"tests": tests, "selection": sel, "model": S["model"],
                                "description": desc[-1], "mining": mine[-1]}
+        if S6:
+            n_huis = lambda f: int(len(np.load(f)["util"]))
+            data["datasets"][k]["v4_tests"] = S["tests"]
+            data["datasets"][k]["v6"] = {
+                "dev_mean_m": S6["dev"]["dev_mean_v5_m"], "dev_median_m": S6["dev"]["dev_median_v5_m"],
+                "dev_mean_v4_m": S6["dev"]["dev_mean_v4_m"], "k_candidates": S6["k_candidates"],
+                "m": S6["m"], "lam": S6["lam"], "regressor": S6["regressor"],
+                "n_features": len(S6["features"]) + 8, "n_huis_L3": n_huis(HO / k / "v5" / "model_L3.npz"),
+                "n_huis_abs": n_huis(HO / k / "v5" / "model_abs.npz"),
+                "v5": J(HO / k / "v5" / "summary.json")["tests"],
+                "v5_dev_mean_m": J(HO / k / "v5" / "summary.json")["dev"]["dev_mean_v5_m"],
+                "research": J(HO / k / "research" / "summary.json"),
+                "verification": J(fin / "verification.json")}
 
     pd.DataFrame(res).to_csv(OUT / "01_ket_qua_tong_hop.csv", index=False)
     pd.DataFrame(cfg).to_csv(OUT / "02_cau_hinh_chon_tren_dev.csv", index=False)
@@ -103,7 +122,7 @@ def main() -> None:
     data["versions"] = V["versions"]
     data["pilots"] = {f: J(HO / "uji" / f) for f in ("theta_pilot.json", "window_pilot.json")}
 
-    P = pd.read_csv(HO / "uji" / "predictions" / "validationData.csv")
+    P = pd.read_csv(FINAL["uji"] / "predictions" / "validationData.csv")
     ok = (P.true_building.astype(str) + "_" + P.true_floor.astype(str)) == P.pred_building_floor
     split = [{"nhom": "Đoán đúng tòa và tầng", "so_mau": int(ok.sum()),
               "sai_so_tb_m": round(float(P.err_m[ok].mean()), 4),
@@ -142,16 +161,21 @@ def main() -> None:
     cells = pd.read_csv(HO / "uji" / "model" / "cells.csv")
     cells.to_csv(OUT / "mo_hinh_uji_cells.csv", index=False)
     shutil.copy(HO / "verification.json", OUT / "kiem_chung_doc_lap.json")
-    data["verification"] = {"n_checks": J(HO / "verification.json")["n_checks"],
-                            "n_failed": J(HO / "verification.json")["n_failed"],
+    shutil.copy(FINAL["uji"] / "verification.json", OUT / "kiem_chung_v6_uji.json")
+    v6v = J(FINAL["uji"] / "verification.json")
+    data["verification"] = {"n_checks": J(HO / "verification.json")["n_checks"] + v6v["n_checks"],
+                            "n_failed": J(HO / "verification.json")["n_failed"] + v6v["n_failed"],
+                            "n_checks_v4": J(HO / "verification.json")["n_checks"], "n_checks_v6": v6v["n_checks"],
                             "per_dataset": [{"dataset": r["dataset"], "n_checks": r["n_checks"],
                                              "n_failed": r["n_failed"]}
                                             for r in J(HO / "verification.json")["datasets"]]}
     ex = P.iloc[(P.err_m - P.err_m.median()).abs().idxmin()]
-    m = data["datasets"]["uji"]["selection"]["params"]["m"]
+    m = data["datasets"]["uji"]["v6"]["m"]
     data["worked_example"] = {
         "src_row": int(ex.src_row), "true_x": float(ex.true_x), "true_y": float(ex.true_y),
         "pred_x": float(ex.pred_x), "pred_y": float(ex.pred_y), "err_m": float(ex.err_m),
+        "v4_x": float(ex.v4_x), "v4_y": float(ex.v4_y), "v4_err_m": float(ex.v4_err_m),
+        "pred_building_floor": str(ex.pred_building_floor),
         "cells": [{"index": int(ex[f"cell{j}_index"]), "weight": float(ex[f"cell{j}_weight"]),
                    "x": float(cells.loc[int(ex[f"cell{j}_index"]), "x"]),
                    "y": float(cells.loc[int(ex[f"cell{j}_index"]), "y"])}

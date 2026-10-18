@@ -9,7 +9,10 @@ Written for: the person running this project and a reviewer checking its claims.
 > **Final deliverables are in `BAOCAO/`** (read `BAOCAO/00_HUONG_DAN_DOC.md` first):
 > the Word report, the slide deck, the model diagrams (`diagram/`), the numbers and
 > the Excel / Python kits that recompute every mean error (`so_lieu/`), and the source
-> code (`ma_nguon/`). The final system is the HUIM-only positioner (§10, no k-NN);
+> code (`ma_nguon/`). The final system is the HUIM-only positioner (§10, no k-NN); for
+> UJIIndoorLoc it adds step 8 (v6): the candidate cells are re-ranked with HUI-derived
+> evidence from three HUI models, combined by a regressor trained on the dev folds
+> (`src/huim_rerank_final.py`; test 6.87 m, was 8.06 m);
 > `src/baocao/` rebuilds the folder. The older `report/`, `slides/` and `verification/`
 > outputs mentioned below were removed; their build scripts still write there if rerun.
 

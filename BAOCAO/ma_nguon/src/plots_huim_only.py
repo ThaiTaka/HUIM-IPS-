@@ -56,6 +56,8 @@ def fig60():
     rows = []
     for k in ORDER:
         p = OUT_ROOT / k / "summary.json"
+        if (OUT_ROOT / k / "v6" / "summary.json").exists():      # UJIIndoorLoc final model: v6
+            p = OUT_ROOT / k / "v6" / "summary.json"
         if not p.exists():
             continue
         S = json.load(open(p, encoding="utf-8"))
@@ -70,7 +72,9 @@ def fig60():
     ax.bar(x, df.huim_only_mean_m, 0.55, color=BLUE, edgecolor="white", lw=2,
            label="Chỉ HUIM (khớp HUI, không k-NN)")
     for xx, v in zip(x, df.huim_only_mean_m):
-        ax.text(xx, v + 0.1, f"{v:.2f} m", ha="center", fontsize=8.5, color=INK)
+        near = abs(v + 0.25 - TARGET_M) < 0.4          # keep the label off the 7 m line
+        ax.text(xx, v - 0.45 if near else v + 0.1, f"{v:.2f} m".replace(".", ","), ha="center",
+                fontsize=8.5, color="white" if near else INK, fontweight="bold" if near else "normal")
     ax.axhline(TARGET_M, color=RED, ls="--", lw=1.2)
     ax.text(len(df) - 0.5, TARGET_M + 0.1, "7 m", color=RED, ha="right", fontsize=9)
     ax.set_xticks(x)
@@ -86,7 +90,9 @@ def fig60():
 def fig61():
     P = pd.read_csv(OUT_ROOT / "uji" / "predictions" / "validationData.csv")
     d = RESULTS / "multi_dataset" / "uji" / "predictions"
-    curves = {"Chỉ HUIM (khớp HUI)": (P.err_m, BLUE),
+    f6 = OUT_ROOT / "uji" / "v6" / "predictions" / "validationData.csv"
+    curves = {"Chỉ HUIM, mô hình cuối (v6)": (pd.read_csv(f6).err_m, "#1F3A5F")} if f6.exists() else {}
+    curves |= {"Chỉ HUIM, v4 (không xếp hạng lại)": (P.err_m, BLUE),
               "k-NN tối ưu, 520 WAP (tham chiếu)": (pd.read_csv(d / "validationData__optimised.csv").err_m, GRAY),
               "k-NN gốc k=1, 520 WAP (tham chiếu)": (pd.read_csv(d / "validationData__study_knn.csv").err_m, YELLOW)}
     fig, ax = plt.subplots(figsize=(7.6, 4.2))
@@ -94,7 +100,7 @@ def fig61():
     for n, (e, c) in curves.items():
         s = np.sort(e.to_numpy())
         ax.plot(s, np.arange(1, len(s) + 1) / len(s) * 100, color=c, lw=2,
-                label=f"{n}: TB {s.mean():.2f} m, trung vị {np.median(s):.2f} m")
+                label=f"{n}: TB {s.mean():.2f} m, trung vị {np.median(s):.2f} m".replace(".", ","))
         for q in (50, 75, 90, 95):
             rows.append({"curve": n, "percentile": q, "err_m": round(float(np.percentile(s, q)), 4)})
         rows.append({"curve": n, "percentile": "mean", "err_m": round(float(s.mean()), 4)})
