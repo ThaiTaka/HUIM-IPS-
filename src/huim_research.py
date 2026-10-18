@@ -223,9 +223,63 @@ def merge(t: str = "") -> None:
         print(G.groupby(c).dev_mean_m.min().sort_values().to_string(), "\n")
 
 
+# ============================================================ re-ranking features
+K_CAND = 30
+FEATS = ["S", "logS", "S_rel", "rank", "P21", "P11", "V", "R", "Pidf", "raw_rel",
+         "d_est", "d_top1", "dens5", "n_ap", "PL3", "VL3", "SL3_rel", "rankL3"]
+
+
+def features(k: int) -> None:
+    """Per dev query: the K_CAND best cells of the chosen floor (baseline score)
+    and HUI-evidence features for each; target = ground distance cell-truth."""
+    b = load(KEY)
+    _p, Q, _cell, XY, BF = inputs(b, KIND)
+    gf = b.ground_factor
+    pos, ex = load_model(fold_path(k), gf)
+    dvi = ex["dvi"]
+    kid = hui_keys(pos)
+    Cws = {"base": pos.Cw, "idf": cell_matrix(pos, pos.hui_util / local_df(pos, kid, 10.0) ** 2)}
+    P, V, R = components_multi(pos, Q[dvi], [(2.0, 20.0), (1.0, 20.0)], Cws)
+    P21, P11, Pidf = P[("base", (2.0, 20.0))], P[("base", (1.0, 20.0))], P[("idf", (2.0, 20.0))]
+    raw = P21 * V ** 3
+    S = raw @ pos._kernel(3.0)
+    floor = pos.floor_of(S, 20)
+    est, *_ = pos.locate(S, floor, 12, 8.0)
+    Sf = np.where(pos.cell_bf[None, :] == floor[:, None], S, -1.0)
+    top = np.argsort(-Sf, 1)[:, :K_CAND]
+    # level model on the same cells (cell ids are the same RP list)
+    posL, _ = load_model(fold_path(k, tag(3)), gf)
+    assert np.array_equal(posL.cells, pos.cells)
+    PL, VL, _R = components_multi(posL, expand_levels(Q[dvi], 3), [(1.0, 20.0)], {"base": posL.Cw})
+    PL = PL[("base", (1.0, 20.0))]
+    SL = (PL * VL ** 3) @ posL._kernel(3.0)
+    SLf = np.where(pos.cell_bf[None, :] == floor[:, None], SL, -1.0)
+    rankL = np.argsort(np.argsort(-SLf, 1), 1)
+    n, Kc = len(dvi), top.shape[1]
+    tk = lambda A: np.take_along_axis(A, top, 1)
+    cxy = pos.cell_xy[top]
+    Stop = tk(S)
+    smax = np.maximum(Stop[:, :1], 1e-12)
+    d_est = np.sqrt(((cxy - est[:, None]) ** 2).sum(-1)) * gf
+    d_top1 = np.sqrt(((cxy - cxy[:, :1]) ** 2).sum(-1)) * gf
+    dd = np.sqrt(((cxy[:, :, None] - cxy[:, None]) ** 2).sum(-1)) * gf
+    dens5 = (dd <= 5.0).sum(-1)
+    F = np.stack([Stop, np.log(Stop + 1e-9), Stop / smax, np.tile(np.arange(Kc), (n, 1)),
+                  tk(P21), tk(P11), tk(V), tk(R), tk(Pidf),
+                  tk(raw) / np.maximum(tk(raw).max(1, keepdims=True), 1e-12),
+                  d_est, d_top1, dens5, np.tile((Q[dvi] > 0).sum(1)[:, None], (1, Kc)),
+                  tk(PL), tk(VL), tk(SL) / np.maximum(tk(SL).max(1, keepdims=True), 1e-12),
+                  tk(rankL)], -1).astype(np.float32)
+    dist = np.sqrt(((cxy - XY[dvi][:, None]) ** 2).sum(-1)) * gf
+    np.savez_compressed(RES / f"feat_fold{k}.npz", F=F, dist=dist, cxy=cxy, true=XY[dvi],
+                        est=est, floor_ok=floor == BF[dvi], dvi=dvi)
+    e = np.sqrt(((est - XY[dvi]) ** 2).sum(1)) * gf
+    print(f"fold {k}: baseline {e.mean():.3f} m, best-of-{K_CAND} {dist.min(1).mean():.3f} m", flush=True)
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--stage", choices=["mine", "mine_all", "eval", "merge"], required=True)
+    ap.add_argument("--stage", choices=["mine", "mine_all", "eval", "merge", "feat"], required=True)
     ap.add_argument("--fold", type=int)
     ap.add_argument("--levels", type=int, default=1)
     ap.add_argument("--theta", type=float, default=THETA)
@@ -234,6 +288,8 @@ def main() -> None:
         mine(a.fold, a.levels, a.theta)
     elif a.stage == "eval":
         evaluate(a.fold, a.levels, a.theta)
+    elif a.stage == "feat":
+        features(a.fold)
     elif a.stage == "merge":
         merge(tag(a.levels, a.theta))
     else:
