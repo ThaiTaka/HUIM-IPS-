@@ -1,387 +1,273 @@
-// BAOCAO/Bao_cao_HUIM_IPS_UJIIndoorLoc.docx — báo cáo theo bố cục luận văn thạc sĩ.
-// Mọi con số đọc từ BAOCAO/so_lieu/du_lieu_bao_cao.json; công thức là phương trình Word (OMML).
-// Chạy: node src/baocao/build_report.js   (cần gói npm "docx")
+// BAOCAO/Bao_cao_HUIM_IPS_UJIIndoorLoc.docx — báo cáo theo thể thức luận văn thạc sĩ.
+// Mọi con số đọc từ BAOCAO/so_lieu (du_lieu_bao_cao.json, bieu_do/*.csv) và results/;
+// mọi sơ đồ và biểu đồ lấy từ BAOCAO/diagram. Công thức là phương trình Word (OMML).
+// Chạy: node src/baocao/build_report.js   (cần npm "docx"; LibreOffice để điền mục lục)
 const fs = require("fs");
 const path = require("path");
-const d = require("docx");
-const {
-  Document, Packer, Paragraph, TextRun, ImageRun, Table, TableRow, TableCell, WidthType,
-  AlignmentType, HeadingLevel, TableOfContents, PageBreak, Footer, PageNumber, TabStopType,
-  BorderStyle, ShadingType, LevelFormat, VerticalAlign, Tab,
-  Math: M, MathRun, MathFraction, MathSubScript, MathSuperScript, MathSubSuperScript,
-  MathSum, MathRadical, MathRoundBrackets, MathSquareBrackets, MathCurlyBrackets,
-} = d;
+const L_ = require("./report_lib");
+const { vn, pct, R, runs, P, PN, H1, H2, H3, BUL, NUMS, GAP, r, fr, sb, sp, sbsp, sum, sqrt, rb, sq, cb, up, abs, flo,
+  EQ, FIG, TAB, ALGO, BOX, build, C, RT, L, J, PT, TableOfContents, Paragraph, TextRun, Tab, TabStopType, d } = L_;
 
 const ROOT = path.resolve(__dirname, "..", "..");
 const B = path.join(ROOT, "BAOCAO");
 const D = JSON.parse(fs.readFileSync(path.join(B, "so_lieu", "du_lieu_bao_cao.json"), "utf8"));
-const FONT = "Times New Roman";
-const PT = (x) => x * 2;
+const csv = (n) => {                         // CSV đơn giản (không có dấu phẩy trong ô)
+  const [h, ...rows] = fs.readFileSync(path.join(B, "so_lieu", "bieu_do", n), "utf8").trim().split(/\r?\n/);
+  const k = h.split(",");
+  return rows.map((l) => Object.fromEntries(l.split(",").map((v, i) => [k[i], isNaN(+v) ? v : +v])));
+};
+const dg = (n) => path.join(B, "diagram", n);
+const impF = path.join(ROOT, "results", "huim_only", "uji", "research", "importance.json");
+const IMP = fs.existsSync(impF) ? JSON.parse(fs.readFileSync(impF, "utf8")) : null;
 
-// ------------------------------------------------------------------ numbers
-const vn = (x, k = 2) => Number(x).toFixed(k).replace(/\B(?=(\d{3})+(?!\d))/g, " ").replace(".", ",");
-const pct = (x, k = 1) => vn(100 * x, k) + "%";
+// ------------------------------------------------------------------ dữ liệu
+const order = D.order, T = D.title;
 const U = D.datasets.uji, UT = U.tests.validationData, SEL = U.selection, PRM = SEL.params;
 const V6 = U.v6, U4 = U.v4_tests.validationData, RSH = V6.research.dev_mean_m;
-
-// ------------------------------------------------------------------ text helpers
-const R = (t, o = {}) => new TextRun({ text: t, font: FONT, ...o });
-function runs(s, base = {}) {   // **đậm**, $công thức nội dòng$: chữ cái nghiêng, _x là chỉ số dưới, ^x chỉ số trên
-  const out = [];
-  s.split(/(\*\*[^*]+\*\*|\$[^$]+\$)/).forEach((p) => {
-    if (!p) return;
-    if (p.startsWith("**")) out.push(R(p.slice(2, -2), { ...base, bold: true }));
-    else if (p.startsWith("$") && p.length > 2) out.push(...mathRuns(p.slice(1, -1), base));
-    else out.push(R(p, base));
-  });
-  return out;
-}
-const UPRIGHT = /^([A-Z]{2,}|exp|max|min|arg|round|log)$/;
-function mathRuns(s, base) {
-  const out = [];
-  s.split(/(_\{[^}]*\}|_[^\s,.;:()\]{}=<>]+|\^\{[^}]*\}|\^[^\s,.;:()\]{}=<>]+|[A-Za-zα-ωΑ-Ω]+)/).forEach((t) => {
-    if (!t) return;
-    const brace = (x) => x.replace(/^[_^]\{?/, "").replace(/\}$/, "");
-    const it = (x) => /[A-Za-zα-ωΑ-Ω]/.test(x) && !UPRIGHT.test(x);
-    if (t[0] === "_") { const x = brace(t); out.push(R(x, { ...base, subScript: true, italics: it(x) })); }
-    else if (t[0] === "^") { const x = brace(t); out.push(R(x, { ...base, superScript: true, italics: it(x) })); }
-    else if (/^[A-Za-zα-ωΑ-Ω]+$/.test(t)) out.push(R(t, { ...base, italics: !UPRIGHT.test(t) }));
-    else out.push(R(t, base));
-  });
-  return out;
-}
-const P = (s, o = {}) => new Paragraph({ children: Array.isArray(s) ? s : runs(s), alignment: AlignmentType.JUSTIFIED,
-  spacing: { after: 120, line: 360 }, indent: { firstLine: 567 }, ...o });
-const PN = (s, o = {}) => P(s, { indent: { firstLine: 0 }, ...o });
-const H1 = (t) => new Paragraph({ heading: HeadingLevel.HEADING_1, pageBreakBefore: true, children: [R(t)] });
-const H2 = (t) => new Paragraph({ heading: HeadingLevel.HEADING_2, children: [R(t)] });
-const H3 = (t) => new Paragraph({ heading: HeadingLevel.HEADING_3, children: [R(t)] });
-const BUL = (s) => new Paragraph({ numbering: { reference: "bul", level: 0 }, children: runs(s),
-  alignment: AlignmentType.JUSTIFIED, spacing: { after: 80, line: 340 } });
-const NUM = (s, ref = "num") => new Paragraph({ numbering: { reference: ref, level: 0 }, children: runs(s),
-  alignment: AlignmentType.JUSTIFIED, spacing: { after: 80, line: 340 } });
-
-// ------------------------------------------------------------------ math helpers
-const r = (t) => new MathRun(t);
-const fr = (n, dd) => new MathFraction({ numerator: n, denominator: dd });
-const sb = (b, s) => new MathSubScript({ children: b, subScript: s });
-const sp = (b, s) => new MathSuperScript({ children: b, superScript: s });
-const sbsp = (b, s, u) => new MathSubSuperScript({ children: b, subScript: s, superScript: u });
-const sum = (lo, body, hi) => new MathSum({ children: body, subScript: lo, ...(hi ? { superScript: hi } : {}) });
-const sqrt = (b) => new MathRadical({ children: b });
-const rb = (...c) => new MathRoundBrackets({ children: c });
-const sq = (...c) => new MathSquareBrackets({ children: c });
-const cb = (...c) => new MathCurlyBrackets({ children: c });
-const up = (t) => r("\u2060" + t);                  // chữ đứng (tên hàm, nhãn), xử lý sau khi ghi file
-const abs = (...c) => rb(r("\u2062ABS"), ...c);       // |…| dạng dấu ngoặc OMML
-const flo = (...c) => rb(r("\u2062FLO"), ...c);       // ⌊…⌋ dạng dấu ngoặc OMML
-const qbar = (s) => sb([r("q̄")], [r(s)]);          // q̄_s
-let eqNo = {};
-function EQ(chap, children) {      // bảng 3 cột không viền: trống | công thức (giữa) | số hiệu (phải)
-  eqNo[chap] = (eqNo[chap] || 0) + 1;
-  const label = `(${chap}.${eqNo[chap]})`;
-  const none = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
-  const nb = { top: none, bottom: none, left: none, right: none };
-  const cell = (w, align, kids) => new TableCell({ width: { size: w, type: WidthType.DXA }, borders: nb,
-    verticalAlign: VerticalAlign.CENTER, margins: { top: 40, bottom: 40, left: 0, right: 0 },
-    children: [new Paragraph({ alignment: align, spacing: { before: 60, after: 60 }, children: kids })] });
-  return { label, p: new Table({ width: { size: 9071, type: WidthType.DXA }, columnWidths: [1000, 7071, 1000],
-    borders: { ...nb, insideHorizontal: none, insideVertical: none },
-    rows: [new TableRow({ cantSplit: true, children: [cell(1000, AlignmentType.LEFT, []),
-      cell(7071, AlignmentType.CENTER, [new M({ children })]),
-      cell(1000, AlignmentType.RIGHT, [R(label)])] })] }) };
-}
-
-// ------------------------------------------------------------------ figures and tables
-const figNo = {}, tabNo = {};
-function pngSize(f) { const b = fs.readFileSync(f); return [b.readUInt32BE(16), b.readUInt32BE(20)]; }
-function FIG(chap, file, caption, widthPx = 600) {
-  figNo[chap] = (figNo[chap] || 0) + 1;
-  const [w, h] = pngSize(file);
-  const W = Math.min(widthPx, 600), H = Math.round(W * h / w);
-  const label = `Hình ${chap}.${figNo[chap]}`;
-  return { label, ps: [
-    new Paragraph({ alignment: AlignmentType.CENTER, keepNext: true, spacing: { before: 120, after: 60 },
-      children: [new ImageRun({ type: "png", data: fs.readFileSync(file), transformation: { width: W, height: H },
-        altText: { title: caption, description: caption, name: path.basename(file) } })] }),
-    new Paragraph({ style: "CaptionHinh", children: [R(`${label}. `, { bold: true }), R(caption)] })] };
-}
-const border = { style: BorderStyle.SINGLE, size: 4, color: "808080" };
-const borders = { top: border, bottom: border, left: border, right: border };
-function TAB(chap, caption, header, rows, widths, opts = {}) {
-  tabNo[chap] = (tabNo[chap] || 0) + 1;
-  const label = `Bảng ${chap}.${tabNo[chap]}`;
-  const total = widths.reduce((a, b) => a + b, 0);
-  const cell = (t, i, head) => new TableCell({
-    borders, width: { size: widths[i], type: WidthType.DXA }, verticalAlign: VerticalAlign.CENTER,
-    shading: head ? { fill: "DCE3EC", type: ShadingType.CLEAR, color: "auto" } : undefined,
-    margins: { top: 50, bottom: 50, left: 90, right: 90 },
-    children: [new Paragraph({ alignment: (opts.align && opts.align[i]) || AlignmentType.LEFT,
-      children: (typeof t === "string" ? runs(t, { bold: head, size: PT(opts.size || 11) }) : t) })] });
-  return { label, ps: [
-    new Paragraph({ style: "CaptionBang", keepNext: true, children: [R(`${label}. `, { bold: true }), R(caption)] }),
-    new Table({ width: { size: total, type: WidthType.DXA }, columnWidths: widths, alignment: AlignmentType.CENTER,
-      rows: [new TableRow({ tableHeader: true, children: header.map((h, i) => cell(h, i, true)) }),
-             ...rows.map((rw) => new TableRow({ children: rw.map((c, i) => cell(String(c), i, false)) }))] }),
-    new Paragraph({ spacing: { after: 120 }, children: [] })] };
-}
-const C = AlignmentType.CENTER, RT = AlignmentType.RIGHT, L = AlignmentType.LEFT;
-
-// ------------------------------------------------------------------ data shortcuts
-const order = D.order, T = D.title;
 const allTests = [];
 order.forEach((k) => Object.entries(D.datasets[k].tests).forEach(([t, v]) => allTests.push({ k, t, v })));
 const nOk = allTests.filter((x) => x.v.duoi_7m).length;
+const others = allTests.filter((x) => x.k !== "uji");
 const ref = (k, t) => D.references.find((x) => x.dataset === k && x.tap_test === t);
 const refU = ref("uji", "validationData");
 const fs4 = D.uji_floor_split;
-const ver = D.versions;
 const pil = D.pilots["theta_pilot.json"], win = D.pilots["window_pilot.json"];
-const diag = (n) => path.join(B, "diagram", n);
-const figr = (n) => path.join(ROOT, "figures", "huim_only", n);
+const EX = D.worked_example, GF = 0.766126;
+const nHUI3 = U.model.n_huis + V6.n_huis_L3 + V6.n_huis_abs;
+const phones = csv("b14_dien_thoai.csv");
+const floors = csv("b04_sai_so_theo_toa_tang.csv");
 
-// ================================================================== content
+// ------------------------------------------------------------------ nội dung
 const body = [];
-const add = (...xs) => xs.forEach((x) => (x.ps ? body.push(...x.ps) : x.p ? body.push(x.p) : body.push(x)));
+const add = (...xs) => xs.forEach((x) => (Array.isArray(x) ? body.push(...x) : x.ps ? body.push(...x.ps) : x.p ? body.push(x.p) : body.push(x)));
+const fig = (chap, f, cap, w) => FIG(chap, dg(f), cap, w);
 
-// ---------- cover
+// ================================================================== BÌA
+const blank = (n) => Array.from({ length: n }, () => new Paragraph({ children: [] }));
+const center = (t, o = {}, sp_ = {}) => new Paragraph({ alignment: C, spacing: { after: 60, ...sp_ }, children: [R(t, o)] });
 const cover = [
-  new Paragraph({ alignment: C, spacing: { after: 80 }, children: [R("BÁO CÁO CHUYÊN ĐỀ CAO HỌC", { bold: true, size: PT(14) })] }),
-  new Paragraph({ alignment: C, spacing: { after: 1600 }, children: [R("Ngành Khoa học máy tính", { size: PT(13) })] }),
-  new Paragraph({ alignment: C, spacing: { after: 240 }, children: [R("ỨNG DỤNG KHAI THÁC TẬP MỤC LỢI ÍCH CAO (HUIM)", { bold: true, size: PT(18) })] }),
-  new Paragraph({ alignment: C, spacing: { after: 240 }, children: [R("TRONG HỆ THỐNG ĐỊNH VỊ TRONG NHÀ", { bold: true, size: PT(18) })] }),
-  new Paragraph({ alignment: C, spacing: { after: 1400 }, children: [R("Định vị bằng so khớp High Utility Itemset trên dữ liệu vân tay Wi-Fi UJIIndoorLoc và năm bộ dữ liệu bổ sung", { italics: true, size: PT(13) })] }),
-  new Paragraph({ alignment: L, indent: { left: 2835 }, spacing: { after: 200 }, children: [R("Học viên thực hiện: ", { bold: true }), R("..............................................")] }),
-  new Paragraph({ alignment: L, indent: { left: 2835 }, spacing: { after: 200 }, children: [R("Mã số học viên: ", { bold: true }), R("..................................................")] }),
-  new Paragraph({ alignment: L, indent: { left: 2835 }, spacing: { after: 2400 }, children: [R("Giảng viên hướng dẫn: ", { bold: true }), R("........................................")] }),
-  new Paragraph({ alignment: C, children: [R("Năm 2026", { size: PT(13) })] }),
+  center("BỘ GIÁO DỤC VÀ ĐÀO TẠO", { bold: true, size: PT(13) }),
+  center("TRƯỜNG ĐẠI HỌC …………………………………", { bold: true, size: PT(13) }, { after: 600 }),
+  center("…………………………………", { bold: true, size: PT(14) }, { after: 100 }),
+  center("(Họ và tên học viên)", { italics: true, size: PT(12) }, { after: 1500 }),
+  center("ỨNG DỤNG THUẬT TOÁN KHAI THÁC", { bold: true, size: PT(18) }, { after: 120 }),
+  center("TẬP MỤC LỢI ÍCH CAO (HUIM)", { bold: true, size: PT(18) }, { after: 120 }),
+  center("TRONG HỆ THỐNG ĐỊNH VỊ TRONG NHÀ", { bold: true, size: PT(18) }, { after: 1500 }),
+  center("LUẬN VĂN THẠC SĨ KHOA HỌC MÁY TÍNH", { bold: true, size: PT(15) }, { after: 3200 }),
+  center("…………, NĂM 2026", { bold: true, size: PT(13) }),
+];
+const titlePage = [
+  center("BỘ GIÁO DỤC VÀ ĐÀO TẠO", { bold: true, size: PT(13) }),
+  center("TRƯỜNG ĐẠI HỌC …………………………………", { bold: true, size: PT(13) }, { after: 600 }),
+  center("…………………………………", { bold: true, size: PT(14) }, { after: 100 }),
+  center("(Họ và tên học viên)", { italics: true, size: PT(12) }, { after: 1300 }),
+  center("ỨNG DỤNG THUẬT TOÁN KHAI THÁC", { bold: true, size: PT(17) }, { after: 120 }),
+  center("TẬP MỤC LỢI ÍCH CAO (HUIM)", { bold: true, size: PT(17) }, { after: 120 }),
+  center("TRONG HỆ THỐNG ĐỊNH VỊ TRONG NHÀ", { bold: true, size: PT(17) }, { after: 900 }),
+  center("Chuyên ngành: Khoa học máy tính", { size: PT(13) }),
+  center("Mã số: …………………", { size: PT(13) }, { after: 700 }),
+  center("LUẬN VĂN THẠC SĨ KHOA HỌC MÁY TÍNH", { bold: true, size: PT(15) }, { after: 900 }),
+  center("NGƯỜI HƯỚNG DẪN KHOA HỌC:", { bold: true, size: PT(13) }),
+  center("…………………………………………", { size: PT(13) }, { after: 2300 }),
+  center("…………, NĂM 2026", { bold: true, size: PT(13) }),
 ];
 
-// ---------- front matter
-const front = [
-  new Paragraph({ heading: HeadingLevel.HEADING_1, pageBreakBefore: true, children: [R("TÓM TẮT")] }),
-  P(`Báo cáo nghiên cứu khả năng dùng thuật toán khai thác tập mục lợi ích cao (High Utility Itemset Mining, HUIM) làm **thuật toán định vị chính** của một hệ thống định vị trong nhà dựa trên vân tay Wi-Fi, thay vì chỉ dùng HUIM như một bước lọc điểm truy cập (AP) đứng trước bộ phân loại k-láng giềng gần nhất (k-NN). Mỗi điểm tham chiếu của tập huấn luyện được coi là một cơ sở dữ liệu giao dịch; thuật toán EFIM khai thác tập High Utility Itemset (HUI) của từng điểm, và tập HUI này chính là mô hình định vị. Khi định vị, vân tay cần xác định được coi là một giao dịch và được so khớp với HUI của mọi ô: điểm khớp đo lượng lợi ích HUI của ô mà vân tay chứa, mức độ phù hợp của cường độ tín hiệu và độ phủ của vân tay. Tầng được chọn trước theo các ô khớp tốt nhất; các ô ứng viên của tầng đó sau đó được xếp hạng lại bằng nhiều bằng chứng rút ra từ HUI (ba mô hình HUI với ba cách đặt lợi ích nội, và hồ sơ cường độ của ô suy ra từ chính các HUI), được kết hợp bởi một bộ hồi quy Gradient Boosting học trên các fold kiểm định, và toạ độ là trọng tâm có trọng số của các ô xếp đầu. Không có phép so khoảng cách nào giữa vân tay truy vấn và vân tay huấn luyện, và mô hình không lưu vân tay huấn luyện.`),
-  P(`Toàn bộ tham số được chọn trên các fold kiểm định (dev) tách từ tập huấn luyện; tập kiểm tra chỉ được dùng một lần. Trên ${allTests.length} tập kiểm tra của ${order.length} bộ dữ liệu, ${nOk} tập đạt sai số trung bình dưới 7 m. Trên UJIIndoorLoc (${vn(UT.so_mau, 0)} vân tay kiểm tra, ${pct(UT.dung_toa_tang)} xác định đúng tòa và tầng), sai số trung bình là ${vn(UT.sai_so_tb_m)} m và trung vị ${vn(UT.trung_vi_m)} m, giảm từ ${vn(U4.mean_err_m)} m của phiên bản chỉ dùng một điểm khớp HUI; bước xếp hạng lại được chọn trên dev (sai số dev ${vn(V6.dev_mean_v4_m)} m xuống ${vn(V6.dev_mean_m)} m) trước khi tập kiểm tra được chấm. Phần lớn sai số còn lại (${pct(fs4[0].phan_tong_sai_so, 0)}) nằm ở các mẫu đã xác định đúng tầng, và ${"9/11"} điện thoại của tập kiểm tra không xuất hiện trong tập huấn luyện. Mọi con số được kiểm chứng độc lập (${D.verification.n_checks} phép kiểm, ${D.verification.n_failed} thất bại) và có thể tính lại bằng sổ Excel kèm theo.`),
-  PN(`**Từ khoá:** khai thác tập mục lợi ích cao, EFIM, định vị trong nhà, vân tay Wi-Fi, UJIIndoorLoc.`),
-  new Paragraph({ heading: HeadingLevel.HEADING_1, pageBreakBefore: true, children: [R("MỤC LỤC")] }),
-  new TableOfContents("Mục lục", { hyperlink: true, headingStyleRange: "1-3" }),
-  new Paragraph({ heading: HeadingLevel.HEADING_1, pageBreakBefore: true, children: [R("DANH MỤC HÌNH")] }),
-  new TableOfContents("Danh mục hình", { hyperlink: true, stylesWithLevels: [new d.StyleLevel("CaptionHinh", 1)] }),
-  new Paragraph({ heading: HeadingLevel.HEADING_1, pageBreakBefore: true, children: [R("DANH MỤC BẢNG")] }),
-  new TableOfContents("Danh mục bảng", { hyperlink: true, stylesWithLevels: [new d.StyleLevel("CaptionBang", 1)] }),
-];
+// ================================================================== PHẦN ĐẦU
+const front = [];
+const fadd = (...xs) => xs.forEach((x) => (Array.isArray(x) ? front.push(...x) : x.ps ? front.push(...x.ps) : front.push(x)));
+fadd(new Paragraph({ heading: d.HeadingLevel.HEADING_1, children: [R("LỜI CAM ĐOAN")] }));
+fadd(P(`Tôi xin cam đoan luận văn “Ứng dụng thuật toán khai thác tập mục lợi ích cao (HUIM) trong hệ thống định vị trong nhà” là công trình nghiên cứu của bản thân, được thực hiện dưới sự hướng dẫn khoa học của người hướng dẫn. Các số liệu và kết quả trình bày trong luận văn được tạo ra từ mã nguồn và dữ liệu đi kèm, có thể tính lại và kiểm chứng độc lập; các nội dung tham khảo đều được trích dẫn nguồn đầy đủ.`));
+fadd(P(`Tôi xin chịu hoàn toàn trách nhiệm về tính trung thực của các kết quả trong luận văn.`));
+fadd(new Paragraph({ alignment: RT, spacing: { before: 600, after: 60 }, children: [R("…………, ngày …… tháng …… năm 2026", { italics: true })] }));
+fadd(new Paragraph({ alignment: RT, spacing: { after: 1200 }, children: [R("Học viên thực hiện", { bold: true })] }));
+fadd(new Paragraph({ alignment: RT, children: [R("…………………………………")] }));
+
+fadd(H1("LỜI CẢM ƠN"));
+fadd(P(`Trước hết, tôi xin bày tỏ lòng biết ơn sâu sắc tới người hướng dẫn khoa học đã định hướng đề tài, góp ý về phương pháp và yêu cầu khắt khe về tính trung thực của số liệu trong suốt quá trình thực hiện luận văn.`));
+fadd(P(`Tôi xin cảm ơn quý thầy cô của chương trình đào tạo thạc sĩ Khoa học máy tính đã truyền đạt kiến thức nền tảng về khai phá dữ liệu, học máy và các hệ thống định vị. Tôi cũng xin cảm ơn nhóm tác giả bộ dữ liệu UJIIndoorLoc và các bộ dữ liệu vân tay Wi-Fi đã công bố dữ liệu, giúp các kết quả của luận văn có thể được đối chiếu.`));
+fadd(P(`Cuối cùng, tôi xin cảm ơn gia đình và bạn bè đã luôn động viên trong thời gian học tập và nghiên cứu.`));
+
+fadd(H1("TÓM TẮT"));
+fadd(P(`Luận văn nghiên cứu việc dùng thuật toán khai thác tập mục lợi ích cao (High Utility Itemset Mining, HUIM) làm **thuật toán định vị chính** của một hệ thống định vị trong nhà dựa trên vân tay Wi-Fi. Ở các nghiên cứu trước của đề tài, HUIM chỉ chọn tập điểm truy cập (AP) cho bộ phân loại k-láng giềng gần nhất (k-NN); phân tích cho thấy khi đó HUIM chỉ đóng góp khoảng 6% mức giảm sai số và có thể bị thay thế. Luận văn đề xuất một mô hình trong đó mỗi điểm tham chiếu của tập huấn luyện được coi là một cơ sở dữ liệu giao dịch, thuật toán EFIM khai thác tập High Utility Itemset (HUI) của từng điểm, và tập HUI này chính là mô hình định vị. Vân tay cần định vị được so khớp với HUI của mọi ô để chọn tòa nhà, tầng và các ô ứng viên; các ô ứng viên sau đó được xếp hạng lại bằng bằng chứng rút ra từ ba mô hình HUI và hồ sơ cường độ suy ra từ HUI, kết hợp bởi một bộ hồi quy Gradient Boosting học trên các fold kiểm định. Mô hình không lưu và không so sánh vân tay huấn luyện, và không dùng k-NN.`));
+fadd(P(`Mọi tham số được chọn trên các fold kiểm định tách từ tập huấn luyện; mỗi tập kiểm tra chỉ được chấm một lần. Trên ${allTests.length} tập kiểm tra của ${order.length} bộ dữ liệu, cả ${nOk} tập đạt sai số trung bình dưới 7 m. Trên UJIIndoorLoc (${vn(UT.so_mau, 0)} vân tay kiểm tra, 9/11 điện thoại không có trong tập huấn luyện), sai số trung bình là **${vn(UT.sai_so_tb_m)} m**, trung vị ${vn(UT.trung_vi_m)} m, đúng tòa nhà ${pct(UT.dung_toa)} và đúng tòa–tầng ${pct(UT.dung_toa_tang)}; phiên bản chỉ dùng một điểm khớp HUI đạt ${vn(U4.mean_err_m)} m. Mọi con số được kiểm chứng độc lập (${D.verification.n_checks} phép kiểm, ${D.verification.n_failed} thất bại) và có thể tính lại bằng sổ Excel kèm theo.`));
+fadd(PN(`**Từ khoá:** khai thác tập mục lợi ích cao, EFIM, định vị trong nhà, vân tay Wi-Fi, UJIIndoorLoc, Gradient Boosting.`));
+
+fadd(H1("ABSTRACT"));
+fadd(P(`This thesis studies High Utility Itemset Mining (HUIM) as the **primary positioning algorithm** of a Wi-Fi fingerprint indoor positioning system, rather than as an access-point selection step in front of a k-nearest-neighbour (k-NN) classifier. Every reference point of the training data is treated as a transaction database; the EFIM algorithm mines the High Utility Itemsets (HUIs) of each point, and these HUI sets form the positioning model. A query fingerprint is matched against the HUIs of every cell to decide the building, the floor and a set of candidate cells; the candidates are then re-ranked with evidence derived from three HUI models and from cell strength profiles computed from the HUIs, combined by a gradient boosting regressor trained on validation folds only. No training fingerprint is stored or compared and no k-NN is used.`));
+fadd(P(`All parameters are selected on validation folds split from the training data, and each test set is scored once. All ${allTests.length} test sets of the ${order.length} datasets reach a mean error below 7 m. On UJIIndoorLoc (${vn(UT.so_mau, 0)} test fingerprints, 9 of 11 phones unseen in training) the mean error is **${UT.sai_so_tb_m.toFixed(2)} m** (median ${UT.trung_vi_m.toFixed(2)} m, building accuracy ${(100 * UT.dung_toa).toFixed(1)}%, building-floor accuracy ${(100 * UT.dung_toa_tang).toFixed(1)}%), compared with ${U4.mean_err_m.toFixed(2)} m for the single HUI-score version. Every number is verified independently (${D.verification.n_checks} checks, ${D.verification.n_failed} failed).`));
+fadd(PN(`**Keywords:** high utility itemset mining, EFIM, indoor positioning, Wi-Fi fingerprinting, UJIIndoorLoc, gradient boosting.`));
+
+fadd(H1("MỤC LỤC"));
+fadd(new TableOfContents("Mục lục", { hyperlink: true, headingStyleRange: "1-3" }));
 const abbr = [
   ["AP", "Access Point — điểm truy cập Wi-Fi"], ["RSSI", "Received Signal Strength Indicator — cường độ tín hiệu thu (dBm)"],
   ["IPS", "Indoor Positioning System — hệ thống định vị trong nhà"], ["HUIM", "High Utility Itemset Mining — khai thác tập mục lợi ích cao"],
-  ["HUI", "High Utility Itemset — tập mục có lợi ích không nhỏ hơn ngưỡng"], ["EFIM", "EFficient high-utility Itemset Mining (Zida và cộng sự, 2017)"],
-  ["TWU", "Transaction-Weighted Utility — lợi ích có trọng số giao dịch"], ["k-NN", "k-Nearest Neighbours — k láng giềng gần nhất"],
-  ["Ô (cell)", "một điểm tham chiếu của tập huấn luyện, đơn vị vị trí của mô hình"], ["dev", "fold kiểm định tách từ tập huấn luyện, dùng để chọn tham số"],
-  ["θ", "ngưỡng lợi ích tối thiểu tương đối (% lợi ích của cơ sở dữ liệu)"],
+  ["HUI", "High Utility Itemset — tập mục có lợi ích không nhỏ hơn ngưỡng minUtil"], ["EFIM", "EFficient high-utility Itemset Mining (Zida và cộng sự, 2017)"],
+  ["TU, TWU", "Transaction Utility, Transaction-Weighted Utility — lợi ích giao dịch, lợi ích có trọng số giao dịch"],
+  ["k-NN, WKNN", "k-Nearest Neighbours, Weighted k-NN — k láng giềng gần nhất (có trọng số)"],
+  ["GBM", "Gradient Boosting Machine — mô hình hồi quy cây tăng cường theo gradient"],
+  ["Ô (cell)", "một điểm tham chiếu của tập huấn luyện, đơn vị vị trí của mô hình"],
   ["Ô ứng viên", "một trong K ô có điểm HUI cao nhất của tầng đã chọn, được xếp hạng lại ở Bước 8"],
-  ["$q̂_c$(i)", "cường độ ước lượng của AP i tại ô c, suy ra từ các HUI của ô (hồ sơ cường độ)"],
-  ["GBM", "Gradient Boosting Machine — mô hình hồi quy cây tăng cường, dùng ở Bước 8"],
+  ["dev", "fold kiểm định tách từ tập huấn luyện, chỉ dùng để chọn tham số và huấn luyện bộ hồi quy"],
+  ["θ", "ngưỡng lợi ích tối thiểu tương đối (% lợi ích của cơ sở dữ liệu giao dịch của ô)"],
+  ["q(i,T), p(i)", "lợi ích nội của AP i trong vân tay T; lợi ích ngoài của AP i"],
+  ["$P_c$, $V_c$, $R_c$", "điểm khớp mẫu HUI, độ phủ truy vấn, độ phủ ngược của ô c"],
+  ["$q̂_c$(i)", "cường độ ước lượng của AP i tại ô c, suy ra từ các HUI của ô"],
+  ["g", "hệ số đổi toạ độ Web Mercator ra mét thực địa (UJIIndoorLoc: 0,766126)"],
 ];
-front.push(new Paragraph({ heading: HeadingLevel.HEADING_1, pageBreakBefore: true, children: [R("DANH MỤC KÝ HIỆU VÀ CHỮ VIẾT TẮT")] }));
-const tA = TAB("0", "Ký hiệu và chữ viết tắt", ["Ký hiệu", "Ý nghĩa"], abbr, [1800, 7200]);
-front.push(...tA.ps.slice(1));   // không đánh số bảng ký hiệu
+fadd(H1("DANH MỤC KÝ HIỆU VÀ CHỮ VIẾT TẮT"));
+const tA = TAB("0", "", ["Ký hiệu", "Ý nghĩa"], abbr, [2000, 7071]);
+fadd(...tA.ps.slice(1));
+fadd(H1("DANH MỤC BẢNG"));
+fadd(new TableOfContents("Danh mục bảng", { hyperlink: true, stylesWithLevels: [new d.StyleLevel("CaptionBang", 1)] }));
+fadd(H1("DANH MỤC HÌNH"));
+fadd(new TableOfContents("Danh mục hình", { hyperlink: true, stylesWithLevels: [new d.StyleLevel("CaptionHinh", 1)] }));
+
+// ================================================================== MỞ ĐẦU
+add(new Paragraph({ heading: d.HeadingLevel.HEADING_1, children: [R("MỞ ĐẦU")] }));
+add(H2("1. Lý do chọn đề tài"));
+add(P(`Con người dành phần lớn thời gian ở trong các toà nhà, nơi tín hiệu vệ tinh định vị toàn cầu bị suy giảm mạnh, trong khi nhu cầu xác định vị trí trong nhà ngày càng lớn: dẫn đường trong bệnh viện, sân bay, trường đại học; quản lý tài sản; hỗ trợ cứu hộ. Định vị bằng vân tay Wi-Fi là hướng tiếp cận phổ biến vì tận dụng hạ tầng điểm truy cập sẵn có và chỉ cần điện thoại thông thường [15], [16].`));
+add(P(`Khai thác tập mục lợi ích cao (HUIM) là một bài toán khai phá dữ liệu mở rộng khai thác tập phổ biến: mỗi mục trong giao dịch mang một lợi ích định lượng, và cần tìm mọi tập mục có tổng lợi ích lớn [6], [10]. Một vân tay Wi-Fi có cấu trúc rất gần với một giao dịch có lợi ích: tập các AP được phát hiện, mỗi AP kèm cường độ tín hiệu. Điều đó gợi ý rằng các tập AP mạnh cùng xuất hiện tại một vị trí, tức các HUI, có thể mô tả vị trí đó.`));
+add(P(`Ở các giai đoạn trước của đề tài, HUIM được dùng để chọn tập AP, còn việc định vị do k-NN đảm nhận. Kết quả cho thấy HUIM chỉ đóng góp khoảng 6% mức giảm sai số và có thể được thay bằng một tiêu chí xếp hạng AP đơn giản; nói cách khác, bỏ HUIM đi hệ thống vẫn định vị được. Với một đề tài mang tên “Ứng dụng HUIM vào hệ thống định vị trong nhà”, vai trò như vậy là chưa đủ. Luận văn vì vậy đặt mục tiêu xây dựng một hệ thống trong đó **HUIM là thuật toán định vị chính**, không dùng k-NN, và vẫn đạt sai số trung bình dưới 7 m.`));
+add(H2("2. Mục tiêu nghiên cứu"));
+add(...NUMS([
+  `Mô hình hoá dữ liệu vân tay Wi-Fi thành các cơ sở dữ liệu giao dịch có lợi ích phù hợp với định nghĩa của bài toán HUIM.`,
+  `Đề xuất mô hình định vị mà mô hình là tập HUI của các điểm tham chiếu; mọi quyết định về tòa nhà, tầng và toạ độ đều dựa trên bằng chứng rút ra từ HUI.`,
+  `Đạt sai số định vị trung bình dưới 7 m trên tập kiểm tra của UJIIndoorLoc và các bộ dữ liệu bổ sung, với giao thức đánh giá không rò rỉ dữ liệu.`,
+  `Kiểm chứng độc lập mọi con số và cung cấp mã nguồn, số liệu để có thể tái lập.`]));
+add(H2("3. Đối tượng và phạm vi nghiên cứu"));
+add(P(`**Đối tượng:** thuật toán khai thác tập mục lợi ích cao EFIM [5], dữ liệu vân tay Wi-Fi dạng RSSI và bài toán ước lượng toạ độ hai chiều, tòa nhà, tầng của một vân tay.`));
+add(P(`**Phạm vi:** sáu bộ dữ liệu công khai hoặc được cung cấp sẵn: UJIIndoorLoc [3] (ba toà nhà, 13 tòa–tầng), UJI_LIB tầng 3, DLULIB, HCXY, HUS và HUS sau khi khử trùng lặp. Luận văn chỉ xét định vị tĩnh từ một lần quét; không xét theo dõi quỹ đạo, cảm biến quán tính hay các công nghệ khác ngoài Wi-Fi RSSI.`));
+add(H2("4. Phương pháp nghiên cứu"));
+add(BUL(`**Nghiên cứu lý thuyết:** tổng hợp các phương pháp định vị vân tay và các thuật toán HUIM, phân tích tính chất của lợi ích và các chặn trên dùng để cắt tỉa.`));
+add(BUL(`**Thực nghiệm có kiểm soát:** mọi lựa chọn mô hình dựa trên các fold kiểm định tách từ tập huấn luyện (với UJIIndoorLoc, fold được giữ lại theo điện thoại để mô phỏng thiết bị lạ); tập kiểm tra chỉ dùng một lần cho mỗi phiên bản và mọi phiên bản đều được ghi lại.`));
+add(BUL(`**Kiểm chứng độc lập:** một chương trình riêng không gọi EFIM hay bộ định vị tính lại các đại lượng từ dữ liệu gốc; sổ Excel và script dùng thư viện chuẩn tính lại sai số trung bình.`));
+add(H2("5. Đóng góp của luận văn"));
+add(BUL(`Một cách mô hình hoá vân tay Wi-Fi thành bài toán HUIM theo từng điểm tham chiếu, với ba định nghĩa lợi ích nội (abs, rel, rank) và ngưỡng tương đối theo ô có cơ chế tự nâng ngưỡng bảo đảm tập HUI luôn đầy đủ.`));
+add(BUL(`Một thuật toán định vị chỉ dựa trên HUI gồm tám bước, trong đó tầng, ô ứng viên và toạ độ đều được suy ra từ điểm khớp HUI và các đại lượng rút ra từ HUI (hồ sơ cường độ, độ phủ ngược), không lưu và không so sánh vân tay huấn luyện.`));
+add(BUL(`Kết quả dưới 7 m trên cả ${allTests.length} tập kiểm tra của ${order.length} bộ dữ liệu, kèm phân tích định lượng nguồn sai số (thiết bị thu, độ phân giải trong tầng) và kiểm chứng độc lập.`));
+add(H2("6. Bố cục luận văn"));
+add(P(`Ngoài phần mở đầu, kết luận, tài liệu tham khảo và phụ lục, luận văn gồm bốn chương. Chương 1 tổng quan về định vị trong nhà và khai thác tập mục lợi ích cao. Chương 2 trình bày cơ sở lý thuyết: mô hình tín hiệu, bài toán định vị vân tay, bài toán HUIM, thuật toán EFIM, Gradient Boosting và các độ đo đánh giá. Chương 3 trình bày mô hình định vị đề xuất theo tám bước từ đầu vào tới đầu ra. Chương 4 trình bày thực nghiệm, kết quả, phân tích và kiểm chứng.`));
 
 // ================================================================== CHƯƠNG 1
-add(H1("CHƯƠNG 1. TỔNG QUAN"));
-add(H2("1.1. Bối cảnh"));
-add(P(`Hệ thống định vị toàn cầu không hoạt động ổn định trong các toà nhà, nên định vị trong nhà thường dựa vào tín hiệu của các điểm truy cập Wi-Fi sẵn có. Phương pháp vân tay (fingerprinting) gồm hai pha: pha khảo sát ghi lại cường độ tín hiệu thu (RSSI) của mọi AP tại các điểm tham chiếu đã biết toạ độ; pha định vị so sánh vân tay mới với cơ sở dữ liệu đó để suy ra vị trí [1], [2]. Bộ dữ liệu UJIIndoorLoc [3] là chuẩn đối chiếu phổ biến cho bài toán này, với 520 AP, ba toà nhà và mười ba tầng.`));
-add(P(`Khai thác tập mục lợi ích cao (HUIM) [6], [7] mở rộng khai thác tập phổ biến [11] bằng cách gán cho mỗi mục một lợi ích nội (số lượng) và một lợi ích ngoài (trọng số); bài toán là tìm mọi tập mục có tổng lợi ích không nhỏ hơn một ngưỡng. Thuật toán EFIM [5] giải bài toán này hiệu quả nhờ hai chặn trên chặt và kỹ thuật chiếu, gộp giao dịch.`));
-add(H2("1.2. Vấn đề nghiên cứu"));
-add(P(`Ở các giai đoạn trước của đề tài, HUIM được dùng để chọn tập AP, còn việc định vị do k-NN đảm nhận. Kết quả trên UJIIndoorLoc cho thấy hai điều. Thứ nhất, khai thác HUI trên toàn bộ dữ liệu chỉ giữ được ${refU.huim_toan_cuc_so_ap} AP và cho sai số ${vn(refU.huim_toan_cuc_knn_m)} m. Thứ hai, khai thác theo từng tòa – tầng giữ ${refU.huim_chon_ap_so_ap}/${refU.tong_ap} AP và cho ${vn(refU.huim_chon_ap_knn_m)} m, nhưng phân tích Shapley cho thấy HUIM chỉ đóng góp khoảng 6% mức giảm sai số, và thay HUIM bằng một tiêu chí xếp hạng AP đơn giản cho kết quả gần như tương đương. Khi đó HUIM chỉ là một nhánh tiền xử lý: bỏ HUIM đi, k-NN vẫn định vị được.`));
-add(P(`Câu hỏi của báo cáo vì vậy là: **có thể xây dựng một hệ thống định vị trong đó HUIM là thuật toán định vị chính, không dùng k-NN, mà vẫn đạt sai số trung bình dưới 7 m hay không?**`));
-add(H2("1.3. Mục tiêu và phạm vi"));
-add(BUL(`Mô hình hoá dữ liệu vân tay Wi-Fi thành các cơ sở dữ liệu giao dịch có lợi ích, phù hợp với định nghĩa của bài toán HUIM.`));
-add(BUL(`Đề xuất thuật toán định vị chỉ dựa trên tập HUI: mô hình định vị là tập HUI của các điểm tham chiếu, quyết định tầng và toạ độ do điểm khớp HUI đưa ra.`));
-add(BUL(`Đánh giá trên UJIIndoorLoc và năm bộ dữ liệu bổ sung (UJI_LIB tầng 3, DLULIB, HCXY, HUS, HUS khử trùng lặp) với giao thức không rò rỉ dữ liệu, và kiểm chứng độc lập mọi con số.`));
-add(P(`Báo cáo không khẳng định tính mới tuyệt đối của việc dùng mẫu tập mục cho định vị, và không ngoại suy kết quả ra ngoài các bộ dữ liệu đã dùng.`));
-add(H2("1.4. Cấu trúc báo cáo"));
-add(P(`Chương 2 trình bày cơ sở lý thuyết về định vị vân tay, bài toán HUIM và thuật toán EFIM. Chương 3 trình bày mô hình và thuật toán đề xuất theo từng bước từ đầu vào tới đầu ra. Chương 4 trình bày dữ liệu, giao thức, kết quả, phân tích và kiểm chứng. Chương 5 kết luận và nêu hướng phát triển.`));
+add(H1("CHƯƠNG 1. TỔNG QUAN VỀ ĐỊNH VỊ TRONG NHÀ VÀ KHAI THÁC TẬP MỤC LỢI ÍCH CAO"));
+add(H2("1.1. Bài toán định vị trong nhà"));
+add(P(`Hệ thống định vị trong nhà (IPS) xác định vị trí của một thiết bị hoặc người dùng bên trong toà nhà, thường gồm toạ độ trên mặt sàn, tầng và toà nhà. Khác với môi trường ngoài trời, tín hiệu vô tuyến trong nhà bị phản xạ, nhiễu xạ và suy hao qua tường, sàn, đồ vật và chính cơ thể người, nên các mô hình hình học đơn giản dựa trên khoảng cách thường kém chính xác [15], [16]. Hai đặc thù quan trọng của bài toán là tính đa tầng (cần xác định đúng tầng trước khi xét toạ độ) và tính không đồng nhất của thiết bị thu: cùng một vị trí, các điện thoại khác nhau đọc cường độ tín hiệu khác nhau [8].`));
+add(H2("1.2. Các công nghệ định vị trong nhà"));
+const t11 = TAB(1, "So sánh định tính một số công nghệ định vị trong nhà (tổng hợp từ [15], [16])",
+  ["Công nghệ", "Đại lượng đo", "Hạ tầng", "Ưu điểm", "Hạn chế"], [
+    ["Wi-Fi RSSI (vân tay)", "Cường độ tín hiệu", "AP sẵn có", "Chi phí thấp, điện thoại phổ biến", "Cần khảo sát; nhạy với thiết bị và môi trường"],
+    ["Bluetooth Low Energy", "Cường độ tín hiệu", "Lắp đặt beacon", "Tiêu thụ năng lượng thấp", "Cần lắp đặt, bảo trì beacon"],
+    ["Ultra-wideband (UWB)", "Thời gian truyền", "Lắp đặt anchor", "Độ chính xác cao", "Chi phí phần cứng cao"],
+    ["RFID", "Phát hiện thẻ", "Đầu đọc, thẻ", "Phù hợp quản lý tài sản", "Tầm hoạt động ngắn"],
+    ["Cảm biến quán tính (PDR)", "Gia tốc, con quay", "Không cần", "Không phụ thuộc hạ tầng", "Sai số tích luỹ theo thời gian"],
+  ], [1900, 1500, 1400, 2100, 2171], { size: 11 });
+add(P(`${t11.label} tóm tắt các công nghệ thường gặp. Luận văn tập trung vào Wi-Fi RSSI vì không cần lắp đặt thêm thiết bị và có các bộ dữ liệu chuẩn để đối chiếu.`));
+add(t11);
+add(H2("1.3. Định vị bằng vân tay Wi-Fi"));
+add(P(`Phương pháp vân tay gồm hai pha. Ở **pha khảo sát** (offline), người khảo sát ghi lại vectơ RSSI của mọi AP tại nhiều điểm tham chiếu đã biết toạ độ; tập các cặp (vân tay, vị trí) tạo thành cơ sở dữ liệu huấn luyện. Ở **pha định vị** (online), vân tay mới được so với cơ sở dữ liệu để suy ra vị trí [1], [2]. Bộ dữ liệu UJIIndoorLoc [3] là chuẩn đối chiếu phổ biến cho bài toán này với 520 AP, ba toà nhà và mười ba tòa–tầng.`));
+add(P(`Các khó khăn chính của định vị vân tay gồm: (i) dao động của tín hiệu theo thời gian và theo người dùng; (ii) khác biệt giữa các thiết bị thu, khiến cùng một vị trí cho các vectơ RSSI lệch nhau; (iii) tín hiệu chồng lấn giữa các tầng liền kề; (iv) số chiều lớn và thưa (mỗi vân tay chỉ thấy một phần nhỏ trong hàng trăm AP) [8], [12].`));
+add(H2("1.4. Các phương pháp định vị vân tay"));
+const t12 = TAB(1, "Một số nhóm phương pháp định vị vân tay Wi-Fi",
+  ["Nhóm", "Nguyên lý", "Ví dụ"], [
+    ["Tất định (k-NN, WKNN)", "Tìm k vân tay huấn luyện gần nhất theo một độ đo khoảng cách, lấy trung bình vị trí", "RADAR [1]; so sánh độ đo [4]"],
+    ["Xác suất", "Ước lượng phân bố RSSI tại mỗi vị trí, chọn vị trí có hậu nghiệm lớn nhất", "Horus [2]"],
+    ["Học máy", "Học trực tiếp ánh xạ từ vân tay sang vị trí hoặc tầng", "Tổng quan [8], [16]"],
+    ["Chọn AP", "Giảm số chiều bằng cách giữ các AP có ích cho định vị", "Chọn AP tiết kiệm năng lượng [12]"],
+  ], [2100, 4571, 2400], { size: 11.5 });
+add(P(`${t12.label} tóm tắt các nhóm phương pháp. Trong các hệ thống tất định, k-NN với độ đo khoảng cách phù hợp là lời giải mạnh và phổ biến [4]. Điểm chung của các phương pháp này là mô hình chứa (hoặc ước lượng trực tiếp từ) các vân tay huấn luyện. Hướng đi của luận văn khác ở chỗ mô hình chỉ gồm các mẫu tập mục khai thác được, không chứa vân tay.`));
+add(t12);
+add(H2("1.5. Khai thác mẫu phổ biến và tập mục lợi ích cao"));
+add(P(`Khai thác tập phổ biến tìm các tập mục xuất hiện cùng nhau trong nhiều giao dịch; Apriori [11] và FP-growth [17] là hai thuật toán nền tảng. Tập phổ biến chỉ xét sự có mặt của mục, bỏ qua số lượng và giá trị. Khai thác tập mục lợi ích cao [6] gán cho mỗi mục một lợi ích nội (ví dụ số lượng) và một lợi ích ngoài (ví dụ đơn giá), và tìm các tập mục có tổng lợi ích không nhỏ hơn ngưỡng. Vì lợi ích không có tính đơn điệu như độ hỗ trợ, các thuật toán phải dùng chặn trên để cắt tỉa không gian tìm kiếm.`));
+const t13 = TAB(1, "Một số thuật toán khai thác tập mục lợi ích cao tiêu biểu",
+  ["Thuật toán", "Năm", "Ý tưởng chính"], [
+    ["Two-Phase [7]", "2005", "Chặn trên TWU đơn điệu giảm; sinh ứng viên rồi tính lợi ích thật ở pha hai"],
+    ["HUI-Miner [18]", "2012", "Danh sách lợi ích (utility-list), khai thác không sinh ứng viên"],
+    ["FHM [19]", "2014", "Cắt tỉa theo đồng xuất hiện của cặp mục (EUCP) trên nền HUI-Miner"],
+    ["EFIM [5]", "2017", "Chặn trên lợi ích cục bộ và lợi ích cây con; chiếu và gộp giao dịch; một lần quét mỗi nút"],
+  ], [1800, 900, 6371], { size: 11.5 });
+add(P(`${t13.label} tóm tắt các thuật toán tiêu biểu; các khảo sát [9], [10] cho thấy EFIM thuộc nhóm nhanh và tiết kiệm bộ nhớ nhất. Luận văn dùng EFIM làm thuật toán khai thác.`));
+add(t13);
+add(H2("1.6. Các giai đoạn trước của đề tài và vấn đề đặt ra"));
+add(P(`Trước luận văn này, HUIM được dùng để chọn tập AP cho k-NN. Khai thác HUI trên toàn bộ dữ liệu UJIIndoorLoc chỉ giữ được ${refU.huim_toan_cuc_so_ap} AP và cho sai số ${vn(refU.huim_toan_cuc_knn_m)} m; khai thác theo từng tòa–tầng giữ ${refU.huim_chon_ap_so_ap}/${refU.tong_ap} AP và cho ${vn(refU.huim_chon_ap_knn_m)} m. Tuy nhiên, phân tích Shapley cho thấy HUIM chỉ đóng góp khoảng 6% mức giảm sai số, phần còn lại đến từ k-NN và các bước khác; thay HUIM bằng một tiêu chí xếp hạng AP đơn giản cho kết quả gần như tương đương. Khi đó HUIM là một nhánh tiền xử lý có thể bỏ đi.`));
+add(BOX("Câu hỏi nghiên cứu", [`Có thể xây dựng một hệ thống định vị trong nhà trong đó HUIM là thuật toán định vị chính — mô hình là tập HUI, mọi quyết định đến từ bằng chứng HUI, không dùng k-NN — mà vẫn đạt sai số trung bình dưới 7 m trên tập kiểm tra hay không?`]));
+add(GAP());
+add(H2("1.7. Kết luận chương 1"));
+add(P(`Chương 1 đã trình bày bài toán định vị trong nhà, các công nghệ và phương pháp định vị vân tay, cùng bài toán và các thuật toán khai thác tập mục lợi ích cao. Từ hạn chế của cách dùng HUIM như bước chọn AP, chương này đặt ra câu hỏi nghiên cứu của luận văn. Chương 2 trình bày các cơ sở lý thuyết cần thiết để trả lời câu hỏi đó.`));
 
 // ================================================================== CHƯƠNG 2
 add(H1("CHƯƠNG 2. CƠ SỞ LÝ THUYẾT"));
-add(H2("2.1. Định vị trong nhà bằng vân tay Wi-Fi"));
-add(P(`Một vân tay là vectơ RSSI của mọi AP tại một lần quét; AP không thu được tín hiệu được ghi bằng giá trị quy ước (UJIIndoorLoc dùng 100). Các hệ thống kinh điển như RADAR [1] và Horus [2] ước lượng vị trí bằng cách so vân tay mới với các vân tay đã khảo sát, phổ biến nhất là bằng k-NN với một độ đo khoảng cách [4]. Khó khăn chính gồm: tín hiệu dao động theo thời gian, khác biệt giữa các thiết bị thu, và sự chồng lấn tín hiệu giữa các tầng liền kề [8].`));
-add(H2("2.2. Bài toán khai thác tập mục lợi ích cao"));
+add(H2("2.1. Mô hình tín hiệu Wi-Fi và cường độ RSSI"));
+add(P(`Cường độ tín hiệu thu được từ một AP giảm theo khoảng cách và chịu ảnh hưởng của vật cản. Mô hình suy hao log-khoảng cách thường dùng để mô tả hiện tượng này [15]:`));
+add(EQ(2, [up("RSSI"), rb(r("d")), r("="), up("RSSI"), rb(sb([r("d")], [r("0")])), r("−10"), r("n"), sb([up("log")], [r("10")]), fr([r("d")], [sb([r("d")], [r("0")])]), r("+"), sb([r("X")], [r("σ")])]));
+add(P(`trong đó d là khoảng cách tới AP, $d_0$ là khoảng cách tham chiếu, n là hệ số suy hao phụ thuộc môi trường và $X_σ$ là nhiễu ngẫu nhiên. Vì n và $X_σ$ thay đổi mạnh theo vị trí, việc suy khoảng cách từ RSSI rồi tam giác đạc kém chính xác trong nhà; phương pháp vân tay tránh mô hình hoá trực tiếp bằng cách học quan hệ giữa vectơ RSSI và vị trí từ dữ liệu khảo sát. Trong UJIIndoorLoc, RSSI nằm trong khoảng −104 dBm tới 0 dBm, và AP không được phát hiện được ghi giá trị quy ước 100 [3].`));
+add(H2("2.2. Bài toán định vị vân tay"));
+add(P(`Gọi $A$ là tập AP. Một vân tay là vectơ f gồm |A| thành phần, thành phần thứ i là RSSI của AP i hoặc giá trị rỗng nếu AP i không được phát hiện. Tập huấn luyện gồm các cặp ($f_j$, $ℓ_j$) với $ℓ_j$ = ($x_j$, $y_j$, tòa nhà, tầng). Bài toán định vị là xây dựng ánh xạ h sao cho với vân tay mới f, h(f) gần vị trí thật. Phương pháp tham chiếu k-NN có trọng số (WKNN) ước lượng:`));
+add(EQ(2, [rb(r("x̂,ŷ")), r("="), fr([sum([r("j∈"), sb([r("N")], [r("k")]), rb(r("f"))], [sb([r("w")], [r("j")]), rb(sb([r("x")], [r("j")]), r(","), sb([r("y")], [r("j")]))])], [sum([r("j∈"), sb([r("N")], [r("k")]), rb(r("f"))], [sb([r("w")], [r("j")])])]), r(",   "), sb([r("w")], [r("j")]), r("="), fr([r("1")], [r("δ"), rb(r("f,"), sb([r("f")], [r("j")]))])]));
+add(P(`với $N_k$(f) là k vân tay huấn luyện gần f nhất theo độ đo δ [4]. Luận văn chỉ dùng k-NN làm **hệ tham chiếu** để đối chiếu kết quả (mục 4.9); hệ thống đề xuất không dùng công thức này.`));
+add(H2("2.3. Bài toán khai thác tập mục lợi ích cao"));
 add(P(`Cho tập mục I và cơ sở dữ liệu giao dịch D. Mỗi mục i trong giao dịch T có lợi ích nội q(i,T) > 0 và mỗi mục có lợi ích ngoài p(i) > 0. Lợi ích của mục, của tập mục X trong một giao dịch và trong toàn bộ D được định nghĩa [6], [7]:`));
-const e21 = EQ(2, [r("u"), rb(r("i,T")), r("=q"), rb(r("i,T")), r("·p"), rb(r("i"))]);
-const e22 = EQ(2, [r("u"), rb(r("X,T")), r("="), sum([r("i∈X")], [r("u"), rb(r("i,T"))])]);
-const e23 = EQ(2, [r("u"), rb(r("X")), r("="), sum([r("T∈D, X⊆T")], [r("u"), rb(r("X,T"))])]);
-add(e21, e22, e23);
-add(P(`Tập mục X là tập mục lợi ích cao (HUI) khi u(X) ≥ minUtil. Khác với độ hỗ trợ trong khai thác tập phổ biến, lợi ích không có tính đơn điệu giảm: thêm một mục có thể làm u(X) tăng hoặc giảm, nên không thể cắt tỉa trực tiếp bằng u(X). Các thuật toán dùng chặn trên đơn điệu giảm, phổ biến nhất là lợi ích có trọng số giao dịch [7]:`));
-const e24 = EQ(2, [up("TU"), rb(r("T")), r("="), sum([r("i∈T")], [r("u"), rb(r("i,T"))]), r(",   "), up("TWU"), rb(r("X")), r("="), sum([r("T∈D, X⊆T")], [up("TU"), rb(r("T"))])]);
-add(e24);
-add(H2("2.3. Thuật toán EFIM"));
-add(P(`EFIM [5] duyệt cây liệt kê tập theo chiều sâu, với các mục được sắp theo thứ tự tăng dần của TWU. Tại nút α, với mỗi mục z có thể mở rộng, EFIM tính hai chặn trên trong một lần quét cơ sở dữ liệu đã chiếu:`));
-const e25 = EQ(2, [up("lu"), rb(r("α,z")), r("="), sum([r("T∋α∪{z}")], [sq(r("u"), rb(r("α,T")), r("+"), up("re"), rb(r("α,T")))])]);
-const e26 = EQ(2, [up("su"), rb(r("α,z")), r("="), sum([r("T∋α∪{z}")], [sq(r("u"), rb(r("α,T")), r("+u"), rb(r("z,T")), r("+"), sum([r("i∈T, i≻z")], [r("u"), rb(r("i,T"))]))])]);
-add(e25, e26);
-add(P(`Trong đó re(α,T) là tổng lợi ích các mục đứng sau α trong T. Nếu lu(α,z) < minUtil thì z bị loại khỏi toàn bộ cây con của α; nếu su(α,z) < minUtil thì nhánh α ∪ {z} không được duyệt. Kết hợp với chiếu cơ sở dữ liệu và gộp các giao dịch giống nhau, EFIM là một trong các thuật toán nhanh và tiết kiệm bộ nhớ nhất theo đánh giá độc lập [9]. Bản cài đặt dùng trong báo cáo được kiểm chứng với một thuật toán vét cạn trên dữ liệu ngẫu nhiên (thư mục ma_nguon/tests).`));
-add(H2("2.4. Các bộ dữ liệu"));
-const t21 = TAB(2, "Mô tả các bộ dữ liệu sử dụng", ["Bộ dữ liệu", "Số AP", "Số lớp tòa–tầng", "Mẫu huấn luyện", "Điểm tham chiếu", "Tập kiểm tra (số mẫu)"],
-  order.map((k) => { const x = D.datasets[k].description; return [x.ten, x.so_ap, x.so_lop_toa_tang, vn(x.mau_huan_luyen, 0), vn(x.diem_tham_chieu, 0), x.tap_test]; }),
-  [1700, 800, 1200, 1300, 1300, 2700], { align: [L, RT, RT, RT, RT, L], size: 10.5 });
-add(P(`UJIIndoorLoc [3] dùng toạ độ Web Mercator (EPSG:3857); khoảng cách được đổi ra mét thực địa bằng hệ số 0,766126. Các bộ còn lại dùng lưới toạ độ tính bằng mét. HUS chứa nhiều mẫu kiểm tra trùng hệt mẫu huấn luyện; bộ “HUS (khử trùng lặp)” loại các bản trùng này và là con số khách quan hơn.`));
-add(t21);
+add(EQ(2, [r("u"), rb(r("i,T")), r("=q"), rb(r("i,T")), r("·p"), rb(r("i"))]));
+add(EQ(2, [r("u"), rb(r("X,T")), r("="), sum([r("i∈X")], [r("u"), rb(r("i,T"))])]));
+add(EQ(2, [r("u"), rb(r("X")), r("="), sum([r("T∈D, X⊆T")], [r("u"), rb(r("X,T"))])]));
+add(BOX("Định nghĩa 2.1 (Tập mục lợi ích cao)", [`Cho ngưỡng minUtil > 0, tập mục X là một High Utility Itemset (HUI) nếu u(X) ≥ minUtil. Bài toán HUIM là tìm tập tất cả các HUI của D.`]));
+add(GAP());
+// ví dụ minh hoạ: CSDL 4 giao dịch, lợi ích tính bằng mã để bảo đảm đúng
+{
+  const DB = [{ A: 5, B: 3, C: 1 }, { A: 4, C: 2, D: 6 }, { B: 2, C: 3, D: 1 }, { A: 3, B: 4, D: 2 }];
+  const items = ["A", "B", "C", "D"], MINU = 15;
+  const util = (X) => DB.reduce((s, t) => (X.every((i) => i in t) ? s + X.reduce((a, i) => a + t[i], 0) : s), 0);
+  const tu = DB.map((t) => Object.values(t).reduce((a, b) => a + b, 0));
+  const twu = (X) => DB.reduce((s, t, k) => (X.every((i) => i in t) ? s + tu[k] : s), 0);
+  const subsets = [];
+  for (let m = 1; m < 16; m++) subsets.push(items.filter((_, i) => m & (1 << i)));
+  subsets.sort((a, b) => a.length - b.length || a.join().localeCompare(b.join()));
+  const tE1 = TAB(2, "Ví dụ: bốn vân tay (giao dịch) với lợi ích nội của các AP (p(i) = 1)", ["Giao dịch", "A", "B", "C", "D", "TU(T)"],
+    DB.map((t, k) => [`$T_${k + 1}$`, ...items.map((i) => (i in t ? String(t[i]) : "–")), String(tu[k])]), [1800, 1300, 1300, 1300, 1300, 2071], { align: [C, RT, RT, RT, RT, RT] });
+  const rows = subsets.filter((X) => util(X) > 0).map((X) => [`{${X.join(", ")}}`, String(util(X)), String(twu(X)), util(X) >= MINU ? "HUI" : "–"]);
+  const tE2 = TAB(2, `Lợi ích và TWU của mọi tập mục trong ví dụ; minUtil = ${MINU}`, ["Tập mục X", "u(X)", "TWU(X)", "Kết luận"], rows, [3000, 1800, 1800, 2471], { align: [L, RT, RT, C], size: 11 });
+  const hu = subsets.filter((X) => util(X) >= MINU).map((X) => `{${X.join(", ")}}`);
+  add(P(`Ví dụ, xét cơ sở dữ liệu gồm bốn vân tay ở ${tE1.label}, trong đó mỗi AP là một mục và lợi ích nội là cường độ đã chuẩn hoá. Với minUtil = ${MINU}, ${tE2.label} liệt kê lợi ích của mọi tập mục; các HUI là ${hu.join(", ")}. Có thể thấy u({A}) = ${util(["A"])} nhỏ hơn u({A, D}) = ${util(["A", "D"])}: thêm mục làm lợi ích tăng, nên lợi ích không đơn điệu giảm. Ngược lại TWU luôn không tăng khi thêm mục, và mọi HUI đều có TWU ≥ minUtil.`));
+  add(tE1, tE2);
+}
+add(P(`Khác với độ hỗ trợ trong khai thác tập phổ biến, lợi ích không có tính đơn điệu giảm: thêm một mục có thể làm u(X) tăng hoặc giảm, nên không thể cắt tỉa trực tiếp bằng u(X). Các thuật toán dùng chặn trên đơn điệu giảm, phổ biến nhất là lợi ích có trọng số giao dịch [7]:`));
+add(EQ(2, [up("TU"), rb(r("T")), r("="), sum([r("i∈T")], [r("u"), rb(r("i,T"))]), r(",   "), up("TWU"), rb(r("X")), r("="), sum([r("T∈D, X⊆T")], [up("TU"), rb(r("T"))])]));
+add(BOX("Tính chất 2.1 (Đóng xuống của TWU)", [`Với mọi X ⊆ Y: u(Y) ≤ TWU(Y) ≤ TWU(X). Do đó nếu TWU(X) < minUtil thì không tập cha nào của X là HUI, và X cùng mọi mở rộng của nó có thể bị loại.`]));
+add(GAP());
+add(H2("2.4. Thuật toán EFIM"));
+add(P(`EFIM [5] duyệt cây liệt kê tập theo chiều sâu, với các mục được sắp theo thứ tự tăng dần của TWU. Tại nút α, với mỗi mục z có thể mở rộng, EFIM tính hai chặn trên trong một lần quét cơ sở dữ liệu đã chiếu theo α:`));
+add(EQ(2, [up("lu"), rb(r("α,z")), r("="), sum([r("T∋α∪{z}")], [sq(r("u"), rb(r("α,T")), r("+"), up("re"), rb(r("α,T")))])]));
+add(EQ(2, [up("su"), rb(r("α,z")), r("="), sum([r("T∋α∪{z}")], [sq(r("u"), rb(r("α,T")), r("+u"), rb(r("z,T")), r("+"), sum([r("i∈T, i≻z")], [r("u"), rb(r("i,T"))]))])]));
+add(P(`Trong đó re(α,T) là tổng lợi ích các mục đứng sau α trong T. Nếu lu(α,z) < minUtil thì z bị loại khỏi toàn bộ cây con của α; nếu su(α,z) < minUtil thì nhánh α ∪ {z} không được duyệt. Hai kỹ thuật **chiếu cơ sở dữ liệu** (chỉ giữ phần giao dịch đứng sau α) và **gộp giao dịch** (cộng lợi ích các giao dịch giống hệt nhau sau khi chiếu) giúp mỗi nút chỉ cần một lần quét tuyến tính.`));
+add(ALGO(2, "EFIM (tóm tắt theo [5])", [
+  "Đầu vào: cơ sở dữ liệu D, ngưỡng minUtil",
+  "  1. Tính TWU của mọi mục; loại các mục có TWU < minUtil; sắp mục theo TWU tăng dần",
+  "  2. Sắp và gộp các giao dịch giống nhau; tính lu(∅, z) và su(∅, z) cho mọi mục z",
+  "  3. Search(α = ∅, D, mục mở rộng = {z : su(∅,z) ≥ minUtil}, mục chính = {z : lu(∅,z) ≥ minUtil})",
+  "Search(α, D_α, Primary, Secondary):",
+  "  4. Với mỗi z ∈ Primary: β ← α ∪ {z}; quét D_α tính u(β) và chiếu, gộp được D_β",
+  "  5.   nếu u(β) ≥ minUtil thì xuất β",
+  "  6.   tính lu(β, w), su(β, w) cho mọi w ∈ Secondary sau z trong một lần quét D_β",
+  "  7.   Search(β, D_β, {w : su(β,w) ≥ minUtil}, {w : lu(β,w) ≥ minUtil})",
+  "Đầu ra: tập mọi HUI của D",
+]));
+add(P(`Bản cài đặt EFIM của luận văn (ma_nguon/src/huim/efim.py) được kiểm thử bằng cách so với một thuật toán vét cạn trên dữ liệu ngẫu nhiên: tập HUI và lợi ích của từng HUI trùng khớp hoàn toàn. Bản cài đặt thêm ngân sách thời gian và số HUI cho mỗi lần chạy để dùng trong cơ chế tự nâng ngưỡng (mục 3.3).`));
+add(H2("2.5. Học tăng cường theo gradient"));
+add(P(`Gradient Boosting [13] xây dựng một mô hình hồi quy dạng tổng của M cây quyết định nhỏ, mỗi cây được học để giảm hàm mất mát của tổng các cây trước nó:`));
+add(EQ(2, [sb([r("F")], [r("M")]), rb(r("φ")), r("="), sb([r("F")], [r("0")]), r("+"), sum([r("m=1")], [r("η"), sb([r("h")], [r("m")]), rb(r("φ"))], [r("M")]), r(",   "), sb([r("h")], [r("m")]), r("="), sb([up("arg min")], [r("h")]), sum([r("j")], [sp([rb(sb([r("g")], [r("jm")]), r("−h"), rb(sb([r("φ")], [r("j")])))], [r("2")])])]));
+add(P(`với η là tốc độ học và $g_{jm}$ là gradient âm của hàm mất mát tại mẫu j sau m − 1 cây (với mất mát bình phương, chính là phần dư). Biến thể dựa trên histogram [14], được cài đặt trong scikit-learn [20] (HistGradientBoostingRegressor), rời rạc hoá đặc trưng thành các ngăn để học nhanh trên hàng trăm nghìn mẫu. Trong luận văn, Gradient Boosting chỉ được dùng ở Bước 8 để kết hợp các bằng chứng rút ra từ HUI (mục 3.8).`));
+add(H2("2.6. Độ đo đánh giá"));
+add(P(`Sai số định vị của vân tay n là khoảng cách Euclid giữa vị trí ước lượng và vị trí thật, đổi ra mét thực địa bằng hệ số g (g = 0,766126 cho UJIIndoorLoc do dùng toạ độ Web Mercator, g = 1 cho các bộ còn lại). Độ đo chính là sai số trung bình trên N vân tay kiểm tra; ngoài ra luận văn báo cáo trung vị, các phân vị 75%, 90%, 95% và độ chính xác tòa nhà, tòa–tầng:`));
+add(EQ(2, [sb([r("e")], [r("n")]), r("="), sqrt([sp([rb(sb([r("x̂")], [r("n")]), r("−"), sb([r("x")], [r("n")]))], [r("2")]), r("+"), sp([rb(sb([r("ŷ")], [r("n")]), r("−"), sb([r("y")], [r("n")]))], [r("2")])]), r("·g,   "), r("ē"), r("="), fr([r("1")], [r("N")]), sum([r("n=1")], [sb([r("e")], [r("n")])], [r("N")])]));
+add(EQ(2, [up("Acc"), r("="), fr([r("1")], [r("N")]), sum([r("n=1")], [r("𝟙"), sq(sb([r("f̂")], [r("n")]), r("="), sb([r("f")], [r("n")]))], [r("N")]), r(",   "), up("SE"), rb(r("ē")), r("="), fr([r("s")], [sqrt([r("N")])])]));
+add(P(`trong đó $f_n$ là nhãn tòa–tầng, 𝟙[·] là hàm chỉ thị và s là độ lệch chuẩn mẫu của các sai số; sai số chuẩn SE dùng để đánh giá độ tin cậy của sai số trung bình.`));
+add(H2("2.7. Kết luận chương 2"));
+add(P(`Chương 2 đã trình bày mô hình tín hiệu, bài toán định vị vân tay, bài toán HUIM với tính chất đóng xuống của TWU, thuật toán EFIM, kỹ thuật Gradient Boosting và các độ đo đánh giá. Đây là nền tảng cho mô hình định vị đề xuất ở Chương 3.`));
 
-// ================================================================== CHƯƠNG 3
-add(H1("CHƯƠNG 3. PHƯƠNG PHÁP ĐỀ XUẤT"));
-add(H2("3.1. Tổng quan hệ thống"));
-const f31 = FIG(3, diag("d01_tong_quan.png"), "Sơ đồ tổng quát của hệ thống định vị chỉ dùng HUIM");
-add(P(`Hệ thống gồm hai pha (${f31.label}). Pha huấn luyện thực hiện một lần trên tập huấn luyện: chuyển RSSI thành lợi ích nội (bước 1), nhóm vân tay theo điểm tham chiếu thành các cơ sở dữ liệu giao dịch (bước 2), khai thác HUI của từng cơ sở dữ liệu bằng EFIM (bước 3) và lưu mô hình là tập HUI cùng toạ độ, tầng của từng ô (bước 4). Pha định vị xử lý từng vân tay: chấm điểm khớp với HUI của mọi ô (bước 5), làm mượt điểm theo không gian và chọn tầng (bước 6), rồi ước lượng toạ độ (bước 7).`));
-add(f31);
-add(H2("3.2. Bước 1 — Lợi ích nội từ cường độ tín hiệu"));
-add(P(`Mỗi vân tay T là một giao dịch; mục là một AP được phát hiện. Lợi ích ngoài được đặt p(i) = 1, nên lợi ích chỉ phản ánh cường độ tín hiệu. Ba định nghĩa lợi ích nội được so sánh, với $n_T$ là số AP thấy được trong T và $r_T$(i) là thứ hạng cường độ của AP i (mạnh nhất có hạng 1):`));
-const e31 = EQ(3, [sb([r("q")], [up("a\u200Bbs")]), rb(r("i,T")), r("="), up("round"), rb(r("1+99·"), fr([up("RSSI"), rb(r("i,T")), r("−"), sb([up("RSSI")], [up("min")])], [sb([up("RSSI")], [up("max")]), r("−"), sb([up("RSSI")], [up("min")])]))]);
-const e32 = EQ(3, [sb([r("q")], [up("rel")]), rb(r("i,T")), r("="), up("round"), rb(r("1+99·"), fr([up("RSSI"), rb(r("i,T")), r("−"), sb([up("max")], [r("j∈T")]), up("RSSI"), rb(r("j,T")), r("+40")], [r("40")]))]);
-const e33 = EQ(3, [sb([r("q")], [up("rank")]), rb(r("i,T")), r("="), up("round"), rb(r("1+99·"), fr([sb([r("n")], [r("T")]), r("−"), sb([r("r")], [r("T")]), rb(r("i"))], [sb([r("n")], [r("T")]), r("−1")]))]);
-add(e31, e32, e33);
-add(P(`Dạng rel và rank không đổi khi một điện thoại đọc mọi AP lệch cùng một lượng dB; dạng rank còn bất biến với mọi biến đổi đơn điệu của thang RSSI. Dạng được chọn trên dev cho UJIIndoorLoc là **${SEL.utility}** (mục 4.3). ${"Hình 3.2"} minh hoạ trên một vân tay thật của tập kiểm tra.`));
-add(FIG(3, diag("d02_buoc1_utility.png"), "Bước 1 trên một vân tay thật (dòng " + D.worked_example.src_row + " của validationData)"));
-add(H2("3.3. Bước 2 và 3 — Cơ sở dữ liệu giao dịch theo ô và khai thác EFIM"));
-add(P(`Một ô c là một điểm tham chiếu của tập huấn luyện; $D_c$ là tập giao dịch của các vân tay đo tại c (UJIIndoorLoc: ${U.model.n_cells} ô, trung bình ${vn(U.mining.giao_dich_tb_moi_o, 1)} giao dịch mỗi ô). Ngưỡng được đặt tương đối theo lợi ích của chính ô đó, để các ô ít mẫu không bị lấn át bởi các ô nhiều mẫu:`));
-const e34 = EQ(3, [sb([r("minUtil")], [r("c")]), r("=θ·u"), rb(sb([r("D")], [r("c")])), r(",   "), sb([up("HUI")], [r("c")]), r("="), cb(r("X : u"), rb(r("X")), r("≥"), sb([r("minUtil")], [r("c")]))]);
-add(e34);
-add(P(`EFIM được chạy độc lập trên từng $D_c$. Mỗi lần chạy có ngân sách 10 giây hoặc 10 000 HUI; nếu vượt ngân sách, ô đó được khai thác lại với θ nhân 1,25 cho tới khi hoàn tất, nên tập HUI dùng cho mô hình luôn đầy đủ (danh sách bị cắt ngang thiên lệch theo thứ tự duyệt và không bao giờ được dùng). Trên UJIIndoorLoc với θ = ${vn(SEL.theta_pct, 0)}%, ${U.mining.o_phai_nang_theta}/${U.model.n_cells} ô phải nâng θ (θ trung vị thực dùng ${vn(U.mining.theta_trung_vi_dung)}%), do các ô có nhiều AP cùng xuất hiện sinh ra số HUI rất lớn.`));
-add(FIG(3, diag("d03_buoc2_o_giao_dich.png"), "Một ô là một cơ sở dữ liệu giao dịch (ô có điểm khớp cao nhất cho vân tay ví dụ)"));
-add(FIG(3, diag("d04_buoc3_efim.png"), "Khai thác HUI của một ô bằng EFIM với hai chặn trên lu và su"));
-add(H2("3.4. Bước 4 — Mô hình định vị"));
-add(P(`Mô hình định vị là tập {($HUI_c$, $x_c$, $y_c$, tòa–tầng$_c$)} của mọi ô, trong đó ($x_c$, $y_c$) là trọng tâm các vị trí huấn luyện của ô. Với mỗi HUI X, mô hình lưu u(X) và độ hỗ trợ s(X); lợi ích trung bình mỗi mục của X trong ô được suy ra trực tiếp:`));
-add(EQ(3, [sb([r("q̄")], [r("c")]), rb(r("X")), r("="), fr([r("u"), rb(r("X"))], [r("s"), rb(r("X")), r("·"), abs(r("X"))])]));
-add(P(`Mô hình UJIIndoorLoc gồm ${vn(U.model.n_huis, 0)} HUI; ${U.model.aps_in_some_hui}/${U.model.n_aps} AP xuất hiện trong ít nhất một HUI. Mô hình không lưu bất kỳ vân tay huấn luyện nào.`));
-add(FIG(3, diag("d05_buoc4_mo_hinh.png"), "Các HUI có lợi ích lớn nhất của một ô trong mô hình"));
-add(H2("3.5. Bước 5 — Chấm điểm khớp giữa vân tay và HUI của ô"));
-add(P(`Vân tay cần định vị cũng được chuyển thành giao dịch T theo bước 1. Với mỗi HUI X của ô c, ba đại lượng được tính: tỷ lệ $ρ$(X,T) các mục của X có mặt trong T (khớp mềm, vì thiết bị khác có thể bỏ sót một AP), lợi ích trung bình mỗi mục của X trong T, và mức phù hợp cường độ agree(X,T) với τ là thang cường độ:`));
-add(EQ(3, [r("ρ"), rb(r("X,T")), r("="), fr([abs(r("X∩T"))], [abs(r("X"))]), r(",   "), sb([r("q̄")], [r("T")]), rb(r("X")), r("="), fr([r("1")], [abs(r("X∩T"))]), sum([r("i∈X∩T")], [r("q"), rb(r("i,T"))])]));
-add(EQ(3, [up("agree"), rb(r("X,T")), r("="), up("exp"), rb(r("−"), fr([abs(sb([r("q̄")], [r("T")]), rb(r("X")), r("−"), sb([r("q̄")], [r("c")]), rb(r("X")))], [r("τ")]))]));
-add(P(`Điểm mẫu $P_c$ đo khối lượng lợi ích HUI của ô mà vân tay chứa, đúng cường độ; độ phủ $V_c$ đo phần lợi ích của vân tay được các HUI của ô giải thích, với $I_c$ là hợp các mục của $HUI_c$:`));
-add(EQ(3, [sb([r("P")], [r("c")]), rb(r("T")), r("="), sum([r("X∈"), sb([up("HUI")], [r("c")])], [fr([r("u"), rb(r("X"))], [sum([r("Y∈"), sb([up("HUI")], [r("c")])], [r("u"), rb(r("Y"))])]), r("·"), sp([r("ρ"), rb(r("X,T"))], [r("γ")]), r("·"), up("agree"), rb(r("X,T"))])]));
-add(EQ(3, [sb([r("V")], [r("c")]), rb(r("T")), r("="), fr([sum([r("i∈T∩"), sb([r("I")], [r("c")])], [r("q"), rb(r("i,T"))])], [sum([r("i∈T")], [r("q"), rb(r("i,T"))])]), r(",   "), sb([up("score")], [r("c")]), rb(r("T")), r("="), sb([r("P")], [r("c")]), rb(r("T")), r("·"), sbsp([r("V")], [r("c")], [r("β")]), rb(r("T"))]));
-add(FIG(3, diag("d06_buoc5_cham_diem.png"), "Chấm điểm vân tay ví dụ với các HUI của ô có điểm cao nhất (số liệu thật)"));
-add(H2("3.6. Bước 6 — Làm mượt không gian và chọn tầng"));
-add(P(`Các ô lân cận trên cùng tầng thường có chữ ký HUI gần nhau. Điểm của mỗi ô được cộng thêm điểm của các ô cùng tầng trong bán kính cỡ σ mét bằng nhân Gauss chuẩn hoá theo hàng, với d(c′,c) là khoảng cách thực địa giữa tâm hai ô; sau đó tầng được chọn là tầng có trung bình $k_f$ điểm lớn nhất cao nhất:`));
-add(EQ(3, [sb([r("S")], [r("c")]), rb(r("T")), r("="), sum([r("c′")], [sb([up("score")], [r("c′")]), rb(r("T")), r("·"), r("K"), rb(r("c′,c"))]), r(",   K"), rb(r("c′,c")), r("∝"), sp([r("e")], [r("−d"), sp([rb(r("c′,c"))], [r("2")]), r("/2"), sp([r("σ")], [r("2")])])]));
-add(EQ(3, [r("f"), rb(r("T")), r("="), sb([up("arg max")], [r("f")]), fr([r("1")], [sb([r("k")], [r("f")])]), sum([r("c∈"), sb([up("top")], [sb([r("k")], [r("f")])]), rb(r("f"))], [sb([r("S")], [r("c")]), rb(r("T"))])]));
-add(FIG(3, diag("d07_buoc6_lam_muot_tang.png"), "Điểm trước và sau làm mượt; điểm theo từng tòa–tầng của vân tay ví dụ"));
-add(H2("3.7. Bước 7 — Ô ứng viên và ước lượng ban đầu"));
-add(P(`K = ${V6.k_candidates} ô có điểm $S_c$ cao nhất trong tầng đã chọn được giữ làm ô ứng viên cho Bước 8. Ước lượng ban đầu là trọng tâm có trọng số của m = ${PRM.m} ô tốt nhất; số mũ p = ${PRM.p} điều chỉnh độ tập trung của trọng số:`));
-add(EQ(3, [rb(r("x̂,ŷ")), r("="), sum([r("c∈top-m"), rb(r("f"))], [sb([r("a")], [r("c")]), rb(sb([r("x")], [r("c")]), r(","), sb([r("y")], [r("c")]))]), r(",   "), sb([r("a")], [r("c")]), r("="), fr([sbsp([r("S")], [r("c")], [r("p")])], [sum([r("c′∈top-m"), rb(r("f"))], [sbsp([r("S")], [r("c′")], [r("p")])])])]));
-add(P(`Ước lượng ban đầu chính là đầu ra của phiên bản v4 (mục 4.4). Phân tích v4 trên tập kiểm tra UJIIndoorLoc cho thấy trong 12 ô được chọn, ô gần vị trí thật nhất cách trung bình 2,40 m, trong khi ô có điểm cao nhất cách 8,82 m: tập ứng viên đúng vùng nhưng một điểm khớp duy nhất không sắp được các ô lân cận theo đúng thứ tự. Bước 8 giải quyết việc này.`));
-add(FIG(3, diag("d08_buoc7_toa_do.png"), "Ô ứng viên của tầng đã chọn và ước lượng ban đầu của vân tay ví dụ"));
-add(H2("3.8. Bước 8 — Xếp hạng lại ô ứng viên bằng bằng chứng HUI"));
-add(P(`Mỗi ô ứng viên được mô tả bằng một véc-tơ bằng chứng, mọi thành phần đều tính từ tập HUI. Ngoài mô hình chính (lợi ích nội rank), hai mô hình HUI phụ được khai thác bằng chính quy trình Bước 2–4: mô hình **mục theo mức cường độ**, trong đó mỗi AP được tách thành L = 3 mục theo mức của lợi ích nội (${vn(V6.n_huis_L3, 0)} HUI), và mô hình **lợi ích abs** theo cường độ tuyệt đối (${vn(V6.n_huis_abs, 0)} HUI):`));
-add(EQ(3, [r("i"), r(" ↦ "), rb(r("i,ℓ")), r(",   "), r("ℓ"), r("="), up("min"), rb(r("L−1, "), flo(fr([rb(r("q"), rb(r("i,T")), r("−1")), r("·L")], [r("100")])))]));
-add(P(`Từ HUI của mỗi ô có thể suy ra một hồ sơ cường độ: khối lượng HUI đặt trên AP i và cường độ ước lượng của AP i tại ô, với w(X) và $q̄_c$(X) như ở (3.5)–(3.8):`));
-add(EQ(3, [sb([r("m")], [r("c")]), rb(r("i")), r("∝"), sum([r("X∈"), sb([up("HUI")], [r("c")]), r(", i∈X")], [fr([r("w"), rb(r("X"))], [abs(r("X"))])]), r(",   "), sb([r("q̂")], [r("c")]), rb(r("i")), r("="), fr([sum([r("X∋i")], [r("w"), rb(r("X")), sb([r("q̄")], [r("c")]), rb(r("X"))])], [sum([r("X∋i")], [r("w"), rb(r("X"))])])]));
-add(EQ(3, [sb([r("R")], [r("c")]), rb(r("T")), r("="), sum([r("i∈T")], [sb([r("m")], [r("c")]), rb(r("i"))]), r(",   "), sb([up("MAE")], [r("c")]), rb(r("T")), r("="), fr([sum([r("i∈T∩"), sb([r("I")], [r("c")])], [r("q"), rb(r("i,T")), abs(r("q"), rb(r("i,T")), r("−"), sb([r("q̂")], [r("c")]), rb(r("i")))])], [sum([r("i∈T∩"), sb([r("I")], [r("c")])], [r("q"), rb(r("i,T"))])])]));
-add(P(`$R_c$ là độ phủ ngược (phần khối lượng HUI của ô có mặt trong vân tay), MAE$_c$ đo độ lệch giữa cường độ của vân tay và hồ sơ cường độ của ô. Véc-tơ bằng chứng φ(T, c) gồm ${V6.n_features} đặc trưng: các điểm $P_c$, $V_c$, $R_c$, $S_c$ của mô hình rank (kể cả $P_c$ với trọng số IDF của HUI giữa các ô lân cận), $P_c$, $V_c$ và thứ hạng của ô theo hai mô hình phụ, các đại lượng hồ sơ cường độ (MAE, hệ số tương quan, cosin) của mô hình rank, mô hình mức cường độ và mô hình abs, và độ đồng thuận không gian giữa các ứng viên (khoảng cách tới ước lượng ban đầu, tới ô xếp đầu, số ứng viên trong bán kính 5 m). Mỗi đặc trưng được dùng thêm ở dạng so với các ứng viên khác của cùng truy vấn (hiệu với giá trị lớn nhất, chuẩn hoá min–max và thứ hạng).`));
-add(P(`Một bộ hồi quy Gradient Boosting [13], [14] học hàm g dự đoán khoảng cách từ tâm ô ứng viên tới vị trí thật, trên dữ liệu chỉ lấy từ các fold dev: với mỗi fold, đặc trưng của các truy vấn dev được tính từ mô hình HUI khai thác trên phần còn lại, nên bộ hồi quy chỉ học từ dữ liệu ngoài fold. Toạ độ cuối là trọng tâm của m = ${V6.m} ô có khoảng cách dự đoán nhỏ nhất, với λ = ${vn(V6.lam, 0)} m:`));
-add(EQ(3, [sb([r("d̂")], [r("c")]), r("="), up("exp"), rb(r("g"), rb(r("φ"), rb(r("T,c")))), r("−1"), r(",   "), sb([r("a")], [r("c")]), r("∝"), up("exp"), rb(r("−"), fr([sb([r("d̂")], [r("c")]), r("−"), sb([r("d̂")], [up("min")])], [r("λ")])), r(",   "), rb(r("x̂,ŷ")), r("="), sum([r("c")], [sb([r("a")], [r("c")]), rb(sb([r("x")], [r("c")]), r(","), sb([r("y")], [r("c")]))])]));
-add(P(`Bộ hồi quy không nhìn thấy vân tay huấn luyện nào; nó chỉ học cách cân các bằng chứng do HUI tạo ra. Các ô được xét vẫn là các ô có điểm HUI cao nhất, và toạ độ vẫn là tổ hợp lồi của tâm các ô đó. Nếu bỏ HUIM, không còn ô ứng viên lẫn đặc trưng nào để xếp hạng.`));
-add(FIG(3, diag("d09_buoc8_xep_hang_lai.png"), "Bước 8: bằng chứng HUI, bộ hồi quy và toạ độ cuối của vân tay ví dụ"));
-add(H2("3.9. Thuật toán tổng hợp"));
-const algo = [
-  "Đầu vào: tập huấn luyện {(T, toạ độ, tòa–tầng)}; vân tay truy vấn T*; tham số θ, γ, τ, β, σ, $k_f$, m, p",
-  "Huấn luyện:",
-  "  1. Với mỗi vân tay huấn luyện T: tính q(i,T) theo (3.1)–(3.3)",
-  "  2. Với mỗi ô c: $D_c$ ← giao dịch đo tại c; $minUtil_c$ ← θ·u($D_c$)",
-  "  3.   lặp: $HUI_c$ ← EFIM($D_c$, $minUtil_c$); nếu vượt ngân sách thì θ ← 1,25·θ",
-  "  4. Mô hình ← {($HUI_c$, $x_c$, $y_c$, tòa–tầng$_c$)} của mọi ô; lặp lại 1–4 cho mô hình mức cường độ và mô hình abs",
-  "  4b. Trên 6 fold dev: tính φ(T, c) cho các ô ứng viên của mỗi truy vấn dev; học g bằng Gradient Boosting",
-  "Định vị T*:",
-  "  5. Với mỗi ô c: tính $P_c$(T*), $V_c$(T*), $score_c$(T*) theo (3.6)–(3.9)",
-  "  6. S ← làm mượt theo (3.10); f ← tầng theo (3.11)",
-  "  7. K ô ứng viên ← K ô có S cao nhất của tầng f",
-  "  8. Với mỗi ứng viên: φ(T*, c) theo (3.13)–(3.15), $d̂_c$ ← g(φ); (x̂, ŷ) theo (3.16)",
-  "Đầu ra: (x̂, ŷ), tòa–tầng f",
-];
-add(new Paragraph({ style: "CaptionBang", keepNext: true, children: [R("Thuật toán 3.1. ", { bold: true }), R("Định vị bằng so khớp High Utility Itemset")] }));
-add(new Table({ width: { size: 9071, type: WidthType.DXA }, columnWidths: [9071], alignment: C,
-  rows: [new TableRow({ cantSplit: true, children: [new TableCell({ borders, width: { size: 9071, type: WidthType.DXA },
-    margins: { top: 100, bottom: 100, left: 160, right: 160 },
-    children: algo.map((t) => new Paragraph({ spacing: { after: 30 }, children: runs(t, { size: PT(11.5), bold: !t.startsWith(" ") }) })) })] })] }));
-add(new Paragraph({ children: [] }));
-add(P(`Gọi H là tổng số HUI của mô hình và A là số AP. Chi phí định vị một vân tay là O(H) cho bước 5 trên mỗi mô hình HUI (mỗi HUI được xét một lần nhờ biểu diễn ma trận thưa), O(C²) cho làm mượt với C ô, O(K·A) cho hồ sơ cường độ, và không phụ thuộc vào số vân tay huấn luyện. Với UJIIndoorLoc, thời gian đo được là ${vn(UT.ms_moi_fp)} ms mỗi vân tay trên cài đặt Python (${vn(U4.ms_per_fp)} ms khi chỉ dùng mô hình chính).`));
+require("./build_report_ch3_4")({ add, fig, D, U, UT, SEL, PRM, V6, U4, RSH, allTests, nOk, others, ref, refU, fs4, pil, win, EX, GF, nHUI3,
+  phones, floors, IMP, order, T, L_ });
 
-// ================================================================== CHƯƠNG 4
-add(H1("CHƯƠNG 4. THỰC NGHIỆM VÀ ĐÁNH GIÁ"));
-add(H2("4.1. Giao thức đánh giá"));
-add(P(`Tập kiểm tra chỉ được dùng một lần cho mỗi phiên bản mô hình; mọi lựa chọn (dạng lợi ích nội, θ, γ, τ, β, σ, $k_f$, m, p) được thực hiện trên 6 fold kiểm định tách từ tập huấn luyện. Với UJIIndoorLoc, ${"9 trong 11"} điện thoại của validationData không có trong trainingData, nên các fold được giữ lại theo điện thoại (GroupKFold trên PHONEID) để mô phỏng đúng tình huống gặp thiết bị lạ. Sau khi chọn, EFIM được chạy lại trên toàn bộ tập huấn luyện và mô hình cuối được chấm một lần trên tập kiểm tra. Bộ hồi quy của Bước 8 cũng chỉ học từ các fold dev, và mọi lựa chọn của Bước 8 (đặc trưng, K, m, λ) dựa trên sai số dev ngoài fold. Sai số được tính theo mét thực địa:`));
-add(EQ(4, [sb([r("e")], [r("n")]), r("="), sqrt([sp([rb(sb([r("x̂")], [r("n")]), r("−"), sb([r("x")], [r("n")]))], [r("2")]), r("+"), sp([rb(sb([r("ŷ")], [r("n")]), r("−"), sb([r("y")], [r("n")]))], [r("2")])]), r("·g,   "), r("ē"), r("="), fr([r("1")], [r("N")]), sum([r("n=1")], [sb([r("e")], [r("n")])], [r("N")])]));
-add(P(`với g = 0,766126 cho UJIIndoorLoc (Web Mercator) và g = 1 cho các bộ còn lại.`));
-add(FIG(4, diag("d10_giao_thuc.png"), "Giao thức đánh giá và kiểm chứng"));
-add(H2("4.2. Tham số được chọn trên dev"));
-const t41 = TAB(4, "Cấu hình được chọn trên các fold dev của từng bộ dữ liệu", ["Bộ dữ liệu", "Utility", "θ (%)", "γ", "τ", "β", "σ (m)", "$k_f$", "m", "p", "Dev TB (m)"],
-  order.map((k) => { const s = D.datasets[k].selection, p = s.params;
-    return [T[k], s.utility || "abs", vn(s.theta_pct, 0), p.gamma, p.tau, p.beta, p.sigma, p.kf, p.m, p.p, vn(s.dev_mean_m)]; }),
-  [1900, 800, 700, 500, 600, 500, 700, 600, 500, 500, 1200], { align: [L, C, RT, RT, RT, RT, RT, RT, RT, RT, RT], size: 10 });
-add(P(`${t41.label} liệt kê cấu hình được chọn. Với UJIIndoorLoc, θ được cố định ở ${vn(SEL.theta_pct, 0)}% bằng thí nghiệm trên dev (θ = 10% sinh khoảng 4 triệu HUI mỗi fold); dạng lợi ích nội rank được chọn vì cho sai số dev thấp nhất trong ba dạng (${vn(pil.phone_folds_theta20_all6_dev_mean_m.rank)} m so với ${vn(pil.phone_folds_theta20_all6_dev_mean_m.abs)} m của abs và ${vn(pil.phone_folds_theta20_all6_dev_mean_m.rel)} m của rel).`));
-add(t41);
-add(FIG(4, figr("fig62_huim_only_dev.png"), "Sai số trên dev của UJIIndoorLoc theo σ và m (mỗi điểm là cấu hình tốt nhất của các tham số còn lại)", 520));
-const t4r = TAB(4, "Các biến thể của Bước 8 thử trên dev UJIIndoorLoc (sai số trung bình ngoài fold, 19 937 truy vấn)", ["Biến thể", "Dev TB (m)", "Kết luận"], [
-  ["Bước 1–7, một điểm khớp HUI (v4)", vn(RSH["v4 (baseline)"]), "mốc so sánh"],
-  ["Trọng số IDF của HUI giữa các ô lân cận", vn(RSH["IDF weight of HUIs (best)"]), "gần như không đổi"],
-  ["Chỉ dùng mô hình mục theo mức cường độ (fold 0)", `${vn(RSH["level items (AP, strength level) alone, fold 0"].L3)} so với ${vn(RSH["level items (AP, strength level) alone, fold 0"].v4)}`, "kém hơn khi dùng riêng"],
-  ["Xếp hạng lại bằng các điểm HUI", vn(RSH["re-rank, HUI scores"]), "cải thiện"],
-  ["+ hồ sơ cường độ suy ra từ HUI", vn(RSH["re-rank + HUI strength profile"]), "cải thiện"],
-  ["Ứng viên trên cả toà nhà (không theo tầng)", vn(RSH["re-rank, candidates over the whole building"]), "không dùng"],
-  ["+ đặc trưng so với các ứng viên khác (v5)", vn(RSH["re-rank + features relative to the query's candidates (v5)"]), "cải thiện"],
-  ["v5 học khi bỏ ô của chính truy vấn", vn(RSH["v5 trained leave-own-cell-out"]), "không dùng"],
-  ["v5 + mô hình HUI lợi ích abs (v6)", vn(RSH["v5 + abs HUI model (v6)"]), "chọn"],
-], [5000, 1700, 2300], { align: [L, RT, L], size: 10.5 });
-add(P(`${t4r.label} ghi lại các biến thể của Bước 8 đã thử; mọi con số là sai số dev ngoài fold và tập kiểm tra không được đọc. Trọng số IDF và mô hình mục theo mức cường độ dùng riêng không cải thiện; chúng chỉ có ích khi là bằng chứng bổ sung cho bộ hồi quy. Quyết định tầng bằng một bộ phân loại học trên dev nâng độ chính xác tầng trên dev từ ${pct(V6.research["learned floor decision dev floor accuracy"].baseline)} lên ${pct(V6.research["learned floor decision dev floor accuracy"].learned)} nhưng không giảm sai số vị trí, nên không được dùng.`));
-add(t4r);
-add(H2("4.3. Kết quả trên tập kiểm tra"));
-const t42 = TAB(4, "Kết quả định vị chỉ bằng HUIM trên tập kiểm tra", ["Bộ dữ liệu", "Tập kiểm tra", "Số mẫu", "TB (m)", "Trung vị (m)", "p90 (m)", "Đúng tòa–tầng", "< 7 m"],
-  allTests.map(({ k, t, v }) => [T[k], t, vn(v.so_mau, 0), vn(v.sai_so_tb_m), vn(v.trung_vi_m), vn(v.p90_m), pct(v.dung_toa_tang), v.duoi_7m ? "đạt" : "không"]),
-  [1800, 1700, 800, 800, 1000, 900, 1200, 800], { align: [L, L, RT, RT, RT, RT, RT, C], size: 10.5 });
-add(P(`${t42.label} và Hình 4.3 trình bày kết quả. ${nOk}/${allTests.length} tập kiểm tra đạt sai số trung bình dưới 7 m. Trên UJIIndoorLoc, sai số trung bình là ${vn(UT.sai_so_tb_m)} m, trung vị ${vn(UT.trung_vi_m)} m, xác định đúng tòa ${pct(UT.dung_toa)} và đúng tòa–tầng ${pct(UT.dung_toa_tang)}; so với ước lượng ban đầu của Bước 7 (${vn(U4.mean_err_m)} m, trung vị ${vn(U4.median_err_m)} m), Bước 8 giảm sai số trung bình ${vn(U4.mean_err_m - UT.sai_so_tb_m)} m. Các bộ dữ liệu khác dùng Bước 1–7 vì đã đạt mục tiêu ở bước đó.`));
-add(t42);
-add(FIG(4, figr("fig60_huim_only_all_datasets.png"), "Sai số trung bình trên tập kiểm tra của mọi bộ dữ liệu; đường đứt là mức 7 m"));
-add(FIG(4, figr("fig61_huim_only_cdf_uji.png"), "Phân bố sai số trên tập kiểm tra UJIIndoorLoc: mô hình cuối, ước lượng ban đầu (v4) và hai đường k-NN chỉ để tham chiếu", 540));
-add(H2("4.4. Phân tích sai số trên UJIIndoorLoc"));
-const t43 = TAB(4, "Tách sai số theo việc xác định đúng hay sai tầng (UJIIndoorLoc)", ["Nhóm mẫu", "Số mẫu", "Sai số TB (m)", "Phần trong tổng sai số"],
-  fs4.map((x) => [x.nhom, vn(x.so_mau, 0), vn(x.sai_so_tb_m), pct(x.phan_tong_sai_so)]), [3600, 1400, 1800, 2200], { align: [L, RT, RT, RT] });
-add(P(`${t43.label} cho thấy phần lớn sai số vẫn nằm ở các mẫu đã xác định đúng tầng (${pct(fs4[0].phan_tong_sai_so)} tổng sai số, sai số trung bình ${vn(fs4[0].sai_so_tb_m)} m, so với 7,78 m ở v4). Bước 8 giảm chủ yếu sai số trong tầng, nhưng đây vẫn là điểm nghẽn: mỗi ô của UJIIndoorLoc chỉ có khoảng ${vn(U.mining.giao_dich_tb_moi_o, 0)} vân tay của một đến bốn người dùng, và gần như không vị trí kiểm tra nào trùng điểm tham chiếu, nên toạ độ phải được nội suy giữa các ô. Theo từng toà nhà, sai số trung bình lần lượt là ${D.uji_by_building.map((x) => `${vn(x.sai_so_tb_m)} m (tòa ${x.toa})`).join(", ")}.`));
-add(t43);
-const t44 = TAB(4, "Các phiên bản đã thử trên UJIIndoorLoc (mỗi phiên bản chọn trên dev rồi chấm tập kiểm tra một lần)", ["Phiên bản", "Thay đổi", "Fold dev", "Dev TB (m)", "Kiểm tra TB (m)", "Đúng tầng"],
-  ver.map((v) => [v.version.replace(" (final)", " (cuối)"), v.change_vi, v.dev_folds === "leave-phones-out" ? "theo điện thoại" : "theo người dùng", vn(v.dev_mean_m), vn(v.test_mean_m), pct(v.test_floor_accuracy)]),
-  [900, 3800, 1300, 1000, 1200, 1000], { align: [L, L, L, RT, RT, RT], size: 10 });
-add(P(`${t44.label} ghi lại mọi phiên bản. Trong các phiên bản Bước 1–7, v1 có sai số kiểm tra thấp nhất nhưng sai số dev kém nhất; giao thức chọn v4, vì chọn theo con số kiểm tra là chọn mô hình trên tập kiểm tra. Sự chênh giữa dev và kiểm tra ở v2 là lý do chuyển sang fold giữ lại theo điện thoại. v5 và v6 thêm Bước 8; v6 có sai số dev thấp nhất (${vn(V6.dev_mean_m)} m) nên là mô hình cuối, và sai số kiểm tra của nó (${vn(UT.sai_so_tb_m)} m) được tính đúng một lần sau khi đã chọn. Hai thí nghiệm phụ khác cho kết quả âm: đặt lợi ích ngoài p(i) theo IDF hoặc theo thông tin tương hỗ không cải thiện, và khai thác HUI trên cửa sổ chồng lấn gồm các ô lân cận (bán kính 4 m và 8 m) làm sai số dev tăng từ ${vn(win.best_dev_mean_m["cells only (window 0)"])} m lên ${vn(win.best_dev_mean_m["window 4 m"])} m và ${vn(win.best_dev_mean_m["window 8 m"])} m vì chữ ký các ô lân cận trở nên giống nhau.`));
-add(t44);
-add(H2("4.5. So sánh với các hệ thống tham chiếu"));
-const t45 = TAB(4, "Sai số trung bình (m) của hệ thống chỉ dùng HUIM và các hệ thống tham chiếu dùng k-NN", ["Bộ dữ liệu", "Tập kiểm tra", "Chỉ HUIM", "k-NN gốc", "k-NN tối ưu", "HUIM chọn AP + k-NN"],
-  D.references.map((x) => [x.ten, x.tap_test, vn(x.chi_huim_m), x.knn_goc_m != null ? vn(x.knn_goc_m) : "–", x.knn_toi_uu_m != null ? vn(x.knn_toi_uu_m) : "–", x.huim_chon_ap_knn_m != null ? `${vn(x.huim_chon_ap_knn_m)} (${x.huim_chon_ap_so_ap}/${x.tong_ap} AP)` : "–"]),
-  [1800, 1700, 1000, 1000, 1100, 2400], { align: [L, L, RT, RT, RT, RT], size: 10.5 });
-add(P(`${t45.label} đặt kết quả cạnh các hệ thống dùng k-NN của các giai đoạn trước, chỉ để tham chiếu. Hệ thống chỉ dùng HUIM tốt hơn k-NN gốc (k = 1, khoảng cách Manhattan) trên UJIIndoorLoc nhưng kém k-NN đã tối ưu; trên các bộ dữ liệu một tầng, k-NN cho sai số thấp hơn vì vị trí kiểm tra trùng hoặc rất gần điểm tham chiếu. Ưu điểm của thiết kế đề xuất không nằm ở sai số tuyệt đối mà ở chỗ toàn bộ quyết định định vị đến từ các mẫu HUI: bỏ HUIM đi thì hệ thống không còn mô hình để định vị.`));
-add(t45);
-add(H2("4.6. Kiểm chứng độc lập"));
-const t46 = TAB(4, "Kết quả kiểm chứng độc lập", ["Bộ dữ liệu", "Số phép kiểm", "Thất bại"],
-  [...D.verification.per_dataset.map((x) => [T[x.dataset], x.n_checks, x.n_failed]),
-   ["UJIIndoorLoc, mô hình cuối (Bước 8)", V6.verification.n_checks, V6.verification.n_failed]], [3600, 2200, 2200], { align: [L, RT, RT] });
-add(P(`Chương trình kiểm chứng không gọi EFIM hay bộ định vị. Từ dữ liệu gốc và các tệp kết quả, nó tính lại ngưỡng của mọi ô, lợi ích và độ hỗ trợ của các HUI bằng cách quét lại dữ liệu, kiểm tra mọi tập 1–2 AP vượt ngưỡng đều có trong mô hình, tính lại điểm khớp, các ô được chọn và toạ độ của các truy vấn ngẫu nhiên bằng vòng lặp thuần, và đếm lại sai số, độ chính xác (${t46.label}). Với mô hình cuối của UJIIndoorLoc, ${V6.verification.n_checks} phép kiểm riêng xác nhận: sai số tính lại từ toạ độ khớp với báo cáo; mỗi toạ độ dự đoán đúng bằng tổng có trọng số của tâm các ô được chọn, trọng số dương và có tổng bằng 1; mọi ô được chọn nằm trên tầng dự đoán; ước lượng ban đầu bên trong mô hình cuối trùng khít với dự đoán của v4; và các dòng kiểm tra đúng là 1 111 dòng của validationData. Ngoài ra, sổ Excel so_lieu/kiem_chung_mean.xlsx tính lại sai số trung bình của mọi tập kiểm tra bằng công thức (4.1) và khớp với kết quả báo cáo tới 10⁻⁴ m.`));
-add(t46);
-add(H2("4.7. Thảo luận"));
-add(P(`Kết quả cho thấy HUIM có thể đảm nhận toàn bộ việc định vị: trên năm bộ dữ liệu ngoài UJIIndoorLoc, sai số trung bình nằm trong khoảng ${vn(Math.min(...allTests.filter((x) => x.k !== "uji").map((x) => x.v.sai_so_tb_m)))}–${vn(Math.max(...allTests.filter((x) => x.k !== "uji").map((x) => x.v.sai_so_tb_m)))} m với Bước 1–7, và trên UJIIndoorLoc đạt ${vn(UT.sai_so_tb_m)} m khi thêm Bước 8. Mức giảm trên tập kiểm tra (${vn(U4.mean_err_m - UT.sai_so_tb_m)} m) không nhỏ hơn mức giảm trên dev (${vn(V6.dev_mean_v4_m - V6.dev_mean_m)} m), nên không có dấu hiệu Bước 8 quá khớp với các fold dev.`));
-add(P(`Cần nêu rõ ba giới hạn. Thứ nhất, kết quả UJIIndoorLoc chỉ thấp hơn mức 7 m ${vn(7 - UT.sai_so_tb_m)} m; với ${vn(UT.so_mau, 0)} mẫu, sai số chuẩn của giá trị trung bình là ${vn(UT.sai_so_chuan_tb_m)} m, nên khoảng cách này nằm trong biên dao động thống kê (khoảng tin cậy 95% xấp xỉ ${vn(UT.sai_so_tb_m - 1.96 * UT.sai_so_chuan_tb_m)}–${vn(UT.sai_so_tb_m + 1.96 * UT.sai_so_chuan_tb_m)} m). Thứ hai, Bước 8 dùng một bộ hồi quy học có giám sát; bộ hồi quy chỉ nhận bằng chứng do HUI tạo ra và chỉ chọn giữa các ô có điểm HUI cao nhất, nhưng phần cân các bằng chứng là do học máy đảm nhận. Thứ ba, thiết bị thu: tập kiểm tra dùng chủ yếu điện thoại lạ, và mẫu HUI của một ô mô tả nhóm AP mạnh cùng xuất hiện tại ô đó, phân biệt tốt giữa các vùng nhưng ít thông tin về vị trí chính xác bên trong vùng.`));
-add(P(`Chi phí tính toán là một hạn chế khác: với θ thấp, số HUI tăng rất nhanh (khoảng 3,2 triệu HUI cho mô hình chính của UJIIndoorLoc ở θ = 20%, tổng cộng ${vn((U.model.n_huis + V6.n_huis_L3 + V6.n_huis_abs) / 1e6, 2)} triệu HUI cho ba mô hình), làm thời gian định vị lớn hơn k-NN trên cài đặt Python. Một cài đặt EFIM bằng ngôn ngữ biên dịch, hoặc các biến thể khai thác HUI đóng hay HUI cực đại để giảm dư thừa, là hướng cải thiện tự nhiên.`));
-
-// ================================================================== CHƯƠNG 5
-add(H1("CHƯƠNG 5. KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN"));
-add(H2("5.1. Kết luận"));
-add(BUL(`Báo cáo đã xây dựng một hệ thống định vị trong nhà trong đó HUIM là thuật toán định vị chính: mô hình là tập HUI do EFIM khai thác cho từng điểm tham chiếu, và mọi quyết định về tầng và toạ độ đến từ bằng chứng rút ra từ HUI; không dùng k-NN và không lưu vân tay huấn luyện.`));
-add(BUL(`Trên ${allTests.length} tập kiểm tra của ${order.length} bộ dữ liệu, ${nOk} tập đạt sai số trung bình dưới 7 m (UJIIndoorLoc ${vn(UT.sai_so_tb_m)} m, UJI_LIB ${vn(D.datasets.uji_lib3.tests["Test-01"].sai_so_tb_m)}/${vn(D.datasets.uji_lib3.tests["Test-02"].sai_so_tb_m)} m, DLULIB ${vn(D.datasets.dlulib.tests.Testing.sai_so_tb_m)} m, HCXY ${vn(D.datasets.hcxy.tests.test_HCXY.sai_so_tb_m)} m, HUS khoảng ${vn(D.datasets.hus_dedup.tests.testcase1.sai_so_tb_m)}–${vn(D.datasets.hus_dedup.tests.testcase2.sai_so_tb_m)} m).`));
-add(BUL(`Trên UJIIndoorLoc, Bước 8 (xếp hạng lại ô ứng viên bằng bằng chứng HUI từ ba mô hình HUI) giảm sai số trung bình từ ${vn(U4.mean_err_m)} m xuống ${vn(UT.sai_so_tb_m)} m, dưới mức 7 m với biên nhỏ; phần sai số còn lại chủ yếu nằm trong tầng và gắn với thiết bị thu khác nhau giữa hai tập.`));
-add(BUL(`Mọi con số được chọn theo giao thức không rò rỉ dữ liệu, được kiểm chứng độc lập và có thể tính lại bằng sổ Excel kèm theo.`));
-add(H2("5.2. Hướng phát triển"));
-add(BUL(`Thiết kế lợi ích nội bất biến tốt hơn với thiết bị, ví dụ hiệu chỉnh độ lệch theo từng điện thoại ngay trong lợi ích nội.`));
-add(BUL(`Tăng độ phân giải trong tầng bằng các ô nhỏ hơn hoặc bằng cách kết hợp HUI ở nhiều mức không gian (tầng, vùng, ô), và thay bộ hồi quy của Bước 8 bằng một quy tắc kết hợp tường minh dễ diễn giải hơn.`));
-add(BUL(`Dùng HUI đóng hoặc HUI cực đại và một cài đặt EFIM biên dịch để giảm số mẫu và thời gian định vị.`));
-
-// ================================================================== references
+// ================================================================== TÀI LIỆU THAM KHẢO
 const refs = [
   "P. Bahl, V. N. Padmanabhan, “RADAR: an in-building RF-based user location and tracking system,” in Proc. IEEE INFOCOM 2000, doi: 10.1109/INFCOM.2000.832252.",
   "M. Youssef, A. Agrawala, “The Horus WLAN location determination system,” in Proc. MobiSys 2005, doi: 10.1145/1067170.1067193.",
@@ -397,79 +283,18 @@ const refs = [
   "Y. Chen, Q. Yang, J. Yin, X. Chai, “Power-efficient access-point selection for indoor location estimation,” IEEE Transactions on Knowledge and Data Engineering, vol. 18, pp. 877–888, 2006, doi: 10.1109/TKDE.2006.112.",
   "J. H. Friedman, “Greedy function approximation: A gradient boosting machine,” The Annals of Statistics, vol. 29, no. 5, pp. 1189–1232, 2001, doi: 10.1214/aos/1013203451.",
   "G. Ke, Q. Meng, T. Finley, T. Wang, W. Chen, W. Ma, Q. Ye, T.-Y. Liu, “LightGBM: A highly efficient gradient boosting decision tree,” in Advances in Neural Information Processing Systems 30 (NIPS 2017), pp. 3146–3154.",
+  "H. Liu, H. Darabi, P. Banerjee, J. Liu, “Survey of wireless indoor positioning techniques and systems,” IEEE Transactions on Systems, Man, and Cybernetics, Part C, vol. 37, no. 6, pp. 1067–1080, 2007, doi: 10.1109/TSMCC.2007.905750.",
+  "F. Zafari, A. Gkelias, K. K. Leung, “A survey of indoor localization systems and technologies,” IEEE Communications Surveys & Tutorials, vol. 21, no. 3, pp. 2568–2599, 2019, doi: 10.1109/COMST.2019.2911558.",
+  "J. Han, J. Pei, Y. Yin, “Mining frequent patterns without candidate generation,” in Proc. ACM SIGMOD 2000, pp. 1–12, doi: 10.1145/342009.335372.",
+  "M. Liu, J. Qu, “Mining high utility itemsets without candidate generation,” in Proc. ACM CIKM 2012, pp. 55–64, doi: 10.1145/2396761.2396773.",
+  "P. Fournier-Viger, C.-W. Wu, S. Zida, V. S. Tseng, “FHM: Faster high-utility itemset mining using estimated utility co-occurrence pruning,” in Proc. ISMIS 2014, LNAI, pp. 83–92, doi: 10.1007/978-3-319-08326-1_9.",
+  "F. Pedregosa et al., “Scikit-learn: Machine learning in Python,” Journal of Machine Learning Research, vol. 12, pp. 2825–2830, 2011.",
 ];
 add(H1("TÀI LIỆU THAM KHẢO"));
-refs.forEach((t, i) => add(new Paragraph({ alignment: AlignmentType.LEFT, spacing: { after: 100, line: 300 },
-  indent: { left: 567, hanging: 567 }, children: [R(`[${i + 1}]`), new TextRun({ font: FONT, children: [new Tab()] }), R(t)], tabStops: [{ type: TabStopType.LEFT, position: 567 }] })));
+refs.forEach((t, i) => add(new Paragraph({ alignment: J, spacing: { after: 100, line: 300 },
+  indent: { left: 567, hanging: 567 }, tabStops: [{ type: TabStopType.LEFT, position: 567 }],
+  children: [R(`[${i + 1}]`), new TextRun({ font: L_.FONT, children: [new Tab()] }), R(t)] })));
 
-// ================================================================== appendix
-add(H1("PHỤ LỤC. CẤU TRÚC THƯ MỤC BÁO CÁO VÀ CÁCH KIỂM CHỨNG"));
-const tP = TAB("A", "Nội dung thư mục BAOCAO", ["Thành phần", "Nội dung"], [
-  ["diagram/", "9 sơ đồ mô hình theo từng bước, từ đầu vào tới đầu ra, vẽ từ mô hình và một vân tay kiểm tra thật"],
-  ["so_lieu/", "kết quả tổng hợp, cấu hình chọn trên dev, lịch sử phiên bản, dự đoán từng mẫu, sổ Excel kiểm chứng, script kiem_tra_mean.py"],
-  ["ma_nguon/", "mã nguồn EFIM, bộ định vị, thực nghiệm, kiểm chứng, kiểm thử và script dựng báo cáo"],
-  ["Bao_cao_HUIM_IPS_UJIIndoorLoc.docx", "báo cáo này"],
-  ["Slide_HUIM_IPS_UJIIndoorLoc.pptx", "bài thuyết trình"]], [3200, 5871]);
-add(tP);
-add(P(`Để kiểm tra sai số trung bình: mở so_lieu/kiem_chung_mean.xlsx (sheet Tong_hop) hoặc chạy “python kiem_tra_mean.py” trong thư mục so_lieu; cả hai tính lại sai số của từng mẫu từ toạ độ thật và toạ độ dự đoán rồi so với con số trong ${t42.label}.`));
+require("./build_report_appendix")({ add, D, U, UT, V6, EX, GF, L_ });
 
-// ================================================================== document
-const doc = new Document({
-  creator: "HUIM-IPS", title: "Ứng dụng HUIM trong hệ thống định vị trong nhà",
-  features: { updateFields: true },
-  styles: {
-    default: { document: { run: { font: FONT, size: PT(13) } } },
-    paragraphStyles: [
-      { id: "Heading1", name: "Heading 1", basedOn: "Normal", next: "Normal", quickFormat: true,
-        run: { font: FONT, size: PT(15), bold: true, color: "1F3A5F" },
-        paragraph: { alignment: AlignmentType.CENTER, spacing: { before: 120, after: 360 }, outlineLevel: 0 } },
-      { id: "Heading2", name: "Heading 2", basedOn: "Normal", next: "Normal", quickFormat: true,
-        run: { font: FONT, size: PT(13.5), bold: true, color: "1F3A5F" },
-        paragraph: { spacing: { before: 240, after: 120 }, keepNext: true, outlineLevel: 1 } },
-      { id: "Heading3", name: "Heading 3", basedOn: "Normal", next: "Normal", quickFormat: true,
-        run: { font: FONT, size: PT(13), bold: true, italics: true },
-        paragraph: { spacing: { before: 180, after: 80 }, keepNext: true, outlineLevel: 2 } },
-      { id: "CaptionHinh", name: "Caption Hinh", basedOn: "Normal", run: { font: FONT, size: PT(12), italics: true },
-        paragraph: { alignment: AlignmentType.CENTER, spacing: { before: 40, after: 220 } } },
-      { id: "CaptionBang", name: "Caption Bang", basedOn: "Normal", run: { font: FONT, size: PT(12), italics: true },
-        paragraph: { alignment: AlignmentType.CENTER, spacing: { before: 160, after: 80 } } },
-    ],
-  },
-  numbering: { config: [
-    { reference: "bul", levels: [{ level: 0, format: LevelFormat.BULLET, text: "–", alignment: AlignmentType.LEFT,
-      style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] },
-    { reference: "num", levels: [{ level: 0, format: LevelFormat.DECIMAL, text: "%1.", alignment: AlignmentType.LEFT,
-      style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] }] },
-  sections: [
-    { properties: { page: { size: { width: 11906, height: 16838 }, margin: { top: 1134, bottom: 1134, left: 1701, right: 1134 } } },
-      children: cover },
-    { properties: { page: { size: { width: 11906, height: 16838 }, margin: { top: 1134, bottom: 1134, left: 1701, right: 1134 } } },
-      footers: { default: new Footer({ children: [new Paragraph({ alignment: C, children: [new TextRun({ children: [PageNumber.CURRENT], font: FONT, size: PT(12) })] })] }) },
-      children: [...front, ...body] },
-  ],
-});
-const out = path.join(B, "Bao_cao_HUIM_IPS_UJIIndoorLoc.docx");
-Packer.toBuffer(doc).then((buf) => {
-  fs.writeFileSync(out, buf);
-  // OMML: <m:nary> bắt buộc có <m:sup> (kể cả khi ẩn); docx-js bỏ qua phần tử này.
-  require("child_process").execFileSync("python3", ["-c", `
-import sys, zipfile, shutil
-p = sys.argv[1]; t = p + ".tmp"
-with zipfile.ZipFile(p) as zi, zipfile.ZipFile(t, "w", zipfile.ZIP_DEFLATED) as zo:
-    for it in zi.infolist():
-        b = zi.read(it.filename)
-        if it.filename == "word/document.xml":
-            x = b.decode("utf-8").replace("</m:sub><m:e>", "</m:sub><m:sup/><m:e>")
-            x = x.replace("<m:d><m:dPr/><m:e><m:r><m:t>\u2062ABS</m:t></m:r>",
-                          '<m:d><m:dPr><m:begChr m:val="|"/><m:endChr m:val="|"/></m:dPr><m:e>')
-            x = x.replace("<m:r><m:t>\u2060", '<m:r><m:rPr><m:sty m:val="p"/></m:rPr><m:t>')
-            x = x.replace("<m:d><m:dPr/><m:e><m:r><m:t>\u2062FLO</m:t></m:r>",
-                          '<m:d><m:dPr><m:begChr m:val="⌊"/><m:endChr m:val="⌋"/></m:dPr><m:e>')
-            assert "\u2060" not in x and "\u2062" not in x
-            b = x.encode("utf-8")
-        zo.writestr(it, b)
-shutil.move(t, p)`, out]);
-  // Mục lục, danh mục hình/bảng: điền sẵn kèm số trang (cần LibreOffice; Word cập nhật lại bằng F9).
-  require("child_process").execFileSync("python3", [path.join(__dirname, "fill_toc.py"), out], { stdio: "inherit" });
-  console.log("written", out, fs.statSync(out).size);
-});
+build({ cover, titlePage, front, body, out: path.join(B, "Bao_cao_HUIM_IPS_UJIIndoorLoc.docx") });

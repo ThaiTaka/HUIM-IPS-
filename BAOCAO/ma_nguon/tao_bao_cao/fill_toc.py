@@ -47,21 +47,24 @@ def render_pages(docx: Path) -> list[str]:
     txt = subprocess.run(["pdftotext", "-layout", str(pdf), "-"], check=True,
                          capture_output=True, text=True).stdout
     shutil.rmtree(tmp)
-    pages = []
+    pages, labels = [], []
     for pg in txt.split("\f"):
         lines = [ln for ln in pg.splitlines() if not re.search(r"\.{4,}|…{2,}", ln)]
         pages.append(re.sub(r"\s+", "", "\n".join(lines)))
-    return pages
+        tail = [ln.strip() for ln in pg.splitlines() if ln.strip()]
+        lab = tail[-1] if tail else ""
+        labels.append(lab if re.fullmatch(r"[ivxlcdm]+|\d+", lab) else "")
+    return pages, labels
 
 
-def find_pages(items, pages):
+def find_pages(items, pages, labels):
     res, cur = [], 0
     for kind, lvl, text in items:
         key = re.sub(r"\s+", "", text)[:60]
         pg = next((i for i in range(cur, len(pages)) if key in pages[i]), None)
         if pg is None:
             raise SystemExit(f"không tìm thấy trang cho: {text}")
-        res.append(pg + 1)
+        res.append(labels[pg] or str(pg + 1))
         if kind == "toc":
             cur = pg
     return res
@@ -92,10 +95,19 @@ def fill(xml: str, items, pages_of) -> str:
 
 
 def rewrite(docx: Path, xml: str) -> None:
+    """Ghi document.xml; bỏ cờ dirty để mọi trình xem hiển thị ngay mục lục đã điền
+    (Word vẫn cập nhật được bằng chuột phải > Update Field hoặc F9)."""
+    xml = xml.replace(' w:dirty="true"', "")
     tmp = docx.with_suffix(".tmp")
     with zipfile.ZipFile(docx) as zi, zipfile.ZipFile(tmp, "w", zipfile.ZIP_DEFLATED) as zo:
         for it in zi.infolist():
-            zo.writestr(it, xml.encode("utf-8") if it.filename == "word/document.xml" else zi.read(it.filename))
+            if it.filename == "word/document.xml":
+                b = xml.encode("utf-8")
+            elif it.filename == "word/settings.xml":
+                b = zi.read(it.filename).decode("utf-8").replace('<w:updateFields w:val="true"/>', "").encode("utf-8")
+            else:
+                b = zi.read(it.filename)
+            zo.writestr(it, b)
     shutil.move(tmp, docx)
 
 
@@ -105,7 +117,7 @@ def main(docx: Path) -> None:
     items = para_items(base)
     prev = None
     for _ in range(4):
-        pages_of = find_pages(items, render_pages(docx))
+        pages_of = find_pages(items, *render_pages(docx))
         if pages_of == prev:
             break
         rewrite(docx, fill(base, items, pages_of))

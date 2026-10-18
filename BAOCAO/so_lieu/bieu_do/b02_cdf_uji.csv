@@ -1,0 +1,21 @@
+duong,phan_vi,sai_so_m
+Mô hình cuối (Bước 1–8),25,2.4726
+Mô hình cuối (Bước 1–8),50,5.1398
+Mô hình cuối (Bước 1–8),75,8.9434
+Mô hình cuối (Bước 1–8),90,14.0185
+Mô hình cuối (Bước 1–8),95,18.4182
+"Ước lượng ban đầu, Bước 1–7 (v4)",25,3.204
+"Ước lượng ban đầu, Bước 1–7 (v4)",50,6.1515
+"Ước lượng ban đầu, Bước 1–7 (v4)",75,10.7194
+"Ước lượng ban đầu, Bước 1–7 (v4)",90,16.9459
+"Ước lượng ban đầu, Bước 1–7 (v4)",95,20.913
+k-NN tối ưu (tham chiếu),25,1.7019
+k-NN tối ưu (tham chiếu),50,3.5224
+k-NN tối ưu (tham chiếu),75,6.8973
+k-NN tối ưu (tham chiếu),90,11.8922
+k-NN tối ưu (tham chiếu),95,16.0926
+k-NN gốc k = 1 (tham chiếu),25,1.4774
+k-NN gốc k = 1 (tham chiếu),50,4.6096
+k-NN gốc k = 1 (tham chiếu),75,9.3883
+k-NN gốc k = 1 (tham chiếu),90,17.0212
+k-NN gốc k = 1 (tham chiếu),95,27.8141
