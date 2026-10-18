@@ -1,0 +1,495 @@
+2026-10-16 09:12:48,199 | INFO    | huim_opt | positioning_conditions.csv: 14 rows, families ['control_top_mi', 'control_top_support', 'huim_topn', 'huim_union']
+2026-10-16 09:14:01,244 | INFO    | huim_opt | positioning_ablation.csv: S4 on 86 HUIM APs, dev 17.529 m, validation 19.3568 m
+2026-10-16 09:14:01,248 | INFO    | huim_opt | sai_so_theo_toa.csv: kept cau_hinh S4_86AP_HUIM only
+2026-10-16 09:14:01,269 | INFO    | huim_opt | du_doan_tung_mau_validation.csv: kept cau_hinh S4_86AP_HUIM only
+2026-10-16 09:14:22,375 | INFO    | huim_opt | A__2.5pct__union         6 AP  dev  62.31 m  val  80.26 m  (b1  63.68 m)
+2026-10-16 09:15:30,372 | INFO    | huim_opt | A__2pct__union          81 AP  dev  17.98 m  val  19.26 m  (b1  35.25 m)
+2026-10-16 09:16:42,705 | INFO    | huim_opt | A__1.9294pct__union     86 AP  dev  17.53 m  val  19.36 m  (b1  35.35 m)
+2026-10-16 09:16:53,833 | INFO    | huim_opt | B__5pct__union           3 AP  dev  70.71 m  val  86.09 m  (b1  63.68 m)
+2026-10-16 09:17:16,352 | INFO    | huim_opt | B__4pct__union          19 AP  dev  48.36 m  val  60.67 m  (b1  62.12 m)
+2026-10-16 09:17:42,957 | INFO    | huim_opt | B__3.5pct__union        25 AP  dev  48.09 m  val  59.97 m  (b1  61.97 m)
+2026-10-16 09:18:19,782 | INFO    | huim_opt | B__3pct__union          40 AP  dev  42.37 m  val  56.55 m  (b1  53.61 m)
+2026-10-16 09:19:09,525 | INFO    | huim_opt | B__2.5pct__union        58 AP  dev  29.20 m  val  33.80 m  (b1  44.39 m)
+2026-10-16 09:20:16,166 | INFO    | huim_opt | B__2pct__union          79 AP  dev  19.11 m  val  19.91 m  (b1  43.85 m)
+2026-10-16 09:20:29,729 | INFO    | huim_opt | C__3.5pct__union         6 AP  dev  62.31 m  val  80.26 m  (b1  63.68 m)
+2026-10-16 09:20:48,473 | INFO    | huim_opt | C__3pct__union          14 AP  dev  56.85 m  val  65.51 m  (b1  63.68 m)
+2026-10-16 09:21:34,390 | INFO    | huim_opt | C__2.5pct__union        53 AP  dev  21.82 m  val  22.16 m  (b1  45.31 m)
+2026-10-16 09:22:43,014 | INFO    | huim_opt | C__2pct__union          81 AP  dev  19.52 m  val  19.75 m  (b1  45.35 m)
+2026-10-16 09:23:58,712 | INFO    | huim_opt | C__1.7321pct__union     91 AP  dev  17.60 m  val  17.49 m  (b1  43.72 m)
+2026-10-16 11:43:00,607 | INFO    | huim_opt |   union search: 50/520 items, 164436 nodes, 51s
+2026-10-16 11:45:57,596 | INFO    | huim_opt |   union at 20.0000% of total utility: 0 items, 1 nodes, 0.0s
+2026-10-16 11:45:57,651 | INFO    | huim_opt |   union at 15.0000% of total utility: 0 items, 1 nodes, 0.1s
+2026-10-16 11:45:57,735 | INFO    | huim_opt |   union at 10.0000% of total utility: 0 items, 17 nodes, 0.1s
+2026-10-16 11:45:57,863 | INFO    | huim_opt |   union at 7.5000% of total utility: 0 items, 40 nodes, 0.1s
+2026-10-16 11:45:58,127 | INFO    | huim_opt |   union at 5.0000% of total utility: 0 items, 96 nodes, 0.3s
+2026-10-16 11:45:58,530 | INFO    | huim_opt |   union at 4.0000% of total utility: 0 items, 285 nodes, 0.4s
+2026-10-16 11:45:59,053 | INFO    | huim_opt |   union at 3.5000% of total utility: 0 items, 550 nodes, 0.5s
+2026-10-16 11:45:59,812 | INFO    | huim_opt |   union at 3.0000% of total utility: 0 items, 1692 nodes, 0.8s
+2026-10-16 11:46:02,619 | INFO    | huim_opt |   union at 2.5000% of total utility: 6 items, 23370 nodes, 2.8s
+2026-10-16 11:48:22,124 | INFO    | huim_opt |   union at 2.0000% of total utility: 81 items, 2020530 nodes, 139.5s
+2026-10-16 11:50:56,864 | INFO    | huim_opt |   union at 10.0000% of total utility: 6 items, 101 nodes, 0.2s
+2026-10-16 11:50:56,915 | INFO    | huim_opt |   union at 10.0000% of total utility: 0 items, 70 nodes, 0.2s
+2026-10-16 11:50:56,916 | INFO    | huim_opt |   union at 10.0000% of total utility: 0 items, 60 nodes, 0.2s
+2026-10-16 11:50:57,159 | INFO    | huim_opt |   union at 7.5000% of total utility: 24 items, 161 nodes, 0.2s
+2026-10-16 11:50:57,166 | INFO    | huim_opt |   union at 7.5000% of total utility: 28 items, 227 nodes, 0.3s
+2026-10-16 11:50:57,198 | INFO    | huim_opt |   union at 7.5000% of total utility: 18 items, 256 nodes, 0.3s
+2026-10-16 11:50:57,373 | INFO    | huim_opt |   union at 10.0000% of total utility: 0 items, 91 nodes, 0.7s
+2026-10-16 11:50:57,446 | INFO    | huim_opt |   union at 5.0000% of total utility: 36 items, 130 nodes, 0.3s
+2026-10-16 11:50:57,453 | INFO    | huim_opt |   union at 5.0000% of total utility: 36 items, 157 nodes, 0.3s
+2026-10-16 11:50:57,543 | INFO    | huim_opt |   union at 5.0000% of total utility: 36 items, 180 nodes, 0.3s
+2026-10-16 11:50:57,711 | INFO    | huim_opt |   union at 10.0000% of total utility: 0 items, 60 nodes, 0.5s
+2026-10-16 11:50:57,745 | INFO    | huim_opt |   union at 10.0000% of total utility: 0 items, 106 nodes, 0.7s
+2026-10-16 11:50:57,748 | INFO    | huim_opt |   union at 4.0000% of total utility: 37 items, 236 nodes, 0.3s
+2026-10-16 11:50:57,756 | INFO    | huim_opt |   union at 4.0000% of total utility: 36 items, 181 nodes, 0.3s
+2026-10-16 11:50:57,859 | INFO    | huim_opt |   union at 4.0000% of total utility: 36 items, 189 nodes, 0.3s
+2026-10-16 11:50:57,955 | INFO    | huim_opt |   union at 10.0000% of total utility: 0 items, 17 nodes, 0.5s
+2026-10-16 11:50:58,029 | INFO    | huim_opt |   union at 3.5000% of total utility: 43 items, 301 nodes, 0.3s
+2026-10-16 11:50:58,105 | INFO    | huim_opt |   union at 3.5000% of total utility: 41 items, 251 nodes, 0.3s
+2026-10-16 11:50:58,219 | INFO    | huim_opt |   union at 3.5000% of total utility: 37 items, 344 nodes, 0.4s
+2026-10-16 11:50:58,301 | INFO    | huim_opt |   union at 7.5000% of total utility: 0 items, 327 nodes, 0.9s
+2026-10-16 11:50:58,341 | INFO    | huim_opt |   union at 3.0000% of total utility: 44 items, 353 nodes, 0.3s
+2026-10-16 11:50:58,400 | INFO    | huim_opt |   union at 7.5000% of total utility: 5 items, 197 nodes, 0.7s
+2026-10-16 11:50:58,441 | INFO    | huim_opt |   union at 3.0000% of total utility: 45 items, 209 nodes, 0.3s
+2026-10-16 11:50:58,569 | INFO    | huim_opt |   union at 7.5000% of total utility: 3 items, 353 nodes, 0.8s
+2026-10-16 11:50:58,658 | INFO    | huim_opt |   union at 3.0000% of total utility: 41 items, 525 nodes, 0.4s
+2026-10-16 11:50:58,696 | INFO    | huim_opt |   union at 7.5000% of total utility: 0 items, 40 nodes, 0.7s
+2026-10-16 11:50:58,745 | INFO    | huim_opt |   union at 2.5000% of total utility: 48 items, 492 nodes, 0.4s
+2026-10-16 11:50:58,818 | INFO    | huim_opt |   union at 2.5000% of total utility: 53 items, 232 nodes, 0.4s
+2026-10-16 11:50:58,885 | INFO    | huim_opt |   union at 10.0000% of total utility: 0 items, 52 nodes, 0.6s
+2026-10-16 11:50:58,957 | INFO    | huim_opt |   union at 10.0000% of total utility: 0 items, 34 nodes, 0.6s
+2026-10-16 11:50:59,135 | INFO    | huim_opt |   union at 2.5000% of total utility: 50 items, 490 nodes, 0.5s
+2026-10-16 11:50:59,167 | INFO    | huim_opt |   union at 2.0000% of total utility: 56 items, 290 nodes, 0.3s
+2026-10-16 11:50:59,189 | INFO    | huim_opt |   union at 2.0000% of total utility: 56 items, 533 nodes, 0.4s
+2026-10-16 11:50:59,508 | INFO    | huim_opt |   union at 1.9294% of total utility: 57 items, 173 nodes, 0.3s
+2026-10-16 11:50:59,551 | INFO    | huim_opt |   union at 1.9294% of total utility: 57 items, 276 nodes, 0.4s
+2026-10-16 11:50:59,570 | INFO    | huim_opt |   union at 2.0000% of total utility: 53 items, 608 nodes, 0.4s
+2026-10-16 11:50:59,736 | INFO    | huim_opt |   union at 7.5000% of total utility: 0 items, 56 nodes, 0.8s
+2026-10-16 11:50:59,785 | INFO    | huim_opt |   union at 7.5000% of total utility: 0 items, 124 nodes, 0.9s
+2026-10-16 11:50:59,847 | INFO    | huim_opt |   union at 1.7321% of total utility: 57 items, 211 nodes, 0.3s
+2026-10-16 11:50:59,889 | INFO    | huim_opt |   union at 5.0000% of total utility: 28 items, 946 nodes, 1.5s
+2026-10-16 11:50:59,916 | INFO    | huim_opt |   union at 1.7321% of total utility: 59 items, 375 nodes, 0.4s
+2026-10-16 11:50:59,945 | INFO    | huim_opt |   union at 1.9294% of total utility: 55 items, 367 nodes, 0.4s
+2026-10-16 11:51:00,008 | INFO    | huim_opt |   union at 5.0000% of total utility: 0 items, 96 nodes, 1.3s
+2026-10-16 11:51:00,218 | INFO    | huim_opt |   union at 1.5000% of total utility: 67 items, 407 nodes, 0.4s
+2026-10-16 11:51:00,333 | INFO    | huim_opt |   union at 1.5000% of total utility: 66 items, 565 nodes, 0.4s
+2026-10-16 11:51:00,430 | INFO    | huim_opt |   union at 1.7321% of total utility: 56 items, 498 nodes, 0.5s
+2026-10-16 11:51:00,609 | INFO    | huim_opt |   union at 5.0000% of total utility: 6 items, 1924 nodes, 2.3s
+2026-10-16 11:51:00,619 | INFO    | huim_opt |   union at 1.2500% of total utility: 74 items, 253 nodes, 0.4s
+2026-10-16 11:51:00,698 | INFO    | huim_opt |   union at 1.2500% of total utility: 72 items, 459 nodes, 0.4s
+2026-10-16 11:51:00,893 | INFO    | huim_opt |   union at 5.0000% of total utility: 40 items, 1949 nodes, 2.3s
+2026-10-16 11:51:00,916 | INFO    | huim_opt |   union at 1.5000% of total utility: 62 items, 698 nodes, 0.5s
+2026-10-16 11:51:00,982 | INFO    | huim_opt |   union at 1.0000% of total utility: 79 items, 321 nodes, 0.4s
+2026-10-16 11:51:01,065 | INFO    | huim_opt |   union at 1.0000% of total utility: 79 items, 506 nodes, 0.4s
+2026-10-16 11:51:01,089 | INFO    | huim_opt |   union at 5.0000% of total utility: 0 items, 240 nodes, 1.3s
+2026-10-16 11:51:01,369 | INFO    | huim_opt |   union at 1.2500% of total utility: 67 items, 595 nodes, 0.5s
+2026-10-16 11:51:01,460 | INFO    | huim_opt |   union at 0.7500% of total utility: 92 items, 481 nodes, 0.5s
+2026-10-16 11:51:01,464 | INFO    | huim_opt |   union at 0.7500% of total utility: 93 items, 652 nodes, 0.4s
+2026-10-16 11:51:01,553 | INFO    | huim_opt |   union at 5.0000% of total utility: 3 items, 834 nodes, 1.8s
+2026-10-16 11:51:01,619 | INFO    | huim_opt |   union at 4.0000% of total utility: 0 items, 285 nodes, 1.6s
+2026-10-16 11:51:01,842 | INFO    | huim_opt |   union at 1.0000% of total utility: 77 items, 775 nodes, 0.5s
+2026-10-16 11:51:01,892 | INFO    | huim_opt |   union at 0.5000% of total utility: 115 items, 724 nodes, 0.4s
+2026-10-16 11:51:01,893 | INFO    | huim_opt |   union at 0.5000% of total utility: 115 items, 777 nodes, 0.4s
+2026-10-16 11:51:01,912 | INFO    | huim_opt | union B b0: 5.2s, 29.6 MB, 6010 nodes
+2026-10-16 11:51:01,921 | INFO    | huim_opt | union C b0: 5.1s, 28.7 MB, 4084 nodes
+2026-10-16 11:51:02,317 | INFO    | huim_opt |   union at 4.0000% of total utility: 44 items, 2031 nodes, 2.4s
+2026-10-16 11:51:02,399 | INFO    | huim_opt |   union at 0.7500% of total utility: 85 items, 964 nodes, 0.6s
+2026-10-16 11:51:02,928 | INFO    | huim_opt |   union at 0.5000% of total utility: 106 items, 1331 nodes, 0.5s
+2026-10-16 11:51:02,941 | INFO    | huim_opt | union A b0: 6.2s, 30.4 MB, 7890 nodes
+2026-10-16 11:51:03,168 | INFO    | huim_opt |   union at 4.0000% of total utility: 0 items, 654 nodes, 2.1s
+2026-10-16 11:51:03,188 | INFO    | huim_opt |   union at 4.0000% of total utility: 50 items, 2075 nodes, 2.3s
+2026-10-16 11:51:03,472 | INFO    | huim_opt |   union at 3.5000% of total utility: 0 items, 550 nodes, 1.9s
+2026-10-16 11:51:03,937 | INFO    | huim_opt |   union at 4.0000% of total utility: 19 items, 2177 nodes, 2.4s
+2026-10-16 11:51:04,061 | INFO    | huim_opt |   union at 10.0000% of total utility: 0 items, 30095 nodes, 7.8s
+2026-10-16 11:51:04,252 | INFO    | huim_opt |   union at 3.5000% of total utility: 59 items, 1045 nodes, 1.9s
+2026-10-16 11:51:04,302 | INFO    | huim_opt |   union at 4.0000% of total utility: 43 items, 5252 nodes, 3.7s
+2026-10-16 11:51:04,613 | INFO    | huim_opt |   union at 3.5000% of total utility: 54 items, 1368 nodes, 1.4s
+2026-10-16 11:51:04,877 | INFO    | huim_opt |   union at 3.0000% of total utility: 63 items, 227 nodes, 0.6s
+2026-10-16 11:51:05,042 | INFO    | huim_opt |   union at 3.5000% of total utility: 6 items, 1155 nodes, 1.9s
+2026-10-16 11:51:05,238 | INFO    | huim_opt |   union at 2.5000% of total utility: 66 items, 192 nodes, 0.4s
+2026-10-16 11:51:05,357 | INFO    | huim_opt |   union at 3.0000% of total utility: 62 items, 570 nodes, 0.7s
+2026-10-16 11:51:05,701 | INFO    | huim_opt |   union at 2.5000% of total utility: 65 items, 252 nodes, 0.3s
+2026-10-16 11:51:05,720 | INFO    | huim_opt |   union at 2.0000% of total utility: 70 items, 302 nodes, 0.5s
+2026-10-16 11:51:05,891 | INFO    | huim_opt |   union at 3.0000% of total utility: 0 items, 1692 nodes, 2.4s
+2026-10-16 11:51:06,140 | INFO    | huim_opt |   union at 2.0000% of total utility: 70 items, 701 nodes, 0.4s
+2026-10-16 11:51:06,225 | INFO    | huim_opt |   union at 1.9294% of total utility: 71 items, 313 nodes, 0.5s
+2026-10-16 11:51:06,342 | INFO    | huim_opt |   union at 3.5000% of total utility: 25 items, 3318 nodes, 2.4s
+2026-10-16 11:51:06,564 | INFO    | huim_opt |   union at 3.5000% of total utility: 57 items, 2957 nodes, 2.3s
+2026-10-16 11:51:06,570 | INFO    | huim_opt |   union at 1.7321% of total utility: 72 items, 147 nodes, 0.3s
+2026-10-16 11:51:06,573 | INFO    | huim_opt |   union at 1.9294% of total utility: 70 items, 800 nodes, 0.4s
+2026-10-16 11:51:06,849 | INFO    | huim_opt |   union at 1.5000% of total utility: 73 items, 87 nodes, 0.3s
+2026-10-16 11:51:07,160 | INFO    | huim_opt |   union at 1.7321% of total utility: 71 items, 1576 nodes, 0.6s
+2026-10-16 11:51:07,206 | INFO    | huim_opt |   union at 3.0000% of total utility: 14 items, 2271 nodes, 2.2s
+2026-10-16 11:51:07,226 | INFO    | huim_opt |   union at 1.2500% of total utility: 74 items, 120 nodes, 0.4s
+2026-10-16 11:51:07,543 | INFO    | huim_opt |   union at 1.5000% of total utility: 72 items, 367 nodes, 0.4s
+2026-10-16 11:51:07,550 | INFO    | huim_opt |   union at 3.0000% of total utility: 60 items, 1396 nodes, 1.0s
+2026-10-16 11:51:07,620 | INFO    | huim_opt |   union at 1.0000% of total utility: 76 items, 311 nodes, 0.4s
+2026-10-16 11:51:07,875 | INFO    | huim_opt |   union at 1.2500% of total utility: 74 items, 271 nodes, 0.3s
+2026-10-16 11:51:08,005 | INFO    | huim_opt |   union at 0.7500% of total utility: 82 items, 370 nodes, 0.4s
+2026-10-16 11:51:08,150 | INFO    | huim_opt |   union at 2.5000% of total utility: 65 items, 1188 nodes, 0.6s
+2026-10-16 11:51:08,391 | INFO    | huim_opt |   union at 1.0000% of total utility: 74 items, 533 nodes, 0.5s
+2026-10-16 11:51:08,398 | INFO    | huim_opt |   union at 0.5000% of total utility: 96 items, 675 nodes, 0.4s
+2026-10-16 11:51:08,417 | INFO    | huim_opt | union C b2: 11.2s, 49.6 MB, 7023 nodes
+2026-10-16 11:51:08,578 | INFO    | huim_opt |   union at 2.0000% of total utility: 71 items, 302 nodes, 0.4s
+2026-10-16 11:51:08,947 | INFO    | huim_opt |   union at 1.9294% of total utility: 72 items, 91 nodes, 0.4s
+2026-10-16 11:51:08,947 | INFO    | huim_opt |   union at 3.0000% of total utility: 40 items, 4300 nodes, 2.6s
+2026-10-16 11:51:09,047 | INFO    | huim_opt |   union at 0.7500% of total utility: 79 items, 2372 nodes, 0.7s
+2026-10-16 11:51:09,321 | INFO    | huim_opt |   union at 1.7321% of total utility: 74 items, 104 nodes, 0.4s
+2026-10-16 11:51:09,491 | INFO    | huim_opt |   union at 0.5000% of total utility: 95 items, 1005 nodes, 0.4s
+2026-10-16 11:51:09,511 | INFO    | huim_opt | union B b2: 12.4s, 49.2 MB, 14298 nodes
+2026-10-16 11:51:09,626 | INFO    | huim_opt |   union at 1.5000% of total utility: 74 items, 64 nodes, 0.3s
+2026-10-16 11:51:09,946 | INFO    | huim_opt |   union at 2.5000% of total utility: 53 items, 4127 nodes, 2.7s
+2026-10-16 11:51:09,960 | INFO    | huim_opt |   union at 1.2500% of total utility: 74 items, 146 nodes, 0.3s
+2026-10-16 11:51:10,349 | INFO    | huim_opt |   union at 1.0000% of total utility: 74 items, 552 nodes, 0.4s
+2026-10-16 11:51:11,104 | INFO    | huim_opt |   union at 0.7500% of total utility: 83 items, 3699 nodes, 0.8s
+2026-10-16 11:51:11,210 | INFO    | huim_opt |   union at 2.5000% of total utility: 58 items, 3587 nodes, 2.3s
+2026-10-16 11:51:11,533 | INFO    | huim_opt |   union at 2.5000% of total utility: 6 items, 23370 nodes, 5.6s
+2026-10-16 11:51:11,632 | INFO    | huim_opt |   union at 0.5000% of total utility: 93 items, 829 nodes, 0.5s
+2026-10-16 11:51:11,647 | INFO    | huim_opt | union A b2: 14.9s, 57.1 MB, 18922 nodes
+2026-10-16 11:51:12,547 | INFO    | huim_opt |   union at 2.0000% of total utility: 79 items, 2195 nodes, 1.3s
+2026-10-16 11:51:12,742 | INFO    | huim_opt |   union at 2.0000% of total utility: 81 items, 4007 nodes, 2.8s
+2026-10-16 11:51:13,623 | INFO    | huim_opt |   union at 1.9294% of total utility: 82 items, 2275 nodes, 1.1s
+2026-10-16 11:51:14,820 | INFO    | huim_opt |   union at 1.7321% of total utility: 88 items, 2091 nodes, 1.2s
+2026-10-16 11:51:15,227 | INFO    | huim_opt |   union at 1.9294% of total utility: 85 items, 4593 nodes, 2.5s
+2026-10-16 11:51:15,895 | INFO    | huim_opt |   union at 1.5000% of total utility: 100 items, 1852 nodes, 1.1s
+2026-10-16 11:51:17,277 | INFO    | huim_opt |   union at 10.0000% of total utility: 0 items, 125365 nodes, 20.5s
+2026-10-16 11:51:17,549 | INFO    | huim_opt |   union at 1.2500% of total utility: 105 items, 4783 nodes, 1.7s
+2026-10-16 11:51:20,810 | INFO    | huim_opt |   union at 1.7321% of total utility: 91 items, 25213 nodes, 5.6s
+2026-10-16 11:51:32,198 | INFO    | huim_opt |   union at 1.0000% of total utility: 110 items, 112931 nodes, 14.6s
+2026-10-16 11:52:06,427 | INFO    | huim_opt |   union at 10.0000% of total utility: 0 items, 579401 nodes, 69.9s
+2026-10-16 11:52:08,394 | INFO    | huim_opt |   union at 1.5000% of total utility: 95 items, 405561 nodes, 47.6s
+2026-10-16 11:54:59,775 | INFO    | huim_opt |   union at 2.0000% of total utility: 81 items, 2020530 nodes, 228.2s
+2026-10-16 11:56:43,059 | INFO    | huim_opt | level A b1 0.5%: 150 items, 897 nodes, 0.6s
+2026-10-16 11:56:44,196 | INFO    | huim_opt | level A b1 1.9294%: 125 items, 7876 nodes, 1.9s
+2026-10-16 11:56:44,897 | INFO    | huim_opt | level A b1 2%: 125 items, 6796 nodes, 2.1s
+2026-10-16 11:56:45,090 | INFO    | huim_opt | level A b1 0.75%: 150 items, 8311 nodes, 2.5s
+2026-10-16 11:56:46,309 | INFO    | huim_opt | level A b1 1.25%: 128 items, 10350 nodes, 4.0s
+2026-10-16 11:56:46,317 | INFO    | huim_opt | level A b1 1.7321%: 125 items, 11074 nodes, 3.8s
+2026-10-16 11:56:52,561 | INFO    | huim_opt | level A b1 1.5%: 125 items, 21839 nodes, 9.7s
+2026-10-16 11:56:52,636 | INFO    | huim_opt | level A b1 10%: 0 items, 30095 nodes, 6.2s
+2026-10-16 11:56:53,107 | INFO    | huim_opt | level B b1 0.5%: 150 items, 988 nodes, 0.3s
+2026-10-16 11:56:54,617 | INFO    | huim_opt | level B b1 0.75%: 140 items, 5242 nodes, 1.7s
+2026-10-16 11:56:58,505 | INFO    | huim_opt | level A b1 2.5%: 121 items, 114675 nodes, 15.3s
+2026-10-16 11:56:58,659 | INFO    | huim_opt | level A b1 5%: 36 items, 88650 nodes, 13.4s
+2026-10-16 11:57:01,207 | INFO    | huim_opt | level B b1 1%: 136 items, 15774 nodes, 7.8s
+2026-10-16 11:57:03,628 | INFO    | huim_opt | level B b1 1.7321%: 125 items, 17494 nodes, 4.7s
+2026-10-16 11:57:05,360 | INFO    | huim_opt | level B b1 1.5%: 126 items, 25193 nodes, 6.6s
+2026-10-16 11:57:10,026 | INFO    | huim_opt | level B b1 1.25%: 127 items, 29803 nodes, 15.0s
+2026-10-16 11:57:12,489 | INFO    | huim_opt | level B b1 2%: 124 items, 37666 nodes, 8.6s
+2026-10-16 11:57:13,173 | INFO    | huim_opt | level A b1 1%: 138 items, 35550 nodes, 30.3s
+2026-10-16 11:57:16,575 | INFO    | huim_opt | level B b1 1.9294%: 125 items, 62291 nodes, 15.1s
+2026-10-16 11:57:54,735 | INFO    | huim_opt | level B b1 5%: 59 items, 263258 nodes, 37.9s
+2026-10-16 11:58:22,669 | INFO    | huim_opt | level A b1 3%: 91 items, 784604 nodes, 99.5s
+2026-10-16 11:58:46,088 | INFO    | huim_opt | level B b1 10%: 0 items, 125365 nodes, 23.2s
+2026-10-16 11:58:46,586 | INFO    | huim_opt | level C b1 0.5%: 150 items, 790 nodes, 0.2s
+2026-10-16 11:58:48,949 | INFO    | huim_opt | level C b1 0.75%: 141 items, 6856 nodes, 2.1s
+2026-10-16 11:58:54,382 | INFO    | huim_opt | level C b1 1%: 133 items, 10894 nodes, 5.2s
+2026-10-16 11:59:05,413 | INFO    | huim_opt | level C b1 1.25%: 127 items, 21556 nodes, 10.8s
+2026-10-16 11:59:10,080 | INFO    | huim_opt | level C b1 1.5%: 125 items, 16145 nodes, 4.4s
+2026-10-16 11:59:14,364 | INFO    | huim_opt | level C b1 1.7321%: 125 items, 15883 nodes, 4.0s
+2026-10-16 11:59:23,756 | INFO    | huim_opt | level C b1 1.9294%: 125 items, 34067 nodes, 9.1s
+2026-10-16 11:59:32,083 | INFO    | huim_opt | level C b1 2%: 125 items, 46575 nodes, 8.1s
+2026-10-16 11:59:35,290 | INFO    | huim_opt | level C b1 2.5%: 112 items, 17296 nodes, 3.0s
+2026-10-16 11:59:41,690 | INFO    | huim_opt | level B b1 2.5%: 110 items, 1259691 nodes, 156.0s
+2026-10-16 12:04:42,878 | INFO    | huim_opt | level C b1 3%: 98 items, 2395086 nodes, 307.3s
+2026-10-16 12:05:07,311 | INFO    | huim_opt |   union at 1.9294% of total utility: 86 items, 3497509 nodes, 607.5s
+2026-10-16 12:06:38,367 | INFO    | huim_opt | level C b1 3.5%: 81 items, 2668141 nodes, 416.3s
+2026-10-16 12:07:56,618 | INFO    | huim_opt | PB_A__0.5pct       303 AP (106/150/93)  dev   6.30  val   5.31
+2026-10-16 12:08:39,737 | INFO    | huim_opt | level B b1 3%: 102 items, 4584717 nodes, 689.4s
+2026-10-16 12:11:12,326 | INFO    | huim_opt | level A global 0.5%: COMPLETED, 242 items, 10696 nodes, 9.3s
+2026-10-16 12:11:27,660 | INFO    | huim_opt | level C b1 5%: 46 items, 1252939 nodes, 288.9s
+2026-10-16 12:11:28,680 | INFO    | huim_opt | PB_A__1pct         264 AP (77/138/74)  dev   6.41  val   5.32
+2026-10-16 12:11:40,612 | INFO    | huim_opt | level A global 1.25%: COMPLETED, 137 items, 89111 nodes, 34.1s
+2026-10-16 12:13:20,034 | INFO    | huim_opt | level A b0 0.5%: COMPLETED, 106 items, 3014 nodes, 1.0s
+2026-10-16 12:13:21,177 | INFO    | huim_opt | level A b0 1%: COMPLETED, 77 items, 1747 nodes, 1.0s
+2026-10-16 12:13:22,425 | INFO    | huim_opt | level A b0 1.25%: COMPLETED, 67 items, 1570 nodes, 1.0s
+2026-10-16 12:13:23,515 | INFO    | huim_opt | level A b0 1.5%: COMPLETED, 62 items, 1281 nodes, 0.6s
+2026-10-16 12:13:24,973 | INFO    | huim_opt | level A b0 1.7321%: COMPLETED, 56 items, 1126 nodes, 1.1s
+2026-10-16 12:13:26,024 | INFO    | huim_opt | level A b0 1.9294%: COMPLETED, 55 items, 1081 nodes, 0.9s
+2026-10-16 12:13:27,014 | INFO    | huim_opt | level A b0 2%: COMPLETED, 53 items, 1013 nodes, 0.8s
+2026-10-16 12:13:27,745 | INFO    | huim_opt | level A b0 2.5%: COMPLETED, 50 items, 980 nodes, 0.5s
+2026-10-16 12:13:28,201 | INFO    | huim_opt | level A b0 3%: COMPLETED, 41 items, 668 nodes, 0.3s
+2026-10-16 12:13:29,221 | INFO    | huim_opt | level A b0 3.5%: COMPLETED, 37 items, 493 nodes, 0.5s
+2026-10-16 12:13:30,057 | INFO    | huim_opt | level A b0 4%: COMPLETED, 36 items, 494 nodes, 0.5s
+2026-10-16 12:13:30,826 | INFO    | huim_opt | level A b0 5%: COMPLETED, 36 items, 389 nodes, 0.5s
+2026-10-16 12:13:31,495 | INFO    | huim_opt | level A b0 7.5%: COMPLETED, 18 items, 256 nodes, 0.4s
+2026-10-16 12:13:32,057 | INFO    | huim_opt | level A b0 10%: COMPLETED, 0 items, 70 nodes, 0.3s
+2026-10-16 12:13:33,514 | INFO    | huim_opt | level B b0 0.5%: COMPLETED, 115 items, 2249 nodes, 1.1s
+2026-10-16 12:13:34,263 | INFO    | huim_opt | level A b0 0.75%: COMPLETED, 85 items, 2438 nodes, 1.2s
+2026-10-16 12:13:35,436 | INFO    | huim_opt | level B b0 0.75%: COMPLETED, 93 items, 2108 nodes, 1.1s
+2026-10-16 12:13:36,037 | INFO    | huim_opt | level B b0 1%: COMPLETED, 79 items, 1494 nodes, 1.2s
+2026-10-16 12:13:36,789 | INFO    | huim_opt | level B b0 1.25%: COMPLETED, 72 items, 1130 nodes, 0.5s
+2026-10-16 12:13:37,255 | INFO    | huim_opt | level B b0 1.5%: COMPLETED, 66 items, 1153 nodes, 0.7s
+2026-10-16 12:13:38,066 | INFO    | huim_opt | level B b0 1.9294%: COMPLETED, 57 items, 990 nodes, 0.5s
+2026-10-16 12:13:38,154 | INFO    | huim_opt | level B b0 1.7321%: COMPLETED, 59 items, 1155 nodes, 0.9s
+2026-10-16 12:13:38,946 | INFO    | huim_opt | level B b0 2.5%: COMPLETED, 48 items, 792 nodes, 0.4s
+2026-10-16 12:13:39,492 | INFO    | huim_opt | level B b0 2%: COMPLETED, 56 items, 932 nodes, 0.8s
+2026-10-16 12:13:40,214 | INFO    | huim_opt | level B b0 3%: COMPLETED, 44 items, 611 nodes, 0.6s
+2026-10-16 12:13:40,386 | INFO    | huim_opt | level B b0 3.5%: COMPLETED, 43 items, 362 nodes, 0.3s
+2026-10-16 12:13:40,835 | INFO    | huim_opt | level B b0 4%: COMPLETED, 37 items, 312 nodes, 0.3s
+2026-10-16 12:13:41,221 | INFO    | huim_opt | level B b0 5%: COMPLETED, 36 items, 283 nodes, 0.4s
+2026-10-16 12:13:41,502 | INFO    | huim_opt | level B b0 7.5%: COMPLETED, 28 items, 230 nodes, 0.2s
+2026-10-16 12:13:42,000 | INFO    | huim_opt | level B b0 10%: COMPLETED, 6 items, 101 nodes, 0.2s
+2026-10-16 12:13:42,902 | INFO    | huim_opt | level C b0 0.5%: COMPLETED, 115 items, 1774 nodes, 0.9s
+2026-10-16 12:13:43,069 | INFO    | huim_opt | level C b0 0.75%: COMPLETED, 92 items, 1589 nodes, 0.7s
+2026-10-16 12:13:44,127 | INFO    | huim_opt | level C b0 1%: COMPLETED, 79 items, 1027 nodes, 0.7s
+2026-10-16 12:13:44,269 | INFO    | huim_opt | level C b0 1.25%: COMPLETED, 74 items, 849 nodes, 0.9s
+2026-10-16 12:13:45,145 | INFO    | huim_opt | level A global 0.75%: COMPLETED, 201 items, 579348 nodes, 167.0s
+2026-10-16 12:13:45,262 | INFO    | huim_opt | level C b0 1.5%: COMPLETED, 67 items, 772 nodes, 0.7s
+2026-10-16 12:13:45,734 | INFO    | huim_opt | level C b0 1.7321%: COMPLETED, 57 items, 807 nodes, 0.7s
+2026-10-16 12:13:46,369 | INFO    | huim_opt | level C b0 1.9294%: COMPLETED, 57 items, 699 nodes, 0.7s
+2026-10-16 12:13:46,528 | INFO    | huim_opt | level C b0 2%: COMPLETED, 56 items, 631 nodes, 0.4s
+2026-10-16 12:13:47,168 | INFO    | huim_opt | level C b0 3%: COMPLETED, 45 items, 432 nodes, 0.4s
+2026-10-16 12:13:47,413 | INFO    | huim_opt | level C b0 2.5%: COMPLETED, 53 items, 418 nodes, 0.6s
+2026-10-16 12:13:47,853 | INFO    | huim_opt | level C b0 3.5%: COMPLETED, 41 items, 328 nodes, 0.3s
+2026-10-16 12:13:48,485 | INFO    | huim_opt | level C b0 5%: COMPLETED, 36 items, 177 nodes, 0.3s
+2026-10-16 12:13:48,550 | INFO    | huim_opt | level C b0 4%: COMPLETED, 36 items, 239 nodes, 0.6s
+2026-10-16 12:13:48,926 | INFO    | huim_opt | level C b0 7.5%: COMPLETED, 24 items, 161 nodes, 0.2s
+2026-10-16 12:13:49,434 | INFO    | huim_opt | level C b0 10%: COMPLETED, 0 items, 60 nodes, 0.2s
+2026-10-16 12:13:50,293 | INFO    | huim_opt | level A b2 0.5%: COMPLETED, 93 items, 1607 nodes, 0.9s
+2026-10-16 12:13:51,451 | INFO    | huim_opt | level A b2 1%: COMPLETED, 74 items, 962 nodes, 0.8s
+2026-10-16 12:13:51,735 | INFO    | huim_opt | level A b2 0.75%: COMPLETED, 83 items, 3844 nodes, 2.0s
+2026-10-16 12:13:53,389 | INFO    | huim_opt | level A b2 1.5%: COMPLETED, 74 items, 1797 nodes, 1.3s
+2026-10-16 12:13:53,594 | INFO    | huim_opt | level A b2 1.25%: COMPLETED, 74 items, 1097 nodes, 1.8s
+2026-10-16 12:13:55,340 | INFO    | huim_opt | level A b2 1.7321%: COMPLETED, 74 items, 1324 nodes, 1.6s
+2026-10-16 12:13:56,229 | INFO    | huim_opt | level A b1 4%: 75 items, 6148165 nodes, 1031.2s
+2026-10-16 12:13:56,358 | INFO    | huim_opt | level A b2 1.9294%: COMPLETED, 72 items, 1939 nodes, 2.6s
+2026-10-16 12:13:58,000 | INFO    | huim_opt | level A b2 2%: COMPLETED, 71 items, 1717 nodes, 2.5s
+2026-10-16 12:13:59,718 | INFO    | huim_opt | level A global 2.5%: COMPLETED, 6 items, 23370 nodes, 12.5s
+2026-10-16 12:13:59,965 | INFO    | huim_opt | level A b2 2.5%: COMPLETED, 65 items, 3498 nodes, 3.3s
+2026-10-16 12:14:03,073 | INFO    | huim_opt | level A global 3%: COMPLETED, 0 items, 1692 nodes, 2.9s
+2026-10-16 12:14:04,789 | INFO    | huim_opt | level A b2 3%: COMPLETED, 60 items, 5350 nodes, 6.4s
+2026-10-16 12:14:04,806 | INFO    | huim_opt | level A global 3.5%: COMPLETED, 0 items, 550 nodes, 1.1s
+2026-10-16 12:14:05,166 | INFO    | huim_opt | level A b2 3.5%: COMPLETED, 57 items, 4347 nodes, 4.9s
+2026-10-16 12:14:06,256 | INFO    | huim_opt | level A global 4%: COMPLETED, 0 items, 285 nodes, 0.9s
+2026-10-16 12:14:07,651 | INFO    | huim_opt | level A global 5%: COMPLETED, 0 items, 96 nodes, 0.9s
+2026-10-16 12:14:08,358 | INFO    | huim_opt | level A b2 5%: COMPLETED, 6 items, 1924 nodes, 2.7s
+2026-10-16 12:14:08,574 | INFO    | huim_opt | level A global 7.5%: COMPLETED, 0 items, 40 nodes, 0.7s
+2026-10-16 12:14:09,153 | INFO    | huim_opt | level A global 10%: COMPLETED, 0 items, 17 nodes, 0.3s
+2026-10-16 12:14:10,044 | INFO    | huim_opt | level A b2 7.5%: COMPLETED, 0 items, 327 nodes, 1.1s
+2026-10-16 12:14:10,782 | INFO    | huim_opt | level A b2 10%: COMPLETED, 0 items, 91 nodes, 0.5s
+2026-10-16 12:14:10,921 | INFO    | huim_opt | level A b2 4%: COMPLETED, 43 items, 5360 nodes, 5.7s
+2026-10-16 12:14:12,810 | INFO    | huim_opt | level B b2 0.5%: COMPLETED, 95 items, 1622 nodes, 1.0s
+2026-10-16 12:14:13,175 | INFO    | huim_opt | level B b2 0.75%: COMPLETED, 79 items, 2963 nodes, 1.7s
+2026-10-16 12:14:14,419 | INFO    | huim_opt | level B b2 1%: COMPLETED, 74 items, 1251 nodes, 1.0s
+2026-10-16 12:14:15,569 | INFO    | huim_opt | level B b2 1.25%: COMPLETED, 74 items, 2073 nodes, 1.8s
+2026-10-16 12:14:16,643 | INFO    | huim_opt | level B b2 1.5%: COMPLETED, 72 items, 1330 nodes, 1.6s
+2026-10-16 12:14:17,928 | INFO    | huim_opt | level B b2 1.7321%: COMPLETED, 71 items, 2289 nodes, 1.8s
+2026-10-16 12:14:19,148 | INFO    | huim_opt | level B b2 1.9294%: COMPLETED, 70 items, 1796 nodes, 1.7s
+2026-10-16 12:14:20,337 | INFO    | huim_opt | level B b2 2%: COMPLETED, 70 items, 1618 nodes, 1.7s
+2026-10-16 12:14:22,027 | INFO    | huim_opt | level B b2 2.5%: COMPLETED, 65 items, 1487 nodes, 2.2s
+2026-10-16 12:14:23,521 | INFO    | huim_opt | level B b2 3%: COMPLETED, 62 items, 2155 nodes, 2.6s
+2026-10-16 12:14:27,087 | INFO    | huim_opt | level B b2 4%: COMPLETED, 50 items, 3361 nodes, 3.0s
+2026-10-16 12:14:27,601 | INFO    | huim_opt | level B b2 3.5%: COMPLETED, 54 items, 4765 nodes, 5.0s
+2026-10-16 12:14:29,106 | INFO    | huim_opt | level B b2 7.5%: COMPLETED, 3 items, 353 nodes, 0.9s
+2026-10-16 12:14:29,959 | INFO    | huim_opt | level B b2 10%: COMPLETED, 0 items, 106 nodes, 0.4s
+2026-10-16 12:14:30,314 | INFO    | huim_opt | level B b2 5%: COMPLETED, 40 items, 1949 nodes, 2.8s
+2026-10-16 12:14:31,177 | INFO    | huim_opt | level C b2 0.5%: COMPLETED, 96 items, 1083 nodes, 0.6s
+2026-10-16 12:14:31,687 | INFO    | huim_opt | level C b2 0.75%: COMPLETED, 82 items, 688 nodes, 0.8s
+2026-10-16 12:14:32,891 | INFO    | huim_opt | level C b2 1.25%: COMPLETED, 74 items, 961 nodes, 0.8s
+2026-10-16 12:14:32,961 | INFO    | huim_opt | level C b2 1%: COMPLETED, 76 items, 740 nodes, 1.0s
+2026-10-16 12:14:34,205 | INFO    | huim_opt | level C b2 1.7321%: COMPLETED, 72 items, 622 nodes, 0.6s
+2026-10-16 12:14:34,412 | INFO    | huim_opt | level C b2 1.5%: COMPLETED, 73 items, 822 nodes, 1.0s
+2026-10-16 12:14:35,811 | INFO    | huim_opt | level C b2 1.9294%: COMPLETED, 71 items, 936 nodes, 1.1s
+2026-10-16 12:14:36,470 | INFO    | huim_opt | level C b2 2%: COMPLETED, 70 items, 919 nodes, 1.4s
+2026-10-16 12:14:38,024 | INFO    | huim_opt | level C b2 2.5%: COMPLETED, 66 items, 1367 nodes, 1.7s
+2026-10-16 12:14:39,536 | INFO    | huim_opt | level C b2 3%: COMPLETED, 63 items, 1514 nodes, 2.4s
+2026-10-16 12:14:41,176 | INFO    | huim_opt | level C b2 3.5%: COMPLETED, 59 items, 1699 nodes, 2.5s
+2026-10-16 12:14:43,279 | INFO    | huim_opt | level C b2 4%: COMPLETED, 44 items, 2042 nodes, 3.3s
+2026-10-16 12:14:43,446 | INFO    | huim_opt | level C b2 5%: COMPLETED, 28 items, 946 nodes, 1.7s
+2026-10-16 12:14:44,553 | INFO    | huim_opt | level C b2 7.5%: COMPLETED, 5 items, 197 nodes, 0.6s
+2026-10-16 12:14:44,755 | INFO    | huim_opt | level C b2 10%: COMPLETED, 0 items, 60 nodes, 0.6s
+2026-10-16 12:15:01,764 | INFO    | huim_opt | level C b1 10%: 0 items, 579401 nodes, 213.6s
+2026-10-16 12:15:45,116 | INFO    | huim_opt | PB_A__1.5pct       249 AP (62/125/74)  dev   6.46  val   5.30
+2026-10-16 12:16:04,119 | INFO    | huim_opt | level B global 0.5%: COMPLETED, 203 items, 421436 nodes, 113.4s
+2026-10-16 12:19:23,584 | INFO    | huim_opt | level B b1 7.5%: 35 items, 5893578 nodes, 1288.6s
+2026-10-16 12:19:24,241 | INFO    | huim_opt | PB_A__1.9294pct    244 AP (55/125/72)  dev   6.47  val   5.31
+2026-10-16 12:19:29,680 | INFO    | huim_opt | EFIM A b0 10%: COMPLETED, 0 HUIs, 0.6s
+2026-10-16 12:19:31,225 | INFO    | huim_opt | EFIM A b0 7.5%: COMPLETED, 13 HUIs, 1.3s
+2026-10-16 12:19:33,765 | INFO    | huim_opt | EFIM A b0 5%: COMPLETED, 1447 HUIs, 1.7s
+2026-10-16 12:19:36,047 | INFO    | huim_opt | EFIM A b0 4%: COMPLETED, 5671 HUIs, 1.9s
+2026-10-16 12:19:38,048 | INFO    | huim_opt | EFIM A b2 10%: COMPLETED, 0 HUIs, 4.0s
+2026-10-16 12:19:39,163 | INFO    | huim_opt | EFIM A b0 3%: COMPLETED, 17033 HUIs, 2.7s
+2026-10-16 12:19:44,469 | INFO    | huim_opt | EFIM A b0 2.5%: COMPLETED, 31039 HUIs, 4.7s
+2026-10-16 12:19:46,130 | INFO    | huim_opt | EFIM A b2 7.5%: COMPLETED, 0 HUIs, 7.6s
+2026-10-16 12:19:53,551 | INFO    | huim_opt | EFIM A b0 1.9294%: COMPLETED, 61897 HUIs, 8.2s
+2026-10-16 12:20:02,164 | INFO    | huim_opt | EFIM A b2 5%: COMPLETED, 2 HUIs, 15.5s
+2026-10-16 12:20:08,860 | INFO    | huim_opt | EFIM A b0 1.5%: COMPLETED, 127773 HUIs, 13.8s
+2026-10-16 12:20:26,393 | INFO    | huim_opt | EFIM A b2 4%: COMPLETED, 84 HUIs, 23.7s
+2026-10-16 12:20:27,706 | INFO    | huim_opt | EFIM A b1 10%: COMPLETED, 0 HUIs, 53.0s
+2026-10-16 12:20:34,731 | INFO    | huim_opt | level A b1 7.5%: 30 items, 5315517 nodes, 1428.2s
+2026-10-16 12:20:35,490 | INFO    | huim_opt | EFIM A b0 1%: COMPLETED, 364603 HUIs, 23.2s
+2026-10-16 12:21:24,070 | INFO    | huim_opt | EFIM A b0 0.5%: ABORTED_RESOURCE_LIMIT, 1000001 HUIs, 38.3s
+2026-10-16 12:21:49,488 | INFO    | huim_opt | EFIM A b2 3%: COMPLETED, 108141 HUIs, 80.0s
+2026-10-16 12:22:37,184 | INFO    | huim_opt | EFIM A b2 2.5%: ABORTED_RESOURCE_LIMIT, 1000001 HUIs, 27.6s
+2026-10-16 12:22:51,362 | INFO    | huim_opt | PB_A__2.5pct       232 AP (50/121/65)  dev   6.69  val   5.88
+2026-10-16 12:23:15,604 | INFO    | huim_opt | level A global 2%: COMPLETED, 81 items, 2020572 nodes, 694.6s
+2026-10-16 12:23:27,736 | INFO    | huim_opt | level B b1 3.5%: 88 items, 7863494 nodes, 1575.0s
+2026-10-16 12:23:53,161 | INFO    | huim_opt | level B global 1%: COMPLETED, 110 items, 117224 nodes, 36.7s
+2026-10-16 12:23:58,961 | INFO    | huim_opt | level B global 1.25%: COMPLETED, 105 items, 6671 nodes, 4.9s
+2026-10-16 12:24:04,459 | INFO    | huim_opt | level B global 1.5%: COMPLETED, 100 items, 6104 nodes, 4.7s
+2026-10-16 12:24:08,984 | INFO    | huim_opt | level B global 1.7321%: COMPLETED, 88 items, 4492 nodes, 3.8s
+2026-10-16 12:24:18,983 | INFO    | huim_opt | level B global 1.9294%: COMPLETED, 82 items, 13424 nodes, 9.2s
+2026-10-16 12:24:28,781 | INFO    | huim_opt | level B global 2%: COMPLETED, 79 items, 11239 nodes, 8.9s
+2026-10-16 12:24:35,206 | INFO    | huim_opt | level B global 2.5%: COMPLETED, 58 items, 8935 nodes, 5.7s
+2026-10-16 12:24:39,641 | INFO    | huim_opt | level B global 3%: COMPLETED, 40 items, 5219 nodes, 3.7s
+2026-10-16 12:24:43,138 | INFO    | huim_opt | level B global 3.5%: COMPLETED, 25 items, 4202 nodes, 2.8s
+2026-10-16 12:24:45,934 | INFO    | huim_opt | level B global 4%: COMPLETED, 19 items, 2177 nodes, 2.0s
+2026-10-16 12:24:47,626 | INFO    | huim_opt | level B global 5%: COMPLETED, 3 items, 834 nodes, 0.9s
+2026-10-16 12:24:49,154 | INFO    | huim_opt | level B global 7.5%: COMPLETED, 0 items, 124 nodes, 0.7s
+2026-10-16 12:24:50,119 | INFO    | huim_opt | level B global 10%: COMPLETED, 0 items, 52 nodes, 0.2s
+2026-10-16 12:25:25,022 | INFO    | huim_opt | PB_A__3pct         189 AP (41/91/60)  dev   7.07  val   6.01
+2026-10-16 12:25:28,358 | INFO    | huim_opt | level A global 1%: COMPLETED, 180 items, 3465817 nodes, 866.6s
+2026-10-16 12:25:28,394 | INFO    | huim_opt | EFIM A b1 7.5%: ABORTED_RESOURCE_LIMIT, 2310 HUIs, 300.2s
+2026-10-16 12:27:25,542 | INFO    | huim_opt | PB_A__4pct         153 AP (36/75/43)  dev   9.01  val   8.23
+2026-10-16 12:28:25,589 | INFO    | huim_opt | level C b1 7.5%: 36 items, 3418296 nodes, 1185.3s
+2026-10-16 12:28:35,958 | INFO    | huim_opt | PB_A__5pct          78 AP (36/36/6)  dev  33.69  val  36.66
+2026-10-16 12:28:51,506 | INFO    | huim_opt | level A global 1.9294%: COMPLETED, 86 items, 3498632 nodes, 1058.9s
+2026-10-16 12:30:11,164 | INFO    | huim_opt | level A global 1.5%: COMPLETED, 128 items, 2729720 nodes, 1147.0s
+2026-10-16 12:30:46,782 | INFO    | huim_opt | level C global 0.75%: COMPLETED, 190 items, 1685618 nodes, 316.8s
+2026-10-16 12:31:55,570 | INFO    | huim_opt | PB_B__0.5pct       310 AP (115/150/95)  dev   6.30  val   5.31
+2026-10-16 12:32:22,285 | INFO    | huim_opt | level C global 1.5%: COMPLETED, 95 items, 410712 nodes, 94.8s
+2026-10-16 12:32:34,443 | INFO    | huim_opt | level C global 1.7321%: COMPLETED, 91 items, 30084 nodes, 11.4s
+2026-10-16 12:32:41,334 | INFO    | huim_opt | level C global 1.9294%: COMPLETED, 85 items, 9602 nodes, 6.2s
+2026-10-16 12:32:47,478 | INFO    | huim_opt | level C global 2%: COMPLETED, 81 items, 7115 nodes, 5.3s
+2026-10-16 12:32:50,014 | INFO    | huim_opt | level C global 0.5%: COMPLETED, 229 items, 2717832 nodes, 479.1s
+2026-10-16 12:32:51,739 | INFO    | huim_opt | level C global 2.5%: COMPLETED, 53 items, 4473 nodes, 3.6s
+2026-10-16 12:32:52,898 | INFO    | huim_opt | level C global 3%: COMPLETED, 14 items, 2284 nodes, 2.1s
+2026-10-16 12:32:54,083 | INFO    | huim_opt | level C global 3.5%: COMPLETED, 6 items, 1155 nodes, 1.6s
+2026-10-16 12:32:54,790 | INFO    | huim_opt | level C global 4%: COMPLETED, 0 items, 654 nodes, 1.1s
+2026-10-16 12:32:55,524 | INFO    | huim_opt | level C global 5%: COMPLETED, 0 items, 240 nodes, 0.7s
+2026-10-16 12:32:55,878 | INFO    | huim_opt | level C global 7.5%: COMPLETED, 0 items, 56 nodes, 0.3s
+2026-10-16 12:32:56,481 | INFO    | huim_opt | level C global 10%: COMPLETED, 0 items, 34 nodes, 0.2s
+2026-10-16 12:34:40,070 | INFO    | huim_opt | PB_B__1pct         265 AP (79/136/74)  dev   6.40  val   5.32
+2026-10-16 12:35:26,085 | INFO    | huim_opt | level C global 1%: COMPLETED, 151 items, 1718273 nodes, 393.8s
+2026-10-16 12:37:07,119 | INFO    | huim_opt | PB_B__1.5pct       254 AP (66/126/72)  dev   6.46  val   5.36
+2026-10-16 12:37:58,611 | INFO    | huim_opt | level B b1 4%: 78 items, 14501948 nodes, 2445.2s
+2026-10-16 12:39:25,418 | INFO    | huim_opt | PB_B__1.9294pct    245 AP (57/125/70)  dev   6.52  val   5.37
+2026-10-16 12:39:59,899 | INFO    | huim_opt | level C b1 4%: 77 items, 12364905 nodes, 2116.6s
+2026-10-16 12:41:03,350 | INFO    | huim_opt | level A global 1.7321%: TIMEOUT, 67 items, 5416000 nodes, 1800.0s
+2026-10-16 12:41:25,962 | INFO    | huim_opt | PB_B__2.5pct       217 AP (48/110/65)  dev   6.44  val   5.84
+2026-10-16 12:43:15,794 | INFO    | huim_opt | PB_B__3pct         203 AP (44/102/62)  dev   6.71  val   6.16
+2026-10-16 12:44:35,869 | INFO    | huim_opt | level B global 0.75%: COMPLETED, 145 items, 10092614 nodes, 1710.7s
+2026-10-16 12:44:46,266 | INFO    | huim_opt | PB_B__4pct         164 AP (37/78/50)  dev   8.28  val   7.99
+2026-10-16 12:45:35,369 | INFO    | huim_opt | level A b1 3.5%: 83 items, 20754211 nodes, 2931.0s
+2026-10-16 12:45:59,943 | INFO    | huim_opt | PB_B__5pct         135 AP (36/59/40)  dev   9.47  val  10.39
+2026-10-16 12:46:49,296 | INFO    | huim_opt | PB_B__7.5pct        66 AP (28/35/3)  dev  54.37  val  47.19
+2026-10-16 12:50:04,291 | INFO    | huim_opt | G_A__0.5pct        242 AP  dev   6.35  val   5.29
+2026-10-16 12:50:09,373 | INFO    | huim_opt | PB_C__0.5pct       311 AP (115/150/96)  dev   6.30  val   5.31
+2026-10-16 12:50:14,211 | INFO    | huim_opt | level C global 1.25%: COMPLETED, 131 items, 9112258 nodes, 1201.7s
+2026-10-16 12:52:38,402 | INFO    | huim_opt | PB_C__1pct         270 AP (79/133/76)  dev   6.36  val   5.32
+2026-10-16 12:52:43,893 | INFO    | huim_opt | G_A__1pct          180 AP  dev   7.36  val   7.76
+2026-10-16 12:54:38,014 | INFO    | huim_opt | G_A__1.5pct        128 AP  dev  13.36  val  14.71
+2026-10-16 12:54:57,396 | INFO    | huim_opt | PB_C__1.5pct       254 AP (67/125/73)  dev   6.45  val   5.34
+2026-10-16 12:55:59,212 | INFO    | huim_opt | G_A__1.9294pct      86 AP  dev  17.53  val  19.36
+2026-10-16 12:57:12,134 | INFO    | huim_opt | PB_C__1.9294pct    245 AP (57/125/71)  dev   6.52  val   5.36
+2026-10-16 12:57:16,237 | INFO    | huim_opt | G_A__2pct           81 AP  dev  17.98  val  19.26
+2026-10-16 12:57:32,199 | INFO    | huim_opt | G_A__2.5pct          6 AP  dev  62.31  val  80.26
+2026-10-16 12:59:16,959 | INFO    | huim_opt | PB_C__2.5pct       225 AP (53/112/66)  dev   6.61  val   5.46
+2026-10-16 13:00:27,243 | INFO    | huim_opt | G_B__0.5pct        203 AP  dev   7.20  val   6.48
+2026-10-16 13:01:10,367 | INFO    | huim_opt | PB_C__3pct         203 AP (45/98/63)  dev   6.88  val   6.27
+2026-10-16 13:02:07,609 | INFO    | huim_opt | G_B__1pct          110 AP  dev  15.08  val  14.56
+2026-10-16 13:02:39,995 | INFO    | huim_opt | PB_C__4pct         156 AP (36/77/44)  dev   8.09  val   8.06
+2026-10-16 13:03:40,995 | INFO    | huim_opt | G_B__1.5pct        100 AP  dev  17.23  val  17.20
+2026-10-16 13:03:46,021 | INFO    | huim_opt | PB_C__5pct         110 AP (36/46/28)  dev  16.36  val  16.14
+2026-10-16 13:04:27,915 | INFO    | huim_opt | PB_C__7.5pct        65 AP (24/36/5)  dev  51.84  val  43.99
+2026-10-16 13:05:00,720 | INFO    | huim_opt | G_B__1.7321pct      88 AP  dev  17.57  val  18.08
+2026-10-16 13:06:10,126 | INFO    | huim_opt | G_B__1.9294pct      82 AP  dev  18.64  val  19.56
+2026-10-16 13:07:16,986 | INFO    | huim_opt | G_B__2pct           79 AP  dev  19.11  val  19.91
+2026-10-16 13:08:06,798 | INFO    | huim_opt | G_B__2.5pct         58 AP  dev  29.20  val  33.80
+2026-10-16 13:08:43,614 | INFO    | huim_opt | G_B__3pct           40 AP  dev  42.37  val  56.55
+2026-10-16 13:11:34,483 | INFO    | huim_opt | G_C__0.5pct        229 AP  dev   6.27  val   5.33
+2026-10-16 13:13:31,755 | INFO    | huim_opt | G_C__1pct          151 AP  dev  10.65  val  10.55
+2026-10-16 13:14:49,844 | INFO    | huim_opt | G_C__1.5pct         95 AP  dev  17.27  val  17.59
+2026-10-16 13:16:04,969 | INFO    | huim_opt | G_C__1.7321pct      91 AP  dev  17.60  val  17.49
+2026-10-16 13:17:15,727 | INFO    | huim_opt | G_C__1.9294pct      85 AP  dev  18.45  val  18.12
+2026-10-16 13:18:24,147 | INFO    | huim_opt | G_C__2pct           81 AP  dev  19.52  val  19.75
+2026-10-16 13:19:09,905 | INFO    | huim_opt | G_C__2.5pct         53 AP  dev  21.82  val  22.16
+2026-10-16 13:19:28,588 | INFO    | huim_opt | G_C__3pct           14 AP  dev  56.85  val  65.51
+2026-10-16 13:19:41,901 | INFO    | huim_opt | G_A__0.5pct        242 AP  dev   6.35  val   5.29
+2026-10-16 13:19:41,908 | INFO    | huim_opt | G_A__1pct          180 AP  dev   7.36  val   7.76
+2026-10-16 13:19:41,917 | INFO    | huim_opt | G_A__1.5pct        128 AP  dev  13.36  val  14.71
+2026-10-16 13:19:41,926 | INFO    | huim_opt | G_A__1.9294pct      86 AP  dev  17.53  val  19.36
+2026-10-16 13:19:41,932 | INFO    | huim_opt | G_A__2pct           81 AP  dev  17.98  val  19.26
+2026-10-16 13:19:41,939 | INFO    | huim_opt | G_A__2.5pct          6 AP  dev  62.31  val  80.26
+2026-10-16 13:19:41,948 | INFO    | huim_opt | G_B__0.5pct        203 AP  dev   7.20  val   6.48
+2026-10-16 13:19:41,956 | INFO    | huim_opt | G_B__1pct          110 AP  dev  15.08  val  14.56
+2026-10-16 13:19:41,962 | INFO    | huim_opt | G_B__1.5pct        100 AP  dev  17.23  val  17.20
+2026-10-16 13:19:41,969 | INFO    | huim_opt | G_B__1.7321pct      88 AP  dev  17.57  val  18.08
+2026-10-16 13:19:41,975 | INFO    | huim_opt | G_B__1.9294pct      82 AP  dev  18.64  val  19.56
+2026-10-16 13:19:41,982 | INFO    | huim_opt | G_B__2pct           79 AP  dev  19.11  val  19.91
+2026-10-16 13:19:41,988 | INFO    | huim_opt | G_B__2.5pct         58 AP  dev  29.20  val  33.80
+2026-10-16 13:19:41,996 | INFO    | huim_opt | G_B__3pct           40 AP  dev  42.37  val  56.55
+2026-10-16 13:19:42,006 | INFO    | huim_opt | G_C__0.5pct        229 AP  dev   6.27  val   5.33
+2026-10-16 13:19:42,014 | INFO    | huim_opt | G_C__1pct          151 AP  dev  10.65  val  10.55
+2026-10-16 13:19:42,032 | INFO    | huim_opt | G_C__1.5pct         95 AP  dev  17.27  val  17.59
+2026-10-16 13:19:42,040 | INFO    | huim_opt | G_C__1.7321pct      91 AP  dev  17.60  val  17.49
+2026-10-16 13:19:42,047 | INFO    | huim_opt | G_C__1.9294pct      85 AP  dev  18.45  val  18.12
+2026-10-16 13:19:42,053 | INFO    | huim_opt | G_C__2pct           81 AP  dev  19.52  val  19.75
+2026-10-16 13:19:42,061 | INFO    | huim_opt | G_C__2.5pct         53 AP  dev  21.82  val  22.16
+2026-10-16 13:19:42,069 | INFO    | huim_opt | G_C__3pct           14 AP  dev  56.85  val  65.51
+2026-10-16 13:19:42,105 | INFO    | huim_opt | PB_A__0.5pct       303 AP (106/150/93)  dev   6.30  val   5.31
+2026-10-16 13:19:42,114 | INFO    | huim_opt | PB_A__1pct         264 AP (77/138/74)  dev   6.41  val   5.32
+2026-10-16 13:19:42,122 | INFO    | huim_opt | PB_A__1.5pct       249 AP (62/125/74)  dev   6.46  val   5.30
+2026-10-16 13:19:42,132 | INFO    | huim_opt | PB_A__1.9294pct    244 AP (55/125/72)  dev   6.47  val   5.31
+2026-10-16 13:19:42,140 | INFO    | huim_opt | PB_A__2.5pct       232 AP (50/121/65)  dev   6.69  val   5.88
+2026-10-16 13:19:42,149 | INFO    | huim_opt | PB_A__3pct         189 AP (41/91/60)  dev   7.07  val   6.01
+2026-10-16 13:19:42,157 | INFO    | huim_opt | PB_A__4pct         153 AP (36/75/43)  dev   9.01  val   8.23
+2026-10-16 13:19:42,167 | INFO    | huim_opt | PB_A__5pct          78 AP (36/36/6)  dev  33.69  val  36.66
+2026-10-16 13:19:42,184 | INFO    | huim_opt | PB_B__0.5pct       310 AP (115/150/95)  dev   6.30  val   5.31
+2026-10-16 13:19:42,193 | INFO    | huim_opt | PB_B__1pct         265 AP (79/136/74)  dev   6.40  val   5.32
+2026-10-16 13:19:42,202 | INFO    | huim_opt | PB_B__1.5pct       254 AP (66/126/72)  dev   6.46  val   5.36
+2026-10-16 13:19:42,211 | INFO    | huim_opt | PB_B__1.9294pct    245 AP (57/125/70)  dev   6.52  val   5.37
+2026-10-16 13:19:42,220 | INFO    | huim_opt | PB_B__2.5pct       217 AP (48/110/65)  dev   6.44  val   5.84
+2026-10-16 13:19:42,230 | INFO    | huim_opt | PB_B__3pct         203 AP (44/102/62)  dev   6.71  val   6.16
+2026-10-16 13:19:42,238 | INFO    | huim_opt | PB_B__4pct         164 AP (37/78/50)  dev   8.28  val   7.99
+2026-10-16 13:19:42,247 | INFO    | huim_opt | PB_B__5pct         135 AP (36/59/40)  dev   9.47  val  10.39
+2026-10-16 13:19:42,256 | INFO    | huim_opt | PB_B__7.5pct        66 AP (28/35/3)  dev  54.37  val  47.19
+2026-10-16 13:19:42,270 | INFO    | huim_opt | PB_C__0.5pct       311 AP (115/150/96)  dev   6.30  val   5.31
+2026-10-16 13:19:42,279 | INFO    | huim_opt | PB_C__1pct         270 AP (79/133/76)  dev   6.36  val   5.32
+2026-10-16 13:19:42,288 | INFO    | huim_opt | PB_C__1.5pct       254 AP (67/125/73)  dev   6.45  val   5.34
+2026-10-16 13:19:42,298 | INFO    | huim_opt | PB_C__1.9294pct    245 AP (57/125/71)  dev   6.52  val   5.36
+2026-10-16 13:19:42,307 | INFO    | huim_opt | PB_C__2.5pct       225 AP (53/112/66)  dev   6.61  val   5.46
+2026-10-16 13:19:42,316 | INFO    | huim_opt | PB_C__3pct         203 AP (45/98/63)  dev   6.88  val   6.27
+2026-10-16 13:19:42,325 | INFO    | huim_opt | PB_C__4pct         156 AP (36/77/44)  dev   8.09  val   8.06
+2026-10-16 13:19:42,333 | INFO    | huim_opt | PB_C__5pct         110 AP (36/46/28)  dev  16.36  val  16.14
+2026-10-16 13:19:42,343 | INFO    | huim_opt | PB_C__7.5pct        65 AP (24/36/5)  dev  51.84  val  43.99
+2026-10-16 13:25:03,138 | INFO    | huim_opt | EFIM C global 0.5%: ABORTED_RESOURCE_LIMIT, 160122 HUIs, 300.2s
+2026-10-16 13:30:03,539 | INFO    | huim_opt | EFIM C global 1%: ABORTED_RESOURCE_LIMIT, 74840 HUIs, 300.2s
+2026-10-16 13:31:54,076 | INFO    | huim_opt | EFIM C global 1.5%: ABORTED_RESOURCE_LIMIT, 1000001 HUIs, 100.7s
+2026-10-16 13:33:06,612 | INFO    | huim_opt | R_G_C__1.7321pct__union                   91 AP  dev  17.60  val  17.49
+2026-10-16 13:33:46,022 | INFO    | huim_opt | R_G_C__1.7321pct__topn0.5                 46 AP  dev  33.84  val  42.28
+2026-10-16 13:34:42,349 | INFO    | huim_opt | R_G_C__1.7321pct__topn0.75                69 AP  dev  21.79  val  24.11
+2026-10-16 13:35:55,636 | INFO    | huim_opt | R_G_C__1.7321pct__frequent2               91 AP  dev  17.60  val  17.49
+2026-10-16 13:36:35,342 | INFO    | huim_opt | R_G_C__1.7321pct__frequentmedian          46 AP  dev  33.84  val  42.28
+2026-10-16 13:37:48,522 | INFO    | huim_opt | R_G_C__1.7321pct__weighted0.5             91 AP  dev  18.78  val  18.14
+2026-10-16 13:39:02,120 | INFO    | huim_opt | R_G_C__1.7321pct__weighted1.0             91 AP  dev  20.70  val  19.91
+2026-10-16 13:39:16,520 | INFO    | huim_opt | EFIM B b0 0.5%: ABORTED_RESOURCE_LIMIT, 1000001 HUIs, 9.9s
+2026-10-16 13:39:23,472 | INFO    | huim_opt | EFIM B b0 1%: COMPLETED, 412972 HUIs, 5.0s
+2026-10-16 13:39:39,547 | INFO    | huim_opt | EFIM B b1 1%: ABORTED_RESOURCE_LIMIT, 1000001 HUIs, 6.4s
+2026-10-16 13:39:43,033 | INFO    | huim_opt | EFIM B b0 1.5%: COMPLETED, 166435 HUIs, 2.5s
+2026-10-16 13:40:45,749 | INFO    | huim_opt | EFIM B b1 1.5%: ABORTED_RESOURCE_LIMIT, 1000001 HUIs, 54.3s
+2026-10-16 13:40:48,138 | INFO    | huim_opt | EFIM B b0 1.9294%: COMPLETED, 85636 HUIs, 1.8s
+2026-10-16 13:41:59,932 | INFO    | huim_opt | EFIM B b1 1.9294%: ABORTED_RESOURCE_LIMIT, 1000001 HUIs, 60.7s
+2026-10-16 13:42:01,450 | INFO    | huim_opt | EFIM B b0 2.5%: COMPLETED, 43480 HUIs, 1.0s
+2026-10-16 13:47:09,488 | INFO    | huim_opt | EFIM B b1 2.5%: ABORTED_RESOURCE_LIMIT, 650505 HUIs, 301.0s
+2026-10-16 13:47:10,585 | INFO    | huim_opt | EFIM B b0 3%: COMPLETED, 25998 HUIs, 0.7s
+2026-10-16 13:52:14,848 | INFO    | huim_opt | EFIM B b1 3%: ABORTED_RESOURCE_LIMIT, 344007 HUIs, 300.6s
+2026-10-16 13:52:15,597 | INFO    | huim_opt | EFIM B b0 4%: COMPLETED, 10678 HUIs, 0.5s
+2026-10-16 13:57:16,814 | INFO    | huim_opt | EFIM B b1 4%: ABORTED_RESOURCE_LIMIT, 75793 HUIs, 300.2s
+2026-10-16 13:57:17,391 | INFO    | huim_opt | EFIM B b0 5%: COMPLETED, 4068 HUIs, 0.3s
+2026-10-16 13:58:26,245 | INFO    | huim_opt | EFIM B b1 5%: ABORTED_RESOURCE_LIMIT, 1000001 HUIs, 57.9s
+2026-10-16 13:58:26,762 | INFO    | huim_opt | EFIM B b0 7.5%: COMPLETED, 147 HUIs, 0.2s
+2026-10-16 14:03:27,280 | INFO    | huim_opt | EFIM B b1 7.5%: ABORTED_RESOURCE_LIMIT, 28361 HUIs, 300.1s
+2026-10-16 14:03:27,631 | INFO    | huim_opt | EFIM B b0 10%: COMPLETED, 1 HUIs, 0.1s
+2026-10-16 14:04:01,158 | INFO    | huim_opt | EFIM B b1 10%: COMPLETED, 0 HUIs, 33.3s
+2026-10-16 14:04:01,161 | WARNING | huim_opt | step 6: no complete HUI set for per_building B
+2026-10-16 14:04:01,200 | INFO    | huim_opt | step 7 candidates: ['G_C__0.5pct', 'PB_B__0.5pct', 'PB_C__0.5pct', 'PB_A__0.5pct', 'G_A__0.5pct', 'G_B__0.5pct']
+2026-10-16 14:04:21,124 | INFO    | huim_opt | best ensemble on dev: E_median__G_C__0.5pct+PB_B__0.5pct+G_B__0.5pct  dev 6.19  val 5.28
+2026-10-16 14:04:49,462 | INFO    | huim_opt | time start: A 1.9294% global       86 AP  3.81 ms/fp  26.2 MB map
+2026-10-16 14:05:23,055 | INFO    | huim_opt | time best global A                242 AP  9.66 ms/fp  73.6 MB map
+2026-10-16 14:05:51,643 | INFO    | huim_opt | time best global B                203 AP  8.24 ms/fp  61.8 MB map
+2026-10-16 14:06:23,637 | INFO    | huim_opt | time best global C                229 AP  9.19 ms/fp  69.7 MB map
+2026-10-16 14:06:51,132 | INFO    | huim_opt | time best per_building A          303 AP  7.79 ms/fp  79.9 MB map
+2026-10-16 14:07:19,395 | INFO    | huim_opt | time best per_building B          310 AP  8.02 ms/fp  82.0 MB map
+2026-10-16 14:07:47,827 | INFO    | huim_opt | time best per_building C          311 AP  8.07 ms/fp  82.3 MB map
+2026-10-16 14:08:01,851 | INFO    | huim_opt | time best rule                     91 AP  4.03 ms/fp  27.7 MB map

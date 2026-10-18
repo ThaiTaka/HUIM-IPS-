@@ -1,0 +1,27 @@
+2026-10-16 12:04:06,313 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-16 12:07:56,618 | INFO    | huim_opt | PB_A__0.5pct       303 AP (106/150/93)  dev   6.30  val   5.31
+2026-10-16 12:11:28,680 | INFO    | huim_opt | PB_A__1pct         264 AP (77/138/74)  dev   6.41  val   5.32
+2026-10-16 12:15:45,116 | INFO    | huim_opt | PB_A__1.5pct       249 AP (62/125/74)  dev   6.46  val   5.30
+2026-10-16 12:19:24,241 | INFO    | huim_opt | PB_A__1.9294pct    244 AP (55/125/72)  dev   6.47  val   5.31
+2026-10-16 12:22:51,362 | INFO    | huim_opt | PB_A__2.5pct       232 AP (50/121/65)  dev   6.69  val   5.88
+2026-10-16 12:25:25,022 | INFO    | huim_opt | PB_A__3pct         189 AP (41/91/60)  dev   7.07  val   6.01
+2026-10-16 12:27:25,542 | INFO    | huim_opt | PB_A__4pct         153 AP (36/75/43)  dev   9.01  val   8.23
+2026-10-16 12:28:35,958 | INFO    | huim_opt | PB_A__5pct          78 AP (36/36/6)  dev  33.69  val  36.66
+2026-10-16 12:31:55,570 | INFO    | huim_opt | PB_B__0.5pct       310 AP (115/150/95)  dev   6.30  val   5.31
+2026-10-16 12:34:40,070 | INFO    | huim_opt | PB_B__1pct         265 AP (79/136/74)  dev   6.40  val   5.32
+2026-10-16 12:37:07,119 | INFO    | huim_opt | PB_B__1.5pct       254 AP (66/126/72)  dev   6.46  val   5.36
+2026-10-16 12:39:25,418 | INFO    | huim_opt | PB_B__1.9294pct    245 AP (57/125/70)  dev   6.52  val   5.37
+2026-10-16 12:41:25,962 | INFO    | huim_opt | PB_B__2.5pct       217 AP (48/110/65)  dev   6.44  val   5.84
+2026-10-16 12:43:15,794 | INFO    | huim_opt | PB_B__3pct         203 AP (44/102/62)  dev   6.71  val   6.16
+2026-10-16 12:44:46,266 | INFO    | huim_opt | PB_B__4pct         164 AP (37/78/50)  dev   8.28  val   7.99
+2026-10-16 12:45:59,943 | INFO    | huim_opt | PB_B__5pct         135 AP (36/59/40)  dev   9.47  val  10.39
+2026-10-16 12:46:49,296 | INFO    | huim_opt | PB_B__7.5pct        66 AP (28/35/3)  dev  54.37  val  47.19
+2026-10-16 12:50:09,373 | INFO    | huim_opt | PB_C__0.5pct       311 AP (115/150/96)  dev   6.30  val   5.31
+2026-10-16 12:52:38,402 | INFO    | huim_opt | PB_C__1pct         270 AP (79/133/76)  dev   6.36  val   5.32
+2026-10-16 12:54:57,396 | INFO    | huim_opt | PB_C__1.5pct       254 AP (67/125/73)  dev   6.45  val   5.34
+2026-10-16 12:57:12,134 | INFO    | huim_opt | PB_C__1.9294pct    245 AP (57/125/71)  dev   6.52  val   5.36
+2026-10-16 12:59:16,959 | INFO    | huim_opt | PB_C__2.5pct       225 AP (53/112/66)  dev   6.61  val   5.46
+2026-10-16 13:01:10,367 | INFO    | huim_opt | PB_C__3pct         203 AP (45/98/63)  dev   6.88  val   6.27
+2026-10-16 13:02:39,995 | INFO    | huim_opt | PB_C__4pct         156 AP (36/77/44)  dev   8.09  val   8.06
+2026-10-16 13:03:46,021 | INFO    | huim_opt | PB_C__5pct         110 AP (36/46/28)  dev  16.36  val  16.14
+2026-10-16 13:04:27,915 | INFO    | huim_opt | PB_C__7.5pct        65 AP (24/36/5)  dev  51.84  val  43.99

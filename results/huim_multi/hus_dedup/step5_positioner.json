@@ -1,0 +1,63 @@
+{
+  "selected_on": "G_A__50pct",
+  "n_ap": 5,
+  "seconds": 94.1,
+  "base_positioner": "powed+manhattan, k=4, w=1/d^4",
+  "new_positioner": "powed+manhattan, k=4, w=1/d^4",
+  "new_config": {
+    "representation": "powed",
+    "distance": "manhattan",
+    "k": 4,
+    "power": 4.0,
+    "offset_range": 0,
+    "ensemble_with": ""
+  },
+  "same_as_base": true,
+  "stages": [
+    {
+      "stage": "S0",
+      "what": "study k-NN as regressor",
+      "label": "positive+manhattan, k=1, w=1/d^0",
+      "dev": {
+        "mean_ground_m": 0.4094,
+        "median_ground_m": 0.0,
+        "p75_ground_m": 0.0,
+        "p90_ground_m": 1.5,
+        "p95_ground_m": 2.9155,
+        "max_ground_m": 8.0623,
+        "mean_projected_m": 0.4094,
+        "share_within_8m": 0.9952
+      }
+    },
+    {
+      "stage": "S1",
+      "what": "best representation x distance (k=1)",
+      "label": "exponential+euclidean, k=1, w=1/d^0",
+      "dev": {
+        "mean_ground_m": 0.406,
+        "median_ground_m": 0.0,
+        "p75_ground_m": 0.0,
+        "p90_ground_m": 1.5,
+        "p95_ground_m": 2.8284,
+        "max_ground_m": 8.7321,
+        "mean_projected_m": 0.406,
+        "share_within_8m": 0.9953
+      }
+    },
+    {
+      "stage": "S2",
+      "what": "+ k and 1/d^p weighting",
+      "label": "powed+manhattan, k=4, w=1/d^4",
+      "dev": {
+        "mean_ground_m": 0.4051,
+        "median_ground_m": 0.0,
+        "p75_ground_m": 0.2578,
+        "p90_ground_m": 1.4142,
+        "p95_ground_m": 2.4501,
+        "max_ground_m": 8.0156,
+        "mean_projected_m": 0.4051,
+        "share_within_8m": 0.9987
+      }
+    }
+  ]
+}

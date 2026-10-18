@@ -1,0 +1,1 @@
+{"members": "R_C__2pct__weighted0.5 + R_C__2pct__weighted1.0 + R_C__2pct__topn0.75", "how": "mean", "dev_mean_m": 2.658, "dev_median_m": 1.9314, "dev_p90_m": 5.76, "dev_max_m": 30.6257, "dev_floor_acc": 0.9945, "test_mean_m": 3.561, "test_median_m": 2.7842, "test_p90_m": 7.2826, "test_max_m": 30.5001, "test_floor_acc": 0.9925}

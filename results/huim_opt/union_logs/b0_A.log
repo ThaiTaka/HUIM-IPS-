@@ -1,0 +1,18 @@
+2026-10-16 11:50:53,270 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-16 11:50:53,984 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-16 11:50:56,915 | INFO    | huim_opt |   union at 10.0000% of total utility: 0 items, 70 nodes, 0.2s
+2026-10-16 11:50:57,198 | INFO    | huim_opt |   union at 7.5000% of total utility: 18 items, 256 nodes, 0.3s
+2026-10-16 11:50:57,543 | INFO    | huim_opt |   union at 5.0000% of total utility: 36 items, 180 nodes, 0.3s
+2026-10-16 11:50:57,859 | INFO    | huim_opt |   union at 4.0000% of total utility: 36 items, 189 nodes, 0.3s
+2026-10-16 11:50:58,219 | INFO    | huim_opt |   union at 3.5000% of total utility: 37 items, 344 nodes, 0.4s
+2026-10-16 11:50:58,658 | INFO    | huim_opt |   union at 3.0000% of total utility: 41 items, 525 nodes, 0.4s
+2026-10-16 11:50:59,135 | INFO    | huim_opt |   union at 2.5000% of total utility: 50 items, 490 nodes, 0.5s
+2026-10-16 11:50:59,570 | INFO    | huim_opt |   union at 2.0000% of total utility: 53 items, 608 nodes, 0.4s
+2026-10-16 11:50:59,945 | INFO    | huim_opt |   union at 1.9294% of total utility: 55 items, 367 nodes, 0.4s
+2026-10-16 11:51:00,430 | INFO    | huim_opt |   union at 1.7321% of total utility: 56 items, 498 nodes, 0.5s
+2026-10-16 11:51:00,916 | INFO    | huim_opt |   union at 1.5000% of total utility: 62 items, 698 nodes, 0.5s
+2026-10-16 11:51:01,369 | INFO    | huim_opt |   union at 1.2500% of total utility: 67 items, 595 nodes, 0.5s
+2026-10-16 11:51:01,842 | INFO    | huim_opt |   union at 1.0000% of total utility: 77 items, 775 nodes, 0.5s
+2026-10-16 11:51:02,399 | INFO    | huim_opt |   union at 0.7500% of total utility: 85 items, 964 nodes, 0.6s
+2026-10-16 11:51:02,928 | INFO    | huim_opt |   union at 0.5000% of total utility: 106 items, 1331 nodes, 0.5s
+2026-10-16 11:51:02,941 | INFO    | huim_opt | union A b0: 6.2s, 30.4 MB, 7890 nodes

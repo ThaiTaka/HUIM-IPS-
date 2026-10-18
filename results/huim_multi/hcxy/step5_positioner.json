@@ -1,0 +1,63 @@
+{
+  "selected_on": "G_A__1pct",
+  "n_ap": 187,
+  "seconds": 84.2,
+  "base_positioner": "powed+braycurtis, k=30, w=1/d^3",
+  "new_positioner": "powed+braycurtis, k=30, w=1/d^3",
+  "new_config": {
+    "representation": "powed",
+    "distance": "braycurtis",
+    "k": 30,
+    "power": 3.0,
+    "offset_range": 0,
+    "ensemble_with": ""
+  },
+  "same_as_base": true,
+  "stages": [
+    {
+      "stage": "S0",
+      "what": "study k-NN as regressor",
+      "label": "positive+manhattan, k=1, w=1/d^0",
+      "dev": {
+        "mean_ground_m": 2.0522,
+        "median_ground_m": 1.6914,
+        "p75_ground_m": 2.4001,
+        "p90_ground_m": 3.7942,
+        "p95_ground_m": 4.9446,
+        "max_ground_m": 31.2234,
+        "mean_projected_m": 2.0522,
+        "share_within_8m": 0.9935
+      }
+    },
+    {
+      "stage": "S1",
+      "what": "best representation x distance (k=1)",
+      "label": "powed+braycurtis, k=1, w=1/d^0",
+      "dev": {
+        "mean_ground_m": 1.8198,
+        "median_ground_m": 1.2004,
+        "p75_ground_m": 2.4,
+        "p90_ground_m": 2.6878,
+        "p95_ground_m": 3.7998,
+        "max_ground_m": 10.8722,
+        "mean_projected_m": 1.8198,
+        "share_within_8m": 0.9965
+      }
+    },
+    {
+      "stage": "S2",
+      "what": "+ k and 1/d^p weighting",
+      "label": "powed+braycurtis, k=30, w=1/d^3",
+      "dev": {
+        "mean_ground_m": 1.3985,
+        "median_ground_m": 1.2009,
+        "p75_ground_m": 1.6934,
+        "p90_ground_m": 2.4019,
+        "p95_ground_m": 3.0597,
+        "max_ground_m": 19.8945,
+        "mean_projected_m": 1.3985,
+        "share_within_8m": 0.9989
+      }
+    }
+  ]
+}

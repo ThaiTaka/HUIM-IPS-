@@ -1,0 +1,1079 @@
+2026-10-16 15:24:06,657 | INFO    | huim_multi | hus_dedup union global A 50%: COMPLETED, 5 APs, 5 nodes, 0.0s
+2026-10-16 15:24:06,685 | INFO    | huim_multi | hus_dedup union global B 50%: COMPLETED, 5 APs, 2 nodes, 0.0s
+2026-10-16 15:24:06,692 | INFO    | huim_multi | hus_dedup union global C 50%: COMPLETED, 5 APs, 5 nodes, 0.0s
+2026-10-16 15:24:10,674 | INFO    | huim_multi | hus_dedup G_A__50pct             5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,698 | INFO    | huim_multi | hus_dedup G_A__30pct             5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,701 | INFO    | huim_multi | hus_dedup G_A__20pct             5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,703 | INFO    | huim_multi | hus_dedup G_A__15pct             5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,706 | INFO    | huim_multi | hus_dedup G_A__10pct             5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,708 | INFO    | huim_multi | hus_dedup G_A__7.5pct            5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,710 | INFO    | huim_multi | hus_dedup G_A__5pct              5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,713 | INFO    | huim_multi | hus_dedup G_A__4pct              5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,715 | INFO    | huim_multi | hus_dedup G_A__3.5pct            5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,716 | INFO    | huim_multi | hus_dedup G_A__3pct              5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,718 | INFO    | huim_multi | hus_dedup G_A__2.5pct            5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,720 | INFO    | huim_multi | hus_dedup G_A__2pct              5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,722 | INFO    | huim_multi | hus_dedup G_A__1.5pct            5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,724 | INFO    | huim_multi | hus_dedup G_A__1pct              5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,734 | INFO    | huim_multi | hus_dedup G_A__0.75pct           5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,736 | INFO    | huim_multi | hus_dedup G_A__0.5pct            5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,738 | INFO    | huim_multi | hus_dedup G_A__0.25pct           5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,741 | INFO    | huim_multi | hus_dedup G_A__0.125pct          5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,743 | INFO    | huim_multi | hus_dedup G_A__0.1pct            5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,746 | INFO    | huim_multi | hus_dedup G_A__0.05pct           5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,755 | INFO    | huim_multi | hus_dedup G_B__50pct             5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,758 | INFO    | huim_multi | hus_dedup G_B__30pct             5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,760 | INFO    | huim_multi | hus_dedup G_B__20pct             5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,762 | INFO    | huim_multi | hus_dedup G_B__15pct             5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,764 | INFO    | huim_multi | hus_dedup G_B__10pct             5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,766 | INFO    | huim_multi | hus_dedup G_B__7.5pct            5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,768 | INFO    | huim_multi | hus_dedup G_B__5pct              5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,771 | INFO    | huim_multi | hus_dedup G_B__4pct              5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,773 | INFO    | huim_multi | hus_dedup G_B__3.5pct            5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,775 | INFO    | huim_multi | hus_dedup G_B__3pct              5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,777 | INFO    | huim_multi | hus_dedup G_B__2.5pct            5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,780 | INFO    | huim_multi | hus_dedup G_B__2pct              5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,784 | INFO    | huim_multi | hus_dedup G_B__1.5pct            5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,786 | INFO    | huim_multi | hus_dedup G_B__1pct              5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,789 | INFO    | huim_multi | hus_dedup G_B__0.75pct           5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,791 | INFO    | huim_multi | hus_dedup G_B__0.5pct            5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,793 | INFO    | huim_multi | hus_dedup G_B__0.25pct           5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,795 | INFO    | huim_multi | hus_dedup G_B__0.125pct          5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,798 | INFO    | huim_multi | hus_dedup G_B__0.1pct            5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,800 | INFO    | huim_multi | hus_dedup G_B__0.05pct           5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,810 | INFO    | huim_multi | hus_dedup G_C__50pct             5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,813 | INFO    | huim_multi | hus_dedup G_C__30pct             5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,815 | INFO    | huim_multi | hus_dedup G_C__20pct             5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,817 | INFO    | huim_multi | hus_dedup G_C__15pct             5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,820 | INFO    | huim_multi | hus_dedup G_C__10pct             5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,822 | INFO    | huim_multi | hus_dedup G_C__7.5pct            5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,825 | INFO    | huim_multi | hus_dedup G_C__5pct              5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,827 | INFO    | huim_multi | hus_dedup G_C__4pct              5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,830 | INFO    | huim_multi | hus_dedup G_C__3.5pct            5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,833 | INFO    | huim_multi | hus_dedup G_C__3pct              5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,835 | INFO    | huim_multi | hus_dedup G_C__2.5pct            5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,838 | INFO    | huim_multi | hus_dedup G_C__2pct              5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,840 | INFO    | huim_multi | hus_dedup G_C__1.5pct            5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,842 | INFO    | huim_multi | hus_dedup G_C__1pct              5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,844 | INFO    | huim_multi | hus_dedup G_C__0.75pct           5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,846 | INFO    | huim_multi | hus_dedup G_C__0.5pct            5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,848 | INFO    | huim_multi | hus_dedup G_C__0.25pct           5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,849 | INFO    | huim_multi | hus_dedup G_C__0.125pct          5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,852 | INFO    | huim_multi | hus_dedup G_C__0.1pct            5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:10,854 | INFO    | huim_multi | hus_dedup G_C__0.05pct           5 AP  dev 0.405  test 0.391
+2026-10-16 15:24:26,559 | INFO    | huim_multi | hcxy union z0 B 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:24:26,598 | INFO    | huim_multi | hcxy union z0 A 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:24:26,602 | INFO    | huim_multi | hcxy union z1 C 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:24:26,659 | INFO    | huim_multi | hcxy union global A 50%: COMPLETED, 0 APs, 1 nodes, 0.1s
+2026-10-16 15:24:26,693 | INFO    | huim_multi | hcxy union z1 C 30%: COMPLETED, 0 APs, 5 nodes, 0.1s
+2026-10-16 15:24:26,727 | INFO    | huim_multi | hcxy union z0 A 30%: COMPLETED, 0 APs, 27 nodes, 0.1s
+2026-10-16 15:24:26,775 | INFO    | huim_multi | hcxy union global A 30%: COMPLETED, 0 APs, 1 nodes, 0.1s
+2026-10-16 15:24:26,800 | INFO    | huim_multi | hcxy union z0 B 30%: COMPLETED, 0 APs, 76 nodes, 0.2s
+2026-10-16 15:24:26,851 | INFO    | huim_multi | hcxy union z1 C 20%: COMPLETED, 0 APs, 49 nodes, 0.1s
+2026-10-16 15:24:26,913 | INFO    | huim_multi | hcxy union z2 A 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:24:26,987 | INFO    | huim_multi | hcxy union z2 A 30%: COMPLETED, 0 APs, 1 nodes, 0.1s
+2026-10-16 15:24:27,024 | INFO    | huim_multi | hcxy union global A 20%: COMPLETED, 0 APs, 1 nodes, 0.2s
+2026-10-16 15:24:27,119 | INFO    | huim_multi | hcxy union z1 A 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:24:27,196 | INFO    | huim_multi | hcxy union z1 B 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:24:27,216 | INFO    | huim_multi | hcxy union z2 A 20%: COMPLETED, 0 APs, 49 nodes, 0.2s
+2026-10-16 15:24:27,297 | INFO    | huim_multi | hcxy union z0 C 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:24:27,334 | INFO    | huim_multi | hcxy union z1 A 30%: COMPLETED, 18 APs, 118 nodes, 0.2s
+2026-10-16 15:24:27,347 | INFO    | huim_multi | hcxy union global C 50%: COMPLETED, 0 APs, 1 nodes, 0.1s
+2026-10-16 15:24:27,361 | INFO    | huim_multi | hcxy union z0 C 30%: COMPLETED, 0 APs, 1 nodes, 0.1s
+2026-10-16 15:24:27,432 | INFO    | huim_multi | hcxy union z1 B 30%: COMPLETED, 18 APs, 120 nodes, 0.2s
+2026-10-16 15:24:27,437 | INFO    | huim_multi | hcxy union global C 30%: COMPLETED, 0 APs, 1 nodes, 0.1s
+2026-10-16 15:24:27,500 | INFO    | huim_multi | hcxy union z1 C 15%: COMPLETED, 32 APs, 730 nodes, 0.6s
+2026-10-16 15:24:27,520 | INFO    | huim_multi | hcxy union z0 C 20%: COMPLETED, 0 APs, 34 nodes, 0.1s
+2026-10-16 15:24:27,582 | INFO    | huim_multi | hcxy union global B 50%: COMPLETED, 0 APs, 1 nodes, 0.1s
+2026-10-16 15:24:27,614 | INFO    | huim_multi | hcxy union global C 20%: COMPLETED, 0 APs, 1 nodes, 0.2s
+2026-10-16 15:24:27,620 | INFO    | huim_multi | hcxy union global A 15%: COMPLETED, 0 APs, 33 nodes, 0.6s
+2026-10-16 15:24:27,627 | INFO    | huim_multi | hcxy union z2 A 15%: COMPLETED, 7 APs, 250 nodes, 0.4s
+2026-10-16 15:24:27,663 | INFO    | huim_multi | hcxy union global B 30%: COMPLETED, 0 APs, 1 nodes, 0.1s
+2026-10-16 15:24:27,855 | INFO    | huim_multi | hcxy union z0 A 20%: COMPLETED, 0 APs, 1114 nodes, 1.1s
+2026-10-16 15:24:27,882 | INFO    | huim_multi | hcxy union global B 20%: COMPLETED, 0 APs, 6 nodes, 0.2s
+2026-10-16 15:24:27,992 | INFO    | huim_multi | hcxy union z0 C 15%: COMPLETED, 28 APs, 429 nodes, 0.5s
+2026-10-16 15:24:28,148 | INFO    | huim_multi | hcxy union global C 15%: COMPLETED, 0 APs, 40 nodes, 0.5s
+2026-10-16 15:24:28,525 | INFO    | huim_multi | hcxy union z1 A 20%: COMPLETED, 30 APs, 1210 nodes, 1.2s
+2026-10-16 15:24:28,623 | INFO    | huim_multi | hcxy union global B 15%: COMPLETED, 0 APs, 71 nodes, 0.7s
+2026-10-16 15:24:28,643 | INFO    | huim_multi | hcxy union z1 B 20%: COMPLETED, 30 APs, 1398 nodes, 1.2s
+2026-10-16 15:24:28,763 | INFO    | huim_multi | hcxy union global A 10%: COMPLETED, 0 APs, 279 nodes, 1.1s
+2026-10-16 15:24:29,109 | INFO    | huim_multi | hcxy union z1 A 15%: COMPLETED, 33 APs, 648 nodes, 0.6s
+2026-10-16 15:24:29,171 | INFO    | huim_multi | hcxy union global C 10%: COMPLETED, 18 APs, 230 nodes, 1.0s
+2026-10-16 15:24:29,382 | INFO    | huim_multi | hcxy union z1 B 15%: COMPLETED, 33 APs, 1018 nodes, 0.7s
+2026-10-16 15:24:29,456 | INFO    | huim_multi | hcxy union z0 B 20%: COMPLETED, 17 APs, 3402 nodes, 2.6s
+2026-10-16 15:24:30,056 | INFO    | huim_multi | hcxy union global B 10%: COMPLETED, 0 APs, 652 nodes, 1.4s
+2026-10-16 15:24:30,805 | INFO    | huim_multi | hcxy union z1 A 10%: COMPLETED, 39 APs, 3272 nodes, 1.6s
+2026-10-16 15:24:31,273 | INFO    | huim_multi | hcxy union z1 B 10%: COMPLETED, 41 APs, 4103 nodes, 1.8s
+2026-10-16 15:24:33,173 | INFO    | huim_multi | hcxy union z1 C 10%: COMPLETED, 57 APs, 6042 nodes, 5.7s
+2026-10-16 15:24:33,507 | INFO    | huim_multi | hcxy union global A 7.5%: COMPLETED, 20 APs, 3075 nodes, 4.7s
+2026-10-16 15:24:33,724 | INFO    | huim_multi | hcxy union global C 7.5%: COMPLETED, 22 APs, 2564 nodes, 4.5s
+2026-10-16 15:24:33,732 | INFO    | huim_multi | hcxy union z1 C 7.5%: COMPLETED, 61 APs, 813 nodes, 0.5s
+2026-10-16 15:24:34,016 | INFO    | huim_multi | hcxy union z1 C 6.777%: COMPLETED, 63 APs, 517 nodes, 0.3s
+2026-10-16 15:24:34,375 | INFO    | huim_multi | hcxy union z1 A 7.5%: COMPLETED, 55 APs, 11359 nodes, 3.6s
+2026-10-16 15:24:34,423 | INFO    | huim_multi | hcxy union z1 C 6.1237%: COMPLETED, 65 APs, 851 nodes, 0.4s
+2026-10-16 15:24:34,500 | INFO    | huim_multi | hcxy union z0 B 15%: COMPLETED, 34 APs, 9809 nodes, 5.0s
+2026-10-16 15:24:34,602 | INFO    | huim_multi | hcxy union z0 A 15%: COMPLETED, 28 APs, 10597 nodes, 6.7s
+2026-10-16 15:24:35,030 | INFO    | huim_multi | hcxy union z1 C 5%: COMPLETED, 74 APs, 2099 nodes, 0.6s
+2026-10-16 15:24:35,415 | INFO    | huim_multi | hcxy union z1 C 4%: COMPLETED, 79 APs, 1251 nodes, 0.4s
+2026-10-16 15:24:35,656 | INFO    | huim_multi | hcxy union z0 C 10%: COMPLETED, 48 APs, 10996 nodes, 7.7s
+2026-10-16 15:24:35,833 | INFO    | huim_multi | hcxy union z1 C 3%: COMPLETED, 85 APs, 1036 nodes, 0.4s
+2026-10-16 15:24:36,204 | INFO    | huim_multi | hcxy union z1 C 2%: COMPLETED, 99 APs, 1751 nodes, 0.4s
+2026-10-16 15:24:36,380 | INFO    | huim_multi | hcxy union z0 A 10%: COMPLETED, 58 APs, 3629 nodes, 1.7s
+2026-10-16 15:24:36,431 | INFO    | huim_multi | hcxy union z1 C 1.5%: COMPLETED, 106 APs, 550 nodes, 0.2s
+2026-10-16 15:24:36,711 | INFO    | huim_multi | hcxy union z1 C 1%: COMPLETED, 122 APs, 1194 nodes, 0.3s
+2026-10-16 15:24:36,965 | INFO    | huim_multi | hcxy union z1 C 0.75%: COMPLETED, 133 APs, 946 nodes, 0.3s
+2026-10-16 15:24:37,295 | INFO    | huim_multi | hcxy union z1 C 0.5%: COMPLETED, 145 APs, 1742 nodes, 0.3s
+2026-10-16 15:24:37,350 | INFO    | huim_multi | hcxy union z0 B 10%: COMPLETED, 47 APs, 7176 nodes, 2.8s
+2026-10-16 15:24:37,747 | INFO    | huim_multi | hcxy union z1 C 0.25%: COMPLETED, 156 APs, 3804 nodes, 0.4s
+2026-10-16 15:24:38,099 | INFO    | huim_multi | hcxy union z1 C 0.1%: COMPLETED, 163 APs, 2768 nodes, 0.3s
+2026-10-16 15:24:38,274 | INFO    | huim_multi | hcxy union z1 B 7.5%: COMPLETED, 55 APs, 22235 nodes, 7.0s
+2026-10-16 15:24:38,347 | INFO    | huim_multi | hcxy union z1 C 0.05%: COMPLETED, 165 APs, 272 nodes, 0.2s
+2026-10-16 15:24:38,558 | INFO    | huim_multi | hcxy union z2 B 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:24:38,614 | INFO    | huim_multi | hcxy union z2 B 30%: COMPLETED, 0 APs, 9 nodes, 0.0s
+2026-10-16 15:24:38,758 | INFO    | huim_multi | hcxy union z2 B 20%: COMPLETED, 0 APs, 59 nodes, 0.1s
+2026-10-16 15:24:38,831 | INFO    | huim_multi | hcxy union z1 A 6.777%: COMPLETED, 60 APs, 15246 nodes, 4.5s
+2026-10-16 15:24:39,300 | INFO    | huim_multi | hcxy union z2 B 15%: COMPLETED, 0 APs, 517 nodes, 0.5s
+2026-10-16 15:24:40,615 | INFO    | huim_multi | hcxy union z0 A 7.5%: COMPLETED, 78 APs, 10988 nodes, 4.2s
+2026-10-16 15:24:41,232 | INFO    | huim_multi | hcxy union z1 A 6.1237%: COMPLETED, 64 APs, 6162 nodes, 2.4s
+2026-10-16 15:24:41,594 | INFO    | huim_multi | hcxy union z1 A 5%: COMPLETED, 65 APs, 673 nodes, 0.4s
+2026-10-16 15:24:41,688 | INFO    | huim_multi | hcxy union global C 6.777%: COMPLETED, 26 APs, 7750 nodes, 8.0s
+2026-10-16 15:24:42,378 | INFO    | huim_multi | hcxy union z0 B 7.5%: COMPLETED, 74 APs, 11895 nodes, 5.0s
+2026-10-16 15:24:43,360 | INFO    | huim_multi | hcxy union z0 A 6.777%: COMPLETED, 83 APs, 7191 nodes, 2.7s
+2026-10-16 15:24:44,259 | INFO    | huim_multi | hcxy union z0 C 7.5%: COMPLETED, 75 APs, 14219 nodes, 8.6s
+2026-10-16 15:24:44,307 | INFO    | huim_multi | hcxy union z1 A 4%: COMPLETED, 68 APs, 11607 nodes, 2.7s
+2026-10-16 15:24:44,405 | INFO    | huim_multi | hcxy union global A 6.777%: COMPLETED, 31 APs, 11053 nodes, 10.9s
+2026-10-16 15:24:44,455 | INFO    | huim_multi | hcxy union z2 A 10%: COMPLETED, 28 APs, 37465 nodes, 16.8s
+2026-10-16 15:24:46,173 | INFO    | huim_multi | hcxy union z0 B 6.777%: COMPLETED, 82 APs, 9068 nodes, 3.8s
+2026-10-16 15:24:46,177 | INFO    | huim_multi | hcxy union z0 A 6.1237%: COMPLETED, 88 APs, 3844 nodes, 2.8s
+2026-10-16 15:24:47,907 | INFO    | huim_multi | hcxy union z0 B 6.1237%: COMPLETED, 87 APs, 3873 nodes, 1.7s
+2026-10-16 15:24:48,500 | INFO    | huim_multi | hcxy union z0 A 5%: COMPLETED, 95 APs, 5850 nodes, 2.3s
+2026-10-16 15:24:49,301 | INFO    | huim_multi | hcxy union z0 A 4%: COMPLETED, 100 APs, 2368 nodes, 0.8s
+2026-10-16 15:24:49,408 | INFO    | huim_multi | hcxy union z1 B 6.777%: COMPLETED, 58 APs, 34357 nodes, 11.1s
+2026-10-16 15:24:49,822 | INFO    | huim_multi | hcxy union z0 C 6.777%: COMPLETED, 84 APs, 3873 nodes, 5.6s
+2026-10-16 15:24:49,859 | INFO    | huim_multi | hcxy union z0 B 5%: COMPLETED, 93 APs, 3905 nodes, 1.9s
+2026-10-16 15:24:50,291 | INFO    | huim_multi | hcxy union z0 A 3%: COMPLETED, 105 APs, 1638 nodes, 0.9s
+2026-10-16 15:24:50,491 | INFO    | huim_multi | hcxy union z0 C 6.1237%: COMPLETED, 88 APs, 1066 nodes, 0.7s
+2026-10-16 15:24:51,220 | INFO    | huim_multi | hcxy union z0 B 4%: COMPLETED, 99 APs, 3540 nodes, 1.4s
+2026-10-16 15:24:51,575 | INFO    | huim_multi | hcxy union z0 A 2%: COMPLETED, 117 APs, 4197 nodes, 1.3s
+2026-10-16 15:24:51,886 | INFO    | huim_multi | hcxy union z0 B 3%: COMPLETED, 106 APs, 2450 nodes, 0.6s
+2026-10-16 15:24:51,965 | INFO    | huim_multi | hcxy union z0 C 5%: COMPLETED, 93 APs, 2220 nodes, 1.5s
+2026-10-16 15:24:52,296 | INFO    | huim_multi | hcxy union z0 A 1.5%: COMPLETED, 130 APs, 3701 nodes, 0.7s
+2026-10-16 15:24:52,903 | INFO    | huim_multi | hcxy union z0 C 4%: COMPLETED, 98 APs, 2063 nodes, 0.9s
+2026-10-16 15:24:53,195 | INFO    | huim_multi | hcxy union z0 A 1%: COMPLETED, 152 APs, 3674 nodes, 0.9s
+2026-10-16 15:24:53,554 | INFO    | huim_multi | hcxy union z0 C 3%: COMPLETED, 102 APs, 1543 nodes, 0.6s
+2026-10-16 15:24:53,613 | INFO    | huim_multi | hcxy union z0 B 2%: COMPLETED, 119 APs, 8607 nodes, 1.7s
+2026-10-16 15:24:53,749 | INFO    | huim_multi | hcxy union z0 A 0.75%: COMPLETED, 173 APs, 2515 nodes, 0.5s
+2026-10-16 15:24:54,137 | INFO    | huim_multi | hcxy union z0 C 2%: COMPLETED, 112 APs, 2019 nodes, 0.6s
+2026-10-16 15:24:54,237 | INFO    | huim_multi | hcxy union z0 A 0.5%: COMPLETED, 195 APs, 2184 nodes, 0.5s
+2026-10-16 15:24:54,640 | INFO    | huim_multi | hcxy union z0 B 1.5%: COMPLETED, 131 APs, 4768 nodes, 1.0s
+2026-10-16 15:24:54,679 | INFO    | huim_multi | hcxy union z0 C 1.5%: COMPLETED, 126 APs, 1639 nodes, 0.5s
+2026-10-16 15:24:54,877 | INFO    | huim_multi | hcxy union z0 A 0.25%: COMPLETED, 213 APs, 4067 nodes, 0.6s
+2026-10-16 15:24:55,204 | INFO    | huim_multi | hcxy union z0 C 1%: COMPLETED, 145 APs, 1874 nodes, 0.5s
+2026-10-16 15:24:55,443 | INFO    | huim_multi | hcxy union z0 A 0.1%: COMPLETED, 222 APs, 4182 nodes, 0.5s
+2026-10-16 15:24:55,633 | INFO    | huim_multi | hcxy union z0 B 1%: COMPLETED, 152 APs, 4180 nodes, 1.0s
+2026-10-16 15:24:55,781 | INFO    | huim_multi | hcxy union z0 C 0.75%: COMPLETED, 161 APs, 1980 nodes, 0.6s
+2026-10-16 15:24:55,811 | INFO    | huim_multi | hcxy union z1 A 3%: COMPLETED, 74 APs, 58093 nodes, 11.5s
+2026-10-16 15:24:55,917 | INFO    | huim_multi | hcxy union z0 A 0.05%: COMPLETED, 224 APs, 1523 nodes, 0.5s
+2026-10-16 15:24:56,097 | INFO    | huim_multi | hcxy union z2 C 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:24:56,147 | INFO    | huim_multi | hcxy union z2 C 30%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:24:56,223 | INFO    | huim_multi | hcxy union z2 C 20%: COMPLETED, 0 APs, 24 nodes, 0.1s
+2026-10-16 15:24:56,366 | INFO    | huim_multi | hcxy union z0 C 0.5%: COMPLETED, 190 APs, 2378 nodes, 0.6s
+2026-10-16 15:24:56,399 | INFO    | huim_multi | hcxy union z2 C 15%: COMPLETED, 0 APs, 86 nodes, 0.1s
+2026-10-16 15:24:56,567 | INFO    | huim_multi | hcxy union z0 B 0.75%: COMPLETED, 174 APs, 3875 nodes, 0.9s
+2026-10-16 15:24:57,067 | INFO    | huim_multi | hcxy union z0 C 0.25%: COMPLETED, 215 APs, 3832 nodes, 0.6s
+2026-10-16 15:24:57,411 | INFO    | huim_multi | hcxy union z0 B 0.5%: COMPLETED, 185 APs, 3170 nodes, 0.8s
+2026-10-16 15:24:57,544 | INFO    | huim_multi | hcxy union z0 C 0.1%: COMPLETED, 221 APs, 1178 nodes, 0.4s
+2026-10-16 15:24:57,921 | INFO    | huim_multi | hcxy union z0 C 0.05%: COMPLETED, 224 APs, 1170 nodes, 0.4s
+2026-10-16 15:24:58,132 | INFO    | huim_multi | hcxy union z0 B 0.25%: COMPLETED, 211 APs, 5377 nodes, 0.7s
+2026-10-16 15:24:58,777 | INFO    | huim_multi | hcxy union z0 B 0.1%: COMPLETED, 222 APs, 5994 nodes, 0.6s
+2026-10-16 15:24:59,179 | INFO    | huim_multi | hcxy union z0 B 0.05%: COMPLETED, 224 APs, 1465 nodes, 0.4s
+2026-10-16 15:25:02,965 | INFO    | huim_multi | hcxy union z1 A 2%: COMPLETED, 88 APs, 39621 nodes, 7.1s
+2026-10-16 15:25:03,217 | INFO    | huim_multi | uji_lib3 union global A 50%: COMPLETED, 0 APs, 1 nodes, 0.1s
+2026-10-16 15:25:03,307 | INFO    | huim_multi | uji_lib3 union global A 30%: COMPLETED, 0 APs, 1 nodes, 0.1s
+2026-10-16 15:25:03,451 | INFO    | huim_multi | uji_lib3 union global A 20%: COMPLETED, 0 APs, 10 nodes, 0.1s
+2026-10-16 15:25:03,746 | INFO    | huim_multi | uji_lib3 union global A 15%: COMPLETED, 0 APs, 57 nodes, 0.3s
+2026-10-16 15:25:03,887 | INFO    | huim_multi | hcxy union z2 C 10%: COMPLETED, 47 APs, 11549 nodes, 7.4s
+2026-10-16 15:25:04,299 | INFO    | huim_multi | uji_lib3 union global A 10%: COMPLETED, 12 APs, 185 nodes, 0.5s
+2026-10-16 15:25:04,343 | INFO    | huim_multi | hcxy union global C 6.1237%: COMPLETED, 69 APs, 21436 nodes, 22.6s
+2026-10-16 15:25:04,464 | INFO    | huim_multi | hcxy union z1 A 1.5%: COMPLETED, 96 APs, 7989 nodes, 1.5s
+2026-10-16 15:25:04,645 | INFO    | huim_multi | uji_lib3 union global B 50%: COMPLETED, 0 APs, 1 nodes, 0.1s
+2026-10-16 15:25:04,882 | INFO    | huim_multi | uji_lib3 union global B 30%: COMPLETED, 0 APs, 11 nodes, 0.1s
+2026-10-16 15:25:04,964 | INFO    | huim_multi | hcxy union z1 A 1%: COMPLETED, 107 APs, 1385 nodes, 0.5s
+2026-10-16 15:25:05,043 | INFO    | huim_multi | uji_lib3 union global A 7.5%: COMPLETED, 21 APs, 342 nodes, 0.7s
+2026-10-16 15:25:05,157 | INFO    | huim_multi | uji_lib3 union global B 20%: COMPLETED, 8 APs, 85 nodes, 0.2s
+2026-10-16 15:25:05,467 | INFO    | huim_multi | hcxy union z1 A 0.75%: COMPLETED, 122 APs, 1552 nodes, 0.5s
+2026-10-16 15:25:05,468 | INFO    | huim_multi | uji_lib3 union global B 15%: COMPLETED, 12 APs, 102 nodes, 0.3s
+2026-10-16 15:25:05,953 | INFO    | huim_multi | hcxy union z1 A 0.5%: COMPLETED, 142 APs, 3156 nodes, 0.5s
+2026-10-16 15:25:05,965 | INFO    | huim_multi | hcxy union z1 B 6.1237%: COMPLETED, 63 APs, 57232 nodes, 16.5s
+2026-10-16 15:25:06,044 | INFO    | huim_multi | uji_lib3 union global B 10%: COMPLETED, 23 APs, 444 nodes, 0.6s
+2026-10-16 15:25:06,252 | INFO    | huim_multi | uji_lib3 union global A 5%: COMPLETED, 32 APs, 964 nodes, 1.2s
+2026-10-16 15:25:06,595 | INFO    | huim_multi | hcxy union z1 A 0.25%: COMPLETED, 152 APs, 4513 nodes, 0.6s
+2026-10-16 15:25:06,792 | INFO    | huim_multi | uji_lib3 union global B 7.5%: COMPLETED, 31 APs, 550 nodes, 0.7s
+2026-10-16 15:25:07,227 | INFO    | huim_multi | hcxy union z1 A 0.1%: COMPLETED, 163 APs, 6177 nodes, 0.6s
+2026-10-16 15:25:07,511 | INFO    | huim_multi | hcxy union z1 A 0.05%: COMPLETED, 165 APs, 664 nodes, 0.3s
+2026-10-16 15:25:07,613 | INFO    | huim_multi | uji_lib3 union global A 4%: COMPLETED, 43 APs, 1761 nodes, 1.3s
+2026-10-16 15:25:07,713 | INFO    | huim_multi | hcxy union global B 7.5%: COMPLETED, 58 APs, 45268 nodes, 37.6s
+2026-10-16 15:25:07,881 | INFO    | huim_multi | uji_lib3 union global B 5%: COMPLETED, 43 APs, 1508 nodes, 1.1s
+2026-10-16 15:25:09,491 | INFO    | huim_multi | uji_lib3 union global B 4%: COMPLETED, 51 APs, 2116 nodes, 1.6s
+2026-10-16 15:25:09,523 | INFO    | huim_multi | uji_lib3 union global A 3.5%: COMPLETED, 45 APs, 2190 nodes, 1.9s
+2026-10-16 15:25:10,745 | INFO    | huim_multi | uji_lib3 union global B 3.5%: COMPLETED, 58 APs, 1787 nodes, 1.2s
+2026-10-16 15:25:11,668 | INFO    | huim_multi | hcxy union z1 B 5%: COMPLETED, 65 APs, 21720 nodes, 5.7s
+2026-10-16 15:25:12,045 | INFO    | huim_multi | uji_lib3 union global B 3%: COMPLETED, 60 APs, 1655 nodes, 1.3s
+2026-10-16 15:25:12,313 | INFO    | huim_multi | uji_lib3 union global A 3%: COMPLETED, 49 APs, 4535 nodes, 2.8s
+2026-10-16 15:25:14,307 | INFO    | huim_multi | uji_lib3 union global B 2.5%: COMPLETED, 66 APs, 3496 nodes, 2.3s
+2026-10-16 15:25:14,891 | INFO    | huim_multi | uji_lib3 union global C 50%: COMPLETED, 0 APs, 1 nodes, 0.1s
+2026-10-16 15:25:15,000 | INFO    | huim_multi | uji_lib3 union global C 30%: COMPLETED, 0 APs, 1 nodes, 0.1s
+2026-10-16 15:25:15,153 | INFO    | huim_multi | uji_lib3 union global C 20%: COMPLETED, 0 APs, 12 nodes, 0.1s
+2026-10-16 15:25:15,692 | INFO    | huim_multi | uji_lib3 union global C 15%: COMPLETED, 0 APs, 46 nodes, 0.4s
+2026-10-16 15:25:15,975 | INFO    | huim_multi | uji_lib3 union global A 2.5%: COMPLETED, 61 APs, 6212 nodes, 3.6s
+2026-10-16 15:25:16,387 | INFO    | huim_multi | uji_lib3 union global C 10%: COMPLETED, 16 APs, 228 nodes, 0.7s
+2026-10-16 15:25:16,978 | INFO    | huim_multi | uji_lib3 union global C 7.5%: COMPLETED, 18 APs, 267 nodes, 0.6s
+2026-10-16 15:25:17,544 | INFO    | huim_multi | hcxy union z2 C 7.5%: COMPLETED, 61 APs, 16997 nodes, 13.6s
+2026-10-16 15:25:17,788 | INFO    | huim_multi | hcxy union global A 6.1237%: COMPLETED, 67 APs, 29740 nodes, 33.3s
+2026-10-16 15:25:18,197 | INFO    | huim_multi | uji_lib3 union global A 2%: COMPLETED, 67 APs, 5214 nodes, 2.2s
+2026-10-16 15:25:18,216 | INFO    | huim_multi | uji_lib3 union global B 2%: COMPLETED, 72 APs, 10803 nodes, 3.9s
+2026-10-16 15:25:18,528 | INFO    | huim_multi | uji_lib3 union global C 5%: COMPLETED, 31 APs, 975 nodes, 1.5s
+2026-10-16 15:25:19,113 | INFO    | huim_multi | hcxy union z1 B 4%: COMPLETED, 68 APs, 29855 nodes, 7.4s
+2026-10-16 15:25:19,322 | INFO    | huim_multi | uji_lib3 union global B 1.5%: COMPLETED, 82 APs, 2871 nodes, 1.1s
+2026-10-16 15:25:19,641 | INFO    | huim_multi | uji_lib3 union global A 1.5%: COMPLETED, 72 APs, 3179 nodes, 1.4s
+2026-10-16 15:25:19,976 | INFO    | huim_multi | uji_lib3 union global C 4%: COMPLETED, 37 APs, 1875 nodes, 1.4s
+2026-10-16 15:25:20,265 | INFO    | huim_multi | uji_lib3 union global B 1%: COMPLETED, 88 APs, 2158 nodes, 0.9s
+2026-10-16 15:25:21,719 | INFO    | huim_multi | uji_lib3 union global C 3.5%: COMPLETED, 46 APs, 2868 nodes, 1.7s
+2026-10-16 15:25:22,499 | INFO    | huim_multi | uji_lib3 union global B 0.75%: COMPLETED, 96 APs, 9391 nodes, 2.2s
+2026-10-16 15:25:22,881 | INFO    | huim_multi | hcxy union z2 C 6.777%: COMPLETED, 68 APs, 12049 nodes, 5.3s
+2026-10-16 15:25:24,197 | INFO    | huim_multi | uji_lib3 union global C 3%: COMPLETED, 52 APs, 4263 nodes, 2.5s
+2026-10-16 15:25:24,911 | INFO    | huim_multi | uji_lib3 union global A 1%: COMPLETED, 83 APs, 23867 nodes, 5.3s
+2026-10-16 15:25:26,680 | INFO    | huim_multi | uji_lib3 union global C 2.5%: COMPLETED, 56 APs, 6149 nodes, 2.5s
+2026-10-16 15:25:28,594 | INFO    | huim_multi | hcxy union z2 C 6.1237%: COMPLETED, 77 APs, 14287 nodes, 5.7s
+2026-10-16 15:25:28,862 | INFO    | huim_multi | uji_lib3 union global A 0.75%: COMPLETED, 93 APs, 18025 nodes, 3.9s
+2026-10-16 15:25:29,436 | INFO    | huim_multi | uji_lib3 union global C 2%: COMPLETED, 68 APs, 7625 nodes, 2.7s
+2026-10-16 15:25:30,586 | INFO    | huim_multi | uji_lib3 union global C 1.5%: COMPLETED, 74 APs, 3617 nodes, 1.1s
+2026-10-16 15:25:31,225 | INFO    | huim_multi | hcxy union z2 C 5%: COMPLETED, 87 APs, 9858 nodes, 2.6s
+2026-10-16 15:25:32,101 | INFO    | huim_multi | uji_lib3 union global A 0.5%: COMPLETED, 104 APs, 20389 nodes, 3.2s
+2026-10-16 15:25:32,961 | INFO    | huim_multi | hcxy union z2 C 4%: COMPLETED, 94 APs, 5032 nodes, 1.7s
+2026-10-16 15:25:33,617 | INFO    | huim_multi | uji_lib3 union global A 0.25%: COMPLETED, 125 APs, 6864 nodes, 1.5s
+2026-10-16 15:25:34,276 | INFO    | huim_multi | hcxy union z2 C 3%: COMPLETED, 111 APs, 4078 nodes, 1.3s
+2026-10-16 15:25:34,357 | INFO    | huim_multi | uji_lib3 union global C 1%: COMPLETED, 80 APs, 15829 nodes, 3.8s
+2026-10-16 15:25:34,878 | INFO    | huim_multi | hcxy union z2 C 2%: COMPLETED, 124 APs, 1703 nodes, 0.6s
+2026-10-16 15:25:35,405 | INFO    | huim_multi | hcxy union z2 C 1.5%: COMPLETED, 131 APs, 1143 nodes, 0.5s
+2026-10-16 15:25:35,660 | INFO    | huim_multi | uji_lib3 union global B 0.5%: COMPLETED, 108 APs, 84971 nodes, 13.2s
+2026-10-16 15:25:36,509 | INFO    | huim_multi | uji_lib3 union global A 0.1%: COMPLETED, 160 APs, 17860 nodes, 2.9s
+2026-10-16 15:25:36,829 | INFO    | huim_multi | hcxy union z2 C 1%: COMPLETED, 144 APs, 8470 nodes, 1.4s
+2026-10-16 15:25:37,200 | INFO    | huim_multi | hcxy union z2 C 0.75%: COMPLETED, 154 APs, 800 nodes, 0.4s
+2026-10-16 15:25:37,513 | INFO    | huim_multi | uji_lib3 union global A 0.05%: COMPLETED, 197 APs, 3014 nodes, 1.0s
+2026-10-16 15:25:37,666 | INFO    | huim_multi | uji_lib3 union z0 A 50%: COMPLETED, 0 APs, 1 nodes, 0.1s
+2026-10-16 15:25:37,845 | INFO    | huim_multi | uji_lib3 union z0 A 30%: COMPLETED, 0 APs, 5 nodes, 0.0s
+2026-10-16 15:25:38,024 | INFO    | huim_multi | uji_lib3 union z0 A 20%: COMPLETED, 8 APs, 56 nodes, 0.2s
+2026-10-16 15:25:38,094 | INFO    | huim_multi | hcxy union z2 C 0.5%: COMPLETED, 184 APs, 2925 nodes, 0.9s
+2026-10-16 15:25:38,145 | INFO    | huim_multi | uji_lib3 union z0 A 15%: COMPLETED, 12 APs, 83 nodes, 0.1s
+2026-10-16 15:25:38,267 | INFO    | huim_multi | uji_lib3 union z0 A 10%: COMPLETED, 22 APs, 246 nodes, 0.1s
+2026-10-16 15:25:38,394 | INFO    | huim_multi | uji_lib3 union z0 A 7.5%: COMPLETED, 27 APs, 298 nodes, 0.1s
+2026-10-16 15:25:38,580 | INFO    | huim_multi | uji_lib3 union global B 0.25%: COMPLETED, 128 APs, 17806 nodes, 2.9s
+2026-10-16 15:25:38,587 | INFO    | huim_multi | uji_lib3 union z0 A 5%: COMPLETED, 40 APs, 762 nodes, 0.2s
+2026-10-16 15:25:38,790 | INFO    | huim_multi | uji_lib3 union z0 A 4%: COMPLETED, 47 APs, 644 nodes, 0.2s
+2026-10-16 15:25:38,835 | INFO    | huim_multi | hcxy union z2 C 0.25%: COMPLETED, 206 APs, 3716 nodes, 0.7s
+2026-10-16 15:25:38,914 | INFO    | huim_multi | uji_lib3 union z0 A 3.5%: COMPLETED, 52 APs, 206 nodes, 0.1s
+2026-10-16 15:25:39,022 | INFO    | huim_multi | uji_lib3 union z0 A 3%: COMPLETED, 56 APs, 221 nodes, 0.1s
+2026-10-16 15:25:39,130 | INFO    | huim_multi | uji_lib3 union z0 A 2.5%: COMPLETED, 60 APs, 382 nodes, 0.1s
+2026-10-16 15:25:39,597 | INFO    | huim_multi | uji_lib3 union z0 A 2%: COMPLETED, 64 APs, 144 nodes, 0.4s
+2026-10-16 15:25:39,798 | INFO    | huim_multi | uji_lib3 union z0 A 1.5%: COMPLETED, 65 APs, 163 nodes, 0.1s
+2026-10-16 15:25:39,859 | INFO    | huim_multi | hcxy union z2 C 0.1%: COMPLETED, 213 APs, 2854 nodes, 1.0s
+2026-10-16 15:25:39,962 | INFO    | huim_multi | uji_lib3 union z0 A 1%: COMPLETED, 72 APs, 599 nodes, 0.1s
+2026-10-16 15:25:40,076 | INFO    | huim_multi | uji_lib3 union z0 A 0.75%: COMPLETED, 79 APs, 338 nodes, 0.1s
+2026-10-16 15:25:40,147 | INFO    | huim_multi | uji_lib3 union global C 0.75%: COMPLETED, 90 APs, 26629 nodes, 5.7s
+2026-10-16 15:25:40,204 | INFO    | huim_multi | uji_lib3 union z0 A 0.5%: COMPLETED, 90 APs, 501 nodes, 0.1s
+2026-10-16 15:25:40,393 | INFO    | huim_multi | uji_lib3 union z0 A 0.25%: COMPLETED, 114 APs, 774 nodes, 0.2s
+2026-10-16 15:25:40,453 | INFO    | huim_multi | hcxy union z2 C 0.05%: COMPLETED, 218 APs, 3730 nodes, 0.6s
+2026-10-16 15:25:40,949 | INFO    | huim_multi | uji_lib3 union z0 A 0.1%: COMPLETED, 153 APs, 1670 nodes, 0.5s
+2026-10-16 15:25:41,233 | INFO    | huim_multi | uji_lib3 union z0 A 0.05%: COMPLETED, 185 APs, 2189 nodes, 0.3s
+2026-10-16 15:25:41,420 | INFO    | huim_multi | uji_lib3 union z0 C 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:25:41,447 | INFO    | huim_multi | uji_lib3 union z0 C 30%: COMPLETED, 0 APs, 3 nodes, 0.0s
+2026-10-16 15:25:41,472 | INFO    | huim_multi | uji_lib3 union global B 0.1%: COMPLETED, 163 APs, 14314 nodes, 2.9s
+2026-10-16 15:25:41,493 | INFO    | huim_multi | uji_lib3 union z0 C 20%: COMPLETED, 7 APs, 48 nodes, 0.0s
+2026-10-16 15:25:41,561 | INFO    | huim_multi | uji_lib3 union z0 C 15%: COMPLETED, 16 APs, 120 nodes, 0.1s
+2026-10-16 15:25:41,626 | INFO    | huim_multi | uji_lib3 union z0 C 10%: COMPLETED, 24 APs, 150 nodes, 0.1s
+2026-10-16 15:25:41,726 | INFO    | huim_multi | uji_lib3 union z0 C 7.5%: COMPLETED, 31 APs, 315 nodes, 0.1s
+2026-10-16 15:25:42,095 | INFO    | huim_multi | uji_lib3 union z0 C 5%: COMPLETED, 41 APs, 404 nodes, 0.4s
+2026-10-16 15:25:42,294 | INFO    | huim_multi | uji_lib3 union z0 C 4%: COMPLETED, 42 APs, 204 nodes, 0.2s
+2026-10-16 15:25:42,424 | INFO    | huim_multi | uji_lib3 union z0 C 3.5%: COMPLETED, 46 APs, 248 nodes, 0.1s
+2026-10-16 15:25:42,534 | INFO    | huim_multi | uji_lib3 union z0 C 3%: COMPLETED, 49 APs, 188 nodes, 0.1s
+2026-10-16 15:25:42,617 | INFO    | huim_multi | uji_lib3 union z0 C 2.5%: COMPLETED, 52 APs, 135 nodes, 0.1s
+2026-10-16 15:25:42,711 | INFO    | huim_multi | uji_lib3 union z0 C 2%: COMPLETED, 60 APs, 248 nodes, 0.1s
+2026-10-16 15:25:42,809 | INFO    | huim_multi | uji_lib3 union z0 C 1.5%: COMPLETED, 64 APs, 356 nodes, 0.1s
+2026-10-16 15:25:42,916 | INFO    | huim_multi | uji_lib3 union z0 C 1%: COMPLETED, 70 APs, 356 nodes, 0.1s
+2026-10-16 15:25:43,006 | INFO    | huim_multi | uji_lib3 union z0 C 0.75%: COMPLETED, 76 APs, 261 nodes, 0.1s
+2026-10-16 15:25:43,223 | INFO    | huim_multi | uji_lib3 union z0 C 0.5%: COMPLETED, 84 APs, 306 nodes, 0.2s
+2026-10-16 15:25:43,642 | INFO    | huim_multi | uji_lib3 union z0 C 0.25%: COMPLETED, 112 APs, 946 nodes, 0.4s
+2026-10-16 15:25:43,853 | INFO    | huim_multi | uji_lib3 union z0 C 0.1%: COMPLETED, 148 APs, 1671 nodes, 0.2s
+2026-10-16 15:25:44,113 | INFO    | huim_multi | uji_lib3 union z0 C 0.05%: COMPLETED, 182 APs, 2029 nodes, 0.2s
+2026-10-16 15:25:44,241 | INFO    | huim_multi | uji_lib3 union z1 A 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:25:44,280 | INFO    | huim_multi | uji_lib3 union z1 A 30%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:25:44,344 | INFO    | huim_multi | uji_lib3 union z1 A 20%: COMPLETED, 0 APs, 19 nodes, 0.1s
+2026-10-16 15:25:44,818 | INFO    | huim_multi | uji_lib3 union z1 A 15%: COMPLETED, 8 APs, 80 nodes, 0.4s
+2026-10-16 15:25:45,066 | INFO    | huim_multi | uji_lib3 union z1 A 10%: COMPLETED, 17 APs, 219 nodes, 0.2s
+2026-10-16 15:25:45,220 | INFO    | huim_multi | uji_lib3 union global C 0.5%: COMPLETED, 104 APs, 22808 nodes, 5.1s
+2026-10-16 15:25:45,385 | INFO    | huim_multi | uji_lib3 union z1 A 7.5%: COMPLETED, 25 APs, 419 nodes, 0.3s
+2026-10-16 15:25:46,104 | INFO    | huim_multi | uji_lib3 union z1 A 5%: COMPLETED, 39 APs, 1743 nodes, 0.7s
+2026-10-16 15:25:46,657 | INFO    | huim_multi | uji_lib3 union z0 B 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:25:46,702 | INFO    | huim_multi | uji_lib3 union z0 B 30%: COMPLETED, 8 APs, 53 nodes, 0.0s
+2026-10-16 15:25:46,767 | INFO    | huim_multi | uji_lib3 union z0 B 20%: COMPLETED, 12 APs, 127 nodes, 0.1s
+2026-10-16 15:25:46,831 | INFO    | huim_multi | uji_lib3 union z1 A 4%: COMPLETED, 43 APs, 2597 nodes, 0.7s
+2026-10-16 15:25:46,839 | INFO    | huim_multi | uji_lib3 union z0 B 15%: COMPLETED, 23 APs, 175 nodes, 0.1s
+2026-10-16 15:25:46,907 | INFO    | huim_multi | uji_lib3 union global C 0.25%: COMPLETED, 122 APs, 8538 nodes, 1.7s
+2026-10-16 15:25:46,926 | INFO    | huim_multi | uji_lib3 union z0 B 10%: COMPLETED, 30 APs, 261 nodes, 0.1s
+2026-10-16 15:25:47,039 | INFO    | huim_multi | uji_lib3 union z0 B 7.5%: COMPLETED, 39 APs, 319 nodes, 0.1s
+2026-10-16 15:25:47,166 | INFO    | huim_multi | uji_lib3 union z0 B 5%: COMPLETED, 46 APs, 443 nodes, 0.1s
+2026-10-16 15:25:47,255 | INFO    | huim_multi | uji_lib3 union z0 B 4%: COMPLETED, 54 APs, 286 nodes, 0.1s
+2026-10-16 15:25:47,309 | INFO    | huim_multi | uji_lib3 union z0 B 3.5%: COMPLETED, 59 APs, 98 nodes, 0.0s
+2026-10-16 15:25:47,362 | INFO    | huim_multi | uji_lib3 union z0 B 3%: COMPLETED, 63 APs, 50 nodes, 0.0s
+2026-10-16 15:25:47,415 | INFO    | huim_multi | uji_lib3 union z0 B 2.5%: COMPLETED, 64 APs, 24 nodes, 0.0s
+2026-10-16 15:25:47,472 | INFO    | huim_multi | uji_lib3 union z0 B 2%: COMPLETED, 66 APs, 46 nodes, 0.1s
+2026-10-16 15:25:47,539 | INFO    | huim_multi | uji_lib3 union z0 B 1.5%: COMPLETED, 72 APs, 119 nodes, 0.1s
+2026-10-16 15:25:47,611 | INFO    | huim_multi | uji_lib3 union z0 B 1%: COMPLETED, 78 APs, 130 nodes, 0.1s
+2026-10-16 15:25:47,703 | INFO    | huim_multi | uji_lib3 union z0 B 0.75%: COMPLETED, 87 APs, 188 nodes, 0.1s
+2026-10-16 15:25:47,734 | INFO    | huim_multi | uji_lib3 union z1 A 3.5%: COMPLETED, 47 APs, 3845 nodes, 0.9s
+2026-10-16 15:25:47,801 | INFO    | huim_multi | uji_lib3 union z0 B 0.5%: COMPLETED, 98 APs, 277 nodes, 0.1s
+2026-10-16 15:25:47,930 | INFO    | huim_multi | uji_lib3 union z0 B 0.25%: COMPLETED, 120 APs, 684 nodes, 0.1s
+2026-10-16 15:25:48,118 | INFO    | huim_multi | uji_lib3 union z0 B 0.1%: COMPLETED, 154 APs, 1357 nodes, 0.2s
+2026-10-16 15:25:48,485 | INFO    | huim_multi | uji_lib3 union z0 B 0.05%: COMPLETED, 186 APs, 2682 nodes, 0.3s
+2026-10-16 15:25:48,744 | INFO    | huim_multi | uji_lib3 union z1 B 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:25:48,793 | INFO    | huim_multi | uji_lib3 union z1 B 30%: COMPLETED, 2 APs, 18 nodes, 0.0s
+2026-10-16 15:25:48,879 | INFO    | huim_multi | uji_lib3 union z1 B 20%: COMPLETED, 10 APs, 91 nodes, 0.1s
+2026-10-16 15:25:49,043 | INFO    | huim_multi | uji_lib3 union z1 B 15%: COMPLETED, 17 APs, 167 nodes, 0.1s
+2026-10-16 15:25:49,262 | INFO    | huim_multi | uji_lib3 union z1 B 10%: COMPLETED, 30 APs, 350 nodes, 0.2s
+2026-10-16 15:25:49,339 | INFO    | huim_multi | uji_lib3 union z1 A 3%: COMPLETED, 47 APs, 6830 nodes, 1.6s
+2026-10-16 15:25:49,601 | INFO    | huim_multi | uji_lib3 union z1 B 7.5%: COMPLETED, 38 APs, 416 nodes, 0.3s
+2026-10-16 15:25:50,064 | INFO    | huim_multi | uji_lib3 union z1 B 5%: COMPLETED, 46 APs, 1190 nodes, 0.4s
+2026-10-16 15:25:50,286 | INFO    | huim_multi | hcxy union z2 B 10%: COMPLETED, 48 APs, 129546 nodes, 70.9s
+2026-10-16 15:25:50,569 | INFO    | huim_multi | uji_lib3 union global B 0.05%: COMPLETED, 191 APs, 68331 nodes, 9.1s
+2026-10-16 15:25:50,768 | INFO    | huim_multi | hcxy union z2 A 7.5%: COMPLETED, 58 APs, 153473 nodes, 66.3s
+2026-10-16 15:25:50,885 | INFO    | huim_multi | uji_lib3 union z1 B 4%: COMPLETED, 47 APs, 2369 nodes, 0.8s
+2026-10-16 15:25:50,943 | INFO    | huim_multi | uji_lib3 union z1 C 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:25:51,022 | INFO    | huim_multi | uji_lib3 union z1 C 30%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:25:51,087 | INFO    | huim_multi | uji_lib3 union z1 C 20%: COMPLETED, 0 APs, 12 nodes, 0.1s
+2026-10-16 15:25:51,225 | INFO    | huim_multi | uji_lib3 union z1 C 15%: COMPLETED, 0 APs, 42 nodes, 0.1s
+2026-10-16 15:25:51,422 | INFO    | huim_multi | uji_lib3 union z1 C 10%: COMPLETED, 11 APs, 160 nodes, 0.2s
+2026-10-16 15:25:51,688 | INFO    | huim_multi | uji_lib3 union z1 C 7.5%: COMPLETED, 23 APs, 431 nodes, 0.3s
+2026-10-16 15:25:51,842 | INFO    | huim_multi | uji_lib3 union z1 B 3.5%: COMPLETED, 50 APs, 3472 nodes, 0.9s
+2026-10-16 15:25:52,501 | INFO    | huim_multi | uji_lib3 union global C 0.1%: COMPLETED, 153 APs, 37754 nodes, 5.6s
+2026-10-16 15:25:52,647 | INFO    | huim_multi | uji_lib3 union z1 A 2.5%: COMPLETED, 53 APs, 14908 nodes, 3.3s
+2026-10-16 15:25:52,833 | INFO    | huim_multi | uji_lib3 union z1 C 5%: COMPLETED, 41 APs, 2329 nodes, 1.1s
+2026-10-16 15:25:53,645 | INFO    | huim_multi | uji_lib3 union global C 0.05%: COMPLETED, 198 APs, 4629 nodes, 1.1s
+2026-10-16 15:25:53,805 | INFO    | huim_multi | uji_lib3 union z2 A 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:25:53,862 | INFO    | huim_multi | uji_lib3 union z2 A 30%: COMPLETED, 0 APs, 6 nodes, 0.0s
+2026-10-16 15:25:53,988 | INFO    | huim_multi | uji_lib3 union z2 A 20%: COMPLETED, 0 APs, 57 nodes, 0.1s
+2026-10-16 15:25:54,176 | INFO    | huim_multi | uji_lib3 union z1 B 3%: COMPLETED, 56 APs, 9931 nodes, 2.3s
+2026-10-16 15:25:54,224 | INFO    | huim_multi | uji_lib3 union z1 C 4%: COMPLETED, 46 APs, 5037 nodes, 1.3s
+2026-10-16 15:25:54,278 | INFO    | huim_multi | uji_lib3 union z2 A 15%: COMPLETED, 12 APs, 265 nodes, 0.3s
+2026-10-16 15:25:54,876 | INFO    | huim_multi | uji_lib3 union z2 A 10%: COMPLETED, 24 APs, 775 nodes, 0.6s
+2026-10-16 15:25:55,286 | INFO    | huim_multi | uji_lib3 union z1 C 3.5%: COMPLETED, 51 APs, 3832 nodes, 1.1s
+2026-10-16 15:25:55,351 | INFO    | huim_multi | uji_lib3 union z2 A 7.5%: COMPLETED, 30 APs, 754 nodes, 0.5s
+2026-10-16 15:25:56,267 | INFO    | huim_multi | uji_lib3 union z1 A 2%: COMPLETED, 58 APs, 15727 nodes, 3.5s
+2026-10-16 15:25:56,534 | INFO    | huim_multi | uji_lib3 union z2 A 5%: COMPLETED, 40 APs, 2418 nodes, 1.1s
+2026-10-16 15:25:56,549 | INFO    | huim_multi | uji_lib3 union z1 C 3%: COMPLETED, 54 APs, 4735 nodes, 1.3s
+2026-10-16 15:25:57,040 | INFO    | huim_multi | uji_lib3 union z1 B 2.5%: COMPLETED, 65 APs, 13823 nodes, 2.9s
+2026-10-16 15:25:57,585 | INFO    | huim_multi | uji_lib3 union z1 B 2%: COMPLETED, 70 APs, 1306 nodes, 0.4s
+2026-10-16 15:25:57,666 | INFO    | huim_multi | uji_lib3 union z1 C 2.5%: COMPLETED, 56 APs, 4000 nodes, 1.1s
+2026-10-16 15:25:57,734 | INFO    | huim_multi | uji_lib3 union z2 A 4%: COMPLETED, 45 APs, 3172 nodes, 1.2s
+2026-10-16 15:25:58,059 | INFO    | huim_multi | uji_lib3 union z2 A 3.5%: COMPLETED, 48 APs, 668 nodes, 0.3s
+2026-10-16 15:25:58,201 | INFO    | huim_multi | hcxy union z1 B 3%: COMPLETED, 73 APs, 193995 nodes, 39.1s
+2026-10-16 15:25:58,449 | INFO    | huim_multi | uji_lib3 union z2 A 3%: COMPLETED, 50 APs, 751 nodes, 0.4s
+2026-10-16 15:25:58,796 | INFO    | huim_multi | uji_lib3 union z1 B 1.5%: COMPLETED, 77 APs, 5435 nodes, 1.2s
+2026-10-16 15:25:58,863 | INFO    | huim_multi | uji_lib3 union z2 A 2.5%: COMPLETED, 55 APs, 1588 nodes, 0.4s
+2026-10-16 15:25:59,425 | INFO    | huim_multi | uji_lib3 union z2 A 2%: COMPLETED, 60 APs, 1902 nodes, 0.6s
+2026-10-16 15:25:59,601 | INFO    | huim_multi | uji_lib3 union z1 C 2%: COMPLETED, 64 APs, 9792 nodes, 1.9s
+2026-10-16 15:26:00,040 | INFO    | huim_multi | uji_lib3 union z2 A 1.5%: COMPLETED, 68 APs, 2718 nodes, 0.6s
+2026-10-16 15:26:00,174 | INFO    | huim_multi | uji_lib3 union z1 A 1.5%: COMPLETED, 69 APs, 19872 nodes, 3.9s
+2026-10-16 15:26:01,399 | INFO    | huim_multi | uji_lib3 union z1 B 1%: COMPLETED, 92 APs, 15320 nodes, 2.6s
+2026-10-16 15:26:01,513 | INFO    | huim_multi | uji_lib3 union z1 C 1.5%: COMPLETED, 76 APs, 9721 nodes, 1.9s
+2026-10-16 15:26:01,618 | INFO    | huim_multi | uji_lib3 union z1 B 0.75%: COMPLETED, 95 APs, 223 nodes, 0.2s
+2026-10-16 15:26:02,248 | INFO    | huim_multi | hus_dedup step 5: powed+manhattan, k=4, w=1/d^4 -> powed+manhattan, k=4, w=1/d^4 (on G_A__50pct, 5 AP, 94s)
+2026-10-16 15:26:02,268 | WARNING | huim_multi | hus_dedup step 6: no complete EFIM HUI set at or above 50%
+2026-10-16 15:26:02,287 | INFO    | huim_multi | hus_dedup step 7 candidates: ['G_A__50pct', 'G_B__50pct', 'G_C__50pct']
+2026-10-16 15:26:02,621 | INFO    | huim_multi | uji_lib3 union z1 B 0.5%: COMPLETED, 102 APs, 6748 nodes, 1.0s
+2026-10-16 15:26:02,686 | INFO    | huim_multi | uji_lib3 union z1 C 1%: COMPLETED, 84 APs, 6786 nodes, 1.1s
+2026-10-16 15:26:03,008 | INFO    | huim_multi | uji_lib3 union z1 C 0.75%: COMPLETED, 87 APs, 1301 nodes, 0.3s
+2026-10-16 15:26:03,283 | INFO    | huim_multi | uji_lib3 union z2 A 1%: COMPLETED, 78 APs, 20274 nodes, 3.2s
+2026-10-16 15:26:03,887 | INFO    | huim_multi | uji_lib3 union z1 C 0.5%: COMPLETED, 98 APs, 6744 nodes, 0.9s
+2026-10-16 15:26:04,363 | INFO    | huim_multi | uji_lib3 union z1 A 1%: COMPLETED, 83 APs, 28937 nodes, 4.2s
+2026-10-16 15:26:04,965 | INFO    | huim_multi | uji_lib3 union z2 A 0.75%: COMPLETED, 92 APs, 14176 nodes, 1.7s
+2026-10-16 15:26:05,074 | INFO    | huim_multi | uji_lib3 union z1 C 0.25%: COMPLETED, 126 APs, 10793 nodes, 1.2s
+2026-10-16 15:26:05,444 | INFO    | huim_multi | uji_lib3 union z1 C 0.1%: COMPLETED, 163 APs, 2649 nodes, 0.4s
+2026-10-16 15:26:05,605 | INFO    | huim_multi | uji_lib3 union z1 B 0.25%: COMPLETED, 135 APs, 28992 nodes, 3.0s
+2026-10-16 15:26:05,765 | INFO    | huim_multi | uji_lib3 union z1 C 0.05%: COMPLETED, 193 APs, 2003 nodes, 0.3s
+2026-10-16 15:26:05,857 | INFO    | huim_multi | uji_lib3 union z2 A 0.5%: COMPLETED, 105 APs, 6969 nodes, 0.9s
+2026-10-16 15:26:06,011 | INFO    | huim_multi | uji_lib3 union z1 A 0.75%: COMPLETED, 91 APs, 13837 nodes, 1.6s
+2026-10-16 15:26:06,046 | INFO    | huim_multi | uji_lib3 union z2 B 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:26:06,069 | INFO    | huim_multi | uji_lib3 union z1 B 0.1%: COMPLETED, 162 APs, 3088 nodes, 0.5s
+2026-10-16 15:26:06,126 | INFO    | huim_multi | uji_lib3 union z2 B 30%: COMPLETED, 4 APs, 58 nodes, 0.1s
+2026-10-16 15:26:06,293 | INFO    | huim_multi | uji_lib3 union z2 A 0.25%: COMPLETED, 127 APs, 2763 nodes, 0.4s
+2026-10-16 15:26:06,311 | INFO    | huim_multi | uji_lib3 union z2 B 20%: COMPLETED, 17 APs, 383 nodes, 0.2s
+2026-10-16 15:26:06,381 | INFO    | huim_multi | hus_dedup best ensemble: E_mean__G_A__50pct+G_B__50pct dev 0.405 test 0.391
+2026-10-16 15:26:06,462 | INFO    | huim_multi | uji_lib3 union z2 B 15%: COMPLETED, 23 APs, 212 nodes, 0.1s
+2026-10-16 15:26:06,468 | INFO    | huim_multi | uji_lib3 union z1 B 0.05%: COMPLETED, 191 APs, 2304 nodes, 0.4s
+2026-10-16 15:26:06,657 | INFO    | huim_multi | uji_lib3 union z2 A 0.1%: COMPLETED, 153 APs, 1710 nodes, 0.4s
+2026-10-16 15:26:06,764 | INFO    | huim_multi | uji_lib3 union z2 C 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:26:06,767 | INFO    | huim_multi | uji_lib3 union z2 B 10%: COMPLETED, 31 APs, 673 nodes, 0.3s
+2026-10-16 15:26:06,811 | INFO    | huim_multi | uji_lib3 union z2 C 30%: COMPLETED, 0 APs, 5 nodes, 0.0s
+2026-10-16 15:26:06,895 | INFO    | huim_multi | uji_lib3 union z2 C 20%: COMPLETED, 0 APs, 42 nodes, 0.1s
+2026-10-16 15:26:06,919 | INFO    | huim_multi | uji_lib3 union z1 A 0.5%: COMPLETED, 97 APs, 6266 nodes, 0.9s
+2026-10-16 15:26:07,043 | INFO    | huim_multi | uji_lib3 union z2 A 0.05%: COMPLETED, 176 APs, 1759 nodes, 0.4s
+2026-10-16 15:26:07,085 | INFO    | huim_multi | uji_lib3 union z2 C 15%: COMPLETED, 12 APs, 184 nodes, 0.2s
+2026-10-16 15:26:07,136 | INFO    | huim_multi | uji_lib3 union z2 B 7.5%: COMPLETED, 39 APs, 916 nodes, 0.4s
+2026-10-16 15:26:07,417 | INFO    | huim_multi | uji_lib3 union z2 C 10%: COMPLETED, 24 APs, 561 nodes, 0.3s
+2026-10-16 15:26:07,563 | INFO    | huim_multi | dlulib union global A 50%: COMPLETED, 0 APs, 7 nodes, 0.0s
+2026-10-16 15:26:07,589 | INFO    | huim_multi | uji_lib3 union z2 B 5%: COMPLETED, 49 APs, 1539 nodes, 0.4s
+2026-10-16 15:26:07,745 | INFO    | huim_multi | dlulib union global A 30%: COMPLETED, 0 APs, 113 nodes, 0.2s
+2026-10-16 15:26:07,769 | INFO    | huim_multi | uji_lib3 union z2 B 4%: COMPLETED, 50 APs, 423 nodes, 0.2s
+2026-10-16 15:26:07,773 | INFO    | huim_multi | uji_lib3 union z2 C 7.5%: COMPLETED, 29 APs, 669 nodes, 0.4s
+2026-10-16 15:26:07,955 | INFO    | huim_multi | uji_lib3 union z2 B 3.5%: COMPLETED, 56 APs, 768 nodes, 0.2s
+2026-10-16 15:26:07,993 | INFO    | huim_multi | dlulib union global A 20%: COMPLETED, 12 APs, 303 nodes, 0.2s
+2026-10-16 15:26:08,094 | INFO    | huim_multi | uji_lib3 union z2 B 3%: COMPLETED, 59 APs, 380 nodes, 0.1s
+2026-10-16 15:26:08,128 | INFO    | huim_multi | dlulib union global A 15%: COMPLETED, 13 APs, 136 nodes, 0.1s
+2026-10-16 15:26:08,278 | INFO    | huim_multi | dlulib union global A 10%: COMPLETED, 14 APs, 294 nodes, 0.1s
+2026-10-16 15:26:08,294 | INFO    | huim_multi | uji_lib3 union z2 B 2.5%: COMPLETED, 62 APs, 773 nodes, 0.2s
+2026-10-16 15:26:08,337 | INFO    | huim_multi | dlulib union global A 7.5%: COMPLETED, 14 APs, 14 nodes, 0.1s
+2026-10-16 15:26:08,419 | INFO    | huim_multi | dlulib union global A 5%: COMPLETED, 14 APs, 89 nodes, 0.1s
+2026-10-16 15:26:08,466 | INFO    | huim_multi | uji_lib3 union z2 C 5%: COMPLETED, 40 APs, 2487 nodes, 0.7s
+2026-10-16 15:26:08,491 | INFO    | huim_multi | dlulib union global A 4%: COMPLETED, 15 APs, 163 nodes, 0.1s
+2026-10-16 15:26:08,549 | INFO    | huim_multi | dlulib union global A 3.5%: COMPLETED, 15 APs, 17 nodes, 0.1s
+2026-10-16 15:26:08,555 | INFO    | huim_multi | uji_lib3 union z2 B 2%: COMPLETED, 68 APs, 1055 nodes, 0.3s
+2026-10-16 15:26:08,609 | INFO    | huim_multi | dlulib union global A 3%: COMPLETED, 15 APs, 36 nodes, 0.1s
+2026-10-16 15:26:08,674 | INFO    | huim_multi | dlulib union global A 2.5%: COMPLETED, 16 APs, 90 nodes, 0.1s
+2026-10-16 15:26:08,727 | INFO    | huim_multi | dlulib union global A 2%: COMPLETED, 16 APs, 34 nodes, 0.0s
+2026-10-16 15:26:08,802 | INFO    | huim_multi | dlulib union global A 1.5%: COMPLETED, 16 APs, 141 nodes, 0.1s
+2026-10-16 15:26:08,826 | INFO    | huim_multi | uji_lib3 union z2 B 1.5%: COMPLETED, 70 APs, 1400 nodes, 0.3s
+2026-10-16 15:26:08,861 | INFO    | huim_multi | dlulib union global A 1%: COMPLETED, 17 APs, 2 nodes, 0.1s
+2026-10-16 15:26:09,025 | INFO    | huim_multi | dlulib union global B 50%: COMPLETED, 0 APs, 11 nodes, 0.1s
+2026-10-16 15:26:09,246 | INFO    | huim_multi | dlulib union global B 30%: COMPLETED, 11 APs, 229 nodes, 0.2s
+2026-10-16 15:26:09,405 | INFO    | huim_multi | dlulib union global B 20%: COMPLETED, 13 APs, 189 nodes, 0.2s
+2026-10-16 15:26:09,518 | INFO    | huim_multi | dlulib union global B 15%: COMPLETED, 13 APs, 117 nodes, 0.1s
+2026-10-16 15:26:09,580 | INFO    | huim_multi | uji_lib3 union z2 C 4%: COMPLETED, 43 APs, 4548 nodes, 1.1s
+2026-10-16 15:26:09,634 | INFO    | huim_multi | dlulib union global B 10%: COMPLETED, 14 APs, 211 nodes, 0.1s
+2026-10-16 15:26:09,680 | INFO    | huim_multi | dlulib union global B 7.5%: COMPLETED, 14 APs, 16 nodes, 0.0s
+2026-10-16 15:26:09,758 | INFO    | huim_multi | dlulib union global B 5%: COMPLETED, 14 APs, 124 nodes, 0.1s
+2026-10-16 15:26:09,846 | INFO    | huim_multi | dlulib union global B 4%: COMPLETED, 15 APs, 188 nodes, 0.1s
+2026-10-16 15:26:09,897 | INFO    | huim_multi | dlulib union global B 3.5%: COMPLETED, 15 APs, 16 nodes, 0.0s
+2026-10-16 15:26:09,946 | INFO    | huim_multi | dlulib union global B 3%: COMPLETED, 15 APs, 37 nodes, 0.0s
+2026-10-16 15:26:10,010 | INFO    | huim_multi | dlulib union global B 2.5%: COMPLETED, 15 APs, 96 nodes, 0.1s
+2026-10-16 15:26:10,076 | INFO    | huim_multi | dlulib union global B 2%: COMPLETED, 16 APs, 124 nodes, 0.1s
+2026-10-16 15:26:10,119 | INFO    | huim_multi | uji_lib3 union z1 A 0.25%: COMPLETED, 123 APs, 31080 nodes, 3.2s
+2026-10-16 15:26:10,152 | INFO    | huim_multi | dlulib union global B 1.5%: COMPLETED, 16 APs, 115 nodes, 0.1s
+2026-10-16 15:26:10,248 | INFO    | huim_multi | dlulib union global B 1%: COMPLETED, 17 APs, 437 nodes, 0.1s
+2026-10-16 15:26:10,332 | INFO    | huim_multi | uji_lib3 union z2 C 3.5%: COMPLETED, 48 APs, 3799 nodes, 0.7s
+2026-10-16 15:26:10,343 | INFO    | huim_multi | dlulib union global C 50%: COMPLETED, 0 APs, 7 nodes, 0.0s
+2026-10-16 15:26:10,534 | INFO    | huim_multi | uji_lib3 union z1 A 0.1%: COMPLETED, 162 APs, 3029 nodes, 0.4s
+2026-10-16 15:26:10,542 | INFO    | huim_multi | dlulib union global C 30%: COMPLETED, 6 APs, 121 nodes, 0.2s
+2026-10-16 15:26:10,643 | INFO    | huim_multi | uji_lib3 union z2 C 3%: COMPLETED, 50 APs, 952 nodes, 0.3s
+2026-10-16 15:26:10,790 | INFO    | huim_multi | dlulib union global C 20%: COMPLETED, 12 APs, 279 nodes, 0.2s
+2026-10-16 15:26:10,906 | INFO    | huim_multi | uji_lib3 union z1 A 0.05%: COMPLETED, 189 APs, 2767 nodes, 0.4s
+2026-10-16 15:26:10,944 | INFO    | huim_multi | dlulib union global C 15%: COMPLETED, 13 APs, 200 nodes, 0.2s
+2026-10-16 15:26:11,071 | INFO    | huim_multi | dlulib union global C 10%: COMPLETED, 14 APs, 197 nodes, 0.1s
+2026-10-16 15:26:11,095 | INFO    | huim_multi | uji_lib3 union z2 C 2.5%: COMPLETED, 52 APs, 2042 nodes, 0.4s
+2026-10-16 15:26:11,136 | INFO    | huim_multi | dlulib union global C 7.5%: COMPLETED, 14 APs, 16 nodes, 0.1s
+2026-10-16 15:26:11,223 | INFO    | huim_multi | dlulib union global C 5%: COMPLETED, 14 APs, 129 nodes, 0.1s
+2026-10-16 15:26:11,285 | INFO    | huim_multi | dlulib union z0 A 50%: COMPLETED, 0 APs, 17 nodes, 0.0s
+2026-10-16 15:26:11,303 | INFO    | huim_multi | dlulib union global C 4%: COMPLETED, 15 APs, 96 nodes, 0.1s
+2026-10-16 15:26:11,350 | INFO    | huim_multi | dlulib union z0 A 30%: COMPLETED, 12 APs, 93 nodes, 0.1s
+2026-10-16 15:26:11,363 | INFO    | huim_multi | dlulib union global C 3.5%: COMPLETED, 15 APs, 36 nodes, 0.1s
+2026-10-16 15:26:11,384 | INFO    | huim_multi | dlulib union z0 A 20%: COMPLETED, 13 APs, 51 nodes, 0.0s
+2026-10-16 15:26:11,401 | INFO    | huim_multi | dlulib union z0 A 15%: COMPLETED, 13 APs, 15 nodes, 0.0s
+2026-10-16 15:26:11,422 | INFO    | huim_multi | dlulib union z0 A 10%: COMPLETED, 14 APs, 47 nodes, 0.0s
+2026-10-16 15:26:11,431 | INFO    | huim_multi | dlulib union global C 3%: COMPLETED, 15 APs, 79 nodes, 0.1s
+2026-10-16 15:26:11,443 | INFO    | huim_multi | dlulib union z0 A 7.5%: COMPLETED, 14 APs, 2 nodes, 0.0s
+2026-10-16 15:26:11,459 | INFO    | huim_multi | dlulib union z0 A 5%: COMPLETED, 14 APs, 8 nodes, 0.0s
+2026-10-16 15:26:11,475 | INFO    | huim_multi | dlulib union z0 A 4%: COMPLETED, 14 APs, 28 nodes, 0.0s
+2026-10-16 15:26:11,490 | INFO    | huim_multi | dlulib union global C 2.5%: COMPLETED, 16 APs, 31 nodes, 0.1s
+2026-10-16 15:26:11,499 | INFO    | huim_multi | dlulib union z0 A 3.5%: COMPLETED, 15 APs, 58 nodes, 0.0s
+2026-10-16 15:26:11,512 | INFO    | huim_multi | dlulib union z0 A 3%: COMPLETED, 15 APs, 1 nodes, 0.0s
+2026-10-16 15:26:11,530 | INFO    | huim_multi | dlulib union z0 A 2.5%: COMPLETED, 15 APs, 1 nodes, 0.0s
+2026-10-16 15:26:11,546 | INFO    | huim_multi | dlulib union global C 2%: COMPLETED, 17 APs, 2 nodes, 0.1s
+2026-10-16 15:26:11,550 | INFO    | huim_multi | dlulib union z0 A 2%: COMPLETED, 15 APs, 1 nodes, 0.0s
+2026-10-16 15:26:11,569 | INFO    | huim_multi | dlulib union z0 A 1.5%: COMPLETED, 15 APs, 1 nodes, 0.0s
+2026-10-16 15:26:11,585 | INFO    | huim_multi | dlulib union z0 A 1%: COMPLETED, 15 APs, 1 nodes, 0.0s
+2026-10-16 15:26:11,603 | INFO    | huim_multi | dlulib union z0 A 0.75%: COMPLETED, 15 APs, 2 nodes, 0.0s
+2026-10-16 15:26:11,614 | INFO    | huim_multi | dlulib union z0 B 50%: COMPLETED, 0 APs, 18 nodes, 0.0s
+2026-10-16 15:26:11,624 | INFO    | huim_multi | dlulib union z0 A 0.5%: COMPLETED, 15 APs, 4 nodes, 0.0s
+2026-10-16 15:26:11,641 | INFO    | huim_multi | dlulib union z0 A 0.25%: COMPLETED, 16 APs, 23 nodes, 0.0s
+2026-10-16 15:26:11,659 | INFO    | huim_multi | dlulib union z0 A 0.1%: COMPLETED, 17 APs, 39 nodes, 0.0s
+2026-10-16 15:26:11,678 | INFO    | huim_multi | dlulib union z0 B 30%: COMPLETED, 12 APs, 93 nodes, 0.1s
+2026-10-16 15:26:11,707 | INFO    | huim_multi | dlulib union z0 C 50%: COMPLETED, 0 APs, 3 nodes, 0.0s
+2026-10-16 15:26:11,715 | INFO    | huim_multi | dlulib union z0 B 20%: COMPLETED, 13 APs, 55 nodes, 0.0s
+2026-10-16 15:26:11,741 | INFO    | huim_multi | dlulib union z0 B 15%: COMPLETED, 13 APs, 15 nodes, 0.0s
+2026-10-16 15:26:11,765 | INFO    | huim_multi | dlulib union z0 B 10%: COMPLETED, 14 APs, 42 nodes, 0.0s
+2026-10-16 15:26:11,770 | INFO    | huim_multi | dlulib union z0 C 30%: COMPLETED, 0 APs, 61 nodes, 0.1s
+2026-10-16 15:26:11,786 | INFO    | huim_multi | dlulib union z0 B 7.5%: COMPLETED, 14 APs, 2 nodes, 0.0s
+2026-10-16 15:26:11,791 | INFO    | huim_multi | uji_lib3 union z2 B 1%: COMPLETED, 88 APs, 26666 nodes, 3.0s
+2026-10-16 15:26:11,806 | INFO    | huim_multi | dlulib union z0 C 20%: COMPLETED, 13 APs, 48 nodes, 0.0s
+2026-10-16 15:26:11,807 | INFO    | huim_multi | dlulib union z0 B 5%: COMPLETED, 14 APs, 7 nodes, 0.0s
+2026-10-16 15:26:11,834 | INFO    | huim_multi | dlulib union z0 C 15%: COMPLETED, 13 APs, 21 nodes, 0.0s
+2026-10-16 15:26:11,835 | INFO    | huim_multi | dlulib union z0 B 4%: COMPLETED, 14 APs, 20 nodes, 0.0s
+2026-10-16 15:26:11,855 | INFO    | huim_multi | dlulib union z0 C 10%: COMPLETED, 14 APs, 14 nodes, 0.0s
+2026-10-16 15:26:11,856 | INFO    | huim_multi | dlulib union z0 B 3.5%: COMPLETED, 14 APs, 36 nodes, 0.0s
+2026-10-16 15:26:11,872 | INFO    | huim_multi | dlulib union z0 C 7.5%: COMPLETED, 14 APs, 3 nodes, 0.0s
+2026-10-16 15:26:11,882 | INFO    | huim_multi | dlulib union z0 B 3%: COMPLETED, 15 APs, 73 nodes, 0.0s
+2026-10-16 15:26:11,891 | INFO    | huim_multi | dlulib union z0 C 5%: COMPLETED, 14 APs, 7 nodes, 0.0s
+2026-10-16 15:26:11,901 | INFO    | huim_multi | dlulib union z0 B 2.5%: COMPLETED, 15 APs, 1 nodes, 0.0s
+2026-10-16 15:26:11,912 | INFO    | huim_multi | dlulib union z0 C 4%: COMPLETED, 14 APs, 19 nodes, 0.0s
+2026-10-16 15:26:11,918 | INFO    | huim_multi | dlulib union z0 B 2%: COMPLETED, 15 APs, 1 nodes, 0.0s
+2026-10-16 15:26:11,932 | INFO    | huim_multi | dlulib union z0 C 3.5%: COMPLETED, 15 APs, 17 nodes, 0.0s
+2026-10-16 15:26:11,937 | INFO    | huim_multi | dlulib union z0 B 1.5%: COMPLETED, 15 APs, 1 nodes, 0.0s
+2026-10-16 15:26:11,949 | INFO    | huim_multi | dlulib union z0 C 3%: COMPLETED, 15 APs, 1 nodes, 0.0s
+2026-10-16 15:26:11,951 | INFO    | huim_multi | dlulib union z0 B 1%: COMPLETED, 15 APs, 1 nodes, 0.0s
+2026-10-16 15:26:11,965 | INFO    | huim_multi | dlulib union z0 B 0.75%: COMPLETED, 15 APs, 1 nodes, 0.0s
+2026-10-16 15:26:11,966 | INFO    | huim_multi | dlulib union z0 C 2.5%: COMPLETED, 15 APs, 1 nodes, 0.0s
+2026-10-16 15:26:11,979 | INFO    | huim_multi | dlulib union z0 C 2%: COMPLETED, 15 APs, 1 nodes, 0.0s
+2026-10-16 15:26:11,983 | INFO    | huim_multi | dlulib union z0 B 0.5%: COMPLETED, 15 APs, 2 nodes, 0.0s
+2026-10-16 15:26:11,995 | INFO    | huim_multi | dlulib union z0 C 1.5%: COMPLETED, 15 APs, 1 nodes, 0.0s
+2026-10-16 15:26:11,997 | INFO    | huim_multi | dlulib union z0 B 0.25%: COMPLETED, 16 APs, 27 nodes, 0.0s
+2026-10-16 15:26:12,013 | INFO    | huim_multi | dlulib union z0 C 1%: COMPLETED, 15 APs, 1 nodes, 0.0s
+2026-10-16 15:26:12,013 | INFO    | huim_multi | dlulib union z0 B 0.1%: COMPLETED, 17 APs, 29 nodes, 0.0s
+2026-10-16 15:26:12,032 | INFO    | huim_multi | dlulib union z0 C 0.75%: COMPLETED, 15 APs, 2 nodes, 0.0s
+2026-10-16 15:26:12,044 | INFO    | huim_multi | dlulib union z1 A 50%: COMPLETED, 0 APs, 7 nodes, 0.0s
+2026-10-16 15:26:12,046 | INFO    | huim_multi | dlulib union z0 C 0.5%: COMPLETED, 15 APs, 2 nodes, 0.0s
+2026-10-16 15:26:12,066 | INFO    | huim_multi | dlulib union z0 C 0.25%: COMPLETED, 15 APs, 21 nodes, 0.0s
+2026-10-16 15:26:12,085 | INFO    | huim_multi | dlulib union z0 C 0.1%: COMPLETED, 17 APs, 16 nodes, 0.0s
+2026-10-16 15:26:12,085 | INFO    | huim_multi | dlulib union z1 A 30%: COMPLETED, 4 APs, 70 nodes, 0.0s
+2026-10-16 15:26:12,121 | INFO    | huim_multi | dlulib union z1 B 50%: COMPLETED, 0 APs, 7 nodes, 0.0s
+2026-10-16 15:26:12,160 | INFO    | huim_multi | dlulib union z1 B 30%: COMPLETED, 0 APs, 64 nodes, 0.0s
+2026-10-16 15:26:12,179 | INFO    | huim_multi | dlulib union z1 A 20%: COMPLETED, 14 APs, 273 nodes, 0.1s
+2026-10-16 15:26:12,194 | INFO    | huim_multi | dlulib union z1 A 15%: COMPLETED, 14 APs, 11 nodes, 0.0s
+2026-10-16 15:26:12,224 | INFO    | huim_multi | dlulib union z1 A 10%: COMPLETED, 15 APs, 83 nodes, 0.0s
+2026-10-16 15:26:12,243 | INFO    | huim_multi | dlulib union z1 A 7.5%: COMPLETED, 16 APs, 43 nodes, 0.0s
+2026-10-16 15:26:12,250 | INFO    | huim_multi | dlulib union z1 B 20%: COMPLETED, 14 APs, 284 nodes, 0.1s
+2026-10-16 15:26:12,258 | INFO    | huim_multi | dlulib union z1 A 5%: COMPLETED, 16 APs, 17 nodes, 0.0s
+2026-10-16 15:26:12,261 | INFO    | huim_multi | dlulib union z1 B 15%: COMPLETED, 14 APs, 11 nodes, 0.0s
+2026-10-16 15:26:12,280 | INFO    | huim_multi | dlulib union z1 A 4%: COMPLETED, 16 APs, 62 nodes, 0.0s
+2026-10-16 15:26:12,287 | INFO    | huim_multi | dlulib union z1 B 10%: COMPLETED, 15 APs, 81 nodes, 0.0s
+2026-10-16 15:26:12,297 | INFO    | huim_multi | dlulib union z1 A 3.5%: COMPLETED, 17 APs, 56 nodes, 0.0s
+2026-10-16 15:26:12,304 | INFO    | huim_multi | dlulib union z1 B 7.5%: COMPLETED, 15 APs, 27 nodes, 0.0s
+2026-10-16 15:26:12,326 | INFO    | huim_multi | dlulib union z1 B 5%: COMPLETED, 16 APs, 62 nodes, 0.0s
+2026-10-16 15:26:12,329 | INFO    | huim_multi | uji_lib3 union z2 C 2%: COMPLETED, 59 APs, 7600 nodes, 1.2s
+2026-10-16 15:26:12,337 | INFO    | huim_multi | dlulib union z1 C 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:26:12,341 | INFO    | huim_multi | dlulib union z1 B 4%: COMPLETED, 16 APs, 33 nodes, 0.0s
+2026-10-16 15:26:12,352 | INFO    | huim_multi | dlulib union z1 C 30%: COMPLETED, 0 APs, 14 nodes, 0.0s
+2026-10-16 15:26:12,365 | INFO    | huim_multi | dlulib union z1 B 3.5%: COMPLETED, 16 APs, 59 nodes, 0.0s
+2026-10-16 15:26:12,388 | INFO    | huim_multi | dlulib union z1 C 20%: COMPLETED, 0 APs, 70 nodes, 0.0s
+2026-10-16 15:26:12,388 | INFO    | huim_multi | dlulib union z1 B 3%: COMPLETED, 17 APs, 63 nodes, 0.0s
+2026-10-16 15:26:12,416 | INFO    | huim_multi | dlulib union z2 A 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:26:12,423 | INFO    | huim_multi | dlulib union z2 A 30%: COMPLETED, 0 APs, 11 nodes, 0.0s
+2026-10-16 15:26:12,442 | INFO    | huim_multi | dlulib union z2 A 20%: COMPLETED, 7 APs, 49 nodes, 0.0s
+2026-10-16 15:26:12,469 | INFO    | huim_multi | dlulib union z2 A 15%: COMPLETED, 8 APs, 74 nodes, 0.0s
+2026-10-16 15:26:12,492 | INFO    | huim_multi | dlulib union z1 C 15%: COMPLETED, 10 APs, 332 nodes, 0.1s
+2026-10-16 15:26:12,505 | INFO    | huim_multi | dlulib union z2 A 10%: COMPLETED, 14 APs, 130 nodes, 0.0s
+2026-10-16 15:26:12,517 | INFO    | huim_multi | dlulib union z2 A 7.5%: COMPLETED, 14 APs, 14 nodes, 0.0s
+2026-10-16 15:26:12,524 | INFO    | huim_multi | dlulib union z1 C 10%: COMPLETED, 15 APs, 63 nodes, 0.0s
+2026-10-16 15:26:12,533 | INFO    | huim_multi | dlulib union z2 A 5%: COMPLETED, 16 APs, 37 nodes, 0.0s
+2026-10-16 15:26:12,542 | INFO    | huim_multi | dlulib union z1 C 7.5%: COMPLETED, 15 APs, 38 nodes, 0.0s
+2026-10-16 15:26:12,546 | INFO    | huim_multi | dlulib union z2 A 4%: COMPLETED, 17 APs, 2 nodes, 0.0s
+2026-10-16 15:26:12,557 | INFO    | huim_multi | dlulib union z1 C 5%: COMPLETED, 17 APs, 5 nodes, 0.0s
+2026-10-16 15:26:12,587 | INFO    | huim_multi | dlulib union z2 B 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:26:12,598 | INFO    | huim_multi | dlulib union z2 C 50%: COMPLETED, 0 APs, 1 nodes, 0.0s
+2026-10-16 15:26:12,603 | INFO    | huim_multi | dlulib union z2 B 30%: COMPLETED, 0 APs, 18 nodes, 0.0s
+2026-10-16 15:26:12,609 | INFO    | huim_multi | dlulib union z2 C 30%: COMPLETED, 0 APs, 9 nodes, 0.0s
+2026-10-16 15:26:12,620 | INFO    | huim_multi | dlulib union z2 C 20%: COMPLETED, 0 APs, 16 nodes, 0.0s
+2026-10-16 15:26:12,635 | INFO    | huim_multi | dlulib union z2 B 20%: COMPLETED, 7 APs, 57 nodes, 0.0s
+2026-10-16 15:26:12,636 | INFO    | huim_multi | dlulib union z2 C 15%: COMPLETED, 6 APs, 52 nodes, 0.0s
+2026-10-16 15:26:12,659 | INFO    | huim_multi | dlulib union z2 C 10%: COMPLETED, 10 APs, 108 nodes, 0.0s
+2026-10-16 15:26:12,663 | INFO    | huim_multi | dlulib union z2 B 15%: COMPLETED, 10 APs, 77 nodes, 0.0s
+2026-10-16 15:26:12,691 | INFO    | huim_multi | dlulib union z2 C 7.5%: COMPLETED, 13 APs, 105 nodes, 0.0s
+2026-10-16 15:26:12,701 | INFO    | huim_multi | dlulib union z2 B 10%: COMPLETED, 14 APs, 153 nodes, 0.0s
+2026-10-16 15:26:12,709 | INFO    | huim_multi | dlulib union z2 B 7.5%: COMPLETED, 14 APs, 9 nodes, 0.0s
+2026-10-16 15:26:12,710 | INFO    | huim_multi | dlulib union z2 C 5%: COMPLETED, 17 APs, 23 nodes, 0.0s
+2026-10-16 15:26:12,725 | INFO    | huim_multi | dlulib union z2 B 5%: COMPLETED, 15 APs, 44 nodes, 0.0s
+2026-10-16 15:26:12,738 | INFO    | huim_multi | dlulib union z2 B 4%: COMPLETED, 16 APs, 20 nodes, 0.0s
+2026-10-16 15:26:12,751 | INFO    | huim_multi | dlulib union z2 B 3.5%: COMPLETED, 17 APs, 21 nodes, 0.0s
+2026-10-16 15:26:13,000 | INFO    | huim_multi | uji_lib3 union z2 C 1.5%: COMPLETED, 68 APs, 4885 nodes, 0.7s
+2026-10-16 15:26:13,884 | INFO    | huim_multi | uji_lib3 union z2 B 0.75%: COMPLETED, 99 APs, 21627 nodes, 2.1s
+2026-10-16 15:26:14,079 | INFO    | huim_multi | uji_lib3 union z2 C 1%: COMPLETED, 78 APs, 11090 nodes, 1.1s
+2026-10-16 15:26:15,133 | INFO    | huim_multi | uji_lib3 union z2 B 0.5%: COMPLETED, 112 APs, 14174 nodes, 1.2s
+2026-10-16 15:26:15,170 | INFO    | huim_multi | uji_lib3 union z2 C 0.75%: COMPLETED, 93 APs, 11666 nodes, 1.1s
+2026-10-16 15:26:15,568 | INFO    | huim_multi | uji_lib3 union z2 C 0.5%: COMPLETED, 105 APs, 3319 nodes, 0.4s
+2026-10-16 15:26:15,872 | INFO    | huim_multi | uji_lib3 union z2 C 0.25%: COMPLETED, 125 APs, 2403 nodes, 0.3s
+2026-10-16 15:26:15,998 | INFO    | huim_multi | uji_lib3 union z2 B 0.25%: COMPLETED, 131 APs, 10793 nodes, 0.9s
+2026-10-16 15:26:16,180 | INFO    | huim_multi | uji_lib3 union z2 C 0.1%: COMPLETED, 151 APs, 2607 nodes, 0.3s
+2026-10-16 15:26:16,382 | INFO    | huim_multi | uji_lib3 union z2 B 0.1%: COMPLETED, 150 APs, 3081 nodes, 0.4s
+2026-10-16 15:26:16,436 | INFO    | huim_multi | uji_lib3 union z2 C 0.05%: COMPLETED, 174 APs, 1578 nodes, 0.3s
+2026-10-16 15:26:16,698 | INFO    | huim_multi | uji_lib3 union z2 B 0.05%: COMPLETED, 173 APs, 1998 nodes, 0.3s
+2026-10-16 15:26:17,254 | INFO    | huim_multi | hcxy union global B 6.777%: COMPLETED, 71 APs, 62041 nodes, 69.5s
+2026-10-16 15:26:18,019 | INFO    | huim_multi | hcxy union z2 A 6.777%: COMPLETED, 64 APs, 95072 nodes, 27.2s
+2026-10-16 15:26:21,744 | INFO    | huim_multi | hcxy union z2 B 7.5%: COMPLETED, 62 APs, 97792 nodes, 31.5s
+2026-10-16 15:26:25,454 | INFO    | huim_multi | hcxy union global A 5%: COMPLETED, 100 APs, 62240 nodes, 67.7s
+2026-10-16 15:26:28,922 | INFO    | huim_multi | hcxy union z1 B 2%: COMPLETED, 87 APs, 257684 nodes, 30.7s
+2026-10-16 15:26:31,279 | INFO    | huim_multi | hcxy union z1 B 1.5%: COMPLETED, 93 APs, 25577 nodes, 2.4s
+2026-10-16 15:26:32,573 | INFO    | huim_multi | hcxy union z2 A 6.1237%: COMPLETED, 73 APs, 77945 nodes, 14.6s
+2026-10-16 15:26:34,851 | INFO    | huim_multi | hcxy union z1 B 1%: COMPLETED, 108 APs, 43080 nodes, 3.6s
+2026-10-16 15:26:35,013 | INFO    | huim_multi | hcxy union z1 B 0.75%: COMPLETED, 119 APs, 1164 nodes, 0.2s
+2026-10-16 15:26:35,235 | INFO    | huim_multi | hcxy union z1 B 0.5%: COMPLETED, 141 APs, 2473 nodes, 0.2s
+2026-10-16 15:26:35,454 | INFO    | huim_multi | hcxy union z1 B 0.25%: COMPLETED, 151 APs, 3546 nodes, 0.2s
+2026-10-16 15:26:35,776 | INFO    | huim_multi | hcxy union z1 B 0.1%: COMPLETED, 163 APs, 4962 nodes, 0.3s
+2026-10-16 15:26:35,917 | INFO    | huim_multi | hcxy union z1 B 0.05%: COMPLETED, 165 APs, 568 nodes, 0.1s
+2026-10-16 15:26:36,819 | INFO    | huim_multi | hcxy union z2 B 6.777%: COMPLETED, 72 APs, 77954 nodes, 15.1s
+2026-10-16 15:26:37,373 | INFO    | huim_multi | hcxy union global A 4%: COMPLETED, 121 APs, 40726 nodes, 11.9s
+2026-10-16 15:26:45,921 | INFO    | huim_multi | hcxy union global C 5%: COMPLETED, 101 APs, 95135 nodes, 101.6s
+2026-10-16 15:26:46,966 | INFO    | huim_multi | hus_dedup R_A__20pct__union                    5 AP  dev 0.405  test 0.391
+2026-10-16 15:26:47,659 | INFO    | huim_multi | hcxy union global A 3%: COMPLETED, 136 APs, 44267 nodes, 10.3s
+2026-10-16 15:26:48,058 | INFO    | huim_multi | hus_dedup R_A__20pct__topn0.5                  3 AP  dev 1.750  test 1.699
+2026-10-16 15:26:49,155 | INFO    | huim_multi | hus_dedup R_A__20pct__topn0.75                 4 AP  dev 0.730  test 0.799
+2026-10-16 15:26:49,192 | INFO    | huim_multi | hus_dedup R_A__20pct__frequent2                5 AP  dev 0.405  test 0.391
+2026-10-16 15:26:49,217 | INFO    | huim_multi | hus_dedup R_A__20pct__frequentmedian           3 AP  dev 1.750  test 1.699
+2026-10-16 15:26:49,609 | INFO    | huim_multi | hcxy union z2 B 6.1237%: COMPLETED, 81 APs, 67255 nodes, 12.8s
+2026-10-16 15:26:50,589 | INFO    | huim_multi | hus_dedup R_A__20pct__weighted0.5              5 AP  dev 0.407  test 0.396
+2026-10-16 15:26:51,773 | INFO    | huim_multi | hus_dedup R_A__20pct__weighted1.0              5 AP  dev 0.409  test 0.398
+2026-10-16 15:26:51,820 | INFO    | huim_multi | hus_dedup step 7 candidates: ['G_A__50pct', 'R_A__20pct__union', 'R_A__20pct__frequent2']
+2026-10-16 15:26:52,392 | INFO    | huim_multi | hcxy union z2 A 5%: COMPLETED, 88 APs, 115565 nodes, 19.8s
+2026-10-16 15:26:54,539 | INFO    | huim_multi | hus_dedup best ensemble: E_mean__G_A__50pct+R_A__20pct__union dev 0.405 test 0.391
+2026-10-16 15:26:56,217 | INFO    | huim_multi | hcxy union z2 A 4%: COMPLETED, 93 APs, 26054 nodes, 3.8s
+2026-10-16 15:26:56,972 | INFO    | huim_multi | hcxy union global C 4%: COMPLETED, 120 APs, 31893 nodes, 11.0s
+2026-10-16 15:26:58,324 | INFO    | huim_multi | hcxy union z2 A 3%: COMPLETED, 107 APs, 17285 nodes, 2.1s
+2026-10-16 15:26:59,122 | INFO    | huim_multi | hcxy union z2 A 2%: COMPLETED, 123 APs, 7438 nodes, 0.8s
+2026-10-16 15:26:59,409 | INFO    | huim_multi | hcxy union z2 A 1.5%: COMPLETED, 130 APs, 1433 nodes, 0.3s
+2026-10-16 15:27:00,075 | INFO    | huim_multi | hcxy union z2 A 1%: COMPLETED, 145 APs, 6248 nodes, 0.7s
+2026-10-16 15:27:00,316 | INFO    | huim_multi | hcxy union z2 A 0.75%: COMPLETED, 154 APs, 883 nodes, 0.2s
+2026-10-16 15:27:00,697 | INFO    | huim_multi | hcxy union z2 A 0.5%: COMPLETED, 183 APs, 3810 nodes, 0.4s
+2026-10-16 15:27:01,176 | INFO    | huim_multi | hcxy union z2 A 0.25%: COMPLETED, 206 APs, 6237 nodes, 0.5s
+2026-10-16 15:27:01,541 | INFO    | huim_multi | hcxy union z2 A 0.1%: COMPLETED, 213 APs, 4679 nodes, 0.4s
+2026-10-16 15:27:01,864 | INFO    | huim_multi | hcxy union z2 A 0.05%: COMPLETED, 218 APs, 3792 nodes, 0.3s
+2026-10-16 15:27:04,590 | INFO    | huim_multi | hcxy union z2 B 5%: COMPLETED, 90 APs, 101445 nodes, 15.0s
+2026-10-16 15:27:04,648 | INFO    | huim_multi | hcxy union global C 3%: COMPLETED, 137 APs, 33172 nodes, 7.7s
+2026-10-16 15:27:09,267 | INFO    | huim_multi | hus_dedup step 7 candidates: ['G_A__50pct']
+2026-10-16 15:27:10,763 | INFO    | huim_multi | hcxy union global B 6.1237%: COMPLETED, 84 APs, 69476 nodes, 53.5s
+2026-10-16 15:27:12,018 | INFO    | huim_multi | hcxy union z2 B 4%: COMPLETED, 94 APs, 57585 nodes, 7.4s
+2026-10-16 15:27:14,066 | INFO    | huim_multi | hcxy union global A 2%: COMPLETED, 167 APs, 160441 nodes, 26.4s
+2026-10-16 15:27:15,126 | INFO    | huim_multi | hcxy union z2 B 3%: COMPLETED, 110 APs, 28817 nodes, 3.1s
+2026-10-16 15:27:16,478 | INFO    | huim_multi | hcxy union z2 B 2%: COMPLETED, 125 APs, 13138 nodes, 1.3s
+2026-10-16 15:27:16,839 | INFO    | huim_multi | hcxy union z2 B 1.5%: COMPLETED, 132 APs, 2608 nodes, 0.4s
+2026-10-16 15:27:17,432 | INFO    | huim_multi | hcxy union global A 1.5%: COMPLETED, 174 APs, 21612 nodes, 3.4s
+2026-10-16 15:27:17,600 | INFO    | huim_multi | hcxy union z2 B 1%: COMPLETED, 150 APs, 7508 nodes, 0.8s
+2026-10-16 15:27:17,764 | INFO    | huim_multi | hcxy union z2 B 0.75%: COMPLETED, 155 APs, 503 nodes, 0.2s
+2026-10-16 15:27:18,036 | INFO    | huim_multi | hcxy union z2 B 0.5%: COMPLETED, 182 APs, 3204 nodes, 0.3s
+2026-10-16 15:27:18,433 | INFO    | huim_multi | hcxy union z2 B 0.25%: COMPLETED, 205 APs, 5880 nodes, 0.4s
+2026-10-16 15:27:18,744 | INFO    | huim_multi | hcxy union z2 B 0.1%: COMPLETED, 213 APs, 5011 nodes, 0.3s
+2026-10-16 15:27:18,977 | INFO    | huim_multi | hcxy union z2 B 0.05%: COMPLETED, 216 APs, 1613 nodes, 0.2s
+2026-10-16 15:27:20,272 | INFO    | huim_multi | hcxy union global A 1%: COMPLETED, 187 APs, 20148 nodes, 2.8s
+2026-10-16 15:27:21,895 | INFO    | huim_multi | hcxy union global A 0.75%: COMPLETED, 200 APs, 10035 nodes, 1.6s
+2026-10-16 15:27:23,625 | INFO    | huim_multi | hcxy union global A 0.5%: COMPLETED, 223 APs, 10858 nodes, 1.7s
+2026-10-16 15:27:23,831 | INFO    | huim_multi | hus_dedup step 7 candidates: ['G_A__50pct', 'R_A__20pct__weighted0.5', 'R_A__20pct__weighted1.0', 'R_A__20pct__topn0.75', 'R_A__20pct__topn0.5']
+2026-10-16 15:27:24,597 | INFO    | huim_multi | hcxy union global A 0.25%: COMPLETED, 280 APs, 5868 nodes, 1.0s
+2026-10-16 15:27:25,679 | INFO    | huim_multi | hcxy union global A 0.1%: COMPLETED, 325 APs, 9133 nodes, 1.1s
+2026-10-16 15:27:26,569 | INFO    | huim_multi | hcxy union global A 0.05%: COMPLETED, 338 APs, 4121 nodes, 0.9s
+2026-10-16 15:27:28,404 | INFO    | huim_multi | hcxy union global C 2%: COMPLETED, 167 APs, 157746 nodes, 23.8s
+2026-10-16 15:27:30,719 | INFO    | huim_multi | hcxy union global C 1.5%: COMPLETED, 173 APs, 15619 nodes, 2.3s
+2026-10-16 15:27:32,148 | INFO    | huim_multi | hcxy union global C 1%: COMPLETED, 187 APs, 10080 nodes, 1.4s
+2026-10-16 15:27:33,405 | INFO    | huim_multi | hcxy union global C 0.75%: COMPLETED, 201 APs, 8398 nodes, 1.3s
+2026-10-16 15:27:34,543 | INFO    | huim_multi | hcxy union global C 0.5%: COMPLETED, 225 APs, 7835 nodes, 1.1s
+2026-10-16 15:27:35,391 | INFO    | huim_multi | hcxy union global C 0.25%: COMPLETED, 278 APs, 5719 nodes, 0.8s
+2026-10-16 15:27:36,368 | INFO    | huim_multi | hcxy union global C 0.1%: COMPLETED, 325 APs, 8449 nodes, 1.0s
+2026-10-16 15:27:37,169 | INFO    | huim_multi | hcxy union global C 0.05%: COMPLETED, 338 APs, 4217 nodes, 0.8s
+2026-10-16 15:27:37,337 | INFO    | huim_multi | hus_dedup best ensemble: E_mean__G_A__50pct+R_A__20pct__weighted0.5 dev 0.406 test 0.393
+2026-10-16 15:27:59,392 | INFO    | huim_multi | dlulib G_A__20pct            12 AP  dev 2.902  test 3.868
+2026-10-16 15:28:00,796 | INFO    | huim_multi | dlulib G_A__15pct            13 AP  dev 2.766  test 3.683
+2026-10-16 15:28:02,716 | INFO    | huim_multi | dlulib G_A__10pct            14 AP  dev 2.673  test 3.597
+2026-10-16 15:28:02,745 | INFO    | huim_multi | dlulib G_A__7.5pct           14 AP  dev 2.673  test 3.597
+2026-10-16 15:28:02,749 | INFO    | huim_multi | dlulib G_A__5pct             14 AP  dev 2.673  test 3.597
+2026-10-16 15:28:02,752 | INFO    | huim_multi | uji_lib3 G_A__10pct            12 AP  dev 2.409  test 2.345
+2026-10-16 15:28:04,806 | INFO    | huim_multi | dlulib G_A__4pct             15 AP  dev 2.595  test 3.551
+2026-10-16 15:28:04,846 | INFO    | huim_multi | dlulib G_A__3.5pct           15 AP  dev 2.595  test 3.551
+2026-10-16 15:28:04,850 | INFO    | huim_multi | dlulib G_A__3pct             15 AP  dev 2.595  test 3.551
+2026-10-16 15:28:05,547 | INFO    | huim_multi | uji_lib3 G_A__7.5pct           21 AP  dev 2.360  test 2.224
+2026-10-16 15:28:07,090 | INFO    | huim_multi | dlulib G_A__2.5pct           16 AP  dev 2.559  test 3.504
+2026-10-16 15:28:07,130 | INFO    | huim_multi | dlulib G_A__2pct             16 AP  dev 2.559  test 3.504
+2026-10-16 15:28:07,133 | INFO    | huim_multi | dlulib G_A__1.5pct           16 AP  dev 2.559  test 3.504
+2026-10-16 15:28:08,823 | INFO    | huim_multi | uji_lib3 G_A__5pct             32 AP  dev 1.749  test 1.658
+2026-10-16 15:28:09,365 | INFO    | huim_multi | dlulib G_A__1pct             17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:09,402 | INFO    | huim_multi | dlulib G_A__0.75pct          17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:09,406 | INFO    | huim_multi | dlulib G_A__0.5pct           17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:09,410 | INFO    | huim_multi | dlulib G_A__0.25pct          17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:09,413 | INFO    | huim_multi | dlulib G_A__0.1pct           17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:09,417 | INFO    | huim_multi | dlulib G_A__0.05pct          17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:11,180 | INFO    | huim_multi | dlulib G_B__30pct            11 AP  dev 3.110  test 4.235
+2026-10-16 15:28:11,217 | INFO    | huim_multi | dlulib G_B__20pct            13 AP  dev 2.766  test 3.683
+2026-10-16 15:28:11,221 | INFO    | huim_multi | dlulib G_B__15pct            13 AP  dev 2.766  test 3.683
+2026-10-16 15:28:11,225 | INFO    | huim_multi | dlulib G_B__10pct            14 AP  dev 2.673  test 3.597
+2026-10-16 15:28:11,229 | INFO    | huim_multi | dlulib G_B__7.5pct           14 AP  dev 2.673  test 3.597
+2026-10-16 15:28:11,234 | INFO    | huim_multi | dlulib G_B__5pct             14 AP  dev 2.673  test 3.597
+2026-10-16 15:28:11,238 | INFO    | huim_multi | dlulib G_B__4pct             15 AP  dev 2.595  test 3.551
+2026-10-16 15:28:11,243 | INFO    | huim_multi | dlulib G_B__3.5pct           15 AP  dev 2.595  test 3.551
+2026-10-16 15:28:11,247 | INFO    | huim_multi | dlulib G_B__3pct             15 AP  dev 2.595  test 3.551
+2026-10-16 15:28:11,252 | INFO    | huim_multi | dlulib G_B__2.5pct           15 AP  dev 2.595  test 3.551
+2026-10-16 15:28:11,256 | INFO    | huim_multi | dlulib G_B__2pct             16 AP  dev 2.559  test 3.504
+2026-10-16 15:28:11,259 | INFO    | huim_multi | dlulib G_B__1.5pct           16 AP  dev 2.559  test 3.504
+2026-10-16 15:28:11,264 | INFO    | huim_multi | dlulib G_B__1pct             17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:11,268 | INFO    | huim_multi | dlulib G_B__0.75pct          17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:11,272 | INFO    | huim_multi | dlulib G_B__0.5pct           17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:11,275 | INFO    | huim_multi | dlulib G_B__0.25pct          17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:11,279 | INFO    | huim_multi | dlulib G_B__0.1pct           17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:11,283 | INFO    | huim_multi | dlulib G_B__0.05pct          17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:12,892 | INFO    | huim_multi | dlulib G_C__30pct             6 AP  dev 4.887  test 6.061
+2026-10-16 15:28:12,953 | INFO    | huim_multi | uji_lib3 G_A__4pct             43 AP  dev 1.653  test 1.574
+2026-10-16 15:28:14,708 | INFO    | huim_multi | dlulib G_C__20pct            12 AP  dev 2.902  test 3.868
+2026-10-16 15:28:16,609 | INFO    | huim_multi | dlulib G_C__15pct            13 AP  dev 2.766  test 3.683
+2026-10-16 15:28:17,144 | INFO    | huim_multi | uji_lib3 G_A__3.5pct           45 AP  dev 1.626  test 1.527
+2026-10-16 15:28:18,702 | INFO    | huim_multi | dlulib G_C__10pct            14 AP  dev 2.673  test 3.597
+2026-10-16 15:28:18,741 | INFO    | huim_multi | dlulib G_C__7.5pct           14 AP  dev 2.673  test 3.597
+2026-10-16 15:28:18,745 | INFO    | huim_multi | dlulib G_C__5pct             14 AP  dev 2.673  test 3.597
+2026-10-16 15:28:20,776 | INFO    | huim_multi | dlulib G_C__4pct             15 AP  dev 2.595  test 3.551
+2026-10-16 15:28:20,806 | INFO    | huim_multi | dlulib G_C__3.5pct           15 AP  dev 2.595  test 3.551
+2026-10-16 15:28:20,811 | INFO    | huim_multi | dlulib G_C__3pct             15 AP  dev 2.595  test 3.551
+2026-10-16 15:28:21,735 | INFO    | huim_multi | uji_lib3 G_A__3pct             49 AP  dev 1.584  test 1.483
+2026-10-16 15:28:23,049 | INFO    | huim_multi | dlulib G_C__2.5pct           16 AP  dev 2.559  test 3.504
+2026-10-16 15:28:25,292 | INFO    | huim_multi | dlulib G_C__2pct             17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:25,319 | INFO    | huim_multi | dlulib G_C__1.5pct           17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:25,324 | INFO    | huim_multi | dlulib G_C__1pct             17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:25,328 | INFO    | huim_multi | dlulib G_C__0.75pct          17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:25,332 | INFO    | huim_multi | dlulib G_C__0.5pct           17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:25,335 | INFO    | huim_multi | dlulib G_C__0.25pct          17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:25,338 | INFO    | huim_multi | dlulib G_C__0.1pct           17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:25,341 | INFO    | huim_multi | dlulib G_C__0.05pct          17 AP  dev 2.540  test 3.433
+2026-10-16 15:28:27,063 | INFO    | huim_multi | uji_lib3 G_A__2.5pct           61 AP  dev 1.470  test 1.358
+2026-10-16 15:28:28,807 | INFO    | huim_multi | dlulib Z_A__20pct            14 AP  dev 2.804  test 3.686
+2026-10-16 15:28:31,975 | INFO    | huim_multi | dlulib Z_A__15pct            14 AP  dev 2.783  test 3.654
+2026-10-16 15:28:33,038 | INFO    | huim_multi | uji_lib3 G_A__2pct             67 AP  dev 1.455  test 1.349
+2026-10-16 15:28:35,526 | INFO    | huim_multi | dlulib Z_A__10pct            15 AP  dev 2.625  test 3.606
+2026-10-16 15:28:38,831 | INFO    | huim_multi | dlulib Z_A__7.5pct           16 AP  dev 2.613  test 3.626
+2026-10-16 15:28:39,620 | INFO    | huim_multi | uji_lib3 G_A__1.5pct           72 AP  dev 1.387  test 1.245
+2026-10-16 15:28:42,374 | INFO    | huim_multi | dlulib Z_A__5pct             17 AP  dev 2.570  test 3.496
+2026-10-16 15:28:46,115 | INFO    | huim_multi | dlulib Z_A__4pct             17 AP  dev 2.550  test 3.456
+2026-10-16 15:28:46,905 | INFO    | huim_multi | uji_lib3 G_A__1pct             83 AP  dev 1.349  test 1.206
+2026-10-16 15:28:49,689 | INFO    | huim_multi | dlulib Z_A__3.5pct           17 AP  dev 2.539  test 3.434
+2026-10-16 15:28:49,755 | INFO    | huim_multi | dlulib Z_A__3pct             17 AP  dev 2.539  test 3.434
+2026-10-16 15:28:49,762 | INFO    | huim_multi | dlulib Z_A__2.5pct           17 AP  dev 2.539  test 3.434
+2026-10-16 15:28:49,771 | INFO    | huim_multi | dlulib Z_A__2pct             17 AP  dev 2.539  test 3.434
+2026-10-16 15:28:49,780 | INFO    | huim_multi | dlulib Z_A__1.5pct           17 AP  dev 2.539  test 3.434
+2026-10-16 15:28:49,789 | INFO    | huim_multi | dlulib Z_A__1pct             17 AP  dev 2.539  test 3.434
+2026-10-16 15:28:49,797 | INFO    | huim_multi | dlulib Z_A__0.75pct          17 AP  dev 2.539  test 3.434
+2026-10-16 15:28:49,807 | INFO    | huim_multi | dlulib Z_A__0.5pct           17 AP  dev 2.539  test 3.434
+2026-10-16 15:28:53,108 | INFO    | huim_multi | dlulib Z_A__0.25pct          17 AP  dev 2.539  test 3.432
+2026-10-16 15:28:54,889 | INFO    | huim_multi | uji_lib3 G_A__0.75pct          93 AP  dev 1.341  test 1.196
+2026-10-16 15:28:56,966 | INFO    | huim_multi | dlulib Z_A__0.1pct           17 AP  dev 2.539  test 3.433
+2026-10-16 15:28:57,003 | INFO    | huim_multi | dlulib Z_A__0.05pct          17 AP  dev 2.539  test 3.433
+2026-10-16 15:29:00,104 | INFO    | huim_multi | dlulib Z_B__20pct            14 AP  dev 2.804  test 3.686
+2026-10-16 15:29:03,604 | INFO    | huim_multi | dlulib Z_B__15pct            14 AP  dev 2.737  test 3.639
+2026-10-16 15:29:03,653 | INFO    | huim_multi | uji_lib3 G_A__0.5pct          104 AP  dev 1.341  test 1.197
+2026-10-16 15:29:06,954 | INFO    | huim_multi | dlulib Z_B__10pct            15 AP  dev 2.625  test 3.606
+2026-10-16 15:29:06,995 | INFO    | huim_multi | dlulib Z_B__7.5pct           15 AP  dev 2.625  test 3.606
+2026-10-16 15:29:10,201 | INFO    | huim_multi | dlulib Z_B__5pct             16 AP  dev 2.591  test 3.580
+2026-10-16 15:29:14,049 | INFO    | huim_multi | uji_lib3 G_A__0.25pct         125 AP  dev 1.347  test 1.204
+2026-10-16 15:29:14,097 | INFO    | huim_multi | dlulib Z_B__4pct             17 AP  dev 2.570  test 3.496
+2026-10-16 15:29:17,657 | INFO    | huim_multi | dlulib Z_B__3.5pct           17 AP  dev 2.550  test 3.456
+2026-10-16 15:29:21,111 | INFO    | huim_multi | dlulib Z_B__3pct             17 AP  dev 2.539  test 3.434
+2026-10-16 15:29:21,148 | INFO    | huim_multi | dlulib Z_B__2.5pct           17 AP  dev 2.539  test 3.434
+2026-10-16 15:29:21,155 | INFO    | huim_multi | dlulib Z_B__2pct             17 AP  dev 2.539  test 3.434
+2026-10-16 15:29:21,161 | INFO    | huim_multi | dlulib Z_B__1.5pct           17 AP  dev 2.539  test 3.434
+2026-10-16 15:29:21,169 | INFO    | huim_multi | dlulib Z_B__1pct             17 AP  dev 2.539  test 3.434
+2026-10-16 15:29:21,177 | INFO    | huim_multi | dlulib Z_B__0.75pct          17 AP  dev 2.539  test 3.434
+2026-10-16 15:29:21,182 | INFO    | huim_multi | dlulib Z_B__0.5pct           17 AP  dev 2.539  test 3.434
+2026-10-16 15:29:24,924 | INFO    | huim_multi | dlulib Z_B__0.25pct          17 AP  dev 2.539  test 3.432
+2026-10-16 15:29:26,803 | INFO    | huim_multi | uji_lib3 G_A__0.1pct          160 AP  dev 1.347  test 1.206
+2026-10-16 15:29:28,701 | INFO    | huim_multi | dlulib Z_B__0.1pct           17 AP  dev 2.539  test 3.433
+2026-10-16 15:29:28,762 | INFO    | huim_multi | dlulib Z_B__0.05pct          17 AP  dev 2.539  test 3.433
+2026-10-16 15:29:31,460 | INFO    | huim_multi | dlulib Z_C__15pct            14 AP  dev 2.955  test 3.899
+2026-10-16 15:29:34,962 | INFO    | huim_multi | dlulib Z_C__10pct            15 AP  dev 2.668  test 3.634
+2026-10-16 15:29:38,519 | INFO    | huim_multi | dlulib Z_C__7.5pct           15 AP  dev 2.631  test 3.613
+2026-10-16 15:29:41,793 | INFO    | huim_multi | uji_lib3 G_A__0.05pct         197 AP  dev 1.352  test 1.208
+2026-10-16 15:29:42,174 | INFO    | huim_multi | dlulib Z_C__5pct             17 AP  dev 2.547  test 3.443
+2026-10-16 15:29:42,218 | INFO    | huim_multi | dlulib Z_C__4pct             17 AP  dev 2.547  test 3.443
+2026-10-16 15:29:43,630 | INFO    | huim_multi | uji_lib3 G_B__20pct             8 AP  dev 2.898  test 2.846
+2026-10-16 15:29:43,665 | INFO    | huim_multi | uji_lib3 G_B__15pct            12 AP  dev 2.409  test 2.345
+2026-10-16 15:29:45,672 | INFO    | huim_multi | dlulib Z_C__3.5pct           17 AP  dev 2.539  test 3.434
+2026-10-16 15:29:45,705 | INFO    | huim_multi | dlulib Z_C__3pct             17 AP  dev 2.539  test 3.434
+2026-10-16 15:29:45,712 | INFO    | huim_multi | dlulib Z_C__2.5pct           17 AP  dev 2.539  test 3.434
+2026-10-16 15:29:45,721 | INFO    | huim_multi | dlulib Z_C__2pct             17 AP  dev 2.539  test 3.434
+2026-10-16 15:29:45,729 | INFO    | huim_multi | dlulib Z_C__1.5pct           17 AP  dev 2.539  test 3.434
+2026-10-16 15:29:45,737 | INFO    | huim_multi | dlulib Z_C__1pct             17 AP  dev 2.539  test 3.434
+2026-10-16 15:29:45,743 | INFO    | huim_multi | dlulib Z_C__0.75pct          17 AP  dev 2.539  test 3.434
+2026-10-16 15:29:45,750 | INFO    | huim_multi | dlulib Z_C__0.5pct           17 AP  dev 2.539  test 3.434
+2026-10-16 15:29:45,756 | INFO    | huim_multi | dlulib Z_C__0.25pct          17 AP  dev 2.539  test 3.434
+2026-10-16 15:29:46,490 | INFO    | huim_multi | uji_lib3 G_B__10pct            23 AP  dev 2.257  test 2.128
+2026-10-16 15:29:49,533 | INFO    | huim_multi | dlulib Z_C__0.1pct           17 AP  dev 2.539  test 3.433
+2026-10-16 15:29:49,566 | INFO    | huim_multi | dlulib Z_C__0.05pct          17 AP  dev 2.539  test 3.433
+2026-10-16 15:29:49,808 | INFO    | huim_multi | uji_lib3 G_B__7.5pct           31 AP  dev 1.765  test 1.679
+2026-10-16 15:29:53,447 | INFO    | huim_multi | uji_lib3 G_B__5pct             43 AP  dev 1.623  test 1.547
+2026-10-16 15:29:58,437 | INFO    | huim_multi | uji_lib3 G_B__4pct             51 AP  dev 1.552  test 1.452
+2026-10-16 15:30:03,178 | INFO    | huim_multi | uji_lib3 G_B__3.5pct           58 AP  dev 1.475  test 1.373
+2026-10-16 15:30:08,492 | INFO    | huim_multi | uji_lib3 G_B__3pct             60 AP  dev 1.477  test 1.377
+2026-10-16 15:30:13,941 | INFO    | huim_multi | uji_lib3 G_B__2.5pct           66 AP  dev 1.455  test 1.347
+2026-10-16 15:30:20,640 | INFO    | huim_multi | uji_lib3 G_B__2pct             72 AP  dev 1.387  test 1.258
+2026-10-16 15:30:26,836 | INFO    | huim_multi | dlulib step 5: powed+braycurtis, k=7, w=1/d^4 -> powed+braycurtis, k=7, w=1/d^4 (on Z_A__0.25pct, 17 AP, 37s)
+2026-10-16 15:30:28,019 | INFO    | huim_multi | uji_lib3 G_B__1.5pct           82 AP  dev 1.355  test 1.219
+2026-10-16 15:30:29,139 | INFO    | huim_multi | dlulib R_C__2pct__union                    17 AP  dev 2.540  test 3.433
+2026-10-16 15:30:30,743 | INFO    | huim_multi | dlulib R_C__2pct__topn0.5                   9 AP  dev 3.811  test 5.019
+2026-10-16 15:30:32,709 | INFO    | huim_multi | dlulib R_C__2pct__topn0.75                 13 AP  dev 2.766  test 3.683
+2026-10-16 15:30:32,737 | INFO    | huim_multi | dlulib R_C__2pct__frequent2                17 AP  dev 2.540  test 3.433
+2026-10-16 15:30:34,547 | INFO    | huim_multi | dlulib R_C__2pct__frequentmedian            9 AP  dev 3.985  test 4.962
+2026-10-16 15:30:35,724 | INFO    | huim_multi | uji_lib3 G_B__1pct             88 AP  dev 1.334  test 1.196
+2026-10-16 15:30:37,133 | INFO    | huim_multi | dlulib R_C__2pct__weighted0.5              17 AP  dev 2.622  test 3.522
+2026-10-16 15:30:39,403 | INFO    | huim_multi | dlulib R_C__2pct__weighted1.0              17 AP  dev 2.676  test 3.595
+2026-10-16 15:30:39,451 | INFO    | huim_multi | dlulib step 7 candidates: ['Z_A__0.25pct', 'Z_C__3.5pct', 'G_A__1pct', 'R_C__2pct__weighted0.5', 'R_C__2pct__weighted1.0', 'R_C__2pct__topn0.75']
+2026-10-16 15:30:43,262 | INFO    | huim_multi | uji_lib3 G_B__0.75pct          96 AP  dev 1.338  test 1.198
+2026-10-16 15:30:50,927 | INFO    | huim_multi | uji_lib3 G_B__0.5pct          108 AP  dev 1.347  test 1.200
+2026-10-16 15:30:59,859 | INFO    | huim_multi | uji_lib3 G_B__0.25pct         128 AP  dev 1.347  test 1.204
+2026-10-16 15:31:07,042 | INFO    | huim_multi | dlulib best ensemble: E_mean__Z_A__0.25pct+G_A__1pct dev 2.537 test 3.432
+2026-10-16 15:31:10,830 | INFO    | huim_multi | uji_lib3 G_B__0.1pct          163 AP  dev 1.351  test 1.206
+2026-10-16 15:31:23,236 | INFO    | huim_multi | uji_lib3 G_B__0.05pct         191 AP  dev 1.353  test 1.208
+2026-10-16 15:31:25,016 | INFO    | huim_multi | uji_lib3 G_C__10pct            16 AP  dev 2.361  test 2.277
+2026-10-16 15:31:26,921 | INFO    | huim_multi | uji_lib3 G_C__7.5pct           18 AP  dev 2.353  test 2.252
+2026-10-16 15:31:29,586 | INFO    | huim_multi | uji_lib3 G_C__5pct             31 AP  dev 1.978  test 1.859
+2026-10-16 15:31:32,567 | INFO    | huim_multi | uji_lib3 G_C__4pct             37 AP  dev 1.773  test 1.672
+2026-10-16 15:31:36,036 | INFO    | huim_multi | uji_lib3 G_C__3.5pct           46 AP  dev 1.612  test 1.526
+2026-10-16 15:31:39,844 | INFO    | huim_multi | uji_lib3 G_C__3pct             52 AP  dev 1.580  test 1.476
+2026-10-16 15:31:43,961 | INFO    | huim_multi | uji_lib3 G_C__2.5pct           56 AP  dev 1.476  test 1.393
+2026-10-16 15:31:48,936 | INFO    | huim_multi | uji_lib3 G_C__2pct             68 AP  dev 1.454  test 1.345
+2026-10-16 15:31:54,326 | INFO    | huim_multi | uji_lib3 G_C__1.5pct           74 AP  dev 1.375  test 1.250
+2026-10-16 15:31:57,047 | INFO    | huim_multi | hcxy union global B 5%: COMPLETED, 109 APs, 224099 nodes, 286.3s
+2026-10-16 15:32:00,070 | INFO    | huim_multi | uji_lib3 G_C__1pct             80 AP  dev 1.355  test 1.226
+2026-10-16 15:32:06,431 | INFO    | huim_multi | uji_lib3 G_C__0.75pct          90 AP  dev 1.351  test 1.206
+2026-10-16 15:32:13,554 | INFO    | huim_multi | uji_lib3 G_C__0.5pct          104 AP  dev 1.342  test 1.197
+2026-10-16 15:32:20,292 | INFO    | huim_multi | hcxy union global B 4%: COMPLETED, 122 APs, 55854 nodes, 23.2s
+2026-10-16 15:32:21,731 | INFO    | huim_multi | uji_lib3 G_C__0.25pct         122 AP  dev 1.351  test 1.201
+2026-10-16 15:32:31,807 | INFO    | huim_multi | uji_lib3 G_C__0.1pct          153 AP  dev 1.346  test 1.207
+2026-10-16 15:32:44,657 | INFO    | huim_multi | uji_lib3 G_C__0.05pct         198 AP  dev 1.352  test 1.208
+2026-10-16 15:32:47,900 | INFO    | huim_multi | uji_lib3 Z_A__15pct            18 AP  dev 2.398  test 2.298
+2026-10-16 15:32:52,253 | INFO    | huim_multi | uji_lib3 Z_A__10pct            32 AP  dev 1.864  test 1.776
+2026-10-16 15:32:57,431 | INFO    | huim_multi | uji_lib3 Z_A__7.5pct           43 AP  dev 1.637  test 1.575
+2026-10-16 15:33:02,906 | INFO    | huim_multi | hcxy union global B 3%: COMPLETED, 144 APs, 261198 nodes, 42.6s
+2026-10-16 15:33:04,194 | INFO    | huim_multi | uji_lib3 Z_A__5pct             63 AP  dev 1.469  test 1.353
+2026-10-16 15:33:11,501 | INFO    | huim_multi | uji_lib3 Z_A__4pct             70 AP  dev 1.443  test 1.324
+2026-10-16 15:33:19,153 | INFO    | huim_multi | uji_lib3 Z_A__3.5pct           75 AP  dev 1.372  test 1.235
+2026-10-16 15:33:24,962 | INFO    | huim_multi | hcxy union global B 2%: COMPLETED, 170 APs, 163514 nodes, 22.1s
+2026-10-16 15:33:26,945 | INFO    | huim_multi | uji_lib3 Z_A__3pct             75 AP  dev 1.377  test 1.236
+2026-10-16 15:33:32,402 | INFO    | huim_multi | hcxy union global B 1.5%: COMPLETED, 179 APs, 61018 nodes, 7.4s
+2026-10-16 15:33:35,319 | INFO    | huim_multi | uji_lib3 Z_A__2.5pct           80 AP  dev 1.358  test 1.220
+2026-10-16 15:33:38,006 | INFO    | huim_multi | hcxy union global B 1%: COMPLETED, 192 APs, 55865 nodes, 5.6s
+2026-10-16 15:33:39,454 | INFO    | huim_multi | hcxy union global B 0.75%: COMPLETED, 202 APs, 10487 nodes, 1.4s
+2026-10-16 15:33:42,701 | INFO    | huim_multi | hcxy union global B 0.5%: COMPLETED, 224 APs, 33809 nodes, 3.2s
+2026-10-16 15:33:43,873 | INFO    | huim_multi | hcxy union global B 0.25%: COMPLETED, 278 APs, 8870 nodes, 1.2s
+2026-10-16 15:33:43,941 | INFO    | huim_multi | uji_lib3 Z_A__2pct             83 AP  dev 1.337  test 1.200
+2026-10-16 15:33:45,054 | INFO    | huim_multi | hcxy union global B 0.1%: COMPLETED, 323 APs, 10005 nodes, 1.2s
+2026-10-16 15:33:45,901 | INFO    | huim_multi | hcxy union global B 0.05%: COMPLETED, 338 APs, 4232 nodes, 0.8s
+2026-10-16 15:33:53,576 | INFO    | huim_multi | uji_lib3 Z_A__1.5pct           89 AP  dev 1.329  test 1.192
+2026-10-16 15:34:03,831 | INFO    | huim_multi | uji_lib3 Z_A__1pct            109 AP  dev 1.319  test 1.166
+2026-10-16 15:34:14,818 | INFO    | huim_multi | uji_lib3 Z_A__0.75pct         116 AP  dev 1.318  test 1.178
+2026-10-16 15:34:26,699 | INFO    | huim_multi | uji_lib3 Z_A__0.5pct          127 AP  dev 1.324  test 1.174
+2026-10-16 15:34:41,398 | INFO    | huim_multi | uji_lib3 Z_A__0.25pct         167 AP  dev 1.324  test 1.171
+2026-10-16 15:35:00,304 | INFO    | huim_multi | uji_lib3 Z_A__0.1pct          229 AP  dev 1.327  test 1.167
+2026-10-16 15:35:12,317 | INFO    | huim_multi | union check: 128/128 identical
+2026-10-16 15:35:21,541 | INFO    | huim_multi | hcxy G_A__7.5pct           20 AP  dev 33.437  test 30.556
+2026-10-16 15:35:22,940 | INFO    | huim_multi | hcxy G_A__6.777pct         31 AP  dev 8.496  test 7.541
+2026-10-16 15:35:23,375 | INFO    | huim_multi | uji_lib3 Z_A__0.05pct         272 AP  dev 1.330  test 1.168
+2026-10-16 15:35:25,591 | INFO    | huim_multi | hcxy G_A__6.1237pct        67 AP  dev 2.091  test 2.119
+2026-10-16 15:35:26,124 | INFO    | huim_multi | uji_lib3 Z_B__30pct             9 AP  dev 2.952  test 2.926
+2026-10-16 15:35:29,285 | INFO    | huim_multi | hcxy G_A__5pct            100 AP  dev 1.574  test 1.789
+2026-10-16 15:35:29,930 | INFO    | huim_multi | uji_lib3 Z_B__20pct            20 AP  dev 2.041  test 1.923
+2026-10-16 15:35:33,686 | INFO    | huim_multi | hcxy G_A__4pct            121 AP  dev 1.489  test 1.658
+2026-10-16 15:35:34,849 | INFO    | huim_multi | uji_lib3 Z_B__15pct            32 AP  dev 1.780  test 1.686
+2026-10-16 15:35:38,828 | INFO    | huim_multi | hcxy G_A__3pct            136 AP  dev 1.473  test 1.603
+2026-10-16 15:35:41,236 | INFO    | huim_multi | uji_lib3 Z_B__10pct            49 AP  dev 1.507  test 1.456
+2026-10-16 15:35:44,727 | INFO    | huim_multi | hcxy G_A__2pct            167 AP  dev 1.415  test 1.596
+2026-10-16 15:35:48,550 | INFO    | huim_multi | uji_lib3 Z_B__7.5pct           61 AP  dev 1.463  test 1.345
+2026-10-16 15:35:50,927 | INFO    | huim_multi | hcxy G_A__1.5pct          174 AP  dev 1.405  test 1.580
+2026-10-16 15:35:57,261 | INFO    | huim_multi | uji_lib3 Z_B__5pct             74 AP  dev 1.384  test 1.248
+2026-10-16 15:35:57,364 | INFO    | huim_multi | hcxy G_A__1pct            187 AP  dev 1.399  test 1.568
+2026-10-16 15:36:04,164 | INFO    | huim_multi | hcxy G_A__0.75pct         200 AP  dev 1.405  test 1.556
+2026-10-16 15:36:06,125 | INFO    | huim_multi | uji_lib3 Z_B__4pct             77 AP  dev 1.365  test 1.238
+2026-10-16 15:36:11,668 | INFO    | huim_multi | hcxy G_A__0.5pct          223 AP  dev 1.407  test 1.544
+2026-10-16 15:36:15,325 | INFO    | huim_multi | uji_lib3 Z_B__3.5pct           80 AP  dev 1.353  test 1.220
+2026-10-16 15:36:20,985 | INFO    | huim_multi | hcxy G_A__0.25pct         280 AP  dev 1.412  test 1.542
+2026-10-16 15:36:25,042 | INFO    | huim_multi | uji_lib3 Z_B__3pct             85 AP  dev 1.338  test 1.196
+2026-10-16 15:36:31,636 | INFO    | huim_multi | hcxy G_A__0.1pct          325 AP  dev 1.413  test 1.546
+2026-10-16 15:36:35,312 | INFO    | huim_multi | uji_lib3 Z_B__2.5pct           88 AP  dev 1.334  test 1.193
+2026-10-16 15:36:42,845 | INFO    | huim_multi | hcxy G_A__0.05pct         338 AP  dev 1.413  test 1.547
+2026-10-16 15:36:45,349 | INFO    | huim_multi | hcxy G_B__7.5pct           58 AP  dev 2.126  test 2.254
+2026-10-16 15:36:46,042 | INFO    | huim_multi | uji_lib3 Z_B__2pct             92 AP  dev 1.331  test 1.194
+2026-10-16 15:36:48,058 | INFO    | huim_multi | hcxy G_B__6.777pct         71 AP  dev 1.924  test 2.118
+2026-10-16 15:36:51,380 | INFO    | huim_multi | hcxy G_B__6.1237pct        84 AP  dev 1.741  test 1.922
+2026-10-16 15:36:55,441 | INFO    | huim_multi | hcxy G_B__5pct            109 AP  dev 1.553  test 1.777
+2026-10-16 15:36:57,616 | INFO    | huim_multi | uji_lib3 Z_B__1.5pct          101 AP  dev 1.328  test 1.167
+2026-10-16 15:36:59,893 | INFO    | huim_multi | hcxy G_B__4pct            122 AP  dev 1.491  test 1.647
+2026-10-16 15:37:05,006 | INFO    | huim_multi | hcxy G_B__3pct            144 AP  dev 1.433  test 1.579
+2026-10-16 15:37:10,592 | INFO    | huim_multi | uji_lib3 Z_B__1pct            117 AP  dev 1.322  test 1.177
+2026-10-16 15:37:10,934 | INFO    | huim_multi | hcxy G_B__2pct            170 AP  dev 1.405  test 1.583
+2026-10-16 15:37:17,170 | INFO    | huim_multi | hcxy G_B__1.5pct          179 AP  dev 1.406  test 1.580
+2026-10-16 15:37:23,750 | INFO    | huim_multi | hcxy G_B__1pct            192 AP  dev 1.400  test 1.562
+2026-10-16 15:37:24,367 | INFO    | huim_multi | uji_lib3 Z_B__0.75pct         125 AP  dev 1.326  test 1.178
+2026-10-16 15:37:30,662 | INFO    | huim_multi | hcxy G_B__0.75pct         202 AP  dev 1.404  test 1.571
+2026-10-16 15:37:38,204 | INFO    | huim_multi | hcxy G_B__0.5pct          224 AP  dev 1.408  test 1.545
+2026-10-16 15:37:39,140 | INFO    | huim_multi | uji_lib3 Z_B__0.5pct          138 AP  dev 1.325  test 1.175
+2026-10-16 15:37:47,411 | INFO    | huim_multi | hcxy G_B__0.25pct         278 AP  dev 1.412  test 1.542
+2026-10-16 15:37:57,488 | INFO    | huim_multi | uji_lib3 Z_B__0.25pct         176 AP  dev 1.329  test 1.171
+2026-10-16 15:37:58,108 | INFO    | huim_multi | hcxy G_B__0.1pct          323 AP  dev 1.413  test 1.546
+2026-10-16 15:38:08,970 | INFO    | huim_multi | hcxy G_B__0.05pct         338 AP  dev 1.413  test 1.547
+2026-10-16 15:38:09,958 | INFO    | huim_multi | hcxy G_C__10pct            18 AP  dev 40.614  test 34.602
+2026-10-16 15:38:11,056 | INFO    | huim_multi | hcxy G_C__7.5pct           22 AP  dev 32.621  test 30.518
+2026-10-16 15:38:12,387 | INFO    | huim_multi | hcxy G_C__6.777pct         26 AP  dev 32.066  test 30.270
+2026-10-16 15:38:15,183 | INFO    | huim_multi | hcxy G_C__6.1237pct        69 AP  dev 1.976  test 2.180
+2026-10-16 15:38:18,966 | INFO    | huim_multi | hcxy G_C__5pct            101 AP  dev 1.576  test 1.804
+2026-10-16 15:38:19,717 | INFO    | huim_multi | uji_lib3 Z_B__0.1pct          227 AP  dev 1.329  test 1.167
+2026-10-16 15:38:23,378 | INFO    | huim_multi | hcxy G_C__4pct            120 AP  dev 1.488  test 1.663
+2026-10-16 15:38:28,131 | INFO    | huim_multi | hcxy G_C__3pct            137 AP  dev 1.471  test 1.596
+2026-10-16 15:38:33,749 | INFO    | huim_multi | hcxy G_C__2pct            167 AP  dev 1.415  test 1.596
+2026-10-16 15:38:39,637 | INFO    | huim_multi | hcxy G_C__1.5pct          173 AP  dev 1.405  test 1.572
+2026-10-16 15:38:45,906 | INFO    | huim_multi | uji_lib3 Z_B__0.05pct         276 AP  dev 1.331  test 1.168
+2026-10-16 15:38:45,922 | INFO    | huim_multi | hcxy G_C__1pct            187 AP  dev 1.399  test 1.584
+2026-10-16 15:38:50,339 | INFO    | huim_multi | uji_lib3 Z_C__10pct            28 AP  dev 2.200  test 2.102
+2026-10-16 15:38:52,755 | INFO    | huim_multi | hcxy G_C__0.75pct         201 AP  dev 1.401  test 1.553
+2026-10-16 15:38:56,061 | INFO    | huim_multi | uji_lib3 Z_C__7.5pct           46 AP  dev 1.647  test 1.621
+2026-10-16 15:39:00,310 | INFO    | huim_multi | hcxy G_C__0.5pct          225 AP  dev 1.407  test 1.547
+2026-10-16 15:39:03,556 | INFO    | huim_multi | uji_lib3 Z_C__5pct             67 AP  dev 1.407  test 1.284
+2026-10-16 15:39:09,450 | INFO    | huim_multi | hcxy G_C__0.25pct         278 AP  dev 1.412  test 1.542
+2026-10-16 15:39:11,905 | INFO    | huim_multi | uji_lib3 Z_C__4pct             73 AP  dev 1.390  test 1.266
+2026-10-16 15:39:20,168 | INFO    | huim_multi | hcxy G_C__0.1pct          325 AP  dev 1.413  test 1.546
+2026-10-16 15:39:20,572 | INFO    | huim_multi | uji_lib3 Z_C__3.5pct           76 AP  dev 1.376  test 1.238
+2026-10-16 15:39:29,246 | INFO    | huim_multi | uji_lib3 Z_C__3pct             77 AP  dev 1.378  test 1.232
+2026-10-16 15:39:31,213 | INFO    | huim_multi | hcxy G_C__0.05pct         338 AP  dev 1.413  test 1.547
+2026-10-16 15:39:34,937 | INFO    | huim_multi | hcxy Z_A__15pct            68 AP  dev 2.471  test 2.404
+2026-10-16 15:39:38,242 | INFO    | huim_multi | uji_lib3 Z_C__2.5pct           79 AP  dev 1.376  test 1.233
+2026-10-16 15:39:40,485 | INFO    | huim_multi | hcxy Z_A__10pct           110 AP  dev 1.681  test 1.854
+2026-10-16 15:39:47,337 | INFO    | huim_multi | hcxy Z_A__7.5pct          137 AP  dev 1.507  test 1.656
+2026-10-16 15:39:47,998 | INFO    | huim_multi | uji_lib3 Z_C__2pct             85 AP  dev 1.355  test 1.215
+2026-10-16 15:39:54,530 | INFO    | huim_multi | hcxy Z_A__6.777pct        147 AP  dev 1.484  test 1.653
+2026-10-16 15:39:58,862 | INFO    | huim_multi | uji_lib3 Z_C__1.5pct           97 AP  dev 1.334  test 1.194
+2026-10-16 15:40:02,055 | INFO    | huim_multi | hcxy Z_A__6.1237pct       156 AP  dev 1.462  test 1.689
+2026-10-16 15:40:10,188 | INFO    | huim_multi | hcxy Z_A__5pct            169 AP  dev 1.442  test 1.653
+2026-10-16 15:40:10,519 | INFO    | huim_multi | uji_lib3 Z_C__1pct            105 AP  dev 1.327  test 1.170
+2026-10-16 15:40:18,555 | INFO    | huim_multi | hcxy Z_A__4pct            176 AP  dev 1.435  test 1.641
+2026-10-16 15:40:22,884 | INFO    | huim_multi | uji_lib3 Z_C__0.75pct         113 AP  dev 1.326  test 1.170
+2026-10-16 15:40:27,503 | INFO    | huim_multi | hcxy Z_A__3pct            187 AP  dev 1.422  test 1.617
+2026-10-16 15:40:36,694 | INFO    | huim_multi | uji_lib3 Z_C__0.5pct          129 AP  dev 1.325  test 1.181
+2026-10-16 15:40:36,987 | INFO    | huim_multi | hcxy Z_A__2pct            206 AP  dev 1.421  test 1.581
+2026-10-16 15:40:47,067 | INFO    | huim_multi | hcxy Z_A__1.5pct          220 AP  dev 1.421  test 1.579
+2026-10-16 15:40:53,799 | INFO    | huim_multi | uji_lib3 Z_C__0.25pct         168 AP  dev 1.323  test 1.170
+2026-10-16 15:40:58,226 | INFO    | huim_multi | hcxy Z_A__1pct            246 AP  dev 1.422  test 1.584
+2026-10-16 15:41:10,563 | INFO    | huim_multi | hcxy Z_A__0.75pct         272 AP  dev 1.428  test 1.584
+2026-10-16 15:41:16,152 | INFO    | huim_multi | uji_lib3 Z_C__0.1pct          231 AP  dev 1.329  test 1.169
+2026-10-16 15:41:23,840 | INFO    | huim_multi | hcxy Z_A__0.5pct          300 AP  dev 1.431  test 1.583
+2026-10-16 15:41:38,450 | INFO    | huim_multi | hcxy Z_A__0.25pct         331 AP  dev 1.432  test 1.585
+2026-10-16 15:41:41,875 | INFO    | huim_multi | uji_lib3 Z_C__0.05pct         276 AP  dev 1.330  test 1.169
+2026-10-16 15:41:53,746 | INFO    | huim_multi | hcxy Z_A__0.1pct          340 AP  dev 1.431  test 1.584
+2026-10-16 15:42:09,243 | INFO    | huim_multi | hcxy Z_A__0.05pct         344 AP  dev 1.431  test 1.585
+2026-10-16 15:42:15,357 | INFO    | huim_multi | hcxy Z_B__10pct           120 AP  dev 1.601  test 1.644
+2026-10-16 15:42:22,104 | INFO    | huim_multi | hcxy Z_B__7.5pct          140 AP  dev 1.497  test 1.615
+2026-10-16 15:42:29,383 | INFO    | huim_multi | hcxy Z_B__6.777pct        151 AP  dev 1.471  test 1.626
+2026-10-16 15:42:37,073 | INFO    | huim_multi | hcxy Z_B__6.1237pct       161 AP  dev 1.456  test 1.707
+2026-10-16 15:42:37,350 | INFO    | huim_multi | uji_lib3 step 5: exponential+braycurtis, k=3, w=1/d^4 -> exponential+braycurtis, k=4, w=1/d^4 (on Z_A__0.75pct, 116 AP, 55s)
+2026-10-16 15:42:39,211 | INFO    | huim_multi | uji_lib3 T_A__10pct            12 AP  dev 2.388  test 2.327
+2026-10-16 15:42:41,585 | INFO    | huim_multi | uji_lib3 T_A__7.5pct           21 AP  dev 2.333  test 2.204
+2026-10-16 15:42:44,689 | INFO    | huim_multi | uji_lib3 T_A__5pct             32 AP  dev 1.736  test 1.653
+2026-10-16 15:42:45,467 | INFO    | huim_multi | hcxy Z_B__5pct            170 AP  dev 1.440  test 1.659
+2026-10-16 15:42:48,474 | INFO    | huim_multi | uji_lib3 T_A__4pct             43 AP  dev 1.646  test 1.568
+2026-10-16 15:42:52,464 | INFO    | huim_multi | uji_lib3 T_A__3.5pct           45 AP  dev 1.616  test 1.521
+2026-10-16 15:42:54,254 | INFO    | huim_multi | hcxy Z_B__4pct            177 AP  dev 1.435  test 1.642
+2026-10-16 15:42:56,731 | INFO    | huim_multi | uji_lib3 T_A__3pct             49 AP  dev 1.573  test 1.474
+2026-10-16 15:43:01,795 | INFO    | huim_multi | uji_lib3 T_A__2.5pct           61 AP  dev 1.470  test 1.361
+2026-10-16 15:43:03,360 | INFO    | huim_multi | hcxy Z_B__3pct            189 AP  dev 1.420  test 1.610
+2026-10-16 15:43:07,233 | INFO    | huim_multi | uji_lib3 T_A__2pct             67 AP  dev 1.457  test 1.347
+2026-10-16 15:43:13,181 | INFO    | huim_multi | hcxy Z_B__2pct            208 AP  dev 1.424  test 1.585
+2026-10-16 15:43:13,280 | INFO    | huim_multi | uji_lib3 T_A__1.5pct           72 AP  dev 1.385  test 1.250
+2026-10-16 15:43:20,075 | INFO    | huim_multi | uji_lib3 T_A__1pct             83 AP  dev 1.349  test 1.217
+2026-10-16 15:43:23,670 | INFO    | huim_multi | hcxy Z_B__1.5pct          219 AP  dev 1.423  test 1.591
+2026-10-16 15:43:27,515 | INFO    | huim_multi | uji_lib3 T_A__0.75pct          93 AP  dev 1.341  test 1.201
+2026-10-16 15:43:35,388 | INFO    | huim_multi | hcxy Z_B__1pct            251 AP  dev 1.422  test 1.581
+2026-10-16 15:43:35,690 | INFO    | huim_multi | uji_lib3 T_A__0.5pct          104 AP  dev 1.342  test 1.195
+2026-10-16 15:43:45,081 | INFO    | huim_multi | uji_lib3 T_A__0.25pct         125 AP  dev 1.350  test 1.199
+2026-10-16 15:43:47,711 | INFO    | huim_multi | hcxy Z_B__0.75pct         272 AP  dev 1.426  test 1.587
+2026-10-16 15:43:56,914 | INFO    | huim_multi | uji_lib3 T_A__0.1pct          160 AP  dev 1.351  test 1.200
+2026-10-16 15:44:00,937 | INFO    | huim_multi | hcxy Z_B__0.5pct          296 AP  dev 1.429  test 1.584
+2026-10-16 15:44:10,972 | INFO    | huim_multi | uji_lib3 T_A__0.05pct         197 AP  dev 1.355  test 1.203
+2026-10-16 15:44:12,518 | INFO    | huim_multi | uji_lib3 T_B__20pct             8 AP  dev 2.863  test 2.813
+2026-10-16 15:44:12,555 | INFO    | huim_multi | uji_lib3 T_B__15pct            12 AP  dev 2.388  test 2.327
+2026-10-16 15:44:15,052 | INFO    | huim_multi | uji_lib3 T_B__10pct            23 AP  dev 2.236  test 2.112
+2026-10-16 15:44:15,769 | INFO    | huim_multi | hcxy Z_B__0.25pct         329 AP  dev 1.432  test 1.585
+2026-10-16 15:44:18,187 | INFO    | huim_multi | uji_lib3 T_B__7.5pct           31 AP  dev 1.748  test 1.668
+2026-10-16 15:44:21,941 | INFO    | huim_multi | uji_lib3 T_B__5pct             43 AP  dev 1.616  test 1.544
+2026-10-16 15:44:26,277 | INFO    | huim_multi | uji_lib3 T_B__4pct             51 AP  dev 1.544  test 1.446
+2026-10-16 15:44:31,043 | INFO    | huim_multi | uji_lib3 T_B__3.5pct           58 AP  dev 1.475  test 1.375
+2026-10-16 15:44:31,359 | INFO    | huim_multi | hcxy Z_B__0.1pct          340 AP  dev 1.431  test 1.584
+2026-10-16 15:44:36,007 | INFO    | huim_multi | uji_lib3 T_B__3pct             60 AP  dev 1.479  test 1.382
+2026-10-16 15:44:41,361 | INFO    | huim_multi | uji_lib3 T_B__2.5pct           66 AP  dev 1.454  test 1.347
+2026-10-16 15:44:47,104 | INFO    | huim_multi | hcxy Z_B__0.05pct         344 AP  dev 1.431  test 1.584
+2026-10-16 15:44:47,264 | INFO    | huim_multi | uji_lib3 T_B__2pct             72 AP  dev 1.385  test 1.260
+2026-10-16 15:44:52,432 | INFO    | huim_multi | hcxy Z_C__10pct            98 AP  dev 1.989  test 2.109
+2026-10-16 15:44:53,976 | INFO    | huim_multi | uji_lib3 T_B__1.5pct           82 AP  dev 1.354  test 1.226
+2026-10-16 15:44:59,037 | INFO    | huim_multi | hcxy Z_C__7.5pct          131 AP  dev 1.536  test 1.734
+2026-10-16 15:45:01,037 | INFO    | huim_multi | uji_lib3 T_B__1pct             88 AP  dev 1.336  test 1.201
+2026-10-16 15:45:06,228 | INFO    | huim_multi | hcxy Z_C__6.777pct        141 AP  dev 1.498  test 1.720
+2026-10-16 15:45:08,658 | INFO    | huim_multi | uji_lib3 T_B__0.75pct          96 AP  dev 1.338  test 1.197
+2026-10-16 15:45:13,546 | INFO    | huim_multi | hcxy Z_C__6.1237pct       150 AP  dev 1.486  test 1.682
+2026-10-16 15:45:16,948 | INFO    | huim_multi | uji_lib3 T_B__0.5pct          108 AP  dev 1.350  test 1.196
+2026-10-16 15:45:21,546 | INFO    | huim_multi | hcxy Z_C__5pct            162 AP  dev 1.463  test 1.693
+2026-10-16 15:45:26,573 | INFO    | huim_multi | uji_lib3 T_B__0.25pct         128 AP  dev 1.349  test 1.198
+2026-10-16 15:45:29,762 | INFO    | huim_multi | hcxy Z_C__4pct            172 AP  dev 1.441  test 1.645
+2026-10-16 15:45:38,310 | INFO    | huim_multi | hcxy Z_C__3pct            181 AP  dev 1.418  test 1.599
+2026-10-16 15:45:38,476 | INFO    | huim_multi | uji_lib3 T_B__0.1pct          163 AP  dev 1.353  test 1.200
+2026-10-16 15:45:47,851 | INFO    | huim_multi | hcxy Z_C__2pct            199 AP  dev 1.414  test 1.582
+2026-10-16 15:45:52,488 | INFO    | huim_multi | uji_lib3 T_B__0.05pct         191 AP  dev 1.355  test 1.203
+2026-10-16 15:45:54,507 | INFO    | huim_multi | uji_lib3 T_C__10pct            16 AP  dev 2.344  test 2.261
+2026-10-16 15:45:56,707 | INFO    | huim_multi | uji_lib3 T_C__7.5pct           18 AP  dev 2.331  test 2.229
+2026-10-16 15:45:58,145 | INFO    | huim_multi | hcxy Z_C__1.5pct          216 AP  dev 1.418  test 1.572
+2026-10-16 15:45:59,762 | INFO    | huim_multi | uji_lib3 T_C__5pct             31 AP  dev 1.960  test 1.847
+2026-10-16 15:46:03,211 | INFO    | huim_multi | uji_lib3 T_C__4pct             37 AP  dev 1.761  test 1.663
+2026-10-16 15:46:07,171 | INFO    | huim_multi | uji_lib3 T_C__3.5pct           46 AP  dev 1.604  test 1.520
+2026-10-16 15:46:09,444 | INFO    | huim_multi | hcxy Z_C__1pct            241 AP  dev 1.423  test 1.579
+2026-10-16 15:46:11,598 | INFO    | huim_multi | uji_lib3 T_C__3pct             52 AP  dev 1.570  test 1.473
+2026-10-16 15:46:16,191 | INFO    | huim_multi | uji_lib3 T_C__2.5pct           56 AP  dev 1.475  test 1.392
+2026-10-16 15:46:21,751 | INFO    | huim_multi | hcxy Z_C__0.75pct         266 AP  dev 1.426  test 1.578
+2026-10-16 15:46:21,934 | INFO    | huim_multi | uji_lib3 T_C__2pct             68 AP  dev 1.453  test 1.348
+2026-10-16 15:46:28,061 | INFO    | huim_multi | uji_lib3 T_C__1.5pct           74 AP  dev 1.372  test 1.252
+2026-10-16 15:46:34,605 | INFO    | huim_multi | uji_lib3 T_C__1pct             80 AP  dev 1.354  test 1.229
+2026-10-16 15:46:35,268 | INFO    | huim_multi | hcxy Z_C__0.5pct          298 AP  dev 1.430  test 1.583
+2026-10-16 15:46:41,761 | INFO    | huim_multi | uji_lib3 T_C__0.75pct          90 AP  dev 1.350  test 1.208
+2026-10-16 15:46:49,779 | INFO    | huim_multi | uji_lib3 T_C__0.5pct          104 AP  dev 1.344  test 1.197
+2026-10-16 15:46:50,243 | INFO    | huim_multi | hcxy Z_C__0.25pct         331 AP  dev 1.432  test 1.585
+2026-10-16 15:46:58,897 | INFO    | huim_multi | uji_lib3 T_C__0.25pct         122 AP  dev 1.352  test 1.197
+2026-10-16 15:47:05,492 | INFO    | huim_multi | hcxy Z_C__0.1pct          339 AP  dev 1.432  test 1.584
+2026-10-16 15:47:10,161 | INFO    | huim_multi | uji_lib3 T_C__0.1pct          153 AP  dev 1.349  test 1.198
+2026-10-16 15:47:20,882 | INFO    | huim_multi | hcxy Z_C__0.05pct         344 AP  dev 1.431  test 1.585
+2026-10-16 15:47:24,375 | INFO    | huim_multi | uji_lib3 T_C__0.05pct         198 AP  dev 1.355  test 1.203
+2026-10-16 15:47:27,834 | INFO    | huim_multi | uji_lib3 TZ_A__15pct           18 AP  dev 2.366  test 2.280
+2026-10-16 15:47:32,417 | INFO    | huim_multi | uji_lib3 TZ_A__10pct           32 AP  dev 1.850  test 1.776
+2026-10-16 15:47:38,222 | INFO    | huim_multi | uji_lib3 TZ_A__7.5pct          43 AP  dev 1.623  test 1.565
+2026-10-16 15:47:46,040 | INFO    | huim_multi | uji_lib3 TZ_A__5pct            63 AP  dev 1.453  test 1.342
+2026-10-16 15:47:54,434 | INFO    | huim_multi | uji_lib3 TZ_A__4pct            70 AP  dev 1.426  test 1.327
+2026-10-16 15:48:03,423 | INFO    | huim_multi | uji_lib3 TZ_A__3.5pct          75 AP  dev 1.359  test 1.234
+2026-10-16 15:48:12,366 | INFO    | huim_multi | uji_lib3 TZ_A__3pct            75 AP  dev 1.362  test 1.234
+2026-10-16 15:48:21,530 | INFO    | huim_multi | uji_lib3 TZ_A__2.5pct          80 AP  dev 1.341  test 1.208
+2026-10-16 15:48:31,150 | INFO    | huim_multi | uji_lib3 TZ_A__2pct            83 AP  dev 1.328  test 1.197
+2026-10-16 15:48:41,389 | INFO    | huim_multi | uji_lib3 TZ_A__1.5pct          89 AP  dev 1.318  test 1.182
+2026-10-16 15:48:45,183 | INFO    | huim_multi | hcxy step 5: powed+braycurtis, k=30, w=1/d^3 -> powed+braycurtis, k=30, w=1/d^3 (on G_A__1pct, 187 AP, 84s)
+2026-10-16 15:48:47,766 | INFO    | huim_multi | hcxy R_A__6.1237pct__union               67 AP  dev 2.091  test 2.119
+2026-10-16 15:48:49,400 | INFO    | huim_multi | hcxy R_A__6.1237pct__topn0.5             34 AP  dev 4.710  test 4.758
+2026-10-16 15:48:51,439 | INFO    | huim_multi | hcxy R_A__6.1237pct__topn0.75            51 AP  dev 2.953  test 2.759
+2026-10-16 15:48:53,745 | INFO    | huim_multi | uji_lib3 TZ_A__1pct           109 AP  dev 1.319  test 1.168
+2026-10-16 15:48:53,791 | INFO    | huim_multi | hcxy R_A__6.1237pct__frequent2           58 AP  dev 2.865  test 2.723
+2026-10-16 15:48:53,817 | INFO    | huim_multi | hcxy R_A__6.1237pct__frequentmedian      34 AP  dev 4.710  test 4.758
+2026-10-16 15:48:56,474 | INFO    | huim_multi | hcxy R_A__6.1237pct__weighted0.5         67 AP  dev 2.820  test 2.829
+2026-10-16 15:48:59,125 | INFO    | huim_multi | hcxy R_A__6.1237pct__weighted1.0         67 AP  dev 3.491  test 3.334
+2026-10-16 15:48:59,175 | INFO    | huim_multi | hcxy step 7 candidates: ['G_A__1pct', 'G_C__1pct', 'G_B__1pct', 'Z_C__2pct', 'Z_B__3pct', 'Z_A__1.5pct']
+2026-10-16 15:49:05,965 | INFO    | huim_multi | uji_lib3 TZ_A__0.75pct        116 AP  dev 1.325  test 1.168
+2026-10-16 15:49:15,007 | INFO    | huim_multi | hcxy best ensemble: E_median__G_C__1pct+G_B__1pct+Z_B__3pct dev 1.397 test 1.576
+2026-10-16 15:49:18,318 | INFO    | huim_multi | uji_lib3 TZ_A__0.5pct         127 AP  dev 1.331  test 1.167
+2026-10-16 15:49:33,366 | INFO    | huim_multi | uji_lib3 TZ_A__0.25pct        167 AP  dev 1.330  test 1.162
+2026-10-16 15:49:52,613 | INFO    | huim_multi | uji_lib3 TZ_A__0.1pct         229 AP  dev 1.337  test 1.165
+2026-10-16 15:50:15,011 | INFO    | huim_multi | uji_lib3 TZ_A__0.05pct        272 AP  dev 1.339  test 1.166
+2026-10-16 15:50:20,699 | INFO    | huim_multi | uji_lib3 R_B__1.5pct__union                  82 AP  dev 1.355  test 1.219
+2026-10-16 15:50:23,841 | INFO    | huim_multi | uji_lib3 R_B__1.5pct__topn0.5                41 AP  dev 1.731  test 1.649
+2026-10-16 15:50:28,217 | INFO    | huim_multi | uji_lib3 R_B__1.5pct__topn0.75               62 AP  dev 1.467  test 1.372
+2026-10-16 15:50:28,250 | INFO    | huim_multi | uji_lib3 R_B__1.5pct__frequent2              82 AP  dev 1.355  test 1.219
+2026-10-16 15:50:31,297 | INFO    | huim_multi | uji_lib3 R_B__1.5pct__frequentmedian         41 AP  dev 1.739  test 1.655
+2026-10-16 15:50:36,965 | INFO    | huim_multi | uji_lib3 R_B__1.5pct__weighted0.5            82 AP  dev 1.661  test 1.561
+2026-10-16 15:50:42,494 | INFO    | huim_multi | uji_lib3 R_B__1.5pct__weighted1.0            82 AP  dev 1.935  test 1.815
+2026-10-16 15:50:42,539 | INFO    | huim_multi | uji_lib3 step 7 candidates: ['TZ_A__1.5pct', 'Z_A__0.75pct', 'Z_B__1pct', 'Z_C__0.25pct', 'G_B__1pct', 'T_B__1pct']
+2026-10-16 15:51:06,275 | INFO    | huim_multi | uji_lib3 best ensemble: E_median__TZ_A__1.5pct+Z_C__0.25pct+G_B__1pct dev 1.284 test 1.144
+2026-10-16 15:51:40,337 | INFO    | huim_multi | uji_lib3 time ban_dau         83 AP 0.240 ms/fp 7.29 MB
+2026-10-16 15:51:41,614 | INFO    | huim_multi | uji_lib3 time don_tot_nhat    89 AP 0.342 ms/fp 13.78 MB
+2026-10-16 15:51:42,387 | INFO    | huim_multi | uji_lib3 time can_bang_global  72 AP 0.221 ms/fp 6.33 MB
+2026-10-16 15:51:43,505 | INFO    | huim_multi | uji_lib3 time can_bang_zone   75 AP 0.288 ms/fp 10.85 MB
+2026-10-16 15:51:48,273 | INFO    | huim_multi | dlulib time ban_dau         17 AP 0.091 ms/fp 1.69 MB
+2026-10-16 15:51:48,709 | INFO    | huim_multi | dlulib time don_tot_nhat    17 AP 0.120 ms/fp 3.32 MB
+2026-10-16 15:51:49,014 | INFO    | huim_multi | dlulib time can_bang_global  15 AP 0.087 ms/fp 1.49 MB
+2026-10-16 15:51:49,495 | INFO    | huim_multi | dlulib time can_bang_zone   15 AP 0.135 ms/fp 2.90 MB
+2026-10-16 15:51:51,496 | INFO    | huim_multi | hcxy time ban_dau         67 AP 0.204 ms/fp 5.81 MB
+2026-10-16 15:51:52,983 | INFO    | huim_multi | hcxy time don_tot_nhat   187 AP 0.534 ms/fp 16.22 MB
+2026-10-16 15:51:54,134 | INFO    | huim_multi | hcxy time can_bang_global 144 AP 0.412 ms/fp 12.49 MB
+2026-10-16 15:51:55,559 | INFO    | huim_multi | hcxy time can_bang_zone  147 AP 0.490 ms/fp 18.76 MB
+2026-10-16 15:52:00,564 | INFO    | huim_multi | hus_dedup time ban_dau          5 AP 0.096 ms/fp 0.77 MB
+2026-10-16 15:52:00,651 | INFO    | huim_multi | hus_dedup time don_tot_nhat     5 AP 0.101 ms/fp 0.77 MB
+2026-10-16 15:52:00,748 | INFO    | huim_multi | hus_dedup time can_bang_global   5 AP 0.108 ms/fp 0.77 MB
+2026-10-16 15:52:25,719 | INFO    | huim_multi | hus_dedup time ban_dau          5 AP 0.100 ms/fp 0.77 MB
+2026-10-16 15:52:25,813 | INFO    | huim_multi | hus_dedup time don_tot_nhat     5 AP 0.101 ms/fp 0.77 MB
+2026-10-16 15:52:25,893 | INFO    | huim_multi | hus_dedup time can_bang_global   5 AP 0.087 ms/fp 0.77 MB

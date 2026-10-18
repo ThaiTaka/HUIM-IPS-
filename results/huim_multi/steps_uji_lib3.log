@@ -1,0 +1,197 @@
+2026-10-16 15:28:02,752 | INFO    | huim_multi | uji_lib3 G_A__10pct            12 AP  dev 2.409  test 2.345
+2026-10-16 15:28:05,547 | INFO    | huim_multi | uji_lib3 G_A__7.5pct           21 AP  dev 2.360  test 2.224
+2026-10-16 15:28:08,823 | INFO    | huim_multi | uji_lib3 G_A__5pct             32 AP  dev 1.749  test 1.658
+2026-10-16 15:28:12,953 | INFO    | huim_multi | uji_lib3 G_A__4pct             43 AP  dev 1.653  test 1.574
+2026-10-16 15:28:17,144 | INFO    | huim_multi | uji_lib3 G_A__3.5pct           45 AP  dev 1.626  test 1.527
+2026-10-16 15:28:21,735 | INFO    | huim_multi | uji_lib3 G_A__3pct             49 AP  dev 1.584  test 1.483
+2026-10-16 15:28:27,063 | INFO    | huim_multi | uji_lib3 G_A__2.5pct           61 AP  dev 1.470  test 1.358
+2026-10-16 15:28:33,038 | INFO    | huim_multi | uji_lib3 G_A__2pct             67 AP  dev 1.455  test 1.349
+2026-10-16 15:28:39,620 | INFO    | huim_multi | uji_lib3 G_A__1.5pct           72 AP  dev 1.387  test 1.245
+2026-10-16 15:28:46,905 | INFO    | huim_multi | uji_lib3 G_A__1pct             83 AP  dev 1.349  test 1.206
+2026-10-16 15:28:54,889 | INFO    | huim_multi | uji_lib3 G_A__0.75pct          93 AP  dev 1.341  test 1.196
+2026-10-16 15:29:03,653 | INFO    | huim_multi | uji_lib3 G_A__0.5pct          104 AP  dev 1.341  test 1.197
+2026-10-16 15:29:14,049 | INFO    | huim_multi | uji_lib3 G_A__0.25pct         125 AP  dev 1.347  test 1.204
+2026-10-16 15:29:26,803 | INFO    | huim_multi | uji_lib3 G_A__0.1pct          160 AP  dev 1.347  test 1.206
+2026-10-16 15:29:41,793 | INFO    | huim_multi | uji_lib3 G_A__0.05pct         197 AP  dev 1.352  test 1.208
+2026-10-16 15:29:43,630 | INFO    | huim_multi | uji_lib3 G_B__20pct             8 AP  dev 2.898  test 2.846
+2026-10-16 15:29:43,665 | INFO    | huim_multi | uji_lib3 G_B__15pct            12 AP  dev 2.409  test 2.345
+2026-10-16 15:29:46,490 | INFO    | huim_multi | uji_lib3 G_B__10pct            23 AP  dev 2.257  test 2.128
+2026-10-16 15:29:49,808 | INFO    | huim_multi | uji_lib3 G_B__7.5pct           31 AP  dev 1.765  test 1.679
+2026-10-16 15:29:53,447 | INFO    | huim_multi | uji_lib3 G_B__5pct             43 AP  dev 1.623  test 1.547
+2026-10-16 15:29:58,437 | INFO    | huim_multi | uji_lib3 G_B__4pct             51 AP  dev 1.552  test 1.452
+2026-10-16 15:30:03,178 | INFO    | huim_multi | uji_lib3 G_B__3.5pct           58 AP  dev 1.475  test 1.373
+2026-10-16 15:30:08,492 | INFO    | huim_multi | uji_lib3 G_B__3pct             60 AP  dev 1.477  test 1.377
+2026-10-16 15:30:13,941 | INFO    | huim_multi | uji_lib3 G_B__2.5pct           66 AP  dev 1.455  test 1.347
+2026-10-16 15:30:20,640 | INFO    | huim_multi | uji_lib3 G_B__2pct             72 AP  dev 1.387  test 1.258
+2026-10-16 15:30:28,019 | INFO    | huim_multi | uji_lib3 G_B__1.5pct           82 AP  dev 1.355  test 1.219
+2026-10-16 15:30:35,724 | INFO    | huim_multi | uji_lib3 G_B__1pct             88 AP  dev 1.334  test 1.196
+2026-10-16 15:30:43,262 | INFO    | huim_multi | uji_lib3 G_B__0.75pct          96 AP  dev 1.338  test 1.198
+2026-10-16 15:30:50,927 | INFO    | huim_multi | uji_lib3 G_B__0.5pct          108 AP  dev 1.347  test 1.200
+2026-10-16 15:30:59,859 | INFO    | huim_multi | uji_lib3 G_B__0.25pct         128 AP  dev 1.347  test 1.204
+2026-10-16 15:31:10,830 | INFO    | huim_multi | uji_lib3 G_B__0.1pct          163 AP  dev 1.351  test 1.206
+2026-10-16 15:31:23,236 | INFO    | huim_multi | uji_lib3 G_B__0.05pct         191 AP  dev 1.353  test 1.208
+2026-10-16 15:31:25,016 | INFO    | huim_multi | uji_lib3 G_C__10pct            16 AP  dev 2.361  test 2.277
+2026-10-16 15:31:26,921 | INFO    | huim_multi | uji_lib3 G_C__7.5pct           18 AP  dev 2.353  test 2.252
+2026-10-16 15:31:29,586 | INFO    | huim_multi | uji_lib3 G_C__5pct             31 AP  dev 1.978  test 1.859
+2026-10-16 15:31:32,567 | INFO    | huim_multi | uji_lib3 G_C__4pct             37 AP  dev 1.773  test 1.672
+2026-10-16 15:31:36,036 | INFO    | huim_multi | uji_lib3 G_C__3.5pct           46 AP  dev 1.612  test 1.526
+2026-10-16 15:31:39,844 | INFO    | huim_multi | uji_lib3 G_C__3pct             52 AP  dev 1.580  test 1.476
+2026-10-16 15:31:43,961 | INFO    | huim_multi | uji_lib3 G_C__2.5pct           56 AP  dev 1.476  test 1.393
+2026-10-16 15:31:48,936 | INFO    | huim_multi | uji_lib3 G_C__2pct             68 AP  dev 1.454  test 1.345
+2026-10-16 15:31:54,326 | INFO    | huim_multi | uji_lib3 G_C__1.5pct           74 AP  dev 1.375  test 1.250
+2026-10-16 15:32:00,070 | INFO    | huim_multi | uji_lib3 G_C__1pct             80 AP  dev 1.355  test 1.226
+2026-10-16 15:32:06,431 | INFO    | huim_multi | uji_lib3 G_C__0.75pct          90 AP  dev 1.351  test 1.206
+2026-10-16 15:32:13,554 | INFO    | huim_multi | uji_lib3 G_C__0.5pct          104 AP  dev 1.342  test 1.197
+2026-10-16 15:32:21,731 | INFO    | huim_multi | uji_lib3 G_C__0.25pct         122 AP  dev 1.351  test 1.201
+2026-10-16 15:32:31,807 | INFO    | huim_multi | uji_lib3 G_C__0.1pct          153 AP  dev 1.346  test 1.207
+2026-10-16 15:32:44,657 | INFO    | huim_multi | uji_lib3 G_C__0.05pct         198 AP  dev 1.352  test 1.208
+uji_lib3 step 3: 287s
+2026-10-16 15:32:47,900 | INFO    | huim_multi | uji_lib3 Z_A__15pct            18 AP  dev 2.398  test 2.298
+2026-10-16 15:32:52,253 | INFO    | huim_multi | uji_lib3 Z_A__10pct            32 AP  dev 1.864  test 1.776
+2026-10-16 15:32:57,431 | INFO    | huim_multi | uji_lib3 Z_A__7.5pct           43 AP  dev 1.637  test 1.575
+2026-10-16 15:33:04,194 | INFO    | huim_multi | uji_lib3 Z_A__5pct             63 AP  dev 1.469  test 1.353
+2026-10-16 15:33:11,501 | INFO    | huim_multi | uji_lib3 Z_A__4pct             70 AP  dev 1.443  test 1.324
+2026-10-16 15:33:19,153 | INFO    | huim_multi | uji_lib3 Z_A__3.5pct           75 AP  dev 1.372  test 1.235
+2026-10-16 15:33:26,945 | INFO    | huim_multi | uji_lib3 Z_A__3pct             75 AP  dev 1.377  test 1.236
+2026-10-16 15:33:35,319 | INFO    | huim_multi | uji_lib3 Z_A__2.5pct           80 AP  dev 1.358  test 1.220
+2026-10-16 15:33:43,941 | INFO    | huim_multi | uji_lib3 Z_A__2pct             83 AP  dev 1.337  test 1.200
+2026-10-16 15:33:53,576 | INFO    | huim_multi | uji_lib3 Z_A__1.5pct           89 AP  dev 1.329  test 1.192
+2026-10-16 15:34:03,831 | INFO    | huim_multi | uji_lib3 Z_A__1pct            109 AP  dev 1.319  test 1.166
+2026-10-16 15:34:14,818 | INFO    | huim_multi | uji_lib3 Z_A__0.75pct         116 AP  dev 1.318  test 1.178
+2026-10-16 15:34:26,699 | INFO    | huim_multi | uji_lib3 Z_A__0.5pct          127 AP  dev 1.324  test 1.174
+2026-10-16 15:34:41,398 | INFO    | huim_multi | uji_lib3 Z_A__0.25pct         167 AP  dev 1.324  test 1.171
+2026-10-16 15:35:00,304 | INFO    | huim_multi | uji_lib3 Z_A__0.1pct          229 AP  dev 1.327  test 1.167
+2026-10-16 15:35:23,375 | INFO    | huim_multi | uji_lib3 Z_A__0.05pct         272 AP  dev 1.330  test 1.168
+2026-10-16 15:35:26,124 | INFO    | huim_multi | uji_lib3 Z_B__30pct             9 AP  dev 2.952  test 2.926
+2026-10-16 15:35:29,930 | INFO    | huim_multi | uji_lib3 Z_B__20pct            20 AP  dev 2.041  test 1.923
+2026-10-16 15:35:34,849 | INFO    | huim_multi | uji_lib3 Z_B__15pct            32 AP  dev 1.780  test 1.686
+2026-10-16 15:35:41,236 | INFO    | huim_multi | uji_lib3 Z_B__10pct            49 AP  dev 1.507  test 1.456
+2026-10-16 15:35:48,550 | INFO    | huim_multi | uji_lib3 Z_B__7.5pct           61 AP  dev 1.463  test 1.345
+2026-10-16 15:35:57,261 | INFO    | huim_multi | uji_lib3 Z_B__5pct             74 AP  dev 1.384  test 1.248
+2026-10-16 15:36:06,125 | INFO    | huim_multi | uji_lib3 Z_B__4pct             77 AP  dev 1.365  test 1.238
+2026-10-16 15:36:15,325 | INFO    | huim_multi | uji_lib3 Z_B__3.5pct           80 AP  dev 1.353  test 1.220
+2026-10-16 15:36:25,042 | INFO    | huim_multi | uji_lib3 Z_B__3pct             85 AP  dev 1.338  test 1.196
+2026-10-16 15:36:35,312 | INFO    | huim_multi | uji_lib3 Z_B__2.5pct           88 AP  dev 1.334  test 1.193
+2026-10-16 15:36:46,042 | INFO    | huim_multi | uji_lib3 Z_B__2pct             92 AP  dev 1.331  test 1.194
+2026-10-16 15:36:57,616 | INFO    | huim_multi | uji_lib3 Z_B__1.5pct          101 AP  dev 1.328  test 1.167
+2026-10-16 15:37:10,592 | INFO    | huim_multi | uji_lib3 Z_B__1pct            117 AP  dev 1.322  test 1.177
+2026-10-16 15:37:24,367 | INFO    | huim_multi | uji_lib3 Z_B__0.75pct         125 AP  dev 1.326  test 1.178
+2026-10-16 15:37:39,140 | INFO    | huim_multi | uji_lib3 Z_B__0.5pct          138 AP  dev 1.325  test 1.175
+2026-10-16 15:37:57,488 | INFO    | huim_multi | uji_lib3 Z_B__0.25pct         176 AP  dev 1.329  test 1.171
+2026-10-16 15:38:19,717 | INFO    | huim_multi | uji_lib3 Z_B__0.1pct          227 AP  dev 1.329  test 1.167
+2026-10-16 15:38:45,906 | INFO    | huim_multi | uji_lib3 Z_B__0.05pct         276 AP  dev 1.331  test 1.168
+2026-10-16 15:38:50,339 | INFO    | huim_multi | uji_lib3 Z_C__10pct            28 AP  dev 2.200  test 2.102
+2026-10-16 15:38:56,061 | INFO    | huim_multi | uji_lib3 Z_C__7.5pct           46 AP  dev 1.647  test 1.621
+2026-10-16 15:39:03,556 | INFO    | huim_multi | uji_lib3 Z_C__5pct             67 AP  dev 1.407  test 1.284
+2026-10-16 15:39:11,905 | INFO    | huim_multi | uji_lib3 Z_C__4pct             73 AP  dev 1.390  test 1.266
+2026-10-16 15:39:20,572 | INFO    | huim_multi | uji_lib3 Z_C__3.5pct           76 AP  dev 1.376  test 1.238
+2026-10-16 15:39:29,246 | INFO    | huim_multi | uji_lib3 Z_C__3pct             77 AP  dev 1.378  test 1.232
+2026-10-16 15:39:38,242 | INFO    | huim_multi | uji_lib3 Z_C__2.5pct           79 AP  dev 1.376  test 1.233
+2026-10-16 15:39:47,998 | INFO    | huim_multi | uji_lib3 Z_C__2pct             85 AP  dev 1.355  test 1.215
+2026-10-16 15:39:58,862 | INFO    | huim_multi | uji_lib3 Z_C__1.5pct           97 AP  dev 1.334  test 1.194
+2026-10-16 15:40:10,519 | INFO    | huim_multi | uji_lib3 Z_C__1pct            105 AP  dev 1.327  test 1.170
+2026-10-16 15:40:22,884 | INFO    | huim_multi | uji_lib3 Z_C__0.75pct         113 AP  dev 1.326  test 1.170
+2026-10-16 15:40:36,694 | INFO    | huim_multi | uji_lib3 Z_C__0.5pct          129 AP  dev 1.325  test 1.181
+2026-10-16 15:40:53,799 | INFO    | huim_multi | uji_lib3 Z_C__0.25pct         168 AP  dev 1.323  test 1.170
+2026-10-16 15:41:16,152 | INFO    | huim_multi | uji_lib3 Z_C__0.1pct          231 AP  dev 1.329  test 1.169
+2026-10-16 15:41:41,875 | INFO    | huim_multi | uji_lib3 Z_C__0.05pct         276 AP  dev 1.330  test 1.169
+uji_lib3 step 4: 537s
+2026-10-16 15:41:42,473 | INFO    | optpos | dev lists positive    euclidean    0.5s
+2026-10-16 15:41:46,038 | INFO    | optpos | dev lists positive    manhattan    2.8s
+2026-10-16 15:41:50,185 | INFO    | optpos | dev lists positive    braycurtis   3.4s
+2026-10-16 15:41:52,686 | INFO    | optpos | dev lists positive    cosine       1.6s
+2026-10-16 15:41:53,951 | INFO    | optpos | dev lists powed       euclidean    0.5s
+2026-10-16 15:41:57,476 | INFO    | optpos | dev lists powed       manhattan    2.8s
+2026-10-16 15:42:01,651 | INFO    | optpos | dev lists powed       braycurtis   3.4s
+2026-10-16 15:42:03,983 | INFO    | optpos | dev lists powed       cosine       1.6s
+2026-10-16 15:42:05,136 | INFO    | optpos | dev lists exponential euclidean    0.5s
+2026-10-16 15:42:08,610 | INFO    | optpos | dev lists exponential manhattan    2.7s
+2026-10-16 15:42:12,907 | INFO    | optpos | dev lists exponential braycurtis   3.5s
+2026-10-16 15:42:15,384 | INFO    | optpos | dev lists exponential cosine       1.6s
+2026-10-16 15:42:16,151 | INFO    | optpos | S0 positive+manhattan, k=1, w=1/d^0 -> dev mean 1.534 m
+2026-10-16 15:42:16,151 | INFO    | optpos | S1 exponential+braycurtis, k=1, w=1/d^0 -> dev mean 1.387 m
+2026-10-16 15:42:16,151 | INFO    | optpos | S2 exponential+braycurtis, k=4, w=1/d^4 -> dev mean 1.347 m
+2026-10-16 15:42:19,675 | INFO    | optpos | dev offset lists exponential delta  -9.0 dB   3.5s
+2026-10-16 15:42:23,143 | INFO    | optpos | dev offset lists exponential delta  -6.0 dB   3.5s
+2026-10-16 15:42:26,688 | INFO    | optpos | dev offset lists exponential delta  -3.0 dB   3.5s
+2026-10-16 15:42:30,185 | INFO    | optpos | dev offset lists exponential delta  +3.0 dB   3.5s
+2026-10-16 15:42:33,782 | INFO    | optpos | dev offset lists exponential delta  +6.0 dB   3.6s
+2026-10-16 15:42:37,211 | INFO    | optpos | dev offset lists exponential delta  +9.0 dB   3.4s
+2026-10-16 15:42:37,306 | INFO    | optpos | S3 exponential+braycurtis, k=4, w=1/d^4, offset +-3 dB -> dev mean 1.388 m
+2026-10-16 15:42:37,316 | INFO    | optpos | S4 exponential+braycurtis, k=4, w=1/d^4, ensemble with positive -> dev mean 1.346 m
+2026-10-16 15:42:37,350 | INFO    | huim_multi | uji_lib3 step 5: exponential+braycurtis, k=3, w=1/d^4 -> exponential+braycurtis, k=4, w=1/d^4 (on Z_A__0.75pct, 116 AP, 55s)
+2026-10-16 15:42:39,211 | INFO    | huim_multi | uji_lib3 T_A__10pct            12 AP  dev 2.388  test 2.327
+2026-10-16 15:42:41,585 | INFO    | huim_multi | uji_lib3 T_A__7.5pct           21 AP  dev 2.333  test 2.204
+2026-10-16 15:42:44,689 | INFO    | huim_multi | uji_lib3 T_A__5pct             32 AP  dev 1.736  test 1.653
+2026-10-16 15:42:48,474 | INFO    | huim_multi | uji_lib3 T_A__4pct             43 AP  dev 1.646  test 1.568
+2026-10-16 15:42:52,464 | INFO    | huim_multi | uji_lib3 T_A__3.5pct           45 AP  dev 1.616  test 1.521
+2026-10-16 15:42:56,731 | INFO    | huim_multi | uji_lib3 T_A__3pct             49 AP  dev 1.573  test 1.474
+2026-10-16 15:43:01,795 | INFO    | huim_multi | uji_lib3 T_A__2.5pct           61 AP  dev 1.470  test 1.361
+2026-10-16 15:43:07,233 | INFO    | huim_multi | uji_lib3 T_A__2pct             67 AP  dev 1.457  test 1.347
+2026-10-16 15:43:13,280 | INFO    | huim_multi | uji_lib3 T_A__1.5pct           72 AP  dev 1.385  test 1.250
+2026-10-16 15:43:20,075 | INFO    | huim_multi | uji_lib3 T_A__1pct             83 AP  dev 1.349  test 1.217
+2026-10-16 15:43:27,515 | INFO    | huim_multi | uji_lib3 T_A__0.75pct          93 AP  dev 1.341  test 1.201
+2026-10-16 15:43:35,690 | INFO    | huim_multi | uji_lib3 T_A__0.5pct          104 AP  dev 1.342  test 1.195
+2026-10-16 15:43:45,081 | INFO    | huim_multi | uji_lib3 T_A__0.25pct         125 AP  dev 1.350  test 1.199
+2026-10-16 15:43:56,914 | INFO    | huim_multi | uji_lib3 T_A__0.1pct          160 AP  dev 1.351  test 1.200
+2026-10-16 15:44:10,972 | INFO    | huim_multi | uji_lib3 T_A__0.05pct         197 AP  dev 1.355  test 1.203
+2026-10-16 15:44:12,518 | INFO    | huim_multi | uji_lib3 T_B__20pct             8 AP  dev 2.863  test 2.813
+2026-10-16 15:44:12,555 | INFO    | huim_multi | uji_lib3 T_B__15pct            12 AP  dev 2.388  test 2.327
+2026-10-16 15:44:15,052 | INFO    | huim_multi | uji_lib3 T_B__10pct            23 AP  dev 2.236  test 2.112
+2026-10-16 15:44:18,187 | INFO    | huim_multi | uji_lib3 T_B__7.5pct           31 AP  dev 1.748  test 1.668
+2026-10-16 15:44:21,941 | INFO    | huim_multi | uji_lib3 T_B__5pct             43 AP  dev 1.616  test 1.544
+2026-10-16 15:44:26,277 | INFO    | huim_multi | uji_lib3 T_B__4pct             51 AP  dev 1.544  test 1.446
+2026-10-16 15:44:31,043 | INFO    | huim_multi | uji_lib3 T_B__3.5pct           58 AP  dev 1.475  test 1.375
+2026-10-16 15:44:36,007 | INFO    | huim_multi | uji_lib3 T_B__3pct             60 AP  dev 1.479  test 1.382
+2026-10-16 15:44:41,361 | INFO    | huim_multi | uji_lib3 T_B__2.5pct           66 AP  dev 1.454  test 1.347
+2026-10-16 15:44:47,264 | INFO    | huim_multi | uji_lib3 T_B__2pct             72 AP  dev 1.385  test 1.260
+2026-10-16 15:44:53,976 | INFO    | huim_multi | uji_lib3 T_B__1.5pct           82 AP  dev 1.354  test 1.226
+2026-10-16 15:45:01,037 | INFO    | huim_multi | uji_lib3 T_B__1pct             88 AP  dev 1.336  test 1.201
+2026-10-16 15:45:08,658 | INFO    | huim_multi | uji_lib3 T_B__0.75pct          96 AP  dev 1.338  test 1.197
+2026-10-16 15:45:16,948 | INFO    | huim_multi | uji_lib3 T_B__0.5pct          108 AP  dev 1.350  test 1.196
+2026-10-16 15:45:26,573 | INFO    | huim_multi | uji_lib3 T_B__0.25pct         128 AP  dev 1.349  test 1.198
+2026-10-16 15:45:38,476 | INFO    | huim_multi | uji_lib3 T_B__0.1pct          163 AP  dev 1.353  test 1.200
+2026-10-16 15:45:52,488 | INFO    | huim_multi | uji_lib3 T_B__0.05pct         191 AP  dev 1.355  test 1.203
+2026-10-16 15:45:54,507 | INFO    | huim_multi | uji_lib3 T_C__10pct            16 AP  dev 2.344  test 2.261
+2026-10-16 15:45:56,707 | INFO    | huim_multi | uji_lib3 T_C__7.5pct           18 AP  dev 2.331  test 2.229
+2026-10-16 15:45:59,762 | INFO    | huim_multi | uji_lib3 T_C__5pct             31 AP  dev 1.960  test 1.847
+2026-10-16 15:46:03,211 | INFO    | huim_multi | uji_lib3 T_C__4pct             37 AP  dev 1.761  test 1.663
+2026-10-16 15:46:07,171 | INFO    | huim_multi | uji_lib3 T_C__3.5pct           46 AP  dev 1.604  test 1.520
+2026-10-16 15:46:11,598 | INFO    | huim_multi | uji_lib3 T_C__3pct             52 AP  dev 1.570  test 1.473
+2026-10-16 15:46:16,191 | INFO    | huim_multi | uji_lib3 T_C__2.5pct           56 AP  dev 1.475  test 1.392
+2026-10-16 15:46:21,934 | INFO    | huim_multi | uji_lib3 T_C__2pct             68 AP  dev 1.453  test 1.348
+2026-10-16 15:46:28,061 | INFO    | huim_multi | uji_lib3 T_C__1.5pct           74 AP  dev 1.372  test 1.252
+2026-10-16 15:46:34,605 | INFO    | huim_multi | uji_lib3 T_C__1pct             80 AP  dev 1.354  test 1.229
+2026-10-16 15:46:41,761 | INFO    | huim_multi | uji_lib3 T_C__0.75pct          90 AP  dev 1.350  test 1.208
+2026-10-16 15:46:49,779 | INFO    | huim_multi | uji_lib3 T_C__0.5pct          104 AP  dev 1.344  test 1.197
+2026-10-16 15:46:58,897 | INFO    | huim_multi | uji_lib3 T_C__0.25pct         122 AP  dev 1.352  test 1.197
+2026-10-16 15:47:10,161 | INFO    | huim_multi | uji_lib3 T_C__0.1pct          153 AP  dev 1.349  test 1.198
+2026-10-16 15:47:24,375 | INFO    | huim_multi | uji_lib3 T_C__0.05pct         198 AP  dev 1.355  test 1.203
+2026-10-16 15:47:27,834 | INFO    | huim_multi | uji_lib3 TZ_A__15pct           18 AP  dev 2.366  test 2.280
+2026-10-16 15:47:32,417 | INFO    | huim_multi | uji_lib3 TZ_A__10pct           32 AP  dev 1.850  test 1.776
+2026-10-16 15:47:38,222 | INFO    | huim_multi | uji_lib3 TZ_A__7.5pct          43 AP  dev 1.623  test 1.565
+2026-10-16 15:47:46,040 | INFO    | huim_multi | uji_lib3 TZ_A__5pct            63 AP  dev 1.453  test 1.342
+2026-10-16 15:47:54,434 | INFO    | huim_multi | uji_lib3 TZ_A__4pct            70 AP  dev 1.426  test 1.327
+2026-10-16 15:48:03,423 | INFO    | huim_multi | uji_lib3 TZ_A__3.5pct          75 AP  dev 1.359  test 1.234
+2026-10-16 15:48:12,366 | INFO    | huim_multi | uji_lib3 TZ_A__3pct            75 AP  dev 1.362  test 1.234
+2026-10-16 15:48:21,530 | INFO    | huim_multi | uji_lib3 TZ_A__2.5pct          80 AP  dev 1.341  test 1.208
+2026-10-16 15:48:31,150 | INFO    | huim_multi | uji_lib3 TZ_A__2pct            83 AP  dev 1.328  test 1.197
+2026-10-16 15:48:41,389 | INFO    | huim_multi | uji_lib3 TZ_A__1.5pct          89 AP  dev 1.318  test 1.182
+2026-10-16 15:48:53,745 | INFO    | huim_multi | uji_lib3 TZ_A__1pct           109 AP  dev 1.319  test 1.168
+2026-10-16 15:49:05,965 | INFO    | huim_multi | uji_lib3 TZ_A__0.75pct        116 AP  dev 1.325  test 1.168
+2026-10-16 15:49:18,318 | INFO    | huim_multi | uji_lib3 TZ_A__0.5pct         127 AP  dev 1.331  test 1.167
+2026-10-16 15:49:33,366 | INFO    | huim_multi | uji_lib3 TZ_A__0.25pct        167 AP  dev 1.330  test 1.162
+2026-10-16 15:49:52,613 | INFO    | huim_multi | uji_lib3 TZ_A__0.1pct         229 AP  dev 1.337  test 1.165
+2026-10-16 15:50:15,011 | INFO    | huim_multi | uji_lib3 TZ_A__0.05pct        272 AP  dev 1.339  test 1.166
+uji_lib3 step 5: 513s
+2026-10-16 15:50:20,699 | INFO    | huim_multi | uji_lib3 R_B__1.5pct__union                  82 AP  dev 1.355  test 1.219
+2026-10-16 15:50:23,841 | INFO    | huim_multi | uji_lib3 R_B__1.5pct__topn0.5                41 AP  dev 1.731  test 1.649
+2026-10-16 15:50:28,217 | INFO    | huim_multi | uji_lib3 R_B__1.5pct__topn0.75               62 AP  dev 1.467  test 1.372
+2026-10-16 15:50:28,250 | INFO    | huim_multi | uji_lib3 R_B__1.5pct__frequent2              82 AP  dev 1.355  test 1.219
+2026-10-16 15:50:31,297 | INFO    | huim_multi | uji_lib3 R_B__1.5pct__frequentmedian         41 AP  dev 1.739  test 1.655
+2026-10-16 15:50:36,965 | INFO    | huim_multi | uji_lib3 R_B__1.5pct__weighted0.5            82 AP  dev 1.661  test 1.561
+2026-10-16 15:50:42,494 | INFO    | huim_multi | uji_lib3 R_B__1.5pct__weighted1.0            82 AP  dev 1.935  test 1.815
+uji_lib3 step 6: 27s
+2026-10-16 15:50:42,539 | INFO    | huim_multi | uji_lib3 step 7 candidates: ['TZ_A__1.5pct', 'Z_A__0.75pct', 'Z_B__1pct', 'Z_C__0.25pct', 'G_B__1pct', 'T_B__1pct']
+2026-10-16 15:51:06,275 | INFO    | huim_multi | uji_lib3 best ensemble: E_median__TZ_A__1.5pct+Z_C__0.25pct+G_B__1pct dev 1.284 test 1.144
+uji_lib3 step 7: 24s

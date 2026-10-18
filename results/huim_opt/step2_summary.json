@@ -1,0 +1,11 @@
+{
+  "selection_criterion": "mean ground-metre error on 6 leave-users-out dev folds of trainingData",
+  "best_overall_on_dev": "A__1.9294pct__union",
+  "best_per_model_on_dev": {
+    "A": "A__1.9294pct__union",
+    "B": "B__2pct__union",
+    "C": "C__1.7321pct__union"
+  },
+  "skipped": "aborted minUtil runs (incomplete HUI set) and runs with no HUI",
+  "timestamp_utc": "2026-10-16T02:23:58.722534+00:00"
+}

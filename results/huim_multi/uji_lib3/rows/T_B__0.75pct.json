@@ -1,0 +1,1 @@
+{"n_ap": 96, "test_mean_m": 1.1968, "test_median_m": 0.694, "test_p90_m": 3.3519, "test_max_m": 8.9593, "test_no_ap_seen_pct": 0.0, "test2_mean_m": 1.9706, "test2_median_m": 1.4571, "test2_p90_m": 3.8323, "test2_max_m": 10.3843, "test2_no_ap_seen_pct": 0.0, "dev_mean_m": 1.3379, "dev_median_m": 0.8736, "dev_p90_m": 3.5762, "dev_max_m": 9.041, "seconds": 7.6}

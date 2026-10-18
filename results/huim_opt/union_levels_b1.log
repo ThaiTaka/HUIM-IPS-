@@ -1,0 +1,111 @@
+2026-10-16 11:56:40,555 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-16 11:56:40,586 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-16 11:56:40,600 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-16 11:56:40,601 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-16 11:56:40,618 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-16 11:56:40,679 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-16 11:56:40,709 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-16 11:56:40,814 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-16 11:56:40,918 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-16 11:56:40,921 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-16 11:56:40,922 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-16 11:56:40,978 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-16 11:56:40,986 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-16 11:56:41,075 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-16 11:56:41,227 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-16 11:56:41,414 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-16 11:56:41,485 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-16 11:56:41,983 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-16 11:56:43,059 | INFO    | huim_opt | level A b1 0.5%: 150 items, 897 nodes, 0.6s
+b1 A 0.5%: 150 AP, 0.6s
+2026-10-16 11:56:44,196 | INFO    | huim_opt | level A b1 1.9294%: 125 items, 7876 nodes, 1.9s
+b1 A 1.9294%: 125 AP, 1.9s
+2026-10-16 11:56:44,897 | INFO    | huim_opt | level A b1 2%: 125 items, 6796 nodes, 2.1s
+b1 A 2%: 125 AP, 2.1s
+2026-10-16 11:56:45,090 | INFO    | huim_opt | level A b1 0.75%: 150 items, 8311 nodes, 2.5s
+b1 A 0.75%: 150 AP, 2.5s
+2026-10-16 11:56:46,309 | INFO    | huim_opt | level A b1 1.25%: 128 items, 10350 nodes, 4.0s
+b1 A 1.25%: 128 AP, 4.0s
+2026-10-16 11:56:46,317 | INFO    | huim_opt | level A b1 1.7321%: 125 items, 11074 nodes, 3.8s
+b1 A 1.7321%: 125 AP, 3.8s
+2026-10-16 11:56:52,561 | INFO    | huim_opt | level A b1 1.5%: 125 items, 21839 nodes, 9.7s
+b1 A 1.5%: 125 AP, 9.7s
+2026-10-16 11:56:52,636 | INFO    | huim_opt | level A b1 10%: 0 items, 30095 nodes, 6.2s
+b1 A 10%: 0 AP, 6.2s
+2026-10-16 11:56:53,107 | INFO    | huim_opt | level B b1 0.5%: 150 items, 988 nodes, 0.3s
+b1 B 0.5%: 150 AP, 0.3s
+2026-10-16 11:56:54,617 | INFO    | huim_opt | level B b1 0.75%: 140 items, 5242 nodes, 1.7s
+b1 B 0.75%: 140 AP, 1.7s
+2026-10-16 11:56:58,505 | INFO    | huim_opt | level A b1 2.5%: 121 items, 114675 nodes, 15.3s
+b1 A 2.5%: 121 AP, 15.3s
+2026-10-16 11:56:58,659 | INFO    | huim_opt | level A b1 5%: 36 items, 88650 nodes, 13.4s
+b1 A 5%: 36 AP, 13.4s
+2026-10-16 11:57:01,207 | INFO    | huim_opt | level B b1 1%: 136 items, 15774 nodes, 7.8s
+b1 B 1%: 136 AP, 7.8s
+2026-10-16 11:57:03,628 | INFO    | huim_opt | level B b1 1.7321%: 125 items, 17494 nodes, 4.7s
+b1 B 1.7321%: 125 AP, 4.7s
+2026-10-16 11:57:05,360 | INFO    | huim_opt | level B b1 1.5%: 126 items, 25193 nodes, 6.6s
+b1 B 1.5%: 126 AP, 6.6s
+2026-10-16 11:57:10,026 | INFO    | huim_opt | level B b1 1.25%: 127 items, 29803 nodes, 15.0s
+b1 B 1.25%: 127 AP, 15.0s
+2026-10-16 11:57:12,489 | INFO    | huim_opt | level B b1 2%: 124 items, 37666 nodes, 8.6s
+b1 B 2%: 124 AP, 8.6s
+2026-10-16 11:57:13,173 | INFO    | huim_opt | level A b1 1%: 138 items, 35550 nodes, 30.3s
+b1 A 1%: 138 AP, 30.3s
+2026-10-16 11:57:16,575 | INFO    | huim_opt | level B b1 1.9294%: 125 items, 62291 nodes, 15.1s
+b1 B 1.9294%: 125 AP, 15.1s
+2026-10-16 11:57:54,735 | INFO    | huim_opt | level B b1 5%: 59 items, 263258 nodes, 37.9s
+b1 B 5%: 59 AP, 37.9s
+2026-10-16 11:58:22,669 | INFO    | huim_opt | level A b1 3%: 91 items, 784604 nodes, 99.5s
+b1 A 3%: 91 AP, 99.5s
+2026-10-16 11:58:46,088 | INFO    | huim_opt | level B b1 10%: 0 items, 125365 nodes, 23.2s
+b1 B 10%: 0 AP, 23.2s
+2026-10-16 11:58:46,586 | INFO    | huim_opt | level C b1 0.5%: 150 items, 790 nodes, 0.2s
+b1 C 0.5%: 150 AP, 0.2s
+2026-10-16 11:58:48,949 | INFO    | huim_opt | level C b1 0.75%: 141 items, 6856 nodes, 2.1s
+b1 C 0.75%: 141 AP, 2.1s
+2026-10-16 11:58:54,382 | INFO    | huim_opt | level C b1 1%: 133 items, 10894 nodes, 5.2s
+b1 C 1%: 133 AP, 5.2s
+2026-10-16 11:59:05,413 | INFO    | huim_opt | level C b1 1.25%: 127 items, 21556 nodes, 10.8s
+b1 C 1.25%: 127 AP, 10.8s
+2026-10-16 11:59:10,080 | INFO    | huim_opt | level C b1 1.5%: 125 items, 16145 nodes, 4.4s
+b1 C 1.5%: 125 AP, 4.4s
+2026-10-16 11:59:14,364 | INFO    | huim_opt | level C b1 1.7321%: 125 items, 15883 nodes, 4.0s
+b1 C 1.7321%: 125 AP, 4.0s
+2026-10-16 11:59:23,756 | INFO    | huim_opt | level C b1 1.9294%: 125 items, 34067 nodes, 9.1s
+b1 C 1.9294%: 125 AP, 9.1s
+2026-10-16 11:59:32,083 | INFO    | huim_opt | level C b1 2%: 125 items, 46575 nodes, 8.1s
+b1 C 2%: 125 AP, 8.1s
+2026-10-16 11:59:35,290 | INFO    | huim_opt | level C b1 2.5%: 112 items, 17296 nodes, 3.0s
+b1 C 2.5%: 112 AP, 3.0s
+2026-10-16 11:59:41,690 | INFO    | huim_opt | level B b1 2.5%: 110 items, 1259691 nodes, 156.0s
+b1 B 2.5%: 110 AP, 156.0s
+2026-10-16 12:04:42,878 | INFO    | huim_opt | level C b1 3%: 98 items, 2395086 nodes, 307.3s
+b1 C 3%: 98 AP, 307.3s
+2026-10-16 12:06:38,367 | INFO    | huim_opt | level C b1 3.5%: 81 items, 2668141 nodes, 416.3s
+b1 C 3.5%: 81 AP, 416.3s
+2026-10-16 12:08:39,737 | INFO    | huim_opt | level B b1 3%: 102 items, 4584717 nodes, 689.4s
+b1 B 3%: 102 AP, 689.4s
+2026-10-16 12:11:27,660 | INFO    | huim_opt | level C b1 5%: 46 items, 1252939 nodes, 288.9s
+b1 C 5%: 46 AP, 288.9s
+2026-10-16 12:13:56,229 | INFO    | huim_opt | level A b1 4%: 75 items, 6148165 nodes, 1031.2s
+b1 A 4%: 75 AP, 1031.2s
+2026-10-16 12:15:01,764 | INFO    | huim_opt | level C b1 10%: 0 items, 579401 nodes, 213.6s
+b1 C 10%: 0 AP, 213.6s
+2026-10-16 12:19:23,584 | INFO    | huim_opt | level B b1 7.5%: 35 items, 5893578 nodes, 1288.6s
+b1 B 7.5%: 35 AP, 1288.6s
+2026-10-16 12:20:34,731 | INFO    | huim_opt | level A b1 7.5%: 30 items, 5315517 nodes, 1428.2s
+b1 A 7.5%: 30 AP, 1428.2s
+2026-10-16 12:23:27,736 | INFO    | huim_opt | level B b1 3.5%: 88 items, 7863494 nodes, 1575.0s
+b1 B 3.5%: 88 AP, 1575.0s
+2026-10-16 12:28:25,589 | INFO    | huim_opt | level C b1 7.5%: 36 items, 3418296 nodes, 1185.3s
+b1 C 7.5%: 36 AP, 1185.3s
+2026-10-16 12:37:58,611 | INFO    | huim_opt | level B b1 4%: 78 items, 14501948 nodes, 2445.2s
+b1 B 4%: 78 AP, 2445.2s
+2026-10-16 12:39:59,899 | INFO    | huim_opt | level C b1 4%: 77 items, 12364905 nodes, 2116.6s
+b1 C 4%: 77 AP, 2116.6s
+2026-10-16 12:45:35,369 | INFO    | huim_opt | level A b1 3.5%: 83 items, 20754211 nodes, 2931.0s
+b1 A 3.5%: 83 AP, 2931.0s
+assembled b1 A
+assembled b1 B
+assembled b1 C

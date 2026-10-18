@@ -1,0 +1,9 @@
+2026-10-16 14:04:36,194 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-16 14:04:49,462 | INFO    | huim_opt | time start: A 1.9294% global       86 AP  3.81 ms/fp  26.2 MB map
+2026-10-16 14:05:23,055 | INFO    | huim_opt | time best global A                242 AP  9.66 ms/fp  73.6 MB map
+2026-10-16 14:05:51,643 | INFO    | huim_opt | time best global B                203 AP  8.24 ms/fp  61.8 MB map
+2026-10-16 14:06:23,637 | INFO    | huim_opt | time best global C                229 AP  9.19 ms/fp  69.7 MB map
+2026-10-16 14:06:51,132 | INFO    | huim_opt | time best per_building A          303 AP  7.79 ms/fp  79.9 MB map
+2026-10-16 14:07:19,395 | INFO    | huim_opt | time best per_building B          310 AP  8.02 ms/fp  82.0 MB map
+2026-10-16 14:07:47,827 | INFO    | huim_opt | time best per_building C          311 AP  8.07 ms/fp  82.3 MB map
+2026-10-16 14:08:01,851 | INFO    | huim_opt | time best rule                     91 AP  4.03 ms/fp  27.7 MB map

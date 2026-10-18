@@ -1,0 +1,34 @@
+2026-10-16 13:20:00,879 | INFO    | prep | loaded training (19937, 529), validation (1111, 529)
+2026-10-16 13:20:00,994 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-16 13:25:03,138 | INFO    | huim_opt | EFIM C global 0.5%: ABORTED_RESOURCE_LIMIT, 160122 HUIs, 300.2s
+2026-10-16 13:30:03,539 | INFO    | huim_opt | EFIM C global 1%: ABORTED_RESOURCE_LIMIT, 74840 HUIs, 300.2s
+2026-10-16 13:31:54,076 | INFO    | huim_opt | EFIM C global 1.5%: ABORTED_RESOURCE_LIMIT, 1000001 HUIs, 100.7s
+2026-10-16 13:33:06,612 | INFO    | huim_opt | R_G_C__1.7321pct__union                   91 AP  dev  17.60  val  17.49
+2026-10-16 13:33:46,022 | INFO    | huim_opt | R_G_C__1.7321pct__topn0.5                 46 AP  dev  33.84  val  42.28
+2026-10-16 13:34:42,349 | INFO    | huim_opt | R_G_C__1.7321pct__topn0.75                69 AP  dev  21.79  val  24.11
+2026-10-16 13:35:55,636 | INFO    | huim_opt | R_G_C__1.7321pct__frequent2               91 AP  dev  17.60  val  17.49
+2026-10-16 13:36:35,342 | INFO    | huim_opt | R_G_C__1.7321pct__frequentmedian          46 AP  dev  33.84  val  42.28
+2026-10-16 13:37:48,522 | INFO    | huim_opt | R_G_C__1.7321pct__weighted0.5             91 AP  dev  18.78  val  18.14
+2026-10-16 13:39:02,120 | INFO    | huim_opt | R_G_C__1.7321pct__weighted1.0             91 AP  dev  20.70  val  19.91
+2026-10-16 13:39:16,520 | INFO    | huim_opt | EFIM B b0 0.5%: ABORTED_RESOURCE_LIMIT, 1000001 HUIs, 9.9s
+2026-10-16 13:39:23,472 | INFO    | huim_opt | EFIM B b0 1%: COMPLETED, 412972 HUIs, 5.0s
+2026-10-16 13:39:39,547 | INFO    | huim_opt | EFIM B b1 1%: ABORTED_RESOURCE_LIMIT, 1000001 HUIs, 6.4s
+2026-10-16 13:39:43,033 | INFO    | huim_opt | EFIM B b0 1.5%: COMPLETED, 166435 HUIs, 2.5s
+2026-10-16 13:40:45,749 | INFO    | huim_opt | EFIM B b1 1.5%: ABORTED_RESOURCE_LIMIT, 1000001 HUIs, 54.3s
+2026-10-16 13:40:48,138 | INFO    | huim_opt | EFIM B b0 1.9294%: COMPLETED, 85636 HUIs, 1.8s
+2026-10-16 13:41:59,932 | INFO    | huim_opt | EFIM B b1 1.9294%: ABORTED_RESOURCE_LIMIT, 1000001 HUIs, 60.7s
+2026-10-16 13:42:01,450 | INFO    | huim_opt | EFIM B b0 2.5%: COMPLETED, 43480 HUIs, 1.0s
+2026-10-16 13:47:09,488 | INFO    | huim_opt | EFIM B b1 2.5%: ABORTED_RESOURCE_LIMIT, 650505 HUIs, 301.0s
+2026-10-16 13:47:10,585 | INFO    | huim_opt | EFIM B b0 3%: COMPLETED, 25998 HUIs, 0.7s
+2026-10-16 13:52:14,848 | INFO    | huim_opt | EFIM B b1 3%: ABORTED_RESOURCE_LIMIT, 344007 HUIs, 300.6s
+2026-10-16 13:52:15,597 | INFO    | huim_opt | EFIM B b0 4%: COMPLETED, 10678 HUIs, 0.5s
+2026-10-16 13:57:16,814 | INFO    | huim_opt | EFIM B b1 4%: ABORTED_RESOURCE_LIMIT, 75793 HUIs, 300.2s
+2026-10-16 13:57:17,391 | INFO    | huim_opt | EFIM B b0 5%: COMPLETED, 4068 HUIs, 0.3s
+2026-10-16 13:58:26,245 | INFO    | huim_opt | EFIM B b1 5%: ABORTED_RESOURCE_LIMIT, 1000001 HUIs, 57.9s
+2026-10-16 13:58:26,762 | INFO    | huim_opt | EFIM B b0 7.5%: COMPLETED, 147 HUIs, 0.2s
+2026-10-16 14:03:27,280 | INFO    | huim_opt | EFIM B b1 7.5%: ABORTED_RESOURCE_LIMIT, 28361 HUIs, 300.1s
+2026-10-16 14:03:27,631 | INFO    | huim_opt | EFIM B b0 10%: COMPLETED, 1 HUIs, 0.1s
+2026-10-16 14:04:01,158 | INFO    | huim_opt | EFIM B b1 10%: COMPLETED, 0 HUIs, 33.3s
+2026-10-16 14:04:01,161 | WARNING | huim_opt | step 6: no complete HUI set for per_building B
+2026-10-16 14:04:01,200 | INFO    | huim_opt | step 7 candidates: ['G_C__0.5pct', 'PB_B__0.5pct', 'PB_C__0.5pct', 'PB_A__0.5pct', 'G_A__0.5pct', 'G_B__0.5pct']
+2026-10-16 14:04:21,124 | INFO    | huim_opt | best ensemble on dev: E_median__G_C__0.5pct+PB_B__0.5pct+G_B__0.5pct  dev 6.19  val 5.28

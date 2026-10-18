@@ -1,0 +1,6 @@
+label,config,scope,model,theta_pct,rule,n_ap,radio_map_mb,build_s,build_peak_mb,n_rows,total_s,ms_per_fp,peak_delta_mb,dev_mean_m,test_mean_m
+ban_dau,G_A__6.1237pct,global,A,6.1237,union,67,5.812,0.031,11.93,860,0.1759,0.2045,5.83,2.0906,2.1195
+don_tot_nhat,G_A__1pct,global,A,1.0,union,187,16.222,0.059,39.16,860,0.4592,0.5339,18.7,1.3985,1.5679
+can_bang_global,G_B__3pct,global,B,3.0,union,144,12.491,0.045,2.0,860,0.3546,0.4123,12.51,1.4329,1.5795
+can_bang_zone,Z_A__6.777pct,zone,A,6.777,union,147,18.757,0.102,39.26,860,0.4218,0.4905,12.77,1.4838,1.6528
+tot_nhat_ensemble,E_median__G_C__1pct+G_B__1pct+Z_B__3pct,ensemble,C+B+B,,ensemble,193,57.783,,,860,1.458,1.6953,19.2,1.3975,1.5764

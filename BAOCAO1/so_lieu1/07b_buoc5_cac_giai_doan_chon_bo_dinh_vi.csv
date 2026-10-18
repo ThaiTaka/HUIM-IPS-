@@ -1,0 +1,13 @@
+bo_du_lieu,chon_tren_cau_hinh,so_AP,giai_doan,noi_dung,bo_dinh_vi,dev_sai_so_tb_m,dev_trung_vi_m,bo_dinh_vi_goc,giong_bo_dinh_vi_goc,thoi_gian_chon_s
+uji_lib3,Z_A__0.75pct,116,S0,study k-NN as regressor,"positive+manhattan, k=1, w=1/d^0",1.5338,0.0000,"exponential+braycurtis, k=3, w=1/d^4",False,55.4000
+uji_lib3,Z_A__0.75pct,116,S1,best representation x distance (k=1),"exponential+braycurtis, k=1, w=1/d^0",1.3871,0.0000,"exponential+braycurtis, k=3, w=1/d^4",False,55.4000
+uji_lib3,Z_A__0.75pct,116,S2,+ k and 1/d^p weighting,"exponential+braycurtis, k=4, w=1/d^4",1.3468,0.8841,"exponential+braycurtis, k=3, w=1/d^4",False,55.4000
+dlulib,Z_A__0.25pct,17,S0,study k-NN as regressor,"positive+manhattan, k=1, w=1/d^0",3.4578,2.4000,"powed+braycurtis, k=7, w=1/d^4",True,37.2000
+dlulib,Z_A__0.25pct,17,S1,best representation x distance (k=1),"powed+braycurtis, k=1, w=1/d^0",2.8578,1.2000,"powed+braycurtis, k=7, w=1/d^4",True,37.2000
+dlulib,Z_A__0.25pct,17,S2,+ k and 1/d^p weighting,"powed+braycurtis, k=7, w=1/d^4",2.5396,1.7974,"powed+braycurtis, k=7, w=1/d^4",True,37.2000
+hcxy,G_A__1pct,187,S0,study k-NN as regressor,"positive+manhattan, k=1, w=1/d^0",2.0522,1.6914,"powed+braycurtis, k=30, w=1/d^3",True,84.2000
+hcxy,G_A__1pct,187,S1,best representation x distance (k=1),"powed+braycurtis, k=1, w=1/d^0",1.8198,1.2004,"powed+braycurtis, k=30, w=1/d^3",True,84.2000
+hcxy,G_A__1pct,187,S2,+ k and 1/d^p weighting,"powed+braycurtis, k=30, w=1/d^3",1.3985,1.2009,"powed+braycurtis, k=30, w=1/d^3",True,84.2000
+hus_dedup,G_A__50pct,5,S0,study k-NN as regressor,"positive+manhattan, k=1, w=1/d^0",0.4094,0.0000,"powed+manhattan, k=4, w=1/d^4",True,94.1000
+hus_dedup,G_A__50pct,5,S1,best representation x distance (k=1),"exponential+euclidean, k=1, w=1/d^0",0.4060,0.0000,"powed+manhattan, k=4, w=1/d^4",True,94.1000
+hus_dedup,G_A__50pct,5,S2,+ k and 1/d^p weighting,"powed+manhattan, k=4, w=1/d^4",0.4051,0.0000,"powed+manhattan, k=4, w=1/d^4",True,94.1000
