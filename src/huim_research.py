@@ -69,19 +69,21 @@ def load_model(f: Path, ground_factor: float) -> tuple[HUIPositioner, dict]:
                  ("indptr", "items", "util", "supp", "hcell", "cells", "cell_xy", "cell_bf")}
 
 
-def mine(k: int, levels: int = 1, theta: float = THETA) -> None:
+def mine(k: int, levels: int = 1, theta: float = THETA, kind: str = KIND) -> None:
     RES.mkdir(parents=True, exist_ok=True)
     b = load(KEY)
-    _p, Q, cell, XY, BF = inputs(b, KIND)
+    _p, Q, cell, XY, BF = inputs(b, kind)
     Q = expand_levels(Q, levels)
     tri, dvi = folds_for(b, len(Q))[k]
     t0 = time.perf_counter()
     pos = HUIPositioner(theta, ground_factor=b.ground_factor).fit(Q[tri], cell[tri], XY[tri], BF[tri])
-    save_model(pos, fold_path(k, tag(levels, theta)), dvi=dvi)
+    save_model(pos, fold_path(k, tag(levels, theta, kind)), dvi=dvi)
     print(f"fold {k}: {len(pos.hui_items)} HUIs, {time.perf_counter() - t0:.0f}s", flush=True)
 
 
-def tag(levels: int, theta: float = THETA) -> str:
+def tag(levels: int, theta: float = THETA, kind: str = KIND) -> str:
+    if kind != KIND:
+        return f"_{kind}_L{levels}_t{theta:g}"
     return "" if levels == 1 and theta == THETA else f"_L{levels}_t{theta:g}"
 
 
@@ -440,9 +442,10 @@ def main() -> None:
     ap.add_argument("--fold", type=int)
     ap.add_argument("--levels", type=int, default=1)
     ap.add_argument("--theta", type=float, default=THETA)
+    ap.add_argument("--kind", default=KIND)
     a = ap.parse_args()
     if a.stage == "mine":
-        mine(a.fold, a.levels, a.theta)
+        mine(a.fold, a.levels, a.theta, a.kind)
     elif a.stage == "eval":
         evaluate(a.fold, a.levels, a.theta)
     elif a.stage == "feat":
