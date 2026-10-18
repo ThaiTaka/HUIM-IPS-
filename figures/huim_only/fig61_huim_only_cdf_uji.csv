@@ -1,9 +1,14 @@
 curve,percentile,err_m
-Chỉ HUIM (khớp HUI),50,6.1515
-Chỉ HUIM (khớp HUI),75,10.7194
-Chỉ HUIM (khớp HUI),90,16.9459
-Chỉ HUIM (khớp HUI),95,20.913
-Chỉ HUIM (khớp HUI),mean,8.0591
+"Chỉ HUIM, mô hình cuối (v6)",50,5.1398
+"Chỉ HUIM, mô hình cuối (v6)",75,8.9434
+"Chỉ HUIM, mô hình cuối (v6)",90,14.0185
+"Chỉ HUIM, mô hình cuối (v6)",95,18.4182
+"Chỉ HUIM, mô hình cuối (v6)",mean,6.8658
+"Chỉ HUIM, v4 (không xếp hạng lại)",50,6.1515
+"Chỉ HUIM, v4 (không xếp hạng lại)",75,10.7194
+"Chỉ HUIM, v4 (không xếp hạng lại)",90,16.9459
+"Chỉ HUIM, v4 (không xếp hạng lại)",95,20.913
+"Chỉ HUIM, v4 (không xếp hạng lại)",mean,8.0591
 "k-NN tối ưu, 520 WAP (tham chiếu)",50,3.5224
 "k-NN tối ưu, 520 WAP (tham chiếu)",75,6.8973
 "k-NN tối ưu, 520 WAP (tham chiếu)",90,11.8922

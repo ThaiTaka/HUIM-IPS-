@@ -11,8 +11,9 @@ checked against the data.
   d05_buoc4_mo_hinh.png      step 4  the model = HUI sets of every cell
   d06_buoc5_cham_diem.png    step 5  scoring a query against a cell's HUIs
   d07_buoc6_lam_muot_tang.png step 6 spatial smoothing and floor decision
-  d08_buoc7_toa_do.png       step 7  position = weighted centroid of the best cells
-  d09_giao_thuc.png          evaluation protocol and verification
+  d08_buoc7_toa_do.png       step 7  candidate cells and the initial (v4) estimate
+  d09_buoc8_xep_hang_lai.png step 8  HUI-evidence re-ranking of the candidates (v6, final)
+  d10_giao_thuc.png          evaluation protocol and verification
 """
 from __future__ import annotations
 
@@ -118,7 +119,7 @@ def main() -> None:
     S = pos.cell_scores(P, V, prm.beta, prm.sigma)
     floor = pos.floor_of(S, prm.kf)
     xy, top, a, sc = pos.locate(S, floor, prm.m, prm.p)
-    assert np.allclose(xy[0], [ex["pred_x"], ex["pred_y"]]), "diagram model differs from saved predictions"
+    assert np.allclose(xy[0], [ex["v4_x"], ex["v4_y"]]), "diagram model differs from saved predictions"
     det = np.flatnonzero(W[0] != 100)
     order = det[np.argsort(-W[0, det], kind="stable")]
     wap = b.wap_cols
@@ -132,19 +133,22 @@ def main() -> None:
     box(ax, 22.5, 33, 18, 17, "Bước 1", [r"utility nội $q(i,T)$", f"dạng: {sel['utility']}", "(thứ hạng cường độ)"], fc=TEAL_L, ec=TEAL, hc=TEAL)
     box(ax, 44, 33, 17, 17, "Bước 2", ["Ô = điểm tham chiếu", f"{U['model']['n_cells']} ô", "mỗi ô = 1 CSDL giao dịch"], fc=TEAL_L, ec=TEAL, hc=TEAL)
     box(ax, 64.5, 33, 16, 17, "Bước 3", ["EFIM theo từng ô", r"$\mathrm{minUtil}_c=$" + f" {sel['theta_pct']:g}% " + r"$u(D_c)$", r"chặn $lu$, $su$"], fc=TEAL_L, ec=TEAL, hc=TEAL)
-    box(ax, 84, 33, 16, 17, "Bước 4: mô hình", [f"{vn(U['model']['n_huis'], 0)} HUI", "+ tâm ô, tòa – tầng", "không lưu fingerprint"], fc=RUST_L, ec=RUST, hc=RUST)
+    V6 = U["v6"]
+    box(ax, 84, 33, 16, 17, "Bước 4: mô hình", [f"{vn(U['model']['n_huis'], 0)} HUI (rank)",
+        "+ 2 mô hình HUI phụ", "(mức cường độ, abs)"], fc=RUST_L, ec=RUST, hc=RUST)
     for x1, x2 in ((19.5, 22), (41, 43.5), (61.5, 64), (81, 83.5)):
         arrow(ax, x1, 41.5, x2, 41.5)
     ax.text(0, 27.5, "ĐỊNH VỊ (cho mỗi fingerprint cần định vị)", fontsize=11, color=RUST, fontweight="bold")
-    box(ax, 0, 6, 19, 18, "Truy vấn T", ["1 fingerprint mới", r"$\rightarrow$ giao dịch $q(i,T)$", "(cùng Bước 1)"], fc=NAVY_L)
-    box(ax, 22.5, 6, 20, 18, "Bước 5: chấm điểm", [r"$P_c$: khớp mẫu HUI", r"$V_c$: độ phủ truy vấn", r"$\mathrm{score}_c = P_c\,V_c^{\,\beta}$"], fc=RUST_L, ec=RUST, hc=RUST)
-    box(ax, 45.5, 6, 17, 18, "Bước 6", [r"làm mượt ($\sigma$)", "chọn tòa – tầng", f"(kf = {prm.kf} ô tốt nhất)"], fc=RUST_L, ec=RUST, hc=RUST)
-    box(ax, 65.5, 6, 15.5, 18, "Bước 7", [f"m = {prm.m} ô tốt nhất", "của tầng đã chọn", r"$\rightarrow$ trọng tâm"], fc=RUST_L, ec=RUST, hc=RUST)
-    box(ax, 84, 6, 16, 18, "Đầu ra", [r"toạ độ $(\hat x,\hat y)$", "tòa, tầng", "sai số (m)"], fc=NAVY_L)
-    for x1, x2 in ((19.5, 22), (43, 45), (63, 65), (81.5, 83.5)):
+    box(ax, 0, 6, 14.5, 18, "Truy vấn T", ["1 fingerprint", r"$\rightarrow q(i,T)$", "(như Bước 1)"], fc=NAVY_L)
+    box(ax, 17.5, 6, 16, 18, "Bước 5", [r"$P_c$: khớp mẫu HUI", r"$V_c$: độ phủ", r"$\mathrm{score}_c = P_c V_c^{\beta}$"], fc=RUST_L, ec=RUST, hc=RUST)
+    box(ax, 36.5, 6, 14.5, 18, "Bước 6", [r"làm mượt ($\sigma$)", "chọn tòa – tầng", f"(kf = {prm.kf})"], fc=RUST_L, ec=RUST, hc=RUST)
+    box(ax, 54, 6, 14, 18, "Bước 7", [f"{V6['k_candidates']} ô ứng viên", "của tầng đã chọn", "ước lượng đầu"], fc=RUST_L, ec=RUST, hc=RUST)
+    box(ax, 71, 6, 14.5, 18, "Bước 8", ["xếp hạng lại", "bằng bằng chứng", f"HUI, m = {V6['m']}"], fc=RUST_L, ec=RUST, hc=RUST)
+    box(ax, 88.5, 6, 11.5, 18, "Đầu ra", [r"$(\hat x,\hat y)$", "tòa, tầng", "sai số"], fc=NAVY_L)
+    for x1, x2 in ((15, 17), (34, 36), (51.5, 53.5), (68.5, 70.5), (86, 88)):
         arrow(ax, x1, 15, x2, 15)
-    arrow(ax, 92, 32.5, 34, 24.5, color=RUST)
-    ax.text(63, 30.2, "mô hình HUI được dùng khi định vị", fontsize=10, color=RUST, ha="center", rotation=8)
+    arrow(ax, 92, 32.5, 28, 24.5, color=RUST)
+    ax.text(60, 30.2, "mô hình HUI được dùng khi định vị", fontsize=10, color=RUST, ha="center", rotation=7)
     save(fig, "d01_tong_quan.png")
 
     # ---------------------------------------------------------------- d02
@@ -311,35 +315,78 @@ def main() -> None:
     ax.scatter((tc.x - x0) * gf, (tc.y - y0) * gf, s=60 + 900 * a[0], color=TEAL, alpha=0.8,
                edgecolor="white", label=f"{prm.m} ô tốt nhất (kích thước tỉ lệ với trọng số " + r"$a_c$" + ")")
     ax.scatter([0], [0], marker="*", s=300, color=NAVY, label="vị trí thật")
-    ax.scatter([(ex["pred_x"] - x0) * gf], [(ex["pred_y"] - y0) * gf], marker="X", s=160, color=RUST,
-               label=f"vị trí ước lượng, sai số {vn(ex['err_m'])} m")
+    ax.scatter([(ex["v4_x"] - x0) * gf], [(ex["v4_y"] - y0) * gf], marker="X", s=160, color=RUST,
+               label=f"ước lượng ban đầu (v4), sai số {vn(ex['v4_err_m'])} m")
     ax.set_xlim(-45, 45); ax.set_ylim(-35, 25); ax.set_aspect("equal")
     ax.set_xlabel("Δx so với vị trí thật (m thực địa)"); ax.set_ylabel("Δy (m thực địa)")
     ax.spines[["top", "right"]].set_visible(False)
     ax.legend(fontsize=9, frameon=False, loc="upper left")
-    ax.set_title("Bước 7 — Toạ độ = trọng tâm có trọng số của m ô tốt nhất trong tầng đã chọn",
+    ax.set_title("Bước 7 — Ô ứng viên của tầng đã chọn và ước lượng ban đầu (trọng tâm của m ô tốt nhất)",
                  loc="left", fontsize=13, fontweight="bold", color=NAVY)
     ax.text(5, 18, r"$(\hat x,\hat y) = \sum_{c\in\mathrm{top}\text{-}m} a_c\,(x_c,y_c),\quad a_c = \dfrac{S_c^{\,p}}{\sum S^{\,p}}$", fontsize=13)
     ax.text(5, 11, r"$e = \sqrt{(\hat x - x)^2 + (\hat y - y)^2}\cdot 0{,}766126$", fontsize=12)
     save(fig, "d08_buoc7_toa_do.png")
 
-    # ---------------------------------------------------------------- d09
+    # ---------------------------------------------------------------- d09 (step 8)
+    pr = pd.read_csv(MODEL / "v6" / "predictions" / "validationData.csv")
+    r6 = pr[pr.src_row == ex["src_row"]].iloc[0]
+    m6 = V6["m"]
+    i6 = np.array([int(r6[f"cell{j}_index"]) for j in range(1, m6 + 1)])
+    w6 = np.array([r6[f"cell{j}_weight"] for j in range(1, m6 + 1)])
+    fig = plt.figure(figsize=(13, 6.4))
+    axL = fig.add_axes([0.0, 0.0, 0.47, 0.9]); axL.axis("off"); axL.set_xlim(0, 100); axL.set_ylim(0, 100)
+    fig.text(0.0, 0.97, "Bước 8 — Xếp hạng lại ô ứng viên bằng bằng chứng HUI (mô hình cuối)", fontsize=14,
+             fontweight="bold", color=NAVY, va="top")
+    box(axL, 0, 70, 100, 22, "Bằng chứng HUI cho mỗi ô ứng viên c (chỉ tính từ HUI)", [
+        r"mô hình rank: $P_c$, $V_c$, $R_c$, điểm sau làm mượt, IDF của HUI",
+        r"mô hình mục (AP, mức cường độ) và mô hình abs: $P_c$, $V_c$, thứ hạng",
+        r"hồ sơ cường độ từ HUI: $\hat q_c(i)$ so với $q(i,T)$; độ đồng thuận không gian"], fc=TEAL_L, ec=TEAL, hc=TEAL, fs=11.5)
+    box(axL, 0, 41, 100, 22, "Bộ hồi quy (học trên 6 fold dev, không dùng tập test)", [
+        f"{V6['n_features']} đặc trưng, mỗi đặc trưng thêm dạng so với các ứng viên khác",
+        r"dự đoán $\hat d_c$ = khoảng cách từ tâm ô c tới vị trí thật",
+        "Gradient Boosting (HistGradientBoostingRegressor)"], fc=RUST_L, ec=RUST, hc=RUST, fs=11.5)
+    box(axL, 0, 8, 100, 26, "Toạ độ cuối", [
+        r"$(\hat x,\hat y) = \sum_{c} a_c\,(x_c,y_c)$ trên m ô có $\hat d_c$ nhỏ nhất",
+        r"$a_c \propto \exp\!\left(-(\hat d_c - \hat d_{\min})/\lambda\right)$" + f",  m = {m6}, " + r"$\lambda$" + f" = {vn(V6['lam'], 0)}",
+        f"dev: {vn(V6['dev_mean_v4_m'])} m (v4) " + r"$\rightarrow$" + f" {vn(V6['dev_mean_m'])} m"], fc=NAVY_L, fs=11.5)
+    arrow(axL, 50, 69.5, 50, 63.5); arrow(axL, 50, 40.5, 50, 34.5)
+    axR = fig.add_axes([0.53, 0.08, 0.47, 0.8])
+    flo = cells[cells.building_floor.astype(str) == floor[0]]
+    axR.scatter((flo.x - x0) * gf, (flo.y - y0) * gf, s=12, color="#C9CED6", label="tâm các ô của tầng")
+    tc6 = cells.loc[i6]
+    axR.scatter((tc6.x - x0) * gf, (tc6.y - y0) * gf, s=40 + 900 * w6, color=TEAL, alpha=0.8, edgecolor="white",
+                label=f"{m6} ô sau xếp hạng lại (kích thước ~ " + r"$a_c$" + ")")
+    axR.scatter([0], [0], marker="*", s=300, color=NAVY, label="vị trí thật", zorder=5)
+    axR.scatter([(ex["v4_x"] - x0) * gf], [(ex["v4_y"] - y0) * gf], marker="o", s=260, facecolor="none",
+                edgecolor=GREY, linewidth=2,
+                label=f"ước lượng ban đầu (v4): {vn(ex['v4_err_m'])} m", zorder=5)
+    axR.scatter([(ex["pred_x"] - x0) * gf], [(ex["pred_y"] - y0) * gf], marker="X", s=160, color=RUST,
+                label=f"toạ độ cuối: sai số {vn(ex['err_m'])} m", zorder=6)
+    axR.set_xlim(-30, 30); axR.set_ylim(-25, 25); axR.set_aspect("equal")
+    axR.set_xlabel("Δx so với vị trí thật (m thực địa)"); axR.set_ylabel("Δy (m thực địa)")
+    axR.spines[["top", "right"]].set_visible(False)
+    axR.legend(fontsize=8.5, frameon=False, loc="upper left")
+    save(fig, "d09_buoc8_xep_hang_lai.png")
+
+    # ---------------------------------------------------------------- d10
     fig, ax = canvas(13, 6.6, "Giao thức đánh giá và kiểm chứng (tập test chỉ dùng một lần)")
     box(ax, 0, 25, 21, 21, "trainingData", ["19 937 fingerprint", "16 điện thoại", "6 fold dev, giữ lại", "theo điện thoại"], fc=NAVY_L)
-    box(ax, 25, 25, 23, 21, "Chọn trên dev", [f"utility: {', '.join(sel['grids'].get('utility', ['abs']))}",
-                                              f"θ = {sel['theta_pct']:g}%", f"{vn(sel['n_configurations'], 0)} cấu hình",
-                                              f"dev TB = {vn(sel['dev_mean_m'])} m"], fc=TEAL_L, ec=TEAL, hc=TEAL)
-    box(ax, 52, 25, 21, 21, "Mô hình cuối", ["khai thác lại EFIM", "trên toàn bộ", "trainingData", f"{vn(U['model']['n_huis'], 0)} HUI"], fc=TEAL_L, ec=TEAL, hc=TEAL)
+    box(ax, 25, 25, 23, 21, "Chọn trên dev", [f"Bước 1–7: {vn(sel['n_configurations'], 0)} cấu hình",
+                                              f"θ = {sel['theta_pct']:g}%, utility rank",
+                                              "Bước 8: học bộ hồi quy",
+                                              f"dev TB = {vn(V6['dev_mean_m'])} m"], fc=TEAL_L, ec=TEAL, hc=TEAL)
+    box(ax, 52, 25, 21, 21, "Mô hình cuối", ["khai thác lại EFIM", "trên toàn bộ trainingData", "3 mô hình HUI", f"{vn((U['model']['n_huis'] + V6['n_huis_L3'] + V6['n_huis_abs']) / 1e6, 2)} triệu HUI"], fc=TEAL_L, ec=TEAL, hc=TEAL)
     box(ax, 77, 25, 23, 21, "validationData", ["1 111 fingerprint", "9/11 điện thoại lạ", "chấm MỘT lần", f"TB = {vn(T['sai_so_tb_m'])} m"], fc=RUST_L, ec=RUST, hc=RUST)
     for x1, x2 in ((21.5, 24.5), (48.5, 51.5), (73.5, 76.5)):
         arrow(ax, x1, 35.5, x2, 35.5)
     box(ax, 0, 1, 100, 19, "Kiểm chứng độc lập (không gọi EFIM, không gọi bộ định vị)", [
         "M1  minUtil mọi ô tính lại từ dBm gốc        M2  utility và support của HUI quét lại từ dữ liệu",
         "M3  mọi itemset 1–2 AP vượt minUtil đều có trong mô hình        M4  điểm, ô được chọn, toạ độ tính lại bằng vòng lặp",
-        f"M5  sai số và độ chính xác đếm lại từ file dự đoán        Kết quả: {data['verification']['n_checks']} phép kiểm, "
-        f"{data['verification']['n_failed']} thất bại; sổ Excel so_lieu/kiem_chung_mean.xlsx khớp mọi tập test"],
+        "M5  sai số và độ chính xác đếm lại từ file dự đoán        V1–V7  toạ độ cuối = tổng có trọng số của các ô (Bước 8)",
+        f"Kết quả: {data['verification']['n_checks']} phép kiểm, {data['verification']['n_failed']} thất bại; "
+        "sổ Excel so_lieu/kiem_chung_mean.xlsx khớp mọi tập test"],
         fc="white", ec=GREY, hc=INK, fs=10)
-    save(fig, "d09_giao_thuc.png")
+    save(fig, "d10_giao_thuc.png")
     print("diagrams:", sorted(p.name for p in OUT.glob("*.png")))
 
 

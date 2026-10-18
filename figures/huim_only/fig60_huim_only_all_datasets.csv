@@ -1,5 +1,5 @@
 dataset,title,test_set,huim_only_mean_m,huim_only_median_m,huim_only_joint_accuracy,knn_study_m,knn_opt_m
-uji,UJIIndoorLoc,validationData,8.0591,6.1515,0.80378,9.277,5.3558
+uji,UJIIndoorLoc,validationData,6.8658,5.1398,0.80378,9.277,5.3558
 uji_lib3,UJI_LIB tầng 3,Test-01,2.5698,2.1707,1.0,1.3341,1.208
 uji_lib3,UJI_LIB tầng 3,Test-02,2.6792,2.3078,1.0,1.9398,2.0277
 dlulib,DLULIB,Testing,6.0098,4.8813,0.968,4.1786,3.4335
