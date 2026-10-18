@@ -27,3 +27,4 @@ Thumbs.db
 desktop.ini
 results/huim_only/uji/research/*.npz
 results/huim_only/uji/research/*.log
+results/logs/preprocess.log
