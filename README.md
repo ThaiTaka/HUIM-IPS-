@@ -6,6 +6,13 @@ on **UJIIndoorLoc**.
 
 Written for: the person running this project and a reviewer checking its claims.
 
+> **Final deliverables are in `BAOCAO/`** (read `BAOCAO/00_HUONG_DAN_DOC.md` first):
+> the Word report, the slide deck, the model diagrams (`diagram/`), the numbers and
+> the Excel / Python kits that recompute every mean error (`so_lieu/`), and the source
+> code (`ma_nguon/`). The final system is the HUIM-only positioner (§10, no k-NN);
+> `src/baocao/` rebuilds the folder. The older `report/`, `slides/` and `verification/`
+> outputs mentioned below were removed; their build scripts still write there if rerun.
+
 ---
 
 ## What this is, and what it is not
@@ -287,9 +294,8 @@ results/
     logs/                   every run's stdout and structured log
     deliverables.csv, verification.json
 figures/                    *.png, each with the *.csv it was plotted from
-report/                     the DOCX report and the Python-file guide
-slides/                     the PPTX decks and speaker_notes.md
-verification/               kiem_chung_thu_cong.xlsx (manual checks)
+BAOCAO/                     final report, slides, diagrams, numbers, source code
+src/baocao/                 the scripts that build BAOCAO/
 run_experiments.py          the whole pipeline
 ```
 

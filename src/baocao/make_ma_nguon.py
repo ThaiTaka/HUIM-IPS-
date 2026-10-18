@@ -17,7 +17,7 @@ MODULES = ["huim_positioning", "run_huim_only", "verify_huim_only", "plots_huim_
            "run_huim_refine", "run_ips", "utils"]
 TESTS = ["conftest.py", "test_efim.py", "test_huim_positioning.py", "test_utility.py"]
 BUILD = ["export_data.py", "make_so_lieu_kit.py", "make_diagrams.py", "make_ma_nguon.py",
-         "build_report.js", "fill_toc.py", "build_slides.js"]
+         "build_report.js", "fill_toc.py", "build_slides.js", "make_slide_formulas.py"]
 
 README = """# Mã nguồn — định vị trong nhà chỉ bằng HUIM
 

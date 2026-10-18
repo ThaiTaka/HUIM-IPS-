@@ -133,6 +133,8 @@ def main() -> None:
                          "knn_toi_uu_m": float(r4.mean_err_m.iloc[0]) if len(r4) else None,
                          "huim_chon_ap_knn_m": z["huim_zone"]["mean_err_m"] if z else None,
                          "huim_chon_ap_so_ap": z["huim_zone"]["n_waps"] if z else None,
+                         "huim_toan_cuc_knn_m": (z["global_huim_best"] or {}).get("mean_err_m") if z else None,
+                         "huim_toan_cuc_so_ap": (z["global_huim_best"] or {}).get("n_waps") if z else None,
                          "tong_ap": z["all_aps"]["n_waps"] if z else None})
     pd.DataFrame(refs).to_csv(OUT / "05_tham_chieu.csv", index=False)
     data["references"] = refs
