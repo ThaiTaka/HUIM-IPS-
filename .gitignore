@@ -32,3 +32,5 @@ results/huim_only/uji/research/eval_fold*.csv
 results/huim_only/uji/research/feat_fold*.npz
 results/huim_only/uji/research/feat*_fold*.npz
 results/huim_only/uji/research/oof_err.npy
+results/huim_only/uji/research/v5_dev_fold*.npz
+results/huim_only/uji/v5/model_L3.npz

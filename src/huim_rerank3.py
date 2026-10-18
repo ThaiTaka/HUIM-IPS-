@@ -24,7 +24,7 @@ GF = 0.766126
 
 
 def load():
-    return [dict(np.load(RES / f"feat3_fold{k}.npz", allow_pickle=False)) for k in range(6)]
+    return [dict(np.load(RES / f"feat3_fold{k}.npz", allow_pickle=True)) for k in range(6)]
 
 
 def reg():
