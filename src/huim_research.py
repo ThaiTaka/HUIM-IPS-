@@ -33,6 +33,20 @@ def fold_path(k: int, tag: str = "") -> Path:
     return RES / f"fold{k}{tag}.npz"
 
 
+def expand_levels(Q: np.ndarray, L: int) -> np.ndarray:
+    """Items = (AP, strength level): AP i at level l becomes column i*L + l,
+    l = floor((q - 1) / 100 * L) from the internal utility q in [1, 100];
+    the utility of the item stays q. L = 1 is the plain AP item."""
+    if L == 1:
+        return Q
+    n, nA = Q.shape
+    lev = np.clip(((Q - 1) / 100.0 * L).astype(np.int64), 0, L - 1)
+    out = np.zeros((n, nA * L), Q.dtype)
+    r, c = np.nonzero(Q)
+    out[r, c * L + lev[r, c]] = Q[r, c]
+    return out
+
+
 def save_model(pos: HUIPositioner, f: Path, **extra) -> None:
     lens = np.array([len(x) for x in pos.hui_items], np.int64)
     np.savez_compressed(f, indptr=np.concatenate([[0], np.cumsum(lens)]),
@@ -55,15 +69,20 @@ def load_model(f: Path, ground_factor: float) -> tuple[HUIPositioner, dict]:
                  ("indptr", "items", "util", "supp", "hcell", "cells", "cell_xy", "cell_bf")}
 
 
-def mine(k: int) -> None:
+def mine(k: int, levels: int = 1, theta: float = THETA) -> None:
     RES.mkdir(parents=True, exist_ok=True)
     b = load(KEY)
     _p, Q, cell, XY, BF = inputs(b, KIND)
+    Q = expand_levels(Q, levels)
     tri, dvi = folds_for(b, len(Q))[k]
     t0 = time.perf_counter()
-    pos = HUIPositioner(THETA, ground_factor=b.ground_factor).fit(Q[tri], cell[tri], XY[tri], BF[tri])
-    save_model(pos, fold_path(k), dvi=dvi)
+    pos = HUIPositioner(theta, ground_factor=b.ground_factor).fit(Q[tri], cell[tri], XY[tri], BF[tri])
+    save_model(pos, fold_path(k, tag(levels, theta)), dvi=dvi)
     print(f"fold {k}: {len(pos.hui_items)} HUIs, {time.perf_counter() - t0:.0f}s", flush=True)
+
+
+def tag(levels: int, theta: float = THETA) -> str:
+    return "" if levels == 1 and theta == THETA else f"_L{levels}_t{theta:g}"
 
 
 # ===================================================================== eval
@@ -141,32 +160,35 @@ def locate_local(pos: HUIPositioner, S, floor, m, p, radius_m):
     return pos.locate(S, floor, m, p)
 
 
-def evaluate(k: int) -> None:
+def evaluate(k: int, levels: int = 1, theta: float = THETA) -> None:
     import itertools
     import pandas as pd
     b = load(KEY)
     _p, Q, _cell, XY, BF = inputs(b, KIND)
+    Q = expand_levels(Q, levels)
     gf = b.ground_factor
     GT = [(2.0, 20.0), (1.0, 20.0)]
     rows = []
+    light = levels > 1
     if True:
-        pos, ex = load_model(fold_path(k), gf)
+        pos, ex = load_model(fold_path(k, tag(levels, theta)), gf)
         dvi = ex["dvi"]
         t0 = time.perf_counter()
         kid = hui_keys(pos)
         nC = len(pos.cells)
         df_glob = np.bincount(kid, minlength=kid.max() + 1)[kid].astype(np.float32)
         Cws = {"base": pos.Cw}
-        for r, aa in ((10.0, (1.0, 2.0)), (20.0, (1.0,))):
+        for r, aa in (() if light else ((10.0, (1.0, 2.0)), (20.0, (1.0,)))):
             dfl = local_df(pos, kid, r)
             for a in aa:
                 Cws[f"idf_r{r:g}_a{a:g}"] = cell_matrix(pos, pos.hui_util / dfl ** a)
-        Cws["idf_glob"] = cell_matrix(pos, pos.hui_util * np.log1p(nC / df_glob))
+        if not light:
+            Cws["idf_glob"] = cell_matrix(pos, pos.hui_util * np.log1p(nC / df_glob))
         print(f"fold {k}: weights built {time.perf_counter() - t0:.0f}s", flush=True)
         P, V, R = components_multi(pos, Q[dvi], GT, Cws)
         print(f"fold {k}: components {time.perf_counter() - t0:.0f}s", flush=True)
         for (name, gt), Pm in P.items():
-            for beta, delta, sigma in itertools.product((1.0, 3.0), (0.0, 1.0, 3.0), (0.0, 3.0)):
+            for beta, delta, sigma in itertools.product((1.0, 3.0), (0.0, 1.0, 3.0, 5.0, 8.0), (0.0, 3.0)):
                 S = Pm * V ** beta * (R ** delta if delta else 1.0)
                 if sigma:
                     S = S @ pos._kernel(sigma)
@@ -183,18 +205,19 @@ def evaluate(k: int) -> None:
                         e = np.sqrt(((xy - XY[dvi]) ** 2).sum(1)) * gf
                         rows.append({**rows[-1], "loc": f"r{rad:g}", "sum_err": float(e.sum())})
         print(f"fold {k}: done {time.perf_counter() - t0:.0f}s", flush=True)
-        pd.DataFrame(rows).to_csv(RES / f"eval_fold{k}.csv", index=False)
+        pd.DataFrame(rows).to_csv(RES / f"eval_fold{k}{tag(levels, theta)}.csv", index=False)
 
 
-def merge(prefix: str = "eval") -> None:
+def merge(t: str = "") -> None:
     import pandas as pd
-    D = pd.concat([pd.read_csv(RES / f"{prefix}_fold{k}.csv") for k in range(6)])
+    prefix = "eval"
+    D = pd.concat([pd.read_csv(RES / f"{prefix}_fold{k}{t}.csv") for k in range(6)])
     keys = [c for c in D.columns if c not in ("fold", "n", "sum_err", "floor_ok")]
     G = D.groupby(keys).agg(n=("n", "sum"), s=("sum_err", "sum"), f=("floor_ok", "sum"), folds=("fold", "nunique")).reset_index()
     G = G[G.folds == 6]
     G["dev_mean_m"] = G.s / G.n
     G["dev_floor"] = G.f / G.n
-    G.sort_values("dev_mean_m").to_csv(RES / f"{prefix}_grid.csv", index=False)
+    G.sort_values("dev_mean_m").to_csv(RES / f"{prefix}_grid{t}.csv", index=False)
     print(G.sort_values("dev_mean_m").head(15).to_string())
     for c in keys:
         print(G.groupby(c).dev_mean_m.min().sort_values().to_string(), "\n")
@@ -204,13 +227,15 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--stage", choices=["mine", "mine_all", "eval", "merge"], required=True)
     ap.add_argument("--fold", type=int)
+    ap.add_argument("--levels", type=int, default=1)
+    ap.add_argument("--theta", type=float, default=THETA)
     a = ap.parse_args()
     if a.stage == "mine":
-        mine(a.fold)
+        mine(a.fold, a.levels, a.theta)
     elif a.stage == "eval":
-        evaluate(a.fold)
+        evaluate(a.fold, a.levels, a.theta)
     elif a.stage == "merge":
-        merge()
+        merge(tag(a.levels, a.theta))
     else:
         for k in range(6):
             if not fold_path(k).exists():
