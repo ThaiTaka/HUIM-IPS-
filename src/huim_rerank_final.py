@@ -148,10 +148,13 @@ def stage_dev(k: int, with_abs: bool = False) -> None:
     print(f"dev fold {k}: features {f['F'].shape}", flush=True)
 
 
-def dev_check() -> dict:
-    """Out-of-fold dev error of v5 (leave-one-fold-out), to confirm the
-    refactored features reproduce the research numbers."""
-    D = [dict(np.load(RES / f"v5_dev_fold{k}.npz")) for k in range(6)]
+def dev_files(with_abs: bool) -> list[Path]:
+    return [RES / f"v5{'a' if with_abs else ''}_dev_fold{k}.npz" for k in range(6)]
+
+
+def dev_check(with_abs: bool = False) -> dict:
+    """Out-of-fold dev error (leave-one-fold-out) of the re-ranker."""
+    D = [dict(np.load(f)) for f in dev_files(with_abs)]
     gf = load(KEY).ground_factor
     e, e4 = [], []
     for k in range(6):
@@ -186,12 +189,28 @@ def load_final_base(gf: float) -> HUIPositioner:
     return pos
 
 
-def stage_final() -> None:
-    OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "predictions").mkdir(exist_ok=True)
+def final_abs_model(b) -> HUIPositioner:
+    """HUI model on the absolute-RSSI utility, mined on the full training data."""
+    f = OUT / "model_abs.npz"
+    if not f.exists():
+        OUT.mkdir(parents=True, exist_ok=True)
+        _p, QA, cell, XY, BF = inputs(b, "abs")
+        t0 = time.perf_counter()
+        posA = HUIPositioner(THETA, ground_factor=b.ground_factor).fit(QA, cell, XY, BF)
+        save_model(posA, f)
+        print(f"final abs model: {len(posA.hui_items)} HUIs, {time.perf_counter() - t0:.0f}s", flush=True)
+    return load_model(f, b.ground_factor)[0]
+
+
+def stage_final(with_abs: bool = False) -> None:
+    out = OUT_ROOT / KEY / ("v6" if with_abs else "v5")
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "predictions").mkdir(exist_ok=True)
     b = load(KEY)
     gf = b.ground_factor
     prep, Q, cell, XY, BF = inputs(b, KIND)
+    posA = final_abs_model(b) if with_abs else None
+    prepA = inputs(b, "abs")[0] if with_abs else None
     pos = load_final_base(gf)
     fL = OUT / "model_L3.npz"
     if not fL.exists():
@@ -202,8 +221,8 @@ def stage_final() -> None:
     posL, _ = load_model(fL, gf)
     assert np.array_equal(np.asarray(pos.cells).astype(str), np.asarray(posL.cells).astype(str))
     posL.cell_bf = pos.cell_bf
-    dev = dev_check()
-    D = [dict(np.load(RES / f"v5_dev_fold{k}.npz")) for k in range(6)]
+    dev = dev_check(with_abs)
+    D = [dict(np.load(f)) for f in dev_files(with_abs)]
     X = np.concatenate([relative(d["F"]).reshape(-1, relative(d["F"]).shape[-1]) for d in D])
     y = np.concatenate([np.log1p(d["dist"]).ravel() for d in D])
     reg = regressor().fit(X, y)
@@ -211,7 +230,7 @@ def stage_final() -> None:
     for tname, te in b.tests.items():
         q = q_matrix(prep, te, KIND)
         t0 = time.perf_counter()
-        f = compute(pos, posL, q, gf)
+        f = compute(pos, posL, q, gf, posA, q_matrix(prepA, te, "abs") if with_abs else None)
         G = relative(f["F"])
         p = np.expm1(reg.predict(G.reshape(-1, G.shape[-1]))).reshape(G.shape[:2])
         xy, o, w = place(p, f["cxy"])
@@ -229,27 +248,29 @@ def stage_final() -> None:
         for j in range(o.shape[1]):
             P[f"cell{j + 1}_index"] = cand[:, j]
             P[f"cell{j + 1}_weight"] = w[:, j]
-        P.to_csv(OUT / "predictions" / f"{tname}.csv", index=False)
+        P.to_csv(out / "predictions" / f"{tname}.csv", index=False)
         tests[tname] = {**m, "ms_per_fp": round(ms, 3), "v4_mean_err_m": round(float(P.v4_err_m.mean()), 4),
                         "below_target": bool(m["mean_err_m"] < 7.0)}
         print(tname, tests[tname], flush=True)
-    json.dump({"dataset": KEY, "version": "v5", "dev": dev, "m": M_TOP, "lam": LAM, "k_candidates": K_CAND,
+    json.dump({"dataset": KEY, "version": "v6" if with_abs else "v5", "with_abs_model": with_abs, "dev": dev, "m": M_TOP, "lam": LAM, "k_candidates": K_CAND,
                "features": BASE_FEATS, "feature_transform": "each feature + (x - max), min-max within query, rank",
                "regressor": "HistGradientBoostingRegressor(max_iter=300, lr=0.06, leaves=31, "
                             "min_leaf=40, l2=1.0, random_state=0) on log1p(distance cell-truth)",
                "trained_on": "6 dev folds of trainingData (features from fold models)",
                "l3_model_huis": int(len(posL.hui_items)), "tests": tests,
                "timestamp_utc": datetime.now(timezone.utc).isoformat()},
-              open(OUT / "summary.json", "w"), indent=1)
+              open(out / "summary.json", "w"), indent=1)
 
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--stage", choices=["dev", "check", "final"], required=True)
+    ap.add_argument("--stage", choices=["dev", "check", "final", "mine_abs"], required=True)
     ap.add_argument("--fold", type=int)
     ap.add_argument("--with-abs", action="store_true")
     a = ap.parse_args()
-    {"dev": lambda: stage_dev(a.fold, a.with_abs), "check": dev_check, "final": stage_final}[a.stage]()
+    {"dev": lambda: stage_dev(a.fold, a.with_abs), "check": lambda: dev_check(a.with_abs),
+     "final": lambda: stage_final(a.with_abs),
+     "mine_abs": lambda: final_abs_model(load(KEY))}[a.stage]()
 
 
 if __name__ == "__main__":
