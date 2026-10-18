@@ -1,0 +1,7 @@
+{
+ "question": "does mining each cell on the transactions of its same-floor neighbours (overlapping windows) improve HUIM-only positioning?",
+ "data": "leave-phones-out dev folds 2 and 3 of trainingData, utility rank, theta 20%, full parameter grid; validationData not used",
+ "best_dev_mean_m": {"cells only (window 0)": 7.468, "window 4 m": 8.078, "window 8 m": 8.512},
+ "best_dev_floor_accuracy": {"window 4 m": 0.8432, "window 8 m": 0.8299},
+ "decision": "rejected: neighbouring cells' HUI signatures become alike, so cells are harder to tell apart; window_m stays 0"
+}

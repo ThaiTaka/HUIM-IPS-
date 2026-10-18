@@ -27,6 +27,9 @@ TITLES = {"uji": "UJIIndoorLoc", "uji_lib3": "UJI_LIB tầng 3", "dlulib": "DLUL
           "hcxy": "HCXY", "hus": "HUS", "hus_dedup": "HUS (khử trùng lặp)"}
 
 
+DEV_VI = {"uji": "6 fold giữ lại theo điện thoại (GroupKFold trên PHONEID của trainingData)"}
+
+
 def J(p):
     return json.load(open(p, encoding="utf-8"))
 
@@ -81,8 +84,15 @@ def build() -> Doc:
     d.rich([(f"Kết quả trên UJIIndoorLoc (validationData = tập test, {f2(T['n_test'], 0)} fingerprint): ", "b"),
             (f"sai số trung bình {f2(T['mean_err_m'])} m, trung vị {f2(T['median_err_m'])} m, "
              f"đúng tòa {pct(T['building_accuracy'])}, đúng tòa+tầng {pct(T['joint_accuracy'])}. "
-             f"Trên tập dev (6 fold theo người dùng của trainingData): {f2(sel['dev_mean_m'])} m. ", ""),
+             f"Trên dev ({DEV_VI.get('uji', sel['dev_folds'])}): {f2(sel['dev_mean_m'])} m. ", ""),
             (f"Yêu cầu < {f2(TARGET_M, 0)} m: {'ĐẠT' if T['below_target'] else 'CHƯA ĐẠT'}.", "b")])
+    n_ok = sum(X["below_target"] for k in keys for X in S[k]["tests"].values())
+    n_all = sum(len(S[k]["tests"]) for k in keys)
+    d.p(f"Trên {n_all} tập test của {len(keys)} dataset, {n_ok} tập đạt sai số trung bình dưới "
+        f"{f2(TARGET_M, 0)} m chỉ bằng HUIM. "
+        + ("UJIIndoorLoc là trường hợp chưa đạt; mục 6.1–6.2 phân tích nguyên nhân (điện thoại trong tập test "
+           "khác tập huấn luyện, và độ phân giải trong tầng) và trình bày mọi phiên bản đã thử. "
+           if not T["below_target"] else ""), align="justify")
     rows = []
     for k in keys:
         for t, X in S[k]["tests"].items():
@@ -123,7 +133,8 @@ def build() -> Doc:
 
     d.h(1, "4. Mô hình hoá: mỗi vị trí tham chiếu là một cơ sở dữ liệu giao dịch")
     d.bullets([
-        "Giao dịch T = một fingerprint; item = một AP được phát hiện; q(i,T) = round(1 + (RSSI − RSSI_min)/(RSSI_max − RSSI_min) × 99) ∈ [1,100]; p(i) = 1.",
+        "Giao dịch T = một fingerprint; item = một AP được phát hiện; p(i) = 1.",
+        "Utility nội q(i,T) ∈ [1,100], ba định nghĩa được so sánh trên dev: abs = round(1 + (RSSI − RSSI_min)/(RSSI_max − RSSI_min) × 99); rel = như abs nhưng tính so với AP mạnh nhất của chính fingerprint (cửa sổ 40 dB); rank = thứ hạng cường độ của AP trong fingerprint (mạnh nhất = 100). rel và rank không đổi khi một điện thoại đọc mọi AP lệch đi cùng một lượng dB.",
         f"Ô (cell) c = một điểm tham chiếu của tập huấn luyện (UJIIndoorLoc: {mdl['n_cells']} ô). D_c = giao dịch của các fingerprint huấn luyện đo tại c.",
         "minUtil_c = θ% × u(D_c) — tương đối theo từng ô. HUI_c = EFIM(D_c, minUtil_c): các nhóm AP cùng xuất hiện với tín hiệu mạnh, là “chữ ký” Wi-Fi của vị trí c.",
         f"Ngân sách mỗi ô: {f2(CELL_TIME_S, 0)} s hoặc {f2(CELL_MAX_HUIS, 0)} HUI; vượt ngân sách thì khai thác lại ở θ × {f2(ESCALATE)} tới khi hoàn chỉnh (không dùng tập HUI bị cắt ngang).",
@@ -155,31 +166,27 @@ def build() -> Doc:
     d.h(2, "5.1. Giao thức")
     d.table(pd.DataFrame([
         {"Bước": "Chuẩn hoá RSSI, khai thác EFIM theo ô", "Dữ liệu": "huấn luyện"},
-        {"Bước": f"Chọn θ ∈ {sel['grids']['theta_pct']}, (γ,τ) ∈ {GT_GRID}, β ∈ {BETA_GRID}, σ ∈ {SIGMA_GRID} m, kf ∈ {KF_GRID}, m ∈ {M_GRID}, p ∈ {P_GRID}",
-         "Dữ liệu": "dev: " + sel["dev_folds"]},
+        {"Bước": "Chọn utility ∈ {u}, θ ∈ {t}, (γ,τ) ∈ {gt}, β ∈ {be}, σ ∈ {sg} m, kf ∈ {kf}, m ∈ {m}, p ∈ {p}".format(
+            u=sel["grids"].get("utility", ["abs"]), t=sel["grids"]["theta_pct"], gt=GT_GRID, be=BETA_GRID,
+            sg=SIGMA_GRID, kf=sel["grids"]["kf"], m=sel["grids"]["m"], p=sel["grids"]["p"]),
+         "Dữ liệu": "dev của UJIIndoorLoc: " + DEV_VI["uji"]},
         {"Bước": "Khai thác lại toàn bộ tập huấn luyện ở θ đã chọn", "Dữ liệu": "huấn luyện"},
         {"Bước": "Đánh giá", "Dữ liệu": "tập test, một lần"},
     ]), f"Dữ liệu dùng ở từng bước ({sel['n_configurations']} cấu hình trên dev)", font_pt=8.5)
-    pil = OUT_ROOT / "uji" / "theta_pilot.json"
-    if pil.exists():
-        PJ = J(pil)
-        d.p("Với UJIIndoorLoc, θ được cố định TRƯỚC khi tìm các tham số còn lại, bằng một thí nghiệm "
-            "trên 2 fold dev (θ = 10% tốn khoảng 25 phút khai thác mỗi fold). Thí nghiệm này chỉ dùng "
-            "trainingData; nó cũng là nơi các cải tiến làm mượt không gian và quyết định tầng trước "
-            "được đề xuất:", align="justify")
-        d.table(pd.DataFrame([{"Biến thể (2 fold dev)": k, "Dev TB (m)": f2(v)}
-                              for k, v in PJ["results_dev_mean_m"].items()]),
-                "UJIIndoorLoc: thí nghiệm chọn θ và utility ngoài trên dev (results/huim_only/uji/theta_pilot.json)", font_pt=8.5)
+    d.p("UJIIndoorLoc: validationData được đo bằng 11 điện thoại, 9 trong số đó không có trong "
+        "trainingData. Vì vậy fold dev của UJIIndoorLoc giữ lại theo ĐIỆN THOẠI (GroupKFold trên "
+        "PHONEID), không theo người dùng — để dev mô phỏng đúng tình huống gặp thiết bị lạ. θ được "
+        "cố định ở 20% bằng thí nghiệm trên dev (θ = 10% sinh khoảng 4 triệu HUI mỗi fold).", align="justify")
 
     d.h(1, "6. Kết quả trên UJIIndoorLoc")
-    d.p(f"Cấu hình chọn trên dev: θ = {f2(sel['theta_pct'], 0)}%, {prm and sel['label']}. Mô hình cuối: "
+    d.p(f"Cấu hình chọn trên dev: utility {sel.get('utility', 'abs')}, θ = {f2(sel['theta_pct'], 0)}%, {prm and sel['label']}. Mô hình cuối: "
         f"{mdl['n_cells']} ô, {f2(mdl['n_huis'], 0)} HUI, khai thác trong {f2(mdl['mining_seconds'], 1)} s; "
         f"{mdl['cells_escalated']} ô phải nâng θ (θ trung vị {f2(mdl['theta_used_median_pct'])}%); "
         f"{mdl['aps_in_some_hui']}/{mdl['n_aps']} AP xuất hiện trong ít nhất một HUI.", align="justify")
-    d.figure(FIG / "fig62_huim_only_dev.png", "Sai số trên dev theo θ và m (mỗi điểm là cấu hình tốt nhất của các tham số còn lại)", 5.4)
+    d.figure(FIG / "fig62_huim_only_dev.png", "Sai số trên dev theo σ và m (mỗi điểm là cấu hình tốt nhất của các tham số còn lại)", 5.4)
     abl = []
     for name, col in (("σ (làm mượt, m)", "sigma"), ("kf (quyết định tầng)", "kf"), ("β (độ phủ)", "beta"), ("τ (khớp cường độ)", "tau"), ("γ (khớp mềm)", "gamma"), ("m (số ô)", "m"), ("p (độ sắc trọng số)", "p")):
-        for v, g in G[G.theta_pct == sel["theta_pct"]].groupby(col):
+        for v, g in G[(G.theta_pct == sel["theta_pct"]) & (G.get("utility", sel.get("utility", "abs")) == sel.get("utility", "abs"))].groupby(col):
             abl.append({"Thành phần": name, "Giá trị": f2(v, 0), "Dev TB tốt nhất (m)": f2(g.dev_mean_m.min()),
                         "Tòa+tầng dev": pct(g.loc[g.dev_mean_m.idxmin(), "dev_joint_accuracy"])})
     d.table(pd.DataFrame(abl), f"Ảnh hưởng của từng thành phần điểm khớp trên dev (θ = {f2(sel['theta_pct'], 0)}%)", font_pt=8.5)
@@ -193,6 +200,45 @@ def build() -> Doc:
         "UJIIndoorLoc validationData (tập test): định vị chỉ bằng HUIM")
     d.figure(FIG / "fig61_huim_only_cdf_uji.png", "Phân bố sai số; hai đường k-NN chỉ để tham chiếu", 5.6)
     d.figure(FIG / "fig63_huim_only_example.png", "Ví dụ một truy vấn: các ô có điểm khớp HUI cao nhất, vị trí thật và vị trí ước lượng", 6.0)
+
+    Pp = pd.read_csv(OUT_ROOT / "uji" / "predictions" / "validationData.csv")
+    okf = (Pp.true_building.astype(str) + "_" + Pp.true_floor.astype(str)) == Pp.pred_building_floor
+    d.h(2, "6.1. Sai số đến từ đâu")
+    d.table(pd.DataFrame([
+        {"Nhóm": "Đoán đúng tòa+tầng", "Số mẫu": int(okf.sum()), "Sai số TB (m)": f2(Pp.err_m[okf].mean()),
+         "Phần trong tổng sai số": pct(Pp.err_m[okf].sum() / Pp.err_m.sum())},
+        {"Nhóm": "Đoán sai tầng", "Số mẫu": int((~okf).sum()), "Sai số TB (m)": f2(Pp.err_m[~okf].mean()),
+         "Phần trong tổng sai số": pct(Pp.err_m[~okf].sum() / Pp.err_m.sum())}]),
+        "UJIIndoorLoc test: tách sai số theo việc đoán đúng hay sai tầng")
+    d.p("Phần lớn sai số nằm ở các mẫu đã đoán đúng tầng: điểm nghẽn là độ phân giải TRONG tầng. "
+        "Mỗi ô của UJIIndoorLoc chỉ có khoảng 20 fingerprint của 1–4 người dùng, nên chữ ký HUI của "
+        "ô không đủ chi tiết để nội suy vị trí giữa các điểm tham chiếu (không vị trí nào của "
+        "validationData trùng điểm tham chiếu của trainingData).", align="justify")
+
+    vh = OUT_ROOT / "uji" / "version_history.json"
+    if vh.exists():
+        V = J(vh)
+        d.h(2, "6.2. Mọi phiên bản đã thử trên UJIIndoorLoc")
+        d.table(pd.DataFrame([{"Phiên bản": v["version"], "Thay đổi": v.get("change_vi", v["change"]),
+                               "Fold dev": {"leave-users-out": "theo người dùng", "leave-phones-out": "theo điện thoại"}.get(v["dev_folds"], v["dev_folds"]),
+                               "Dev TB (m)": f2(v["dev_mean_m"]), "Test TB (m)": f2(v["test_mean_m"]),
+                               "Đúng tầng test": pct(v["test_floor_accuracy"])} for v in V["versions"]]),
+                "UJIIndoorLoc: mỗi phiên bản được chọn trên dev rồi chấm test một lần", font_pt=7.5)
+        d.p(V["note"].replace("v1 has the lowest test error but the worst dev error; choosing it because of its test number would select on the test set, so the final model is v4, the one the protocol selects.",
+                              "Bản v1 có sai số test thấp nhất nhưng sai số dev kém nhất; chọn nó vì con số test là chọn trên tập test, nên mô hình cuối là v4 — bản mà giao thức chọn."), align="justify")
+        exp = []
+        for f, title in (("theta_pilot.json", "θ và utility ngoài"), ("window_pilot.json", "cửa sổ chồng lấn")):
+            pth = OUT_ROOT / "uji" / f
+            if not pth.exists():
+                continue
+            PJ = J(pth)
+            for key in ("results_dev_mean_m", "phone_folds_theta20_all6_dev_mean_m", "best_dev_mean_m"):
+                for k, v in PJ.get(key, {}).items():
+                    exp.append({"Thí nghiệm": title, "Biến thể": k, "Dev TB (m)": f2(v),
+                                "Fold": "2 fold dev" if key != "phone_folds_theta20_all6_dev_mean_m" else "6 fold theo điện thoại"})
+        if exp:
+            d.table(pd.DataFrame(exp), "Các thí nghiệm phụ trên dev (results/huim_only/uji/*_pilot.json); "
+                    "khai thác HUI trên cửa sổ chồng lấn bị loại vì làm chữ ký các ô lân cận giống nhau", font_pt=7.5)
 
     d.h(1, "7. Các dataset khác")
     d.p("Cùng mã nguồn, chỉ đổi dữ liệu; θ và tham số điểm khớp được chọn lại trên dev của từng dataset.", align="justify")
@@ -232,7 +278,8 @@ def build() -> Doc:
     d.bullets([
         "Ô = điểm tham chiếu của tập huấn luyện; vị trí ước lượng là tổ hợp lồi của tâm các ô, nên không thể nằm ngoài vùng đã khảo sát.",
         "Bước cuối (trung bình có trọng số của m ô) giống về hình thức với weighted k-NN; điểm khác là trọng số do khớp HUI quyết định.",
-        "Với UJIIndoorLoc, θ được cố định bằng thí nghiệm trên 2 fold dev thay vì tìm trên cả 6 fold vì chi phí khai thác; các tham số khác được tìm trên đủ 6 fold.",
+        "Với UJIIndoorLoc, θ được cố định bằng thí nghiệm trên dev thay vì tìm cùng các tham số khác vì chi phí khai thác (θ = 10% sinh khoảng 4 triệu HUI mỗi fold).",
+        "UJIIndoorLoc chưa đạt 7 m chỉ bằng HUIM: tập test dùng chủ yếu điện thoại lạ và vị trí không trùng điểm tham chiếu; sai số dev và test của các phiên bản dao động 7,6–8,2 m. Tham chiếu: khi HUIM chỉ chọn AP và k-NN định vị (báo cáo Bao_Cao_HUIM_IPS_Theo_Vung.docx) sai số là 5,30 m — nhưng đó là thiết kế mà HUIM chỉ là nhánh lọc.",
         "Các tham số γ, τ, β, m, p, θ được chọn trên dev; tập test chấm một lần, không chọn lại sau khi xem test.",
         f"Ngân sách {f2(CELL_TIME_S, 0)} s/ô làm một số ô dày đặc phải chạy ở θ cao hơn θ chọn; số ô bị ảnh hưởng ghi trong cell_runs.csv.",
         "EFIM viết bằng Python; thời gian khai thác và định vị là của cài đặt này.",

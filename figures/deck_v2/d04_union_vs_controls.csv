@@ -1,4 +1,0 @@
-model,minutil_pct,n_waps,huim_union,top_mi,top_support,random_mean
-A_signal,1.9294,86,0.649865,0.713771,0.70207,0.6480646666666666
-B_discriminative,2.0,79,0.667867,0.70207,0.69667,0.5721573333333333
-C_rare_discriminative,1.7321,91,0.715572,0.744374,0.718272,0.6939693333333333

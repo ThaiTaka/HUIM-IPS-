@@ -1,0 +1,7 @@
+dataset,ten,so_o,so_hui,thoi_gian_khai_thac_s,o_phai_nang_theta,theta_trung_vi_dung,ap_trong_hui,tong_ap,giao_dich_tb_moi_o
+uji,UJIIndoorLoc,933,3238416,418.54,676,31.25,379,520,21.29
+uji_lib3,UJI_LIB tầng 3,24,63176,23.72,8,10.0,63,620,480.0
+dlulib,DLULIB,650,2878077,43.67,140,10.0,17,17,20.0
+hcxy,HCXY,379,433090,675.85,379,74.50580596923828,240,347,30.0
+hus,HUS,205,6352,0.18,0,10.0,5,5,100.0
+hus_dedup,HUS (khử trùng lặp),205,6352,0.23,0,10.0,5,5,98.0

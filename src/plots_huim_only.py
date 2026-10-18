@@ -121,15 +121,18 @@ def fig62():
     sp = sel["params"]
     ax.scatter([sp["m"]], [sel["dev_mean_m"]], s=170, facecolor="none",
                edgecolor=INK, lw=1.4, zorder=5)
-    ax.annotate(f"chọn: σ={sp['sigma']:g} m, m={sp['m']}\ndev {sel['dev_mean_m']:.2f} m",
-                (sp["m"], sel["dev_mean_m"]), xytext=(14, 18),
+    ax.annotate(f"chọn: σ={sp['sigma']:g} m, m={sp['m']}, dev {sel['dev_mean_m']:.2f} m",
+                (sp["m"], sel["dev_mean_m"]), xytext=(10, -26),
                 textcoords="offset points", fontsize=8)
     ax.axhline(TARGET_M, color=RED, ls="--", lw=1.2)
+    ax.text(30, TARGET_M + 0.03, "7 m", color=RED, ha="right", va="bottom", fontsize=8.5)
     ax.set_xlabel("m = số ô điểm cao nhất dùng để ước lượng toạ độ")
     ax.set_ylabel("Sai số TB trên dev (m)")
-    ax.set_ylim(0, max(TARGET_M + 1, best.dev_mean_m.max() * 1.1))
-    ax.legend(fontsize=8.5, loc="lower right")
-    ax.set_title(f"UJIIndoorLoc, θ = {sel['theta_pct']:g}%: chọn tham số trên dev (6 fold theo người dùng)", fontsize=10)
+    lo = min(TARGET_M, best.dev_mean_m.min()) - 0.3
+    ax.set_ylim(lo, best.dev_mean_m.max() + 0.3)
+    ax.legend(fontsize=8.5, loc="upper right", ncol=2)
+    note = sel.get("dev_folds", "").split(" - ")[0]
+    ax.set_title(f"UJIIndoorLoc, utility {sel.get('utility', 'abs')}, θ = {sel['theta_pct']:g}%: dev ({note})", fontsize=9.5)
     save(fig, "fig62_huim_only_dev", best)
 
 
@@ -154,13 +157,19 @@ def fig63():
     ax.scatter([r.pred_x], [r.pred_y], marker="X", s=140, color=ORANGE, edgecolor=INK, lw=0.8,
                label=f"vị trí HUIM ước lượng (sai số {r.err_m:.2f} m)", zorder=6)
     pad = 40
+    x0, y0 = float(r.true_x), float(r.true_y)
+    for coll in ax.collections:
+        off = coll.get_offsets()
+        coll.set_offsets(off - [x0, y0])
+    same, tc = same.assign(x=same.x - x0, y=same.y - y0), tc.assign(x=tc.x - x0, y=tc.y - y0)
+    r = r.copy(); r["pred_x"] -= x0; r["pred_y"] -= y0; r["true_x"] = 0.0; r["true_y"] = 0.0
     xs = list(tc.x) + [r.true_x, r.pred_x]
     ys = list(tc.y) + [r.true_y, r.pred_y]
     ax.set_xlim(min(xs) - pad, max(xs) + pad)
     ax.set_ylim(min(ys) - pad, max(ys) + pad)
     ax.set_aspect("equal")
-    ax.set_xlabel("X (EPSG:3857, m chiếu)")
-    ax.set_ylabel("Y (EPSG:3857, m chiếu)")
+    ax.set_xlabel("ΔX so với vị trí thật (m chiếu, EPSG:3857)")
+    ax.set_ylabel("ΔY so với vị trí thật (m chiếu)")
     ax.legend(fontsize=7.5, loc="upper left", bbox_to_anchor=(1.01, 1))
     ax.set_title(f"Một truy vấn (dòng {int(r.src_row)} của validationData): HUIM chọn ô và ước lượng vị trí", fontsize=9.5)
     data = pd.DataFrame({"cell_index": top, "x": tc.x.to_numpy(), "y": tc.y.to_numpy(),

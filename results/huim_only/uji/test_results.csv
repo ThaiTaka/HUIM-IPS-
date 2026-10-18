@@ -1,2 +1,2 @@
 test_set,n_test,building_accuracy,floor_accuracy,joint_accuracy,mean_err_m,median_err_m,p75_err_m,p90_err_m,p95_err_m,max_err_m,mean_err_coord,share_within_2m,share_within_5m,ms_per_fp
-validationData,1111,1.0,0.79658,0.79658,7.6591,6.129,10.3176,15.0315,18.8811,54.7326,9.9972,0.1188,0.4086,17.6123
+validationData,1111,0.9991,0.80378,0.80378,8.0591,6.1515,10.7194,16.9459,20.913,61.4983,10.5193,0.1368,0.3906,136.3523

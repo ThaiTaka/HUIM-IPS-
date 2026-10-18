@@ -1,32 +1,33 @@
 {
   "dataset": "uji",
-  "theta_pct": 30.0,
+  "utility": "rank",
+  "theta_pct": 20.0,
   "params": {
-    "gamma": 1.0,
-    "tau": 40.0,
-    "beta": 1.0,
-    "m": 8,
-    "p": 8.0
+    "gamma": 2.0,
+    "tau": 20.0,
+    "beta": 3.0,
+    "m": 12,
+    "p": 8.0,
+    "sigma": 3.0,
+    "kf": 20
   },
-  "label": "gamma=1, tau=40, beta=1, m=8, p=8",
-  "dev_mean_m": 8.2717,
-  "dev_median_m": 5.8487,
-  "dev_joint_accuracy": 0.732507,
-  "dev_folds": "6 folds, USERID - leave-users-out, exactly as PHASE I3 of the study (validationData is another user, other phones, 4 months later)",
-  "n_configurations": 648,
+  "label": "gamma=2, tau=20, beta=3, sigma=3 m, kf=20, m=12, p=8",
+  "dev_mean_m": 7.6532,
+  "dev_median_m": 4.9812,
+  "dev_joint_accuracy": 0.838391,
+  "dev_folds": "6 folds, PHONEID - leave-phones-out (GroupKFold over the 16 training phones): validationData is 9 unseen phones of 11",
+  "n_configurations": 2880,
   "grids": {
+    "utility": [
+      "abs",
+      "rank"
+    ],
     "theta_pct": [
-      30.0,
-      50.0,
-      70.0
+      20.0
     ],
     "gamma_tau": [
       [
         1.0,
-        10.0
-      ],
-      [
-        1.0,
         20.0
       ],
       [
@@ -35,34 +36,39 @@
       ],
       [
         2.0,
-        10.0
-      ],
-      [
-        2.0,
         20.0
-      ],
-      [
-        2.0,
-        40.0
       ]
     ],
     "beta": [
       1.0,
+      3.0
+    ],
+    "sigma_m": [
+      0.0,
       3.0,
-      5.0
+      6.0,
+      10.0
+    ],
+    "kf": [
+      3,
+      10,
+      20
     ],
     "m": [
-      3,
       5,
       8,
-      12
+      12,
+      20,
+      30
     ],
     "p": [
-      2.0,
       4.0,
-      8.0
+      8.0,
+      12.0,
+      16.0
     ]
   },
+  "theta_note": "fixed at 20% (pilot on dev folds, theta_pilot.json): 10% mines ~4M HUIs per fold and, with user folds, did not transfer to new phones; every other parameter, and the internal utility, chosen on all 6 dev folds",
   "rule": "lowest dev mean error over all dev rows; ties -> larger theta (fewer HUIs)",
-  "timestamp_utc": "2026-10-17T09:09:48.437175+00:00"
+  "timestamp_utc": "2026-10-17T14:47:42.627661+00:00"
 }

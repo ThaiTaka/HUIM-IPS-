@@ -6,6 +6,13 @@ on **UJIIndoorLoc**.
 
 Written for: the person running this project and a reviewer checking its claims.
 
+> **Final deliverables are in `BAOCAO/`** (read `BAOCAO/00_HUONG_DAN_DOC.md` first):
+> the Word report, the slide deck, the model diagrams (`diagram/`), the numbers and
+> the Excel / Python kits that recompute every mean error (`so_lieu/`), and the source
+> code (`ma_nguon/`). The final system is the HUIM-only positioner (§10, no k-NN);
+> `src/baocao/` rebuilds the folder. The older `report/`, `slides/` and `verification/`
+> outputs mentioned below were removed; their build scripts still write there if rerun.
+
 ---
 
 ## What this is, and what it is not
@@ -287,9 +294,8 @@ results/
     logs/                   every run's stdout and structured log
     deliverables.csv, verification.json
 figures/                    *.png, each with the *.csv it was plotted from
-report/                     the DOCX report and the Python-file guide
-slides/                     the PPTX decks and speaker_notes.md
-verification/               kiem_chung_thu_cong.xlsx (manual checks)
+BAOCAO/                     final report, slides, diagrams, numbers, source code
+src/baocao/                 the scripts that build BAOCAO/
 run_experiments.py          the whole pipeline
 ```
 
@@ -434,3 +440,32 @@ Outputs per dataset in `results/huim_zone/<key>/`: `zone_mining.csv`,
 (every AP set, the all-AP baseline and matched-budget controls),
 `predictions/`, `selected.json`. The headline numbers are in the report and in
 `results/huim_zone/<key>/selected.json`.
+
+---
+
+## 10. Positioning by HUIM alone, no k-NN (PHASE Q)
+
+In PHASE Z the positioner is still k-NN; HUIM only selects its columns. PHASE Q
+removes k-NN: the positioning model *is* the HUI sets.
+
+1. every training reference point is a cell; EFIM mines each cell's
+   transactions at minUtil = θ% of the cell's utility (`src/huim_positioning.py`);
+2. a query fingerprint is a transaction; each cell is scored by how much of its
+   HUI utility the query contains (soft containment, signal agreement) and how
+   much of the query its HUIs explain; scores are smoothed over same-floor
+   neighbouring cells;
+3. the floor whose best cells score highest is chosen, and the position is the
+   score-weighted centroid of the best cells of that floor.
+
+No training fingerprint is compared with a query. Internal utility (abs / rel /
+rank), θ and the scoring parameters are chosen on dev folds of the training
+data; UJIIndoorLoc's dev folds hold out phones, because 9 of the 11
+validationData phones are unseen in training. Every version tried on
+UJIIndoorLoc is listed in `results/huim_only/uji/version_history.json`.
+
+```bash
+python src/run_huim_only.py --dataset all     # select on dev, final model, test once
+python src/verify_huim_only.py                # independent re-computation
+python src/plots_huim_only.py                 # figures/huim_only/fig60-63 (+ CSV)
+python src/make_huim_only_report.py           # report/Bao_Cao_HUIM_IPS_Dinh_Vi_Chi_Bang_HUIM.docx
+```

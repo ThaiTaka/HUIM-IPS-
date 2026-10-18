@@ -1,0 +1,63 @@
+{
+ "dataset": "uji",
+ "source": "results/logs/huim_only.log (each version selected on dev, then scored once on validationData)",
+ "versions": [
+  {
+   "version": "v1",
+   "change": "per-cell EFIM, theta 30/50/70%, soft HUI match, floor by vote of the top cells",
+   "dev_folds": "leave-users-out",
+   "utility": "abs",
+   "theta_pct": 30,
+   "config": "gamma=1, tau=40, beta=1, m=8, p=8",
+   "dev_mean_m": 8.272,
+   "test_mean_m": 7.659,
+   "test_median_m": 6.129,
+   "test_floor_accuracy": 0.7966,
+   "ms_per_fp": 17.61,
+   "change_vi": "EFIM theo từng ô, θ 30/50/70%, khớp HUI mềm, tầng do các ô điểm cao bỏ phiếu"
+  },
+  {
+   "version": "v2",
+   "change": "+ spatial smoothing (sigma), floor-first decision (kf), theta 10% (pilot on dev folds 1-2)",
+   "dev_folds": "leave-users-out",
+   "utility": "abs",
+   "theta_pct": 10,
+   "config": "gamma=2, tau=20, beta=3, sigma=3 m, kf=10, m=12, p=8",
+   "dev_mean_m": 7.699,
+   "test_mean_m": 8.175,
+   "test_median_m": 6.297,
+   "test_floor_accuracy": 0.7615,
+   "ms_per_fp": 129.5,
+   "change_vi": "+ làm mượt không gian (σ), chọn tầng trước (kf), θ 10% (thí nghiệm trên 2 fold dev)"
+  },
+  {
+   "version": "v3",
+   "change": "leave-PHONES-out dev folds; internal utility chosen among abs / rel / rank; theta 20%",
+   "dev_folds": "leave-phones-out",
+   "utility": "rank",
+   "theta_pct": 20,
+   "config": "gamma=2, tau=20, beta=3, sigma=3 m, kf=10, m=12, p=8",
+   "dev_mean_m": 7.669,
+   "test_mean_m": 7.997,
+   "test_median_m": 6.147,
+   "test_floor_accuracy": 0.7993,
+   "ms_per_fp": 136.86,
+   "change_vi": "fold dev giữ lại theo ĐIỆN THOẠI; chọn utility nội trong abs / rel / rank; θ 20%"
+  },
+  {
+   "version": "v4 (final)",
+   "change": "wider grid for kf, m, p (v3 had selected values on its edges)",
+   "dev_folds": "leave-phones-out",
+   "utility": "rank",
+   "theta_pct": 20,
+   "config": "gamma=2, tau=20, beta=3, sigma=3 m, kf=20, m=12, p=8",
+   "dev_mean_m": 7.653,
+   "test_mean_m": 8.059,
+   "test_median_m": 6.152,
+   "test_floor_accuracy": 0.8038,
+   "ms_per_fp": 136.35,
+   "change_vi": "mở rộng lưới kf, m, p (v3 chọn giá trị ở biên lưới)"
+  }
+ ],
+ "note": "v1 has the lowest test error but the worst dev error; choosing it because of its test number would select on the test set, so the final model is v4, the one the protocol selects."
+}

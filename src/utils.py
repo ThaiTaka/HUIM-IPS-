@@ -12,7 +12,9 @@ from pathlib import Path
 
 import numpy as np
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+# HUIM_IPS_ROOT lets a copy of src/ (e.g. BAOCAO/ma_nguon) run against the
+# project folder that holds the data and results
+PROJECT_ROOT = Path(os.environ.get("HUIM_IPS_ROOT") or Path(__file__).resolve().parents[1])
 
 # The two raw CSVs are never written to. inspect_data.py verifies they exist and
 # records their SHA-256 so later phases can prove they were not edited.

@@ -1,0 +1,16 @@
+curve,percentile,err_m
+Chỉ HUIM (khớp HUI),50,6.1515
+Chỉ HUIM (khớp HUI),75,10.7194
+Chỉ HUIM (khớp HUI),90,16.9459
+Chỉ HUIM (khớp HUI),95,20.913
+Chỉ HUIM (khớp HUI),mean,8.0591
+"k-NN tối ưu, 520 WAP (tham chiếu)",50,3.5224
+"k-NN tối ưu, 520 WAP (tham chiếu)",75,6.8973
+"k-NN tối ưu, 520 WAP (tham chiếu)",90,11.8922
+"k-NN tối ưu, 520 WAP (tham chiếu)",95,16.0926
+"k-NN tối ưu, 520 WAP (tham chiếu)",mean,5.3558
+"k-NN gốc k=1, 520 WAP (tham chiếu)",50,4.6096
+"k-NN gốc k=1, 520 WAP (tham chiếu)",75,9.3883
+"k-NN gốc k=1, 520 WAP (tham chiếu)",90,17.0212
+"k-NN gốc k=1, 520 WAP (tham chiếu)",95,27.8141
+"k-NN gốc k=1, 520 WAP (tham chiếu)",mean,9.277

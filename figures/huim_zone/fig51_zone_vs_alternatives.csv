@@ -1,9 +1,0 @@
-label,n_waps,mean_err_m
-Toàn bộ 520 WAP (không chọn),520,5.3562
-"HUIM toàn cục Model A (86 WAP, θ 1.9294%)",86,19.3568
-"HUIM toàn cục Model B (79 WAP, θ 2%)",79,19.9128
-"HUIM toàn cục Model C (91 WAP, θ 1.7321%)",91,17.4882
-Top-n theo số lần phát hiện (240 WAP),240,5.3247
-Top-n theo mutual information (240 WAP),240,5.3049
-"Ngẫu nhiên (240 WAP, TB 3 seed)",240,6.3302000000000005
-"HUIM THEO VÙNG (240 WAP, A, θ 3%)",240,5.2974

@@ -60,6 +60,39 @@ MAX_ESCALATIONS = 60
 BATCH = 16
 
 
+NOT_DETECTED = 100
+REL_WINDOW_DB = 40.0
+
+
+def internal_utility(W: np.ndarray, kind: str, lo: float = -104.0,
+                     hi: float = 0.0) -> np.ndarray:
+    """q(i,T) in [1, 100] for detected APs, 0 otherwise.
+
+    abs   absolute strength: round(1 + (RSSI - lo)/(hi - lo) x 99)
+    rel   strength relative to the strongest AP of the same fingerprint:
+          round(1 + clip((RSSI - max_T RSSI + W)/W, 0, 1) x 99), W = 40 dB.
+          A phone that reads every AP k dB lower gets the same q.
+    rank  rank of the AP inside its fingerprint, strongest = 100, weakest = 1.
+          Invariant to any monotone distortion of a phone's RSSI scale.
+    """
+    det = W != NOT_DETECTED
+    if kind == "abs":
+        v = np.clip((W - lo) / (hi - lo), 0, 1)
+    elif kind == "rel":
+        mx = np.where(det, W, -np.inf).max(axis=1, keepdims=True)
+        v = np.clip((W - mx + REL_WINDOW_DB) / REL_WINDOW_DB, 0, 1)
+    elif kind == "rank":
+        R = np.where(det, W, -np.inf)
+        order = np.argsort(np.argsort(-R, axis=1, kind="stable"), axis=1)
+        n = det.sum(axis=1, keepdims=True)
+        v = np.where(n > 1, (n - 1 - order) / np.maximum(n - 1, 1), 1.0)
+    else:
+        raise ValueError(kind)
+    q = np.where(det, np.rint(1 + np.nan_to_num(v) * 99), 0)
+    q[det & (q < 1)] = 1
+    return q
+
+
 @dataclass
 class Params:
     gamma: float = 1.0
@@ -80,8 +113,9 @@ class HUIPositioner:
 
     def __init__(self, theta: float, cell_time_s: float = CELL_TIME_S,
                  cell_max_huis: int = CELL_MAX_HUIS,
-                 ground_factor: float = 1.0) -> None:
+                 ground_factor: float = 1.0, window_m: float = 0.0) -> None:
         self.theta = theta
+        self.window_m = window_m
         self.ground_factor = ground_factor
         self.cell_time_s = cell_time_s
         self.cell_max_huis = cell_max_huis
@@ -97,8 +131,22 @@ class HUIPositioner:
         items, util, supp, cid = [], [], [], []
         cells, cxy, cbf, crun = [], [], [], []
         t0 = time.perf_counter()
-        for c in np.unique(cell):
-            rows = np.flatnonzero(cell == c)
+        ucells = np.unique(cell)
+        own = {c: np.flatnonzero(cell == c) for c in ucells}
+        cen = np.array([xy[own[c]].mean(axis=0) for c in ucells])
+        cfl = []
+        for c in ucells:
+            labs, cnt = np.unique(bf[own[c]], return_counts=True)
+            cfl.append(labs[cnt.argmax()])
+        cfl = np.array(cfl)
+        for ci, c in enumerate(ucells):
+            if self.window_m > 0:
+                near = np.flatnonzero((cfl == cfl[ci]) & (np.sqrt(
+                    ((cen - cen[ci]) ** 2).sum(axis=1)) * self.ground_factor
+                    <= self.window_m))
+                rows = np.concatenate([own[ucells[j]] for j in near])
+            else:
+                rows = own[c]
             db = [{int(j): float(Q[i, j]) for j in np.flatnonzero(Q[i])} for i in rows]
             db = [t for t in db if t]
             if not db:
@@ -119,9 +167,8 @@ class HUIPositioner:
                 th *= ESCALATE
             k = len(cells)
             cells.append(c)
-            cxy.append(xy[rows].mean(axis=0))
-            labs, cnt = np.unique(bf[rows], return_counts=True)
-            cbf.append(labs[cnt.argmax()])
+            cxy.append(cen[ci])
+            cbf.append(cfl[ci])
             crun.append({"cell": c, "n_transactions": len(db),
                          "total_utility": tot, "theta_used_pct": th,
                          "abs_minutil": tot * th / 100.0, "n_attempts": att,

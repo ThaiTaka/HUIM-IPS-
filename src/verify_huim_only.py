@@ -4,7 +4,8 @@ Uses the raw fingerprints (through the dataset loaders) and the saved model /
 prediction files only. It does not call EFIM, HUIPositioner or the metric code.
 
   M1  every cell's minUtil = theta_used% x the cell's total utility,
-      recomputed from raw dBm
+      recomputed from raw dBm (q(i,T) re-derived for the selected internal
+      utility: abs, rel or rank)
   M2  a sample of HUIs (every HUI of SAMPLE_CELLS random cells): utility and
       support recomputed by scanning the cell's rows, >= minUtil
   M3  completeness up to length 2, EVERY cell: each 1- and 2-itemset whose
@@ -38,11 +39,30 @@ N_QUERY = 8
 NOT_DET = 100
 
 
-def q_of(W, lo, hi):
+def q_of(W, lo, hi, kind="abs"):
+    """q(i,T), written out per fingerprint with plain Python for rel / rank."""
     det = W != NOT_DET
-    v = np.clip((W - lo) / (hi - lo), 0, 1)
-    q = np.where(det, np.rint(1 + v * 99), 0)
-    q[det & (q < 1)] = 1
+    if kind == "abs":
+        v = np.clip((W - lo) / (hi - lo), 0, 1)
+        q = np.where(det, np.rint(1 + v * 99), 0)
+        q[det & (q < 1)] = 1
+        return q
+    q = np.zeros_like(W)
+    for r in range(W.shape[0]):
+        seen = [j for j in range(W.shape[1]) if W[r, j] != NOT_DET]
+        if not seen:
+            continue
+        if kind == "rel":
+            mx = max(W[r, j] for j in seen)
+            for j in seen:
+                v = min(max((W[r, j] - mx + 40.0) / 40.0, 0.0), 1.0)
+                q[r, j] = max(1.0, float(np.rint(1 + v * 99)))
+        else:                                   # rank: strongest = 100
+            order = sorted(seen, key=lambda j: (-W[r, j], j))
+            n = len(order)
+            for k, j in enumerate(order):
+                v = (n - 1 - k) / (n - 1) if n > 1 else 1.0
+                q[r, j] = max(1.0, float(np.rint(1 + v * 99)))
     return q
 
 
@@ -58,7 +78,8 @@ def check(key: str) -> dict:
     W = tr[wap].to_numpy(np.float64)
     det = W[W != NOT_DET]
     lo, hi = det.min(), det.max()
-    Q = q_of(W, lo, hi)
+    kind = json.load(open(out / "selection.json", encoding="utf-8")).get("utility", "abs")
+    Q = q_of(W, lo, hi, kind)
     M = np.load(out / "model" / "huis.npz")
     cells = pd.read_csv(out / "model" / "cells.csv")
     runs = pd.read_csv(out / "cell_runs.csv")
@@ -136,7 +157,7 @@ def check(key: str) -> dict:
     for tname, T in S["tests"].items():
         P = pd.read_csv(out / "predictions" / f"{tname}.csv")
         te = b.tests[tname]
-        Qt = q_of(te[wap].to_numpy(np.float64), lo, hi)
+        Qt = q_of(te[wap].to_numpy(np.float64), lo, hi, kind)
         bad = 0
         for i in rnd.sample(range(len(te)), min(N_QUERY, len(te))):
             q = Qt[i]

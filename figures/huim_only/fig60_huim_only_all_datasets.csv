@@ -1,0 +1,10 @@
+dataset,title,test_set,huim_only_mean_m,huim_only_median_m,huim_only_joint_accuracy,knn_study_m,knn_opt_m
+uji,UJIIndoorLoc,validationData,8.0591,6.1515,0.80378,9.277,5.3558
+uji_lib3,UJI_LIB tầng 3,Test-01,2.5698,2.1707,1.0,1.3341,1.208
+uji_lib3,UJI_LIB tầng 3,Test-02,2.6792,2.3078,1.0,1.9398,2.0277
+dlulib,DLULIB,Testing,6.0098,4.8813,0.968,4.1786,3.4335
+hcxy,HCXY,test_HCXY,2.8207,2.14,1.0,1.9308,1.5468
+hus,HUS,testcase1,1.299,1.0262,1.0,0.0481,0.0681
+hus,HUS,testcase2,1.5429,1.3027,1.0,0.0293,0.057
+hus_dedup,HUS-dedup,testcase1,1.303,1.0507,1.0,0.422,0.3905
+hus_dedup,HUS-dedup,testcase2,1.5362,1.2972,1.0,0.3305,0.2535

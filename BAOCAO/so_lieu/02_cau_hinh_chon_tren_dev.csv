@@ -1,0 +1,7 @@
+dataset,ten,utility,theta_pct,gamma,tau,beta,m,p,sigma,kf,dev_tb_m,dev_dung_tang,fold_dev,so_cau_hinh
+uji,UJIIndoorLoc,rank,20.0,2.0,20.0,3.0,12,8.0,3.0,20,7.6532,0.838391,"6 folds, PHONEID - leave-phones-out (GroupKFold over the 16 training phones): validationData is 9 unseen phones of 11",2880
+uji_lib3,UJI_LIB tầng 3,abs,10.0,1.0,20.0,3.0,12,8.0,0.0,3,2.7405,1.0,"6 folds, Month - leave-months-out: both test sets span the same 25 months as training and differ from it by collection session; no user/device column exists (one phone)",864
+dlulib,DLULIB,abs,10.0,1.0,20.0,1.0,5,8.0,0.0,3,4.4764,0.962077,"6 folds, SampleTimes - leave-sample-indices-out: the test set revisits every training RP with the same phones, so a dev fold must keep each RP in training and hold out other samples of it",864
+hcxy,HCXY,abs,10.0,2.0,20.0,3.0,8,4.0,0.0,3,2.4834,1.0,"6 folds, RP - leave-positions-out: none of the 86 test RPs is a training RP (overlap 0)",864
+hus,HUS,abs,10.0,1.0,20.0,1.0,5,8.0,0.0,3,1.4267,1.0,"6 folds, none - the files carry no user, device, session or sample index, and both test cases revisit the training RPs; dev folds are a shuffled 6-fold KFold over rows",864
+hus_dedup,HUS (khử trùng lặp),abs,10.0,1.0,20.0,1.0,5,8.0,0.0,3,1.4276,1.0,"6 folds, none - the files carry no user, device, session or sample index, and both test cases revisit the training RPs; dev folds are a shuffled 6-fold KFold over rows",864

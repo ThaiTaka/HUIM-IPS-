@@ -1,2 +1,2 @@
 test_set,n_test,building_accuracy,floor_accuracy,joint_accuracy,mean_err_m,median_err_m,p75_err_m,p90_err_m,p95_err_m,max_err_m,mean_err_coord,share_within_2m,share_within_5m,ms_per_fp
-test_HCXY,860,1.0,1.0,1.0,3.0306,2.3326,4.0988,6.6982,8.2732,12.6847,3.0306,0.4372,0.807,0.9813
+test_HCXY,860,1.0,1.0,1.0,2.8207,2.14,3.2074,5.5678,6.5094,18.1383,2.8207,0.4558,0.8791,11.5796
