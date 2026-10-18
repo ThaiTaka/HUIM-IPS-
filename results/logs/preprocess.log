@@ -511,3 +511,6 @@
 2026-10-18 02:05:57,829 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
 2026-10-18 02:05:57,833 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
 2026-10-18 02:05:57,837 | INFO    | prep | fit on 6 training rows: 4 WAP columns, detected RSSI in [-104, 0]
+2026-10-18 03:16:00,533 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-18 03:16:00,565 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-18 03:16:00,613 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]

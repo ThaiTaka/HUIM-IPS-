@@ -25,3 +25,4 @@ results/logs/preview/
 Thumbs.db
 .DS_Store
 desktop.ini
+results/huim_only/uji/research/*.npz
