@@ -49,8 +49,10 @@ BASE_FEATS = ["S", "logS", "S_rel", "rank", "P21", "P11", "V", "R", "Pidf", "raw
               "prof_maeL3", "prof_cosL3"]
 
 
-def compute(pos: HUIPositioner, posL: HUIPositioner, q: np.ndarray, gf: float) -> dict:
-    """HUI-evidence features of the K_CAND best cells of the chosen floor."""
+def compute(pos: HUIPositioner, posL: HUIPositioner, q: np.ndarray, gf: float,
+            posA: HUIPositioner | None = None, qA: np.ndarray | None = None) -> dict:
+    """HUI-evidence features of the K_CAND best cells of the chosen floor.
+    posA/qA: optional second HUI model mined on the absolute-RSSI utility."""
     kid = hui_keys(pos)
     Cws = {"base": pos.Cw, "idf": cell_matrix(pos, pos.hui_util / local_df(pos, kid, 10.0) ** 2)}
     P, V, R = components_multi(pos, q, [(2.0, 20.0), (1.0, 20.0)], Cws)
@@ -86,8 +88,21 @@ def compute(pos: HUIPositioner, posL: HUIPositioner, q: np.ndarray, gf: float) -
         mae, corr, cos, tm, shn = profile_feats(q[s:s + 256], mass, qhat, top[s:s + 256])
         maeL, _c, cosL, _t, _n = profile_feats(qL[s:s + 256], massL, qhatL, top[s:s + 256])
         ext.append(np.stack([mae, corr, cos, tm, shn, maeL, cosL], -1))
-    F = np.concatenate([np.stack(F, -1), np.concatenate(ext)], -1).astype(np.float32)
-    return {"F": F, "cand": top, "cxy": cxy, "est": est, "floor": floor}
+    F = np.concatenate([np.stack(F, -1), np.concatenate(ext)], -1)
+    if posA is not None:
+        PA, VA, RA = components_multi(posA, qA, [(2.0, 20.0)], {"base": posA.Cw})
+        PA = PA[("base", (2.0, 20.0))]
+        SA = (PA * VA ** 3) @ posA._kernel(3.0)
+        SAf = np.where(pos.cell_bf[None, :] == floor[:, None], SA, -1.0)
+        rankA = np.argsort(np.argsort(-SAf, 1), 1)
+        massA, qhatA = strength_profile(posA)
+        extA = []
+        for s in range(0, n, 256):
+            mae, corr, cos, tm, shn = profile_feats(qA[s:s + 256], massA, qhatA, top[s:s + 256])
+            extA.append(np.stack([mae, corr, cos], -1))
+        FA = [tk(PA), tk(VA), tk(RA), tk(SA) / np.maximum(tk(SA).max(1, keepdims=True), 1e-12), tk(rankA)]
+        F = np.concatenate([F, np.stack(FA, -1), np.concatenate(extA)], -1)
+    return {"F": F.astype(np.float32), "cand": top, "cxy": cxy, "est": est, "floor": floor}
 
 
 def relative(X: np.ndarray) -> np.ndarray:
@@ -113,16 +128,22 @@ def place(pred: np.ndarray, cxy: np.ndarray, m: int = M_TOP, lam: float = LAM):
     return np.einsum("ij,ijk->ik", w, np.take_along_axis(cxy, o[..., None], 1)), o, w
 
 
-def stage_dev(k: int) -> None:
+def stage_dev(k: int, with_abs: bool = False) -> None:
     b = load(KEY)
     _p, Q, _c, XY, _BF = inputs(b, KIND)
     pos, ex = load_model(fold_path(k), b.ground_factor)
     posL, _ = load_model(fold_path(k, tag(3)), b.ground_factor)
     assert np.array_equal(pos.cells, posL.cells)
     dvi = ex["dvi"]
-    f = compute(pos, posL, Q[dvi], b.ground_factor)
+    posA = qA = None
+    if with_abs:
+        _pa, QA, *_ = inputs(b, "abs")
+        posA, _ = load_model(fold_path(k, tag(1, THETA, "abs")), b.ground_factor)
+        assert np.array_equal(pos.cells, posA.cells)
+        qA = QA[dvi]
+    f = compute(pos, posL, Q[dvi], b.ground_factor, posA, qA)
     dist = np.sqrt(((f["cxy"] - XY[dvi][:, None]) ** 2).sum(-1)) * b.ground_factor
-    np.savez_compressed(RES / f"v5_dev_fold{k}.npz", F=f["F"], cxy=f["cxy"], dist=dist,
+    np.savez_compressed(RES / f"v5{'a' if with_abs else ''}_dev_fold{k}.npz", F=f["F"], cxy=f["cxy"], dist=dist,
                         true=XY[dvi], est=f["est"], dvi=dvi)
     print(f"dev fold {k}: features {f['F'].shape}", flush=True)
 
@@ -226,8 +247,9 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--stage", choices=["dev", "check", "final"], required=True)
     ap.add_argument("--fold", type=int)
+    ap.add_argument("--with-abs", action="store_true")
     a = ap.parse_args()
-    {"dev": lambda: stage_dev(a.fold), "check": dev_check, "final": stage_final}[a.stage]()
+    {"dev": lambda: stage_dev(a.fold, a.with_abs), "check": dev_check, "final": stage_final}[a.stage]()
 
 
 if __name__ == "__main__":
