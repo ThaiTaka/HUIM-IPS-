@@ -1,0 +1,23 @@
+{
+ "dataset": "uji",
+ "dev_mean_m": {
+  "v4 (baseline)": 7.6532,
+  "IDF weight of HUIs (best)": 7.63,
+  "level items (AP, strength level) alone, fold 0": {
+   "v4": 7.017,
+   "L3": 7.682
+  },
+  "re-rank, HUI scores": 7.327,
+  "re-rank + HUI strength profile": 7.19,
+  "re-rank, candidates over the whole building": 7.25,
+  "re-rank + features relative to the query's candidates (v5)": 7.0836,
+  "v5 trained leave-own-cell-out": 7.306,
+  "v5 + abs HUI model (v6)": 6.8274
+ },
+ "learned floor decision dev floor accuracy": {
+  "baseline": 0.8384,
+  "learned": 0.8807,
+  "note": "not used: position error was not lower"
+ },
+ "note": "every number out-of-fold on the 6 leave-phones-out dev folds of trainingData; test data not read"
+}
