@@ -2,4 +2,6 @@ version,change_vi,dev_folds,utility,theta_pct,config,dev_mean_m,test_mean_m,test
 v1,"EFIM theo từng ô, θ 30/50/70%, khớp HUI mềm, tầng do các ô điểm cao bỏ phiếu",leave-users-out,abs,30,"gamma=1, tau=40, beta=1, m=8, p=8",8.272,7.659,6.129,0.7966
 v2,"+ làm mượt không gian (σ), chọn tầng trước (kf), θ 10% (thí nghiệm trên 2 fold dev)",leave-users-out,abs,10,"gamma=2, tau=20, beta=3, sigma=3 m, kf=10, m=12, p=8",7.699,8.175,6.297,0.7615
 v3,fold dev giữ lại theo ĐIỆN THOẠI; chọn utility nội trong abs / rel / rank; θ 20%,leave-phones-out,rank,20,"gamma=2, tau=20, beta=3, sigma=3 m, kf=10, m=12, p=8",7.669,7.997,6.147,0.7993
-v4 (final),"mở rộng lưới kf, m, p (v3 chọn giá trị ở biên lưới)",leave-phones-out,rank,20,"gamma=2, tau=20, beta=3, sigma=3 m, kf=20, m=12, p=8",7.653,8.059,6.152,0.8038
+v4,"mở rộng lưới kf, m, p (v3 chọn giá trị ở biên lưới)",leave-phones-out,rank,20,"gamma=2, tau=20, beta=3, sigma=3 m, kf=20, m=12, p=8",7.653,8.059,6.152,0.8038
+v5,"xếp hạng lại 30 ô ứng viên bằng bộ hồi quy trên bằng chứng HUI (mô hình rank, mô hình mục mức cường độ, hồ sơ cường độ từ HUI), học trên dev",leave-phones-out,rank (+ L3),20,"K=30 candidates, m=20, lambda=2.0, GBM re-ranker",7.0836,7.178,5.392,0.8038
+v6 (final),v5 + bằng chứng từ mô hình HUI thứ ba khai thác trên lợi ích abs,leave-phones-out,"rank (+ L3, + abs)",20,"K=30 candidates, m=20, lambda=2.0, GBM re-ranker",6.8274,6.866,5.14,0.8038

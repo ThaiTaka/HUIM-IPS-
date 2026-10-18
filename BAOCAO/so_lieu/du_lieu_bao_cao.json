@@ -7,17 +7,18 @@
      "ten": "UJIIndoorLoc",
      "tap_test": "validationData",
      "so_mau": 1111,
-     "sai_so_tb_m": 8.0591,
-     "trung_vi_m": 6.1515,
-     "p75_m": 10.7194,
-     "p90_m": 16.9459,
-     "p95_m": 20.913,
+     "sai_so_tb_m": 6.8658,
+     "trung_vi_m": 5.1398,
+     "p75_m": 8.9434,
+     "p90_m": 14.0185,
+     "p95_m": 18.4182,
      "dung_toa": 0.9991,
      "dung_tang": 0.80378,
      "dung_toa_tang": 0.80378,
-     "ty_le_duoi_5m": 0.3906,
-     "ms_moi_fp": 136.3523,
-     "duoi_7m": false,
+     "ty_le_duoi_5m": 0.4905,
+     "ms_moi_fp": 266.305,
+     "duoi_7m": true,
+     "sai_so_chuan_tb_m": 0.1961,
      "he_so_met": 0.766126
     }
    },
@@ -130,6 +131,127 @@
     "ap_trong_hui": 379,
     "tong_ap": 520,
     "giao_dich_tb_moi_o": 21.29
+   },
+   "v4_tests": {
+    "validationData": {
+     "n_test": 1111,
+     "building_accuracy": 0.9991,
+     "floor_accuracy": 0.80378,
+     "joint_accuracy": 0.80378,
+     "mean_err_m": 8.0591,
+     "median_err_m": 6.1515,
+     "p75_err_m": 10.7194,
+     "p90_err_m": 16.9459,
+     "p95_err_m": 20.913,
+     "max_err_m": 61.4983,
+     "mean_err_coord": 10.5193,
+     "share_within_2m": 0.1368,
+     "share_within_5m": 0.3906,
+     "ms_per_fp": 136.3523,
+     "below_target": false
+    }
+   },
+   "v6": {
+    "dev_mean_m": 6.8274,
+    "dev_median_m": 4.1079,
+    "dev_mean_v4_m": 7.6532,
+    "k_candidates": 30,
+    "m": 20,
+    "lam": 2.0,
+    "regressor": "HistGradientBoostingRegressor(max_iter=300, lr=0.06, leaves=31, min_leaf=40, l2=1.0, random_state=0) on log1p(distance cell-truth)",
+    "n_features": 33,
+    "n_huis_L3": 1031786,
+    "n_huis_abs": 3062754,
+    "v5": {
+     "validationData": {
+      "n_test": 1111,
+      "building_accuracy": 0.9991,
+      "floor_accuracy": 0.80378,
+      "joint_accuracy": 0.80378,
+      "mean_err_m": 7.1777,
+      "median_err_m": 5.3924,
+      "p75_err_m": 9.4943,
+      "p90_err_m": 14.3095,
+      "p95_err_m": 19.5314,
+      "max_err_m": 60.3019,
+      "mean_err_coord": 9.3689,
+      "share_within_2m": 0.1656,
+      "share_within_5m": 0.4698,
+      "ms_per_fp": 171.107,
+      "v4_mean_err_m": 8.0591,
+      "below_target": false
+     }
+    },
+    "v5_dev_mean_m": 7.0836,
+    "research": {
+     "dataset": "uji",
+     "dev_mean_m": {
+      "v4 (baseline)": 7.6532,
+      "IDF weight of HUIs (best)": 7.63,
+      "level items (AP, strength level) alone, fold 0": {
+       "v4": 7.017,
+       "L3": 7.682
+      },
+      "re-rank, HUI scores": 7.327,
+      "re-rank + HUI strength profile": 7.19,
+      "re-rank, candidates over the whole building": 7.25,
+      "re-rank + features relative to the query's candidates (v5)": 7.0836,
+      "v5 trained leave-own-cell-out": 7.306,
+      "v5 + abs HUI model (v6)": 6.8274
+     },
+     "learned floor decision dev floor accuracy": {
+      "baseline": 0.8384,
+      "learned": 0.8807,
+      "note": "not used: position error was not lower"
+     },
+     "note": "every number out-of-fold on the 6 leave-phones-out dev folds of trainingData; test data not read"
+    },
+    "verification": {
+     "n_checks": 8,
+     "n_failed": 0,
+     "checks": [
+      {
+       "check": "C1 mean error",
+       "ok": true,
+       "detail": "6.8658 vs 6.8658"
+      },
+      {
+       "check": "C1 median error",
+       "ok": true,
+       "detail": "5.1398 vs 5.1398"
+      },
+      {
+       "check": "C2 position = weighted cells",
+       "ok": true,
+       "detail": "max deviation 9.31e-09"
+      },
+      {
+       "check": "C3 weights",
+       "ok": true,
+       "detail": "min 3.19e-18, sum range 1.000000-1.000000"
+      },
+      {
+       "check": "C4 cells on predicted floor",
+       "ok": true,
+       "detail": "all cells"
+      },
+      {
+       "check": "C5 v4 reproduced",
+       "ok": true,
+       "detail": "max deviation 1.86e-09; floors identical"
+      },
+      {
+       "check": "C6 test rows = validationData",
+       "ok": true,
+       "detail": "1111 rows, file has 1111; positions match"
+      },
+      {
+       "check": "C7 dev number",
+       "ok": true,
+       "detail": "6.8274 vs research 6.8274"
+      }
+     ]
+    }
    }
   },
   "uji_lib3": {
@@ -150,6 +272,7 @@
      "ty_le_duoi_5m": 0.8876,
      "ms_moi_fp": 0.8455,
      "duoi_7m": true,
+     "sai_so_chuan_tb_m": 0.0226,
      "he_so_met": 1.0
     },
     "Test-02": {
@@ -168,6 +291,7 @@
      "ty_le_duoi_5m": 0.9044,
      "ms_moi_fp": 0.8711,
      "duoi_7m": true,
+     "sai_so_chuan_tb_m": 0.0201,
      "he_so_met": 1.0
     }
    },
@@ -296,6 +420,7 @@
      "ty_le_duoi_5m": 0.5137,
      "ms_moi_fp": 73.4123,
      "duoi_7m": true,
+     "sai_so_chuan_tb_m": 0.0569,
      "he_so_met": 1.0
     }
    },
@@ -420,6 +545,7 @@
      "ty_le_duoi_5m": 0.8791,
      "ms_moi_fp": 11.5796,
      "duoi_7m": true,
+     "sai_so_chuan_tb_m": 0.095,
      "he_so_met": 1.0
     }
    },
@@ -548,6 +674,7 @@
      "ty_le_duoi_5m": 0.9902,
      "ms_moi_fp": 0.0501,
      "duoi_7m": true,
+     "sai_so_chuan_tb_m": 0.0672,
      "he_so_met": 1.0
     },
     "testcase2": {
@@ -566,6 +693,7 @@
      "ty_le_duoi_5m": 0.9756,
      "ms_moi_fp": 0.0469,
      "duoi_7m": true,
+     "sai_so_chuan_tb_m": 0.0808,
      "he_so_met": 1.0
     }
    },
@@ -690,6 +818,7 @@
      "ty_le_duoi_5m": 0.9902,
      "ms_moi_fp": 0.0762,
      "duoi_7m": true,
+     "sai_so_chuan_tb_m": 0.0674,
      "he_so_met": 1.0
     },
     "testcase2": {
@@ -708,6 +837,7 @@
      "ty_le_duoi_5m": 0.9756,
      "ms_moi_fp": 0.071,
      "duoi_7m": true,
+     "sai_so_chuan_tb_m": 0.0808,
      "he_so_met": 1.0
     }
    },
@@ -875,7 +1005,7 @@
    "change_vi": "fold dev giữ lại theo ĐIỆN THOẠI; chọn utility nội trong abs / rel / rank; θ 20%"
   },
   {
-   "version": "v4 (final)",
+   "version": "v4",
    "change": "wider grid for kf, m, p (v3 had selected values on its edges)",
    "dev_folds": "leave-phones-out",
    "utility": "rank",
@@ -887,6 +1017,34 @@
    "test_floor_accuracy": 0.8038,
    "ms_per_fp": 136.35,
    "change_vi": "mở rộng lưới kf, m, p (v3 chọn giá trị ở biên lưới)"
+  },
+  {
+   "version": "v5",
+   "change": "re-rank the 30 best cells of the chosen floor with a regressor on HUI-evidence features (rank model, level-item model, HUI strength profile), trained on the dev folds",
+   "dev_folds": "leave-phones-out",
+   "utility": "rank (+ L3)",
+   "theta_pct": 20,
+   "config": "K=30 candidates, m=20, lambda=2.0, GBM re-ranker",
+   "dev_mean_m": 7.0836,
+   "test_mean_m": 7.178,
+   "test_median_m": 5.392,
+   "test_floor_accuracy": 0.8038,
+   "ms_per_fp": 171.107,
+   "change_vi": "xếp hạng lại 30 ô ứng viên bằng bộ hồi quy trên bằng chứng HUI (mô hình rank, mô hình mục mức cường độ, hồ sơ cường độ từ HUI), học trên dev"
+  },
+  {
+   "version": "v6 (final)",
+   "change": "v5 + evidence from a third HUI model mined on the absolute-RSSI utility",
+   "dev_folds": "leave-phones-out",
+   "utility": "rank (+ L3, + abs)",
+   "theta_pct": 20,
+   "config": "K=30 candidates, m=20, lambda=2.0, GBM re-ranker",
+   "dev_mean_m": 6.8274,
+   "test_mean_m": 6.866,
+   "test_median_m": 5.14,
+   "test_floor_accuracy": 0.8038,
+   "ms_per_fp": 266.305,
+   "change_vi": "v5 + bằng chứng từ mô hình HUI thứ ba khai thác trên lợi ích abs"
   }
  ],
  "pilots": {
@@ -935,33 +1093,33 @@
   {
    "nhom": "Đoán đúng tòa và tầng",
    "so_mau": 893,
-   "sai_so_tb_m": 7.7843,
-   "phan_tong_sai_so": 0.7764
+   "sai_so_tb_m": 6.4809,
+   "phan_tong_sai_so": 0.7587
   },
   {
    "nhom": "Đoán sai tầng",
    "so_mau": 218,
-   "sai_so_tb_m": 9.1849,
-   "phan_tong_sai_so": 0.2236
+   "sai_so_tb_m": 8.4427,
+   "phan_tong_sai_so": 0.2413
   }
  ],
  "uji_by_building": [
   {
    "toa": 0,
    "so_mau": 536,
-   "sai_so_tb_m": 7.2293,
+   "sai_so_tb_m": 5.7009,
    "dung_tang": 0.7873
   },
   {
    "toa": 1,
    "so_mau": 307,
-   "sai_so_tb_m": 7.9946,
+   "sai_so_tb_m": 7.4312,
    "dung_tang": 0.7362
   },
   {
    "toa": 2,
    "so_mau": 268,
-   "sai_so_tb_m": 9.7924,
+   "sai_so_tb_m": 8.5482,
    "dung_tang": 0.9142
   }
  ],
@@ -970,7 +1128,7 @@
    "dataset": "uji",
    "ten": "UJIIndoorLoc",
    "tap_test": "validationData",
-   "chi_huim_m": 8.0591,
+   "chi_huim_m": 6.8658,
    "knn_goc_m": 9.277,
    "knn_toi_uu_m": 5.3558,
    "huim_chon_ap_knn_m": 5.2974,
@@ -1085,8 +1243,10 @@
   }
  ],
  "verification": {
-  "n_checks": 42,
+  "n_checks": 50,
   "n_failed": 0,
+  "n_checks_v4": 42,
+  "n_checks_v6": 8,
   "per_dataset": [
    {
     "dataset": "uji",
@@ -1121,84 +1281,136 @@
   ]
  },
  "worked_example": {
-  "src_row": 729,
-  "true_x": -7420.426334573698,
-  "true_y": 4864893.484687847,
-  "pred_x": -7427.334184050138,
-  "pred_y": 4864897.577517376,
-  "err_m": 6.151454511598399,
+  "src_row": 573,
+  "true_x": -7639.759229676641,
+  "true_y": 4865007.284228645,
+  "pred_x": -7638.433538942641,
+  "pred_y": 4865000.70773517,
+  "err_m": 5.139770401904927,
+  "v4_x": -7638.251387920138,
+  "v4_y": 4865000.034449457,
+  "v4_err_m": 5.673104059122658,
+  "pred_building_floor": "0_3",
   "cells": [
    {
-    "index": 274,
-    "weight": 0.2544193958691031,
-    "x": -7424.804142381996,
-    "y": 4864898.435409412
+    "index": 702,
+    "weight": 0.4997621572655202,
+    "x": -7637.839099999517,
+    "y": 4865000.615700001
    },
    {
-    "index": 286,
-    "weight": 0.191709706534343,
-    "x": -7426.483600001782,
-    "y": 4864899.974799997
+    "index": 699,
+    "weight": 0.1989249127786732,
+    "x": -7638.830899998546,
+    "y": 4864999.286200002
    },
    {
-    "index": 271,
-    "weight": 0.148641227307251,
-    "x": -7426.627799998969,
-    "y": 4864896.0578000005
+    "index": 696,
+    "weight": 0.1703773791151395,
+    "x": -7639.35000000149,
+    "y": 4865001.098100001
    },
    {
-    "index": 275,
-    "weight": 0.1343165345083819,
-    "x": -7427.868400000036,
-    "y": 4864896.747000002
+    "index": 700,
+    "weight": 0.0369535770118739,
+    "x": -7639.7153999991715,
+    "y": 4865007.160400003
    },
    {
-    "index": 290,
-    "weight": 0.078112122389924,
-    "x": -7425.728100001812,
-    "y": 4864901.3354
+    "index": 703,
+    "weight": 0.0257532836116609,
+    "x": -7640.289599999785,
+    "y": 4865009.164800003
    },
    {
-    "index": 289,
-    "weight": 0.0345884781621396,
-    "x": -7424.407800000161,
-    "y": 4864901.759999997
+    "index": 693,
+    "weight": 0.0199167333710379,
+    "x": -7637.177999999374,
+    "y": 4864993.520600001
    },
    {
-    "index": 280,
-    "weight": 0.0328371253077104,
-    "x": -7435.990200001746,
-    "y": 4864891.204000004
+    "index": 698,
+    "weight": 0.0161109954584658,
+    "x": -7640.98050000146,
+    "y": 4865006.785600001
    },
    {
-    "index": 279,
-    "weight": 0.0312547293444626,
-    "x": -7436.122900001705,
-    "y": 4864891.476599999
+    "index": 694,
+    "weight": 0.0098983296585941,
+    "x": -7636.6660999991,
+    "y": 4864991.733700002
    },
    {
-    "index": 287,
-    "weight": 0.0281014451879264,
-    "x": -7435.377900000662,
-    "y": 4864892.818000004
+    "index": 697,
+    "weight": 0.0089555805175995,
+    "x": -7641.573199998587,
+    "y": 4865008.853
    },
    {
-    "index": 276,
-    "weight": 0.0236459795676311,
-    "x": -7432.574799999595,
-    "y": 4864889.443000004
+    "index": 708,
+    "weight": 0.0040487356428759,
+    "x": -7632.033700000495,
+    "y": 4864987.610399997
    },
    {
-    "index": 278,
-    "weight": 0.0232425698023201,
-    "x": -7432.24384206906,
-    "y": 4864893.576495245
+    "index": 695,
+    "weight": 0.0030798261361474,
+    "x": -7635.040800001472,
+    "y": 4864986.0639
    },
    {
-    "index": 283,
-    "weight": 0.0191306860188064,
-    "x": -7429.617124881595,
-    "y": 4864899.692378685
+    "index": 692,
+    "weight": 0.0021573952027996,
+    "x": -7634.477000001818,
+    "y": 4864984.097499996
+   },
+   {
+    "index": 701,
+    "weight": 0.0014027542002568,
+    "x": -7641.899399999529,
+    "y": 4865014.780100003
+   },
+   {
+    "index": 704,
+    "weight": 0.0010578419186288,
+    "x": -7642.445999998599,
+    "y": 4865016.687799997
+   },
+   {
+    "index": 678,
+    "weight": 0.0007385866934604,
+    "x": -7616.688900001347,
+    "y": 4864976.028099999
+   },
+   {
+    "index": 673,
+    "weight": 0.0006402444023954,
+    "x": -7631.8949000015855,
+    "y": 4864981.916900002
+   },
+   {
+    "index": 676,
+    "weight": 0.0001475770326834,
+    "x": -7622.325800001621,
+    "y": 4864976.611699998
+   },
+   {
+    "index": 680,
+    "weight": 4.2141385273423e-05,
+    "x": -7618.763300001621,
+    "y": 4864975.433799997
+   },
+   {
+    "index": 691,
+    "weight": 3.0694614280576324e-05,
+    "x": -7617.12480000034,
+    "y": 4864979.6094999965
+   },
+   {
+    "index": 679,
+    "weight": 1.2539826322286314e-06,
+    "x": -7611.129000000656,
+    "y": 4864977.622000003
    }
   ]
  }

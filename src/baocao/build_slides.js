@@ -29,6 +29,7 @@ const HF = THEME.headFontFace, BF = THEME.bodyFontFace;
 const vn = (x, k = 2) => Number(x).toFixed(k).replace(/\B(?=(\d{3})+(?!\d))/g, " ").replace(".", ",");
 const pct = (x, k = 1) => vn(100 * x, k) + "%";
 const U = D.datasets.uji, UT = U.tests.validationData, SEL = U.selection, PRM = SEL.params;
+const V6 = U.v6, U4 = U.v4_tests.validationData, RSH = V6.research.dev_mean_m;
 const allTests = [];
 D.order.forEach((k) => Object.entries(D.datasets[k].tests).forEach(([t, v]) => allTests.push({ k, t, v })));
 const nOk = allTests.filter((x) => x.v.duoi_7m).length;
@@ -293,16 +294,32 @@ section("Phương pháp đề xuất");
 
 // ------------------------------------------------------------------ 12. bước 7
 {
-  const s = slide("03 · Bước 7", "Ước lượng toạ độ từ các ô khớp nhất",
-    `Toạ độ là trọng tâm có trọng số của m = ${PRM.m} ô có điểm cao nhất trên tầng đã chọn, trọng số tỷ lệ với S mũ p = ${PRM.p}. Trên vân tay ví dụ, sai số là ${vn(D.worked_example.err_m)} m.`);
-  const r = img(s, diag("d08_buoc7_toa_do.png"), MX, 1.55, 7.0, 5.3, "left", "Toạ độ của vân tay ví dụ");
+  const s = slide("03 · Bước 7", "Ô ứng viên và ước lượng ban đầu",
+    `${V6.k_candidates} ô có điểm cao nhất trên tầng đã chọn là ô ứng viên. Ước lượng ban đầu là trọng tâm có trọng số của m = ${PRM.m} ô tốt nhất; đây là đầu ra của phiên bản v4. Trong 12 ô đó luôn có ô gần đúng vị trí (trung bình 2,4 m), nhưng ô điểm cao nhất cách tới 8,8 m: tập ứng viên đúng vùng, chỉ thứ tự là chưa đúng.`);
+  const r = img(s, diag("d08_buoc7_toa_do.png"), MX, 1.55, 7.0, 5.3, "left", "Ô ứng viên của vân tay ví dụ");
   const x = r.x + r.w + 0.4, w = SW - MX - x;
   img(s, fx("f_coord"), x, 1.8, w, 1.2, "left", "Trọng tâm có trọng số");
   bullets(s, [
-    `m = ${PRM.m} ô tốt nhất, trọng số a_{c} tỷ lệ S_{c}^{p} với p = ${PRM.p}`,
-    `Vân tay ví dụ (dòng ${D.worked_example.src_row} của validationData): sai số **${vn(D.worked_example.err_m)} m**`,
-    "Giống bước tổng hợp của k-NN có trọng số về hình thức, nhưng ô và trọng số **hoàn toàn do điểm khớp HUI quyết định**",
+    `**${V6.k_candidates} ô ứng viên** của tầng đã chọn được chuyển sang Bước 8`,
+    `Ước lượng ban đầu (v4): trọng tâm của m = ${PRM.m} ô, trọng số theo S_{c}^{p}, p = ${PRM.p}`,
+    "Trên tập test v4: ô gần nhất trong 12 ô cách **2,4 m**, ô điểm cao nhất cách **8,8 m**",
   ], x, 3.25, w, 3.5, 14);
+}
+
+// ------------------------------------------------------------------ 12b. bước 8
+{
+  const s = slide("03 · Bước 8", "Xếp hạng lại ô ứng viên bằng bằng chứng HUI",
+    `Mỗi ô ứng viên có ${V6.n_features} đặc trưng, đều tính từ HUI: điểm khớp của ba mô hình HUI (rank, mục theo mức cường độ, lợi ích abs), độ phủ, hồ sơ cường độ của ô suy ra từ HUI và độ đồng thuận không gian. Bộ hồi quy Gradient Boosting học trên 6 fold dev dự đoán khoảng cách từ ô tới vị trí thật; toạ độ là trọng tâm của ${V6.m} ô dự đoán gần nhất. Bộ hồi quy không thấy vân tay huấn luyện nào, và không có k-NN.`);
+  const r = img(s, diag("d09_buoc8_xep_hang_lai.png"), MX, 1.45, 8.3, 3.25, "left", "Bước 8 trên vân tay ví dụ");
+  panel(s, MX, r.y + r.h + 0.1, 8.3, 6.85 - (r.y + r.h + 0.1), "FBFAF7");
+  img(s, fx("f_rerank"), MX + 0.2, r.y + r.h + 0.2, 7.9, 6.75 - (r.y + r.h + 0.25), "left", "Công thức Bước 8");
+  const x = MX + 8.6, w = SW - MX - x;
+  bullets(s, [
+    `Ba mô hình HUI: rank (${vn(U.model.n_huis / 1e6, 2)} tr.), mức cường độ (${vn(V6.n_huis_L3 / 1e6, 2)} tr.), abs (${vn(V6.n_huis_abs / 1e6, 2)} tr. HUI)`,
+    "Hồ sơ cường độ q̂_{c}(i) suy ra **từ HUI của ô**, không từ vân tay",
+    "Bộ hồi quy học **chỉ trên fold dev**, nhãn = khoảng cách ô – vị trí thật",
+    `Dev: **${vn(V6.dev_mean_v4_m)} → ${vn(V6.dev_mean_m)} m**`,
+  ], x, 1.6, w, 5.2, 14);
 }
 
 // ------------------------------------------------------------------ 13. giao thức
@@ -310,7 +327,7 @@ section("Thực nghiệm");
 {
   const s = slide("04 · Thực nghiệm", "Giao thức đánh giá: chọn trên dev, chấm tập kiểm tra một lần",
     "Mọi tham số được chọn trên 6 fold dev tách từ tập huấn luyện. Với UJIIndoorLoc, 9 trên 11 điện thoại của tập kiểm tra không có trong tập huấn luyện, nên fold được giữ lại theo điện thoại. Sau khi chọn, mô hình được huấn luyện lại trên toàn bộ tập huấn luyện và chấm tập kiểm tra đúng một lần.");
-  const r = img(s, diag("d09_giao_thuc.png"), MX, 1.55, 8.1, 4.3, "left", "Giao thức đánh giá");
+  const r = img(s, diag("d10_giao_thuc.png"), MX, 1.55, 8.1, 4.3, "left", "Giao thức đánh giá");
   img(s, fx("f_err"), MX + 0.2, r.y + r.h + 0.25, 7.0, 0.85, "left", "Sai số theo mét");
   const x = MX + 8.5, w = SW - MX - x;
   bullets(s, [
@@ -324,13 +341,13 @@ section("Thực nghiệm");
 // ------------------------------------------------------------------ 14. kết quả tổng hợp
 {
   const s = slide("04 · Kết quả", `${nOk}/${allTests.length} tập kiểm tra đạt sai số trung bình dưới 7 m`,
-    `Trên năm bộ dữ liệu ngoài UJIIndoorLoc, mọi tập kiểm tra đều dưới 7 m. UJIIndoorLoc đạt ${vn(UT.sai_so_tb_m)} m, chưa đạt mục tiêu; hai slide sau phân tích nguyên nhân.`);
+    `Mọi tập kiểm tra đều dưới 7 m. UJIIndoorLoc đạt ${vn(UT.sai_so_tb_m)} m sau Bước 8 (v4: ${vn(U4.mean_err_m)} m); biên dưới 7 m nhỏ, sai số chuẩn của trung bình là ${vn(UT.sai_so_chuan_tb_m)} m. Các bộ khác dùng Bước 1–7.`);
   const short = { uji: "UJIIndoorLoc", uji_lib3: "UJI_LIB", dlulib: "DLULIB", hcxy: "HCXY", hus: "HUS", hus_dedup: "HUS khử trùng" };
   const labels = allTests.map(({ k, t }) => `${short[k]} · ${t.replace("validationData", "validation").replace("testcase", "case ").replace("test_HCXY", "test")}`);
   const vals = allTests.map(({ v }) => Math.round(v.sai_so_tb_m * 100) / 100);
   s.addChart(pres.charts.BAR, [{ name: "Sai số trung bình (m)", labels, values: vals }], {
     x: MX, y: 1.5, w: 8.6, h: 5.35, barDir: "bar", catAxisOrientation: "maxMin",
-    chartColors: allTests.map(({ k }) => (k === "uji" ? RUST : TEAL)),
+    chartColors: allTests.map(({ k }) => (k === "uji" ? NAVY : TEAL)),
     showValue: true, dataLabelPosition: "outEnd", dataLabelFormatCode: "0.00", dataLabelFontSize: 12,
     dataLabelColor: INK, dataLabelFontFace: "+mn-lt",
     catAxisLabelFontSize: 12, catAxisLabelColor: INK, catAxisLabelFontFace: "+mn-lt",
@@ -342,22 +359,22 @@ section("Thực nghiệm");
   const x = MX + 9.0, w = SW - MX - x;
   stat(s, x, 1.7, w, `${nOk}/${allTests.length}`, "tập kiểm tra dưới 7 m", TEAL);
   stat(s, x, 3.2, w, `${vn(Math.min(...allTests.map((a) => a.v.sai_so_tb_m)))}–${vn(Math.max(...allTests.filter((a) => a.k !== "uji").map((a) => a.v.sai_so_tb_m)))} m`, "khoảng sai số trên 5 bộ ngoài UJIIndoorLoc", NAVY);
-  stat(s, x, 4.7, w, `${vn(UT.sai_so_tb_m)} m`, `UJIIndoorLoc (${vn(UT.so_mau, 0)} vân tay), chưa đạt mức 7 m`, RUST);
+  stat(s, x, 4.7, w, `${vn(UT.sai_so_tb_m)} m`, `UJIIndoorLoc (${vn(UT.so_mau, 0)} vân tay), v4: ${vn(U4.mean_err_m)} m`, NAVY);
 }
 
 // ------------------------------------------------------------------ 15. UJIIndoorLoc
 {
-  const s = slide("04 · Phân tích", "UJIIndoorLoc: sai số nằm ở độ phân giải trong tầng",
+  const s = slide("04 · Phân tích", "UJIIndoorLoc: sai số còn lại nằm chủ yếu trong tầng",
     `Trung vị ${vn(UT.trung_vi_m)} m, đúng tòa ${pct(UT.dung_toa)}, đúng tòa-tầng ${pct(UT.dung_toa_tang)}. ${pct(split[0].phan_tong_sai_so)} tổng sai số nằm ở các mẫu đã đoán đúng tầng, nên điểm nghẽn là độ phân giải trong tầng: mỗi ô chỉ có khoảng ${vn(U.mining.giao_dich_tb_moi_o, 0)} vân tay của một tới bốn người dùng. Thêm vào đó, 9/11 điện thoại của tập kiểm tra không có trong tập huấn luyện.`);
   const cw = 2.85;
-  [[`${vn(UT.sai_so_tb_m)} m`, "sai số trung bình", RUST], [`${vn(UT.trung_vi_m)} m`, "trung vị", NAVY],
+  [[`${vn(UT.sai_so_tb_m)} m`, "sai số trung bình", NAVY], [`${vn(UT.trung_vi_m)} m`, "trung vị", NAVY],
    [pct(UT.dung_toa_tang), "đúng tòa và tầng", TEAL], [pct(split[0].phan_tong_sai_so), "tổng sai số thuộc mẫu đúng tầng", NAVY]]
     .forEach(([v, l, c], i) => stat(s, MX + i * (cw + 0.13), 1.6, cw, v, l, c));
   table(s, ["Nhóm mẫu", "Số mẫu", "Sai số TB (m)", "Phần tổng sai số"],
     split.map((x) => [x.nhom, vn(x.so_mau, 0), vn(x.sai_so_tb_m), pct(x.phan_tong_sai_so)]),
     MX, 3.35, 6.2, [2.6, 1.0, 1.25, 1.35], { align: ["left", "right", "right", "right"], size: 13, rowH: 0.42 });
   bullets(s, [
-    "Điểm nghẽn là **độ phân giải trong tầng**, không phải việc chọn tầng",
+    `Bước 8 giảm sai số mẫu đúng tầng từ 7,78 m xuống **${vn(split[0].sai_so_tb_m)} m**`,
     `Mỗi ô chỉ có khoảng ${vn(U.mining.giao_dich_tb_moi_o, 0)} vân tay của một tới bốn người dùng`,
     "**9/11 điện thoại** của tập kiểm tra không có trong tập huấn luyện",
   ], MX, 4.85, 6.3, 2.0, 14);
@@ -367,16 +384,38 @@ section("Thực nghiệm");
 // ------------------------------------------------------------------ 16. phiên bản
 {
   const s = slide("04 · Phân tích", "Lịch sử phiên bản và lựa chọn mô hình cuối",
-    "Phiên bản v1 có sai số kiểm tra thấp nhất nhưng sai số dev kém nhất. Chọn v1 vì con số kiểm tra là chọn mô hình trên tập kiểm tra, nên mô hình cuối là v4, phiên bản mà giao thức chọn. Báo cáo ghi lại mọi phiên bản.");
+    "Mọi lựa chọn dựa trên sai số dev. Trong các phiên bản Bước 1–7, v1 có sai số kiểm tra thấp nhất nhưng dev kém nhất nên không được chọn. v5 và v6 thêm Bước 8; v6 có sai số dev thấp nhất nên là mô hình cuối, và tập kiểm tra chỉ được chấm sau khi đã chọn.");
   const V = D.versions;
   table(s, ["Phiên bản", "Thay đổi", "Fold dev", "Dev TB (m)", "Kiểm tra TB (m)", "Đúng tầng"],
     V.map((v) => [v.version.replace(" (final)", " (cuối)"), v.change_vi, v.dev_folds === "leave-phones-out" ? "theo điện thoại" : "theo người dùng",
       vn(v.dev_mean_m), vn(v.test_mean_m), pct(v.test_floor_accuracy)]),
     MX, 1.6, SW - 2 * MX, [1.2, 5.9, 1.55, 1.15, 1.35, 0.98],
-    { align: ["left", "left", "left", "right", "right", "right"], size: 12, rowH: 0.62, hl: (i) => i === V.length - 1 });
-  panel(s, MX, 5.15, SW - 2 * MX, 1.55, SOFT);
-  text(s, "**Nguyên tắc:** mọi lựa chọn dựa trên dev. v1 có sai số kiểm tra thấp nhất nhưng dev kém nhất; chọn v1 là chọn mô hình trên tập kiểm tra. Mô hình cuối là **v4**, phiên bản mà giao thức chọn.",
-    MX + 0.3, 5.35, SW - 2 * MX - 0.6, 1.2, { fontSize: 15 });
+    { align: ["left", "left", "left", "right", "right", "right"], size: 11, rowH: 0.5, hl: (i) => i === V.length - 1 });
+  panel(s, MX, 5.85, SW - 2 * MX, 0.95, SOFT);
+  text(s, `**Nguyên tắc:** mọi lựa chọn dựa trên dev; v1 có kiểm tra thấp nhất trong Bước 1–7 nhưng dev kém nhất nên không được chọn. Mô hình cuối là **v6** (dev ${vn(V6.dev_mean_m)} m), chấm tập kiểm tra đúng một lần: **${vn(UT.sai_so_tb_m)} m**.`,
+    MX + 0.3, 6.0, SW - 2 * MX - 0.6, 0.7, { fontSize: 14 });
+}
+
+// ------------------------------------------------------------------ 16b. biến thể Bước 8
+{
+  const s = slide("04 · Phân tích", "Bước 8: những gì đã thử trên dev",
+    "Mọi biến thể được so bằng sai số dev ngoài fold trên 19 937 truy vấn; tập kiểm tra không được đọc. Trọng số IDF của HUI và mô hình mục theo mức cường độ dùng riêng không cải thiện; chúng chỉ có ích khi làm bằng chứng bổ sung cho bộ hồi quy. Bộ phân loại tầng học trên dev tăng độ chính xác tầng nhưng không giảm sai số vị trí nên không dùng.");
+  const L3 = RSH["level items (AP, strength level) alone, fold 0"];
+  const rows = [["Bước 1–7, một điểm khớp HUI (v4)", vn(RSH["v4 (baseline)"]), "mốc"],
+    ["Trọng số IDF của HUI giữa các ô lân cận", vn(RSH["IDF weight of HUIs (best)"]), "gần như không đổi"],
+    ["Chỉ dùng mô hình mục theo mức cường độ (fold 0)", `${vn(L3.L3)} so với ${vn(L3.v4)}`, "kém hơn"],
+    ["Xếp hạng lại bằng các điểm HUI", vn(RSH["re-rank, HUI scores"]), "cải thiện"],
+    ["+ hồ sơ cường độ suy ra từ HUI", vn(RSH["re-rank + HUI strength profile"]), "cải thiện"],
+    ["Ứng viên trên cả toà nhà", vn(RSH["re-rank, candidates over the whole building"]), "không dùng"],
+    ["+ đặc trưng so với các ứng viên khác (v5)", vn(RSH["re-rank + features relative to the query's candidates (v5)"]), "cải thiện"],
+    ["v5 học khi bỏ ô của chính truy vấn", vn(RSH["v5 trained leave-own-cell-out"]), "không dùng"],
+    ["v5 + mô hình HUI lợi ích abs (v6)", vn(RSH["v5 + abs HUI model (v6)"]), "chọn"]];
+  table(s, ["Biến thể", "Dev TB (m)", "Kết luận"], rows, MX, 1.6, 8.6, [5.4, 1.5, 1.7],
+    { align: ["left", "right", "left"], size: 13, rowH: 0.48, hl: (i) => i === rows.length - 1 });
+  const x = MX + 9.0, w = SW - MX - x;
+  stat(s, x, 1.7, w, `${vn(RSH["v4 (baseline)"])} m`, "dev, Bước 1–7 (v4)", GREY);
+  stat(s, x, 3.2, w, `${vn(V6.dev_mean_m)} m`, "dev, mô hình cuối (v6)", TEAL);
+  stat(s, x, 4.7, w, `${vn(UT.sai_so_tb_m)} m`, "tập kiểm tra, chấm một lần", NAVY);
 }
 
 // ------------------------------------------------------------------ 17. tham chiếu
@@ -432,17 +471,18 @@ section("Kết luận");
     bullets(s, items, x, 2.6, 5.7, 4.3, 15, "FFFFFF");
   };
   col(MX, "Kết quả đạt được", [
-    "HUIM là thuật toán định vị chính: mô hình là tập HUI của từng ô, tầng và toạ độ đến từ điểm khớp HUI; **không dùng k-NN**",
-    `${nOk}/${allTests.length} tập kiểm tra đạt sai số trung bình dưới 7 m trên năm bộ dữ liệu bổ sung`,
-    `UJIIndoorLoc: ${vn(UT.sai_so_tb_m)} m, **chưa đạt 7 m**; nguyên nhân là thiết bị thu khác nhau và độ phân giải trong tầng`,
+    "HUIM là thuật toán định vị chính: mô hình là tập HUI của từng ô, tầng và toạ độ đến từ bằng chứng HUI; **không dùng k-NN**",
+    `**${nOk}/${allTests.length}** tập kiểm tra của 6 bộ dữ liệu đạt sai số trung bình dưới 7 m`,
+    `UJIIndoorLoc: **${vn(UT.sai_so_tb_m)} m** (v4: ${vn(U4.mean_err_m)} m) nhờ xếp hạng lại bằng bằng chứng HUI; biên dưới 7 m còn nhỏ`,
     "Tham số chọn trên dev, mọi con số kiểm chứng được",
   ]);
   col(MX + 6.3, "Hướng phát triển", [
     "Lợi ích nội bất biến hơn với thiết bị, ví dụ hiệu chỉnh độ lệch theo từng điện thoại",
     "Tăng độ phân giải trong tầng bằng ô nhỏ hơn hoặc kết hợp HUI ở nhiều mức không gian",
+    "Thay bộ hồi quy Bước 8 bằng quy tắc kết hợp tường minh, dễ diễn giải hơn",
     "Dùng HUI đóng hoặc HUI cực đại và cài đặt EFIM biên dịch để giảm số mẫu và thời gian định vị",
   ]);
-  s.addNotes("Tóm lại, đề tài đã chuyển HUIM từ vai trò tiền xử lý sang vai trò thuật toán định vị. Kết quả đạt mục tiêu trên năm bộ dữ liệu bổ sung; trên UJIIndoorLoc chưa đạt 7 m và nguyên nhân đã được phân tích định lượng.");
+  s.addNotes("Tóm lại, đề tài đã chuyển HUIM từ vai trò tiền xử lý sang vai trò thuật toán định vị. Kết quả đạt mục tiêu dưới 7 m trên cả sáu bộ dữ liệu; trên UJIIndoorLoc nhờ Bước 8, với biên nhỏ cần nói rõ.");
 }
 
 // ------------------------------------------------------------------ 20. cảm ơn

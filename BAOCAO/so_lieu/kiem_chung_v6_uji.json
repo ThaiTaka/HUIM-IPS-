@@ -1,0 +1,46 @@
+{
+ "n_checks": 8,
+ "n_failed": 0,
+ "checks": [
+  {
+   "check": "C1 mean error",
+   "ok": true,
+   "detail": "6.8658 vs 6.8658"
+  },
+  {
+   "check": "C1 median error",
+   "ok": true,
+   "detail": "5.1398 vs 5.1398"
+  },
+  {
+   "check": "C2 position = weighted cells",
+   "ok": true,
+   "detail": "max deviation 9.31e-09"
+  },
+  {
+   "check": "C3 weights",
+   "ok": true,
+   "detail": "min 3.19e-18, sum range 1.000000-1.000000"
+  },
+  {
+   "check": "C4 cells on predicted floor",
+   "ok": true,
+   "detail": "all cells"
+  },
+  {
+   "check": "C5 v4 reproduced",
+   "ok": true,
+   "detail": "max deviation 1.86e-09; floors identical"
+  },
+  {
+   "check": "C6 test rows = validationData",
+   "ok": true,
+   "detail": "1111 rows, file has 1111; positions match"
+  },
+  {
+   "check": "C7 dev number",
+   "ok": true,
+   "detail": "6.8274 vs research 6.8274"
+  }
+ ]
+}

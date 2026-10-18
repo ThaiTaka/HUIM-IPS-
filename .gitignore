@@ -25,3 +25,14 @@ results/logs/preview/
 Thumbs.db
 .DS_Store
 desktop.ini
+results/huim_only/uji/research/*.npz
+results/huim_only/uji/research/*.log
+results/logs/preprocess.log
+results/huim_only/uji/research/eval_fold*.csv
+results/huim_only/uji/research/feat_fold*.npz
+results/huim_only/uji/research/feat*_fold*.npz
+results/huim_only/uji/research/oof_err.npy
+results/huim_only/uji/research/v5_dev_fold*.npz
+results/huim_only/uji/v5/model_L3.npz
+results/huim_only/uji/research/v5a_dev_fold*.npz
+results/huim_only/uji/v5/model_abs.npz

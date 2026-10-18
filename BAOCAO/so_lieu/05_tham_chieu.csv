@@ -1,5 +1,5 @@
 dataset,ten,tap_test,chi_huim_m,knn_goc_m,knn_toi_uu_m,huim_chon_ap_knn_m,huim_chon_ap_so_ap,huim_toan_cuc_knn_m,huim_toan_cuc_so_ap,tong_ap
-uji,UJIIndoorLoc,validationData,8.0591,9.277,5.3558,5.2974,240,17.4882,91,520
+uji,UJIIndoorLoc,validationData,6.8658,9.277,5.3558,5.2974,240,17.4882,91,520
 uji_lib3,UJI_LIB tầng 3,Test-01,2.5698,1.3341,1.208,1.197,90,1.1931,87,620
 uji_lib3,UJI_LIB tầng 3,Test-02,2.6792,1.9398,2.0277,2.0229,90,2.0378,83,620
 dlulib,DLULIB,Testing,6.0098,4.1786,3.4335,3.4335,17,3.4335,17,17

@@ -33,6 +33,9 @@ F = {
     "f_smooth": [r"$S_c(T) = \sum_{c'} \mathrm{score}_{c'}(T)\,K(c',c),\qquad K(c',c) \propto e^{-d(c',c)^2/2\sigma^2}$",
                 r"$f(T) = \arg\max_{f}\ \dfrac{1}{k_f}\, \sum_{c\in \mathrm{top}_{k_f}(f)} S_c(T)$"],
     "f_coord": [r"$(\hat x,\hat y) = \sum_{c\in \mathrm{top}\text{-}m(f)} a_c\,(x_c,y_c),\qquad a_c = \dfrac{S_c^{\,p}}{\sum_{c'} S_{c'}^{\,p}}$"],
+    "f_rerank": [r"$\hat q_c(i) = \dfrac{\sum_{X\ni i} w(X)\,\bar q_c(X)}{\sum_{X\ni i} w(X)},\qquad R_c(T) = \sum_{i\in T} m_c(i)$",
+                 r"$\hat d_c = \exp\left(g(\varphi(T,c))\right) - 1,\qquad a_c \propto \exp\left(-\dfrac{\hat d_c - \hat d_{\min}}{\lambda}\right)$",
+                 r"$(\hat x,\hat y) = \sum_{c\in\mathrm{top}\text{-}m(\hat d)} a_c\,(x_c,y_c)$"],
     "f_err": [r"$e_n = \sqrt{(\hat x_n - x_n)^2 + (\hat y_n - y_n)^2}\cdot g,\qquad \bar e = \dfrac{1}{N}\sum_{n=1}^{N} e_n$"],
 }
 
