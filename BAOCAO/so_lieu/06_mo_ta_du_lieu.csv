@@ -1,0 +1,7 @@
+dataset,ten,so_ap,so_toa,so_lop_toa_tang,mau_huan_luyen,diem_tham_chieu,ap_tb_moi_fp,tap_test,he_so_met
+uji,UJIIndoorLoc,520,3,13,19937,933,17.995,validationData (1111),0.766126
+uji_lib3,UJI_LIB tầng 3,620,1,1,11520,24,19.284,Test-01 (7200); Test-02 (7200),1.0
+dlulib,DLULIB,17,1,3,13000,650,10.017,Testing (6500),1.0
+hcxy,HCXY,347,1,1,11370,379,36.388,test_HCXY (860),1.0
+hus,HUS,5,1,1,20500,205,5.0,testcase1 (205); testcase2 (205),1.0
+hus_dedup,HUS (khử trùng lặp),5,1,1,20091,205,5.0,testcase1 (205); testcase2 (205),1.0

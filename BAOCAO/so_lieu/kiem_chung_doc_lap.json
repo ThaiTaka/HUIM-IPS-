@@ -1,0 +1,258 @@
+{
+ "datasets": [
+  {
+   "dataset": "uji",
+   "checks": [
+    {
+     "check": "M1 minUtil per cell",
+     "ok": true,
+     "detail": "933 cells, 0 mismatches"
+    },
+    {
+     "check": "M2 HUI utility / support recomputed",
+     "ok": true,
+     "detail": "124267 HUIs in 25 cells, 0 failures"
+    },
+    {
+     "check": "M3 every 1/2-itemset >= minUtil is in the model",
+     "ok": true,
+     "detail": "610177 itemsets scanned in 933 cells, 0 missing"
+    },
+    {
+     "check": "M4 validationData: scores, top cells and (x,y) recomputed",
+     "ok": true,
+     "detail": "8 rows, 0 mismatches"
+    },
+    {
+     "check": "M5 validationData: metrics recounted",
+     "ok": true,
+     "detail": "mean 8.0591 m, joint 0.8038"
+    },
+    {
+     "check": "M6 selected = dev-grid minimum",
+     "ok": true,
+     "detail": "dev 7.6532 m over 2880 configurations"
+    }
+   ],
+   "n_checks": 6,
+   "n_failed": 0
+  },
+  {
+   "dataset": "uji_lib3",
+   "checks": [
+    {
+     "check": "M1 minUtil per cell",
+     "ok": true,
+     "detail": "24 cells, 0 mismatches"
+    },
+    {
+     "check": "M2 HUI utility / support recomputed",
+     "ok": true,
+     "detail": "63176 HUIs in 24 cells, 0 failures"
+    },
+    {
+     "check": "M3 every 1/2-itemset >= minUtil is in the model",
+     "ok": true,
+     "detail": "180626 itemsets scanned in 24 cells, 0 missing"
+    },
+    {
+     "check": "M4 Test-01: scores, top cells and (x,y) recomputed",
+     "ok": true,
+     "detail": "8 rows, 0 mismatches"
+    },
+    {
+     "check": "M5 Test-01: metrics recounted",
+     "ok": true,
+     "detail": "mean 2.5698 m, joint 1.0000"
+    },
+    {
+     "check": "M4 Test-02: scores, top cells and (x,y) recomputed",
+     "ok": true,
+     "detail": "8 rows, 0 mismatches"
+    },
+    {
+     "check": "M5 Test-02: metrics recounted",
+     "ok": true,
+     "detail": "mean 2.6792 m, joint 1.0000"
+    },
+    {
+     "check": "M6 selected = dev-grid minimum",
+     "ok": true,
+     "detail": "dev 2.7405 m over 864 configurations"
+    }
+   ],
+   "n_checks": 8,
+   "n_failed": 0
+  },
+  {
+   "dataset": "dlulib",
+   "checks": [
+    {
+     "check": "M1 minUtil per cell",
+     "ok": true,
+     "detail": "650 cells, 0 mismatches"
+    },
+    {
+     "check": "M2 HUI utility / support recomputed",
+     "ok": true,
+     "detail": "100032 HUIs in 25 cells, 0 failures"
+    },
+    {
+     "check": "M3 every 1/2-itemset >= minUtil is in the model",
+     "ok": true,
+     "detail": "76155 itemsets scanned in 650 cells, 0 missing"
+    },
+    {
+     "check": "M4 Testing: scores, top cells and (x,y) recomputed",
+     "ok": true,
+     "detail": "8 rows, 0 mismatches"
+    },
+    {
+     "check": "M5 Testing: metrics recounted",
+     "ok": true,
+     "detail": "mean 6.0098 m, joint 0.9680"
+    },
+    {
+     "check": "M6 selected = dev-grid minimum",
+     "ok": true,
+     "detail": "dev 4.4764 m over 864 configurations"
+    }
+   ],
+   "n_checks": 6,
+   "n_failed": 0
+  },
+  {
+   "dataset": "hcxy",
+   "checks": [
+    {
+     "check": "M1 minUtil per cell",
+     "ok": true,
+     "detail": "379 cells, 0 mismatches"
+    },
+    {
+     "check": "M2 HUI utility / support recomputed",
+     "ok": true,
+     "detail": "30856 HUIs in 25 cells, 0 failures"
+    },
+    {
+     "check": "M3 every 1/2-itemset >= minUtil is in the model",
+     "ok": true,
+     "detail": "444330 itemsets scanned in 379 cells, 0 missing"
+    },
+    {
+     "check": "M4 test_HCXY: scores, top cells and (x,y) recomputed",
+     "ok": true,
+     "detail": "8 rows, 0 mismatches"
+    },
+    {
+     "check": "M5 test_HCXY: metrics recounted",
+     "ok": true,
+     "detail": "mean 2.8207 m, joint 1.0000"
+    },
+    {
+     "check": "M6 selected = dev-grid minimum",
+     "ok": true,
+     "detail": "dev 2.4834 m over 864 configurations"
+    }
+   ],
+   "n_checks": 6,
+   "n_failed": 0
+  },
+  {
+   "dataset": "hus",
+   "checks": [
+    {
+     "check": "M1 minUtil per cell",
+     "ok": true,
+     "detail": "205 cells, 0 mismatches"
+    },
+    {
+     "check": "M2 HUI utility / support recomputed",
+     "ok": true,
+     "detail": "775 HUIs in 25 cells, 0 failures"
+    },
+    {
+     "check": "M3 every 1/2-itemset >= minUtil is in the model",
+     "ok": true,
+     "detail": "3075 itemsets scanned in 205 cells, 0 missing"
+    },
+    {
+     "check": "M4 testcase1: scores, top cells and (x,y) recomputed",
+     "ok": true,
+     "detail": "8 rows, 0 mismatches"
+    },
+    {
+     "check": "M5 testcase1: metrics recounted",
+     "ok": true,
+     "detail": "mean 1.2990 m, joint 1.0000"
+    },
+    {
+     "check": "M4 testcase2: scores, top cells and (x,y) recomputed",
+     "ok": true,
+     "detail": "8 rows, 0 mismatches"
+    },
+    {
+     "check": "M5 testcase2: metrics recounted",
+     "ok": true,
+     "detail": "mean 1.5429 m, joint 1.0000"
+    },
+    {
+     "check": "M6 selected = dev-grid minimum",
+     "ok": true,
+     "detail": "dev 1.4267 m over 864 configurations"
+    }
+   ],
+   "n_checks": 8,
+   "n_failed": 0
+  },
+  {
+   "dataset": "hus_dedup",
+   "checks": [
+    {
+     "check": "M1 minUtil per cell",
+     "ok": true,
+     "detail": "205 cells, 0 mismatches"
+    },
+    {
+     "check": "M2 HUI utility / support recomputed",
+     "ok": true,
+     "detail": "775 HUIs in 25 cells, 0 failures"
+    },
+    {
+     "check": "M3 every 1/2-itemset >= minUtil is in the model",
+     "ok": true,
+     "detail": "3075 itemsets scanned in 205 cells, 0 missing"
+    },
+    {
+     "check": "M4 testcase1: scores, top cells and (x,y) recomputed",
+     "ok": true,
+     "detail": "8 rows, 0 mismatches"
+    },
+    {
+     "check": "M5 testcase1: metrics recounted",
+     "ok": true,
+     "detail": "mean 1.3030 m, joint 1.0000"
+    },
+    {
+     "check": "M4 testcase2: scores, top cells and (x,y) recomputed",
+     "ok": true,
+     "detail": "8 rows, 0 mismatches"
+    },
+    {
+     "check": "M5 testcase2: metrics recounted",
+     "ok": true,
+     "detail": "mean 1.5362 m, joint 1.0000"
+    },
+    {
+     "check": "M6 selected = dev-grid minimum",
+     "ok": true,
+     "detail": "dev 1.4276 m over 864 configurations"
+    }
+   ],
+   "n_checks": 8,
+   "n_failed": 0
+  }
+ ],
+ "n_checks": 42,
+ "n_failed": 0
+}
