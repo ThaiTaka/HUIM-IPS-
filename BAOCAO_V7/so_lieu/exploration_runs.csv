@@ -1,0 +1,9 @@
+log,mo_ta,dac_trung,fold0,fold1,fold2,fold3,fold4,fold5,tb_co_trong_so
+b_c1.log,"1 thành viên, MLP 64/32, lr 5e-4, wd 1e-4, dừng sớm theo 1 fold",V6,5.742,4.691,5.196,6.756,8.479,6.171,5.9797
+b_c2.log,"như trên + mất mát phụ listwise (aux 0,3)",V6,5.736,4.836,5.337,6.68,8.439,6.144,6.0113
+b_c3.log,"1 thành viên, MLP 32/16, wd 1e-3",V6,5.829,4.693,5.036,6.675,8.513,6.058,5.9588
+b_c3_devrob.log,như dòng trên + khối bù lệch thiết bị (13 cột),V6 + devrob,5.901,4.802,5.179,6.561,8.813,6.348,6.0848
+b2_base.log,tập hợp 5 thành viên + log có dấu (= V7-B),V6,5.714,4.619,5.078,6.528,8.677,6.113,5.93
+b2_rel.log,như trên + HUI rel (= V7-C1),V6 + rel,5.464,4.488,4.801,6.355,8.519,5.936,5.7354
+b2_rel_geo.log,như trên + đồng thuận không gian (15 cột),V6 + rel + geo,5.459,4.509,4.791,6.294,8.556,5.894,5.729
+b2_rel_absL3.log,như trên + HUI abs mức-3 (= V7-C2),V6 + rel + absL3,5.374,4.441,4.715,6.31,8.608,5.968,5.7017

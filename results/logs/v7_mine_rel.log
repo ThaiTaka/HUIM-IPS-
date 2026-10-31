@@ -1,0 +1,12 @@
+2026-10-31 10:19:55,680 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-31 10:19:55,788 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-31 10:19:55,957 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+fold 2: 3247999 HUIs, 304s
+2026-10-31 10:25:07,183 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+fold 0: 3268895 HUIs, 318s
+2026-10-31 10:25:20,523 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+fold 1: 3202044 HUIs, 415s
+2026-10-31 10:26:57,959 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+fold 4: 2851776 HUIs, 342s
+fold 3: 3188384 HUIs, 367s
+fold 5: 3101559 HUIs, 310s

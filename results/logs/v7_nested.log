@@ -1,0 +1,8 @@
+2026-10-31 18:48:04,234 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested k2 j0 rank: 3290765 HUIs, 218s
+2026-10-31 18:51:44,497 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested k2 j0 L3: 823042 HUIs, 50s
+2026-10-31 18:52:37,205 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested k2 j0 abs: 3157878 HUIs, 182s
+2026-10-31 18:55:44,284 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-31 18:55:45,135 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]

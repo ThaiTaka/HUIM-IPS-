@@ -1,0 +1,7 @@
+2026-10-31 16:17:00,535 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-31 16:17:01,225 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+test features: (1111, 30, 33) in 229s
+2026-10-31 16:21:00,745 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+test block rel: (1111, 30, 8)
+2026-10-31 16:22:24,039 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+test block absL3: (1111, 30, 8)

@@ -1,0 +1,25 @@
+{
+ "label": "C_rel_absL3 ('rel', 'absL3')",
+ "n_all": 19937,
+ "n_informative": 19861,
+ "mean_all": 6.300564070451678,
+ "mean_inf": 5.701721185277944,
+ "median_inf": 3.893610193239513,
+ "p90_inf": 12.616130934510629,
+ "right_floor_inf": 5.0791239359049785,
+ "wrong_floor_inf": 9.008391164947392,
+ "blocks": [
+  "rel",
+  "absL3"
+ ],
+ "cfg": {
+  "lr": 0.0005,
+  "h1": 32,
+  "h2": 16,
+  "wd": 0.001,
+  "ep": 30,
+  "tf": "slog",
+  "patience": 8
+ },
+ "seed": 0
+}

@@ -1,0 +1,95 @@
+{
+ "selected_model": "C_rel_absL3 (V7-C2)",
+ "selection_rule": "lowest out-of-fold dev mean error on informative queries among the declared variants; validationData not used for selection",
+ "dataset": {
+  "train": "ujiindoorloc/UJIndoorLoc/trainingData.csv",
+  "train_sha256": "45ca0128bd12019c976bb4793e407c979c82995d7a5940ab7288620247905168",
+  "test": "ujiindoorloc/UJIndoorLoc/validationData.csv",
+  "test_sha256": "5f90c536648cd657b2c516d20c4e0968d4003279ea6bd5d5d5322d3f1e8905c0",
+  "ground_factor_m_per_coordinate_unit": 0.766126,
+  "n_wap": 520,
+  "cells": 933
+ },
+ "folds": {
+  "scheme": "GroupKFold",
+  "n_splits": 6,
+  "group": "PHONEID (16 training phones)"
+ },
+ "hui": {
+  "algorithm": "EFIM (src/huim/efim.py, exact; verified against brute force)",
+  "theta_pct": 20.0,
+  "external_utility": 1.0,
+  "per_cell_budget": {
+   "time_s": 10,
+   "max_huis": 10000,
+   "escalation": 1.25
+  },
+  "models": {
+   "rank": "rank utility, items = AP",
+   "rank_L3": "rank utility, items = (AP, level of 3)",
+   "abs": "absolute-strength utility",
+   "rel": "strength relative to the strongest AP (40 dB window)",
+   "abs_L3": "absolute-strength utility, items = (AP, level of 3)"
+  },
+  "final_hui_counts": {
+   "rank": 3238416,
+   "rank_L3": 1031786,
+   "abs": 3062754,
+   "rel": 3197333,
+   "abs_L3": 2371262
+  }
+ },
+ "candidates": {
+  "k": 30,
+  "floor_rule": "floor whose 20 best cells have the highest mean smoothed HUI score (kf=20)",
+  "score": "S = P(gamma=2,tau=20) * V^3, Gaussian smoothing sigma=3 m within the floor"
+ },
+ "features": {
+  "v6_columns": 33,
+  "extra_blocks": [
+   "rel",
+   "absL3"
+  ],
+  "block_columns": 8,
+  "transform": "each feature + (x - max over candidates), min-max within the query, rank; then signed log; z-score"
+ },
+ "scorer": {
+  "type": "shared MLP with pooled-candidate branch",
+  "lr": 0.0005,
+  "h1": 32,
+  "h2": 16,
+  "wd": 0.001,
+  "ep": 30,
+  "tf": "slog",
+  "patience": 8,
+  "loss": "mean(0.766126 * ||sum_i w_i c_i - x_true||), w = softmax(s)",
+  "optimiser": "Adam (b1 .9, b2 .999), batch 256",
+  "ensemble": "one member per training fold; member i early-stops on fold i and is fitted on the others; scores averaged, then softmax",
+  "seed": 0
+ },
+ "v7a_fusion_rule_declared": {
+  "params_in_sample_on_dev": {
+   "rule": "adaptT",
+   "m": 30,
+   "T0": 0.25,
+   "c": 1.2
+  },
+  "nested_dev_informative_mean": 6.181340498252748
+ },
+ "results": {
+  "dev_oof_informative_mean_m": 5.701721185277944,
+  "dev_oof_all_mean_m": 6.300564070451678,
+  "test_mean_m": 6.309324680815074,
+  "test_median_m": 4.63568556571041,
+  "test_p90_m": 12.852796745175299,
+  "test_floor_accuracy": 0.8037803780378038,
+  "test_building_accuracy": 0.9990999099909991
+ },
+ "software": {
+  "python": "3.13.14",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "scikit_learn": "1.9.1",
+  "git_rev_of_code": "d572d66"
+ }
+}

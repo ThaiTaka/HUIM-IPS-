@@ -1,0 +1,87 @@
+{
+ "variant": "C_rel_absL3",
+ "n_checks": 16,
+ "n_failed": 0,
+ "checks": [
+  {
+   "check": "T1 error statistics",
+   "ok": true,
+   "detail": "mean 6.3093, median 4.6357, p90 12.8528 vs summary 6.3093/4.6357/12.8528"
+  },
+  {
+   "check": "T2 position = weighted cells",
+   "ok": true,
+   "detail": "max deviation 9.31e-10 coordinate units over 1111 queries"
+  },
+  {
+   "check": "T3 weights",
+   "ok": true,
+   "detail": "min 5.28e-10, max |sum-1| 2.11e-15"
+  },
+  {
+   "check": "T4 finite values",
+   "ok": true,
+   "detail": "76659 numeric cells checked"
+  },
+  {
+   "check": "T5 cells on predicted floor",
+   "ok": true,
+   "detail": "all candidate cells"
+  },
+  {
+   "check": "T6 test rows = validationData",
+   "ok": true,
+   "detail": "1111 predictions, file has 1111 rows; positions match"
+  },
+  {
+   "check": "T7 floor / building accuracy",
+   "ok": true,
+   "detail": "floor 0.8038, building 0.9991"
+  },
+  {
+   "check": "T8 V6 reproduced",
+   "ok": true,
+   "detail": "V4 estimate max deviation 9.0e-06 coordinate units (< 1 mm); floors identical: True; stored 20 cells inside the 30 recomputed candidates: 100.0%; stored V6 mean 6.8658 vs reproduced 6.8614 (|diff| 0.0044 m); ordered 20-cell lists identical on 0.6% (the GBM is refitted with scikit-learn 1.9.1, which re-orders near-ties)"
+  },
+  {
+   "check": "T9 V6 unchanged",
+   "ok": true,
+   "detail": "git diff HEAD on the V6 sources/results is empty"
+  },
+  {
+   "check": "T10a folds disjoint by phone",
+   "ok": true,
+   "detail": "6 folds, 19937 rows covered once"
+  },
+  {
+   "check": "T10b cache fold hashes",
+   "ok": true,
+   "detail": "recomputed train/eval row hashes equal the cache metadata"
+  },
+  {
+   "check": "T11 cache provenance",
+   "ok": true,
+   "detail": "33 caches built from trainingData.csv 45ca0128bd12…"
+  },
+  {
+   "check": "T12 no k-NN / fingerprint matching",
+   "ok": true,
+   "detail": "9 inference modules scanned"
+  },
+  {
+   "check": "T13 EFIM = brute force",
+   "ok": true,
+   "detail": "86 passed, 1 skipped, 14 deselected in 8.69s"
+  },
+  {
+   "check": "T14 seed reproducibility",
+   "ok": true,
+   "detail": "two independent runs of each dev variant give identical per-fold errors to 3 decimals: B_base: identical (6 folds); C_rel: identical (6 folds); C_rel_absL3: identical (6 folds)"
+  },
+  {
+   "check": "T15 EFIM mining reproduces V6",
+   "ok": true,
+   "detail": "12 fold models (rank, abs): HUI counts equal the original dev_parts; final L3 model 1,031,786 HUIs = V6 summary 1,031,786"
+  }
+ ]
+}

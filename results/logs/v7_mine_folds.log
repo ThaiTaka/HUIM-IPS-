@@ -1,0 +1,36 @@
+2026-10-30 18:28:26,512 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-30 18:28:26,518 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-30 18:28:26,542 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-30 18:28:26,552 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-30 18:28:26,558 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-30 18:28:26,564 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+fold 0: 999179 HUIs, 105s
+2026-10-30 18:30:20,587 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+fold 1: 1808785 HUIs, 189s
+2026-10-30 18:31:44,245 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+fold 2: 868680 HUIs, 81s
+2026-10-30 18:33:12,067 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+fold 0: 3099005 HUIs, 339s
+2026-10-30 18:34:14,015 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+fold 0: 3225283 HUIs, 399s
+2026-10-30 18:35:13,348 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+fold 1: 3074903 HUIs, 445s
+2026-10-30 18:35:58,783 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+fold 2: 3281832 HUIs, 380s
+2026-10-30 18:36:46,891 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+fold 1: 3063901 HUIs, 535s
+2026-10-30 18:37:29,512 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+fold 3: 1194449 HUIs, 145s
+2026-10-30 18:37:44,787 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+fold 2: 3120434 HUIs, 343s
+2026-10-30 18:39:00,529 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+fold 4: 1086473 HUIs, 121s
+2026-10-30 18:39:37,392 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+fold 5: 1243451 HUIs, 131s
+2026-10-30 18:41:54,590 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+fold 3: 3217204 HUIs, 499s
+fold 3: 3072191 HUIs, 451s
+fold 4: 2763788 HUIs, 434s
+fold 4: 2998148 HUIs, 496s
+fold 5: 3289477 HUIs, 450s
+fold 5: 3041539 HUIs, 377s

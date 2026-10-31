@@ -1,0 +1,24 @@
+{
+ "label": "C_rel ('rel',)",
+ "n_all": 19937,
+ "n_informative": 19861,
+ "mean_all": 6.337996732839908,
+ "mean_inf": 5.7352857992946635,
+ "median_inf": 3.947852462173749,
+ "p90_inf": 12.613934488918332,
+ "right_floor_inf": 5.146262743989522,
+ "wrong_floor_inf": 8.863640215046217,
+ "blocks": [
+  "rel"
+ ],
+ "cfg": {
+  "lr": 0.0005,
+  "h1": 32,
+  "h2": 16,
+  "wd": 0.001,
+  "ep": 30,
+  "tf": "slog",
+  "patience": 8
+ },
+ "seed": 0
+}

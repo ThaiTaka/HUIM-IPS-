@@ -1,0 +1,12 @@
+2026-10-31 14:58:23,736 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+block absL3 fold 0: (4835, 30, 8) in 292.4s
+2026-10-31 15:03:24,944 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+block absL3 fold 1: (4516, 30, 8) in 307.3s
+2026-10-31 15:08:40,250 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+block absL3 fold 2: (2643, 30, 8) in 156.3s
+2026-10-31 15:11:23,808 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+block absL3 fold 3: (2547, 30, 8) in 159.0s
+2026-10-31 15:14:10,490 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+block absL3 fold 4: (2622, 30, 8) in 147.0s
+2026-10-31 15:16:44,506 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+block absL3 fold 5: (2774, 30, 8) in 170.2s
