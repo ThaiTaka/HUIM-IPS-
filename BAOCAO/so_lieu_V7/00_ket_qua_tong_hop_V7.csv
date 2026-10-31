@@ -1,0 +1,10 @@
+sheet,mo_hinh,file,so_mau,sai_so_tb_m,trung_vi_m,p90_m,dung_toa_tang,he_so_met
+V4_luu,V4 (dự đoán đã lưu),du_doan/V4_luu.csv,1111,8.0591,6.1515,16.9459,0.80378,0.766126
+V5_luu,V5 (dự đoán đã lưu),du_doan/V5_luu.csv,1111,7.1777,5.3924,14.3095,0.80378,0.766126
+V6_luu,V6 (dự đoán đã lưu),du_doan/V6_luu.csv,1111,6.8658,5.1398,14.0185,0.80378,0.766126
+V6_tai_tao,V6 (tái tạo ở V7),du_doan/V6_tai_tao.csv,1111,6.8614,5.0442,14.103,0.80378,0.766126
+V7A,V7-A hợp nhất thích ứng,du_doan/V7A.csv,1111,6.8862,5.0068,14.3447,0.80378,0.766126
+V7B,V7-B tối ưu trực tiếp,du_doan/V7B.csv,1111,6.4303,4.8898,13.0644,0.80378,0.766126
+V7C1,V7-C1 (+ HUI rel),du_doan/V7C1.csv,1111,6.3925,4.7634,12.9653,0.80378,0.766126
+V7C2,V7-C2 (+ rel + abs mức-3) — mô hình chọn,du_doan/V7C2.csv,1111,6.3093,4.6357,12.8528,0.80378,0.766126
+V7D,V7-D (+ HUI cấp tầng),du_doan/V7D.csv,1111,6.3236,4.6603,12.8322,0.80378,0.766126

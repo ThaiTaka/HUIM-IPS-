@@ -91,3 +91,11 @@ ghi kết quả vào `results/huim_only/uji/v7/predictions/V6_reproduced.csv` v�
   "chưa từng quan sát".
 * "Vân tay có thông tin" = có ≥ 1 AP. 76 vân tay huấn luyện không phát hiện AP nào (mọi ô điểm 0, vị trí là kết quả
   hòa điểm) được báo cáo riêng; `validationData.csv` không có vân tay nào như vậy. Mọi bảng dev có cả hai cách tính.
+
+## 5. Slide và bộ kiểm chứng trong thư mục BAOCAO
+
+* `BAOCAO/Slide_HUIM_IPS_V7.pptx`: 55 slide (cùng thiết kế với slide V6): lý thuyết có ví dụ số, các bước thuật toán tới 6,309 m với công thức có chú thích ký hiệu,
+  ví dụ trọn vẹn một vân tay thật (hàng 335) tính tay, kết quả, kiểm chứng 6,309 m, kết luận và **slide cuối: tóm tắt một slide cho người mới học HUIM trong IPS**.
+* `BAOCAO/so_lieu_V7/`: bộ kiểm chứng giống `BAOCAO/so_lieu/` (Excel `kiem_chung_V7_mean.xlsx`, Python `kiem_tra_V7.py`, dự đoán từng mẫu, `kiem_chung_V7.json`);
+  hướng dẫn ở `BAOCAO/so_lieu_V7/HUONG_DAN_KIEM_CHUNG.md` và `BAOCAO/00_HUONG_DAN_DOC.md`.
+* Dựng lại: `python src/baocao/export_data_v7.py`, `python src/baocao/make_so_lieu_kit_v7.py`, `node src/baocao/build_slides_v7.js` (cần npm `pptxgenjs`).

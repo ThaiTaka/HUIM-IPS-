@@ -95,3 +95,32 @@ node   src/baocao/build_report.js       # báo cáo .docx (cần npm docx, Libre
 node   src/baocao/build_slides.js       # slide .pptx (cần npm pptxgenjs, matplotlib)
 python src/baocao/make_ma_nguon.py      # ma_nguon/
 ```
+
+## HUIM-IPS V7: slide và kiểm chứng 6,309 m
+
+V7 (sau V6) đạt **6,309 m** trên validationData (V6: 6,866 m); mục tiêu dưới 6 m **chưa đạt**. Báo cáo văn bản của V7 nằm ở `../BAOCAO_V7/`
+(`HUIM_IPS_V7_RESEARCH_REPORT.md`, `V6_V7_COMPARISON.md`, `README_V7.md`); mã ở `../src/v7/`. Các tệp dưới đây thuộc thư mục này.
+
+| Thành phần | Nội dung |
+|---|---|
+| `Slide_HUIM_IPS_V7.pptx` | 55 slide cùng thiết kế với slide cũ: lý thuyết (vân tay Wi-Fi, HUIM, EFIM, điểm khớp) kèm ví dụ số; các bước thuật toán V7 tới 6,309 m với công thức có chú thích ký hiệu; ví dụ trọn vẹn một vân tay thật tính tay (hàng 335); kết quả; **kiểm chứng 6,309 m**; kết luận; **slide cuối: tóm tắt một slide cho người mới học HUIM trong IPS** (lý thuyết + ví dụ). Có ghi chú cho người trình bày. |
+| `so_lieu_V7/` | Bộ kiểm chứng sai số V7, cùng cấu trúc với `so_lieu/` (xem bên dưới) |
+| `ma_nguon/tao_bao_cao/*_v7*`, `export_data_v7.py`, `make_so_lieu_kit_v7.py`, `recalc_xlsx.ps1` | Bản sao các script dựng slide V7 và bộ kiểm chứng (bản gốc ở `src/baocao/`) |
+
+### Kiểm chứng 6,309 m (`so_lieu_V7/`)
+
+Ba cách kiểm tra độc lập; cả ba tính lại sai số từ toạ độ thật và toạ độ dự đoán của từng vân tay (hệ số mét 0,766126):
+
+1. **Excel:** `so_lieu_V7/kiem_chung_V7_mean.xlsx`. Sheet `Tong_hop`: cột *Kết luận* ghi KHỚP cho 9 mô hình (V4, V5, V6, V6 tái tạo, V7-A, V7-B, V7-C1, V7-C2, V7-D);
+   mỗi sheet mô hình có công thức sai số từng mẫu và `AVERAGE`; `V7C2_dung_lai_toa_do` dựng lại (x̂, ŷ) = Σ w·tâm ô từ 30 trọng số; `Vi_du_mot_truy_van` dựng tay hàng 335; `Dev_OOF` tính lại dev.
+2. **Python (chỉ thư viện chuẩn):** trong `so_lieu_V7` chạy `python kiem_tra_V7.py`; in KHỚP/LỆCH cho từng mô hình, dựng lại toạ độ V7-C2 và tính lại dev (kết quả: "Tất cả khớp").
+3. **Chương trình kiểm chứng của dự án:** `so_lieu_V7/kiem_chung_V7.json` lưu kết quả `src/v7/verify_v7.py`: 16 phép kiểm, 0 thất bại.
+
+Dựng lại slide và bộ kiểm chứng từ thư mục gốc dự án (sau khi có kết quả V7 trong `results/huim_only/uji/v7`):
+
+```bash
+python src/baocao/export_data_v7.py          # so_lieu_V7/du_lieu_bao_cao_V7.json (nguồn số liệu của slide)
+python src/baocao/make_so_lieu_kit_v7.py     # so_lieu_V7/*.xlsx, kiem_tra_V7.py, du_doan/*.csv
+powershell -File src/baocao/recalc_xlsx.ps1 BAOCAO/so_lieu_V7/kiem_chung_V7_mean.xlsx   # Excel tính lại để lưu giá trị
+node src/baocao/build_slides_v7.js           # Slide_HUIM_IPS_V7.pptx (cần npm pptxgenjs, Python có matplotlib, pandas)
+```
