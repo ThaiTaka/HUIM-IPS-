@@ -26,11 +26,12 @@ from v7.rerank import N_FOLDS, load_dev, oof_v6  # noqa: E402
 from v7.stats import cluster_bootstrap_mean, paired_cluster_bootstrap  # noqa: E402
 
 DEST = PROJECT_ROOT / "BAOCAO_V7" / "so_lieu"
-VARIANTS = ["B_base", "C_rel", "C_rel_absL3", "C_rel_geo", "C_devrob"]
+VARIANTS = ["B_base", "C_rel", "C_rel_absL3", "C_rel_geo", "C_devrob", "D_hier"]
 LABEL = {"V4": "V4", "V5": "V5 (tái tạo)", "V6": "V6 (như công bố, float32)", "V6*": "V6* (V6, trọng số float64)",
          "V7-A": "V7-A (hợp nhất thích ứng)", "B_base": "V7-B (tối ưu tọa độ trực tiếp)",
          "C_rel": "V7-C1 (+ HUI lợi ích rel)", "C_rel_absL3": "V7-C2 (+ HUI abs mức-3) = V7 cuối",
-         "C_rel_geo": "V7-C (+ rel + đồng thuận không gian)", "C_devrob": "V7-C (+ đặc trưng bù lệch thiết bị)"}
+         "C_rel_geo": "V7-C (+ rel + đồng thuận không gian)", "C_devrob": "V7-C (+ đặc trưng bù lệch thiết bị)",
+         "D_hier": "V7-D (V7-C2 + ngữ cảnh HUI cấp tầng)"}
 
 
 def v5_errors(D: list[dict]) -> list[np.ndarray]:
@@ -94,7 +95,7 @@ def summarize(T: pd.DataFrame, models: list[str], mask: np.ndarray, groups: np.n
 TEST_FILES = {"V4": UJI / "predictions" / "validationData.csv", "V5": UJI / "v5" / "predictions" / "validationData.csv",
               "V6": UJI / "v6" / "predictions" / "validationData.csv"}
 TEST_V7 = {"V6_reproduced": "V6r", "V6_star": "V6*", "V7_A": "V7-A", "B_base": "B_base", "C_rel": "C_rel", "C_rel_absL3": "C_rel_absL3",
-           "C_rel_geo": "C_rel_geo", "C_hier": "C_hier"}
+           "C_rel_geo": "C_rel_geo", "D_hier": "D_hier"}
 
 
 def test_table() -> pd.DataFrame:

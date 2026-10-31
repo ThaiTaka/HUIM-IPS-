@@ -53,7 +53,8 @@ Toàn bộ EFIM và `HUIPositioner`; hàm `compute` (30 ứng viên + 33 đặc 
   hàng đánh giá rời nhau trong cả 6 fold, `dev_features.py` có assert; kiểm lại ở T10 của `verify_v7.py`).
 * **Rò rỉ gián tiếp bậc hai:** bộ xếp hạng đánh giá trên fold k được huấn luyện bằng đặc trưng của các fold j≠k, mà mô
   hình HUI M_j của fold j đã đọc vân tay của fold k. Bộ xếp hạng không thấy cặp (đặc trưng, nhãn) nào của fold k, nên đây
-  chỉ là rò rỉ gián tiếp; V7 định lượng nó bằng `nested_check.py` (xem báo cáo).
+  chỉ là rò rỉ gián tiếp; V7 định lượng nó bằng `nested_check.py` trên fold ngoài số 2: bộ chấm điểm huấn luyện bằng đặc trưng chặt cho 5,0747 m so với
+5,0783 m ở giao thức chuẩn (chênh −0,0035 m, báo cáo §6.8).
 * Chọn tham số (m, λ ở V6; T₀, c ở V7-A; số epoch dừng sớm ở V7-B) chỉ dùng dev; V7-A và số epoch được chọn lồng nhau.
 * Chưa có tập kiểm tra độc lập mới; `validationData.csv` chỉ dùng để chấm cuối từng biến thể đã khai báo.
 
@@ -76,4 +77,4 @@ Toàn bộ EFIM và `HUIPositioner`; hàm `compute` (30 ứng viên + 33 đặc 
 * **V7-B** — bộ chấm điểm dùng chung học trực tiếp trọng số w = softmax(s) bằng hàm mất mát là sai số tọa độ (mét): `direct.py`.
 * **V7-C** — thêm bằng chứng HUI mới: mô hình HUI trên lợi ích `rel` (bất biến với độ lệch thu của điện thoại) và trên
   (AP, mức cường độ tuyệt đối); thử thêm đặc trưng bù lệch thiết bị và đồng thuận không gian.
-* **V7-D** — HUI cấp tầng làm ngữ cảnh cho quyết định theo ô: `hier.py`.
+* **V7-D** — HUI cấp tầng làm ngữ cảnh cho quyết định theo ô: `hier.py` (kết quả trung tính).

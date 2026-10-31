@@ -115,7 +115,8 @@ def seconds_per_query(blocks: tuple[str, ...]) -> float:
 def main(variants: dict[str, dict]) -> None:
     D = load_dev()
     T = load_cache(f"test_{TEST}")
-    res = {}
+    prev = OUT / "test_summary.json"
+    res = json.load(open(prev)) if prev.exists() else {}        # variants scored earlier are kept (each is scored once)
     xy6, xy64, p6, o6, w6 = v6_test(D, T)
     res["V6_reproduced"] = metrics(T, xy6) | {"ms_per_query": round(seconds_per_query(()) * 1000, 1)}
     write_predictions("V6_reproduced", T, xy6, w6, o6)
@@ -127,6 +128,9 @@ def main(variants: dict[str, dict]) -> None:
     res["V7_A"] = metrics(T, xyA) | {"params": pa, "ms_per_query": res["V6_reproduced"]["ms_per_query"]}
     write_predictions("V7_A", T, xyA, wA)
     for name, v in variants.items():
+        if name in res:
+            print(f"{name}: already scored, kept", flush=True)
+            continue
         xy, w, members, ms = direct_test(tuple(v["blocks"]), v["cfg"], v.get("seed", 0), v.get("n_seeds", 1))
         res[name] = metrics(T, xy) | {"scorer_ms_per_query": round(ms, 4), "n_members": len(members), "blocks": list(v["blocks"]),
                                       "ms_per_query": round(seconds_per_query(tuple(v["blocks"])) * 1000 + ms, 1)}

@@ -1,0 +1,26 @@
+{
+ "label": "D_hier ('rel', 'absL3', 'hier')",
+ "n_all": 19937,
+ "n_informative": 19861,
+ "mean_all": 6.286497916887674,
+ "mean_inf": 5.6883545372276,
+ "median_inf": 3.9064766294503936,
+ "p90_inf": 12.588559994887065,
+ "right_floor_inf": 5.074326196878787,
+ "wrong_floor_inf": 8.949514270494221,
+ "blocks": [
+  "rel",
+  "absL3",
+  "hier"
+ ],
+ "cfg": {
+  "lr": 0.0005,
+  "h1": 32,
+  "h2": 16,
+  "wd": 0.001,
+  "ep": 30,
+  "tf": "slog",
+  "patience": 8
+ },
+ "seed": 0
+}

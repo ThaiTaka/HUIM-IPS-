@@ -12,7 +12,7 @@ pipeline code.
     T6   the test rows are exactly validationData (count, source rows, true positions)
     T7   floor / building accuracy recomputed from validationData labels equal the summary
     T8   V6 reproduced: the reproduced V6 candidate cells and weights equal the stored V6 predictions
-    T9   V6 files in the repository are unchanged (git diff against HEAD)
+    T9   V6 files in the repository are unchanged (git diff against the merge-base with origin/main)
     T10  dev folds: disjoint by PHONEID, cover every training row once; cache metadata hashes match a recomputation
     T11  every cache was built from this trainingData.csv (SHA-256)
     T12  no neighbour search / raw-fingerprint matching in the inference modules (static scan)
@@ -98,8 +98,9 @@ def main(variant: str) -> None:
             f"V4 estimate max deviation {dv4:.1e} coordinate units (< 1 mm); floors identical: {same_floor}; stored 20 cells inside the 30 recomputed candidates: {inside:.1%}; "
             f"stored V6 mean {T6.err_m.mean():.4f} vs reproduced {R.err_m.mean():.4f} (|diff| {d_mean:.4f} m); ordered 20-cell lists identical on {ident:.1%} "
             f"(the GBM is refitted with scikit-learn {__import__('sklearn').__version__}, which re-orders near-ties)")
-    diff = subprocess.run(["git", "diff", "--stat", "HEAD", "--"] + V6_FILES, cwd=PROJECT_ROOT, capture_output=True, text=True).stdout.strip()
-    add("T9 V6 unchanged", diff == "", "git diff HEAD on the V6 sources/results is empty" if diff == "" else diff.replace("\n", " | "))
+    base = subprocess.run(["git", "merge-base", "HEAD", "origin/main"], cwd=PROJECT_ROOT, capture_output=True, text=True).stdout.strip() or "HEAD"
+    diff = subprocess.run(["git", "diff", "--stat", base, "--"] + V6_FILES, cwd=PROJECT_ROOT, capture_output=True, text=True).stdout.strip()
+    add("T9 V6 unchanged", diff == "", (f"git diff {base[:8]} (merge-base with origin/main, plus the working tree) on the V6 sources/results is empty" if diff == "" else diff.replace(chr(10), " | ")))
     sys.path.insert(0, str(PROJECT_ROOT / "src"))
     from multi_datasets import load
     from run_huim_only import folds_for

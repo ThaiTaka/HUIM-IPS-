@@ -1,0 +1,7 @@
+V6_reproduced    test mean 6.8614 m | median 5.044 | P90 14.10 | floor acc 0.8038
+V6_star          test mean 6.8614 m | median 5.044 | P90 14.10 | floor acc 0.8038
+V7_A             test mean 6.8862 m | median 5.007 | P90 14.34 | floor acc 0.8038
+B_base           test mean 6.4303 m | median 4.890 | P90 13.06 | floor acc 0.8038
+C_rel            test mean 6.3925 m | median 4.763 | P90 12.97 | floor acc 0.8038
+C_rel_absL3      test mean 6.3093 m | median 4.636 | P90 12.85 | floor acc 0.8038
+D_hier           test mean 6.3236 m | median 4.660 | P90 12.83 | floor acc 0.8038

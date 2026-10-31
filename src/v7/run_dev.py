@@ -29,6 +29,7 @@ VARIANTS = {
     "C_rel_absL3": ("rel", "absL3"),     # + HUI model on (AP, absolute-strength level) items
     "C_rel_geo": ("rel", "geo"),         # + spatial-consensus features (neutral result)
     "C_devrob": ("devrob",),             # device-offset features (negative result)
+    "D_hier": ("rel", "absL3", "hier"),  # V7-D: + floor-level HUI context
 }
 
 

@@ -46,7 +46,7 @@
   {
    "check": "T9 V6 unchanged",
    "ok": true,
-   "detail": "git diff HEAD on the V6 sources/results is empty"
+   "detail": "git diff d572d666 (merge-base with origin/main, plus the working tree) on the V6 sources/results is empty"
   },
   {
    "check": "T10a folds disjoint by phone",
@@ -61,7 +61,7 @@
   {
    "check": "T11 cache provenance",
    "ok": true,
-   "detail": "33 caches built from trainingData.csv 45ca0128bd12…"
+   "detail": "46 caches built from trainingData.csv 45ca0128bd12…"
   },
   {
    "check": "T12 no k-NN / fingerprint matching",
@@ -71,7 +71,7 @@
   {
    "check": "T13 EFIM = brute force",
    "ok": true,
-   "detail": "86 passed, 1 skipped, 14 deselected in 8.69s"
+   "detail": "86 passed, 1 skipped, 14 deselected in 6.34s"
   },
   {
    "check": "T14 seed reproducibility",

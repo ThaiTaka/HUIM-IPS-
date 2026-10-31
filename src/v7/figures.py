@@ -151,7 +151,7 @@ def main() -> None:
                  "F5_hieu_qua_chon_o_ung_vien_dev.png", "% truy vấn", legend_below=True)
     s = pd.read_csv(DATA / "dev_summary_informative.csv").set_index("model")
     order = [("V4", "V4"), ("V6*", "V6* (V6, float64)"), ("V7-A", "V7-A hợp nhất thích ứng"), ("B_base", "V7-B tối ưu trực tiếp"),
-             ("C_rel", "V7-C1 + HUI rel"), ("C_rel_absL3", "V7-C2 + HUI abs mức-3")]
+             ("C_rel", "V7-C1 + HUI rel"), ("C_rel_absL3", "V7-C2 + HUI abs mức-3"), ("D_hier", "V7-D + HUI cấp tầng")]
     order = [(k, v) for k, v in order if k in s.index]
     fig, ax = axes(figsize=(8.2, 3.9), grid="x")
     ys = np.arange(len(order))

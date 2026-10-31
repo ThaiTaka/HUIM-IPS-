@@ -6,3 +6,40 @@ nested k2 j0 L3: 823042 HUIs, 50s
 nested k2 j0 abs: 3157878 HUIs, 182s
 2026-10-31 18:55:44,284 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
 2026-10-31 18:55:45,135 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested features k2 j0: (4835, 30, 33)
+2026-10-31 19:13:27,267 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested k2 j1 rank: 2628747 HUIs, 286s
+2026-10-31 19:18:15,359 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested k2 j1 L3: 1384046 HUIs, 86s
+2026-10-31 19:19:43,816 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested k2 j1 abs: 2632461 HUIs, 261s
+2026-10-31 19:24:10,546 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-31 19:24:11,379 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested features k2 j1: (4516, 30, 33)
+2026-10-31 22:50:25,110 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested k2 j3 rank: 3206605 HUIs, 253s
+2026-10-31 22:54:40,308 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested k2 j3 L3: 1009820 HUIs, 66s
+2026-10-31 22:55:48,798 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested k2 j3 abs: 3075381 HUIs, 224s
+2026-10-31 22:59:43,738 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-31 22:59:44,470 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested features k2 j3: (2547, 30, 33)
+2026-10-31 23:08:55,300 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested k2 j4 rank: 3080005 HUIs, 244s
+2026-10-31 23:13:01,624 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested k2 j4 L3: 907497 HUIs, 54s
+2026-10-31 23:13:57,722 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested k2 j4 abs: 2817031 HUIs, 213s
+2026-10-31 23:17:35,298 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-31 23:17:36,030 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested features k2 j4: (2622, 30, 33)
+2026-10-31 23:26:19,377 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested k2 j5 rank: 3332893 HUIs, 224s
+2026-10-31 23:30:05,921 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested k2 j5 L3: 1080345 HUIs, 63s
+2026-10-31 23:31:10,644 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested k2 j5 abs: 3099219 HUIs, 199s
+2026-10-31 23:34:34,113 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+2026-10-31 23:34:34,827 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+nested features k2 j5: (2774, 30, 33)

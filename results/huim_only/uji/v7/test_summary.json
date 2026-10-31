@@ -126,5 +126,30 @@
    "absL3"
   ],
   "ms_per_query": 336.4
+ },
+ "D_hier": {
+  "n": 1111,
+  "mean": 6.32358919202796,
+  "median": 4.660259844410545,
+  "p75": 8.5682603779453,
+  "p90": 12.832202924176556,
+  "p95": 15.878945216853188,
+  "max": 53.192214318836164,
+  "building_accuracy": 0.9990999099909991,
+  "floor_accuracy": 0.8037803780378038,
+  "mean_right_floor": 5.8676270681315765,
+  "n_right_floor": 893,
+  "mean_wrong_floor": 8.19136064450259,
+  "n_wrong_floor": 218,
+  "share_within_2m": 0.21872187218721872,
+  "share_within_5m": 0.5328532853285328,
+  "scorer_ms_per_query": 0.7397,
+  "n_members": 6,
+  "blocks": [
+   "rel",
+   "absL3",
+   "hier"
+  ],
+  "ms_per_query": 336.2
  }
 }

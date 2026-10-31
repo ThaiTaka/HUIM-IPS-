@@ -90,6 +90,6 @@
   "numpy": "2.5.3",
   "scipy": "1.18.1",
   "scikit_learn": "1.9.1",
-  "git_rev_of_code": "d572d66"
+  "git_rev_of_code": "752743b"
  }
 }

@@ -35,7 +35,7 @@ Sai số tính bằng mét. Độ chính xác tầng và tòa không đổi gi�
 | V7-C1 (+ rel) | 6,338 | 5,735 | 6,393 | 4,763 | 8,557 | 12,965 | 99,91% | 80,38% | 279,4 |
 | **V7-C2 (+ rel + abs mức-3) — chọn theo dev** | **6,301** | **5,702** | **6,309** | **4,636** | **8,615** | **12,853** | 99,91% | 80,38% | 336,4 |
 | V7-C (+ bù lệch thiết bị, không chọn) | 6,601 | 5,994 | không chấm test | — | — | — | — | — | — |
-| V7-D (HUI cấp tầng) | chưa chạy xong | chưa chạy xong | chưa chạy xong | — | — | — | — | — | — |
+| V7-D (V7-C2 + HUI cấp tầng; không chọn) | 6,287 | 5,688 | 6,324 | 4,660 | 8,568 | 12,832 | 99,91% | 80,38% | ≥ 336,2 (chưa đo phần chấm điểm cấp tầng) |
 
 Ghi chú: (1) V7-C-bù-lệch-thiết-bị chỉ chạy ở dev vì bị loại ngay ở dev. (2) Dev của V4/V5/V6 "tái tạo" có chênh nhẹ so với
 số tham chiếu do 76 vân tay rỗng chọn ô theo thứ tự hòa điểm phụ thuộc phiên bản thư viện (xem `KIEM_TOAN_V6.md` §5). (3) Thời
@@ -49,6 +49,9 @@ gian của V4/V5/V6 gốc đo ở thời điểm khác; chỉ so V6 (tái đo) v
 | V6\* → V7-B | −0,279 m (−4,5%) | −0,337 m | −0,436 m (−6,3%) |
 | V6\* → V7-C1 | −0,474 m (−7,6%) | −0,535 m | −0,473 m (−6,9%) |
 | **V6\* → V7-C2** | **−0,507 m (−8,2%)** | **−0,573 m (−8,3%)** | **−0,557 m (−8,1%)** (so với V6 lưu) |
+| V6\* → V7-D | −0,520 m (−8,4%) | −0,587 m | −0,542 m (−7,9%) |
+
+V7-D chỉ thấp hơn V7-C2 0,013 m ở dev (KTC cặp [−0,052; +0,008]; tốt hơn ở 3/6 fold) và cao hơn 0,014 m ở test; V7-C2 được giữ theo tiêu chí "thấp hơn và tốt hơn ≥ 4/6 fold" (xem báo cáo §6.9).
 
 Khoảng tin cậy 95% (bootstrap theo cụm điện thoại, chênh lệch cặp): V7-C2 so với V6\* trên dev [−0,734; −0,261]; V7-C2 so với
 V6 (lưu) trên test [−1,103; −0,149]. Trong 4.000 lần lấy mẫu lại điện thoại, V7-C2 tốt hơn V6 ở 99,98% (dev) và 99,5% (test).
@@ -84,4 +87,4 @@ Hình: `bieu_do/F2_…`, `F8_…`, `F4_…`, `F10_…`.
 ## 7. Chi phí
 
 V7-C2 dùng 12,90 triệu HUI (V6: 7,33 triệu), tệp mô hình 74,3 MB (V6: 43,0 MB), 336 ms/vân tay (V6 đo lại: 206 ms); số HUI phải nạp vào
-bộ nhớ nhiều hơn 1,76 lần (chưa đo RAM riêng). V7-B (đặc trưng V6, không thêm mô hình HUI) rẻ gần bằng V6 (206,7 ms) và đã giảm 0,44 m trên test.
+bộ nhớ nhiều hơn 1,76 lần; đỉnh RAM của tiến trình suy luận 5.579 MB so với 3.965 MB của V6 (+41%, đo bằng `measure_inference.py`). V7-B (đặc trưng V6, không thêm mô hình HUI) rẻ gần bằng V6 (206,7 ms) và đã giảm 0,44 m trên test.

@@ -7,6 +7,18 @@ số liệu của V6 không bị sửa; kiểm chứng T9 trong `verification.js
 Kết quả và phân tích: [`HUIM_IPS_V7_RESEARCH_REPORT.md`](HUIM_IPS_V7_RESEARCH_REPORT.md) ·
 So sánh V6 ↔ V7: [`V6_V7_COMPARISON.md`](V6_V7_COMPARISON.md) · Kiểm toán V6: [`KIEM_TOAN_V6.md`](KIEM_TOAN_V6.md).
 
+## Kết quả chính (số đo thật, xem báo cáo để biết chi tiết)
+
+| | V6 | V7-C2 (chọn theo dev) |
+|---|---|---|
+| validationData, sai số TB / trung vị / P90 | 6,866 / 5,140 / 14,02 m (tái tạo: 6,861) | **6,309** / 4,636 / 12,85 m |
+| dev out-of-fold, vân tay có thông tin (19.861) | 6,209 m (V6\*, float64) | **5,702** m |
+| đúng tầng / đúng tòa (test) | 80,38% / 99,91% | 80,38% / 99,91% (giữ quy tắc chọn tầng) |
+
+**Mục tiêu dưới 6,00 m chưa đạt.** Chênh lệch V7-C2 so với V6 trên test là −0,557 m (KTC 95% theo cụm điện thoại [−1,103; −0,149]).
+V7-A (hợp nhất thích ứng), khối bù lệch thiết bị, khối đồng thuận không gian, trộn với GBM và V7-D (HUI cấp tầng) không phải cải tiến; xem
+báo cáo §6.9 và §7. Kiểm tra rò rỉ chặt (lồng nhau) trên fold ngoài số 2: chênh lệch −0,0035 m (§6.8). Kiểm chứng độc lập: 16 phép, 0 thất bại.
+
 ## 1. Mô hình V7 trong một đoạn
 
 ```
@@ -42,7 +54,8 @@ tĩnh T12 và `tests/test_v7.py`). Tọa độ thật chỉ là nhãn huấn luy
 | Chấm test | `src/v7/final_stage.py` |
 | Bảng, khoảng tin cậy, biểu đồ | `src/v7/analysis.py`, `src/v7/stats.py`, `src/v7/figures.py` |
 | Kiểm chứng độc lập | `src/v7/verify_v7.py` → `results/huim_only/uji/v7/verification.json` |
-| Kiểm tra rò rỉ chặt (lồng nhau) | `src/v7/nested_check.py` |
+| Kiểm tra rò rỉ chặt (lồng nhau) | `src/v7/nested_check.py` (`run_v7.py --stage nested`) |
+| Phân tích phụ | `src/v7/weight_analysis.py`, `src/v7/position_type.py`, `src/v7/exploration_table.py`, `src/v7/measure_inference.py` |
 | Test | `tests/test_v7.py` (cộng `tests/test_efim.py` có sẵn) |
 
 ## 3. Chạy lại
@@ -56,7 +69,7 @@ Yêu cầu: Python 3.13 (kết quả báo cáo tạo trên 3.13.14, numpy 2.5.3,
 python src/v7/run_v7.py --list          # in các lệnh sẽ chạy (bước đã có kết quả sẽ được bỏ qua)
 python src/v7/run_v7.py                 # chạy toàn bộ: mine → features → dev → test → report → verify
 python src/v7/run_v7.py --stage dev     # hoặc từng giai đoạn
-python -m pytest tests/test_v7.py -q    # 15 test
+python -m pytest tests/test_v7.py -q    # 15 test (toàn bộ `pytest tests`: 171 đạt, 1 bỏ qua)
 python src/v7/verify_v7.py C_rel_absL3  # kiểm chứng độc lập
 ```
 

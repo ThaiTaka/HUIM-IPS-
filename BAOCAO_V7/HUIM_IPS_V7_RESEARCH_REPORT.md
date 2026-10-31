@@ -89,8 +89,8 @@ cụm (bán kính r quanh ô có khối lượng softmax lớn nhất). Tham s�
 **V7-B — tối ưu tọa độ trực tiếp** (`direct.py`): bộ chấm điểm ở §4.1 chỉ với 33 đặc trưng V6.
 
 **V7-C — bằng chứng HUI bổ sung:** (C1) thêm mô hình HUI trên lợi ích `rel`; (C2) thêm mô hình HUI trên (AP, mức cường độ
-tuyệt đối), 3 mức. Mỗi mô hình bổ sung cho 8 đặc trưng mỗi ứng viên (`extra_models.py`). Hai thí nghiệm nhắm vào độ bền với
-thiết bị bị **loại**: khối "bù lệch thiết bị" (`device.py`: độ lệch ngụ ý của ô, MAE sau khi trừ độ lệch, chênh lệch RSSI
+tuyệt đối), 3 mức. Mỗi mô hình bổ sung cho 8 đặc trưng mỗi ứng viên (`extra_models.py`). Hai khối đặc trưng thử thêm
+bị **loại** vì không có lợi ở dev: khối "bù lệch thiết bị" (`device.py`: độ lệch ngụ ý của ô, MAE sau khi trừ độ lệch, chênh lệch RSSI
 tương đối của các AP mạnh nhất, khối lượng AP then chốt vắng mặt, độ ổn định support, mức nhất quán giữa 3 mô hình) và khối
 "đồng thuận không gian" (`geo.py`: khoảng cách tới trọng tâm bằng chứng và mật độ bằng chứng của từng mô hình).
 
@@ -141,11 +141,12 @@ Sai số trung bình (m); khoảng tin cậy 95% theo cụm điện thoại cho 
 | V7-B tối ưu trực tiếp | 5,930 | −0,279 [−0,464; −0,110] | 6,536 | 4,122 | 7,884 | 12,786 |
 | V7-C1 + HUI rel | 5,735 | −0,474 [−0,689; −0,268] | 6,338 | 3,948 | 7,572 | 12,614 |
 | **V7-C2 + HUI abs mức-3 (chọn)** | **5,702** | **−0,507 [−0,734; −0,261]** | **6,301** | **3,894** | **7,488** | **12,616** |
+| V7-D V7-C2 + ngữ cảnh HUI cấp tầng (không chọn) | 5,688 | −0,520 [−0,748; −0,286] | 6,287 | 3,907 | 7,447 | 12,589 |
 | V7-C + bù lệch thiết bị (không chọn) | 5,994 | −0,215 [−0,398; −0,048] | 6,601 | 4,107 | 7,834 | 12,996 |
 
 (Độ chính xác tầng dev 84,15%, tòa 99,99% — như nhau ở mọi dòng vì cùng quy tắc chọn tầng.) V7-C2 giảm **0,507 m (8,2%)**;
-trong 4.000 lần lấy mẫu lại điện thoại, V7-C2 tốt hơn V6\* ở 99,98%. Mô hình được chọn theo quy tắc khai báo trước: sai số dev
-thấp nhất. Chênh lệch C2 − C1 chỉ 0,034 m (C2 tốt hơn ở 4/6 fold), nên giá trị của mô hình abs mức-3 là nhỏ nhưng nhất quán về dấu.
+trong 4.000 lần lấy mẫu lại điện thoại, V7-C2 tốt hơn V6\* ở 99,98%. Mô hình được chọn theo tiêu chí "sai số dev thấp hơn và tốt hơn ở ít nhất 4/6 fold" (xem §6.9): V7-C2. Chênh lệch C2 − C1 chỉ 0,034 m
+(KTC cặp [−0,087; +0,054], C2 tốt hơn ở 4/6 fold), nên giá trị riêng của mô hình abs mức-3 nhỏ và **chưa có ý nghĩa thống kê** trên dev (trên test: −0,083 m).
 
 ### 6.2 Tập kiểm tra validationData (1.111 vân tay, 11 điện thoại)
 
@@ -161,6 +162,7 @@ Mỗi biến thể được chấm đúng một lần; số của V4/V5/V6 gốc
 | V7-B | 6,430 | [5,76; 7,42] | −0,436 [−0,836; −0,095] | 4,890 | 8,539 | 13,064 | 16,486 | 80,38% | 99,91% |
 | V7-C1 | 6,393 | [5,70; 7,37] | −0,473 [−0,941; −0,053] | 4,763 | 8,557 | 12,965 | 16,546 | 80,38% | 99,91% |
 | **V7-C2 (chọn theo dev)** | **6,309** | **[5,65; 7,21]** | **−0,557 [−1,103; −0,149]** | **4,636** | **8,615** | **12,853** | **15,574** | 80,38% | 99,91% |
+| V7-D (V7-C2 + HUI cấp tầng; không chọn) | 6,324 | [5,65; 7,24] | −0,542 [−1,084; −0,120] | 4,660 | 8,568 | 12,832 | 15,879 | 80,38% | 99,91% |
 
 V7-C2 trong 99,5% lần lấy mẫu lại điện thoại tốt hơn V6. Đúng tầng (893): 6,476 → **5,859 m** (−0,617); sai tầng (218):
 8,440 → 8,154 m (−0,286). Tỷ lệ truy vấn sai số ≤ 2 m: 18,3% → 22,1%; ≤ 5 m: 49,5% → 53,3%.
@@ -179,7 +181,8 @@ không do V7 gây ra và V7 không thu hẹp nó (dev −0,51 m, test −0,56 m)
 | → V7-A hợp nhất thích ứng | 6,181 | −0,027 | chọn lồng nhau; **không bền trên test** (+0,020) |
 | → V7-B tối ưu trực tiếp (thay GBM + công thức cố định) | 5,930 | −0,251 so với V7-A | cắt: 1 thành viên 5,959; tập hợp + log có dấu 5,930 |
 | → + HUI rel | 5,735 | −0,195 | |
-| → + HUI abs mức-3 | 5,702 | −0,034 | |
+| → + HUI abs mức-3 | 5,702 | −0,034 | KTC cặp [−0,087; +0,054] |
+| → + HUI cấp tầng (V7-D) | 5,688 | −0,013 | trung tính (§6.9) |
 
 Thử trên nền C1 (rel): + đồng thuận không gian = 5,729 (−0,006, không có ý nghĩa, loại). Thử trên nền V6: + bù lệch
 thiết bị = 5,994 vs V7-B 5,930 (+0,063, **tệ hơn**, loại). Trộn trọng số của V7-C2 với trọng số GBM của V6 (α, T chọn lồng nhau)
@@ -201,6 +204,21 @@ thoại 17 (sai số lớn nhất ở dev, 12,5–13,1 m) và 19 (7,9–8,2 m) l
 chỉ có 52 vân tay, nên chênh lệch của nó có độ bất định lớn.
 Bảng: `so_lieu/dev_by_phone.csv`, `so_lieu/test_by_phone.csv`; hình F4, F10.
 
+### 6.5b Theo hình học vị trí (đầu hành lang / biên, vùng thưa điểm tham chiếu)
+
+Phân tích dùng vị trí thật chỉ để **phân nhóm** (`src/v7/position_type.py`): với mỗi truy vấn lấy các ô cùng tầng trong 8 m quanh vị trí thật; nếu các ô chỉ nằm ở một phía
+(khoảng trống góc lớn nhất ≥ 180°) thì vị trí là **biên / đầu hành lang**, nếu không có ô nào trong 8 m thì là **vùng thưa**.
+
+| Nhóm | % truy vấn (dev / test) | đúng tầng (dev / test) | Dev: V6\* → V7 (m) | Test: V6 → V7 (m) |
+|---|---|---|---|---|
+| bên trong (ô ở mọi phía) | 50,0% / 44,0% | 91,0% / 86,1% | 5,339 → 4,951 | 5,924 → 5,399 |
+| biên / đầu hành lang | 48,6% / 53,0% | 78,4% / 77,6% | 6,969 → 6,355 | 7,277 → 6,721 |
+| vùng thưa (không ô nào trong 8 m) | 1,4% / 3,0% | 37,4% / 45,5% | 10,991 → 9,971 | 13,499 → 12,449 |
+
+Đầu hành lang và biên chiếm khoảng một nửa số truy vấn, sai số cao hơn bên trong ~1,6 m ở dev và ~1,4 m ở test, và chọn tầng cũng kém hơn; V7 giảm sai số ở cả ba nhóm
+(giảm nhiều nhất ở biên: −0,61 m dev, −0,56 m test). Vùng thưa điểm tham chiếu là nhóm xấu nhất ở mọi mô hình, đúng như kỳ vọng (không có ô nào gần để lấy tâm).
+Bảng: `so_lieu/by_position_type.csv`; nhóm theo mật độ ô: `results/huim_only/uji/v7/diagnosis/by_cell_density.csv`.
+
 ### 6.6 Mẫu cải thiện và mẫu xấu đi (dev, ngưỡng 0,5 m)
 
 8.324 truy vấn tốt hơn (giảm trung bình 2,89 m; ở đó V6\* sai trung bình 7,76 m; 85,2% đúng tầng), 6.248 truy vấn kém hơn (tăng
@@ -221,16 +239,51 @@ V7 tập trung hơn và tập trung đúng chỗ hơn: tỷ lệ truy vấn có 
 
 ### 6.8 Rò rỉ gián tiếp của giao thức OOF chuẩn — kiểm tra chặt (lồng nhau)
 
-**Chưa có kết quả tại thời điểm commit này.** Phép kiểm tra (`src/v7/nested_check.py`, fold ngoài số 2) cần đào lại 15 mô hình HUI
-(rank, rank-mức-3, abs cho 5 fold trong, mỗi mô hình không đọc vân tay của fold 2 và của fold trong tương ứng) và tính lại đặc trưng; nó đang chạy
-nền và sẽ được cập nhật ở commit sau. Cho đến khi có số đo, **mọi kết quả OOF ở trên chịu mức lạc quan chưa được định lượng** do rò rỉ bậc hai
-đã nêu ở §5.
+Trong giao thức chuẩn, bộ chấm điểm đánh giá trên fold k được huấn luyện bằng đặc trưng của các fold j≠k, nhưng mô hình HUI M_j của fold j đã đọc
+vân tay của fold k. Bộ chấm điểm không thấy cặp (đặc trưng, nhãn) nào của fold k, nên đây chỉ là rò rỉ gián tiếp bậc hai. Để đo nó, `src/v7/nested_check.py`
+làm lại cho **fold ngoài số 2** (3 điện thoại, 2.643 truy vấn) đúng giao thức chặt: với mỗi trong 5 fold trong j, đào lại **15 mô hình HUI** (rank,
+rank-mức-3, abs) trên các hàng huấn luyện **không** thuộc fold 2 và fold j (assert: không điện thoại nào của hai fold đó có mặt trong hàng đào), tính đặc trưng của fold j
+bằng chúng, huấn luyện tập hợp chéo trên 5 fold đó, rồi đánh giá trên đặc trưng của fold 2 từ mô hình M_2 (đã không đọc fold 2). Không vân tay nào của fold 2 chạm tới bộ chấm điểm.
 
-### 6.9 V7-D — HUI phân cấp (cấp tầng làm ngữ cảnh)
+| Fold ngoài 2, V7-B (33 đặc trưng V6), vân tay có thông tin | Sai số TB (m) |
+|---|---|
+| bộ chấm điểm huấn luyện bằng đặc trưng của giao thức chuẩn | 5,0783 |
+| bộ chấm điểm huấn luyện bằng đặc trưng lồng nhau chặt | 5,0747 |
+| chênh lệch (chuẩn − chặt) | −0,0035 |
 
-**Chưa có kết quả tại thời điểm commit này.** Mô hình HUI cấp tầng (`src/v7/hier.py`, θ khởi đầu 12,5%, không giới hạn đồng hồ, nâng θ chỉ
-khi một lần chạy vượt 150.000 HUI) đang được đào cho từng fold; thí nghiệm V7-D chỉ được phép chạy sau V7-A/B/C. Kết quả (kể cả khi âm) sẽ được
-thêm ở commit sau.
+Mức lạc quan do rò rỉ bậc hai của giao thức chuẩn trên fold này là **không đáng kể** (−0,0035 m, tức giao thức chặt không tệ hơn). Giới hạn: chỉ một trong 6 fold
+ngoài, một seed, chỉ đặc trưng V6 (không gồm rel/abs mức-3), và đặc trưng huấn luyện của giao thức chặt đến từ mô hình đào trên 4/6 chứ không phải 5/6 điện thoại. Vì vậy đây
+là bằng chứng rằng rò rỉ bậc hai nhỏ, không phải chứng minh rằng nó bằng 0 cho mọi fold hay mọi biến thể.
+
+### 6.9 V7-D — HUI phân cấp (cấp tầng làm ngữ cảnh) — kết quả trung tính
+
+**Thiết kế (`src/v7/hier.py`).** Mức 1 (mới): với mỗi tòa-tầng, EFIM chạy trên **toàn bộ** vân tay huấn luyện của tầng đó (≈ 1.000–2.700
+giao dịch), θ khởi đầu 12,5%, nâng ×1,25 chỉ khi một lần chạy vượt 150.000 HUI, **không giới hạn đồng hồ** (để mô hình không phụ thuộc
+tải máy). Mức 2 (V6): HUI theo ô vẫn sinh ra 30 ứng viên và toàn bộ bằng chứng theo ô. HUI cấp tầng chỉ là **ngữ cảnh**: với tầng được chọn f\*
+của truy vấn, 11 đặc trưng (điểm khớp P, độ phủ V, độ phủ ngược R của f\*; chênh với tầng tốt nhất khác trong cùng tòa; điểm tương đối và hạng của f\*
+trong 13 tầng và trong tòa; trung bình điểm theo ô của 20 ô tốt nhất) được gắn vào mọi ứng viên của truy vấn. Chưa khai thác mức vùng (giữa tầng và
+ô): cửa sổ ô chồng lấn 4 m và 8 m đã thất bại ở V6 và không được lặp lại.
+
+**Mô hình cấp tầng khá thưa và thiếu ổn định.** Số HUI của 6 mô hình fold: 10.128 · 21.334 · 8.936 · 67.839 · 6.775 · 42.836; mô hình cuối: 4.845. Ở mỗi
+mô hình có 1–3 tầng **không có HUI nào** ở θ = 12,5% (tầng 6 và 9 hầu như luôn thiếu), và tầng 4, 12 phải nâng θ lên 19,5–38,1% (5–6 trên 7 mô hình).
+
+**Kết quả** (V7-C2 + khối cấp tầng, cùng giao thức, cùng cấu hình bộ chấm điểm):
+
+| | V7-C2 | V7-D |
+|---|---|---|
+| Dev OOF, có thông tin | 5,7017 | 5,6884 (−0,013; KTC cặp [−0,052; +0,008]; tốt hơn ở 3/6 fold) |
+| Dev OOF, tất cả | 6,3006 | 6,2865 |
+| Test (validationData) | 6,3093 | 6,3236 (+0,014) |
+| Test, đúng tầng / sai tầng | 5,859 / 8,154 | 5,868 / 8,191 |
+
+Mức chênh nằm trong nhiễu ở cả hai tập: V7-D **không** là cải tiến. Quy tắc chọn mô hình dùng ở cả ba lần so sánh là "sai số dev thấp hơn **và** tốt hơn ở
+ít nhất 4/6 fold": V7-B tốt hơn V6\* (6/6 fold), V7-C1 tốt hơn V7-B (6/6; −0,195 m, KTC cặp [−0,283; −0,106]), V7-C2 tốt hơn V7-C1 (4/6), nhưng V7-D tốt hơn V7-C2 chỉ ở 3/6 fold nên
+V7-C2 được giữ. (Tiêu chí "4/6 fold" được nêu rõ sau khi đã thấy sai số dev của V7-D và **trước khi** chấm V7-D trên validationData; nếu áp dụng thuần "sai số dev thấp nhất"
+thì V7-D, thấp hơn 0,013 m, sẽ được chọn, và test của nó 6,324 m không thay đổi kết luận về mục tiêu 6 m.) Cần nói thẳng rằng ngay C2 so với C1 (−0,034 m, KTC cặp
+[−0,087; +0,054]) và V7-D so với C2 đều **không** khác 0 có ý nghĩa thống kê trên dev; chỉ khối `rel` (−0,195 m) và bộ chấm điểm trực tiếp (−0,279 m so với V6\*) có ý nghĩa rõ.
+
+**Giải thích khả dĩ** (chưa kiểm chứng riêng): bằng chứng cấp tầng yếu hơn cấp ô (HUI cấp tầng thưa, nhiều tầng không có HUI), và quyết định tầng không đổi nên
+khối ngữ cảnh chỉ có thể điều chỉnh độ sắc nét của trọng số; bộ chấm điểm không có cách nào sửa tầng sai.
 
 ### 6.10 Chi phí
 
@@ -240,10 +293,12 @@ thêm ở commit sau.
 | dung lượng tệp mô hình (.npz) | 43,0 MB | 74,3 MB |
 | thời gian suy luận / vân tay (đo trên máy này; phần bằng chứng HUI + chấm điểm) | 206,2 ms | 336,4 ms (+63%) |
 | trong đó: mô hình rel / abs mức-3 / bộ chấm điểm | — | 72,5 / 56,8 / 0,9 ms |
+| RAM của tiến trình suy luận (đo bằng đỉnh tập làm việc, gồm dữ liệu UJI và tiền xử lý) | 3.965 MB (2.524 MB ngay sau khi nạp 3 mô hình) | 5.579 MB (4.136 MB sau khi nạp 5 mô hình), +41% |
 
-Thời gian 266 ms/vân tay trong `summary.json` của V6 được đo ở thời điểm khác và gồm cả bộ GBM; so sánh trong bảng là cùng
-máy, cùng phép đo. Mô hình HUI nạp vào bộ nhớ chiếm khoảng 1,4–1,5 GB mỗi mô hình khi chấm điểm (quan sát trên tiến trình thực
-tế), nên V7 cần nhiều RAM hơn V6; chưa tối ưu bộ nhớ.
+Thời gian 266 ms/vân tay trong `summary.json` của V6 được đo ở thời điểm khác và gồm cả bộ GBM; so sánh trong bảng là cùng máy, cùng phép
+đo trên 1.111 vân tay (`test_features.py` cho `seconds_per_query`). RAM đo bằng `src/v7/measure_inference.py` (một tiến trình riêng cho
+mỗi chế độ, 64 vân tay; thời gian của phép đo 64 vân tay không so sánh được vì chi phí cố định mỗi lần gọi chưa được chia đều). V7 cần nhiều RAM hơn V6 và
+chưa được tối ưu bộ nhớ; HUI được giữ dưới dạng danh sách mảng Python và ma trận thưa.
 
 ## 7. Thử nghiệm thất bại và kết quả âm (ghi trung thực)
 
@@ -255,8 +310,8 @@ tế), nên V7 cần nhiều RAM hơn V6; chưa tối ưu bộ nhớ.
    huấn luyện và quá khớp (nhiều thành viên dừng sớm ở epoch 5).
 3. **Đồng thuận không gian** giữa các mô hình HUI: không có lợi (5,729 so với 5,735).
 4. **Trộn với GBM của V6:** không có lợi khi chọn tham số lồng nhau (5,706 so với 5,702).
-5. **Mất mát phụ listwise** và **regularization entropy** (entropy chỉ cài đặt, gradient đã kiểm; không dùng ở cấu hình cuối):
-   mất mát phụ làm tệ (6,011 so với 5,980).
+5. **Mất mát phụ listwise** (cross-entropy với softmax của −khoảng cách thật, trọng số 0,3) làm tệ đi (6,011 so với 5,980, thăm dò 1 thành
+   viên). **Regularization entropy** đã được cài đặt (gradient đã kiểm) nhưng chưa chạy thí nghiệm nào với nó, nên không có kết luận.
 6. Những thí nghiệm IDF/thông tin tương hỗ đã thất bại ở V6 **không được lặp lại**.
 
 ## 8. Kiểm chứng độc lập
@@ -273,9 +328,9 @@ tế), nên V7 cần nhiều RAM hơn V6; chưa tối ưu bộ nhớ.
 | T6 | các hàng test đúng là `validationData.csv` | 1.111 hàng, vị trí khớp |
 | T7 | độ chính xác tầng/tòa tính lại từ nhãn | 0,8038 / 0,9991 |
 | T8 | V6 tái tạo | ước lượng V4 lệch < 1 mm; tầng giống hệt; 20 ô lưu nằm trong 30 ứng viên tính lại ở 100%; TB 6,8658 so với 6,8614 |
-| T9 | V6 không bị đổi | `git diff HEAD` rỗng trên mã/kết quả V6 |
+| T9 | V6 không bị đổi | `git diff` so với điểm gốc `d572d66` (merge-base với `origin/main`) rỗng trên mã và kết quả V6, kể cả cây làm việc |
 | T10 | fold rời nhau theo điện thoại; băm chỉ số cache khớp | đúng |
-| T11 | 33 cache dựng từ cùng `trainingData.csv` | SHA-256 trùng |
+| T11 | 46 cache dựng từ cùng `trainingData.csv` | SHA-256 trùng |
 | T12 | không k-NN / so khớp vân tay thô | 9 mô-đun suy luận sạch |
 | T13 | EFIM = duyệt vét cạn | 86 test đạt |
 | T14 | tái lập theo seed | 3 biến thể × 6 fold trùng đến 3 chữ số |
@@ -289,13 +344,16 @@ Test: `python -m pytest tests -q` → 171 đạt, 1 bỏ qua (test rỗng có s�
 * Mục tiêu dưới 6 m chưa đạt; khoảng cách giữa ô tiên tri (0,59 m ở dev; 1,51 m ở test) và V7 (5,70 / 6,31 m) cho thấy
   bằng chứng HUI hiện có còn chưa đủ phân biệt các ô lân cận.
 * Tập validation đã bị nhìn nhiều lần; không có tập kiểm tra mới.
-* Giao thức OOF chuẩn có rò rỉ gián tiếp bậc hai (xem §6.8).
+* Giao thức OOF chuẩn có rò rỉ gián tiếp bậc hai; đo được −0,0035 m trên một fold ngoài (§6.8), chưa đo trên 5 fold còn lại.
 * 16 điện thoại huấn luyện là cỡ mẫu nhỏ cho việc học một bộ chấm điểm; khoảng tin cậy theo điện thoại rộng.
 * Quyết định tầng không được cải thiện (đúng tầng 80,4% ở test); nhóm sai tầng vẫn tốn thêm 2,3 m.
-* V7 dùng 5 mô hình HUI, tốn RAM và thời gian suy luận hơn V6 (+63%).
+* V7 dùng 5 mô hình HUI: thời gian suy luận +63% và đỉnh RAM +41% so với V6 (§6.10).
 * Chính sách tự nâng ngưỡng θ của EFIM theo đồng hồ thật (10 s/ô ở V6) là nguồn không tất định tiềm tàng; đã kiểm số HUI
-  trùng khớp ở 12 mô hình fold, nhưng không có đảm bảo tổng quát.
+  trùng khớp ở 12 mô hình fold, nhưng không có đảm bảo tổng quát. Nó đã thực sự gây khác biệt ở lần đào đầu tiên của mô hình cấp tầng (giới hạn 600 s bị kích hoạt khi máy quá tải: số HUI
+  22.000–124.000 tùy fold), nên V7-D dùng chính sách chỉ dựa trên số HUI và bỏ các mô hình đào lần đầu.
 * 76 vân tay rỗng: kết quả dev gộp vào hay bỏ ra đều được báo cáo; không có cách nào định vị chúng bằng Wi-Fi.
+* **Các bộ dữ liệu bổ sung của dự án (UJI_LIB, DLULIB, HCXY, HUS) chưa được đánh giá bằng V7.** Bộ xếp hạng bước 8 của V6 chỉ tồn tại cho UJIIndoorLoc (README gốc), nên các bộ khác
+  không có đường cơ sở V6 để so sánh trực tiếp, và HUS có rò rỉ tập kiểm tra đã được ghi nhận; thiếu đặc trưng dev theo fold cho chúng. Đây là phần chưa làm, không phải kết quả âm.
 
 ## 10. Hướng nghiên cứu tiếp
 
