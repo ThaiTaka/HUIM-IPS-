@@ -30,18 +30,21 @@ VARIANTS = {
     "C_rel_geo": ("rel", "geo"),         # + spatial-consensus features (neutral result)
     "C_devrob": ("devrob",),             # device-offset features (negative result)
     "D_hier": ("rel", "absL3", "hier"),  # V7-D: + floor-level HUI context
+    "E_seeds": ("rel", "absL3"),         # V7-E: V7-C2 scorers, 5 independent seeds per fold (30 members instead of 6)
 }
+N_SEEDS = {"E_seeds": 5}                 # variants with a seed ensemble (default 1)
 
 
 def run(variant: str, seed: int = 0) -> dict:
     blocks = VARIANTS[variant]
     D = load_dev()
     data = prepare(D, blocks)
-    out = direct_oof(data, CFG, seed=seed, name=variant, blocks=blocks)
+    n_seeds = N_SEEDS.get(variant, 1)
+    out = direct_oof(data, CFG, seed=seed, name=variant, blocks=blocks, n_seeds=n_seeds)
     r = summarize(D, {k: v[0] for k, v in out.items()}, f"{variant} {blocks}")
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "dev").mkdir(exist_ok=True)
-    json.dump(r | {"blocks": list(blocks), "cfg": CFG, "seed": seed}, open(OUT / "dev" / f"{variant}.json", "w"), indent=1)
+    json.dump(r | {"blocks": list(blocks), "cfg": CFG, "seed": seed, "n_seeds": n_seeds}, open(OUT / "dev" / f"{variant}.json", "w"), indent=1)
     return r
 
 

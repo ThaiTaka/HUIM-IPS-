@@ -54,12 +54,14 @@ def prepare(D: list[dict], blocks: tuple[str, ...] = ()) -> list[dict]:
 
 
 def direct_oof(data: list[dict], cfg: dict, folds=range(N_FOLDS), seed: int = 0, verbose: bool = True,
-               name: str | None = None, blocks: tuple[str, ...] = ()):
+               name: str | None = None, blocks: tuple[str, ...] = (), n_seeds: int = 1):
     """Out-of-fold direct predictions. Returns {k: (xy global, weights)}; with `name`, they are cached
     (with the configuration) as oof_<name> so tables, bootstraps and figures are computed from them."""
     out = {}
     for k in folds:
-        members = fit_members(data, [j for j in range(N_FOLDS) if j != k], cfg, seed)
+        members = []
+        for s_ in range(n_seeds):           # seed ensemble: independent initialisations / batch orders (seed + 100*s_, as direct_test)
+            members += fit_members(data, [j for j in range(N_FOLDS) if j != k], cfg, seed + 100 * s_)
         xp, w = predict_members(members, data[k]["X"], data[k]["C"])
         out[k] = (data[k]["o"] + xp, w)
         if verbose:
@@ -69,7 +71,7 @@ def direct_oof(data: list[dict], cfg: dict, folds=range(N_FOLDS), seed: int = 0,
                   flush=True)
     if name and len(out) == N_FOLDS:
         from v7.common import base_meta, save_cache
-        save_cache(f"oof_{name}", base_meta(kind="oof_direct", cfg=cfg, blocks=list(blocks), seed=seed),
+        save_cache(f"oof_{name}", base_meta(kind="oof_direct", cfg=cfg, blocks=list(blocks), seed=seed, n_seeds=n_seeds),
                    **{f"xy{k}": out[k][0] for k in out}, **{f"w{k}": out[k][1] for k in out})
     return out
 
