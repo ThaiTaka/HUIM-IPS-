@@ -19,6 +19,8 @@ So sánh V6 ↔ V7: [`V6_V7_COMPARISON.md`](V6_V7_COMPARISON.md) · Kiểm toán
 V7-A (hợp nhất thích ứng), khối bù lệch thiết bị, khối đồng thuận không gian, trộn với GBM và V7-D (HUI cấp tầng) không phải cải tiến; xem
 báo cáo §6.9 và §7. Kiểm tra rò rỉ chặt (lồng nhau) trên fold ngoài số 2: chênh lệch −0,0035 m (§6.8). Kiểm chứng độc lập: 16 phép, 0 thất bại.
 
+**Thử nghiệm bổ sung V7-E (sau báo cáo chính):** cùng mô hình V7-C2 nhưng tập hợp 5 seed (30 thành viên thay vì 6; `python src/v7/run_dev.py --variant E_seeds`, `python src/v7/final_stage.py E_seeds`). Dev 5,6814 m (thấp hơn V7-C2 0,020 m, tốt hơn ở 6/6 fold, đạt quy tắc chọn đã khai báo); test chấm một lần **6,2775 m** (trung vị 4,6138; P90 12,8264; tự tính lại từ `predictions/E_seeds.csv`). Cải thiện nhỏ (0,032 m) và bộ kiểm chứng Excel/Python chưa phủ V7-E, nên số chính của báo cáo và slide vẫn là V7-C2 (6,309 m).
+
 ## 1. Mô hình V7 trong một đoạn
 
 ```

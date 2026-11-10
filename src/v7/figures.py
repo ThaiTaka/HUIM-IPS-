@@ -76,16 +76,16 @@ def cdf_plot(df: pd.DataFrame, cols: list[tuple[str, str, str]], mask, title: st
     save(fig, name)
 
 
-def paired_hist(df: pd.DataFrame, a: str, b: str, mask, title: str, sub: str, name: str) -> None:
+def paired_hist(df: pd.DataFrame, a: str, b: str, mask, title: str, sub: str, name: str, ref: str = "V6*") -> None:
     d = (df.loc[mask, a] - df.loc[mask, b]).to_numpy()           # positive = b (V7) better
     fig, ax = axes(grid="y")
     edges = np.arange(-20, 20.01, 1.0)
     h, _ = np.histogram(np.clip(d, -19.99, 19.99), edges)
     ctr = (edges[:-1] + edges[1:]) / 2
-    ax.bar(ctr[ctr < 0], h[ctr < 0], width=0.86, color=ORANGE, label=f"V7 kém hơn V6*: {int((d < -0.5).sum()):,} truy vấn (> 0,5 m)".replace(",", "."))
-    ax.bar(ctr[ctr >= 0], h[ctr >= 0], width=0.86, color=BLUE, label=f"V7 tốt hơn V6*: {int((d > 0.5).sum()):,} truy vấn (> 0,5 m)".replace(",", "."))
+    ax.bar(ctr[ctr < 0], h[ctr < 0], width=0.86, color=ORANGE, label=f"V7 kém hơn {ref}: {int((d < -0.5).sum()):,} truy vấn (> 0,5 m)".replace(",", "."))
+    ax.bar(ctr[ctr >= 0], h[ctr >= 0], width=0.86, color=BLUE, label=f"V7 tốt hơn {ref}: {int((d > 0.5).sum()):,} truy vấn (> 0,5 m)".replace(",", "."))
     ax.set_ylim(0, h.max() * 1.18)
-    ax.set_xlabel("sai số V6* − sai số V7 (m); dương = V7 chính xác hơn (cắt ở ±20 m)", color=INK2, fontsize=9.5)
+    ax.set_xlabel(f"sai số {ref} − sai số V7 (m); dương = V7 chính xác hơn (cắt ở ±20 m)", color=INK2, fontsize=9.5)
     ax.set_ylabel("số truy vấn", color=INK2, fontsize=9.5)
     ax.legend(frameon=False, fontsize=8.8, labelcolor=INK2, loc="upper left")
     titled(fig, ax, title, sub)
@@ -172,7 +172,7 @@ def main() -> None:
         tcols = [("err_V4", "V4", GREY), ("err_V6", "V6", BLUE)] + ([("err_B_base", "V7-B", AQUA)] if "err_B_base" in te else []) + [(tfinal, nm, ORANGE)]
         cdf_plot(te, tcols, np.ones(len(te), bool), "Phân bố sai số trên tập kiểm tra validationData",
                  "1.111 vân tay, 11 điện thoại (9 chưa từng thấy); tập này đã được dùng nhiều lần từ V1 đến V6", "F7_cdf_test.png")
-        paired_hist(te, "err_V6", tfinal, np.ones(len(te), bool), "Từng truy vấn: V7 so với V6 (validationData)", "Chênh lệch sai số trên 1.111 vân tay", "F8_cai_thien_tung_truy_van_test.png")
+        paired_hist(te, "err_V6", tfinal, np.ones(len(te), bool), "Từng truy vấn: V7 so với V6 (validationData)", "Chênh lệch sai số trên 1.111 vân tay; V6 = dự đoán đã lưu của V6 (6,866 m)", "F8_cai_thien_tung_truy_van_test.png", ref="V6")
         fr = pd.read_csv(DATA / "test_by_floor_right.csv").set_index("model")["mean"]
         fw = pd.read_csv(DATA / "test_by_floor_wrong.csv").set_index("model")["mean"]
         grouped_bars(["đúng tầng", "sai tầng"], [("V6", [fr["V6"], fw["V6"]], BLUE), (nm, [fr[tfinal[4:]], fw[tfinal[4:]]], ORANGE)],

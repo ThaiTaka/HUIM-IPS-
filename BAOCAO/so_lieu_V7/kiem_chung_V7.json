@@ -61,7 +61,7 @@
   {
    "check": "T11 cache provenance",
    "ok": true,
-   "detail": "46 caches built from trainingData.csv 45ca0128bd12…"
+   "detail": "46 caches built from trainingData.csv 45ca0128bd12â€¦"
   },
   {
    "check": "T12 no k-NN / fingerprint matching",

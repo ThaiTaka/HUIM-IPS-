@@ -158,7 +158,7 @@ def main(variant: str) -> None:
     add("T15 EFIM mining reproduces V6", not bad and l3 == l3_ref,
         f"12 fold models (rank, abs): HUI counts equal the original dev_parts; final L3 model {l3:,} HUIs = V6 summary {l3_ref:,}" if not bad and l3 == l3_ref else str(bad))
     out = {"variant": variant, "n_checks": len(checks), "n_failed": sum(not c["ok"] for c in checks), "checks": checks}
-    json.dump(out, open(OUT / "verification.json", "w"), ensure_ascii=False, indent=1)
+    json.dump(out, open(OUT / "verification.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"{out['n_checks']} checks, {out['n_failed']} failed")
 
 

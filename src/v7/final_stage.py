@@ -141,6 +141,6 @@ def main(variants: dict[str, dict]) -> None:
 
 
 if __name__ == "__main__":
-    from v7.run_dev import CFG, VARIANTS
+    from v7.run_dev import CFG, N_SEEDS, VARIANTS
     want = sys.argv[1:] or ["B_base", "C_rel", "C_rel_absL3"]
-    main({v: {"blocks": VARIANTS[v], "cfg": CFG} for v in want})
+    main({v: {"blocks": VARIANTS[v], "cfg": CFG, "n_seeds": N_SEEDS.get(v, 1)} for v in want})

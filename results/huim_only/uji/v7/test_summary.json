@@ -151,5 +151,29 @@
    "hier"
   ],
   "ms_per_query": 336.2
+ },
+ "E_seeds": {
+  "n": 1111,
+  "mean": 6.277497317538858,
+  "median": 4.613770055400611,
+  "p75": 8.5628981716394,
+  "p90": 12.82641456128965,
+  "p95": 15.64818203963257,
+  "max": 53.781663369291614,
+  "building_accuracy": 0.9990999099909991,
+  "floor_accuracy": 0.8037803780378038,
+  "mean_right_floor": 5.807991360965546,
+  "n_right_floor": 893,
+  "mean_wrong_floor": 8.20074878185064,
+  "n_wrong_floor": 218,
+  "share_within_2m": 0.2223222322232223,
+  "share_within_5m": 0.531953195319532,
+  "scorer_ms_per_query": 3.8183,
+  "n_members": 30,
+  "blocks": [
+   "rel",
+   "absL3"
+  ],
+  "ms_per_query": 339.3
  }
 }
