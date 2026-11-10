@@ -177,6 +177,11 @@ function chartBase() {
     legendFontFace: F, legendFontSize: 12, legendColor: INK, titleFontFace: F, titleColor: NAVY, titleFontSize: 14 };
 }
 
+// ------------------------------------------------------------------ bản bổ sung (SUPP=1): slide "vì sao chọn vậy / con số từ đâu"
+const SUPP = process.env.SUPP === "1";
+const WHY = SUPP ? require("./why_slides_v7.js")({ pres, slide, text, bullets, table, card, callout, para, vn, vnd, pct, MX, SW, F, INK, NAVY, TEAL, RUST, GREY, GOLD, SOFT, SOFT2, CARD, LINE,
+  D, tr, dI, T7, T6r, E: JSON.parse(fs.readFileSync(path.join(B, "so_lieu_V7", "nguon_goc_hang_so.json"), "utf8")) }) : null;
+
 // ================================================================== 1. bìa
 pres.addSection({ title: "Giới thiệu" });
 {
@@ -298,6 +303,7 @@ divider(1, "Cơ sở lý thuyết", ["Vân tay Wi-Fi và đơn vị đo", "HUIM 
     `sai số = ${vn(Math.hypot(dx, dy), 5)} × 0,766126 = **${vn(EX.v7.err_m, 4)} m**`,
     `Hệ số 0,766126 được kiểm bằng src/verify_coordinates.py; các tập dữ liệu khác dùng mét trực tiếp (hệ số 1)`], MX + 0.3, 4.05, SW - 2 * MX - 0.6, 2.6, 16);
 }
+if (WHY) WHY.coord();
 {
   const s = formulaSlide("Lý thuyết · HUIM", "HUIM: khai thác tập mục có lợi ích tổng cao", "fm_hui", [
     ["D", "cơ sở dữ liệu giao dịch; T ∈ D là một giao dịch"],
@@ -356,6 +362,7 @@ divider(1, "Cơ sở lý thuyết", ["Vân tay Wi-Fi và đơn vị đo", "HUIM 
   s.addText("Ví dụ vân tay hàng 335 (6 AP mạnh nhất)", { x: MX, y: 4.2, w: 8, h: 0.35, fontFace: F, fontSize: 15, bold: true, color: NAVY, margin: 0, isTextBox: true });
   table(s, ["", ...sel.map((a) => `WAP${String(a.ap).padStart(3, "0")}`)], rows, MX, 4.6, SW - 2 * MX, [3.9, ...sel.map(() => (SW - 2 * MX - 3.9) / 6)], { size: 12.5, rowH: 0.3, align: ["left", ...sel.map(() => "center")] });
 }
+if (WHY) WHY.utility();
 {
   const s = formulaSlide("Lý thuyết · EFIM", "EFIM: duyệt cây tập mục với hai chặn trên lu và su", "fm_efim", [
     ["TWU(X)", "tổng lợi ích các giao dịch chứa X; TWU < minUtil thì X và mọi tập chứa X không thể là HUI"],
@@ -383,6 +390,7 @@ divider(1, "Cơ sở lý thuyết", ["Vân tay Wi-Fi và đơn vị đo", "HUIM 
   card(s, MX, 5.75, SW - 2 * MX, 1.1, CARD, null, TEAL, TEAL);
   text(s, `**Ví dụ (ô 351, tầng 2_1):** ${vn(C1.n_huis, 0)} HUI, tổng lợi ích ${vn(C1.sum_u, 0)}, dùng ${C1.n_ap_in_Ic} trong 520 AP. Toàn mô hình rank: **${vn(HC.rank, 0)} HUI**; V6 (3 mô hình): ${vn(nHUI6, 0)}; V7 (5 mô hình): **${vn(nHUI7, 0)}**.`, MX + 0.3, 5.85, SW - 2 * MX - 0.6, 0.95, { fontSize: 15.5, valign: "middle" });
 }
+if (WHY) WHY.theta();
 {
   const s = formulaSlide("Lý thuyết · Điểm khớp", "Chấm điểm khớp giữa truy vấn và HUI của từng ô", "fm_match", [
     ["ρ(X,T)", "tỷ lệ AP của X có mặt trong T (0…1)"],
@@ -412,6 +420,7 @@ divider(1, "Cơ sở lý thuyết", ["Vân tay Wi-Fi và đơn vị đo", "HUIM 
     `P·V³ = ${vn(C1.P, 4)} × ${vn(C1.V, 4)}³ = **${vn(C1.S_raw, 4)}**`,
     `Sau làm mượt (σ = 3 m): S = **${vn(C1.S_smooth, 4)}**`], MX + 8.15, 2.1, SW - 2 * MX - 8.4, 4.3, 14.5);
 }
+if (WHY) WHY.match();
 {
   const s = slide("Lý thuyết · Làm mượt, tầng, ứng viên", "Làm mượt không gian, chọn tầng, 30 ô ứng viên và ước lượng V4",
     "Điểm của ô được trải sang các ô lân cận cùng tầng; tầng là tầng có 20 ô tốt nhất trung bình cao nhất; 30 ô tốt nhất của tầng là ứng viên; V4 lấy trung bình có trọng số S⁸ của 12 ô.");
@@ -424,6 +433,7 @@ divider(1, "Cơ sở lý thuyết", ["Vân tay Wi-Fi và đơn vị đo", "HUIM 
   bullets(s, [`Tầng dự đoán **${EX.pred_bf}** = tầng thật (đúng). Ô có điểm cao nhất là ô **${c.cell}** (S = ${vn(c.S, 4)}) nhưng cách vị trí thật **${vn(c.dist_m, 2)} m**`,
     `30 ô ứng viên: có ô cách vị trí thật chỉ **${vn(Math.min(...EX.cells.map((q) => q.dist_m)), 2)} m** (ô ${EX.cells.reduce((a, b) => (a.dist_m < b.dist_m ? a : b)).cell}); ước lượng V4 sai **${vn(EX.v4_err_m, 2)} m**`], MX + 0.3, 5.3, SW - 2 * MX - 0.6, 1.5, 15);
 }
+if (WHY) WHY.smooth();
 {
   const s = formulaSlide("Lý thuyết · V6", "V6: bộ hồi quy dự đoán khoảng cách từng ô rồi đổi thành trọng số", "fm_v6", [
     ["φ_{c}", "33 đặc trưng HUI của ô ứng viên c (và dạng tương đối so với các ô khác)"],
@@ -436,6 +446,7 @@ divider(1, "Cơ sở lý thuyết", ["Vân tay Wi-Fi và đơn vị đo", "HUIM 
 }
 
 // ================================================================== CHƯƠNG 3
+if (WHY) WHY.v6();
 divider(2, "Thuật toán V7", ["Chẩn đoán V6: vì sao cần V7", "Các bước từ vân tay tới 6,309 m", "Ví dụ trọn vẹn một vân tay thật", "V7-A, V7-B, V7-C, V7-D và các thử nghiệm không giúp"]);
 {
   const s = slide("V7 · Chẩn đoán", "Ứng viên đã đúng; sai số sinh ra khi xếp hạng và kết hợp",
@@ -506,6 +517,7 @@ divider(2, "Thuật toán V7", ["Chẩn đoán V6: vì sao cần V7", "Các bư�
   card(s, MX + 6.3, 5.15, SW - 2 * MX - 6.3, 1.7, CARD, null, RUST, RUST);
   text(s, `**Kích thước:** tệp mô hình ${vn(D.cost.v6.working_set_after_loading_MB / 1000, 2)} → ${vn(D.cost.v7.working_set_after_loading_MB / 1000, 2)} GB RAM sau khi nạp (V6 → V7); 74,3 MB so với 43,0 MB trên đĩa.`, MX + 6.6, 5.28, SW - 2 * MX - 6.9, 1.45, { fontSize: 14.5 });
 }
+if (WHY) WHY.views();
 {
   const s = slide("V7 · Bước 4", "Bước 4: đặc trưng bằng chứng HUI của từng ô ứng viên (49 cột)",
     "Mọi cột đều tính từ HUI của ô và từ chính vân tay truy vấn khớp với HUI. V6 có 33 cột; mỗi mô hình bổ sung thêm 8 cột.");
@@ -534,6 +546,7 @@ divider(2, "Thuật toán V7", ["Chẩn đoán V6: vì sao cần V7", "Các bư�
   card(s, MX + 7.9, 3.95, SW - 2 * MX - 7.9, 2.9, SOFT, "Vì sao tương đối", NAVY, TEAL);
   bullets(s, ["Điểm tuyệt đối thay đổi theo vân tay; điều quan trọng là ô này **tốt hơn các ô khác bao nhiêu**", "4 phép biến đổi nhân số cột lên 4 lần: 49 × 4 = 196 đầu vào"], MX + 8.15, 4.5, SW - 2 * MX - 8.4, 2.3, 14.5);
 }
+if (WHY) WHY.features();
 {
   const s = formulaSlide("V7 · Bước 6", "Bước 6: bộ chấm điểm dùng chung cho 30 ô ứng viên", "fm_scorer", [
     ["z_{i}", "196 đặc trưng đã chuẩn hóa của ứng viên i"],
@@ -556,6 +569,7 @@ divider(2, "Thuật toán V7", ["Chẩn đoán V6: vì sao cần V7", "Các bư�
   card(s, MX + 10.4 - 0.1, 4.45, SW - 2 * MX - 10.3, 1.9, SOFT, null, TEAL, TEAL);
   text(s, "Tổng **7 360** tham số (V7-B: 5 312)", MX + 10.4 + 0.1, 4.55, SW - 2 * MX - 10.5, 1.7, { fontSize: 14.5 });
 }
+if (WHY) WHY.scorer();
 {
   const cs = EX.cells.slice().sort((a, b) => b.w7 - a.w7);
   const s = formulaSlide("V7 · Bước 7", "Bước 7: softmax đổi điểm thành trọng số, rồi thành tọa độ", "fm_softmax", [
@@ -571,6 +585,7 @@ divider(2, "Thuật toán V7", ["Chẩn đoán V6: vì sao cần V7", "Các bư�
   card(s, MX + 8.5, 3.95, SW - 2 * MX - 8.5, 2.9, SOFT, "Tính đủ 30 ô", NAVY, TEAL);
   bullets(s, [`Σ w = ${vn(cs.reduce((a, c) => a + c.w7, 0), 6)}`, `Σ w·Δx = **${vn(EX.v7.sum_dx, 5)}**`, `Σ w·Δy = **${vn(EX.v7.sum_dy, 5)}**`, "Slide ví dụ sau tính đủ 30 ô"], MX + 8.75, 4.5, SW - 2 * MX - 9.0, 2.3, 14.5);
 }
+if (WHY) WHY.softmax();
 {
   const s = formulaSlide("V7 · Bước 8", "Bước 8: học bằng chính sai số tọa độ tính bằng mét", "fm_loss", [
     ["L", "hàm mất mát: sai số tọa độ hợp nhất trung bình (m)"],
@@ -584,6 +599,7 @@ divider(2, "Thuật toán V7", ["Chẩn đoán V6: vì sao cần V7", "Các bư�
   bullets(s, ["Adam (lr 5·10⁻⁴, weight decay 10⁻³), batch 256, tối đa 30 epoch, dừng sớm (kiên nhẫn 8); gradient viết tay bằng NumPy, kiểm bằng sai phân hữu hạn (sai lệch tương đối 5·10⁻⁸)",
     "Mất mát là **chính chỉ số cần giảm**; không có bước đổi khoảng cách thành trọng số bằng công thức cố định như V6"], MX + 0.3, 5.4, SW - 2 * MX - 0.6, 1.4, 14.5);
 }
+if (WHY) WHY.loss();
 {
   const s = slide("V7 · Giao thức huấn luyện", "Tập hợp chéo theo điện thoại: fold đánh giá không bao giờ bị thấy",
     "Sáu fold theo điện thoại. Với fold đánh giá k, năm thành viên: thành viên i dừng sớm trên một fold huấn luyện i và huấn luyện trên bốn fold còn lại. Điểm s trung bình rồi softmax.");
@@ -609,6 +625,7 @@ divider(2, "Thuật toán V7", ["Chẩn đoán V6: vì sao cần V7", "Các bư�
   card(s, MX + 9.2, 1.5, SW - 2 * MX - 9.2, 3.5, SOFT, "Cache có nguồn gốc", NAVY, TEAL);
   text(s, "Mỗi cache ghi SHA-256 của trainingData.csv, băm chỉ số hàng huấn luyện/đánh giá, mã, seed, cấu hình; từ chối cache không khớp.", MX + 9.45, 2.1, SW - 2 * MX - 9.7, 2.8, { fontSize: 14 });
 }
+if (WHY) WHY.folds();
 {
   const s = slide("V7 · Ví dụ trọn vẹn (1)", `Vân tay hàng ${EX.src_row}: bằng chứng HUI của các ô ứng viên hàng đầu`,
     "Hàng 335 có sai số V7 đúng bằng trung vị của tập kiểm tra (4,6357 m) và đúng tầng; chọn theo quy tắc khách quan, không chọn ví dụ đẹp. Ô điểm HUI cao nhất cách vị trí thật 11,4 m.");
@@ -907,7 +924,8 @@ divider(5, "Kết luận", ["Đạt gì, chưa đạt gì", "Hạn chế và hư
 }
 
 // ------------------------------------------------------------------ ghi file
-const out = path.join(B, "Slide_HUIM_IPS_V7.pptx");
+if (WHY) WHY.appendix();
+const out = path.join(B, SUPP ? "Slide_HUIM_IPS_V7_bo_sung.pptx" : "Slide_HUIM_IPS_V7.pptx");
 pres.writeFile({ fileName: out }).then(async () => {
   const apply = process.env.PPTX_APPLY_THEME;
   if (apply && fs.existsSync(apply)) await require(apply).applyTheme(out, THEME);

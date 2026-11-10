@@ -104,6 +104,8 @@ V7 (sau V6) đạt **6,309 m** trên validationData (V6: 6,866 m); mục tiêu d
 | Thành phần | Nội dung |
 |---|---|
 | `Slide_HUIM_IPS_V7.pptx` | 55 slide cùng thiết kế với slide cũ: lý thuyết (vân tay Wi-Fi, HUIM, EFIM, điểm khớp) kèm ví dụ số; các bước thuật toán V7 tới 6,309 m với công thức có chú thích ký hiệu; ví dụ trọn vẹn một vân tay thật tính tay (hàng 335); kết quả; **kiểm chứng 6,309 m**; kết luận; **slide cuối: tóm tắt một slide cho người mới học HUIM trong IPS** (lý thuyết + ví dụ). Có ghi chú cho người trình bày. |
+| `Slide_HUIM_IPS_V7_day_du.pptx` | **Bộ slide V7 đầy đủ để thuyết trình** (55 slide, có 3 diagram của báo cáo V7: F5, F6, F8): đi theo đúng đường của dữ liệu, từ UJIIndoorLoc đến 6,309 m trên tập kiểm tra, không dạy lại lý thuyết HUIM. Mỗi slide thuật toán có công thức, **chú thích mọi ký hiệu**, *vì sao chọn* và *vì sao các con số này* (đếm / định nghĩa / đo / quy ước / chọn trên dev / ngân sách); **ghi chú của từng slide là kịch bản thuyết trình** có ví dụ đời thường (quán trà sữa, thi chạy, bỏ phiếu…). Có ví dụ trọn vẹn hàng 335, kết quả, kiểm chứng, hỏi–đáp, bản đồ nguồn gốc con số và slide tóm tắt. Số liệu: `so_lieu_V7/du_lieu_dataset_uji.json`, `nguon_goc_hang_so.json`, `du_lieu_bao_cao_V7.json`. |
+| `Slide_HUIM_IPS_V7_bo_sung.pptx` | **Bản bổ sung để trả lời vấn đáp** (71 slide = 55 slide gốc + 16 slide đánh dấu BỔ SUNG): sau mỗi thuật toán có slide *"Vì sao chọn vậy"* (0,766126; ba lợi ích rank/abs/rel, −104/0 dBm, 40 dB; θ = 20% và ngân sách 10 s/10 000 HUI/×1,25; γ, τ, β; σ, kf, K = 30; V6 m, λ; 5 góc nhìn; 49 cột và ×4; MLP 32/16 và 7 360 tham số; softmax; mất mát, Adam, epoch, ε; 6 fold và 5 thành viên) và cuối bộ có 2 slide hỏi–đáp dự kiến, 2 slide *"bản đồ nguồn gốc con số"* (mỗi số là đếm / định nghĩa / đo / quy ước / chọn trên dev / ngân sách). Mỗi số đều tính lại được từ `so_lieu_V7/nguon_goc_hang_so.json`; chỗ nào chưa dò thì ghi thẳng "chưa dò". Slide gốc không bị sửa; có thể ẩn các slide BỔ SUNG khi trình bày. |
 | `so_lieu_V7/` | Bộ kiểm chứng sai số V7, cùng cấu trúc với `so_lieu/` (xem bên dưới) |
 | `ma_nguon/tao_bao_cao/*_v7*`, `export_data_v7.py`, `make_so_lieu_kit_v7.py`, `recalc_xlsx.ps1` | Bản sao các script dựng slide V7 và bộ kiểm chứng (bản gốc ở `src/baocao/`) |
 
@@ -123,4 +125,8 @@ python src/baocao/export_data_v7.py          # so_lieu_V7/du_lieu_bao_cao_V7.jso
 python src/baocao/make_so_lieu_kit_v7.py     # so_lieu_V7/*.xlsx, kiem_tra_V7.py, du_doan/*.csv
 powershell -File src/baocao/recalc_xlsx.ps1 BAOCAO/so_lieu_V7/kiem_chung_V7_mean.xlsx   # Excel tính lại để lưu giá trị
 node src/baocao/build_slides_v7.js           # Slide_HUIM_IPS_V7.pptx (cần npm pptxgenjs, Python có matplotlib, pandas)
+python src/baocao/export_why_v7.py           # so_lieu_V7/nguon_goc_hang_so.json (bằng chứng cho các slide bổ sung)
+SUPP=1 node src/baocao/build_slides_v7.js    # Slide_HUIM_IPS_V7_bo_sung.pptx (đặt biến môi trường SUPP=1 trước lệnh node)
+python src/baocao/export_dataset_v7.py       # so_lieu_V7/du_lieu_dataset_uji.json (số liệu dataset tính từ CSV gốc)
+node src/baocao/build_slides_v7_day_du.js    # Slide_HUIM_IPS_V7_day_du.pptx (bộ slide đầy đủ có kịch bản)
 ```

@@ -1,0 +1,505 @@
+{
+ "grid": {
+  "n_configurations": 2880,
+  "n_rank": 1440,
+  "selected": {
+   "gamma": 2.0,
+   "tau": 20.0,
+   "beta": 3.0,
+   "m": 12,
+   "p": 8.0,
+   "sigma": 3.0,
+   "kf": 20
+  },
+  "selected_dev_mean_m": 7.6532,
+  "gamma_tau": [
+   {
+    "gamma": 1.0,
+    "tau": 20.0,
+    "dev_mean_m": 7.8384
+   },
+   {
+    "gamma": 1.0,
+    "tau": 40.0,
+    "dev_mean_m": 7.7482
+   },
+   {
+    "gamma": 2.0,
+    "tau": 20.0,
+    "dev_mean_m": 7.6532
+   }
+  ],
+  "beta": [
+   {
+    "beta": 1.0,
+    "dev_mean_m": 7.9928,
+    "joint_accuracy": 0.816422
+   },
+   {
+    "beta": 3.0,
+    "dev_mean_m": 7.6532,
+    "joint_accuracy": 0.838391
+   }
+  ],
+  "sigma": [
+   {
+    "sigma": 0.0,
+    "dev_mean_m": 7.7874,
+    "joint_accuracy": 0.838993
+   },
+   {
+    "sigma": 3.0,
+    "dev_mean_m": 7.6532,
+    "joint_accuracy": 0.838391
+   },
+   {
+    "sigma": 6.0,
+    "dev_mean_m": 7.7728,
+    "joint_accuracy": 0.839545
+   },
+   {
+    "sigma": 10.0,
+    "dev_mean_m": 8.0944,
+    "joint_accuracy": 0.840698
+   }
+  ],
+  "kf": [
+   {
+    "kf": 3,
+    "dev_mean_m": 7.7202,
+    "joint_accuracy": 0.841802
+   },
+   {
+    "kf": 10,
+    "dev_mean_m": 7.6688,
+    "joint_accuracy": 0.839846
+   },
+   {
+    "kf": 20,
+    "dev_mean_m": 7.6532,
+    "joint_accuracy": 0.838391
+   }
+  ],
+  "m": [
+   {
+    "m": 5,
+    "dev_mean_m": 7.7475,
+    "joint_accuracy": 0.838391
+   },
+   {
+    "m": 8,
+    "dev_mean_m": 7.6884,
+    "joint_accuracy": 0.838391
+   },
+   {
+    "m": 12,
+    "dev_mean_m": 7.6532,
+    "joint_accuracy": 0.838391
+   },
+   {
+    "m": 20,
+    "dev_mean_m": 7.6604,
+    "joint_accuracy": 0.838391
+   },
+   {
+    "m": 30,
+    "dev_mean_m": 7.6696,
+    "joint_accuracy": 0.838391
+   }
+  ],
+  "p": [
+   {
+    "p": 4.0,
+    "dev_mean_m": 7.7353,
+    "joint_accuracy": 0.838391
+   },
+   {
+    "p": 8.0,
+    "dev_mean_m": 7.6532,
+    "joint_accuracy": 0.838391
+   },
+   {
+    "p": 12.0,
+    "dev_mean_m": 7.7106,
+    "joint_accuracy": 0.838391
+   },
+   {
+    "p": 16.0,
+    "dev_mean_m": 7.7727,
+    "joint_accuracy": 0.838391
+   }
+  ],
+  "utility_best": {
+   "rank": 7.6532,
+   "abs": 7.6848
+  },
+  "grid_sizes": {
+   "gamma": [
+    1.0,
+    2.0
+   ],
+   "tau": [
+    20.0,
+    40.0
+   ],
+   "beta": [
+    1.0,
+    3.0
+   ],
+   "sigma": [
+    0.0,
+    3.0,
+    6.0,
+    10.0
+   ],
+   "kf": [
+    3.0,
+    10.0,
+    20.0
+   ],
+   "m": [
+    5.0,
+    8.0,
+    12.0,
+    20.0,
+    30.0
+   ],
+   "p": [
+    4.0,
+    8.0,
+    12.0,
+    16.0
+   ]
+  }
+ },
+ "theta_pilot": {
+  "purpose": "choose theta for UJIIndoorLoc before the full 6-fold dev search (theta = 10% costs about 25 minutes of mining per fold)",
+  "data": "dev folds 1 and 2 of GroupKFold(6) over USERID on trainingData; validationData not used",
+  "scorer": "best over gamma/tau, beta, sigma, kf=3|10, m, p, with the floor-first rule",
+  "results_dev_mean_m": {
+   "theta 30%, no smoothing": 9.145,
+   "theta 30%, p = IDF, no smoothing": 8.747,
+   "theta 30%, p = mutual information, no smoothing": 9.673,
+   "theta 20%, sigma 0": 8.415,
+   "theta 20%, best sigma (6 m)": 7.742,
+   "theta 10%, sigma 0": 7.816,
+   "theta 10%, best sigma (6 m)": 7.138
+  },
+  "decision": "theta = 20%, dev folds = leave-phones-out; internal utility chosen among abs / rel / rank on those folds",
+  "per_cell_budget": "10 s or 10 000 HUIs, theta x 1.25 on overflow",
+  "phone_folds_theta20_all6_dev_mean_m": {
+   "abs": 7.685,
+   "rel": 8.362,
+   "rank": 7.669
+  },
+  "user_folds_theta10_all6": {
+   "dev_mean_m": 7.699,
+   "validationData_mean_m": 8.1755,
+   "note": "selected on leave-users-out folds; did not transfer to validationData (mostly unseen phones), which led to leave-phones-out folds"
+  }
+ },
+ "window_pilot": {
+  "question": "does mining each cell on the transactions of its same-floor neighbours (overlapping windows) improve HUIM-only positioning?",
+  "data": "leave-phones-out dev folds 2 and 3 of trainingData, utility rank, theta 20%, full parameter grid; validationData not used",
+  "best_dev_mean_m": {
+   "cells only (window 0)": 7.468,
+   "window 4 m": 8.078,
+   "window 8 m": 8.512
+  },
+  "best_dev_floor_accuracy": {
+   "window 4 m": 0.8432,
+   "window 8 m": 0.8299
+  },
+  "decision": "rejected: neighbouring cells' HUI signatures become alike, so cells are harder to tell apart; window_m stays 0"
+ },
+ "versions": [
+  {
+   "version": "v1",
+   "dev_folds": "leave-users-out",
+   "utility": "abs",
+   "theta_pct": 30,
+   "config": "gamma=1, tau=40, beta=1, m=8, p=8",
+   "dev_mean_m": 8.272,
+   "test_mean_m": 7.659
+  },
+  {
+   "version": "v2",
+   "dev_folds": "leave-users-out",
+   "utility": "abs",
+   "theta_pct": 10,
+   "config": "gamma=2, tau=20, beta=3, sigma=3 m, kf=10, m=12, p=8",
+   "dev_mean_m": 7.699,
+   "test_mean_m": 8.175
+  },
+  {
+   "version": "v3",
+   "dev_folds": "leave-phones-out",
+   "utility": "rank",
+   "theta_pct": 20,
+   "config": "gamma=2, tau=20, beta=3, sigma=3 m, kf=10, m=12, p=8",
+   "dev_mean_m": 7.669,
+   "test_mean_m": 7.997
+  },
+  {
+   "version": "v4",
+   "dev_folds": "leave-phones-out",
+   "utility": "rank",
+   "theta_pct": 20,
+   "config": "gamma=2, tau=20, beta=3, sigma=3 m, kf=20, m=12, p=8",
+   "dev_mean_m": 7.653,
+   "test_mean_m": 8.059
+  },
+  {
+   "version": "v5",
+   "dev_folds": "leave-phones-out",
+   "utility": "rank (+ L3)",
+   "theta_pct": 20,
+   "config": "K=30 candidates, m=20, lambda=2.0, GBM re-ranker",
+   "dev_mean_m": 7.0836,
+   "test_mean_m": 7.178
+  },
+  {
+   "version": "v6 (final)",
+   "dev_folds": "leave-phones-out",
+   "utility": "rank (+ L3, + abs)",
+   "theta_pct": 20,
+   "config": "K=30 candidates, m=20, lambda=2.0, GBM re-ranker",
+   "dev_mean_m": 6.8274,
+   "test_mean_m": 6.866
+  }
+ ],
+ "cells": {
+  "n_cells": 933,
+  "mean_transactions": 21.287245444801716,
+  "mean_theta_used_pct": 34.553078736267416,
+  "share_escalated": 0.7245444801714899,
+  "max_attempts": 8,
+  "mean_huis": 3470.9710610932475,
+  "total_huis": 3238416,
+  "max_runtime_s": 4.662574500998744,
+  "cell1": {
+   "n_attempts": 4,
+   "theta_used_pct": 39.0625,
+   "n_transactions": 20
+  }
+ },
+ "best_of_k": [
+  {
+   "K": 1,
+   "mean_m": 7.522390735374,
+   "under3": 0.3273752580434016,
+   "under5": 0.4805397512713358
+  },
+  {
+   "K": 3,
+   "mean_m": 4.633619035065732,
+   "under3": 0.5269623886007754,
+   "under5": 0.6608932077941695
+  },
+  {
+   "K": 5,
+   "mean_m": 3.144945384806175,
+   "under3": 0.6643170031720457,
+   "under5": 0.7737274054680027
+  },
+  {
+   "K": 10,
+   "mean_m": 1.5271985707695312,
+   "under3": 0.8253864357283117,
+   "under5": 0.8942651427420573
+  },
+  {
+   "K": 12,
+   "mean_m": 1.2073492944306132,
+   "under3": 0.857660742157998,
+   "under5": 0.9134988167765974
+  },
+  {
+   "K": 20,
+   "mean_m": 0.7317792341001276,
+   "under3": 0.908614873369921,
+   "under5": 0.9489451689240219
+  },
+  {
+   "K": 30,
+   "mean_m": 0.5878681218404755,
+   "under3": 0.9244751019586124,
+   "under5": 0.9590655052615679
+  }
+ ],
+ "nn_cells": {
+  "n": 933,
+  "median": 2.2189230676338054,
+  "mean": 2.738757570690778,
+  "p25": 1.1730500074959662,
+  "p75": 3.8158878890637244,
+  "p90": 4.825510433064687
+ },
+ "rssi": {
+  "min_detected": -104,
+  "max_detected": 0,
+  "n_readings": 358763,
+  "share_within_db": {
+   "20": 0.4452465833990685,
+   "30": 0.7112606372452008,
+   "40": 0.8988803193194393,
+   "50": 0.9669754127376569
+  },
+  "n_rows": 19937,
+  "n_phones": 16,
+  "n_users": 18,
+  "n_rows_with_ap": 19861
+ },
+ "folds": [
+  {
+   "fold": 0,
+   "phones": [
+    14
+   ],
+   "rows": 4835
+  },
+  {
+   "fold": 1,
+   "phones": [
+    13
+   ],
+   "rows": 4516
+  },
+  {
+   "fold": 2,
+   "phones": [
+    3,
+    7,
+    24
+   ],
+   "rows": 2643
+  },
+  {
+   "fold": 3,
+   "phones": [
+    6,
+    10,
+    22
+   ],
+   "rows": 2547
+  },
+  {
+   "fold": 4,
+   "phones": [
+    11,
+    16,
+    17,
+    23
+   ],
+   "rows": 2622
+  },
+  {
+   "fold": 5,
+   "phones": [
+    1,
+    8,
+    18,
+    19
+   ],
+   "rows": 2774
+  }
+ ],
+ "coord": {
+  "lat_deg": 39.992698,
+  "cos_lat": 0.76612635628456,
+  "x_extent": 390.5194,
+  "y_extent": 270.9428,
+  "x_extent_m": 299.1870658444,
+  "y_extent_m": 207.57632359279998,
+  "dist_to_campus_m": 139.7,
+  "dist_utm31_km": 497.33090000000004
+ },
+ "scorer": {
+  "mlp64_32_wd1e-4": 5.9797,
+  "mlp32_16_wd1e-3": 5.9588,
+  "aux_listwise": 6.0113,
+  "devrob": 6.0848,
+  "ens5_slog_base": 5.93,
+  "params": {
+   "V7-B": 5312,
+   "V7-C2": 7360
+  },
+  "inputs": {
+   "V7-B": 132,
+   "V7-C2": 196
+  }
+ },
+ "epochs": {
+  "C2": {
+   "n_members": 30,
+   "min": 5,
+   "max": 29,
+   "median": 15.0,
+   "n_at_cap": 0
+  },
+  "E": {
+   "n_members": 150,
+   "min": 4,
+   "max": 30,
+   "median": 15.0,
+   "n_at_cap": 1
+  }
+ },
+ "v6_rerank_grid": {
+  "gbm_floor": {
+   "12|2.0": 7.190265173651267,
+   "12|1.0": 7.19189571122608,
+   "8|1.0": 7.200561138596262,
+   "5|1.0": 7.204141009024035,
+   "5|2.0": 7.210149254311653,
+   "8|2.0": 7.211700080251711,
+   "3|1.0": 7.235270492603435,
+   "12|0.5": 7.239873210945328,
+   "8|0.5": 7.240955949924516,
+   "5|0.5": 7.242666633960241,
+   "3|2.0": 7.250933315493976,
+   "3|0.5": 7.255838062900412,
+   "5|4.0": 7.277057531907614,
+   "3|4.0": 7.296848861563181,
+   "8|4.0": 7.321564127979022,
+   "12|4.0": 7.328383793964567,
+   "1|1.0": 7.358737187655705,
+   "1|0.5": 7.358737187655705,
+   "1|2.0": 7.358737187655705,
+   "1|4.0": 7.358737187655705
+  },
+  "gbm_building_k40": {
+   "20|1.0": 7.250426747148167,
+   "12|1.0": 7.252887478365768,
+   "20|2.0": 7.260351430031644,
+   "12|2.0": 7.262019546279323,
+   "8|1.0": 7.262057656536892,
+   "8|2.0": 7.271640005998241,
+   "5|1.0": 7.281191072970126,
+   "5|2.0": 7.290056470655383,
+   "8|4.0": 7.31763120609131,
+   "5|4.0": 7.321286716912337,
+   "3|1.0": 7.329770130618412,
+   "12|4.0": 7.333603502809945,
+   "3|2.0": 7.340140322656904,
+   "3|4.0": 7.3595296386664995,
+   "20|4.0": 7.38109062004101
+  },
+  "ridge_best": 7.327007523321551,
+  "gbm_best": 7.190265173651267
+ },
+ "levels3": {
+  "low": [
+   1,
+   34
+  ],
+  "mid": [
+   35,
+   67
+  ],
+  "high": [
+   68,
+   100
+  ]
+ }
+}
