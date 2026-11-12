@@ -1,0 +1,7 @@
+  [gbm33] fold 0: 6.191 m | fit 22 s | infer 0.4030 ms/q
+  [gbm33] fold 1: 4.739 m | fit 21 s | infer 0.3834 ms/q
+  [gbm33] fold 2: 5.200 m | fit 25 s | infer 0.3740 ms/q
+  [gbm33] fold 3: 7.125 m | fit 24 s | infer 0.4038 ms/q
+  [gbm33] fold 4: 8.831 m | fit 22 s | infer 0.3590 ms/q
+  [gbm33] fold 5: 6.279 m | fit 23 s | infer 0.3961 ms/q
+gbm33: dev (có thông tin) 6.2087 m | train 23 s/fold | infer 0.3865 ms/query

@@ -1,0 +1,25 @@
+{
+ "cand": "gbm49",
+ "members": null,
+ "blocks": [
+  "rel",
+  "absL3"
+ ],
+ "folds": [
+  0
+ ],
+ "n_inputs": 196,
+ "inf_mean": 5.76314652030194,
+ "fold_inf": {
+  "0": 5.76314652030194
+ },
+ "train_s_total": 31.515128599945456,
+ "train_s_per_fold": 31.515128599945456,
+ "infer_ms_per_query": 0.5290482730644196,
+ "n_params": null,
+ "epochs": {
+  "0": []
+ },
+ "wall_s": 34.15294769965112,
+ "scope": "dev OOF, vân tay có thông tin; validationData không được đọc"
+}

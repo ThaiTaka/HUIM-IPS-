@@ -21,6 +21,8 @@ báo cáo §6.9 và §7. Kiểm tra rò rỉ chặt (lồng nhau) trên fold ngo
 
 **Thử nghiệm bổ sung V7-E (sau báo cáo chính):** cùng mô hình V7-C2 nhưng tập hợp 5 seed (30 thành viên thay vì 6; `python src/v7/run_dev.py --variant E_seeds`, `python src/v7/final_stage.py E_seeds`). Dev 5,6814 m (thấp hơn V7-C2 0,020 m, tốt hơn ở 6/6 fold, đạt quy tắc chọn đã khai báo); test chấm một lần **6,2775 m** (trung vị 4,6138; P90 12,8264; tự tính lại từ `predictions/E_seeds.csv`). Cải thiện nhỏ (0,032 m) và bộ kiểm chứng Excel/Python chưa phủ V7-E, nên số chính của báo cáo và slide vẫn là V7-C2 (6,309 m).
 
+**So sánh bộ chấm điểm bước 8 (sau báo cáo chính):** `src/v7/alt_scorers.py`, `compare_scorers.py`, `summarize_scorers.py`, `test_alt.py`; kết quả ở `results/huim_only/uji/v7/scorer_compare/`. Cùng 49 cột, 6 fold dev: tuyến tính 5,7077 m (5 thành viên), MLP không nhánh gộp 5,6868 m, attention 5,7091 m, V7-C2 5,7017 m; MLP rộng 5,8297 và GBM 49 cột 5,9732 m (1 thành viên), GBM 33 cột 6,2087 m (= V6\*), k-NN 6,1233 m. Chỉ MLP không nhánh gộp đạt quy tắc dev (thấp hơn và tốt hơn ≥ 4/6 fold); chấm test một lần: 6,3162 m (V7-C2: 6,3093 m), không cải thiện, nên V7-C2 vẫn là mô hình chính.
+
 ## 1. Mô hình V7 trong một đoạn
 
 ```

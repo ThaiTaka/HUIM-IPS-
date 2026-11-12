@@ -175,5 +175,31 @@
    "absL3"
   ],
   "ms_per_query": 339.3
+ },
+ "F_nopool": {
+  "n": 1111,
+  "mean": 6.316195235840962,
+  "median": 4.663255801584894,
+  "p75": 8.577651814848974,
+  "p90": 12.795355702882919,
+  "p95": 15.590868214072025,
+  "max": 54.435378189569356,
+  "building_accuracy": 0.9990999099909991,
+  "floor_accuracy": 0.8037803780378038,
+  "mean_right_floor": 5.843861876329614,
+  "n_right_floor": 893,
+  "mean_wrong_floor": 8.251028676408094,
+  "n_wrong_floor": 218,
+  "share_within_2m": 0.21782178217821782,
+  "share_within_5m": 0.5292529252925292,
+  "scorer_ms_per_query": 0.5951,
+  "n_members": 6,
+  "blocks": [
+   "rel",
+   "absL3"
+  ],
+  "scorer": "mlp_nopool",
+  "train_s_total": 654.4,
+  "ms_per_query": 336.1
  }
 }

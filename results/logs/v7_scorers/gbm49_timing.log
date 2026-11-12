@@ -1,0 +1,2 @@
+  [gbm49] fold 0: 5.763 m | fit 32 s | infer 0.5290 ms/q
+gbm49_f0: dev (có thông tin) 5.7631 m | train 32 s/fold | infer 0.5290 ms/query

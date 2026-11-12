@@ -1,0 +1,7 @@
+  [attn m=1] fold 0: 5.599 m | train 70 s | infer 0.1356 ms/q | epochs [6]
+  [attn m=1] fold 1: 4.648 m | train 80 s | infer 0.1438 ms/q | epochs [8]
+  [attn m=1] fold 2: 5.122 m | train 109 s | infer 0.1389 ms/q | epochs [11]
+  [attn m=1] fold 3: 6.579 m | train 110 s | infer 0.1347 ms/q | epochs [11]
+  [attn m=1] fold 4: 8.604 m | train 103 s | infer 0.1360 ms/q | epochs [10]
+  [attn m=1] fold 5: 6.287 m | train 128 s | infer 0.1490 ms/q | epochs [14]
+attn_m1: dev (có thông tin) 5.9351 m | train 100 s/fold | infer 0.1396 ms/query
