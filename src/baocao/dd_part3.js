@@ -1,9 +1,15 @@
 // Phần 3 của Slide_HUIM_IPS_V7_day_du.pptx: chương 4 "Học trọng số 30 ô ứng viên" (phần mới của V7).
+const fs = require("fs");
+const path = require("path");
+
 module.exports = function part3(c) {
   const { pres, slide, divider, img, as, bullets, text, ann, stat, card, badge, table, tb, callout, fcard, head, chartBase, algoSlide, vn, vnd, pct, tr, dI,
     MX, SW, W, F, INK, NAVY, TEAL, RUST, GREY, GOLD, SOFT, SOFT2, CARD, LINE, D, E, DS } = c;
   const T7 = tr("C_rel_absL3"), T6 = tr("V6"), T6r = tr("V6r");
   const EX = D.example, SC = E.scorer, EP = E.epochs;
+  const rj = (f) => { try { return JSON.parse(fs.readFileSync(path.join(c.ROOT, f), "utf8")); } catch (e) { return null; } };
+  const CMP = rj("results/huim_only/uji/v7/scorer_compare/summary.json"), TS = rj("results/huim_only/uji/v7/test_summary.json");
+  const CR = CMP ? CMP.rows : null, FT = TS && TS.F_nopool ? TS.F_nopool : null;
 
   divider(3, "Học trọng số 30 ô ứng viên (phần mới của V7)", ["Ý tưởng: học trọng số bằng chính sai số mét", "49 đặc trưng → 196 đầu vào → MLP → softmax → tọa độ", "Mất mát, Adam, và huấn luyện không rò rỉ"],
 `KỊCH BẢN (30 giây)
@@ -39,6 +45,27 @@ CHUYỂN Ý: Bộ chấm điểm nhận vào cái gì? Em mô tả 49 đặc tr�
     s.addShape(pres.shapes.LINE, { x: MX + 3 * (bw + g) + bw / 2, y: y0 + 1.15, w: 0, h: 0.35, line: { color: GREY, width: 1.5, endArrowType: "triangle" } });
     s.addText("sai số mét truyền ngược để cập nhật bộ chấm điểm (gradient)", { x: MX + 3 * (bw + g) - 0.2, y: y0 + 1.55, w: 4.8, h: 0.3, fontFace: F, fontSize: 12, italic: true, color: GREY, margin: 0, isTextBox: true });
     callout(s, `Kết quả: chỉ thay công thức cố định bằng bộ chấm điểm học trực tiếp: **${vn(T6r.mean, 3)} → ${vn(tr("B_base").mean, 3)} m** (test); thêm hai góc nhìn HUI mới: **${vn(T7.mean, 3)} m**.`, 6.0, 0.8, NAVY, "FFFFFF", 15);
+  }
+
+  // ---- V6 khác V7 trong 8 bước
+  {
+    const s = slide("V7 · So với V6", "V6 khác V7 ở bước nào trong 8 bước (và bằng chứng ở slide nào)",
+`KỊCH BẢN (khoảng 2 phút)
+NÓI: Em tóm tắt sự khác nhau giữa V6 và V7 theo đúng tám bước của sơ đồ tổng quan. Bốn bước đầu, từ dữ liệu, lợi ích q, điểm khớp, làm mượt đến 30 ô ứng viên, V7 giữ nguyên từ V6, trừ việc ở bước 2 V7 khai thác thêm hai góc nhìn HUI. Phần khác biệt thật sự nằm ở bốn bước sau: đặc trưng, dạng tương đối, bộ chấm điểm và mục tiêu huấn luyện.
+VÍ DỤ ĐỜI THƯỜNG: Giống hai đầu bếp dùng chung nguyên liệu và sơ chế: V6 nêm nếm theo công thức cố định, V7 nếm thử và tự chỉnh theo khẩu vị người ăn. Nguyên liệu thêm hai loại mới (hai góc nhìn HUI), nhưng điểm khác lớn nhất là cách nêm.
+CÁCH CHỨNG MINH TỪNG BƯỚC: Cột bên phải ghi tên slide có bằng chứng. Bước 2: slide "Năm góc nhìn HUI" có bảng số HUI từng góc nhìn. Bước 5: slide "49 đặc trưng" có phép cộng 33 + 8 + 8. Bước 6: slide "dạng tương đối" có ví dụ số 196 đầu vào. Bước 7: slide "bộ chấm điểm MLP" có phép cộng 7 360 tham số, và slide "Đường cơ sở V6" có công thức GBM với trọng số cố định. Bước 8: slide "mất mát" và slide "đóng góp từng bước", trong đó V7-B giảm 0,43 mét chỉ nhờ cách học mà không thêm đặc trưng nào.
+NÓI THẲNG: Mức giảm 0,43 mét của V7-B gộp hai thay đổi: đổi sang học bằng sai số mét và đổi sang MLP. Em đã so thêm các bộ chấm điểm khác ở slide sau để tách bớt hai yếu tố này.
+CHUYỂN Ý: Em đi vào bước 5, mô tả 49 đặc trưng.`);
+    const rows = [["1. Dữ liệu, lợi ích q", "như V7", "giữ nguyên", "Bước 1 (q) và ví dụ hàng 335"],
+      ["2. EFIM, HUI theo ô", "3 góc nhìn (rank, rank-L3, abs): 7,33 triệu HUI", "**5 góc nhìn**, thêm rel và abs-L3: 12,90 triệu HUI", "Năm góc nhìn HUI"],
+      ["3. Điểm khớp P·V³, tầng", "σ = 3 m, 20 ô chọn tầng", "giữ nguyên", "Điểm khớp; làm mượt và chọn tầng"],
+      ["4. 30 ô ứng viên", "30 ô", "giữ nguyên", "30 ô ứng viên"],
+      ["5. Đặc trưng", "33 cột", "**49 cột** (+ 8 cột mỗi góc nhìn mới)", "49 đặc trưng"],
+      ["6. Dạng tương đối", "x, x−max, min-max, hạng (GBM)", "4 phép + slog + z-score: **196 đầu vào**", "Dạng tương đối"],
+      ["7. Chấm điểm, trọng số", "GBM dự đoán log(1+d); a ∝ exp(−d̂/λ), m = 20, λ = 2 cố định", "**MLP 7 360 tham số**, softmax trên 30 ô: trọng số được học", "Bộ chấm điểm MLP; Đường cơ sở V6"],
+      ["8. Mục tiêu huấn luyện", "log khoảng cách từng ô (gián tiếp)", "**sai số tọa độ cuối bằng mét**, Adam, 5 thành viên", "Mất mát; Đóng góp từng bước"]];
+    tb(s, ["Bước", "V6", "V7", "Bằng chứng ở slide"], rows, MX, 1.45, W, [2.5, 3.6, 3.8, W - 9.9], { size: 12.5, minH: 0.5, hl: (i) => i >= 4 });
+    callout(s, "Bước 1–4 giữ nguyên từ V6 (trừ 2 góc nhìn mới ở bước 2). **Phần mới thật sự của V7 là bước 5–8**; V7 cũng tính bằng float64 thay vì float32.", 6.2, 0.65, NAVY, "FFFFFF", 14.5);
   }
 
   // ---- 49 đặc trưng
@@ -97,7 +124,7 @@ CHUYỂN Ý: Đã có 196 con số cho mỗi ô; đến bộ chấm điểm.`);
       formula: "fm_scorer", fh: 1.9, fw: 6.0,
       syms: [["z_{i}", "196 đặc trưng đã chuẩn hóa của ô ứng viên i"], ["W_{1}, b_{1}", "lớp ẩn 1: 196 → 32 (6 304 tham số)"], ["h̄", "trung bình h của 30 ứng viên: cho ô i biết các ô còn lại"], ["W_{2}, b_{2}", "lớp ẩn 2: 64 → 16 (1 040 tham số)"], ["w_{3}", "16 trọng số cuối → điểm s_{i} (16 tham số)"], ["ReLU", "max(0, ·); K = 30"]], symSize: 12,
       exDraw: drawNet, exH: 0.9,
-      why: ["**Dùng chung** một bộ tham số cho mọi ô: ít tham số, không phụ thuộc thứ tự", "**Nhánh gộp** (h̄): điểm của một ô phụ thuộc các ô còn lại (so sánh tương đối)", "MLP nhỏ vì dữ liệu chỉ vài chục nghìn truy vấn; gradient viết tay, kiểm bằng sai phân hữu hạn"],
+      why: ["**Dùng chung** một bộ tham số cho mọi ô: ít tham số, không phụ thuộc thứ tự", "**Nhánh gộp** (h̄): điểm của một ô phụ thuộc các ô còn lại (đã cắt riêng ở slide sau: không cần thiết)", "MLP nhỏ vì dữ liệu chỉ vài chục nghìn truy vấn; gradient viết tay, kiểm bằng sai phân hữu hạn"],
       nums: [["32 và 16 nơ-ron", "dev (2 cấu hình)", `64/32: ${vn(SC["mlp64_32_wd1e-4"], 4)}; **32/16: ${vn(SC["mlp32_16_wd1e-3"], 4)}**`], ["7 360 tham số", "đếm", "6 304 + 1 040 + 16"], ["V7-B: 5 312", "đếm", "(132×32+32) + 1 040 + 16"]],
       numCols: [1.55, 1.15, 2.75], leftW: 5.9,
     },
@@ -107,7 +134,55 @@ VÍ DỤ ĐỜI THƯỜNG: Hãy nghĩ đến một giám khảo cuộc thi hát 
 TỰ KIỂM SỐ THAM SỐ: Lớp 1 có 196 nhân 32 trọng số cộng 32 độ lệch là 6 304. Lớp 2 nhận 64 đầu vào (h và trung bình h) và ra 16: 64 nhân 16 cộng 16 là 1 040. Lớp cuối có 16 trọng số. Tổng là 6 304 cộng 1 040 cộng 16 bằng 7 360. Với V7-B (chỉ 132 đầu vào) là 5 312.
 VÌ SAO CHỌN: Một, dùng chung tham số để mô hình gọn và không phụ thuộc vào thứ tự ô. Hai, nhánh gộp để so sánh tương đối giữa các ô. Ba, mạng nhỏ vì dữ liệu chỉ vài chục nghìn truy vấn.
 VÌ SAO 32 VÀ 16: Em chỉ so hai cấu hình trên dev: mạng 64/32 với weight decay 10 mũ trừ 4 cho 5,9797 mét, mạng 32/16 với weight decay 10 mũ trừ 3 cho 5,9588 mét. Chênh 0,021 mét, nhỏ; em chọn mạng nhỏ hơn vì không kém mà ít tham số hơn. Hai thay đổi này đổi cùng lúc nên em chưa tách riêng được; em cũng chưa dò lưới sâu hơn và chưa cắt riêng nhánh gộp.
-CHUYỂN Ý: Điểm s chưa phải trọng số; em đổi bằng softmax.`);
+CẬP NHẬT: Sau đó em đã chạy so sánh MLP với các bộ chấm điểm khác (hai slide ngay sau slide này): nhánh gộp hóa ra không cần thiết và các bộ chấm điểm cho kết quả sát nhau.
+CHUYỂN Ý: Em trình bày kết quả so sánh, rồi đến softmax.`);
+  }
+
+  // ---- so sánh các bộ chấm điểm (đã chạy thật)
+  if (CR) {
+    const g = (k) => CR[k], r3 = (x) => vn(x, 4), tms = (k) => vn(g(k).infer_ms_per_query, 3), fold = (k) => `${g(k).folds_better_than_ref}/6`;
+    const C2m1 = g("mlp_c2_m1"), C2saved = CMP.c2_saved_5members.inf_mean;
+    const s = slide("Bước 8 · So sánh bộ chấm điểm", "Bước 8: đã chạy thử các bộ chấm điểm khác, đo sai số mét và thời gian",
+`KỊCH BẢN (khoảng 3 phút)
+NÓI: Ở phần trước em nói chưa so MLP với bộ chấm điểm nào khác. Em đã chạy thật. Tất cả dùng cùng đặc trưng 49 cột (196 đầu vào), cùng 6 fold dev theo điện thoại, cùng hàm mất mát sai số mét, chỉ khác bộ chấm điểm. Em đo hai thứ: sai số trung bình trên dev bằng mét và thời gian: thời gian huấn luyện mỗi thành viên và thời gian suy luận cho mỗi vân tay, chỉ tính riêng bộ chấm điểm. Phần khai thác HUI cho mỗi vân tay mất khoảng 336 mili giây (V7), lớn hơn bộ chấm điểm hàng nghìn lần, nên thời gian của bộ chấm điểm không phải nút cổ chai.
+VÍ DỤ ĐỜI THƯỜNG: Giống như tuyển giám khảo cho một cuộc thi: em cho các ứng viên cùng chấm một bộ hồ sơ như nhau, rồi so điểm số của họ so với đáp án và xem ai chấm nhanh. Vòng một mỗi ứng viên chấm một lượt (1 thành viên); ứng viên nào đủ điều kiện thì vào vòng hai, nơi lập hội đồng 5 người cùng chấm như V7-C2.
+ĐỌC KẾT QUẢ: Một, các mô hình đơn giản không thua MLP: tuyến tính chỉ 196 tham số đạt ${r3(g("linear_lr5e-3_m1").inf_mean)} mét ở vòng một, thấp hơn MLP chuẩn ${r3(C2m1.inf_mean)} mét, và huấn luyện nhanh gấp khoảng 6 lần. Hai, MLP không có nhánh gộp, tức bỏ phần trung bình của 30 ô, tốt hơn MLP có nhánh gộp: ${r3(g("mlp_nopool_m1").inf_mean)} so với ${r3(C2m1.inf_mean)}; ở vòng hai với 5 thành viên là ${r3(g("mlp_nopool_m5").inf_mean)} so với ${r3(C2saved)} mét của V7-C2. Điều này cho thấy nhánh gộp không cần thiết, vì dạng tương đối ở bước 7 đã chứa thông tin so sánh giữa các ô. Ba, MLP rộng hơn (64/32) không tốt hơn. Bốn, attention không thắng. Năm, GBM kiểu V6 và k-NN kém hơn rõ; k-NN còn chậm hơn khoảng 40 lần ở khâu suy luận.
+NÓI THẲNG: Mức chênh giữa tuyến tính, MLP và MLP không nhánh gộp chỉ cỡ 0,01 đến 0,05 mét, cùng cỡ dao động giữa các lần huấn luyện. Em chọn theo quy tắc khai báo trước chứ không khẳng định đã tìm ra bộ tốt nhất tuyệt đối. Em thử hai tốc độ học (5·10⁻⁴ và 5·10⁻³) cho tuyến tính, MLP, MLP không nhánh gộp và attention; MLP rộng và GBM chỉ một cấu hình; chưa dò thêm.
+CÁCH ĐỌC THỜI GIAN: Thời gian huấn luyện là giây cho mỗi thành viên trên một fold. Suy luận là mili giây cho mỗi vân tay, một thành viên. Hội đồng 5 thành viên nhân lên khoảng 5 lần. Thời gian của GBM 49 cột đo lại sạch trên một fold vì lần chạy đầu bị đo sai do máy ngủ.
+CHUYỂN Ý: Em kết luận chọn bộ nào ở slide sau.`);
+    const rows = [["Tuyến tính (lr 5·10⁻³)", "196", r3(g("linear_lr5e-3_m1").inf_mean), r3(g("linear_lr5e-3_m5").inf_mean), vn(g("linear_lr5e-3_m1").train_s_per_fold, 0), tms("linear_lr5e-3_m1")],
+      ["**MLP không nhánh gộp 32/16**", "6 848", r3(g("mlp_nopool_m1").inf_mean), "**" + r3(g("mlp_nopool_m5").inf_mean) + "**", vn(g("mlp_nopool_m1").train_s_per_fold, 0), tms("mlp_nopool_m1")],
+      ["MLP có nhánh gộp 32/16 (V7-C2)", "7 360", r3(C2m1.inf_mean), r3(C2saved) + " (đã lưu)", vn(C2m1.train_s_per_fold, 0), tms("mlp_c2_m1")],
+      ["MLP rộng 64/32", "16 768", r3(g("mlp_wide_m1").inf_mean), "—", vn(g("mlp_wide_m1").train_s_per_fold, 0), tms("mlp_wide_m1")],
+      ["Attention 1 đầu (lr 5·10⁻³)", "8 640", r3(g("attn_lr5e-3_m1").inf_mean), r3(g("attn_lr5e-3_m5").inf_mean), vn(g("attn_lr5e-3_m1").train_s_per_fold, 0), tms("attn_lr5e-3_m1")],
+      ["GBM 49 cột + công thức V6", "—", r3(g("gbm49").inf_mean), "—", vn(g("gbm49_f0").train_s_per_fold, 0), tms("gbm49_f0")],
+      ["GBM 33 cột (V6*)", "—", r3(g("gbm33").inf_mean), "—", vn(g("gbm33").train_s_per_fold, 0), tms("gbm33")],
+      ["k-NN trên đặc trưng HUI (k = 15, tham khảo)", "—", r3(g("knn49").inf_mean), "—", "0 (không huấn luyện)", tms("knn49")]];
+    tb(s, ["Bộ chấm điểm", "Tham số", "Dev, 1 thành viên (m)", "Dev, 5 thành viên (m)", "Huấn luyện (s/thành viên)", "Suy luận (ms/vân tay)"], rows, MX, 1.4, W, [3.9, 1.0, 1.7, 1.9, 1.9, W - 10.4], { size: 12, minH: 0.42, align: ["left", "right", "right", "right", "right", "right"], hl: (i) => i === 1 });
+    text(s, "Cùng 49 cột, 6 fold dev theo điện thoại, mất mát sai số mét; vân tay có thông tin (19 861). Thời gian chỉ tính riêng bộ chấm điểm; khai thác HUI cho mỗi vân tay mất ~336 ms. GBM/k-NN dùng cách V6: dự đoán log(1 + d), trọng số exp(−d/λ), m = 20, λ = 2. validationData không được đọc ở bước này.", MX, 5.95, W, 0.9, { fontSize: 12.5, color: GREY });
+  }
+
+  // ---- chọn bộ chấm điểm + GBM 3 vs 5 góc nhìn
+  if (CR) {
+    const g = (k) => CR[k], r3 = (x) => vn(x, 4), C2saved = CMP.c2_saved_5members.inf_mean, V7B = dI("B_base").mean;
+    const nop = g("mlp_nopool_m5");
+    const testTxt = FT ? `Em chấm test đúng một lần cho bộ này: ${vn(FT.mean, 4)} mét (trung vị ${vn(FT.median, 3)}, P90 ${vn(FT.p90, 2)}), so với V7-C2 là ${vn(T7.mean, 4)} mét.` : "Em chưa chấm test cho bộ này.";
+    const s = slide("Bước 8 · Chọn bộ chấm điểm", "Bước 8: các bộ chấm điểm sát nhau, không bộ nào vượt rõ V7-C2",
+`KỊCH BẢN (khoảng 3 phút)
+NÓI: Em áp quy tắc đã khai báo trước: sai số dev thấp hơn bộ chuẩn VÀ tốt hơn ở ít nhất 4 trên 6 fold, so với V7-C2 (5 thành viên, ${r3(C2saved)} mét). Trên dev chỉ MLP không nhánh gộp đạt quy tắc: ${r3(nop.inf_mean)} mét, tốt hơn ở ${nop.folds_better_than_ref} trên 6 fold. Tuyến tính (${r3(g("linear_lr5e-3_m5").inf_mean)}, ${g("linear_lr5e-3_m5").folds_better_than_ref}/6 fold) và attention (${r3(g("attn_lr5e-3_m5").inf_mean)}) không đạt. ${testTxt} ${FT ? (FT.mean >= T7.mean ? "Nghĩa là bộ thắng trên dev KHÔNG cải thiện trên test; chênh " + vn(FT.mean - T7.mean, 3) + " mét nằm trong nhiễu. Kết luận trung thực: em giữ V7-C2 làm mô hình chính, vì nó đã được kiểm chứng đủ ba cách, và nói rằng việc chọn bộ chấm điểm không phải yếu tố quyết định." : "Bộ này tốt hơn V7-C2 trên test.") : ""}
+VÍ DỤ ĐỜI THƯỜNG: Giống tuyển chọn trên điểm thi thử và quy tắc công bố trước: ai vừa có điểm trung bình cao hơn vừa hơn ở ít nhất bốn trong sáu bài thi thử thì được vào, và chỉ người vào mới được thi chính thức. Một mô hình chỉ hơn ở điểm trung bình nhưng thua nhiều bài thi thử thì không được chọn.
+CÂU HỎI CỦA THẦY CÔ: "Nếu V6 dùng bộ hồi quy GBM nhưng có 5 góc nhìn thì sao?" Em đã chạy: GBM với 49 cột đạt ${r3(g("gbm49").inf_mean)} mét trên dev, so với ${r3(g("gbm33").inf_mean)} mét của GBM 33 cột (V6*): thêm hai góc nhìn giảm ${vn(g("gbm33").inf_mean - g("gbm49").inf_mean, 3)} mét. Với bộ chấm điểm học trực tiếp: 33 cột (V7-B) là ${r3(V7B)}, 49 cột (V7-C2) là ${r3(dI("C_rel_absL3").mean)} mét, giảm ${vn(V7B - dI("C_rel_absL3").mean, 3)} mét. Tức là thêm góc nhìn giúp khoảng 0,23 mét ở cả hai cách. Còn đổi cách chấm điểm từ GBM sang học trực tiếp giúp thêm khoảng 0,27 mét ở cả hai mức đặc trưng. Hai đóng góp này gần như cộng dồn: đặc trưng mới và cách học mới độc lập với nhau.
+NÓI THẲNG: Số GBM 49 cột là trên dev, em chưa chấm test; dev của V6 6,209 mét tương ứng 6,861 mét trên test, nên GBM 49 cột nhiều khả năng cho khoảng 6,6 mét trên test, đó là ước đoán chứ không phải số đo. Với MLP không nhánh gộp, mức hơn V7-C2 trên dev chỉ khoảng ${vn(C2saved - nop.inf_mean, 3)} mét và mức đó không tái hiện trên test; em thừa nhận nhánh gộp không cần thiết nhưng bỏ nó cũng không cải thiện kết quả cuối.
+CHUYỂN Ý: Quay lại các bước còn lại của V7: softmax và huấn luyện.`);
+    const rows = [["GBM, 33 cột (V6*)", r3(g("gbm33").inf_mean), "—"], ["GBM, 49 cột (5 góc nhìn)", r3(g("gbm49").inf_mean), vnd(g("gbm49").inf_mean - g("gbm33").inf_mean, 3)],
+      ["Học trực tiếp, 33 cột (V7-B)", r3(V7B), vnd(V7B - g("gbm33").inf_mean, 3) + " so với GBM 33"], ["Học trực tiếp, 49 cột (V7-C2)", r3(dI("C_rel_absL3").mean), vnd(dI("C_rel_absL3").mean - V7B, 3)]];
+    head(s, "GBM với 3 hay 5 góc nhìn so với học trực tiếp (dev, m)", MX, 1.4, 7.2);
+    const yb = tb(s, ["Cách chấm điểm và đặc trưng", "Sai số dev", "Thay đổi"], rows, MX, 1.8, 7.2, [3.9, 1.5, 1.8], { size: 12.5, minH: 0.42, align: ["left", "right", "right"] });
+    text(s, "Thêm 2 góc nhìn: **−0,24 m** (GBM) và **−0,23 m** (học trực tiếp). Đổi GBM → học trực tiếp: **−0,28 m** (33 cột) và **−0,27 m** (49 cột). Hai đóng góp gần như cộng dồn. Số GBM 49 cột là dev; chưa chấm test.", MX, yb + 0.15, 7.2, 1.5, { fontSize: 13.5 });
+    card(s, MX + 7.5, 1.4, W - 7.5, 5.45, SOFT, "Quy tắc chọn và kết quả", TEAL, TEAL);
+    bullets(s, ["Quy tắc khai báo trước: dev thấp hơn **và** tốt hơn ≥ 4/6 fold so với V7-C2 (5 thành viên, " + r3(C2saved) + " m)",
+      `**MLP không nhánh gộp:** ${r3(nop.inf_mean)} m, **${nop.folds_better_than_ref}/6 fold: đạt**`, `Tuyến tính ${r3(g("linear_lr5e-3_m5").inf_mean)} m (${g("linear_lr5e-3_m5").folds_better_than_ref}/6) và attention ${r3(g("attn_lr5e-3_m5").inf_mean)} m (${g("attn_lr5e-3_m5").folds_better_than_ref}/6): không đạt`,
+      FT ? `**Test, chấm một lần:** ${vn(FT.mean, 4)} m (V7-C2: ${vn(T7.mean, 4)} m)` : "Test: chưa chấm", "**Kết luận:** dev chọn MLP không nhánh gộp nhưng test không cải thiện ⇒ **giữ V7-C2** làm mô hình chính", "**Thừa nhận:** nhánh gộp không cần thiết; chênh giữa các bộ cỡ 0,01–0,05 m, cùng cỡ dao động giữa các lần huấn luyện"], MX + 7.75, 1.9, W - 8.0, 4.9, 13, INK, 6);
   }
 
   // ---- softmax

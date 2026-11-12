@@ -38,7 +38,7 @@ CHUYỂN Ý: Em cho thầy cô xem trên bản đồ.`);
     card(s, MX, 5.35, 6.0, 1.5, CARD, null, TEAL, TEAL);
     text(s, `Vị trí thật: tầng ${EX.pred_bf} (dự đoán đúng), điện thoại ${EX.phone}. **Ô hạng 1 (${EX.cells[0].cell}) cách ${vn(EX.cells[0].dist_m, 2)} m**; ước lượng V4 (trung bình 12 ô) sai ${vn(EX.v4_err_m, 2)} m.`, MX + 0.3, 5.5, 5.5, 1.25, { fontSize: 14.5, valign: "middle" });
     card(s, MX + 6.3, 5.35, W - 6.3, 1.5, SOFT2, null, RUST, RUST);
-    text(s, "**Ký hiệu:** S/S₁ điểm tương đối so với ô hạng 1; P, V, R bằng chứng HUI (bước 3 và 6); w trọng số của ô. **V6** dồn trọng số vào các ô xa (351, 348, 352: tổng ${pct(W3, 0)}); **V7** chuyển tới ô gần hơn (344, 342, 338, 365).", MX + 6.55, 5.45, W - 6.8, 1.3, { fontSize: 13.5, valign: "middle" });
+    text(s, `**Ký hiệu:** S/S₁ điểm tương đối so với ô hạng 1; P, V, R bằng chứng HUI (bước 3 và 6); w trọng số của ô. **V6** dồn trọng số vào các ô xa (351, 348, 352: tổng ${pct(W3, 0)}); **V7** chuyển tới ô gần hơn (344, 342, 338, 365).`, MX + 6.55, 5.45, W - 6.8, 1.3, { fontSize: 13.5, valign: "middle" });
   }
 
   {
@@ -343,9 +343,9 @@ CHUYỂN Ý: Cuối cùng em xin tóm tắt các con số để thầy cô tiệ
       ["Hướng tiếp theo", NAVY, ["Học quyết định tầng từ HUI (sai tầng là nguồn sai số lớn nhất)", "Thêm góc nhìn HUI (θ khác nhau, rel mức-3)", "Giảm RAM bằng ma trận thưa", "Kiểm tra trên tập độc lập mới và các bộ dữ liệu khác"]],
       ["Thử nghiệm bổ sung: V7-E (5 seed)", TEAL, [`**V7-E:** tập hợp 5 seed cho bộ chấm điểm (30 mạng thay vì 6), cùng đặc trưng với V7-C2`, `Dev: **${e ? vn(e.mean_inf, 4) : "5,6814"} m** (−0,020 m; tốt hơn ở 6/6 fold) ⇒ đạt quy tắc chọn khai báo trước`,
         eTest ? `Test (chấm một lần): **${vn(eTest, 4)} m**, thấp hơn V7-C2 0,032 m và **dưới 6,3 m**; tự tính lại từ tệp dự đoán: khớp` : "Test V7-E: **chưa chấm**, chưa đưa vào kết quả chính",
-        eTest ? "Cải thiện **nhỏ** (tốt hơn V7-C2 ở 586/1 111 vân tay), chưa có Excel/Python kiểm chứng riêng ⇒ **số chính của bài vẫn là V7-C2: 6,309 m**" : "Số liệu chính của bài vẫn là V7-C2: 6,309 m"]]];
+        eTest ? "Cải thiện **nhỏ** (tốt hơn V7-C2 ở 586/1 111 vân tay), chưa có Excel/Python kiểm chứng riêng ⇒ **số chính của bài vẫn là V7-C2: 6,309 m**" : "Số liệu chính của bài vẫn là V7-C2: 6,309 m", ...(ts && ts.F_nopool ? [`Đã so 8 bộ chấm điểm ở bước 8: MLP không nhánh gộp đạt quy tắc dev (5,6868 m) nhưng **test ${vn(ts.F_nopool.mean, 4)} m**, không cải thiện`] : [])]]];
     const w = (W - 0.5) / 3;
-    cols.forEach(([t, col, items], i) => { const x = MX + i * (w + 0.25); card(s, x, 1.45, w, 5.4, CARD, t, col, col); bullets(s, items, x + 0.25, 2.05, w - 0.45, 4.7, 14, INK, 9); });
+    cols.forEach(([t, col, items], i) => { const x = MX + i * (w + 0.25); card(s, x, 1.45, w, 5.4, CARD, t, col, col); bullets(s, items, x + 0.25, 2.05, w - 0.45, 4.7, 13, INK, 6); });
   }
 
   // ---- bản đồ nguồn gốc con số
@@ -375,6 +375,25 @@ CHUYỂN Ý: ${n === 1 ? "Phần hai của bảng." : "Em xin dừng ở đây v
       ["lr 5·10⁻⁴, batch 256, ε = 10⁻⁶", "quy ước", "chưa dò lưới; ε chỉ tránh √0"],
       ["30 epoch, kiên nhẫn 8", "ngân sách / quy ước", "epoch tốt nhất 5–29, trung vị 15"],
       ["12,90 triệu HUI; 6,309 m; 5,702 m", "đếm / đo", "EFIM (khớp vét cạn); chấm lại độc lập bằng Excel, Python, verify_v7"]]);
+  }
+
+  // ---- làm rõ các điểm hay bị hỏi nhầm
+  {
+    const s = slide("Làm rõ", "Làm rõ năm điểm hay bị hỏi nhầm trong 8 bước",
+`KỊCH BẢN (khoảng 3 phút, dùng khi được hỏi)
+CÂU 1: 20 ô, 30 ô và top-20 có giống nhau không? Không. Hai bước diễn ra theo thứ tự. Bước 4: với mỗi tầng em lấy 20 ô điểm cao nhất, tính trung bình, tầng nào cao nhất thì được chọn (kf = 20). Bước 5: trong tầng đã chọn em lấy 30 ô điểm cao nhất làm ứng viên (K = 30). Còn top-20 chỉ có ở V6: 20 ô có khoảng cách dự đoán nhỏ nhất, dùng để chia trọng số; V7 không dùng số này.
+VÍ DỤ: Giống tuyển sinh hai vòng: vòng một chọn trường bằng điểm trung bình 20 thí sinh giỏi nhất của mỗi trường; vòng hai trong trường đã chọn lấy 30 thí sinh vào danh sách xét tuyển.
+CÂU 2: Làm mượt sigma bằng 3 mét để làm gì? Để điểm của một ô được cộng thêm điểm của các ô lân cận cùng tầng, ô càng gần càng nhiều. Ô được nhiều hàng xóm cùng ủng hộ thì đáng tin hơn một ô lẻ có điểm cao. Nhờ vậy chọn tầng và chọn 30 ứng viên ổn định hơn. Số 3 mét là giá trị tốt nhất trong lưới 0, 3, 6, 10 (7,653 mét), nhưng em chưa thử giá trị xen kẽ.
+CÂU 3: 49 đặc trưng có trùng nhau giữa các ô không? Không. 49 đặc trưng được tính riêng cho từng cặp (vân tay truy vấn, ô ứng viên). Ô 351 với vân tay hàng 335 có P bằng 0,1817, nhưng với vân tay khác thì khác. Mỗi truy vấn có 30 nhân 49 con số. Mạng chấm điểm chỉ dùng chung THAM SỐ, không dùng chung đặc trưng.
+CÂU 4: Bốn phép ở bước 7 là gì? Với mỗi đặc trưng x trong 30 ô của một truy vấn: giá trị gốc, hiệu với giá trị lớn nhất (x trừ max), min-max, và hạng. 49 nhân 4 bằng 196 đầu vào. Sau đó mới đến slog và z-score. Em chưa chạy thí nghiệm cắt riêng từng phép.
+CÂU 5: Vì sao rank-L3 có ít HUI hơn rank? Vì mỗi mục là (bộ phát, mức), mỗi tổ hợp gom được ít lợi ích hơn trong khi ngưỡng minUtil giữ nguyên; mẫu ít hơn nhưng cụ thể hơn. Ba mức là quy ước, chỉ thử mức 1 và mức 3.
+CHUYỂN Ý: Phần hỏi đáp tiếp theo.`);
+    const rows = [["20 ô, 30 ô, top-20 có giống nhau không?", "**Không.** Bước 4: 20 ô điểm cao nhất của mỗi tầng → chọn **tầng** (kf = 20). Bước 5: 30 ô điểm cao nhất của **tầng đã chọn** → ứng viên (K = 30). top-20 chỉ có ở V6 (chia trọng số), V7 không dùng."],
+      ["Làm mượt σ = 3 m để làm gì?", "Cộng thêm điểm của ô lân cận **cùng tầng** (ô càng gần càng nhiều): ô được nhiều hàng xóm ủng hộ đáng tin hơn ô lẻ ⇒ chọn tầng và ứng viên ổn định. σ = 3 m tốt nhất trong lưới {0, 3, 6, 10}: 7,653 m; chưa thử giá trị xen kẽ."],
+      ["49 đặc trưng có trùng giữa các ô không?", "**Không.** Tính riêng cho từng cặp (vân tay truy vấn, ô ứng viên): mỗi truy vấn có 30 × 49 số. Mạng chỉ dùng chung **tham số**, không dùng chung đặc trưng."],
+      ["Bốn phép ở bước 7 là gì?", "Với đặc trưng x trong 30 ô của một truy vấn: **giá trị gốc**, **x − max**, **min-max**, **hạng**. 49 × 4 = 196 đầu vào; sau đó slog và z-score. Chưa cắt riêng từng phép."],
+      ["Vì sao rank-L3 ít HUI hơn rank?", "Mục là (AP, mức): mỗi tổ hợp gom được ít lợi ích hơn trong khi minUtil giữ nguyên ⇒ ít tổ hợp vượt ngưỡng. Mẫu ít hơn nhưng cụ thể hơn; 3 mức là quy ước (chỉ thử 1 và 3)."]];
+    tb(s, ["Câu hỏi", "Trả lời ngắn"], rows, MX, 1.45, W, [3.4, W - 3.4], { size: 12.5, minH: 0.8 });
   }
 
   // ---- hỏi đáp
