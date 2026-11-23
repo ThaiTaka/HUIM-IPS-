@@ -1,0 +1,7 @@
+  [mlp_c2 m=1] fold 0: 5.412 m | train 113 s | infer 0.1290 ms/q | epochs [16]
+  [mlp_c2 m=1] fold 1: 4.560 m | train 128 s | infer 0.1178 ms/q | epochs [22]
+  [mlp_c2 m=1] fold 2: 4.922 m | train 104 s | infer 0.1156 ms/q | epochs [14]
+  [mlp_c2 m=1] fold 3: 6.323 m | train 102 s | infer 0.1092 ms/q | epochs [14]
+  [mlp_c2 m=1] fold 4: 8.839 m | train 88 s | infer 0.1292 ms/q | epochs [11]
+  [mlp_c2 m=1] fold 5: 5.994 m | train 133 s | infer 0.1054 ms/q | epochs [25]
+mlp_c2_m1: dev (có thông tin) 5.8014 m | train 111 s/fold | infer 0.1177 ms/query

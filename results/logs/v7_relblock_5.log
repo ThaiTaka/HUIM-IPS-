@@ -1,0 +1,2 @@
+2026-10-31 10:46:09,360 | INFO    | prep | fit on 19937 training rows: 520 WAP columns, detected RSSI in [-104, 0]
+block rel fold 5: (2774, 30, 8) in 191.5s

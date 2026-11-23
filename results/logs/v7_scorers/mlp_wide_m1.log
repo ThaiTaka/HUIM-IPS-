@@ -1,0 +1,7 @@
+  [mlp_wide m=1] fold 0: 5.490 m | train 94 s | infer 0.1331 ms/q | epochs [7]
+  [mlp_wide m=1] fold 1: 4.529 m | train 142 s | infer 0.1279 ms/q | epochs [15]
+  [mlp_wide m=1] fold 2: 4.913 m | train 130 s | infer 0.1365 ms/q | epochs [10]
+  [mlp_wide m=1] fold 3: 6.438 m | train 147 s | infer 0.1468 ms/q | epochs [12]
+  [mlp_wide m=1] fold 4: 8.873 m | train 175 s | infer 0.1341 ms/q | epochs [16]
+  [mlp_wide m=1] fold 5: 5.984 m | train 151 s | infer 0.1373 ms/q | epochs [13]
+mlp_wide_m1: dev (có thông tin) 5.8297 m | train 140 s/fold | infer 0.1359 ms/query

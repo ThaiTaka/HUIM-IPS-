@@ -1,0 +1,7 @@
+  [knn49] fold 0: 5.851 m | fit 0 s | infer 4.6315 ms/q
+  [knn49] fold 1: 4.887 m | fit 0 s | infer 4.6121 ms/q
+  [knn49] fold 2: 5.303 m | fit 0 s | infer 4.5655 ms/q
+  [knn49] fold 3: 6.598 m | fit 0 s | infer 4.5727 ms/q
+  [knn49] fold 4: 9.025 m | fit 0 s | infer 4.7356 ms/q
+  [knn49] fold 5: 6.217 m | fit 0 s | infer 4.6719 ms/q
+knn49: dev (có thông tin) 6.1233 m | train 0 s/fold | infer 4.6316 ms/query

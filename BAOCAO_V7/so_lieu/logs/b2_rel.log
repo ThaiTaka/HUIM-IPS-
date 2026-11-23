@@ -1,0 +1,8 @@
+V6* (float64)                      informative mean 6.2087 | median 4.114 | p90 13.38 | right-floor 5.618 | wrong-floor 9.345 | all 6.8731
+  fold 0: direct 5.464 m (informative) / 5.464 (all) | epochs [23, 14, 10, 23, 14]
+  fold 1: direct 4.488 m (informative) / 4.546 (all) | epochs [18, 13, 8, 27, 16]
+  fold 2: direct 4.801 m (informative) / 4.801 (all) | epochs [12, 8, 10, 29, 12]
+  fold 3: direct 6.355 m (informative) / 7.330 (all) | epochs [15, 11, 18, 30, 15]
+  fold 4: direct 8.519 m (informative) / 8.519 (all) | epochs [18, 11, 20, 19, 20]
+  fold 5: direct 5.936 m (informative) / 9.272 (all) | epochs [17, 11, 13, 6, 22]
+ens {'lr': 0.0005, 'h1': 32, 'h2': 16, 'wd': 0.001, 'ep': 30, 'tf': 'slog'} ('rel',) informative mean 5.7353 | median 3.948 | p90 12.61 | right-floor 5.146 | wrong-floor 8.864 | all 6.3380

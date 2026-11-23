@@ -1,0 +1,7 @@
+  [mlp_nopool_lr5e-3 m=1] fold 0: 5.315 m | train 43 s | infer 0.0993 ms/q | epochs [5]
+  [mlp_nopool_lr5e-3 m=1] fold 1: 4.397 m | train 47 s | infer 0.1000 ms/q | epochs [6]
+  [mlp_nopool_lr5e-3 m=1] fold 2: 4.688 m | train 47 s | infer 0.0940 ms/q | epochs [4]
+  [mlp_nopool_lr5e-3 m=1] fold 3: 6.629 m | train 59 s | infer 0.0957 ms/q | epochs [7]
+  [mlp_nopool_lr5e-3 m=1] fold 4: 8.899 m | train 73 s | infer 0.0940 ms/q | epochs [11]
+  [mlp_nopool_lr5e-3 m=1] fold 5: 6.009 m | train 47 s | infer 0.1027 ms/q | epochs [4]
+mlp_nopool_lr5e-3_m1: dev (có thông tin) 5.7583 m | train 53 s/fold | infer 0.0976 ms/query

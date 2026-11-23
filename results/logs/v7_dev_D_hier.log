@@ -1,0 +1,7 @@
+  fold 0: direct 5.386 m (informative) / 5.386 (all) | epochs [13, 11, 10, 17, 16]
+  fold 1: direct 4.444 m (informative) / 4.501 (all) | epochs [22, 13, 10, 16, 12]
+  fold 2: direct 4.723 m (informative) / 4.723 (all) | epochs [18, 13, 13, 17, 6]
+  fold 3: direct 6.198 m (informative) / 7.172 (all) | epochs [20, 7, 17, 17, 14]
+  fold 4: direct 8.590 m (informative) / 8.590 (all) | epochs [27, 13, 19, 15, 20]
+  fold 5: direct 5.956 m (informative) / 9.260 (all) | epochs [22, 18, 11, 14, 17]
+D_hier ('rel', 'absL3', 'hier')    informative mean 5.6884 | median 3.906 | p90 12.59 | right-floor 5.074 | wrong-floor 8.950 | all 6.2865

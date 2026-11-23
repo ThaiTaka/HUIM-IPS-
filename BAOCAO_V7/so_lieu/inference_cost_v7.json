@@ -1,0 +1,9 @@
+{
+ "mode": "v7",
+ "models_loaded": 5,
+ "load_seconds": 10.8,
+ "working_set_after_loading_MB": 4136,
+ "peak_working_set_MB": 5579,
+ "evidence_seconds_per_query_on_64_queries": 0.5004,
+ "note": "64 queries only: fixed per-call costs are not amortised, so this is NOT comparable with the 1111-query timing in test_summary.json; use it for memory"
+}

@@ -1,0 +1,7 @@
+  [attn_lr5e-3 m=1] fold 0: 5.354 m | train 72 s | infer 0.1399 ms/q | epochs [6]
+  [attn_lr5e-3 m=1] fold 1: 4.361 m | train 72 s | infer 0.1370 ms/q | epochs [6]
+  [attn_lr5e-3 m=1] fold 2: 4.908 m | train 83 s | infer 0.1443 ms/q | epochs [6]
+  [attn_lr5e-3 m=1] fold 3: 6.383 m | train 73 s | infer 0.1552 ms/q | epochs [4]
+  [attn_lr5e-3 m=1] fold 4: 9.100 m | train 108 s | infer 0.1508 ms/q | epochs [10]
+  [attn_lr5e-3 m=1] fold 5: 5.960 m | train 78 s | infer 0.1443 ms/q | epochs [5]
+attn_lr5e-3_m1: dev (có thông tin) 5.7775 m | train 81 s/fold | infer 0.1452 ms/query

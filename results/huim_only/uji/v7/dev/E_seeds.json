@@ -1,0 +1,26 @@
+{
+ "label": "E_seeds ('rel', 'absL3')",
+ "n_all": 19937,
+ "n_informative": 19861,
+ "mean_all": 6.280484670473942,
+ "mean_inf": 5.681367408016955,
+ "median_inf": 3.89349266443129,
+ "p90_inf": 12.636592481528934,
+ "right_floor_inf": 5.060196775517483,
+ "wrong_floor_inf": 8.980460497180028,
+ "blocks": [
+  "rel",
+  "absL3"
+ ],
+ "cfg": {
+  "lr": 0.0005,
+  "h1": 32,
+  "h2": 16,
+  "wd": 0.001,
+  "ep": 30,
+  "tf": "slog",
+  "patience": 8
+ },
+ "seed": 0,
+ "n_seeds": 5
+}

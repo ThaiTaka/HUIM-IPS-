@@ -36,3 +36,10 @@ results/huim_only/uji/research/v5_dev_fold*.npz
 results/huim_only/uji/v5/model_L3.npz
 results/huim_only/uji/research/v5a_dev_fold*.npz
 results/huim_only/uji/v5/model_abs.npz
+
+# HUIM-IPS V7: regenerable caches and mined models (hundreds of MB); metadata sidecars stay with the caches
+results/huim_only/uji/v7/cache/
+results/huim_only/uji/v7/models/
+results/huim_only/uji/v7/diagnosis/dev_per_query.csv
+results/huim_only/uji/research/nested_k*.npz
+results/huim_only/uji/research/*floor*.npz

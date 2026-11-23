@@ -1,0 +1,7 @@
+  fold 0: direct 5.901 m (informative) / 5.901 (all) | epochs [13, 12, 16, 5, 16]
+  fold 1: direct 4.598 m (informative) / 4.655 (all) | epochs [22, 16, 6, 5, 5]
+  fold 2: direct 4.959 m (informative) / 4.959 (all) | epochs [13, 9, 5, 5, 5]
+  fold 3: direct 6.399 m (informative) / 7.388 (all) | epochs [25, 7, 8, 5, 5]
+  fold 4: direct 8.909 m (informative) / 8.909 (all) | epochs [16, 11, 14, 5, 13]
+  fold 5: direct 6.292 m (informative) / 9.652 (all) | epochs [24, 7, 5, 5, 6]
+C_devrob ('devrob',)               informative mean 5.9935 | median 4.107 | p90 13.00 | right-floor 5.382 | wrong-floor 9.242 | all 6.6014

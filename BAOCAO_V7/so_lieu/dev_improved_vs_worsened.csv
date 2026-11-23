@@ -1,0 +1,3 @@
+group,n,dung_tang,mean_gain_m,mean_err_V6*,mean_best30
+"V7 tốt hơn > 0,5 m",8324,0.852,2.886,7.7625,0.5681
+"V7 kém hơn > 0,5 m",6248,0.8244,-2.2436,5.4498,0.5219

@@ -1,0 +1,3 @@
+outer fold 2, scorer trained with standard       features: informative mean 5.0783 m
+outer fold 2, scorer trained with strict nested  features: informative mean 5.0747 m
+optimism of the standard protocol on fold 2: -0.0035 m

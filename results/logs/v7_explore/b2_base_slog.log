@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\Users\karin\AppData\Local\Temp\claude\D--HUIM-IPS-\b6248fe9-0495-4da8-a665-dbd934f2914a\scratchpad\exp_b2.py", line 4, in <module>
+    from v7.experiments import *
+ModuleNotFoundError: No module named 'v7'

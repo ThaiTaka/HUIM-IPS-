@@ -1,0 +1,7 @@
+  fold 0: direct 5.374 m (informative) / 5.374 (all) | epochs [16, 15, 10, 13, 26]
+  fold 1: direct 4.441 m (informative) / 4.498 (all) | epochs [22, 21, 9, 16, 18]
+  fold 2: direct 4.715 m (informative) / 4.715 (all) | epochs [14, 10, 14, 17, 5]
+  fold 3: direct 6.310 m (informative) / 7.284 (all) | epochs [14, 11, 17, 15, 29]
+  fold 4: direct 8.608 m (informative) / 8.608 (all) | epochs [11, 14, 21, 12, 21]
+  fold 5: direct 5.968 m (informative) / 9.276 (all) | epochs [25, 17, 11, 6, 15]
+C_rel_absL3 ('rel', 'absL3')       informative mean 5.7017 | median 3.894 | p90 12.62 | right-floor 5.079 | wrong-floor 9.008 | all 6.3006

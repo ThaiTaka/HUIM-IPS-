@@ -1,0 +1,24 @@
+{
+ "label": "C_devrob ('devrob',)",
+ "n_all": 19937,
+ "n_informative": 19861,
+ "mean_all": 6.601372223440886,
+ "mean_inf": 5.993513908313303,
+ "median_inf": 4.107134137188621,
+ "p90_inf": 12.996244491440397,
+ "right_floor_inf": 5.381921605194109,
+ "wrong_floor_inf": 9.241735628788101,
+ "blocks": [
+  "devrob"
+ ],
+ "cfg": {
+  "lr": 0.0005,
+  "h1": 32,
+  "h2": 16,
+  "wd": 0.001,
+  "ep": 30,
+  "tf": "slog",
+  "patience": 8
+ },
+ "seed": 0
+}
