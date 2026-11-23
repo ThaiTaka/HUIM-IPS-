@@ -38,23 +38,24 @@ def main():
         loi += not khop
         print(f"{r['mo_hinh']:<44} n={n:<5} TB {tb:8.4f} m | báo cáo {float(r['sai_so_tb_m']):8.4f} m | trung vị {tv:7.4f} | P90 {p90:8.4f} "
               f"| đúng tòa+tầng {dung / n:.4f} | {'KHỚP' if khop else 'LỆCH'}")
-    # V7-C2: dựng lại toạ độ từ trọng số và tâm ô
+    # V7-C2 và V7-E: dựng lại toạ độ từ trọng số và tâm ô
     cells = [(float(c["x"]), float(c["y"])) for c in csv.DictReader(open(HERE / "mo_hinh_uji_cells.csv", encoding="utf-8"))]
-    lech, tong_w_min, tong_w_max, e_tb, n = 0.0, 9.0, 0.0, 0.0, 0
-    for d in csv.DictReader(open(HERE / "du_doan" / "V7C2.csv", encoding="utf-8")):
-        w = [float(d[f"cell{j}_weight"]) for j in range(1, 31)]
-        idx = [int(d[f"cell{j}_index"]) for j in range(1, 31)]
-        ox, oy = cells[idx[0]]                                      # gốc cục bộ để tránh mất chữ số trên toạ độ 4,9e6
-        x = ox + sum(wj * (cells[i][0] - ox) for wj, i in zip(w, idx))
-        y = oy + sum(wj * (cells[i][1] - oy) for wj, i in zip(w, idx))
-        lech = max(lech, abs(x - float(d["pred_x"])), abs(y - float(d["pred_y"])))
-        tong_w_min, tong_w_max = min(tong_w_min, sum(w)), max(tong_w_max, sum(w))
-        e_tb += math.hypot(x - float(d["true_x"]), y - float(d["true_y"])) * G
-        n += 1
-    ok2 = lech < 1e-6 and abs(1 - tong_w_min) < 1e-9 and abs(1 - tong_w_max) < 1e-9
-    loi += not ok2
-    print(f"V7-C2: dựng lại (x̂, ŷ) = Σ w·(x, y): lệch toạ độ lớn nhất {lech:.2e}; tổng trọng số {tong_w_min:.12f}…{tong_w_max:.12f}; "
-          f"sai số TB từ toạ độ dựng lại {e_tb / n:.4f} m | {'KHỚP' if ok2 else 'LỆCH'}")
+    for ten, tep in (("V7-C2", "V7C2.csv"), ("V7-E", "V7E.csv")):
+      lech, tong_w_min, tong_w_max, e_tb, n = 0.0, 9.0, 0.0, 0.0, 0
+      for d in csv.DictReader(open(HERE / "du_doan" / tep, encoding="utf-8")):
+          w = [float(d[f"cell{j}_weight"]) for j in range(1, 31)]
+          idx = [int(d[f"cell{j}_index"]) for j in range(1, 31)]
+          ox, oy = cells[idx[0]]                                      # gốc cục bộ để tránh mất chữ số trên toạ độ 4,9e6
+          x = ox + sum(wj * (cells[i][0] - ox) for wj, i in zip(w, idx))
+          y = oy + sum(wj * (cells[i][1] - oy) for wj, i in zip(w, idx))
+          lech = max(lech, abs(x - float(d["pred_x"])), abs(y - float(d["pred_y"])))
+          tong_w_min, tong_w_max = min(tong_w_min, sum(w)), max(tong_w_max, sum(w))
+          e_tb += math.hypot(x - float(d["true_x"]), y - float(d["true_y"])) * G
+          n += 1
+      ok2 = lech < 1e-6 and abs(1 - tong_w_min) < 1e-9 and abs(1 - tong_w_max) < 1e-9
+      loi += not ok2
+      print(f"{ten}: dựng lại (x̂, ŷ) = Σ w·(x, y): lệch toạ độ lớn nhất {lech:.2e}; tổng trọng số {tong_w_min:.12f}…{tong_w_max:.12f}; "
+            f"sai số TB từ toạ độ dựng lại {e_tb / n:.4f} m | {'KHỚP' if ok2 else 'LỆCH'}")
     # dev out-of-fold
     s6 = s7 = 0.0
     k = 0

@@ -42,7 +42,10 @@ MODELS = [  # (tên sheet, nhãn, tệp nguồn)
     ("V7C1", "V7-C1 (+ HUI rel)", V7 / "predictions" / "C_rel.csv"),
     ("V7C2", "V7-C2 (+ rel + abs mức-3) — mô hình chọn", V7 / "predictions" / "C_rel_absL3.csv"),
     ("V7D", "V7-D (+ HUI cấp tầng)", V7 / "predictions" / "D_hier.csv"),
+    ("V7E", "V7-E (V7-C2, tập hợp 5 seed) — bổ sung", V7 / "predictions" / "E_seeds.csv"),
+    ("V7F_nopool", "MLP không nhánh gộp (so sánh bộ chấm điểm) — bổ sung", V7 / "predictions" / "F_nopool.csv"),
 ]
+REBUILD = [("V7C2", "V7-C2", "C_rel_absL3.csv"), ("V7E", "V7-E", "E_seeds.csv")]      # sheet dựng lại toạ độ từ 30 trọng số
 HDR = PatternFill("solid", fgColor="1F3A5F")
 SOFT = PatternFill("solid", fgColor="E6F0F2")
 BOLD = Font(bold=True)
@@ -81,6 +84,8 @@ def copy_predictions() -> None:
         shutil.copyfile(f, OUT / "du_doan" / f"{key}.csv")
     shutil.copyfile(UJI / "model" / "cells.csv", OUT / "mo_hinh_uji_cells.csv")
     shutil.copyfile(V7 / "verification.json", OUT / "kiem_chung_V7.json")
+    if (V7 / "verification_E_seeds.json").exists():
+        shutil.copyfile(V7 / "verification_E_seeds.json", OUT / "kiem_chung_V7E.json")
 
 
 def dev_csv() -> pd.DataFrame:
@@ -127,16 +132,16 @@ def sheet_simple(wb, key, label, f: Path, row0=7):
     return ws
 
 
-def sheet_main(wb):
-    """V7-C2: dựng lại toạ độ từ 30 trọng số và 30 tâm ô, rồi tính sai số."""
-    d = pd.read_csv(V7 / "predictions" / "C_rel_absL3.csv")
+def sheet_main(wb, key="V7C2", label="V7-C2", src="C_rel_absL3.csv"):
+    """Dựng lại toạ độ từ 30 trọng số và 30 tâm ô, rồi tính sai số (V7-C2 và V7-E)."""
+    d = pd.read_csv(V7 / "predictions" / src)
     cells = pd.read_csv(UJI / "model" / "cells.csv")
     cx, cy = cells.x.to_numpy(), cells.y.to_numpy()
-    ws = wb.create_sheet("V7C2_dung_lai_toa_do")
+    ws = wb.create_sheet(f"{key}_dung_lai_toa_do")
     row0 = 8
     n = len(d)
     last = row0 + n - 1
-    ws["A1"] = "V7-C2 trên validationData: dựng lại (x̂, ŷ) = Σ wᵢ·(xᵢ, yᵢ) từ 30 trọng số và tâm 30 ô, rồi sai số"
+    ws["A1"] = f"{label} trên validationData: dựng lại (x̂, ŷ) = Σ wᵢ·(xᵢ, yᵢ) từ 30 trọng số và tâm 30 ô, rồi sai số"
     ws["A1"].font = Font(bold=True, size=13)
     ws["A2"], ws["B2"] = "Hệ số mét g", GF
     ws["A3"], ws["B3"] = "Sai số TB (từ toạ độ dựng lại)", None
@@ -248,7 +253,7 @@ def sheet_total(wb, rep, ex_row):
         ws.cell(r, 6, f"=D{r}-E{r}"); ws.cell(r, 7, f'=IF(ABS(F{r})<0.00005,"KHỚP","LỆCH")')
         ws.cell(r, 8, f"='{key}'!B4"); ws.cell(r, 9, round(s["median"], 4)); ws.cell(r, 10, f"='{key}'!B5"); ws.cell(r, 11, round(s["p90"], 4))
         ws.cell(r, 12, f"='{key}'!E3"); ws.cell(r, 13, round(s["floor"], 6))
-        if key == "V7C2":
+        if key in ("V7C2", "V7E"):
             for c in range(1, 14):
                 ws.cell(r, c).fill = SOFT
                 ws.cell(r, c).font = BOLD
@@ -260,6 +265,10 @@ def sheet_total(wb, rep, ex_row):
     ws.cell(r + 4, 1, "Dev OOF, V7-C2, vân tay có thông tin (m)"); ws.cell(r + 4, 4, "='Dev_OOF'!C3")
     ws.cell(r + 5, 1, "Dev OOF, V6*, vân tay có thông tin (m)"); ws.cell(r + 5, 4, "='Dev_OOF'!B3")
     ws.cell(r + 6, 1, "Ví dụ một truy vấn (hàng 335): sai số V7 dựng bằng tay (m)"); ws.cell(r + 6, 4, f"='Vi_du_mot_truy_van'!G{ex_row + 3}")
+    ws.cell(r + 8, 1, "Kiểm tra bổ sung của V7-E (tập hợp 5 seed; không phải số chính của báo cáo)").font = BOLD
+    ws.cell(r + 9, 1, "Sai số TB dựng lại từ 30 trọng số × tâm ô (m)"); ws.cell(r + 9, 4, "='V7E_dung_lai_toa_do'!B3")
+    ws.cell(r + 10, 1, "Lệch toạ độ lớn nhất so với toạ độ lưu (đơn vị toạ độ)"); ws.cell(r + 10, 4, "='V7E_dung_lai_toa_do'!B5")
+    ws.cell(r + 11, 1, "Tổng trọng số nhỏ nhất / lớn nhất"); ws.cell(r + 11, 4, "='V7E_dung_lai_toa_do'!C6"); ws.cell(r + 11, 5, "='V7E_dung_lai_toa_do'!D6")
     ws.cell(r + 7, 1, "Ví dụ một truy vấn (hàng 335): sai số V6* dựng bằng tay (m)"); ws.cell(r + 7, 4, f"='Vi_du_mot_truy_van'!F{ex_row + 3}")
     for c, w in zip("ABCDEFGHIJKLM", (58, 44, 10, 18, 20, 10, 12, 16, 16, 14, 14, 18, 20)):
         ws.column_dimensions[c].width = w
@@ -305,23 +314,24 @@ def main():
         loi += not khop
         print(f"{r['mo_hinh']:<44} n={n:<5} TB {tb:8.4f} m | báo cáo {float(r['sai_so_tb_m']):8.4f} m | trung vị {tv:7.4f} | P90 {p90:8.4f} "
               f"| đúng tòa+tầng {dung / n:.4f} | {'KHỚP' if khop else 'LỆCH'}")
-    # V7-C2: dựng lại toạ độ từ trọng số và tâm ô
+    # V7-C2 và V7-E: dựng lại toạ độ từ trọng số và tâm ô
     cells = [(float(c["x"]), float(c["y"])) for c in csv.DictReader(open(HERE / "mo_hinh_uji_cells.csv", encoding="utf-8"))]
-    lech, tong_w_min, tong_w_max, e_tb, n = 0.0, 9.0, 0.0, 0.0, 0
-    for d in csv.DictReader(open(HERE / "du_doan" / "V7C2.csv", encoding="utf-8")):
-        w = [float(d[f"cell{j}_weight"]) for j in range(1, 31)]
-        idx = [int(d[f"cell{j}_index"]) for j in range(1, 31)]
-        ox, oy = cells[idx[0]]                                      # gốc cục bộ để tránh mất chữ số trên toạ độ 4,9e6
-        x = ox + sum(wj * (cells[i][0] - ox) for wj, i in zip(w, idx))
-        y = oy + sum(wj * (cells[i][1] - oy) for wj, i in zip(w, idx))
-        lech = max(lech, abs(x - float(d["pred_x"])), abs(y - float(d["pred_y"])))
-        tong_w_min, tong_w_max = min(tong_w_min, sum(w)), max(tong_w_max, sum(w))
-        e_tb += math.hypot(x - float(d["true_x"]), y - float(d["true_y"])) * G
-        n += 1
-    ok2 = lech < 1e-6 and abs(1 - tong_w_min) < 1e-9 and abs(1 - tong_w_max) < 1e-9
-    loi += not ok2
-    print(f"V7-C2: dựng lại (x̂, ŷ) = Σ w·(x, y): lệch toạ độ lớn nhất {lech:.2e}; tổng trọng số {tong_w_min:.12f}…{tong_w_max:.12f}; "
-          f"sai số TB từ toạ độ dựng lại {e_tb / n:.4f} m | {'KHỚP' if ok2 else 'LỆCH'}")
+    for ten, tep in (("V7-C2", "V7C2.csv"), ("V7-E", "V7E.csv")):
+      lech, tong_w_min, tong_w_max, e_tb, n = 0.0, 9.0, 0.0, 0.0, 0
+      for d in csv.DictReader(open(HERE / "du_doan" / tep, encoding="utf-8")):
+          w = [float(d[f"cell{j}_weight"]) for j in range(1, 31)]
+          idx = [int(d[f"cell{j}_index"]) for j in range(1, 31)]
+          ox, oy = cells[idx[0]]                                      # gốc cục bộ để tránh mất chữ số trên toạ độ 4,9e6
+          x = ox + sum(wj * (cells[i][0] - ox) for wj, i in zip(w, idx))
+          y = oy + sum(wj * (cells[i][1] - oy) for wj, i in zip(w, idx))
+          lech = max(lech, abs(x - float(d["pred_x"])), abs(y - float(d["pred_y"])))
+          tong_w_min, tong_w_max = min(tong_w_min, sum(w)), max(tong_w_max, sum(w))
+          e_tb += math.hypot(x - float(d["true_x"]), y - float(d["true_y"])) * G
+          n += 1
+      ok2 = lech < 1e-6 and abs(1 - tong_w_min) < 1e-9 and abs(1 - tong_w_max) < 1e-9
+      loi += not ok2
+      print(f"{ten}: dựng lại (x̂, ŷ) = Σ w·(x, y): lệch toạ độ lớn nhất {lech:.2e}; tổng trọng số {tong_w_min:.12f}…{tong_w_max:.12f}; "
+            f"sai số TB từ toạ độ dựng lại {e_tb / n:.4f} m | {'KHỚP' if ok2 else 'LỆCH'}")
     # dev out-of-fold
     s6 = s7 = 0.0
     k = 0
@@ -350,15 +360,17 @@ GUIDE = """# Kiểm chứng sai số V7 (6,309 m trên validationData)
 Ba cách kiểm tra độc lập; cả ba tính lại sai số từ **toạ độ thật** và **toạ độ dự đoán** của từng vân tay, rồi so với con số trong báo cáo.
 
 1. **Excel** — mở `kiem_chung_V7_mean.xlsx`:
-   - `Tong_hop`: cột *Kết luận* ghi KHỚP cho từng mô hình (V4, V5, V6, V6 tái tạo, V7-A, V7-B, V7-C1, V7-C2, V7-D).
+   - `Tong_hop`: cột *Kết luận* ghi KHỚP cho từng mô hình (V4, V5, V6, V6 tái tạo, V7-A, V7-B, V7-C1, V7-C2, V7-D, và hai kết quả bổ sung V7-E, MLP không nhánh gộp).
    - Mỗi sheet mô hình: cột F tính sai số từng mẫu bằng `=SQRT((x̂−x)^2+(ŷ−y)^2)*g`; B3 là `AVERAGE` (sai số trung bình), B4 trung vị, B5 P90.
-   - `V7C2_dung_lai_toa_do`: dựng lại (x̂, ŷ) = Σ wᵢ·(xᵢ, yᵢ) từ **30 trọng số và tâm 30 ô** bằng `SUMPRODUCT`, rồi tính sai số.
+   - `V7C2_dung_lai_toa_do` và `V7E_dung_lai_toa_do`: dựng lại (x̂, ŷ) = Σ wᵢ·(xᵢ, yᵢ) từ **30 trọng số và tâm 30 ô** bằng `SUMPRODUCT`, rồi tính sai số.
    - `Vi_du_mot_truy_van`: một vân tay thật (hàng 335), V6\\* sai 7,9938 m, V7 sai 4,6357 m, dựng bằng tay.
    - `Dev_OOF`: dev out-of-fold của V6\\* và V7-C2 (19.937 vân tay; 19.861 có ít nhất một AP).
-2. **Python, chỉ thư viện chuẩn** — trong thư mục này chạy `python kiem_tra_V7.py`; script in KHỚP hoặc LỆCH cho từng mô hình, dựng lại toạ độ V7-C2 từ trọng số và tính lại dev.
+2. **Python, chỉ thư viện chuẩn** — trong thư mục này chạy `python kiem_tra_V7.py`; script in KHỚP hoặc LỆCH cho từng mô hình, dựng lại toạ độ V7-C2 và V7-E từ trọng số và tính lại dev.
 3. **Chương trình kiểm chứng độc lập của dự án** — `kiem_chung_V7.json` lưu kết quả của `src/v7/verify_v7.py`: 16 phép kiểm, 0 thất bại
    (tính lại sai số, trọng số ≥ 0 và tổng bằng 1, tọa độ = tổng có trọng số của tâm ô, ô nằm trên tầng dự đoán, fold rời nhau theo điện thoại,
-   cache cùng nguồn dữ liệu, không k-NN, EFIM = vét cạn, tái lập theo seed, V6 không bị đổi).
+   cache cùng nguồn dữ liệu, không k-NN, EFIM = vét cạn, tái lập theo seed, V6 không bị đổi). `kiem_chung_V7E.json`: cùng bộ phép kiểm chạy cho V7-E.
+
+**Số chính của báo cáo là V7-C2: 6,309 m.** V7-E (tập hợp 5 seed, 6,2775 m) và MLP không nhánh gộp (6,3162 m) là kết quả bổ sung, mỗi biến thể chấm test đúng một lần; chúng có trong bộ kiểm chứng để ai cũng tính lại được.
 
 Hệ số mét: UJIIndoorLoc dùng toạ độ Web Mercator nên mét thực địa = đơn vị toạ độ × **0,766126**.
 
@@ -369,7 +381,7 @@ Hệ số mét: UJIIndoorLoc dùng toạ độ Web Mercator nên mét thực đ�
 | `du_doan_dev/dev_oof_V6star_V7C2.csv` | toạ độ dự đoán out-of-fold của dev |
 | `mo_hinh_uji_cells.csv` | toạ độ 933 ô tham chiếu (chỉ số ô = số dòng, từ 0) |
 | `du_lieu_bao_cao_V7.json` | nguồn số liệu duy nhất của slide V7 |
-| `kiem_chung_V7.json` | kết quả `verify_v7.py` |
+| `kiem_chung_V7.json`, `kiem_chung_V7E.json` | kết quả `verify_v7.py` cho V7-C2 và V7-E |
 
 Tự kiểm bằng tay một vân tay: lấy `pred_x, pred_y, true_x, true_y` của một dòng, tính √((x̂−x)²+(ŷ−y)²)×0,766126. Ví dụ hàng 335 của validationData: Δx = −0,99923; Δy = 5,96774; √(…) = 6,05050; × 0,766126 = 4,6357 m.
 """
@@ -384,7 +396,8 @@ def main() -> None:
     wb.active.title = "Tong_hop"
     for key, label, f in MODELS:
         sheet_simple(wb, key, label, OUT / "du_doan" / f"{key}.csv")
-    sheet_main(wb)
+    for key, label, src in REBUILD:
+        sheet_main(wb, key, label, src)
     ex_row = sheet_example(wb)
     sheet_dev(wb, df)
     sheet_total(wb, rep, ex_row)

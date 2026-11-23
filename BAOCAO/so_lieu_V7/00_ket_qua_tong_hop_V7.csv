@@ -8,3 +8,5 @@ V7B,V7-B tối ưu trực tiếp,du_doan/V7B.csv,1111,6.4303,4.8898,13.0644,0.80
 V7C1,V7-C1 (+ HUI rel),du_doan/V7C1.csv,1111,6.3925,4.7634,12.9653,0.80378,0.766126
 V7C2,V7-C2 (+ rel + abs mức-3) — mô hình chọn,du_doan/V7C2.csv,1111,6.3093,4.6357,12.8528,0.80378,0.766126
 V7D,V7-D (+ HUI cấp tầng),du_doan/V7D.csv,1111,6.3236,4.6603,12.8322,0.80378,0.766126
+V7E,"V7-E (V7-C2, tập hợp 5 seed) — bổ sung",du_doan/V7E.csv,1111,6.2775,4.6138,12.8264,0.80378,0.766126
+V7F_nopool,MLP không nhánh gộp (so sánh bộ chấm điểm) — bổ sung,du_doan/V7F_nopool.csv,1111,6.3162,4.6633,12.7954,0.80378,0.766126
